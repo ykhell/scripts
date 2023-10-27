@@ -1,0 +1,863 @@
+\documentclass[a4paper]{article}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{faktor}
+\usepackage{tikz-cd}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}%[subsection]
+\newtheorem{lemm}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{prop*}{Proposition}
+\newtheorem{satz}[thm]{Satz}
+\newtheorem*{satz45'}{Satz 45'}
+\newtheorem{kor}[thm]{Korollar}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{thm-defi}[thm]{Theorem-Definition}
+
+\theoremstyle{definition}
+%\renewcommand{\thethm}{\arabic{thm}}
+\newtheorem{defi}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{bem}[thm]{Bemerkung}
+\newtheorem*{bem*}{Bemerkung}
+\newtheorem*{hin*}{Hinweis}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{bsp}[thm]{Beispiel}
+\newtheorem*{bsp*}{Beispiel}
+\newtheorem{Conc}[thm]{Conclusion}
+\newtheorem*{nota*}{Notation}
+\newtheorem*{rech*}{Rechenregeln}
+\newtheorem*{whg*}{Wiederholung}
+\newtheorem{auf}[thm]{Aufgabe}
+\newtheorem{ubng}[thm]{Übung}
+\newtheorem*{ubng*}{Übung}
+\newtheorem{loes}[thm]{Lösung}
+\newtheorem{exer}[thm]{Exercise}
+\newtheorem{soln}[thm]{Solution}
+
+\graphicspath{ {./graphics/} }
+\title{\vspace{-2cm} Algebra 1 WS23/24}
+\author{Yousef Khell}
+\begin{document}
+\maketitle
+\section{Gruppen und Monoide}%
+\label{sec:Gruppen und Monoide}
+\begin{nota*} \item
+\begin{itemize}
+  \item $\Bbb N = \{1, 2, ...\}$
+  \item $\Bbb N_{0} = \Bbb N \cup \{0\}$
+\item $\#X = $ die Kardinalität/Mächtigkeit einer Menge $X$
+\end{itemize}
+\end{nota*}
+
+\begin{defi}[\textbf{Monoid}] %def-1
+  Ein Tripel $(M, e, \circ)$ mit
+  \begin{itemize}
+ \item $M$ einer Menge.
+ \item $e$ einem Element aus $M$,
+ \item $\circ : M \times M \to M$ einer zweistelligen Verknüpfung
+  \end{itemize}
+  heißt \textbf{Monoid} falls gilt
+  \begin{enumerate}[(M1)]
+ \item Assoziativität: $$\forall a, b, c \in M : (a \circ b) \circ c = a \circ (b \circ c)$$
+ \item Neutrales Element: $$\forall a \in M : a \circ e = a = e \circ a$$
+  \end{enumerate}
+  Wir nennen ein $a \in M$ \textbf{invertierbar}, falls $$\exists b, b' \in M : b \circ a = e = a \circ b'$$ (b bzw. b' heißen dann Links- bzw. Rechtsinverse)
+ \begin{bem*}
+$b = b'$, denn $$b' = e \circ b' = (b\circ a) \circ b' = b \circ (a \circ b') = b \circ e = b$$
+ \end{bem*}
+\end{defi}
+
+\begin{defi}[\textbf{Gruppe}]%def-2
+Eine \textbf{Gruppe} ist ein Monoid, in dem alle Elemente invertierbar sind.
+\end{defi}
+\begin{bem}[zur Assoziativität]%bem-3
+Seien $a_{1}, ..., a_{n} \in M$, und setzt man in
+$$a_{1} \circ \cdots \circ a_{n}$$
+Klammern, sodass $\circ$ jeweils 2 Elemente verknüpft, so ist wegen (M1) das Ergebnis unabhängig von der Wahl der Klammerung, and also lässt man i.a. die Klammern weg. (Die Reihenfolge ist aber schon wichtig!)
+\end{bem}
+\begin{defi}[\textbf{Abelsche Gruppe/Monoid}] %def-4
+Ein Monoid bzw. eine Gruppe $M$ heißt \textbf{abelsch} (oder kommutativ) $:\iff \forall a, b \in M:$ $$a \circ b = b \circ a$$
+\end{defi}
+\begin{prop}[Eindeutigkeit des neutralen Elements bzw. der neutralen Elementen]
+  % TODO Check Grammar in Title
+  % TODO Check Numbering in Vorlesung
+  Sei $M$ ein Monoid, dann
+  \begin{enumerate}[(a)]
+    \item Erfüllt $e' \in M$ die Bedingung $e' \circ a = a \forall a \in M$, so gilt $e' = e$.
+    \item Ist $a \in M$ invertierbar, so ist sein Inverses eindeutig.
+  \end{enumerate}
+\end{prop}
+\begin{proof}[Beweis] \item
+\begin{enumerate}[(a)]
+  \item Nach Konstruktion $e = e' \circ e = e'$.
+\item Gelte $a \circ b' = e$ und $b$ sei ein Inverses von $a$, dann:
+$$b' = e \circ b' = (b \circ a) \circ b' = b \circ (a \circ b') = b \circ e = b. $$
+\end{enumerate}
+\end{proof}
+
+\begin{satz}[ohne Beweis]%satz-6
+  Sei $(G, e, \circ)$ ein Tripel  mit $G$ eine Menge, $e \in G$, $\circ : G \times G \to G$ eine assoziative Verknüpfung sodass:
+  \begin{itemize}
+    \item  $e$ ist Linkseins, d.h.
+    $$\forall g \in G : e \circ g = g$$
+    \item jedes $g$ hat ein Linksinverses $$\forall g \in G \exists h \in G : h \circ g = e$$
+    So ist $(G, e, \circ)$ eine Gruppe.
+  \end{itemize}
+\end{satz}
+\begin{hin*}[Nutzen von Satz 6]
+  Es müssen weniger Axiome geprüft werden.
+\end{hin*}
+\begin{nota*}
+  \item
+  \begin{enumerate}[(i)]
+\item $ab := a \circ b$
+\item $a^{0} = e, a^{1}=a, a^{n+1}=a^{n}a, n \in N$
+    \item $a^{n} = (a^{-n})^{-1}, n < 0$
+
+\item  Ist $\circ$ kommutativ, so schreibt man oft $+$
+  \end{enumerate}
+\end{nota*}
+\begin{ubng*}[Rechenregeln]
+  \item
+  \begin{enumerate}[(i)]
+\item  $a^{n}a^{m}=a^{n+m}, (a^{n})^{m}=a^{nm}, \forall m,n \in \Bbb N_{0}$
+\item  Ist $a$ invertierbar, so gelten die Regeln $\forall n,m \in \Bbb Z$
+  \end{enumerate}
+\end{ubng*}
+
+\begin{prop}[Übung]
+  Sei $G$ eine Gruppe, seien $g,h \in G$, dann:
+  \begin{enumerate}[(a)]
+    \item Die Glecihung $xg = h$ besitzt genau eine Lösung (in $G$), nämlich $x=hg^{-1}$.
+    \item Es gilt $(gh)^{-1} = h^{-1}g^{-1}$
+    \item Die Rechtstranslation (um $g$) $r_{g}: G \to G, x \mapsto xg$ und die Linkstranslationen (um $g$) $\ell_{g}: G \to G, x \mapsto gx$
+    sind bijektiv.
+
+  \end{enumerate}
+\end{prop}
+
+\begin{bsp*}
+  % TODO Nummerierung wie in der Vorlesung
+  \begin{enumerate}[1)]
+\item $(\Bbb N_{0}, 0, +), (\Bbb N_{0}, 1, \cdot)$ sind kommutative Monoide.
+\item Jede Gruppe ist ein Monoid.
+\item Ist $X$ eine Menge, $\mathrm{Abb}(X,X)$ bzw. $\mathrm{Bij}(X,X)$ die Menge aller Abbildungen bzw. Bijektionen von $X$ in sich, so gilt:
+\begin{enumerate}[(a)]
+    \item $(\mathrm{Abb}(X,X), \mathrm{id}_{X}, \circ)$ ist ein Monoid.
+    \item $(\mathrm{Bij}(X,X), \mathrm{id}_{X}, \circ)$ ist eine Gruppe.
+\end{enumerate}
+    Schreibe $S_{n}:=\mathrm{Bij}(\{1, ..., n\}, \{1, ..., n\})$ für die Gruppe der Permutationen von $\{1, ..., n\}$.
+    \item Ist $(V, \langle \cdot, \cdot \rangle)$ ein Euklidischer Raum, so sind
+    \begin{enumerate}[(i)]
+    \item $O(V):= \{\varphi \in \mathrm{End}_{\Bbb R}(V) | \varphi \text{ orthogonal}\}$ und $SO(V):= \{\varphi \in O(V) | \det(\varphi) = 1\}$ Gruppen.
+    \item Ist $V = \Bbb R^{2}$ und $P_{n}:=\{\cos \frac{2\pi j}{n}, \sin \frac{2\pi j}{n} \mid j = 0, ..., n-1\}$, dann ist
+    \begin{enumerate}[(a)]
+        \item $C_{n}:= \{\varphi \in SO(V) \mid \varphi(P_{n}) = P\}$ die Gruppe der Drehungen um 0 von Winkel $\frac{2\pi j}{n}, (j=0, ..., n=1)$ und
+        \item $D_{n}:= \{\varphi \in O(V) \mid \varphi(P_{n})=P\}$ die [[Diedergruppe]] der Ordnung $2n$
+
+    \end{enumerate}
+        (Übung) $\#C_{n} = n, \#D_{n} = 2n$.
+    \end{enumerate}
+    Gruppen beschreiben oft Symmetrien eines geometrischen Objekts.
+\item Ist $M$ ein Monoid, so ist $M^{\times}:=\{a \in M \mid a \text{ invertierbar}\}$ eine Gruppe, also $(M^{\times}, e, \circ)$.
+
+  \end{enumerate}
+
+
+\end{bsp*}
+\begin{defi}[\textbf{Ring}]
+  Ein [[Ring]] ist ein [[Tupel]] $(R, 0, 1, +, \cdot)$, sodass
+  \begin{enumerate}[(R1)]
+    \item $(R, 0, +)$ eine [[abelsche Gruppe]],
+    \item $(R, 1, \cdot)$ ein Monoid,
+    \item Es gelten die Distributivgesetze
+  \end{enumerate}
+\end{defi}
+
+\begin{defi}[\textbf{Ordnung einer Gruppe}]
+  Ist $M$ ein Monoid oder eine Gruppe, so heißt $$\mathrm{ord}(M):=\#M$$
+  die Ordnung von $M$.
+\end{defi}
+
+\begin{defi}[\textbf{Untermonoid/Untergruppe}]
+  Seien $M$ ein Monoid, $G$ eine Gruppe, dann
+  \begin{enumerate}[(a)] %TODO Check nummer
+    \item $N \subseteq M$ heißt Untermonoid (UM) wenn:
+          \begin{itemize}
+            \item $e \in N$
+            \item $\forall n, n' \in N : n \circ n' \in N$
+          \end{itemize}
+    \item $H \subseteq G$ heißt Untergruppe (UG) wenn:
+          \begin{itemize}
+            \item $e \in H$
+            \item $\forall h, h' \in H : h \circ h' \in H$
+          \end{itemize}
+  \end{enumerate}
+
+So schreiben wir $N \leq M, H \leq G$.
+\end{defi}
+
+\begin{ubng}%übung-11
+  \begin{enumerate}[(i)] %TODO Check nummer
+    \item $N \leq M \implies (N, e, \cdot \mid_{N \times N}:N\times N \to N)$ ist Monoid
+    \item $H \leq G \implies (H, e, \cdot \mid_{H \times H}:H\times H \to H)$ ist Monoid
+  \end{enumerate}
+
+\end{ubng}
+\begin{bsp*}
+  Sei $K$ ein Körper, dann ist
+  \begin{enumerate}[(i)] %TODO Check nummer
+    \item $SL_{n}(K) \leq GL_{n}(K)$
+    \item $SO(V) \leq O(V) \le \mathrm{Aut}_{\Bbb R}(V)$
+  \end{enumerate}
+\end{bsp*}
+
+\begin{prop}[Übung]
+Sind $(H_{i})_{i \in I}$ Untergruppen von $G$, so ist
+$$\bigcap_{i \in I} H_{i} \leq G.$$
+\end{prop}
+
+\begin{bsp*}
+  Sei $G$ eine Gruppe, $g  \in G, S \le G$, dann:
+  \begin{enumerate}[(i)] %TODO Check num
+\item $C_{G}(g)$ \textbf{Zentralisator} von $g \in G$, also $$C_{G}(g) = \{h \in G \mid hg = gh\} \le G$$
+\item $C_{G}(S)$ \textbf{Zentralisator} von $S$, also $$C_{G}(S) = \{h \in G \mid hs = sh \forall s \in S\} = \bigcap_{s \in S} C_{G}(s) \le G$$
+\item $Z(G)$ \textbf{Zentrum} von $G$, also $$Z(G)=C_{G}(G) \underset{\text{komm.}}\le G$$
+\item (Übung) $Z(GL_{n}(K)) = K^{\times}\mathbf{1}_{n}$
+  \end{enumerate}
+
+\end{bsp*}
+
+\begin{lemm}
+  Sei $G$ eine Gruppe und $S \subseteq G$ eine Teilmenge, dann $\exists$ kleinste Untergruppe $\langle S \rangle \le G$, die $S$ umfasst.
+  \begin{proof}[Beweis]
+    Definiere $$\langle S \rangle := \bigcap \{H \leq G \mid S \subseteq H\}.$$
+  \end{proof}
+
+\end{lemm}
+
+\begin{ubng}
+Sei $M$ ein Monoid, $S \subseteq M$ eine Teilmenge, ein Wort aus $S$ ist ein Ausdruck $$s_{1} \cdot \cdots \cdot s_{n}, s_{i} \in S, n\in N$$
+Dann gilt: $\{\text{Worte in } S \cup \{e\}\} = \langle S \rangle \le M$ ist das kleinste Untermodnoid von M, das $S$ umfasst.
+Und ist $G$ eine Gruppe, so gilt $\{\text{Worte in } S \cup S^{-1} \cup \{e\}\} = \langle S \rangle \le G$ ist die kleinste Untergruppe von G, die $S$ umfasst.
+\end{ubng}
+
+\begin{defi}[\textbf{Erzeugendensystem}]
+Sei $G$ eine Gruppe und $S \subseteq G$ eine Teilmenge. $S$ heißt Erzeugendensystem von $G \iff \langle S \rangle = G$.
+\end{defi}
+
+\begin{bsp*}[Übung]
+Seien $E_{ij} \in M_{n \times n}(K)$ die Elementarmatrizen mit $1$ an der Stelle $(i,j)$ und $0$ sonst. Dann ist
+$$\{\mathbf 1_{n} + aE_{ij} \mid a \in K, i,j \in \{1, ..., n\}, i \neq j\}$$
+ein Erzeugendensystem von $SL_{n}(K)$ (Gauß-Algorithmus)
+\end{bsp*}
+
+\begin{lemm}
+Sei $G$ eine Gruppe, $g \in G$, dann gilt
+$$\langle g \rangle = \langle \{g\} \rangle = \{g^{n} \mid n \in \Bbb Z\}$$
+\begin{proof}[Beweis]
+(Nach Übung 14) $$\langle \{g\} \rangle = \{\text{Worte in } \{g, g^{-1}, e\}\}$$
+$$ = \{g^{i_{1}}, ..., g^{i_{n}} \mid n \in \Bbb N i_{1}, ..., i_{n} \in \{0, \pm 1\}\}$$
+$$= \{g^{i_{1}+\cdots + i_{n}} \mid n \in \Bbb N i_{1}, ..., i_{n} \in \{0, \pm 1\}\}$$
+$$= \{g^{n} | n \in \Bbb Z\}$$
+\end{proof}
+\end{lemm}
+\begin{bem*}$\langle g \rangle$ ist abelsch.\end{bem*}
+\begin{defi}[\textbf{Ordnung eines Gruppenelements, Zyklische Gruppe}]
+  % TODO NUmmer
+  Sei $G$ eine Gruppe, $g \in G$
+
+\begin{enumerate}[(a)]
+
+ \item Die Ordnung von $g$ ist
+$$\mathrm{ord}(g) = \# \langle g \rangle = \# \{ g^{n} \mid n \in \Bbb{Z} \} \in \Bbb{N} \cup \{\infty\}$$
+ \item$g$ hat endliche Ordnung $\iff \mathrm{ord}(g) \in \Bbb N$
+ \item $G$ ist zyklisch $\iff \exists g \in G : G = \langle g \rangle$
+\end{enumerate}
+\end{defi}
+
+% Vorlesung 2
+
+\begin{prop}
+  Zyklische Gruppen sind abelsch.
+  \begin{proof}[Beweis]
+$G$ zyklisch $\implies \exists g \in G : G = \langle g \rangle = \{ g^{n} \mid n \in \Bbb{Z} \}$. Dann: $$g^{n}g^{m} = g^{n+m} \overset{+ \text{komm. in } \Bbb Z}= g^{m+n} = g^{m}g^{n}.$$
+  \end{proof}
+\end{prop}
+
+\begin{prop} %prop-19 %TODO Format
+Sei $G$ eine Gruppe, $g \in G, n := \mathrm{ord}(g)$ und
+$$n' = \sup\{m \in \Bbb N \mid e, g, g^{2} ..., g^{m-1} \text{ paarw. versch.}\}$$
+Dann gelten:
+\begin{enumerate}[(a)]
+\item $n' = \infty = \sup \Bbb N$ oder $g^{n'} = e$ und $\langle g \rangle= \{e, g, g^{2} ..., g^{n'-1}\}$. Insbesondere ist $n'=n$
+\item Falls $n = \mathrm{ord}(g) < \infty$, so gilt für $m,m' \in \Bbb Z$: $$g^{m} = g^{m'} \iff m \equiv m' \mod n$$
+    Insbesondere ist $g^{m} = e \iff n \mid m$
+\item Für $s \in \Bbb Z$ gilt $$\mathrm{ord}(g^{s}) = \frac{n}{\mathrm{ggT}(n,s)}$$
+\end{enumerate}
+\begin{proof}[Beweis]
+  \item
+  \begin{enumerate}[(a)]
+    \item Gelte $n' < \infty$:
+
+Definition von $n' \implies g^{n'} \in \{e, g, ..., g^{n'-1}\}$
+Annahme: $g^{n'} = g^{i}$ für ein $i \in \{1, ..., n'-1\}$
+Multipliziere mit $g^{-i} \implies g^{n'-i} = g^{0} = e$ und
+$0 < n' - i < n'$, d.h. $g^{n'-i} \in \{e, ..., g^{n'-1}\}$
+$\implies \{g^{0}, ..., g^{n'-1}\}$ nicht paarweise verschieden (Widerspruch)
+Sei schließlich $m \in \Bbb Z$ beliebig, Division mit Rest: $$m = qn' + r : q,r \in \Bbb Z , 0 \le r \le n' - 1$$
+$$\implies g^{m} = g^{qn'+r} = (g^{n'})^{q}g^{r} = g^{r} \in \{g^{0}, ..., g^{n-1}\}$$
+Also: $\langle g \rangle = \{e, ..., g^{n'-1}\}$ sind paarweise verschieden. $\implies \mathrm{ord}(g) = \# \langle g \rangle = n'$
+\item Seien $m, m' \in \Bbb Z$, schreibe $m'-m = qn'+r, (q, r \in \Bbb Z, 0 \le r \le n'-1)$, dann:
+$$g^{m'} = g^{m} \iff g^{m'-m} = g^{0} = e \iff g^{qn'+r} = e$$
+$$\iff g^{} = e \overunderset{1.\  n = n'}{e, ..., g^{n-1} \text{paarw. versch.}}\iff r = 0$$
+$\iff m' - m$ ist Vielfaches von $n=n' \iff m \equiv m \mod n$
+\item Bestime die $m \in \Bbb Z$ mit $(g^{s})^{m} = e$
+$$(g^{s})^{m} = e \iff g^{sm} \underset{2.}= e \iff n \mid sm$$
+$$\underset{\mathrm{ggT}(n,s) \mid n,s}\iff \frac n{\mathrm{ggT}(n,s)} \mid \frac s{\mathrm{ggT}(n,s)}m \iff \frac{n}{\mathrm{ggT}(n,s)} \mid m$$
+
+  \end{enumerate}
+
+Da $\frac n{\mathrm{ggT}(n,s)},  \frac s{\mathrm{ggT}(n,s)}$ teilerfremd sind
+$$\overset{2. }\iff \mathrm{ord}(g^{s}) = \frac n{\mathrm{ggT}(n,s)} \ \square.$$
+\end{proof}
+\end{prop}
+
+\begin{bsp*}
+$$\mathrm{ord}(g) = 6 \implies \mathrm{ord}(g^{2}) = 3 = 6/\mathrm{ggT}(6,2) = 6/2$$
+\end{bsp*}
+
+\begin{kor}
+  Sei $G$ eine Gruppe, dann
+  \begin{enumerate}[(a)]
+    \item Für $g \in G$ gilt: $$\mathrm{ord}(g)= \infty \iff g^{n}, n \in \Bbb Z \text{ sind paarw. verschieden}$$
+    \item Ist $G$ zyklisch und $G \le G$ eine Untergruppe, so ist $H$ zyklisch.
+  \end{enumerate}
+\begin{proof}[Beweis]
+\item
+  \begin{enumerate}[(a)]
+\item $\impliedby$ vgl. 19(a)
+$\implies$ wissen nach 19(a), dass $e, g, ..., g^{n}, ...$ paarw. versch. sind. Multipliziere mit $g^{-m},(m \in \Bbb N)$
+$\implies g^{-m}, g^{-m+1}, ..., g^{0}, g^{1}, ...$ sind paarw. versch.
+\item Sei $g \in G$ ein Erzeuger von $G, H \le G$ eine UG von G und ohne Einschränkung $H \supsetneq \{e\}$
+$$\implies \exists m \in \Bbb Z \setminus \{0\}:g^{m} \in H \setminus \{e\}$$
+$H$ ist Gruppe $\implies g^{m}, (g^{m})^{-1} = g^{-m} \in H$
+
+Sei $t \in \min\{m \in \Bbb N \mid g^{m} \in H\}$. Behauptung: $\langle g^{t} \rangle = H$.
+\begin{itemize}
+\item ``$\subseteq$'': Klar, da $g^{t} \in H$ also auch $\langle g^{t} \rangle \subseteq H$ ($H$ ist UG die $t$ enthält)
+\item ``$\supseteq$'': Sei $g^{m} \in H$, Division mit Rest: $m = tq + r:  q, r \in \Bbb Z, 0 \leq r \leq t-1$
+\end{itemize}
+$\implies H \ni g^{m} = g^{tq + r} = {\underbrace{(g^{t})}_{\in H}}^{q}g^{r} \implies g^{r} = (g^{m})((g^{t})^{q})^{-1} \in H$
+
+          Nach Def von $t$ muss gelten: $r = 0$, da $r = 1, ..., t-1$ verboten.
+Also ist $g^{m} = (g^{t})^{q} \in \langle g^{t} \rangle$.
+  \end{enumerate}
+
+\end{proof}
+
+
+\end{kor}
+\begin{kor}[Übung]
+Untergruppen von $\Bbb Z$ sind die Mengen $\Bbb Zn = \{an \mid a \in \Bbb Z\}, (n \in \Bbb N_{0})$
+\end{kor}
+
+\begin{whg*}[Vorbereitung]
+  \item
+\begin{itemize}
+\item Äquivalenzrelationen
+\item Äquivalenzklassen
+\item Repräsentantensysteme
+\end{itemize}
+\end{whg*}
+
+\begin{bem*} \item
+  \begin{itemize}
+        \item $X = \bigsqcup_{r \in \mathcal R} [r]_{\sim}$
+        \item Falls $\#X < \infty : \# = \sum_{r \in \mathcal R} \# [r]_{\sim}$ %TODO what is this
+  \end{itemize}
+\end{bem*}
+
+\begin{satz}[Satz von Lagrange]
+Sei $G$ eine endliche Gruppe und $H \le G$ eine Untergruppe, dann gilt $\#H \mid \#G$.
+\end{satz}
+\begin{proof}[Beweis] \item
+  \begin{enumerate} [1)]
+    \item Definiere $\sim$ auf $G$ durch $g \sim g' :\iff \exists h \in H : g' = gh$
+          $\sim$ ist eine Äquivalenzrelation:
+          \begin{itemize}
+            \item reflexiv: $g \sim g$ denn $g = ge, e \in H$
+            \item symmetrisch: gelte $g' = gh$ für ein $h \in H$ $$\underset{\_\cdot h^{-1}}{\implies} g'h^{-1}=g \underset{H \text{ Gruppe}} \implies h^{-1} \in H \implies g' \sim g$$
+            \item transitiv: gelte $g \sim g', g' \sim g''$, d.h. $\exists h \in H : g' = gh, \exists h' \in H " g'' = g'h$
+          \end{itemize}
+            $$\implies g'' = g'h' = (gh)h' = g(hh') \implies g \sim g''$$
+    \item Äquivalenzklassen: Für $g \in G$ ist
+    $$[g]_{\sim} = \{g' \in G \mid \exists h \in H : g' = gh\} = \{gh \mid h \in H\} =: gH$$
+    \item Beachte $G$ endlich $\implies H \subseteq G$ endlich (und ebenso jede Teilmenge von $G$)
+        Behauptung: $\#gH = \#H \forall g \in G$
+        Grund: Die Abbildungen $$\ell_{g}: H \to gH, h \mapsto gh, \ell_{g^{-1}}: gH \to H, x \mapsto g^{-1}x$$ sind zueinander invers (Übung) und also biijektiv. $\implies \#H = \#gH$.
+    \item Sei $\mathcal R \subseteq G$ ein Repräsentantensystem zu $\sim$
+
+          $\implies \#G = \sum_{g \in \mathcal R} \# [g]_{\sim} = \sum_{g \in \mathcal R} \#gH = \sum_{g \in \mathcal R} \#H \overset{3)}= \# \mathcal R \# H$
+  \end{enumerate}
+$\implies \#H$ teilt $\#G$.
+\end{proof}
+
+\begin{nota*}
+Seien $G$ eine Gruppe, $H \le G$ eine Untergruppe und $\sim$ wie im Beweis vom Satz 22.
+\begin{itemize}
+\item Schreibe $\faktor GH$ für die Menge aller Äquivalenzklassen also für $\{gH \mid g \in G\}$
+\item Schreibe $[G : H]:= \#  \faktor GH = \# \mathcal R$ (Index von $H$ in $G$)
+\end{itemize}
+Lagrange sagt: $\#G = \# \faktor GH \cdot \#H = [G : H] \cdot \#H$
+\end{nota*}
+
+\begin{ubng}
+Seien $H' \le H \le G$ Untergruppen, dann ist $H' \le G$ und
+$$[G: H'] = [G:H]\cdot[H:H']$$
+\end{ubng}
+
+\begin{kor} %kor-24
+  Sei $G$ eine endliche Gruppe, dann gelten:
+  \begin{enumerate}[(a)]
+    \item $\forall g \in G : \mathrm{ord}(g) \mid \mathrm{ord}(G) = \#G$
+    \item Ist $\mathrm{ord}(G)$ eine Primzahl, so ist $G$ zyklisch
+  \end{enumerate}
+  \begin{proof}[Beweis] \item
+    \begin{enumerate}[(a)]
+\item $\langle g \rangle \le G$ ist eine Untergruppe $\underset{\text{Lagrange}}\implies \mathrm{ord}(g) = \#\langle g \rangle \mid \#G = \mathrm{ord}(G)$
+\item Sei $p = \mathrm{ord}(G) \in \mathbb P$ eine Primzahl, sei $g \in G \setminus \{e\}$ ($\#G \ge 2$)
+Nach 1. gilt $\underbrace{\mathrm{ord}(g)}_{\neq 1 \text{ da } g \neq e} \mid \mathrm{ord}(G) = p$
+    \end{enumerate}
+Folglich: $p = \mathrm{ord}(g) = \mathrm{ord}(G)$, d.h. $\langle g \rangle \le G$ ist Inklusion gleichmächtiger endlicher Mengen, also $\langle g \rangle = G.$
+\end{proof}
+\end{kor}
+
+\begin{defi}[\textbf{Gruppenexponent}]
+Sei $G$ eine Gruppe, der Exponent von $G$ ist $\exp(G) = \min \{n \in \Bbb N \mid \forall g \in G : g^{n} = e\}$ (wobei $\min \emptyset = \infty$).
+\end{defi}
+
+\begin{bsp*}[Übung] \item
+\begin{enumerate}[(i)]
+\item $\exp (C_{n}) = n$
+\item $\exp D_{n} = \mathrm{kgV}(2,n)$
+\item $\exp(S_{3}) = 6$
+\item $\exp(S_{4}) = 12$
+\item $\exp(G) = 2 \implies G$ abelsch
+\item $\Bbb F_{p}$ Körper mit $p$ Elementen und $0 \neq V$ ein $\Bbb F_{p}$-[[Vektorraum]], so gilt $\exp(V, 0, +) = p$
+\end{enumerate}
+\end{bsp*}
+
+\begin{satz}
+  Sei $G$ eine endliche Gruppe, es gelten
+  \begin{enumerate}[(a)]
+    \item $\exp(G) \mid \mathrm{card}(G)$
+    \item $\exp(G) = \mathrm{kgV}(\{\mathrm{ord}(g)\mid g \in G\})$
+  \end{enumerate}
+\begin{proof}[Beweis] \item
+\begin{enumerate}[(a)]
+\item Folgt aus (b) und $\mathrm{ord}(g) \mid \mathrm{ord}(G) \forall g \in G$ nach Korollar 24.
+\item $\mathrm{ord}(g) \mid \exp(G), \forall g \in G$, denn nach Definition gilt:
+$$g^{\exp(G)} = e \underset{19} \implies \mathrm{ord}(g ) \mid \exp(G)$$
+\end{enumerate}
+folglich: $N:= \mathrm{kgV}(\{\mathrm{ord}(g) \mid g \in G\})$ teilt $\exp G$.
+
+        Behauptung: $\exp G \le N$, (dann fertig)
+
+        Wir zeigen: $g^{N} = e \implies \exp G \le N$.
+Dies folgt aus $g^{\mathrm{ord}(g)} = e$ und $\mathrm{ord}(g) \mid N = \mathrm{kgV}(...).$
+\end{proof}
+\end{satz}
+
+\begin{ubng}%ubng-27
+  Sei $G$ eine endliche Gruppe, dann gelten:
+  \begin{enumerate}[(a)]
+    \item Sind $g,h \in G : gh = hg$ und gilt $\mathrm{ggT}(\mathrm{ord}(g), \mathrm{ord}(h)) = 1$, so gilt $$\mathrm{ord}(gh) = \mathrm{ord}(g)\mathrm{ord}(h)$$
+    \item Gelte $p^{f} \mid \exp G$ für $p$ eine Primzahl und $f \in \Bbb N$, dann $\exists g \in G : \mathrm{ord}(g) = p^{f}$
+    \item Ist $G$ abelsch, so $\exists g \in G : \exp (G) = \mathrm{ord}(g)$
+  \end{enumerate}
+\end{ubng}
+
+\begin{satz}
+Sei $G$ eine endliche abelsche Gruppe, dann ist $G$ genau dann zyklisch, wenn $\mathrm{ord}(G) = \exp(G)$
+\begin{proof}[Beweis] \item
+\begin{itemize}
+\item ``$\implies$'': Sei $g \in G$ Erzeuger $\underset{19}\implies \mathrm{ord}(G) = \mathrm{ord}(g)$
+$$\mathrm{ord}(g) \mid \exp G, \exp G \mid \mathrm{ord}(G) \implies \exp G = \mathrm{ord}(G)$$
+\item ``$\impliedby$'': Wähle nach 27.3 ein $g \in G$ mit $\mathrm{ord}(g) = \exp(G)$, nach Voraussetzung ist $\exp(G) = \mathrm{ord}(g) \implies \mathrm{ord}(g) = \mathrm{ord}(G) \implies \langle g \rangle \subseteq G$ ist Gleichheit, d.h. $\langle g \rangle = G.$
+\end{itemize}
+\end{proof}
+\end{satz}
+\section{Gruppenhomomorphismen}%
+\label{sec:Gruppenhomomorphismen}
+Seien im Weiteren $M, M'$ Monoide und $G, G'$ Gruppen.
+\begin{defi}[\textbf{Monoid-/Gruppenhomomorphismus}] \item
+  \begin{enumerate}[(a)]
+    \item Eine Abbildung $\varphi : M \to M'$ heißt \textbf{Monoidhomomorphismus}, falls
+          \begin{enumerate}[(i)]
+            \item $\varphi(e) = e'$ und
+                  \item $\forall m , \tilde m \in M : \varphi(m \circ \tilde m) = \varphi(m) \circ' \varphi(\tilde m)$
+          \end{enumerate}
+          \item Sind $M, M'$ Gruppen, so heißt ein Gruppenhomomorphismus $\iff$ (ii) gilt.
+  \end{enumerate}
+\end{defi}
+\begin{bem} \item
+ \begin{enumerate}[(a)]
+   \item Ist $\varphi : M \to M'$ ein Gruppenhomomorphismus, so gilt $\varphi(e)=e'$ und $\varphi(m^{-1}) = \varphi(m)^{-1}, \forall m \in M$.
+         \item (Übung) Die Verkettung von Monoid- bzw. Gruppenhomomorphismen ist wieder ein solcher.
+ \end{enumerate}
+ \begin{proof}[Beweis]
+Zu (a): $$e' \circ' \varphi(e) = \varphi(e) = \varphi(e \circ e) = \varphi(e) \circ' \varphi(e)$$
+Kürzen $\implies e' = \varphi(e)$. Und $$\varphi(m^{-1})\circ' \varphi(m) = \varphi(m^{-1} \circ m) = \varphi(e) = e'$$
+Eindeutigkeit des Inverses $\implies \varphi(m^{-1}) = \varphi(m)^{-1}$.
+ \end{proof}
+\end{bem}
+\begin{bsp}
+  \begin{enumerate}[(a)]
+    \item Für $g \in G$ ist die Abbildung
+          $$\varphi: \Bbb Z \to G, n \mapsto g^{n}$$
+          ein Gruppenhomomorphismus mit $\mathrm{Bild}(\varphi) = \langle g \rangle$.
+    \item Sei $K$ ein Körper, $V, W$ $K$-Vektorräume, $\varphi : V \to W$ ein Vektorraumhomomorphismus, dann ist
+          $$\varphi : (V, 0_{V}, +_{V}) \to (W, 0_{W}, +_{W})$$
+          ein Gruppenhomomorphismus.
+    \item Die Vorzeichenfunktion (Aus der linearen Algebra)
+          $$\mathrm{sgn}: S_{n} \to \{\pm 1\}, \sigma \mapsto \mathrm{sgn}(\sigma)$$
+          ist ein Gruppenhomomorphismus.
+  \end{enumerate}
+\end{bsp}
+
+\begin{defi}[\textbf{Kern/Bild}]
+  Sei $\varphi : G \to G'$ ein Gruppenhomomorphismus.
+  \begin{enumerate}[(a)]
+    \item Der Kern von $\varphi$ ist $\mathrm{Kern}(\varphi) := \{g \in G \mid \varphi(g) = e'\}$
+    \item Das Bild von $\varphi$ ist $\mathrm{Bild}(\varphi) := \{\varphi(g) \in G'\mid g \in G\}$
+  \end{enumerate}
+\end{defi}
+
+\begin{prop}[Übung]
+  Sei $\varphi : G \to G'$ ein Gruppenhomomorphismus, dann
+  \begin{enumerate}[(a)]
+          \item Für $H \le G$ eine Untergruppe ist $\varphi(G) \le G'$ eine Untergruppe.
+    \item Für $H' \le G'$ eine Untergruppe ist $\varphi^{-1}(H') \le G$ eine Untergruppe.
+
+          Insbesondere sind $\mathrm{Bild}(\varphi) \le G', \mathrm{Kern}(\varphi) \le G$ Untergruppen.
+    \item $\varphi$ ist injektiv (ein Gruppenmonomorphismus) $\iff \mathrm{Kern}(\varphi) = \{e\}$.
+    \item $\varphi$ ist surjektiv (ein Gruppenepimorphismus) $\iff \mathrm{Bild}(\varphi) = G'$
+  \end{enumerate}
+  \begin{bem*}
+(a), (b) und (d) gelten auch für Monoide.
+  \end{bem*}
+\end{prop}
+
+\begin{defi}[\textbf{Gruppenisomorphismus}]
+Ein Gruppenhomomorphismus $\varphi$ ist ein Gruppenisomorphismus, wenn $\varphi$ bijektiv ist. ($\iff \mathrm{Kern}(\varphi) = \{e\}$ und $\mathrm{Bild}(\varphi) =G'$).
+\end{defi}
+\begin{bem*}[Übung]
+  Definiere ein Monoidhomomorphismus analog zu Definition 24.
+\end{bem*}
+
+\begin{nota*}
+  Wir schreiben $G \cong G'$ ($G$ ist isomorph zu $G'$) wenn $\exists$ Gruppenisomorphismus $\varphi : G \to G'$.
+\end{nota*}
+
+\begin{defi}[\textbf{Gruppenautomorphismus}]
+\begin{enumerate}[(a)]
+  \item Ein Gruppenisomorphismus $\varphi : G \to G$ heißt Gruppenautomorphismus.
+  \item $\mathrm{Aut}(G):= \{\varphi : G \to G \mid \varphi \text{ ist ein Gruppenautomorphismus}\}$.
+\end{enumerate}
+\end{defi}
+
+
+\begin{bem}[Übung]
+  \begin{enumerate}[(a)]
+    \item $\mathrm{id}_{G} : G \to G \in \mathrm{Aut}(G)$
+    \item Verkettung von Gruppenisomorphismen (oder Automorphismen) ist wieder ein solcher.
+    \item Ist $\varphi : G \to G'$ ein Gruppenisomorphismus, so gelten
+          \begin{enumerate}[(i)]
+            \item $\#G = \#G'$.
+            \item $G$ abelsch $\iff G'$ abelsch.
+            \item $S \subseteq G$ ein Erzeugendensystem $\iff \varphi(S) \subseteq G'$ ein Erzeugendensystem.
+          \end{enumerate}
+  \end{enumerate}
+\end{bem}
+
+
+\begin{prop} $(\mathrm{Aut}(G), \mathrm{id}_{G}, \circ)$ und $(\mathrm{Aut}(M), \mathrm{id}_{M}, \circ)$ sind Gruppen.
+  \begin{proof}[Beweis](Übung) Zeige: $$\mathrm{Aut}(G) \le \mathrm{Bij}(G) , \mathrm{Aut}(M) \le \mathrm{Bij}(M)$$
+sind Untergruppen.
+  \end{proof}
+\end{prop}
+
+\begin{bsp}[Übung]\item
+  \begin{enumerate}[(a)]
+    \item $\mathrm{Aut}((\Bbb Z, 0, +)) = \{\mathrm{id}_{\Bbb Z}, - \mathrm{id}_{\Bbb Z}\} \cong C_{2}$
+    \item Für $\Bbb Z_{n}:= \faktor{\Bbb Z}{(n)}$ der Ring der Restklassen modulo $n$ gilt
+          $$(\Bbb Z_{n}, \overline 0, +) \cong C_{n} \text{ und } \mathrm{Aut}(\Bbb Z_{n}, \overline 0, +) \cong \Bbb Z_{n}^{\times}$$
+          z.B. Erzeuger von $\Bbb Z_{n}$ sind Reste $\overline a$, sodass $\mathrm{ggT}(a,n) = 1$
+    \item Sei $G$ beliebig, zu $g \in G$ definiere den \textbf{Konjugationsautomorphismus} (\textbf{Konjugation} mit $g$)
+          $$c_{g}: G \to G, h \mapsto g\circ h \circ g^{-1}$$
+\begin{enumerate}[(i)]
+  \item $c_{g} \circ c_{g'} = g_{g\circ g'}, \forall g, g' \in G$
+  \item $c_{e} = \mathrm{id}_{G}$ und $c_{g} \in \mathrm{Aut}(G), \forall g \in G$
+  \item $c_{\cdot}: G \to \mathrm{Aut}(G), g \mapsto c_{g}$ ist ein Gruppenhomomorphismus.
+  \item $\mathrm{Kern}(c_{\cdot}) = Z(G)$ (Zentrum von $G$).
+\end{enumerate}
+  \end{enumerate}
+\end{bsp}
+\begin{bem*}
+$\mathrm{Bild}(c_{\cdot}) =: \mathrm{Inn}(G)$ die Gruppe der \textbf{inneren Automorphismen} von $G$
+\end{bem*}
+
+\begin{lemm}
+  Seien $\varphi, \varphi' : G \to G'$ Gruppenhomomorphismen. Sei $S \subseteq G$ ein Erzeugendensystem. Dann gilt
+  $$\varphi(s) = \varphi'(s) \forall s \in S \iff \varphi = \varphi'\quad (*)$$
+  Analoge Aussage gilt für Monoide
+\end{lemm}
+\begin{proof}[Beweisskizze](Übung)
+  \begin{itemize}
+          \item ``$\impliedby$'': Klar.
+    \item ``$\implies$'':
+          \begin{enumerate}[1)]
+            \item Zeige $H := \{g \in G \mid \varphi(g) = \varphi'(g)\}i \le G$ ist eine Untergruppe.
+            \item Da $S \subseteq$ nach Definition von $H$ und Voraussetzung von ``$\implies$'', folgt $G = \langle S \rangle \subseteq H \le G$
+          \end{enumerate}
+  \end{itemize}
+\end{proof}
+\section*{Normalteiler (Normal Subgroup)}
+\begin{nota*}
+  Für $X \subseteq G$ und $g \in G$ setze $$\ell_{g}(X) = \{gx \mid x \in X\} = gX \text{ und } r_{g}(X) = \{xg \mid x \in X\} = Xg$$
+  Gruppenverknüpfung assoziaativ $\implies$
+  \begin{enumerate}[(i)]
+    \item $c_{g}(X) = \{gxg^{-1} \mid x \in X\} = (gX)g^{-1} = g(Xg^{-1})$.
+    \item $g(hX) = (gh)X$ und $(Xg)h = X(gh)$.
+  \end{enumerate}
+\end{nota*}
+
+\begin{bem*} Ist $H \le G$ eine Untergruppe, dann heißt $gH$ \textbf{Linksnebenklasse} und $Hg$ \textbf{Rechtsnebenklasse}.
+\end{bem*}
+
+\begin{defi}[\textbf{Normalteiler}]
+  Eine Untergruppe $N \le G$ heißt Normalteiler (N.T.) $\iff \forall g \in G : Ng = gN$. (Diese Definition ist auch für Monoide sinnvoll)
+\end{defi}
+
+\begin{lemm}
+  Für eine Untergruppe $N \le G$ sind äquivalent:
+  \begin{enumerate}[(i)]
+    \item $\forall g \in G : gN = nG$
+    \item $\forall g \in G : gNg^{-1} = N$
+    \item $\forall g \in G : gNg^{-1} \subseteq N$
+  \end{enumerate}
+  \begin{proof}[Beweis]
+\begin{itemize}
+\item ``$(ii)\implies (iii)$'': Klar.
+  \item ``$(iii)\implies (i)$'': Rechtsmultiplikation mit $g$ liefert aus $(iii)$:
+        $$(gNg^{-1})g = gN(g^{-1}g) = gNe = gN \subseteq Ng$$
+        Für die andere Inklusion betrachte $(iii)$ für $g^{-1}$:
+        $$g^{-1}Ng \subseteq N \underset{\text{Linksmult. mit }g}\implies Ng \subseteq gN$$
+\item ``$(i)\implies (ii)$'': Wende auf $(i)$ Rechtsmultiplikation mit $g^{-1}$ an. ($r_{g^{-1}}: G \to G$ ist eine bijektive Abbildung.)
+\end{itemize}
+  \end{proof}
+\end{lemm}
+
+\begin{nota*}
+  \item $H \le G$ bedeuteg $H \subseteq G$ ist eine Untergruppe.
+  \item $H \trianglelefteq G$ bedeuteg $H \subseteq G$ ist ein Normailteiler.
+\end{nota*}
+
+\begin{satz}
+  Ist $\varphi : G \to G'$ ein Gruppenhomomorphismus, so ist $\mathrm{Kern}(\varphi) \trianglelefteq G$ ein Normalteiler.
+  \begin{proof}[Beweis]
+    Sei $g \in G$ beliebig, zu zeigen ist $g \circ \mathrm{Kern}(\varphi) \circ g^{-1} \subseteq \mathrm{Kern}(\varphi)$
+    \item Sei $h \in \mathrm{Kern}(\varphi)$, zu zeigen ist $ghg^{-1} \in \mathrm{Kern}(\varphi)$.
+    Damit:
+    $$\varphi(ghg^{-1}) = \varphi(g)\varphi(h)\varphi(g^{-1}) \underset{h \in \mathrm{Kern}(\varphi)} = \varphi(g) \circ e' \circ \varphi(g^{-1}) = \varphi(g)\varphi(g^{-1})$$
+    $$= \varphi(gg^{-1}) = \varphi(e) = e'.$$
+    $\implies \mathrm{Kern}(\varphi) \trianglelefteq G.$
+  \end{proof}
+\end{satz}
+
+\begin{ubng} \item
+  \begin{enumerate}[(a)]
+          \item Ist $N' \trianglelefteq G'$ und $\varphi : G \to G'$ Gruppenhomomorphismus, so gilt $\varphi^{-1}(N') \trianglelefteq G$.
+    \item Ist $h \le G$ eine Untergruppe mit $[G:H] = \# \faktor GH= 2$, so folgt $H \trianglelefteq G$.
+    \item Ist $G$ abelsch, so ist jede Untergruppe $H \le G$ ein Normalteiler.
+    \item Der \textbf{Kommutator} zu $g, h \in G$ ist $ghg^{-1}h^{-1}$, die \textbf{Kommutatoruntergruppe} von $G$ ist $$[G, G]:= \langle ghg^{-1}h^{-1} \mid g, h \in G \rangle$$
+\end{enumerate}
+Es gilt $[G, G] \trianglelefteq G.$
+\end{ubng}
+
+\begin{bsp*} Es gibt Beispiele für folgende Aussagen:
+  \begin{enumerate}[(i)]
+    \item $\exists H \le G : H \not \trianglelefteq G$
+    \item $\varphi : G \to G'$ ein Gruppenhomomorphismus und $N \trianglelefteq G$ mit $\varphi(G) \not \trianglelefteq G'$
+    \item $\exists N \trianglelefteq G$ und $H \trianglelefteq N$, so dass $H \not \trianglelefteq G$.
+  \end{enumerate}
+\end{bsp*}
+  \begin{proof}[Beweis] \item
+  \begin{enumerate}[(i)]
+    \item $G = S_{3} = \mathrm{Bij}(\{1,2,3\}) \supseteq H = \{\mathrm{id}, \sigma\}$ mit $\sigma = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3\end{pmatrix}$. Dann $H \le G$ Klar, aber $H \not \trianglelefteq G$, denn für $\tau = \begin{pmatrix} 1 & 2 & 3 \\ 1 & 3 & 2\end{pmatrix}$ gilt $\tau \sigma \tau^{-1}$ (Übung) $\implies \tau H\tau^{-1} \not \subseteq H$
+    \item Betrachte $\varphi: H \to G$ Inklusion mit $G, H$ aus (i), dann gilt $H \trianglelefteq H$ aber $\varphi(H) = H$ nein Nullteiler von $G = S_{3}$.
+    \item Später.
+   \end{enumerate}
+  \end{proof}
+\begin{satz}
+  Sei $N \trianglelefteq G$ ein Nullteiler, dann gelten:
+  \begin{enumerate}[(a)]
+    \item Aus $gN = g'N$ und $hN = h'N$ für $g, g', h, h' \in G$ folgt $ghN = g'h'N$ und insbesondere ist die Verknüpfung $$\circ : \underbrace{\faktor GN}_{\{gN \mid g \in G\}} \times \faktor GN \longrightarrow \faktor GN,\  (gN, hN) \longmapsto gN \circ hN = ghN$$
+          wohl-definiert.
+    \item $\faktor GN, \underbrace{N}_{=eN}, \circ)$ ist eine Gruppe.
+    \item $gN = g'N \iff g^-1g' \in N$.
+    \item $\pi : G \to \faktor GN, g \mapsto gN$ ist ein Gruppenhomomorphismus mit $\mathrm{Kern}(\pi) = N$.
+  \end{enumerate}
+\begin{proof}[Beweis]
+\begin{enumerate}[(a)]
+  \item Es gelten (Formeln von Definition 40)
+        $$(gh)N = g(hN) \overset{N \trianglelefteq G}= g(Nh) = (gN)h$$
+        $$= (g'N)h = g'(Nh) = g'(hN) = g'(h'N) = (g'h')N \implies (a)$$
+  \item Überlege Gruppenaxiome.
+\begin{itemize}
+  \item Assoziativität (Übung)
+  \item Linkseins ist $N = eN$, denn
+        $$N \circ(gN) = eN\circ gN \overset{\text{wohl-def.}} = (e \circ g)N = gN$$
+  \item Linksinverses zu $gN$ ist $g^{-1}N$, denn
+        $$(g^{-1}N)\circ gN \underset{\text{nach Def.}}= (g^{-1}g)N \underset{\text{Gruppe}}= eN = N$$
+\end{itemize}
+  \item  $gN = g'N \underset{g^{-1}\circ \underline{\ }}= N = g^{-1}g'N \underset{e \in N}\implies N \ni g^{-1}g'e$, d.h. $g^{-1}g' \in G$.
+        $$g^{-1}g' \in N \underset{\substack{\ell_{g^{-1}g'} : N \to N\\ \text{ist bijektiv.}}}\implies N = g^{-1}N \underset{g^{-1}\circ \underline{\ }}\implies gN= g'N$$
+  \item $\pi : G \to \faktor GN, g \mapsto gN$ ist Gruppenhomomorphismus, denn $$\pi(gg') = gg'N \underset{\text{Def. von } \circ} = gN \circ g'N = \pi(g)\circ \pi(g')$$
+        $$g \in \mathrm{Kern}(\pi) \iff gN = eN \underset{(c)}\iff e^{-1}g = g \in N$$
+\end{enumerate}
+\end{proof}
+\end{satz}
+\begin{bem*}[Bezeichnung] $\faktor GN$ (bzw. $(\faktor GN, eN, \circ)$) heißt \textbf{Faktorgruppe} von $G$ modulo $N$.
+\end{bem*}
+\begin{bem*}[Übung]
+$G$ abelsch $\implies \faktor{G}{N}$ abelsch.
+\end{bem*}
+
+\begin{satz}[Homomorphiesatz für Gruppen]
+  Sei $\varphi: G \to G'$ ein Gruppenhomomorphismus mit $N = \mathrm{Kern}(\varphi)$, dann existiert genau ein Gruppenhomomorphismus $\overline \varphi : \faktor GN \longrightarrow G'$, sodass
+  $$
+\begin{tikzcd}
+G \arrow[r, "\varphi"] \arrow[d, "\pi"'] & G' \\
+\faktor GN \arrow[ru, "\overline \varphi"']               &
+\end{tikzcd}
+$$
+kommutiert, d.h. $\overline \varphi \circ \pi = \varphi$. (wobei $\pi : G \longrightarrow \faktor GN, g \mapsto gN$ aus Satz 44). Die Abbildung $\overline \varphi$ ist injektiv und $\overline \varphi$ bijektiv $\iff \varphi$ surjektiv.
+\begin{proof}[Beweis]
+\begin{itemize}
+  \item Existenz von $\overline \varphi$: Definiere $\overline\varphi(gN) = \varphi(g), \forall g \in G$.
+  \item $\overline\varphi$ wohl-definiert: Es gilt: $gN = g'N \iff N = g^{-1}g'N \underset{44c}\iff g^{-1}g' \in N.$ Damit $$\implies \varphi(g') = \varphi(gg^{-1}g') = \varphi(g)\varphi(\underbrace{g^{-1} \circ g'}_{\in N = \mathrm{Kern}(\varphi)}) = \varphi(g)e = \varphi(g).$$
+  \item $\overline\varphi$ Gruppenhomomorphismus: $$\overline\varphi(gN \circ g'N)\underset{\text{Def. von } \circ} = \overline\varphi(gg'N) \underset{\text{Def. von } \overline\varphi} =  \varphi(gg') \underset{\varphi \text{ Hom.}} = \varphi(g)\varphi(g')$$
+        $$\underset{\text{Def. von } \overline\varphi} =\overline\varphi(gN)\overline\varphi(g'N).$$
+\item $\overline\varphi \circ \pi = \varphi$: (Aus der Definition von $\overline\varphi$): $$\underbrace{\overline\varphi(gN)}_{\overline\varphi(\pi(g))} = \varphi(g)$$
+\item $\overline\varphi$ injektiv: $\overline\varphi(gN) = e \iff \varphi(g)=e \iff g \in N = \mathrm{Kern}(\varphi) \underset{44c} \iff gN= eN = N$.
+\item $\overline\varphi$ eindeutig: Folgt aus der Surjektivität von $\pi$.
+\item Zusatz $\varphi$ surjektiv $\iff \overline\varphi$ Isomorphismus (Übung): Verwende $\mathrm{Bild}(\varphi) = \mathrm{Bild}(\overline\varphi)$ und $\overline\varphi$ injektiv.
+\end{itemize}
+\end{proof}
+\end{satz}
+\begin{satz45'}[Homomorphiesatz'](Übung)
+  Ist $\varphi : G \to G'$ ein Gruppenhomomorphismus und $N \trianglelefteq G$, so dass $N \subseteq \mathrm{Kern}(\varphi)$, dann existiert genau ein Gruppenhomomorphismus $$\overline\varphi : \faktor GN \longrightarrow G'\text{ mit }\ \overline\varphi \circ \pi = \varphi.$$
+  wobei $\pi : G \to \faktor GN, g \mapsto gN$
+\end{satz45'}
+\begin{nota*}
+Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\Bbb Z}$ der Restklassenring. ($n\Bbb Z \subseteq \Bbb Z $ eine Untergruppe)
+\end{nota*}
+
+\begin{kor}
+  Sei $G$ eine zyklische Gruppe,
+  \begin{enumerate}[(a)]
+    \item Falls $m:= \mathrm{ord}(G) \in \Bbb N \implies G \cong \Bbb Z_{m} = \faktor{\Bbb Z}{(m)}$.
+          \item Falls $\mathrm{ord}(G) = \infty \implies G \cong \Bbb Z$.
+  \end{enumerate}
+\begin{proof}[Beweis]
+  Sei $g \in G$ ein Erzeuger und betrachte $$\varphi : \Bbb Z \to G, n \mapsto g^{n}$$
+  $\varphi$ ist surjektiv, da $\mathrm{Bild}(\varphi) = \langle g^{n} \mid n \in \Bbb Z \rangle = G$.
+  $$\underset{\text{Satz 45}}\implies \overline\varphi : \faktor{\Bbb Z}{\Bbb Zm} \overset \cong \longrightarrow{} G$$
+  für $m \in \Bbb N_{0}$, so dass $\mathrm{Kern}(\varphi) = \Bbb Zm$.
+  \begin{itemize}
+\item Fall (b): $\mathrm{ord}(G) = \infty \implies \mathrm{Kern}(\varphi) = \{0\} \implies \varphi : \Bbb Z \to G$ ist ein Isomorphismus.
+\item Fall (a): $\mathrm{ord}(G) = m \in \Bbb N$ dann ist $\overline\varphi$ der gewünschte Isomorphismus.
+ \end{itemize}
+\end{proof}
+\end{kor}
+\begin{kor}Für zyklische Gruppen $G, H$ gilt $G = H \iff \#G = \#H$
+\end{kor}
+\begin{ubng*}
+\begin{enumerate}[(a)]
+  \item $\faktor G{[G, G]}$ ist eine abelsche Gruppe.
+  \item Für $N \trianglelefteq G$ gilt:
+        $$\faktor GN \text{ abelsch} \iff [G, G] \le N$$
+\end{enumerate}
+\end{ubng*}
+\subsection*{Einschub: Faktorringe}
+\begin{defi}[\textbf{Ideal}]
+  Sei $R$ ein kommutativer Ring. $I \subseteq R$ heißt Ideal wenn
+  \begin{enumerate}[(i)]
+    \item $I$ ist Untergruppe von $(R, 0, +)$
+    \item $RI := \{ri \mid r \in R, i \in I\} \subseteq I$
+  \end{enumerate}
+\end{defi}
+\begin{bsp*}
+  \begin{enumerate}[1)]
+    \item $\Bbb Zn \subseteq \Bbb Z$ ist ein Ideal $\forall n \in \Bbb Z$.
+    \item $Ra \subseteq R$ für $a \in R$ ist ein $Ideal$ von $R$.
+  \end{enumerate}
+\end{bsp*}
+
+\begin{satz}
+  Sei $R$ ein kommutativer Ring, $I \subseteq R$ ein Ideal, und $\faktor RI = \{r + I \mid r \in R\}$ die Nebenklassenmenge von $R$ modulo $I$ (für die Gruppe $(R, 0, +)$). Dann:
+  \begin{enumerate}[(a)]
+    \item Die Verknüpfungen $$+ : \faktor RI \times \faktor RI \longrightarrow \faktor RI, (r+I, s+I) \longmapsto (r+s)+I$$
+          $$\cdot : \faktor RI \times \faktor RI \longrightarrow \faktor RI, (r+I, s+I) \longmapsto rs+I$$
+          sind wohl-definiert auf $\faktor RI$
+
+    \item $(\faktor RI, \overline 0, \overline 1, +, \cdot)$ ist ein kommutativer Ring ($\overline r := r + I$ Notation für die Klasse von $r$) der Restklassenring von $R$ modulo $I$.
+    \item $\pi : R \longrightarrow \faktor RI, r \longmapsto r+I$ ist ein surjektiver Ringhomomorphismus.
+  \end{enumerate}
+\begin{proof}[Beweis]
+\begin{enumerate}[(a)]
+  \item ``$+$'' wohl-definiert folgt aus Satz 44. ($I \subseteq (R, 0, +)$ Ideal!)
+
+        ``$\cdot$''  wohl-definiert: Gelte $a+I = a'+I$ und $b+I = b'+I$.
+        $$\implies a'b' + I = ab + aj + bi + ij + I = ab + I$$
+  \item (Übung)
+  \item Wie in 45 (d)
+\end{enumerate}
+\end{proof}
+\end{satz}
+\subsection*{Die Isomorphiesätze}
+\begin{satz}[\textbf{Erster Isomorphiesatz}]
+  Sei $G$ eine Gruppe, $N \trianglelefteq G$ ein Normalteiler und $H \le G$ eine Untergruppe, dann gelten:
+  \begin{enumerate}[(a)]
+    \item $HN = \{hn \mid h \in H, n \in N\} \subseteq G$ ist ein Untergruppe.
+    \item $H \cap N \subseteq H$ ist ein Normalteiler (und (Übung) $N \trianglelefteq HN$)
+    \item Die folgende Abbildung ist wohl-definiert und ein Gruppenisomorphismus $$\faktor H{H \cap N} \longrightarrow \faktor {HN}N, h(H\cap N) \longmapsto hN$$
+  \end{enumerate}
+\begin{proof}[Beweis]
+\begin{enumerate}[(a)]
+  \item Seien $hn, h'n' \in HN$, dann:
+        $$(h'n')(hn)^{-1}=h'\underbrace{n'n^{-1}h^{-1}}_{\in Nh^{-1} \underset{N \trianglelefteq G} = h^{-1}N} = h'h^{-1}\tilde n \underset{H \text{ U.G.}}= (h'h^{-1})\tilde n \in HN$$
+        und $e = ee = HN$
+  \item Zu zeigen: für $h \in H$ gilt $h(H \cap N)h^{-1} \subseteq H \cap N$
+
+        Dazu:
+        $$\begin{matrix}
+            h (H \cap N)h^{-1} \subseteq hHh^{-1} = H \\
+            h (H \cap N)h^{-1} \subseteq hNh^{-1} \underset{N \trianglelefteq G}= N
+          \end{matrix} \implies h(H \cap N)h^{-1} \subseteq H \cap N.$$
+\end{enumerate}
+
+
+\end{proof}
+\end{satz}
+
+
+\end{document}
