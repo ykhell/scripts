@@ -3,6 +3,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{mathabx}
 \usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{faktor}
@@ -39,6 +40,8 @@
 \newtheorem{loes}[thm]{Lösung}
 \newtheorem{exer}[thm]{Exercise}
 \newtheorem{soln}[thm]{Solution}
+
+
 
 \graphicspath{ {./graphics/} }
 \title{\vspace{-2cm} Algebra 1 WS23/24}
@@ -853,11 +856,117 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
             h (H \cap N)h^{-1} \subseteq hHh^{-1} = H \\
             h (H \cap N)h^{-1} \subseteq hNh^{-1} \underset{N \trianglelefteq G}= N
           \end{matrix} \implies h(H \cap N)h^{-1} \subseteq H \cap N.$$
+
+  \item Betrachte die Verkettung von Gruppenhomomorphismen
+        $$\varphi: H \xrightarrow[h \longmapsto h]{\text{Inklusion}} HN \xrightarrow[x \longmapsto xN]{} \faktor{HN}N$$
+        dann ist $\varphi$ ein Gruppenautomorphismus.
+
+        $\varphi$ ist surjektiv: Jede Klasse in $\faktor{HN}N$ ist von der Form $$hnN = \underbrace{hN}_{=\varphi(h)}$$
+        für ein $h \in H$. Nach Homomorphiesatz: nur noch zu zeigen $\mathrm{Kern}(\varphi) = H \cap N$:
+        für $h \in H$: $$h \in \mathrm{Kern}(\varphi) \iff \varphi(h) = eN \iff hN = eN \underset{44(c)}\implies h \in N \underset{h \in H}\implies h \in N \cap H$$
+        Umgekehrt: $h \in N \cap H \implies h \in N \implies hN = eN = N$.
 \end{enumerate}
-
-
 \end{proof}
 \end{satz}
 
+\begin{satz}[\textbf{Zweiter Isomorphiesatz}]
+  Sei $G$ eine Gruppe und $N \trianglelefteq G$ ein Normailteiler, und sei $\pi : G \longrightarrow \faktor GN, g \longmapsto \overline g = gN $ die Faktorabbildung.
+  \begin{enumerate}[(a)]
+    \item Sei $X:= \{H \le G \mid N \subseteq H\}$, und sei $\overline X := \left\{\overline H \le \faktor GN\right\}$, dann ist die Abbildung $$\psi : X \longrightarrow \overline X, H \longmapsto \pi(H) = \faktor HN =: \overline H$$
+          eine Bijektion mit inverser Abbildung $$\nu: \overline X \longrightarrow X, \overline H \longmapsto \pi^{-1}(\overline H).$$
+          Dabei gilt:
+          $$X \ni H \trianglelefteq G \iff \overline X \ni \pi(H) \trianglelefteq \faktor GN$$
+    \item Ist $H \in X$ ein Normalteiler von $G$, so ist
+          $$\faktor GH \longrightarrow \faktor{\left(\faktor GN\right)}{\left(\faktor HN \right)}, g \longmapsto \underbrace{\overline g}_{gN} \underbrace{\overline H}_{\pi(H)}$$
+          wohl-definiert und ein Gruppenisomorphismus.
+  \end{enumerate}
+\begin{proof}[Beweis]
+  \begin{enumerate}[(a)]
+    \item Nach Proposition 33 sind $\psi$ und $\nu$ wohl-definiert.
+\begin{itemize}
 
+          \item $\nu \circ \psi = \mathrm{id}_{X}$: Sei $H \le G$ mit $N \subseteq H$, zu zeigen ist $\pi^{-1}(\pi(H)) = H$. Es gilt:
+          $$g \in \pi^{-1}(\pi(H)) \iff \pi(g) \in \pi(H) \iff gN \in \bigcup_{h \in H}hN$$
+          $$\iff \exists h \in H : gN = hN \underset{44(c)}\implies h^{-1}g \in N \subseteq H \implies g \in hH = H.$$
+          (``$\impliedby$'' klar: $g \in H \implies g \in \pi^{-1}(\pi(H))$).
+
+          \item $\psi \circ \nu = \mathrm{id}_{\overline X}$: Für $\overline H \in \overline X$ (d.h. $\overline H \le \faktor GN$) ist zu zeigen $\pi(\pi^{-1}(\overline H)) = \overline H$. Dies gilt, denn $\pi$ ist surjektiv.
+
+  \item Schließlich: Sei $H \in X$, zu zeigen ist $H \trianglelefteq G \iff \pi(H) \trianglelefteq \faktor GN$
+        $$H \trianglelefteq G \iff \forall g \in G : gHg^{-1} \subseteq H$$
+        $$\underset{\pi: G \to \overline G \text{ surj.}}\implies \forall \overline g \in \faktor GN: \overline g \pi(H)\overline g \subseteq \pi(H) \implies \pi(H) \trianglelefteq \overline G$$
+        Umgekehrt: Falls $\pi(H) \trianglelefteq \trianglelefteq \overline G$ und $g \in G$:
+        $$\pi(gHg^{-1}) = \overline g\pi(H)\overline g^{-1} \le \pi(H)$$
+        $$\implies gHg^{-1} \subseteq \pi^{-1}(\pi(gHg^{-1})) \subseteq \pi^{-1}(\pi(H)) \underset{\nu \circ \psi = \mathrm{id}_{X}} = H$$
+\end{itemize}
+    \item Sei $H \trianglelefteq G$ ein Normalteiler mit $N \subseteq H$, so dass nach (a)
+          $$\overline H = \underbrace{\faktor HN}_{\pi(H)} \trianglelefteq \underbrace{\faktor GN}_{\pi(G)}$$
+          ein Normalteiler ist. Betrachte den verketteten Gruppenautomorphismus
+          $$\varphi : G \xrightarrow[g \longmapsto gN]{\pi}\faktor GN \xrightarrow[\overline g \longmapsto \overline g \overline H]{\pi'} \faktor{\left(\faktor GN\right)}{\left(\faktor HN\right)}$$
+          $\pi, \pi'$ sind surjektive Gruppenhomomorphismen nach Satz 44(d) $\implies$ die Verkettung $\varphi$ ist ein surjektiver Gruppenhomomorphismus.
+
+          Nach Homomorphiesatz für Gruppen bleibt zu zeigen: $\mathrm{Kern}(\varphi) = H$:
+          $$g \in \mathrm{Kern}(\varphi) \underset{\pi'(\pi(g))=e}\iff\pi(g) \in \mathrm{Kern}(\pi') \iff gN \in \faktor HN$$
+          $$\iff gN \subseteq H \underset{N \le H}\iff g \in H.$$
+  \end{enumerate}
+\end{proof}
+\end{satz}
+
+\subsection*{(Semi-)direkte Produkte}%
+\label{sec:Direkte Produkte}
+\begin{lemm}[Übung]
+  Seien $(G_{1}, e_{1}, \circ_{1})$ und $(G_{2}, e_{2}, \circ_{2})$ Gruppen, dann ist $G = (G_{1} \times G_{2}, (e_{1}, e_{2}), \circ)$ eine Gruppe mit
+  $$(g_{1}, g_{2}) \circ (h_{1}, h_{2}) = (g_{1} \circ h_{1}, g_{2} \circ h_{2})$$
+  Analog für $k \ge 2$ Faktoren. Dabei sind $G_{1} \times \{e_{2}\} \trianglelefteq G$ und $\{e_{1}\} \times G_{2} \trianglelefteq G$ Nullteiler von $G$.
+\end{lemm}
+\begin{defi}[\textbf{Direktes Produkt}] Die Gruppe $G$ aus Lemma 52 heißt das direkte Produkt von $G_{1}$ und $G_{2}$, Notation $G_{1} \times G_{2}$.
+\end{defi}
+\begin{bsp*}
+$$(\Bbb R^{n}, \underline 0, +) = (\Bbb R, 0, +) \times \cdots \times (\Bbb R, 0, +) = \bigtimes_{i = 1}^{n}(\Bbb R, 0, +)$$
+\end{bsp*}
+
+\begin{prop}
+  Sei $G$ eine Gruppe, seien $N_{1}, N_{2} \trianglelefteq G$ Nullteiler mit $N_{1} \cap N_{2} = \{e\}$, dann gelten:
+  \begin{enumerate}[(a)]
+    \item $\forall n_{1} \in N_{1}, n_{2} \in N_{2}: n_{1}n_{2} = n_{2}n_{1}$
+    \item $N_{1}N_{2} \trianglelefteq G$ ist ein Normalteiler in G
+    \item $\psi : N_{1} \times N_{2} \to N_{1}N_{2}, (n_{1},n_{2}) \mapsto n_{1}n_{2}$ ist ein Gruppenisomorphismus. (Insbesondere gilt $\#N_{1}N_{2} = \#N_{1} \#N_{2}$)
+  \end{enumerate}
+  Zusatz: Gilt $G = N_{1}N_{2}$, so folgt $G \cong N_{1} \times N_{2}$ via $\psi$.
+  \begin{proof}[Beweis]
+\begin{enumerate}[(a)]
+  \item  Seien $n_{1} \in N_{1}, n_{2} \in N_{2}$, setze $x = n_{1}n_{2}n_{1}^{-1}n_{2}^{-1}$.
+        Nun: $$x = (n_{1}n_{2}n_{1}^{-1})n_{2}^{-1} \in (n_{1}N_{2}n_{1}^{-1})N_{2} \subseteq N_{2}N_{2} = N_{2}$$
+        analog $$x = n_{1}(n_{2}n_{1}^{-1}n_{2}^{-1}) \in N_{1}(n_{2}N_{1}n_{2}^{-1}) \overset{N_{2} \trianglelefteq G}\subseteq N_{1}N_{1} = N_{1}$$
+        damit ist $x \in N_{1} \cap N_{2} = \{e\} \implies x = e \implies n_{1}n_{2} = n_{2}n_{1}$.
+
+  \item Für $g \in G$:
+        $$gN_{1}N_{2}g^{-1}= gN_{1}g^{-1}gN_{2}g^{-1} \subseteq  N_{1}N_{2}$$
+
+  \item $\psi$ ist wohl-definiert: klar. $\psi$ ein Gruppenhomomorphismus folgt aus (a)
+        $$\psi((n_{1}, n_{2}) \circ (n_{1}', n_{2}')) = \psi((n_{1} \circ n_{1}', n_{2} \circ n_{2}')) = n_{1}n_{1}' n_{2}n_{2}'$$
+        $$\underset{(a)}= n_{1}n_{2}n_{1}'n_{2}' = \psi(n_{1}, n_{2}) \circ \psi(n_{1}', n_{2}')$$
+        $\{(e, e)\} = \mathrm{Kern}(\psi)$:
+        $$\psi(n_{1}, n_{2}) = e \iff n_{1}n_{2} = e \iff n_{1} = n_{2}^{-1} \in N_{1}\cap N_{2} = \{e\}$$
+        $$\iff n_{1} = n_{2} = e$$
+$\mathrm{Bild}(\psi) = N_{1}N_{2}$.
+\end{enumerate}
+  \end{proof}
+\end{prop}
+
+\begin{kor}[Übung]
+  Sei $G$ eine endliche Gruppe. Seien $N_{1}, ..., N_{k} \trianglelefteq G$ Normalteiler von $G$ und gelte:
+  \begin{enumerate}[(i)]
+    \item $\forall i \ne j : \mathrm{ggT}(\#N_{i}, \#N_{j}) = 1$
+    \item $\prod_{j=1}^k \# N_{j} = \#G$
+  \end{enumerate}
+  Dann ist $$\psi : \bigtimes_{j=1}^{k}N_{j} \longrightarrow G, (n_{1}, ..., n_{k}) \longmapsto n_{1}\cdot ... \cdot n_{k} = \prod_{j=1}^{k}n_{j}$$
+  ein Gruppenisomorphismus.
+\item
+\end{kor}
+\begin{ubng*}
+Spezialfall: $n = \prod_{i=1}^{k}p_{i}^{f_{i}}$ für $p_{1}, ..., p_{k}$ paarweise verschiedene Primzahlen, dann gilt:
+$$\bigtimes_{i}^{k}\faktor{\Bbb Z}{(p_{i}^{f_{i}})} \cong \faktor{\Bbb Z}{(n)}$$
+ist Folge von Korollar 55.
+\end{ubng*}
 \end{document}

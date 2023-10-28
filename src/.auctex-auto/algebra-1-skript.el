@@ -11,13 +11,15 @@
     "amssymb"
     "amsmath"
     "amsthm"
+    "mathabx"
     "graphicx"
     "enumerate"
     "faktor"
     "tikz-cd")
    (LaTeX-add-labels
     "sec:Gruppen und Monoide"
-    "sec:Gruppenhomomorphismen")
+    "sec:Gruppenhomomorphismen"
+    "sec:Direkte Produkte")
    (LaTeX-add-amsthm-newtheorems
     "thm"
     "lemm"
