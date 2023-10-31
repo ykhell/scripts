@@ -15,7 +15,10 @@
     "graphicx"
     "enumerate"
     "faktor"
-    "tikz-cd")
+    "tikz-cd"
+    "color"
+    "hyperref"
+    "geometry")
    (LaTeX-add-labels
     "sec:Gruppen und Monoide"
     "sec:Gruppenhomomorphismen"

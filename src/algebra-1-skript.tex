@@ -8,6 +8,18 @@
 \usepackage{enumerate}
 \usepackage{faktor}
 \usepackage{tikz-cd}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+  }
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ top=40mm,
+ }
 
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}%[subsection]
@@ -19,6 +31,8 @@
 \newtheorem{kor}[thm]{Korollar}
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{thm-defi}[thm]{Theorem-Definition}
+
+\renewcommand*\contentsname{Inhaltsverzeichnis}
 
 \theoremstyle{definition}
 %\renewcommand{\thethm}{\arabic{thm}}
@@ -41,13 +55,13 @@
 \newtheorem{exer}[thm]{Exercise}
 \newtheorem{soln}[thm]{Solution}
 
-
-
 \graphicspath{ {./graphics/} }
-\title{\vspace{-2cm} Algebra 1 WS23/24}
-\author{Yousef Khell}
+\title{\vspace{-2cm} Algebra I Vorlesungsmitschrieb}
+\author{Yousef Khell - Bis zur 4. Vorlseung}
 \begin{document}
 \maketitle
+\tableofcontents
+
 \section{Gruppen und Monoide}%
 \label{sec:Gruppen und Monoide}
 \begin{nota*} \item

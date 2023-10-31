@@ -1,0 +1,2 @@
+\contentsline {section}{\numberline {1}Gruppen und Monoide}{1}{section.1}%
+\contentsline {section}{\numberline {2}Gruppenhomomorphismen}{9}{section.2}%
