@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "algebra-1-skript"
+ "algebra-1-chapter-2"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("report" "a4paper")))
@@ -25,17 +25,24 @@
     "faktor"
     "tikz-cd"
     "color"
-    "hyperref")
+    "hyperref"
+    "geometry")
    (TeX-add-symbols
     "Z"
     "R"
     "C"
     "Rn"
+    "id"
+    "kn"
+    "bil"
+    "End"
+    "Aut"
+    "Iso"
+    "GL"
+    "SL"
+    "OR"
+    "SO"
     "ph")
-   (LaTeX-add-labels
-    "sec:Gruppen und Monoide"
-    "sec:Gruppenhomomorphismen"
-    "sec:Direkte Produkte")
    (LaTeX-add-amsthm-newtheorems
     "thm"
     "lemm"

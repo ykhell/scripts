@@ -1,86 +1,7 @@
 \documentclass[a4paper]{report}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{mathabx}
-\usepackage{graphicx}
-\usepackage{enumerate}
-\usepackage{faktor}
-\usepackage{tikz-cd}
-\usepackage{color}   %May be necessary if you want to color links
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true, %set true if you want colored links
-    linktoc=all,     %set to all if you want both sections and subsections linked
-    linkcolor=black,  %choose some color if you want links to stand out
-  }
-%\usepackage{geometry}
-% \geometry{
-% a4paper,
-% top=40mm,
-% }
-
-\theoremstyle{plain}
-\newtheorem{thm}{Theorem}%[subsection]
-\newtheorem{lemm}[thm]{Lemma}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem*{prop*}{Proposition}
-\newtheorem{satz}[thm]{Satz}
-\newtheorem*{satz45'}{Satz 45'}
-\newtheorem{kor}[thm]{Korollar}
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{thm-defi}[thm]{Theorem-Definition}
-
-\renewcommand*\contentsname{Inhaltsverzeichnis}
-\renewcommand*\chaptername{Kapitel}
-
-\theoremstyle{definition}
-%\renewcommand{\thethm}{\arabic{thm}}
-\newtheorem{defi}[thm]{Definition}
-\newtheorem{rem}[thm]{Remark}
-\newtheorem{bem}[thm]{Bemerkung}
-\newtheorem*{bem*}{Bemerkung}
-\newtheorem*{hin*}{Hinweis}
-\newtheorem{exmp}[thm]{Example}
-\newtheorem{bsp}[thm]{Beispiel}
-\newtheorem*{bsp*}{Beispiel}
-\newtheorem*{bspe*}{Beispiele}
-\newtheorem{Conc}[thm]{Conclusion}
-\newtheorem*{nota*}{Notation}
-\newtheorem*{rech*}{Rechenregeln}
-\newtheorem*{whg*}{Wiederholung}
-\newtheorem{auf}[thm]{Aufgabe}
-\newtheorem{ubng}[thm]{Übung}
-\newtheorem*{ubng*}{Übung}
-\newtheorem{loes}[thm]{Lösung}
-\newtheorem{exer}[thm]{Exercise}
-\newtheorem{soln}[thm]{Solution}
-
-\let\ph\varphi
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Rn}{\mathbb{R}^n}
-
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\kn}{Kern}
-\DeclareMathOperator{\bil}{Bild}
-\DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\Iso}{Iso}
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\OR}{O}
-\DeclareMathOperator{\SO}{SO}
-
-\graphicspath{ {./graphics/} }
-\title{\vspace{-2cm} Algebra 1 Vorlesungsmitschrieb}
-\author{Yousef Khell}
+\usepackage{../template}
 \begin{document}
-\maketitle
-\tableofcontents
-\chapter{Gruppentheorie}
+
 \section{Gruppen und Monoide}%
 \label{sec:Gruppen und Monoide}
 \begin{nota*} \item
@@ -108,7 +29,6 @@
 $b = b'$, denn $$b' = e \circ b' = (b\circ a) \circ b' = b \circ (a \circ b') = b \circ e = b$$
  \end{bem*}
 \end{defi}
-
 \begin{defi}[\textbf{Gruppe}]%def-2
 Eine \textbf{Gruppe} ist ein Monoid, in dem alle Elemente invertierbar sind.
 \end{defi}

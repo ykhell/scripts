@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "algebra-1-skript"
+ "section2"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("report" "a4paper")))
@@ -14,45 +14,6 @@
    (TeX-run-style-hooks
     "latex2e"
     "report"
-    "rep10"
-    "amsfonts"
-    "amssymb"
-    "amsmath"
-    "amsthm"
-    "mathabx"
-    "graphicx"
-    "enumerate"
-    "faktor"
-    "tikz-cd"
-    "color"
-    "hyperref")
-   (TeX-add-symbols
-    "Z"
-    "R"
-    "C"
-    "Rn"
-    "ph")
-   (LaTeX-add-labels
-    "sec:Gruppen und Monoide"
-    "sec:Gruppenhomomorphismen"
-    "sec:Direkte Produkte")
-   (LaTeX-add-amsthm-newtheorems
-    "thm"
-    "lemm"
-    "prop"
-    "satz"
-    "kor"
-    "cor"
-    "defi"
-    "rem"
-    "bem"
-    "exmp"
-    "bsp"
-    "Conc"
-    "auf"
-    "ubng"
-    "loes"
-    "exer"
-    "soln"))
+    "rep10"))
  :latex)
 

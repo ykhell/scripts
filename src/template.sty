@@ -1,0 +1,115 @@
+\ProvidesPackage{template}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage{mathabx}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{faktor}
+\usepackage{tikz-cd}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{docmute}
+\usepackage{import}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+  }
+%\usepackage{geometry}
+% \geometry{
+% a4paper,
+% top=40mm,
+% }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[chapter]%[subsection]
+\newtheorem{lemm}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{prop*}{Proposition}
+\newtheorem{satz}[thm]{Satz}
+\newtheorem*{satz45'}{Satz 45'}
+\newtheorem{kor}[thm]{Korollar}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{thm-defi}[thm]{Theorem-Definition}
+
+\renewcommand*\contentsname{Inhaltsverzeichnis}
+\renewcommand*\chaptername{Kapitel}
+
+\theoremstyle{definition}
+%\renewcommand{\thethm}{\arabic{thm}}
+\newtheorem{defi}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{bem}[thm]{Bemerkung}
+\newtheorem*{bem*}{Bemerkung}
+\newtheorem*{bez*}{Bezeichnung}
+\newtheorem*{hin*}{Hinweis}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{bsp}[thm]{Beispiel}
+\newtheorem*{bsp*}{Beispiel}
+\newtheorem*{bspe*}{Beispiele}
+\newtheorem{Conc}[thm]{Conclusion}
+\newtheorem*{nota*}{Notation}
+\newtheorem*{rech*}{Rechenregeln}
+\newtheorem*{whg*}{Wiederholung}
+\newtheorem{auf}[thm]{Aufgabe}
+\newtheorem{ubng}[thm]{Übung}
+\newtheorem*{ubng*}{Übung}
+\newtheorem{loes}[thm]{Lösung}
+\newtheorem{exer}[thm]{Exercise}
+\newtheorem{soln}[thm]{Solution}
+
+\let \ph \varphi
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Nn}{\mathbb{N}_0}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Rn}{\mathbb{R}^n}
+
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\kn}{Kern}
+\DeclareMathOperator{\bil}{Bild}
+
+\DeclareMathOperator{\Abb}{Abb}
+\DeclareMathOperator{\Bij}{Bij}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Iso}{Iso}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Mon}{Mon}
+
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\GLn}{GL_n}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SLn}{SL_n}
+\DeclareMathOperator{\OR}{O}
+\DeclareMathOperator{\SO}{SO}
+
+\makeatletter
+\DeclareRobustCommand*{\mfaktor}[3][]
+{
+   { \mathpalette{\mfaktor@impl@}{{#1}{#2}{#3}} }
+}
+\newcommand*{\mfaktor@impl@}[2]{\mfaktor@impl#1#2}
+\newcommand*{\mfaktor@impl}[4]{
+   \settoheight{\faktor@zaehlerhoehe}{\ensuremath{#1#2{#3}}}%
+   \settoheight{\faktor@nennerhoehe}{\ensuremath{#1#2{#4}}}%
+      \raisebox{-0.5\faktor@zaehlerhoehe}{\ensuremath{#1#2{#3}}}%
+      \mkern-4mu\diagdown\mkern-5mu%
+      \raisebox{0.5\faktor@nennerhoehe}{\ensuremath{#1#2{#4}}}%
+}
+\makeatother
+
+
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+      <5> <6> <7> <8> <9> <10>
+      <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+      mathx10
+      }{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareFontSubstitution{U}{mathx}{m}{n}
+\DeclareMathSymbol{\bigtimes}{1}{mathx}{"91}

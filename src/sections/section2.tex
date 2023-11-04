@@ -1,0 +1,121 @@
+\documentclass[a4paper]{report}
+\usepackage{../template}
+\begin{document}
+\section{Strukturtheorie zu Gruppen (``Einige Aussagen'')}
+Sei im Weiteren $M$ ein Monoid, $G$ eine Gruppe und $X$ eine Menge.
+\begin{defi}[\textbf{Wirkung}]
+  Eine Abbildung
+  $$\lambda : M \times X \to X, (m,x) \mapsto m \cdot x := \lambda(m,x)$$
+  heißt Linkswirkung (left action, Linksoperation) von $M$ auf $X$, wenn es gelten $\forall x \in X, m, m' \in M:$
+  \begin{enumerate}[(i)]
+    \item Neutrales Element: $e\cdot x = x$
+    \item Assoziativität: $m\cdot (m'\cdot x) = (m\cdot m') \cdot x$
+  \end{enumerate}
+\end{defi}
+\begin{bez*}
+  Ist $M$ eine Gruppe, so heißt $\lambda$ auch Gruppenwirkung und $X$ heißt Links-$M$-Menge.
+\end{bez*}
+\begin{bem*} Analog kann man auch Rechtswirkungen
+  $$\rho : X \times M \to X, (x,m) \mapsto x \cdot m$$
+  definieren. (Axiome: $x\cdot e = c$ und $(x\cdot m)\cdot m' = x \cdot (m \cdot m')$)
+\end{bem*}
+\begin{bem*}[Übung]
+  Jede Links-$G$-Wirkung kann man in eine Rechts-$G$-Wirkung überführen:
+  zu $\lambda: G \times X \to X$ definiere $\rho : X \times G \to X$ durch
+  $$\rho(x,g) := \lambda(g^{-1}, x) \iff x \cdot g := g^{-1} \cdot x$$
+\end{bem*}
+\begin{prop}[Alternative Beschreibung von Wirkungen] \item
+\begin{enumerate}[(a)]
+  \item Sei $\lambda: G \times X \to X$ eine Linkswirkung, dann ist
+        $$\ph : G \to \Bij(X), g \mapsto (\ph_{g}: X \to X, x \mapsto gx)$$
+        ein wohl-definierter Gruppenhomomorphismus.
+  \item Sei $\ph : G \to \Bij(X)$ ein Gruppenhomomorphismus, dann ist
+        $$\lambda: G \times X \to X, (g,x) \mapsto \ph(g)(x)$$
+        eine Linkswirkung von $G$ auf $X$.
+\end{enumerate}
+\end{prop}
+\begin{proof}[Beweis]
+  \begin{enumerate}[(a)]
+          \item Für $g \in G$ sei $\ph_{g} : X \to X, x \mapsto gx$, dann gelten:
+          $\ph_{e}: X \to X, x \mapsto ex = x$ ist $\id_{X}$ (Axiom (i)), und
+          $$(*) \quad \ph_{g} \circ \ph_{g'} = \ph_{gg'}$$
+          denn $\forall x \in X:$
+          $$(\ph_{g} \circ \ph_{g'})(x) = \ph_{g}(\ph_{g'}(x)) = g(g'x) \overset{(ii)} = (gg')x = \ph_{gg'}(x)$$
+          Damit folgen:
+          \begin{enumerate}[1.]
+            \item $\ph_{g} \circ \ph_{g^{-1}} = \underbrace{\ph_{e}}_{\id_{X}} = \ph_{g^{-1}} \circ \ph_{g}$
+            $\implies \ph_{g}$ ist eine bijektive Abbildung mit Inverse $\varphi_{g^{-1}}$, d.h. $$\ph : G \to \Bij(X), g \mapsto \ph_{g}$$ist wohl-definiert.
+            \item $\ph$ ist ein Gruppenhomomorphismus: folgt aus $(*)$ (Verknüpfung in $\Bij(X)$ ist die Verkettung von Abbildungen.)
+          \end{enumerate}
+        \item Übung.
+  \end{enumerate}
+\end{proof}
+\begin{bem*}
+\begin{enumerate}[(a)]
+  \item Das Analogon von Proposition 2 gilt auch für Monoide. Die Linkewirkungen eines Monoids $M$ auf $X$ entsprechen Monoidhomomorphismen $M \to (\Abb(X,X), \id_{X}, \circ)$
+\item Eine Gruppe kann auch auf ``Objekten'' mit mehr Struktur als eine Menge wirken, z.B. auf eine Gruppe!
+\end{enumerate}
+\end{bem*}
+\begin{bsp*}
+$G$ wirkt auf eine Gruppe $N$ heißt, man hat einen Gruppenhomomorphismus $G \to \Aut(N)$ (vgl. Lemma 1.56)
+\end{bsp*}
+\begin{defi}[Eigenschaften von Wirkungen]
+  Sei $\lambda: G \times X \to X$ eine Linkswirkung von $G$ auf $X$.
+  \begin{enumerate}[(a)]
+    \item Die Bahn zu $x \in X$ ist $Gx = \{gx \mid g \in G\}$. Die Länge der Bahn zu $x$ ist $\#Gx$
+    \item $\lambda$ ist transitiv $\iff \forall y, z \in X \exists g \in G : gy=z \overset{\text{Übung}}\iff \forall y \in X : Gy = X \overset{\text{Übung}}\iff \exists x \in X : Gx = X$
+    \item $\lambda$ ist $n$-fach transitiv ($n \in \N$), wenn für alle Paare von $n$-Tupeln $(x_{1}, ..., x_{n}), (y_{1}, ..., y_{n}) \in X^{n}$ mit $\#\{x_{1}, ..., x_{n}\} = \#\{y_{1}, ..., y_{n}\}$ gilt $\exists g \in G : gx_{i} = y_{i}, \forall i$.
+    \item Die Wirkung heißt treu, wenn der induzierte Gruppenhomomorphismus $\ph: G \to \Bij(X)$ (aus Proposition 2) injektiv ist $$\overset{\text{Übung}} \iff \forall g \in G \setminus \{e\} : \exists x \in X : \underbrace{gX \ne X}_{\ph_{g}(x) \ne \id_{X}(x)}$$
+  \end{enumerate}
+\end{defi}
+\begin{bsp}\item
+\begin{enumerate}
+  \item Ist $V$ ein $K$-Vektoraum, so wirkt das Monoid $(K, 1, \cdot)$ auf $V$ durch Skalarmultiplikation $(\lambda, v) \mapsto \lambda v$
+  \item Die folgenden 3 Beispiele sind Linkswirkungen von $\GLn(K)$:
+    \begin{enumerate}[(i)]
+      \item $\GLn(K) \times K^{n} \to K^{n}, (g,v) \mapsto gv$.
+            (Übung: Es gibt die Bahnen $\{0\}, K^{n} \setminus \{0\}$)
+      \item Sei $\mathcal B = \{\text{geordnete Basen von } K^{n}\}$ und
+            $$\GLn(K) \times  \mathcal B\to \mathcal B, (g, (b_{1}, ..., b_{n})) \mapsto (gb_{1}, ..., gb_{n})$$
+            die Wirkung ist treu und transitiv.
+      \item $\GLn(K) \times \End_{K}(K^{n}) \to \End_{K}(K^{n}), (A,B) \mapsto ABA^{-1}$ die Wirkung ist nicht treu $Z(\GLn(K))$ wirkt trivial. (Übung: Bahnen stehen in Bijektion zu den Frobeniusnormalformen von Matrizen.)
+    \end{enumerate}
+  \item $S_{n} \times \{1, ..., n\} \to \{1, ..., n\}, (\sigma, i) \mapsto \sigma(i)$ Wirkung ist treu und $n$-fach transitiv.
+  \item Abstrakte Beispiele: Sei $H \le G$ eine Untergruppe.
+        \begin{enumerate}[(i)]
+          \item $\lambda: H \times G \to G, (h,g) \mapsto hg$. Die Bahnen sind die Mengen $Hg$, also die Rechtsnebenklassen zu $H$ (treu?) Menge der Rechtsnebenklassen $$\mfaktor HG := \{Hg \mid g \in G\}$$
+          \item $\rho : G \times H \to G, (g,h) \mapsto gh$ Bahnen = Linksnebenklassen zu $H$ und $$\faktor GH = \{gH \mid g \in G\}$$
+          \item $c_{\cdot}: G \times G \to G, (g, g') \mapsto gg'g^{-1}$ ist eine Linkswirkung, denn der nach Proposition 2 zugehörige Gruppenhomomorphismus ist $c: G \to \Aut(G), g \mapsto c_{g}$.
+          \item $G \times \faktor GH \to \faktor GH, (g, g'H) \mapsto gg'H$ Die Klassen $gH$ heißen Linksnebenklassen wegen der Links-$G$-Wirkung auf ihnen.
+        \end{enumerate}
+\end{enumerate}
+\end{bsp}
+
+\begin{prop}
+  Sei $X$ eine Links-$G$-Menge (zu der Wirkung $\lambda: G \times X \to X, (g,x), \mapsto gx$) definiere Relation $\sim$ auf $X$ durch
+  $$x \sim y \iff \exists g \in G : gx = y$$
+  dann gelten:
+  \begin{enumerate}[(a)]
+    \item $\sim$ ist eine Äquivalenzrelation.
+    \item Die Äquivalenzklasse zu $x \in X$ bezüglich $\sim$ ist die Bahn $Gx$. Insbesondere ist $X$ die disjunkte Vereinigung seiner Bahnen. (Ist $(x_{i})_{i \in I}$ ein Repräsentantensystem der $G$-Bahnen, so gilt also $\#X = \sum_{i \in I}\#Gx$)
+  \end{enumerate}
+\end{prop}
+\begin{proof}[Beweis]
+  \begin{enumerate}[(a)]
+    \item $\sim$ ist eine Äquivalenzrelation: Prüfe
+          \begin{itemize}
+          \item $\sim$ reflexiv: $ex = x \implies x \sim x.$
+          \item $\sim$ symmetrisch: Gelte $x \sim y$, d.h. $\exists g \in G : gx = y$, dann gilt $x = ex = g^{-1}(gx) = g^{-1}y \implies y \sim x$.
+            \item $\sim$ transitiv: Gelte $x \sim y$ und $y \sim z$, d.h. $\exists g, h' \in G : gx = y, g'y = z$
+                  $$\implies (g'g)x = g'(gx) = g'y = z \implies x \sim z$$
+          \end{itemize}
+    \item Sei $x \in X$, dann ist $$\{y \in X \mid x\sim y\} = \{y \in X \mid \exists g \in G : y = gx\} = \{gx \mid g \in G\} = Gx.$$
+  \end{enumerate}
+\end{proof}
+
+\begin{satz}[\textbf{Satz von Cayley}]
+Jede Gruppe $G$ (jedes Monoid $M$) ist isomorph zu einer Untergruppe (einem Untermonoid) von $(\Bij(G), \id_{G}, \circ)$ (bzw. $(\Abb(G,G), \id_{G}, \circ)$).
+\end{satz}
+\begin{proof}[Beweis](Für Gruppen, Rest ist eine Übung) Definiere die Wirkung $\lambda G \times G \to G, (g,h) \mapsto gh$, dann erhalten wir den induzierten Gruppenhomomorphismus $\varphi: G \to \Bij(G)$, wir zeigen $\varphi$ ist injektiv: Sei $g \in G \setminus \{e\}$, dann gilt $ge = g \ne e \implies$ Wirkung treu, also $\varphi$ ist ein Gruppenmonomorphismus. D.h. $G$ ``ist'' Untergruppe von $\Bij(G)$.
+\end{proof}
+\end{document}
