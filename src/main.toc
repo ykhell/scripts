@@ -1,5 +1,29 @@
 \contentsline {chapter}{\numberline {1}Gruppentheorie}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Gruppen und Monoide}{5}{section.1.1}%
+\contentsline {subsection}{Monoid}{5}{section*.2}%
+\contentsline {subsection}{Gruppe}{5}{Item.2}%
+\contentsline {subsection}{Ring}{7}{Item.26}%
+\contentsline {subsection}{Ordnung}{7}{Item.29}%
+\contentsline {subsection}{Untermonoid/Untergruppe}{8}{thm.1.9}%
+\contentsline {subsection}{Erzeuger}{9}{thm.1.14}%
+\contentsline {subsection}{Zyklische Gruppe}{9}{thm.1.16}%
+\contentsline {subsection}{Satz von Lagrange}{11}{thm.1.21}%
+\contentsline {subsection}{Exponent einer Gruppe}{13}{Item.60}%
 \contentsline {section}{\numberline {1.2}Gruppenhomomorphismen}{14}{section.1.2}%
+\contentsline {subsection}{Homomorphismus}{14}{section*.3}%
+\contentsline {subsection}{Isomorphismus}{15}{Item.88}%
+\contentsline {section}{Normalteiler}{16}{Item.105}%
+\contentsline {subsection}{Kommutator/Kommutatoruntergruppe}{18}{thm.1.42}%
+\contentsline {subsection}{Faktor-/Quotientengruppe}{19}{Item.128}%
+\contentsline {section}{Homomorphiesatz für Gruppen}{19}{Item.128}%
+\contentsline {section}{Einschub: Faktorringe}{21}{Item.132}%
+\contentsline {section}{Die Isomorphiesätze}{21}{Item.142}%
+\contentsline {subsection}{Erster Isomorphiesatz}{22}{section*.6}%
+\contentsline {subsection}{Zweiter Isomorphiesatz}{22}{Item.148}%
+\contentsline {section}{(Semi-)direkte Produkte}{24}{Item.152}%
+\contentsline {subsection}{Semi-direktes Produkt}{26}{thm.1.56}%
 \contentsline {chapter}{\numberline {2}Gruppen Strukturtheorie}{27}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Strukturtheorie zu Gruppen (``Einige Aussagen'')}{27}{section.2.1}%
+\contentsline {section}{Wirkung}{27}{section.2.1}%
+\contentsline {section}{Eigenschaften von Wirkungen}{28}{Item.176}%
+\contentsline {subsection}{Satz von Cayley}{30}{Item.195}%

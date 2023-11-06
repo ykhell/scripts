@@ -12,6 +12,7 @@
 \end{itemize}
 \end{nota*}
 
+\addcontentsline{toc}{subsection}{Monoid}
 \begin{defi}[\textbf{Monoid}] %def-1
   Ein Tripel $(M, e, \circ)$ mit
   \begin{itemize}
@@ -29,6 +30,7 @@
 $b = b'$, denn $$b' = e \circ b' = (b\circ a) \circ b' = b \circ (a \circ b') = b \circ e = b$$
  \end{bem*}
 \end{defi}
+\addcontentsline{toc}{subsection}{Gruppe}
 \begin{defi}[\textbf{Gruppe}]%def-2
 Eine \textbf{Gruppe} ist ein Monoid, in dem alle Elemente invertierbar sind.
 \end{defi}
@@ -124,9 +126,9 @@ $$b' = e \circ b' = (b \circ a) \circ b' = b \circ (a \circ b') = b \circ e = b.
 \item Ist $M$ ein Monoid, so ist $M^\times:=\{a \in M \mid a \text{ invertierbar}\}$ eine Gruppe, also $(M^{\times}, e, \circ)$.
 
   \end{enumerate}
-
-
 \end{bsp*}
+
+\addcontentsline{toc}{subsection}{Ring}
 \begin{defi}[\textbf{Ring}]
   Ein [[Ring]] ist ein [[Tupel]] $(R, 0, 1, +, \cdot)$, sodass
   \begin{enumerate}[(R1)]
@@ -136,11 +138,13 @@ $$b' = e \circ b' = (b \circ a) \circ b' = b \circ (a \circ b') = b \circ e = b.
   \end{enumerate}
 \end{defi}
 
+\addcontentsline{toc}{subsection}{Ordnung}
 \begin{defi}[\textbf{Ordnung einer Gruppe}]
   Ist $M$ ein Monoid oder eine Gruppe, so heißt $$\mathrm{ord}(M):=\#M$$
   die Ordnung von $M$.
 \end{defi}
 
+\addcontentsline{toc}{subsection}{Untermonoid/Untergruppe}
 \begin{defi}[\textbf{Untermonoid/Untergruppe}]
   Seien $M$ ein Monoid, $G$ eine Gruppe, dann
   \begin{enumerate}[(a)] %TODO Check nummer
@@ -204,6 +208,7 @@ Dann gilt: $\{\text{Worte in } S \cup \{e\}\} = \langle S \rangle \le M$ ist das
 Und ist $G$ eine Gruppe, so gilt $\{\text{Worte in } S \cup S^{-1} \cup \{e\}\} = \langle S \rangle \le G$ ist die kleinste Untergruppe von G, die $S$ umfasst.
 \end{ubng}
 
+\addcontentsline{toc}{subsection}{Erzeuger}
 \begin{defi}[\textbf{Erzeugendensystem}]
 Sei $G$ eine Gruppe und $S \subseteq G$ eine Teilmenge. $S$ heißt Erzeugendensystem von $G \iff \langle S \rangle = G$.
 \end{defi}
@@ -225,6 +230,8 @@ $$= \{g^{n} | n \in \Bbb Z\}$$
 \end{proof}
 \end{lemm}
 \begin{bem*}$\langle g \rangle$ ist abelsch.\end{bem*}
+
+\addcontentsline{toc}{subsection}{Zyklische Gruppe}
 \begin{defi}[\textbf{Ordnung eines Gruppenelements, Zyklische Gruppe}]
   % TODO NUmmer
   Sei $G$ eine Gruppe, $g \in G$
@@ -340,6 +347,7 @@ Untergruppen von $\Bbb Z$ sind die Mengen $\Bbb Zn = \{an \mid a \in \Bbb Z\}, (
   \end{itemize}
 \end{bem*}
 
+\addcontentsline{toc}{subsection}{Satz von Lagrange}
 \begin{satz}[Satz von Lagrange]
 Sei $G$ eine endliche Gruppe und $H \le G$ eine Untergruppe, dann gilt $\#H \mid \#G$.
 \end{satz}
@@ -395,6 +403,7 @@ Folglich: $p = \mathrm{ord}(g) = \mathrm{ord}(G)$, d.h. $\langle g \rangle \le G
 \end{proof}
 \end{kor}
 
+\addcontentsline{toc}{subsection}{Exponent einer Gruppe}
 \begin{defi}[\textbf{Gruppenexponent}]
 Sei $G$ eine Gruppe, der Exponent von $G$ ist $\exp(G) = \min \{n \in \Bbb N \mid \forall g \in G : g^{n} = e\}$ (wobei $\min \emptyset = \infty$).
 \end{defi}
@@ -453,6 +462,7 @@ $$\mathrm{ord}(g) \mid \exp G, \exp G \mid \mathrm{ord}(G) \implies \exp G = \ma
 \section{Gruppenhomomorphismen}%
 \label{sec:Gruppenhomomorphismen}
 Seien im Weiteren $M, M'$ Monoide und $G, G'$ Gruppen.
+\addcontentsline{toc}{subsection}{Homomorphismus}
 \begin{defi}[\textbf{Monoid-/Gruppenhomomorphismus}] \item
   \begin{enumerate}[(a)]
     \item Eine Abbildung $\varphi : M \to M'$ heißt \textbf{Monoidhomomorphismus}, falls
@@ -511,6 +521,7 @@ Eindeutigkeit des Inverses $\implies \varphi(m^{-1}) = \varphi(m)^{-1}$.
   \end{bem*}
 \end{prop}
 
+\addcontentsline{toc}{subsection}{Isomorphismus}
 \begin{defi}[\textbf{Gruppenisomorphismus}]
 Ein Gruppenhomomorphismus $\varphi$ ist ein Gruppenisomorphismus, wenn $\varphi$ bijektiv ist. ($\iff \mathrm{Kern}(\varphi) = \{e\}$ und $\mathrm{Bild}(\varphi) =G'$).
 \end{defi}
@@ -585,6 +596,7 @@ $\mathrm{Bild}(c_{\cdot}) =: \mathrm{Inn}(G)$ die Gruppe der \textbf{inneren Aut
           \end{enumerate}
   \end{itemize}
 \end{proof}
+\addcontentsline{toc}{section}{Normalteiler}
 \section*{Normalteiler (Normal Subgroup)}
 \begin{nota*}
   Für $X \subseteq G$ und $g \in G$ setze $$\ell_{g}(X) = \{gx \mid x \in X\} = gX \text{ und } r_{g}(X) = \{xg \mid x \in X\} = Xg$$
@@ -638,6 +650,7 @@ $\mathrm{Bild}(c_{\cdot}) =: \mathrm{Inn}(G)$ die Gruppe der \textbf{inneren Aut
   \end{proof}
 \end{satz}
 
+\addcontentsline{toc}{subsection}{Kommutator/Kommutatoruntergruppe}
 \begin{ubng} \item
   \begin{enumerate}[(a)]
           \item Ist $N' \trianglelefteq G'$ und $\varphi : G \to G'$ Gruppenhomomorphismus, so gilt $\varphi^{-1}(N') \trianglelefteq G$.
@@ -663,7 +676,7 @@ Es gilt $[G, G] \trianglelefteq G.$
    \end{enumerate}
   \end{proof}
 \begin{satz}
-  Sei $N \trianglelefteq G$ ein Nullteiler, dann gelten:
+  Sei $N \trianglelefteq G$ ein Normalteiler, dann gelten:
   \begin{enumerate}[(a)]
     \item Aus $gN = g'N$ und $hN = h'N$ für $g, g', h, h' \in G$ folgt $ghN = g'h'N$ und insbesondere ist die Verknüpfung $$\circ : \underbrace{\faktor GN}_{\{gN \mid g \in G\}} \times \faktor GN \longrightarrow \faktor GN,\  (gN, hN) \longmapsto gN \circ hN = ghN$$
           wohl-definiert.
@@ -691,12 +704,14 @@ Es gilt $[G, G] \trianglelefteq G.$
 \end{enumerate}
 \end{proof}
 \end{satz}
+\addcontentsline{toc}{subsection}{Faktor-/Quotientengruppe}
 \begin{bem*}[Bezeichnung] $\faktor GN$ (bzw. $(\faktor GN, eN, \circ)$) heißt \textbf{Faktorgruppe} von $G$ modulo $N$.
 \end{bem*}
 \begin{bem*}[Übung]
 $G$ abelsch $\implies \faktor{G}{N}$ abelsch.
 \end{bem*}
 
+\addcontentsline{toc}{section}{Homomorphiesatz für Gruppen}
 \begin{satz}[Homomorphiesatz für Gruppen]
   Sei $\varphi: G \to G'$ ein Gruppenhomomorphismus mit $N = \mathrm{Kern}(\varphi)$, dann existiert genau ein Gruppenhomomorphismus $\overline \varphi : \faktor GN \longrightarrow G'$, sodass
   $$
@@ -753,6 +768,7 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
         $$\faktor GN \text{ abelsch} \iff [G, G] \le N$$
 \end{enumerate}
 \end{ubng*}
+\addcontentsline{toc}{section}{Einschub: Faktorringe}
 \subsection*{Einschub: Faktorringe}
 \begin{defi}[\textbf{Ideal}]
   Sei $R$ ein kommutativer Ring. $I \subseteq R$ heißt Ideal wenn
@@ -789,7 +805,9 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
 \end{enumerate}
 \end{proof}
 \end{satz}
+\addcontentsline{toc}{section}{Die Isomorphiesätze}
 \subsection*{Die Isomorphiesätze}
+\addcontentsline{toc}{subsection}{Erster Isomorphiesatz}
 \begin{satz}[\textbf{Erster Isomorphiesatz}]
   Sei $G$ eine Gruppe, $N \trianglelefteq G$ ein Normalteiler und $H \le G$ eine Untergruppe, dann gelten:
   \begin{enumerate}[(a)]
@@ -822,6 +840,7 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
 \end{proof}
 \end{satz}
 
+\addcontentsline{toc}{subsection}{Zweiter Isomorphiesatz}
 \begin{satz}[\textbf{Zweiter Isomorphiesatz}]
   Sei $G$ eine Gruppe und $N \trianglelefteq G$ ein Normailteiler, und sei $\pi : G \longrightarrow \faktor GN, g \longmapsto \overline g = gN $ die Faktorabbildung.
   \begin{enumerate}[(a)]
@@ -865,6 +884,7 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
 \end{proof}
 \end{satz}
 
+\addcontentsline{toc}{section}{(Semi-)direkte Produkte}
 \subsection*{(Semi-)direkte Produkte}%
 \label{sec:Direkte Produkte}
 \begin{lemm}[Übung]
@@ -937,6 +957,7 @@ ist Folge von Korollar 55.
   \end{itemize}
 \end{lemm}
 %Tausendste Zeile WeeweeweeW!
+\addcontentsline{toc}{subsection}{Semi-direktes Produkt}
 \begin{defi}[\textbf{Semi-direktes Produkt}]
   Die Gruppe $G = N \rtimes H$ heißt das semi-direkte Produkt von $N$ mit $H$ (bezüglich $\varphi$).
 \end{defi}

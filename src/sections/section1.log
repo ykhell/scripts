@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.4)  4 NOV 2023 03:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.4)  6 NOV 2023 17:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -713,10 +713,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead
  on input line 9.
 
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 15.
+
 [1
 
 {/usr/local/texlive/2022basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (18.14714pt too wide) in paragraph at lines 114--115
+Overfull \hbox (18.14714pt too wide) in paragraph at lines 116--117
 []$\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 ) := \O
 MS/cmsy/m/n/10 f\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 2 [][]\OT1/cmr/m/n/10 (\OML
 /cmm/m/it/10 V\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 '[]\OMS/cmsy/
@@ -726,13 +730,18 @@ t/10 V\OT1/cmr/m/n/10 ) := \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/1
 cmsy/m/n/10 j []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '\OT1/cmr/m/n/10 ) =
  []
 
-[2] [3] [4] [5] [6] [7] [8] [9] [10]
-Overfull \hbox (0.82832pt too wide) in paragraph at lines 527--528
+[2] [3] [4] [5] [6] [7] [8]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 465.
+
+[9] [10]
+Overfull \hbox (0.82832pt too wide) in paragraph at lines 538--539
 [][]\OT1/cmr/m/n/10 Ein Grup-peni-so-mor-phis-
  []
 
 [11] [12] [13] [14] [15] [16] [17] [18] [19]
-Overfull \hbox (12.56558pt too wide) in paragraph at lines 921--922
+Overfull \hbox (12.56558pt too wide) in paragraph at lines 941--942
 [][]\OT1/cmr/bx/n/10 Ubung. []\OT1/cmr/m/n/10 Spezial-fall: $\OML/cmm/m/it/10 n
  \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 p[]$ \OT1/cmr/m/n/10 f^^?ur $\OML/cmm/
 m/it/10 p[]; :::; p[]$ \OT1/cmr/m/n/10 paar-weise ver-schiedene Primzahlen,
@@ -743,17 +752,24 @@ m/it/10 p[]; :::; p[]$ \OT1/cmr/m/n/10 paar-weise ver-schiedene Primzahlen,
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-01>
  ***********
-Package rerunfilecheck Info: File `section1.out' has not changed.
-(rerunfilecheck)             Checksum: FD9830AA03103B4E87A719307C94A185;296.
+
+
+Package rerunfilecheck Warning: File `section1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `section1.out':
+(rerunfilecheck)             Before: 0B397FF829F7F4D6ED83929F6ACF00D0;3029
+(rerunfilecheck)             After:  37E4E6BA2BC998BE79F5E0158AF477E2;3188.
  ) 
 Here is how much of TeX's memory you used:
- 21622 strings out of 475729
- 410112 string characters out of 5782024
- 1943530 words of memory out of 5000000
- 43004 multiletter control sequences out of 15000+600000
+ 21643 strings out of 475729
+ 410321 string characters out of 5782024
+ 1942530 words of memory out of 5000000
+ 43023 multiletter control sequences out of 15000+600000
  564400 words of font info for 58 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,18n,117p,580b,1099s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,18n,117p,580b,1101s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/yousef/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/public/ma
 thabx/mathx10.600pk> </Users/yousef/Library/texlive/2022basic/texmf-var/fonts/p
 k/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2022basic/texmf-dist/fo
@@ -777,10 +793,10 @@ s/symbols/msam5.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msam7.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022basic/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on section1.pdf (22 pages, 313949 bytes).
+Output written on section1.pdf (22 pages, 315283 bytes).
 PDF statistics:
- 503 PDF objects out of 1000 (max. 8388607)
- 434 compressed objects within 5 object streams
- 253 named destinations out of 1000 (max. 500000)
- 29 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 565 PDF objects out of 1000 (max. 8388607)
+ 496 compressed objects within 5 object streams
+ 255 named destinations out of 1000 (max. 500000)
+ 189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -14,6 +14,9 @@
    (TeX-run-style-hooks
     "latex2e"
     "report"
-    "rep10"))
+    "rep10")
+   (LaTeX-add-labels
+    "def:Wirkung"
+    "satz:Satz von Cayley"))
  :latex)
 

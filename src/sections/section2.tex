@@ -3,7 +3,9 @@
 \begin{document}
 \section{Strukturtheorie zu Gruppen (``Einige Aussagen'')}
 Sei im Weiteren $M$ ein Monoid, $G$ eine Gruppe und $X$ eine Menge.
+\addcontentsline{toc}{section}{Wirkung}
 \begin{defi}[\textbf{Wirkung}]
+\label{def:Wirkung}
   Eine Abbildung
   $$\lambda : M \times X \to X, (m,x) \mapsto m \cdot x := \lambda(m,x)$$
   heißt Linkswirkung (left action, Linksoperation) von $M$ auf $X$, wenn es gelten $\forall x \in X, m, m' \in M:$
@@ -59,6 +61,7 @@ Sei im Weiteren $M$ ein Monoid, $G$ eine Gruppe und $X$ eine Menge.
 \begin{bsp*}
 $G$ wirkt auf eine Gruppe $N$ heißt, man hat einen Gruppenhomomorphismus $G \to \Aut(N)$ (vgl. Lemma 1.56)
 \end{bsp*}
+\addcontentsline{toc}{section}{Eigenschaften von Wirkungen}
 \begin{defi}[Eigenschaften von Wirkungen]
   Sei $\lambda: G \times X \to X$ eine Linkswirkung von $G$ auf $X$.
   \begin{enumerate}[(a)]
@@ -112,8 +115,9 @@ $G$ wirkt auf eine Gruppe $N$ heißt, man hat einen Gruppenhomomorphismus $G \to
     \item Sei $x \in X$, dann ist $$\{y \in X \mid x\sim y\} = \{y \in X \mid \exists g \in G : y = gx\} = \{gx \mid g \in G\} = Gx.$$
   \end{enumerate}
 \end{proof}
-
+\addcontentsline{toc}{subsection}{Satz von Cayley}
 \begin{satz}[\textbf{Satz von Cayley}]
+\label{satz:Satz von Cayley}
 Jede Gruppe $G$ (jedes Monoid $M$) ist isomorph zu einer Untergruppe (einem Untermonoid) von $(\Bij(G), \id_{G}, \circ)$ (bzw. $(\Abb(G,G), \id_{G}, \circ)$).
 \end{satz}
 \begin{proof}[Beweis](Für Gruppen, Rest ist eine Übung) Definiere die Wirkung $\lambda G \times G \to G, (g,h) \mapsto gh$, dann erhalten wir den induzierten Gruppenhomomorphismus $\varphi: G \to \Bij(G)$, wir zeigen $\varphi$ ist injektiv: Sei $g \in G \setminus \{e\}$, dann gilt $ge = g \ne e \implies$ Wirkung treu, also $\varphi$ ist ein Gruppenmonomorphismus. D.h. $G$ ``ist'' Untergruppe von $\Bij(G)$.
