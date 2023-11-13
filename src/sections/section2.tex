@@ -61,7 +61,7 @@ Sei im Weiteren $M$ ein Monoid, $G$ eine Gruppe und $X$ eine Menge.
 \begin{bsp*}
 $G$ wirkt auf eine Gruppe $N$ heißt, man hat einen Gruppenhomomorphismus $G \to \Aut(N)$ (vgl. Lemma 1.56)
 \end{bsp*}
-\addcontentsline{toc}{section}{Eigenschaften von Wirkungen}
+\addcontentsline{toc}{subsection}{Eigenschaften von Wirkungen}
 \begin{defi}[Eigenschaften von Wirkungen]
   Sei $\lambda: G \times X \to X$ eine Linkswirkung von $G$ auf $X$.
   \begin{enumerate}[(a)]
@@ -112,7 +112,7 @@ $G$ wirkt auf eine Gruppe $N$ heißt, man hat einen Gruppenhomomorphismus $G \to
             \item $\sim$ transitiv: Gelte $x \sim y$ und $y \sim z$, d.h. $\exists g, h' \in G : gx = y, g'y = z$
                   $$\implies (g'g)x = g'(gx) = g'y = z \implies x \sim z$$
           \end{itemize}
-    \item Sei $x \in X$, dann ist $$\{y \in X \mid x\sim y\} = \{y \in X \mid \exists g \in G : y = gx\} = \{gx \mid g \in G\} = Gx.$$
+    \item Sei $x \in X$, dann ist $$\{y \in X \mid x \sim y\} = \{y \in X \mid \exists g \in G : y = gx\} = \{gx \mid g \in G\} = Gx.$$
   \end{enumerate}
 \end{proof}
 \addcontentsline{toc}{subsection}{Satz von Cayley}
@@ -122,4 +122,252 @@ Jede Gruppe $G$ (jedes Monoid $M$) ist isomorph zu einer Untergruppe (einem Unte
 \end{satz}
 \begin{proof}[Beweis](Für Gruppen, Rest ist eine Übung) Definiere die Wirkung $\lambda G \times G \to G, (g,h) \mapsto gh$, dann erhalten wir den induzierten Gruppenhomomorphismus $\varphi: G \to \Bij(G)$, wir zeigen $\varphi$ ist injektiv: Sei $g \in G \setminus \{e\}$, dann gilt $ge = g \ne e \implies$ Wirkung treu, also $\varphi$ ist ein Gruppenmonomorphismus. D.h. $G$ ``ist'' Untergruppe von $\Bij(G)$.
 \end{proof}
+
+\addcontentsline{toc}{subsection}{Stabilisator}
+\begin{defi}[\textbf{Stabilisator}]
+  Sei $X$ eine Links-$G$-Menge und $x \in X$, dann heißt
+  \[G_{x} := \stb_{G}(x) := \{g \in G \mid gx = x\}\]
+  Stabilisator von $x$ (unter $G$).
+  Warnung: $G_{x} \ne G\cdot x$.
+\end{defi}
+\begin{bsp*}
+  $\stb_{\Sn}(\{n\}) = \{\sigma \in \Sn \mid \sigma(n) = n\} \cong S_{n-1}$ mit der üblichen $\Sn$-Wirkung auf $\{1, ..., n\}$.
+\end{bsp*}
+\begin{ubng*}
+  $G$-Wirkung auf einer Menge $X$ ist treu
+  \[\iff \bigcap_{x \in X} \stb_{G}(x) = \{e\}\]
+\end{ubng*}
+\begin{prop}
+  Sei $X$ eine links-$G$-Menge, $x \in X, g \in G$, dann gilt
+  \begin{enumerate}[(a)]
+    \item $\stb_{G}(x) \le G$ ist eine Untergruppe.
+    \item $\stb_{G}(gx) = g\stb_{G}(x)g^{-1}$
+  \end{enumerate}
+\end{prop}
+\begin{proof}[Beweis] \item
+  \begin{enumerate}[(a)]
+    \item $e \in \stb_{G}(x)$, denn $ex = x$. Seien $\ubr{g_{1}, g_{2} \in \stb_{G}(x)}_{\substack{\text{bedeutet } g_{1}x = x, g_{2} x= x}}$, zu zeigen ist $g_{1}^{-1}g_{2} \in \stb_{G}(x)$
+          \[\overset{g_{1}^{-1}\cdot \underline\ }\imp x = ex = g_{1}^{-1}g_{1}x = g^{-1}x\]
+          Damit gilt $(g_{1}^{-1}\cdot g_{2}^{-1})x = g_{1}^{-1}(g_{2}x) = g_{1}^{-1}x = x$
+    \item Sei $h \in G$, dann:
+          \[h \in \stb_{G}(gx) \iff hgx = gx \overset{g^{-1}\cdot \underline\ } \iff g^{-1}hgx = x \]
+          \[ \iff g^{-1}hg \in \stb_{G}(x) \underset{\text{Konj. mit } g} \iff h \in g \stb_{G}(x)g^{-1}. \qedhere\]
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}[Bahngleichung]
+  Sei $X$ eine links-$G$-Menge, $x \in X$, dann gilt:
+  \begin{itemize}
+    \item $\psi : \fak{G}{G_{x}} \to Gx, hG_{x} \mapsto hx$ ist wohl-definiert und eine Bijektion.
+    \item Ist $G$ endlich, so folgt $\# G\cdot x = [G : G_{x}]$.
+  \end{itemize}
+\end{prop}
+\begin{proof}[Beweis] \item
+  \begin{itemize}
+    \item $\psi$ injektiv und wohl definiert: Seien $g, h \in G$, dann
+          \[hx = gx \iff g^{-1}hx = x \iff g^{-1}h \in G_{x} \le G\]
+          \[\iff g^{-1}h G_{x} = G_{x} \iff hG_{x} = gG_x\]
+    \item $\psi$ surjektiv nach Definition von $G\cdot x$.
+    \item Aussage über Mächtigkeiten: $\psi$ bijektiv $\imp \# \fak G{G_{x}} = \#G \cdot x$.
+  \end{itemize}
+\end{proof}
+
+\begin{bem*} Die Abbildung $\psi$ ist ein Homomorphismus von links-$G$-Mengen (ein Isomorphismus!), $\fak G{G_{x}}$ und $G \times x \subseteq X$ sind links-$G$-Mengen und $\psi$ erfüllt:
+  \[\psi (g \cdot h G_{x}) = g\cdot  \psi (hG_{x})\]
+  (beides ist $=gx \cdot x$)
+\end{bem*}
+
+
+\begin{defi}% definition 10
+  Sei $X$ eine links-$G$-Menge,
+  \begin{enumerate}[(a)]
+    \item Man sagt $G$ operiert frei auf $X \iff \forall x \in X : G_{x} = \{e\}$
+    \item Die Menge der Fixpunkte der $G$-Wirkung ist \[X^{G} := \{x \in X \mid G_{x} = G\}\]
+  \end{enumerate}
+\end{defi}
+
+\begin{bsp*}
+$\GLn(K)$ operiert frei auf der Menge der geordneten Basen von $K^{n}$.
+\end{bsp*}
+
+\begin{kor}
+  Sei $X$ eine links-$G$-Menge. Sei $x_{1}, ..., x_{n}$ ein Repräsentantensystem der Bahnen der Länge $\ge 2$. Dann:
+  \begin{enumerate}[(a)]
+  \item \(X = X^{G} \sqcup \bigsqcup_{i \in \{1, ..., n\}} G \cdot x_{i}\)
+  \item \(\# X = \# X^{G} + \sum_{i \in \{1, ..., n\}}\ubr{[G:G_{x_{i}}]}_{=\#G \cdot x}\)
+  \end{enumerate}
+\end{kor}
+\begin{proof}[Beweis]
+Aus Proposition 5 folgt (a), Lemma 9 gibt (b).
+\end{proof}
+\begin{anw*}
+Sei $X:= G$. Sei die $G$-Wirkung durch Konjugation gegeben, d.h. \[g \ubr {\circ}_{\text{Wirk.}} h = ghg^{-1}\]
+Die Bahnen unter dieser $G$-Wirkung heißen Konjugationsklassen. Die Konjugationsklasse zu $h \in G = X$ ist \[G_{h} := \{ghg^{-1} \mid g \in G\}\]
+Bahnen der Länge 1 sind Fixpunkte unter Konjugation mit allen $g \in G$
+\[= \{h \in G \mid \forall g \in G : \ubr{ghg^{-1} = h}_{gh = hg} \} =: Z(G) \text{ das Zentrum von }G\]
+Stabilisator zu $h \in G$ (unter Konjugationswirkung)
+\[ = \{g \in G \mid ghg^{-1} = h\} = C_{G}(h) \text{ Zentralisator von } h\]
+\end{anw*}
+Aus Korollar 11 ergibt sich nun:
+\begin{satz}[Klassengleichung]
+  Sei $G$ endlich. Ist $g_{1}, ..., g_{n}$ ein Repräsentantensystem der Konjugationsklassen der Länge $\ge 2$, so gilt:
+  \[\# \ubr{G}_{X} = \#\ubr{Z(G)}_{X^{G}} + \sum_{i = 1}^{n}[G : \ubr{C_{G}(g_{i})}_{C_{g}}]\]
+\end{satz}
+
+\begin{defi}
+Sei $p$ eine Primzahl, eine Gruppe $G$ heißt $p$-Gruppe $\iff \# = p^{m}$ füe ein $m \in \N$
+\end{defi}
+\begin{bsp*}
+  \[\fak \Z{(p^{m})} \text{ oder } U_{3}(\Bbb F_{p}) =
+    \l\{\begin{pmatrix}
+      1 & a & b \\
+      0 & 1 & c \\
+      0 & 0 & 1
+  \end{pmatrix} \ \middle | \ a, b, c \in \Bbb F_{p} \r\}\]
+\end{bsp*}
+
+\begin{kor}
+  Ist $G$ eine $p$-Gruppe, so gilt $p | \#Z(G)$, (d.h. $Z(G)$ ist nicht-trivial und also eine $p$-Gruppe)
+\end{kor}
+
+\begin{proof}[Beweis]
+  Seien $g_{1}, ..., g_{n}$ wie im Satz 12. Dann gilt: $C_{G}(g_{i}) < G$ ist eine echte Untergruppe. (sonst $g_{i} = Z(G)$, ist ausgeschlossen)
+  \[\underset{\text{Lagrange}}\imp [G: C_{G}(g_{i})] \text{ teilt } \# G = p^{m}\]
+  ist ungleich 1!
+  \[ \imp p | [G: C_{G}(g_{i})], \forall i \in \{1, ..., n\}\]
+  Klassengleichung modulo $p:$
+  \[\ubr 0_{\# G} \cong \# Z(G) + \sum_{i=1}^n \ubr 0_{[G : C_{G}(g_{i})]} \mod p \imp p | \# Z(G). \qedhere\]
+\end{proof}
+
+\begin{ubng}[Satz von Cauchy](?) Sei $p$ eine Primzahl und $G$ endlich, dann gilt:
+  \[p | \#G \imp \ex g \in G : \ord(g) = p.\]
+  ($\imp \#G$ und $\#\exp(G)$ haben dieselben Primteiler)
+
+  Idee: Verwende Induktion über $\#G$ und die Klassengleichung. In Induktionsschritt 2 Fälle:
+  \begin{enumerate}
+\item $\ex H < G$ echte Untergruppe mit $p | \#H$
+\item $\neg \ex H < G$ echte Untergruppe mit $p | \#H$
+  \end{enumerate}
+  Im 2. Fall wende Klassengleichung mod $p$ an!
+\end{ubng}
+
+\section{Permutationsgruppen}
+Sei $n \in \N$, $\Sn = \Bij(\{1, ..., n\})$, Notation für $\sigma \in \Sn$, d.h. $\sigma : \{1, ..., n\} \to\{1, ..., n\}$ bijektiv ist
+\[\begin{pmatrix}
+1 & 2 & \cdots & n \\
+\sigma(1) & \sigma(2) & \cdots & \sigma(n) \\
+  \end{pmatrix}\]
+Dabei gilt: $(\sigma(1), ..., \sigma(n))$ ist eine Permutation von $\{1, ..., n\}$, d.h. \[\#\{\sigma(1), ..., \sigma(n)\} = n\]
+
+\begin{kor}
+  $\#S_{n} = n!$
+\end{kor}
+\begin{proof}[Beweis](Übung) Betrachte die möglichen ``Wertetabellen'' für Permutationen.
+\end{proof}
+
+\begin{defi}
+  Für $\sigma, \tau \in \Sn$ definiere
+  \begin{enumerate}[(a)]
+    \item $\supp(\sigma) =$ Träger von $\sigma, \supp(\sigma) := \{i \in \{1, ..., n\} \mid \sigma(i) \ne i\}$
+    \item $\sigma$ und $\tau$ sind disjunkt $\iff \supp(\sigma) \cap \supp(\tau) = \emptyset$
+  \end{enumerate}
+\end{defi}
+
+\begin{bem*}
+$\supp(\sigma) = \emptyset \iff 0 = \id$
+\end{bem*}
+
+\begin{lemm}[Andere Interpretation des Trägers]
+  Sei $\sigma \in \Sn$, dann gilt für die Wirkung von $\< \sigma \> : \supp(\sigma) =$ Vereinigung der Bahnen von $\< \sigma \>$ auf $\{1, ..., n\}$ der Länge $\ge 2$.
+\end{lemm}
+\begin{proof}[Beweis] \item
+\begin{itemize}
+\item ``$\subseteq$'': Sei $i \in \supp(\s) \imp \s(i) \ne i \imp \{i, \sigma(i), \sigma^{2}(i), ..., \sigma^{m}(i), ...\}$ ist Bahn von $\<\s\> = \{\s^{j} \mid j \in \Nn\} = \{\id, \s, ..., \s^{r-1}\}$ der Länge $\ge 2$. für $r = \ord(\s)$.
+\item ``$\supseteq$'': Sei $i \notin \supp(\s) \imp \s(i) = i \imp \s^{j}(i) = i, \forall j \in \N \imp$ Bahn von $i$ unter $\<\s\>$ ist 1-elementig.
+\end{itemize}
+\end{proof}
+
+\begin{kor}
+  Für $\s \in \Sn$ gelten:
+  \begin{enumerate}[(a)]
+    \item $i \in \supp (\s) \iff \s(i) \in \supp(\s)$
+    \item  Auf jeder $\<\s\>$-Bahn (durch $i \in \{1, ..., n\}$) wirkt $\s$ als ``zyklische Permutation'', d.h.
+          \[\begin{tikzcd}
+i_n:=i \arrow[r, maps to] & i_2=\sigma(i) \arrow[r, maps to] & i_3 = \sigma^2(i) \arrow[r, maps to] & \cdots \arrow[r, maps to] & i_r = \sigma^{r-1}(i) \arrow[llll, "\sigma"', "(\text{mit } \# \{1\cdots  n\} = r)", maps to, bend left]
+\end{tikzcd}\]
+  \end{enumerate}
+\end{kor}
+\begin{proof}[Beweis]
+\begin{enumerate}[(a)]
+  \item \[i \in \supp(\s) \imp \s(i) \ne i \underset{\s \text{ anwenden}} \imp \s(\s(i)) \ne \s(i) \imp \s(i) \in \supp(\s)\]
+        Falls $\s(i) \in \supp(\s)$, so gilt $\s(\s(i)) \ne \s(i)$
+        \(\underset{\s^{-1} \text{ anwenden}} \imp \s(i) \ne i\)
+  \item Sei $r$ die Länge der Bahn durch $i$ unter $\<\s\>$. Dann sind $i_{j+1}:= \s^{j}(i), j = 0, ..., r-1$ \emph{paarweise verschieden}. Sonst $\ex 0 \le j_1 < j_{2} \le r-1$ mit $\s^{j_{1}}(i) = \s^{j_{2}}(i)$
+        \[\underset{\s^{-1} \text{ anwenden}} \imp i = \s^{j_{2} - j_{1}}(i) \quad (*)\]
+        \(\imp\) Bahn durch $i$ hat höchstens $j_{2} - j_{1} < r$ Elemente, die Bahn ist wegen $(*)$ \[= \{i, \s(i), ..., \s^{j_{2}-j_{1}}(i)\}\]
+        Und nun: Wiederholtes Anwenden von $\s$ gibt den Zykel
+        \[\begin{tikzcd}
+i_1 \arrow[r, maps to] & i_2 \arrow[r, maps to] & \cdots \arrow[r, maps to] & i_r \arrow[lll, bend left]
+\end{tikzcd} \qedhere \]
+\end{enumerate}
+\end{proof}
+
+\begin{lemm}
+  Sind $\s, \tau \in \Sn$ disjunkt, so gilt $\s \tau = \tau \s$.
+\end{lemm}
+
+\begin{proof}[Beweis]
+  Zeige $\sigma \circ \tau = \tau \circ \s$ als Abbildungen $\{1, ..., n\} \to \{1, ..., n\}$, sei $i \in \{1, ..., n\}$
+  \begin{itemize}
+    \item Fall 1: $i \in \supp(\s) \imp \s(i) \in \supp(\s) \imp i, \s(i) \notin \supp(\tau)$.
+          Also $\tau(i) = i, \tau(\sigma(i)) = \sigma(i)$
+    \item Fall 2: $i \in \supp(\tau)$ analog zu Fall 1.
+    \item Fall 3: $i \notin \supp(\s) \cup \supp(\tau) \imp \s(i) = i = \tau(i)$.
+  \end{itemize}
+Also $\s(\tau(i)) = \s(i) = i = \tau(i) = \tau(\sigma(i)).$
+\end{proof}
+(Folge: $\s, \tau$ disjunkt $\imp \ord(\s \tau) = \kgv(\ord(\s), \ord(\tau))$)
+
+\begin{defi}
+  Seien $i_{1}, ..., i_{r} \in \{1, ..., n\}$ paarweise verschieden. Der $r$-Zykel \[(i_{1} \ i_{2}\ \cdots \ i_{r})(j) =
+  \begin{cases}
+    j & j \notin \{i_{1}, ..., i_{r}\} \\
+    i_{s+1} & j = i_{s} \ (s \in \{1, ..., n\}) \\
+    i_{1} & j = i_{r}
+  \end{cases}\]
+$2$-Zykel heißen Transposition.
+Konvention: $( \cdot ):= \id_{\{1, ..., n\}}$ (leerer Zykel).
+Beachte:
+\begin{enumerate}[(i)]
+  \item $(i) = (\cdot)$ für $i \in \{1, ..., n\}$
+  \item $\supp(i_{1} \ i_{2} \ \cdots \ i_{r}) =
+        \begin{cases}
+          \{i_{1}, ..., i_{r}\} & r \ge 2 \\
+          \emptyset & r =1
+        \end{cases}$
+  \item $(i_{1} \ i_{2}\ \cdots \ i_{r}) = (i_{r} \ i_{1} \ i_{2} \ \cdots i_{r-1})$ (Notation ist nicht eindeutig, können Einträge zyklisch weiterschieben.)
+        z.B.
+        \[(1 \ 4\ 7) = (7\ 1\ 4) = (4\ 7\ 1)
+= \begin{tikzcd}
+             & 1 \arrow[rd] &              \\
+7 \arrow[ru] &              & 4 \arrow[ll]
+\end{tikzcd}
+        \]
+  \item $\ord(i_{1}\ \cdots \ i_{r}) = r$, z.B. $\ord(1 \ 2) = 2$
+\end{enumerate}
+\end{defi}
+
+\begin{satz}[Zykeldarstellung]
+  Sei $\s \in \Sn$, seien $I_{1}, ..., I_{t} \subseteq \{1, ..., n\}$. Die verschiedenen Bahnen von $\< \s \>$ der Länge $\ge 2$, dann:
+  \begin{enumerate}[(a)]
+    \item $\ex !$ Zykel $\s_{j}$ der Länge $\# I_{j}$ mit $\supp(\s_{j}) =I_{j}$, so dass $\s_{j}|_{I_{j}} = \s|_{I_{j}}$
+    \item $\s = \s_{1} \cdot ... \cdot \s_{t}$ und die $\s_{i}$ kommutieren paarweise.
+    \item Die Darstellung in (b) ist bis auf Permutation der Faktoren eindeutig.
+    \item Es gilt mit der Notation aus (b):
+          \[\ord(\s) = \kgv(\#I_{1}, ..., \# I_{t})\]
+  \end{enumerate}
+
+\end{satz}
+
+
 \end{document}

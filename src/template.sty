@@ -45,6 +45,7 @@
 \newtheorem{bem}[thm]{Bemerkung}
 \newtheorem*{bem*}{Bemerkung}
 \newtheorem*{bez*}{Bezeichnung}
+\newtheorem*{anw*}{Anwendung}
 \newtheorem*{hin*}{Hinweis}
 \newtheorem{exmp}[thm]{Example}
 \newtheorem{bsp}[thm]{Beispiel}
@@ -66,9 +67,29 @@
 \newcommand{\Nn}{\mathbb{N}_0}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Rn}{\mathbb{R}^n}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\newcommand{\skl}{\langle\cdot,\cdot\rangle}
 
+% generally useful things
+\renewcommand{\hat}{\widehat}
+\renewcommand{\bar}{\overline}
+\newcommand{\und}{\underline}
+\newcommand{\ubr}{\underbrace}
+\newcommand{\obr}{\overbrace}
+\newcommand{\ex}{\exists}
+\newcommand{\imp}{\implies}
+\newcommand{\impb}{\impliedby}
+%\newcommand{\1n}{ \{1, \dots, n\} }
+\newcommand{\fak}{\faktor}
+\renewcommand{\l}{\left}
+\renewcommand{\r}{\right}
+\newcommand{\s}{\sigma}
+
+% Algebra
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\kn}{Kern}
 \DeclareMathOperator{\bil}{Bild}
@@ -80,13 +101,25 @@
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Mon}{Mon}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\kgv}{kgV}
+\DeclareMathOperator{\ggt}{ggT}
 
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\GLn}{GL_n}
 \DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\SLn}{SL_n}
 \DeclareMathOperator{\OR}{O}
+\DeclareMathOperator{\ORn}{O_n}
 \DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\SOn}{SO_n}
+\DeclareMathOperator{\stb}{Stab}
+
+\newcommand{\Sn}{S_n}
+% Topologie
+\newcommand{\T}{\mathcal{T}}
+
 
 \makeatletter
 \DeclareRobustCommand*{\mfaktor}[3][]
