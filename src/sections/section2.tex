@@ -239,6 +239,7 @@ Sei $p$ eine Primzahl, eine Gruppe $G$ heißt $p$-Gruppe $\iff \# = p^{m}$ füe 
   \[\ubr 0_{\# G} \cong \# Z(G) + \sum_{i=1}^n \ubr 0_{[G : C_{G}(g_{i})]} \mod p \imp p | \# Z(G). \qedhere\]
 \end{proof}
 
+\addcontentsline{toc}{subsection}{Satz von Cauchy}
 \begin{ubng}[Satz von Cauchy](?) Sei $p$ eine Primzahl und $G$ endlich, dann gilt:
   \[p | \#G \imp \ex g \in G : \ord(g) = p.\]
   ($\imp \#G$ und $\#\exp(G)$ haben dieselben Primteiler)
@@ -357,17 +358,240 @@ Beachte:
 \end{enumerate}
 \end{defi}
 
-\begin{satz}[Zykeldarstellung]
-  Sei $\s \in \Sn$, seien $I_{1}, ..., I_{t} \subseteq \{1, ..., n\}$. Die verschiedenen Bahnen von $\< \s \>$ der Länge $\ge 2$, dann:
+% Vorlesung 7
+\addcontentsline{toc}{subsection}{Zykeldarstellung von Permutationen}
+\begin{satz}[Zykeldarstellung von Permutationen]
+  Sei $\s \in \Sn$, seien $I_{1}, ..., I_{t} \subseteq \{1, ..., n\}$ die paarweise verschiedenen Bahnen von $\< \s \>$ auf $\{1, ..., n\}$ der Länge $\ge 2$, dann:
   \begin{enumerate}[(a)]
-    \item $\ex !$ Zykel $\s_{j}$ der Länge $\# I_{j}$ mit $\supp(\s_{j}) =I_{j}$, so dass $\s_{j}|_{I_{j}} = \s|_{I_{j}}$
+    \item Für $j \in \{1, ..., t\}\ \ex !$ Zykel $\s_{j} \in \Sn$ mit $\supp(\s_{j}) =I_{j}$, und $\s_{j}|_{I_{j}} = \s|_{I_{j}}$
     \item $\s = \s_{1} \cdot ... \cdot \s_{t}$ und die $\s_{i}$ kommutieren paarweise.
-    \item Die Darstellung in (b) ist bis auf Permutation der Faktoren eindeutig.
-    \item Es gilt mit der Notation aus (b):
-          \[\ord(\s) = \kgv(\#I_{1}, ..., \# I_{t})\]
+    \item Die Darstellung in (b) ist eindeutig bis auf Permutation der Faktoren.
+    \item Für $\s$ gilt: \(\ord(\s) = \kgv(\# I_{j} \mid j \in \{1, ..., t\})\)
   \end{enumerate}
+\end{satz}
+\begin{proof}[Beweis]
+\begin{enumerate}[(a)]
+  \item Sei $r_{j}$ die Länge von $I_{j}$. Sei $i_{j} \in I_{j}$, dann ist (vgl. Beweis von Korollar 19)
+        \[\s_{j}:= (i_{j}, \s(i_{j}), \s^{2}(i_{j}), ..., \s^{r_{j}-1}(i_{j}) \in \Sn\]
+        ein $r_{j}$-Zykel und $\sigma|_{I_{j}} = \s_{j}$
+  \item Die $(\s_{j})$ kommutieren paarweise, denn deren Träger, die Mengen $I_j$, sind paarweise disjunkt.
 
+        Um $\s = \s_{1} \cdot ... \cdot \s_{t}$ zu prüfen, wende beide Abbildungen an auf $i \in \{1, ..., n\}$.
+        \begin{itemize}
+          \item Fall $j \in \{1, ..., t\}: i \in J$
+
+               $(*)$ Es gilt $\s_{j'}(i) = i$ für $j' \ne j$ (da $I_{j'} \cap I_{j} = \emptyset$)
+                \[\imp \s(i) = \s_{j}(i) \overset{(*)} = \l(\s_{j} \cdot \textstyle \prod_{j' \ne j}\s_{j'}\r)(i)\]
+                \[\overset{\s_{j} \text{ kommutieren}} = (\s_{1} \cdot ... \cdot \s_{j} \cdot ... \cdot \s_{t})(i)\]
+          \item Fall $0: i \in \{1, ..., n\} \setminus \bigcup_{j \in \{1, ..., t\}} I_{j}$. Dann:
+                \(\s(i) = i\) (1-elementige Bahn).
+
+                Da $i \notin I_{j}: \s_{j}(i) = i, \forall j \in \eb t$. also $(\s_{1} \cdot \ldots \cdot \s_{t})(i) = i = \s(i)$
+        \end{itemize}
+  \item Es gelte $\s = \s_{1}' \cdot \ldots \s_{t'}'$ mit paarweise disjunkten Zykeln $\s = \s_{1}' \cdot \ldots \s_{t'}'$  der Länge $\ge 2$.
+        Sei $I'_{j'} := \supp(\s'_{j'})$ für $j' \in \eb {t'}$. Dann:
+        \[\s|_{I'_{j'}} = \s'_{j'}|_{I'_{j'}}\]
+        \(\imp {I'_{j'}}\) ist Bahn von $\<\s\>$ der Länge $\ge 2$. $\imp t' = t$ und nach Umindizieren der $I'_{j'}$ gelte \[I'_{j} = I_{j} \text{ für } j \in \eb t\]
+        und $\s_{j}|_{I_{j}} = \s|_{I_{j}} = \s'_{j}|_{I_{j}} \overunderset{\s_{j}, \s'_{j} \text{ sind}}{r_{j} = \#I_{j} \text{-Zykel}}\imp \s_{j} = \s'j$
+  \item (Übung). \qedhere
+\end{enumerate}
+\end{proof}
+\begin{bsp}
+\[\s = \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+        2 & 5 & 8 & 4 & 1 & 6 & 3 & 7
+      \end{pmatrix} \in S_{8}\]
+    \(\imp \<\s\>\)-Bahnen: $\{1, 2, 5\}, \{3, 8, 7\}, \{4\}, \{6\}$ und $\sigma= (1\ 2\ 5)(3\ 8\ 7)$
+\end{bsp}
+
+\begin{defi}[Young-Diagramm/Partition] Sei $\s \in \Sn$, seien $I_{1}, ..., I_{t}$ die Bahnen von $\<\s\>$ (auch Bahnen der Länge $1$), und gelte o.E. $\#I_{1} \ge \#I_{2} \ge \cdots \ge \#I_{t}$.
+  \begin{enumerate}[(a)]
+\item Das Young-Diagramm zu $\s$ ist das Diagramm der Form:
+  \[\begin{ytableau}
+     \ & \ & \ & \ & \ & \ & \ & \ & \none &  \none[\#I_{1}] \\
+     \ & \ & \ & \ & \ & \none & \none & \none & \none &  \none[\#I_{2}] \\
+     \none[\cdots] & \none & \none & \none & \none & \none & \none & \none & \none &  \none[\vdots]\\
+     \ & \none & \none & \none & \none & \none & \none & \none & \none &  \none[\#I_{t}]
+   \end{ytableau}\]
+ im obigen Beispiel 23 \[\ydiagram{3, 3, 1, 1}\]
+    \item Eine Partition von $n$ ist ein Tupel $(n_{1}, ..., n_{t})$ aus  $\N$ mit $n_{1} \ge \cdots \ge n_{t}$ unt $n = n_{1}, + \cdots + n_{t}$.
+          (Young-Diagramm: Möglichkeit eine Partition zu veranschaulichen z.B. ist $(\#I_{1}, ..., \#I_{t})$ eine Partition von $n$)
+  \end{enumerate}
+\end{defi}
+
+\begin{satz}[Übung] \item
+\begin{enumerate}[(a)]
+  \item Seien $i_{1}, ..., i_{r}$ aus $\eb n$ paarweise verschiedene Elemente. Dann gilt $\forall \s \in \Sn:$
+        \[\s \circ (i_{1} \ i_{2} \cdots \ i_{r}) \circ \s^{-1} = (\s(i_{1}) \ \s(i_{2}) \cdots \ \s(i_{r}))\]
+  \item $\s_{1}$ und $\s_{2}$ aus $\Sn$ liegen in dieselben Konjugationsklasse $\iff$ sie haben dasselbe Young-Diagramm.
+\end{enumerate}
 \end{satz}
 
+\begin{bsp*}
+  $S_{5}$ hat 7 Youngdiagramme
+  \[
+    \underline{\ydiagram{1, 1, 1, 1, 1}} \ \
+    \ydiagram{2, 1, 1, 1} \ \
+    \underline{\ydiagram{2, 2, 1}}\ \
+    \underline{\ydiagram{3, 1, 1}}\ \
+    \ydiagram{3, 2}\ \
+    \ydiagram{4, 1}\ \
+    \underline{\ydiagram{5}}
+  \]
+  also auch 7 Konjugationsklassen.
+\end{bsp*}
+\begin{defi*}[Signum-Funktion/Alternierende Gruppe]
+  Sei $\sgn : \Sn \to \{\pm 1\}$ die Signum-Funktion aus der linearen Algebra. $\sgn$ ist eindeutig bestimmt durch:
+  \begin{enumerate}[(i)]
+    \item $\sgn$ ist ein Gruppenhomomorphismus.
+    \item $\sgn(\tau) = -1$, für $\tau$ eine Transposition.
+  \end{enumerate}
+  (jedes $\s \in \Sn$ lässt sich schreiben als Produkt von Transpositionen)
+  $A_{n} = \ker(\sgn) = $ die alternierende Gruppe auf $n$ Elementen
+  \[A_{n} = \{\tau_{1} \cdot ... \cdot \tau_{2m} \mid \tau_{i} \in \Sn, \sgn(\tau) = -1, m \in \N\}\]
+\end{defi*}
 
+\begin{prop}[Formeln für $\sgn$] (Übung) \item
+\begin{enumerate}[(a)]
+  \item Jeder $r$-Zykel $\s$ ist ein Produkt von $r-1$ Transpositionen, und also gilt $\sgn(\s) = (-1)^{r-1}$
+  \item Hat $\s$ die Zykeldarstellung $\s = \s_{1} \cdot ... \cdot \s_{t}$ mit Zykellängen $r_{i}$ (von $\s_{i}$), $i \in \eb t$, so gilt $\sgn(\s) = (-1)^{r_{1} + \cdots + r_{t} - t}$
+\end{enumerate}
+\end{prop}
+
+\begin{bem*}
+Man kann $\sgn$ durch (b) bestimmen und kann dann nachprüfen: $\s$ ist ein Gruppenhomomorphismus.
+\end{bem*}
+
+\begin{lemm}
+  Sei $C_{3} = \{\s \in A_{n} \mid \s \text{ ist 3-Zykel}\}$ und sei $C_{2,2} = \{\s \in A_{n} \mid \s = \tau_{1} \cdot \tau_{2} \text{ mit } \tau_{1}, \tau_{2} \text{ disjunkt.}\}$, dann
+ \begin{enumerate}[(a)]
+\item Für $n \ge 3$ gilt $A_{n} = \<C_{3}\> =: H_{3}$
+\item Für $n \ge 5$ gilt $A_{n} = \<C_{2, 2}\> =: H_{2, 2}$
+\item Für $n \ge 5$ sind $C_{3}$ und $C_{2, 2}$ $A_{n}$-Konjugationsklassen.
+ \end{enumerate}
+\end{lemm}
+% BEWEIS VON LEMMA 27
+\begin{proof}[Beweis]
+\[A_{n} = \{\ubr{\tau_{1} \cdot ... \cdot \tau_{2m}}_{\text{gerade Anzahl}} \mid \tau_{i} \in \Sn \text{ Transpositionen.}\}\]
+
+\begin{enumerate}[(a)]
+  \item Zeige: $\tau, \tau' \in H_{3}$ für $\tau, \tau'$ beliebige Transpositionen in $\Sn$
+        \begin{enumerate}[(i)]
+          \item $\tau = \tau'$:
+
+                \(\tau \cdot \tau' = \id = \sigma^{3}\) für jeden 3-Zykel $\s \in H_{3}$
+          \item $\tau \ne \tau'$ und $\tau, \tau'$ nicht disjunkt:
+
+                also $\tau = (a\ b)$, $\tau' = (b \ c)$ mit $\#\{a, b, c\} = 3, a, b, c \in \eb n$.
+                \[\tau \tau' = (a\ b\ c) = \underset{\substack{a \leftarrow b \leftarrow c \\ c \leftarrow c \leftarrow b \\ b \leftarrow a \leftarrow a}}{(a \ b)(b\ c)}\]
+          \item $\tau \ne \tau'$ und $\tau, \tau'$ disjunkt
+                also $\tau = (a\ b), \tau' = (c\ d), \#\{a, b, c, d\}=4, \{a, b, c, d\} \subseteq \eb n$.
+                \[(a\ c\ b)(a\ c\ d) \overset{\text{(Übung)}}= (a\ b)(c\ d)\]
+        \end{enumerate}
+  \item Zeige $\tau \cdot \tau \in H_{2, 2}$ für $\tau, \tau' \in \Sn$ Transpositionen.
+        \begin{itemize}
+          \item Fall (iii) trivial.
+          \item Fall (i) trivial \[(\tau_{1}\cdot \tau_{2})(\tau_{1}\cdot \tau_{2}) \in \<C_{2, 2}\>= H_{2, 2}\]
+          \item Fall (ii) $\tau = (a\ b), \tau' = (b \ c)$ (wie oben). Wegen $n \ge 5$, finde $d\ne e \in \eb n \setminus \{a, b, c\}$. Dann
+                \[\tau \cdot \tau' = ((a\ b)(d\ e))((b\ c)(d\ e))\]
+        \end{itemize}
+  \item $C_{3}$ ist $A_{n}$-Konjugationsklasse.
+
+        Zu zeigen $(a\ b\ c)$ ($\{a, b, c\} \in \eb n$ 3 elementig) ist konjugiert zu  $(1\ 2\ 3)$.
+
+        Wahle $\s \in \Sn$ mit $\s(1)=a, \s(2)=b, \s(3)=c$.
+        \[\overset{\text{Satz 25}}\imp \s(1\ 2\ 3)\s^{-1} \overset{(*)} (\underbrace a_{{\s(1)}}\ \underbrace b_{{\s(2)}}\ \underbrace c_{{\s(3)}})\]
+        Aber $\sgn(\s)$ ist unklar $+1, -1?$
+
+        Beachte: $(*)$ gilt auch für $\s(4\ 5)$ und: entweder gilt $\sgn(\s) = 1$ oder $\sgn(\s(4\ 5)) = 1$
+        \(\imp (1\ 2\ 3) \in A_{n}\) konjugiert zu $(a\ b\ c)$
+
+        Für $C_{2, 2}$: zu zeigen $(a\ b)(c\ d)$ $A_{n}$-konjugiert zu $(1\ 2)(3\ 4)$ für $\{a, b, c, d\} \subseteq \eb n$ 4-elementig.
+
+        Wähle $\s \in \Sn$ mit $\s(1)=a, \s(2)=b, \s(3)=c, \s(4)=d$
+        \[\imp \s (1\ 2)(3\ 4)\s^{-1} \overset{(**)}= (a\ b)(c\ d)\]
+        und $(*)$ gilt auch für $\s(1\ 2)$ ... etc. (Schließe wie für $C_{3}$.)
+\end{enumerate}
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Einfache Gruppe}
+\begin{defi}[Einfache Gruppe]
+  Eine Gruppe $G$ heißt einfach $\iff \{e\}$ und $G$ sind die einzigen Normalteiler von $G$. (d.h. $G$ hat keine nicht-trivialen Normalteiler)
+\end{defi}
+
+\begin{satz}
+Für $n \ge 5$ ist $A_{n}$ einfach.
+\end{satz}
+\begin{proof}[Beweis]
+  Sei $N \nt A_{n}$ ein Normalteiler und $\{e\} \subsetneq N$ und sei $\s \in N \setminus \{e\}$.
+\begin{itemize}
+\item $n = 5$:
+  \[\underbrace{\ydiagram{2, 2, 1}}_{(*)}\ \ \underbrace{\ydiagram{3, 1, 1}}_{(**)} \ \ \ydiagram{5}\]
+  $(*)$ Doppeltranspositionen bilden $A_{5}$-Konjugationsklasse und erzeugen $A_{5}$ (Lemma 27). Falls Doppeltranspositionen in $N$, so folgt $N = A_{5}$.
+  \newline
+  $(**)$ 3-Zykel bilden $A_{5}$-Konjugationsklasse und erzeugen $A_{5}$ (Lemma 27). Falls $\s$ ein $3-Zykel \imp N = A_{5}$.
+  \newline
+  Gelte $\s = 5$-Zykel $= (a\ b\ c\ d\ e)$. Nun:
+  $N \ni \underbrace{(a\ b\ c)\s(a\ b\ c)^{-1}}_{\in N} \underbrace{\s}_{\in N}$
+        \(\overset{\text{Übung}} = (a\ b\ d) \text{ 3-Zykel}\)
+  \item $n=6$: möglichen Youngdiagramme: (zu $\s \in A_{6} \setminus \{e\}$)
+        \[
+        \overbrace{\ydiagram{2, 2, 1, 1}}^{(*)} \ \
+        \overbrace{\ydiagram{3, 1, 1, 1}}^{(*)} \ \
+        \ydiagram{3, 3} \ \
+        \overbrace{\ydiagram{5, 1}}^{(*)}
+        \]
+        $(*)$ wurden schon im $A_{5}$-Fall erklärt.
+
+        Sei also $\s^{2} = (a\ b\ c)(d\ e\ f) \in N$, mit $\{a, \ldots f\} = \eb 6$. Sei $\tau = (a\ b\ c)$, berechne $\tau(\s)(\tau^{-1})$ (Satz 25)
+        \[\underbrace{\underbrace{\tau \s \tau^{-1}}_{\in N} \underbrace{\s}_{\in N}}_{\in N} = \underset{
+        f\  \longleftarrow\
+        f\  \longleftarrow\ \
+        e\  \longleftarrow\
+        e\  \longleftarrow\  f}{(b\ d\ c)(a\ e\ f)(a\ c\ b)(e\ d\ f)}
+        \overset{\text{Übung}}=(a\ b\ e\ c\ d) \in 5-\text{Zykel}\]
+        wurde schon bei $n=5$ geklärt.
+  \item $n \ge 6:$ o.E. (Permutation von $1, ..., n$) $\s(1) \ne 1$
+        Wähle $\{j, k\} \in \eb n \setminus \{1, \s(1)\}$. Sei $\tau:= (\s(1)\ j \ k) \imp \s^{-1}\tau \s \tau^{-1} \in N$
+        Dann:
+        \begin{enumerate}[(i)]
+          \item $\ph := \tau \s \tau^{-1} \s^{-1} \in N$
+          \item $\ph(\s(n)) = \tau \s \tau^{-1}(1) \overunderset{1 \notin \supp(\tau)}{1 \notin \supp(\tau^{-1})}=\tau \s(1) = j \ne \s(1)$, also $\ph \ne \id$.
+          \item $\# \supp(\ph) \le 6$, denn:
+                \[\ph = \underbrace{\tau}_{\text{3-Zykel}} \cdot \underbrace{\s\underbrace{\tau^{-1}}_{\text{3-Zykel}}\s^{-1}}_{\text{3-Zykel}}\]
+                o.E: $\supp(\ph) \subseteq \eb 6 \imp \ph \in A_{6} \setminus \{e\}$
+        \end{enumerate}
+  \item Fälle $n \le 6$: Nurmalteiler, der von $\ph$ erzeugt wird enthält 3-Zykel oder Doppeltransposition.
+        Dann fertig wegen Lemma 27.\qedhere
+\end{itemize}
+\end{proof}
+
+\begin{bem*}
+  Es gibt eine Klassifikation aller endlich einfachen Gruppen:
+  Liste:
+  \begin{itemize}
+    \item $\fak \Z{(p)}, p$ prim
+    \item $A_{n}, n \ge 5$
+    \item endliche Gruppen vom Lie typ:
+          \begin{enumerate}[(i)]
+            \item $\fak {\SLn(K)}{Z(\SLn(K))}$ bis auf einige kleine $\#K$ sind einfach (endlich falls $K$ endlich).
+            \item Weitere Untergruppen von $\SLn$, welche zu ``linearen algebraischen Gruppen'' korrespondieren.
+          \end{enumerate}
+          \item 26 weitere.
+  \end{itemize}
+\end{bem*}
+
+\section{Sylow Theoreme}
+\begin{satz}[Sylow I; nach Wieland]
+  Sie $G$ eine endliche Gruppe, $p$ eine Primzahl, $k \in \N$ sodass $p^{k} | \#G$, sei
+  \[n_{k}:= \#\{H \le G \mid \#H = p^{k}\}\]
+  Dann ist
+  \[n_{k} \equiv 1 \mod p\]
+  insbesondere $\exists H \le G$ mit $\#H = p^{k}$
+\end{satz}
+\begin{ubng*}[Vorbereitung]
+  Sei $p$ eine Primzahl, $k \in \Nn, m \in \N$, dann:
+  \[\binom {mp^{k}}{p^{k}} = m \cdot u\]
+  wobei $\N \ni u \equiv 1 \mod p.$
+\end{ubng*}
 \end{document}

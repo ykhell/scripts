@@ -28,4 +28,8 @@
 \contentsline {subsection}{Eigenschaften von Wirkungen}{28}{Item.176}%
 \contentsline {subsection}{Satz von Cayley}{30}{Item.195}%
 \contentsline {subsection}{Stabilisator}{30}{thm.2.6}%
+\contentsline {subsection}{Satz von Cauchy}{33}{thm.2.14}%
 \contentsline {section}{\numberline {2.2}Permutationsgruppen}{33}{section.2.2}%
+\contentsline {subsection}{Zykeldarstellung von Permutationen}{35}{Item.215}%
+\contentsline {subsection}{Einfache Gruppe}{38}{Item.240}%
+\contentsline {section}{\numberline {2.3}Sylow Theoreme}{40}{section.2.3}%

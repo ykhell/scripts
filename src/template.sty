@@ -8,8 +8,9 @@
 \usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{faktor}
-\usepackage{tikz-cd}
-\usepackage{color}   %May be necessary if you want to color links
+\usepackage{tikz-cd} % Commutative diagrams
+\usepackage{ytableau} % Young diagrams
+\usepackage{color}
 \usepackage{docmute}
 \usepackage{import}
 \usepackage{hyperref}
@@ -50,6 +51,7 @@
 \newtheorem{exmp}[thm]{Example}
 \newtheorem{bsp}[thm]{Beispiel}
 \newtheorem*{bsp*}{Beispiel}
+\newtheorem*{defi*}{Definition}
 \newtheorem*{bspe*}{Beispiele}
 \newtheorem{Conc}[thm]{Conclusion}
 \newtheorem*{nota*}{Notation}
@@ -87,12 +89,14 @@
 \newcommand{\fak}{\faktor}
 \renewcommand{\l}{\left}
 \renewcommand{\r}{\right}
+\newcommand{\nt}{\trianglelefteq}
 \newcommand{\s}{\sigma}
 
 % Algebra
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\kn}{Kern}
-\DeclareMathOperator{\bil}{Bild}
+\renewcommand{\ker}{\operatorname{Kern}}
+\DeclareMathOperator{\bil}{Kern}
 
 \DeclareMathOperator{\Abb}{Abb}
 \DeclareMathOperator{\Bij}{Bij}
@@ -102,6 +106,7 @@
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Mon}{Mon}
 \DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\kgv}{kgV}
 \DeclareMathOperator{\ggt}{ggT}
@@ -115,6 +120,8 @@
 \DeclareMathOperator{\SO}{SO}
 \DeclareMathOperator{\SOn}{SO_n}
 \DeclareMathOperator{\stb}{Stab}
+
+\newcommand{\eb}[1]{\{1, \ldots, #1\}}
 
 \newcommand{\Sn}{S_n}
 % Topologie

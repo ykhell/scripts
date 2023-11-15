@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  13 NOV 2023 21:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  15 NOV 2023 01:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -482,6 +482,24 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowwidth=\dimen260
 \pgfarrowlinewidth=\dimen261
 )))
+(/usr/local/texlive/2023basic/texmf-dist/tex/latex/ytableau/ytableau.sty
+Package: ytableau 2021/06/12 v1.4 Many-featured Young tableaux and Young diagra
+ms
+\tableaux@YT=\box64
+\thistableau@YT=\box65
+\refhtdp@YT=\box66
+\toks@YT=\toks42
+\opttoksa@YT=\toks43
+\opttoksb@YT=\toks44
+\boxdim@YT=\dimen262
+\tableauwd@YT=\dimen263
+\count@YT=\count293
+
+(/usr/local/texlive/2023basic/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks45
+\pgfopts@list@add@b@toks=\toks46
+))
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/docmute/docmute.sty
 Package: docmute 2012/03/22 v1.4 Input stand-alone documents
 )
@@ -543,11 +561,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count293
+\c@section@level=\count294
 )
-\@linkdim=\dimen262
-\Hy@linkcounter=\count294
-\Hy@pagecounter=\count295
+\@linkdim=\dimen264
+\Hy@linkcounter=\count295
+\Hy@pagecounter=\count296
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
@@ -560,7 +578,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/local/texlive/2023basic/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count296
+\Hy@SavedSpaceFactor=\count297
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
@@ -574,14 +592,14 @@ Package hyperref Info: Plain pages OFF on input line 4192.
 Package hyperref Info: Backreferencing OFF on input line 4197.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4425.
-\c@Hy@tempcnt=\count297
+\c@Hy@tempcnt=\count298
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen263
+\XeTeXLinkMargin=\dimen265
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -590,9 +608,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count298
-\Field@Width=\dimen264
-\Fld@charsize=\dimen265
+\Fld@menulength=\count299
+\Field@Width=\dimen266
+\Fld@charsize=\dimen267
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -604,9 +622,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count299
-\c@Item=\count300
-\c@Hfootnote=\count301
+\Hy@abspage=\count300
+\c@Item=\count301
+\c@Hfootnote=\count302
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -618,8 +636,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count302
-\c@bookmark@seq@number=\count303
+\Fld@listcount=\count303
+\c@bookmark@seq@number=\count304
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/rerunfilecheck/rerunfilechec
 k.sty
@@ -634,15 +652,15 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip58
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 20.
-\c@thm=\count304
+Package hyperref Info: Option `colorlinks' set `true' on input line 21.
+\c@thm=\count305
 \symmathx=\mathgroup6
 )
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.d
 ef
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count305
-\l__pdf_internal_box=\box64
+\l__color_backend_stack_int=\count306
+\l__pdf_internal_box=\box67
 ) (./main.aux)
 \openout1 = `main.aux'.
 
@@ -667,17 +685,17 @@ LaTeX Font Info:    ... okay on input line 7.
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count306
-\scratchdimen=\dimen266
-\scratchbox=\box65
-\nofMPsegments=\count307
-\nofMParguments=\count308
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count309
-\MPscratchDim=\dimen267
-\MPnumerator=\count310
-\makeMPintoPDFobject=\count311
-\everyMPtoPDFconversion=\toks43
+\scratchcounter=\count307
+\scratchdimen=\dimen268
+\scratchbox=\box68
+\nofMPsegments=\count308
+\nofMParguments=\count309
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count310
+\MPscratchDim=\dimen269
+\MPnumerator=\count311
+\makeMPintoPDFobject=\count312
+\everyMPtoPDFconversion=\toks48
 )
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.s
 ty
@@ -694,7 +712,7 @@ Package hyperref Info: Link coloring ON on input line 7.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-\docmute@nestinglevel=\count312
+\docmute@nestinglevel=\count313
 LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -806,21 +824,31 @@ st $\OML/cmm/m/it/10 g[]; :::; g[]$ \OT1/cmr/m/it/10 ein Repr^^?asentantensyste
 m
  []
 
-[32] [33] [34]) [35] (./main.aux)
+[32] [33] [34] [35] [36] [37] [38]
+Overfull \hbox (5.07335pt too wide) in paragraph at lines 586--587
+[][]\OT1/cmr/bx/n/10 Satz 2.30 \OT1/cmr/m/n/10 (Sy-low I; nach Wieland)\OT1/cmr
+/bx/n/10 . []\OT1/cmr/m/it/10 Sie $\OML/cmm/m/it/10 G$ \OT1/cmr/m/it/10 eine en
+dliche Gruppe, $\OML/cmm/m/it/10 p$ \OT1/cmr/m/it/10 eine Primzahl,
+ []
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+[39]) [40] (./main.aux)
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 95FB7A10773D2E82B2128F7BBB2A88A8;4523.
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 95FB7A10773D2E82B2128F7BBB2A88A8;4523
+(rerunfilecheck)             After:  6ED9FE260A70CD8D4001953D01B769EF;5148.
  ) 
 Here is how much of TeX's memory you used:
- 21779 strings out of 477476
- 417154 string characters out of 5824243
- 1873388 words of memory out of 5000000
- 41300 multiletter control sequences out of 15000+600000
+ 22036 strings out of 477476
+ 423259 string characters out of 5824243
+ 1884388 words of memory out of 5000000
+ 41509 multiletter control sequences out of 15000+600000
  525945 words of font info for 80 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,18n,117p,540b,1172s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,18n,117p,513b,1172s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/public/ma
 thabx/mathx10.600pk> </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/p
 k/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fo
@@ -847,10 +875,10 @@ ic/amsfonts/symbols/msam5.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023basic/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023basic/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (35 pages, 395084 bytes).
+Output written on main.pdf (40 pages, 418935 bytes).
 PDF statistics:
- 819 PDF objects out of 1000 (max. 8388607)
- 728 compressed objects within 8 object streams
- 344 named destinations out of 1000 (max. 500000)
+ 884 PDF objects out of 1000 (max. 8388607)
+ 788 compressed objects within 8 object streams
+ 384 named destinations out of 1000 (max. 500000)
  261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
