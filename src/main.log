@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  15 NOV 2023 01:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  17 NOV 2023 05:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -728,13 +728,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/usr/local/texlive/2023basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-(./main.toc)
+(./main.toc [3])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [3] [4
-
-]
+ [4]
 Kapitel 1.
 (./sections/section1.tex
 
@@ -745,7 +743,9 @@ Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 15.
 
-[5] [6]
+[5
+
+] [6]
 Overfull \hbox (18.14714pt too wide) in paragraph at lines 116--117
 []$\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 ) := \O
 MS/cmsy/m/n/10 f\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 2 [][]\OT1/cmr/m/n/10 (\OML
@@ -785,7 +785,7 @@ gt aus $(\OMS/cmsy/m/n/10 ^^C\OT1/cmr/m/n/10 )$ (Verkn^^?upfung in $[](\OML/cmm
  []
 
 
-Overfull \hbox (49.38011pt too wide) in paragraph at lines 70--71
+Overfull \hbox (49.38011pt too wide) in paragraph at lines 71--72
 []$\OML/cmm/m/it/10 ^^U$ \OT1/cmr/m/n/10 ist $\OML/cmm/m/it/10 n$\OT1/cmr/m/n/1
 0 -fach tran-si-tiv ($\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 N$\OT
 1/cmr/m/n/10 ), wenn f^^?ur alle Paare von $\OML/cmm/m/it/10 n$\OT1/cmr/m/n/10 
@@ -795,7 +795,7 @@ Overfull \hbox (49.38011pt too wide) in paragraph at lines 70--71
  []
 
 [28]
-Overfull \hbox (7.57716pt too wide) in paragraph at lines 92--93
+Overfull \hbox (7.57716pt too wide) in paragraph at lines 93--94
 []$\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^B [] ! []\OML/cmm/m/it/10 ; \OT1/cmr/m
 /n/10 (\OML/cmm/m/it/10 g; g[]H\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 7! \OML/cmm/m
 /it/10 gg[]H$ \OT1/cmr/m/n/10 Die Klassen $\OML/cmm/m/it/10 gH$ \OT1/cmr/m/n/10
@@ -803,21 +803,21 @@ Overfull \hbox (7.57716pt too wide) in paragraph at lines 92--93
  []
 
 
-Overfull \hbox (40.22739pt too wide) in paragraph at lines 103--104
+Overfull \hbox (40.22739pt too wide) in paragraph at lines 104--105
 \OT1/cmr/m/it/10 ist $\OML/cmm/m/it/10 X$ \OT1/cmr/m/it/10 die dis-junkte Vere-
 ini-gung seiner Bah-nen. (Ist $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/
 n/10 )[]$ \OT1/cmr/m/it/10 ein Repr^^?asentantensystem
  []
 
 [29] [30]
-Overfull \hbox (15.43114pt too wide) in paragraph at lines 194--195
+Overfull \hbox (15.43114pt too wide) in paragraph at lines 198--199
 [][]\OT1/cmr/bx/n/10 Korollar 2.11. []\OT1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 X$
  \OT1/cmr/m/it/10 eine links-$\OML/cmm/m/it/10 G$\OT1/cmr/m/it/10 -Menge. Sei $
 \OML/cmm/m/it/10 x[]; :::; x[]$ \OT1/cmr/m/it/10 ein Repr^^?asentantensystem
  []
 
 [31]
-Overfull \hbox (21.635pt too wide) in paragraph at lines 213--214
+Overfull \hbox (21.635pt too wide) in paragraph at lines 220--221
 [][]\OT1/cmr/bx/n/10 Satz 2.12 \OT1/cmr/m/n/10 (Klas-sen-gle-ichung)\OT1/cmr/bx
 /n/10 . []\OT1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 G$ \OT1/cmr/m/it/10 endlich. I
 st $\OML/cmm/m/it/10 g[]; :::; g[]$ \OT1/cmr/m/it/10 ein Repr^^?asentantensyste
@@ -825,27 +825,21 @@ m
  []
 
 [32] [33] [34] [35] [36] [37] [38]
-Overfull \hbox (5.07335pt too wide) in paragraph at lines 586--587
+Overfull \hbox (5.07335pt too wide) in paragraph at lines 599--600
 [][]\OT1/cmr/bx/n/10 Satz 2.30 \OT1/cmr/m/n/10 (Sy-low I; nach Wieland)\OT1/cmr
 /bx/n/10 . []\OT1/cmr/m/it/10 Sie $\OML/cmm/m/it/10 G$ \OT1/cmr/m/it/10 eine en
 dliche Gruppe, $\OML/cmm/m/it/10 p$ \OT1/cmr/m/it/10 eine Primzahl,
  []
 
 [39]) [40] (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 95FB7A10773D2E82B2128F7BBB2A88A8;4523
-(rerunfilecheck)             After:  6ED9FE260A70CD8D4001953D01B769EF;5148.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: DCFC3B30CED6F2F48889CCDBCCC0ACAF;6772.
  ) 
 Here is how much of TeX's memory you used:
- 22036 strings out of 477476
- 423259 string characters out of 5824243
- 1884388 words of memory out of 5000000
- 41509 multiletter control sequences out of 15000+600000
+ 22051 strings out of 477476
+ 423411 string characters out of 5824243
+ 1885388 words of memory out of 5000000
+ 41524 multiletter control sequences out of 15000+600000
  525945 words of font info for 80 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  113i,18n,117p,513b,1172s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -875,10 +869,10 @@ ic/amsfonts/symbols/msam5.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023basic/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023basic/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (40 pages, 418935 bytes).
+Output written on main.pdf (40 pages, 424191 bytes).
 PDF statistics:
- 884 PDF objects out of 1000 (max. 8388607)
- 788 compressed objects within 8 object streams
+ 965 PDF objects out of 1000 (max. 8388607)
+ 868 compressed objects within 9 object streams
  384 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 389 words of extra memory for PDF output out of 10000 (max. 10000000)
 

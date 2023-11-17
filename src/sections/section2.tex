@@ -3,7 +3,7 @@
 \begin{document}
 \section{Strukturtheorie zu Gruppen (``Einige Aussagen'')}
 Sei im Weiteren $M$ ein Monoid, $G$ eine Gruppe und $X$ eine Menge.
-\addcontentsline{toc}{section}{Wirkung}
+\addcontentsline{toc}{section}{Wirkungen}
 \begin{defi}[\textbf{Wirkung}]
 \label{def:Wirkung}
   Eine Abbildung
@@ -65,10 +65,11 @@ $G$ wirkt auf eine Gruppe $N$ heißt, man hat einen Gruppenhomomorphismus $G \to
 \begin{defi}[Eigenschaften von Wirkungen]
   Sei $\lambda: G \times X \to X$ eine Linkswirkung von $G$ auf $X$.
   \begin{enumerate}[(a)]
-    \item Die Bahn zu $x \in X$ ist $Gx = \{gx \mid g \in G\}$. Die Länge der Bahn zu $x$ ist $\#Gx$
+\addcontentsline{toc}{subsection}{Bahn}
+    \item Die \textbf{Bahn} zu $x \in X$ ist $Gx = \{gx \mid g \in G\}$. Die Länge der Bahn zu $x$ ist $\#Gx$
     \item $\lambda$ ist transitiv $\iff \forall y, z \in X \exists g \in G : gy=z \overset{\text{Übung}}\iff \forall y \in X : Gy = X \overset{\text{Übung}}\iff \exists x \in X : Gx = X$
     \item $\lambda$ ist $n$-fach transitiv ($n \in \N$), wenn für alle Paare von $n$-Tupeln $(x_{1}, ..., x_{n}), (y_{1}, ..., y_{n}) \in X^{n}$ mit $\#\{x_{1}, ..., x_{n}\} = \#\{y_{1}, ..., y_{n}\}$ gilt $\exists g \in G : gx_{i} = y_{i}, \forall i$.
-    \item Die Wirkung heißt treu, wenn der induzierte Gruppenhomomorphismus $\ph: G \to \Bij(X)$ (aus Proposition 2) injektiv ist $$\overset{\text{Übung}} \iff \forall g \in G \setminus \{e\} : \exists x \in X : \underbrace{gX \ne X}_{\ph_{g}(x) \ne \id_{X}(x)}$$
+    \item Die Wirkung heißt \textbf{treu}, wenn der induzierte Gruppenhomomorphismus $\ph: G \to \Bij(X)$ (aus Proposition 2) injektiv ist $$\overset{\text{Übung}} \iff \forall g \in G \setminus \{e\} : \exists x \in X : \underbrace{gX \ne X}_{\ph_{g}(x) \ne \id_{X}(x)}$$
   \end{enumerate}
 \end{defi}
 \begin{bsp}\item
@@ -127,7 +128,7 @@ Jede Gruppe $G$ (jedes Monoid $M$) ist isomorph zu einer Untergruppe (einem Unte
 \begin{defi}[\textbf{Stabilisator}]
   Sei $X$ eine Links-$G$-Menge und $x \in X$, dann heißt
   \[G_{x} := \stb_{G}(x) := \{g \in G \mid gx = x\}\]
-  Stabilisator von $x$ (unter $G$).
+  \textbf{Stabilisator} von $x$ (unter $G$).
   Warnung: $G_{x} \ne G\cdot x$.
 \end{defi}
 \begin{bsp*}
@@ -155,6 +156,7 @@ Jede Gruppe $G$ (jedes Monoid $M$) ist isomorph zu einer Untergruppe (einem Unte
   \end{enumerate}
 \end{proof}
 
+\addcontentsline{toc}{subsection}{Bahngleichung}
 \begin{prop}[Bahngleichung]
   Sei $X$ eine links-$G$-Menge, $x \in X$, dann gilt:
   \begin{itemize}
@@ -181,8 +183,10 @@ Jede Gruppe $G$ (jedes Monoid $M$) ist isomorph zu einer Untergruppe (einem Unte
 \begin{defi}% definition 10
   Sei $X$ eine links-$G$-Menge,
   \begin{enumerate}[(a)]
-    \item Man sagt $G$ operiert frei auf $X \iff \forall x \in X : G_{x} = \{e\}$
-    \item Die Menge der Fixpunkte der $G$-Wirkung ist \[X^{G} := \{x \in X \mid G_{x} = G\}\]
+\addcontentsline{toc}{subsection}{Freie Operation}
+    \item Man sagt $G$ operiert \textbf{frei} auf $X \iff \forall x \in X : G_{x} = \{e\}$
+\addcontentsline{toc}{subsection}{Fixpunkte}
+    \item Die Menge der \textbf{Fixpunkte} der $G$-Wirkung ist \[X^{G} := \{x \in X \mid G_{x} = G\}\]
   \end{enumerate}
 \end{defi}
 
@@ -202,19 +206,23 @@ Aus Proposition 5 folgt (a), Lemma 9 gibt (b).
 \end{proof}
 \begin{anw*}
 Sei $X:= G$. Sei die $G$-Wirkung durch Konjugation gegeben, d.h. \[g \ubr {\circ}_{\text{Wirk.}} h = ghg^{-1}\]
-Die Bahnen unter dieser $G$-Wirkung heißen Konjugationsklassen. Die Konjugationsklasse zu $h \in G = X$ ist \[G_{h} := \{ghg^{-1} \mid g \in G\}\]
+\addcontentsline{toc}{subsection}{Konjugationsklasse}
+Die Bahnen unter dieser $G$-Wirkung heißen \textbf{Konjugationsklassen}. Die Konjugationsklasse zu $h \in G = X$ ist \[G_{h} := \{ghg^{-1} \mid g \in G\}\]
 Bahnen der Länge 1 sind Fixpunkte unter Konjugation mit allen $g \in G$
 \[= \{h \in G \mid \forall g \in G : \ubr{ghg^{-1} = h}_{gh = hg} \} =: Z(G) \text{ das Zentrum von }G\]
 Stabilisator zu $h \in G$ (unter Konjugationswirkung)
 \[ = \{g \in G \mid ghg^{-1} = h\} = C_{G}(h) \text{ Zentralisator von } h\]
 \end{anw*}
 Aus Korollar 11 ergibt sich nun:
+
+\addcontentsline{toc}{subsection}{Klassengleichung}
 \begin{satz}[Klassengleichung]
   Sei $G$ endlich. Ist $g_{1}, ..., g_{n}$ ein Repräsentantensystem der Konjugationsklassen der Länge $\ge 2$, so gilt:
   \[\# \ubr{G}_{X} = \#\ubr{Z(G)}_{X^{G}} + \sum_{i = 1}^{n}[G : \ubr{C_{G}(g_{i})}_{C_{g}}]\]
 \end{satz}
 
-\begin{defi}
+\addcontentsline{toc}{subsection}{p-Gruppe}
+\begin{defi}[\textbf{$p$-Gruppe}]
 Sei $p$ eine Primzahl, eine Gruppe $G$ heißt $p$-Gruppe $\iff \# = p^{m}$ füe ein $m \in \N$
 \end{defi}
 \begin{bsp*}
@@ -269,8 +277,10 @@ Dabei gilt: $(\sigma(1), ..., \sigma(n))$ ist eine Permutation von $\{1, ..., n\
 \begin{defi}
   Für $\sigma, \tau \in \Sn$ definiere
   \begin{enumerate}[(a)]
-    \item $\supp(\sigma) =$ Träger von $\sigma, \supp(\sigma) := \{i \in \{1, ..., n\} \mid \sigma(i) \ne i\}$
-    \item $\sigma$ und $\tau$ sind disjunkt $\iff \supp(\sigma) \cap \supp(\tau) = \emptyset$
+\addcontentsline{toc}{subsection}{Träger}
+    \item $\supp(\sigma) =$ \textbf{Träger} von $\sigma, \supp(\sigma) := \{i \in \{1, ..., n\} \mid \sigma(i) \ne i\}$
+\addcontentsline{toc}{subsection}{disjunkte Permutationen}
+    \item $\sigma$ und $\tau$ sind \textbf{disjunkt} $\iff \supp(\sigma) \cap \supp(\tau) = \emptyset$
   \end{enumerate}
 \end{defi}
 
@@ -330,13 +340,14 @@ Also $\s(\tau(i)) = \s(i) = i = \tau(i) = \tau(\sigma(i)).$
 (Folge: $\s, \tau$ disjunkt $\imp \ord(\s \tau) = \kgv(\ord(\s), \ord(\tau))$)
 
 \begin{defi}
-  Seien $i_{1}, ..., i_{r} \in \{1, ..., n\}$ paarweise verschieden. Der $r$-Zykel \[(i_{1} \ i_{2}\ \cdots \ i_{r})(j) =
+\addcontentsline{toc}{subsection}{Zykel/Transposition}
+  Seien $i_{1}, ..., i_{r} \in \{1, ..., n\}$ paarweise verschieden. Der $r$-\textbf{Zykel} \[(i_{1} \ i_{2}\ \cdots \ i_{r})(j) =
   \begin{cases}
     j & j \notin \{i_{1}, ..., i_{r}\} \\
     i_{s+1} & j = i_{s} \ (s \in \{1, ..., n\}) \\
     i_{1} & j = i_{r}
   \end{cases}\]
-$2$-Zykel heißen Transposition.
+$2$-Zykel heißen \textbf{Transposition}.
 Konvention: $( \cdot ):= \id_{\{1, ..., n\}}$ (leerer Zykel).
 Beachte:
 \begin{enumerate}[(i)]
@@ -360,7 +371,7 @@ Beachte:
 
 % Vorlesung 7
 \addcontentsline{toc}{subsection}{Zykeldarstellung von Permutationen}
-\begin{satz}[Zykeldarstellung von Permutationen]
+\begin{satz}[\textbf{Zykeldarstellung von Permutationen}]
   Sei $\s \in \Sn$, seien $I_{1}, ..., I_{t} \subseteq \{1, ..., n\}$ die paarweise verschiedenen Bahnen von $\< \s \>$ auf $\{1, ..., n\}$ der Länge $\ge 2$, dann:
   \begin{enumerate}[(a)]
     \item Für $j \in \{1, ..., t\}\ \ex !$ Zykel $\s_{j} \in \Sn$ mit $\supp(\s_{j}) =I_{j}$, und $\s_{j}|_{I_{j}} = \s|_{I_{j}}$
@@ -404,7 +415,8 @@ Beachte:
     \(\imp \<\s\>\)-Bahnen: $\{1, 2, 5\}, \{3, 8, 7\}, \{4\}, \{6\}$ und $\sigma= (1\ 2\ 5)(3\ 8\ 7)$
 \end{bsp}
 
-\begin{defi}[Young-Diagramm/Partition] Sei $\s \in \Sn$, seien $I_{1}, ..., I_{t}$ die Bahnen von $\<\s\>$ (auch Bahnen der Länge $1$), und gelte o.E. $\#I_{1} \ge \#I_{2} \ge \cdots \ge \#I_{t}$.
+\addcontentsline{toc}{subsection}{Young-Diagramm/Partition}
+\begin{defi}[\textbf{Young-Diagramm/Partition}] Sei $\s \in \Sn$, seien $I_{1}, ..., I_{t}$ die Bahnen von $\<\s\>$ (auch Bahnen der Länge $1$), und gelte o.E. $\#I_{1} \ge \#I_{2} \ge \cdots \ge \#I_{t}$.
   \begin{enumerate}[(a)]
 \item Das Young-Diagramm zu $\s$ ist das Diagramm der Form:
   \[\begin{ytableau}
@@ -440,7 +452,8 @@ Beachte:
   \]
   also auch 7 Konjugationsklassen.
 \end{bsp*}
-\begin{defi*}[Signum-Funktion/Alternierende Gruppe]
+\addcontentsline{toc}{subsection}{Signum-Funktion/Alternierende Gruppe}
+\begin{defi*}[\textbf{Signum-Funktion/Alternierende Gruppe}]
   Sei $\sgn : \Sn \to \{\pm 1\}$ die Signum-Funktion aus der linearen Algebra. $\sgn$ ist eindeutig bestimmt durch:
   \begin{enumerate}[(i)]
     \item $\sgn$ ist ein Gruppenhomomorphismus.
@@ -515,8 +528,8 @@ Man kann $\sgn$ durch (b) bestimmen und kann dann nachprüfen: $\s$ ist ein Grup
 \end{proof}
 
 \addcontentsline{toc}{subsection}{Einfache Gruppe}
-\begin{defi}[Einfache Gruppe]
-  Eine Gruppe $G$ heißt einfach $\iff \{e\}$ und $G$ sind die einzigen Normalteiler von $G$. (d.h. $G$ hat keine nicht-trivialen Normalteiler)
+\begin{defi}[\textbf{Einfache Gruppe}]
+  Eine Gruppe $G$ heißt \textbf{einfach} $\iff \{e\}$ und $G$ sind die einzigen Normalteiler von $G$. (d.h. $G$ hat keine nicht-trivialen Normalteiler)
 \end{defi}
 
 \begin{satz}
@@ -593,5 +606,6 @@ Für $n \ge 5$ ist $A_{n}$ einfach.
   Sei $p$ eine Primzahl, $k \in \Nn, m \in \N$, dann:
   \[\binom {mp^{k}}{p^{k}} = m \cdot u\]
   wobei $\N \ni u \equiv 1 \mod p.$
+
 \end{ubng*}
 \end{document}

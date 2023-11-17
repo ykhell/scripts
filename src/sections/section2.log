@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  15 NOV 2023 01:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  17 NOV 2023 05:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -735,7 +735,7 @@ gt aus $(\OMS/cmsy/m/n/10 ^^C\OT1/cmr/m/n/10 )$ (Verkn^^?upfung in $[](\OML/cmm
 [1
 
 {/usr/local/texlive/2023basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (49.38011pt too wide) in paragraph at lines 70--71
+Overfull \hbox (49.38011pt too wide) in paragraph at lines 71--72
 []$\OML/cmm/m/it/10 ^^U$ \OT1/cmr/m/n/10 ist $\OML/cmm/m/it/10 n$\OT1/cmr/m/n/1
 0 -fach tran-si-tiv ($\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 N$\OT
 1/cmr/m/n/10 ), wenn f^^?ur alle Paare von $\OML/cmm/m/it/10 n$\OT1/cmr/m/n/10 
@@ -745,7 +745,7 @@ Overfull \hbox (49.38011pt too wide) in paragraph at lines 70--71
  []
 
 [2]
-Overfull \hbox (7.57716pt too wide) in paragraph at lines 92--93
+Overfull \hbox (7.57716pt too wide) in paragraph at lines 93--94
 []$\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^B [] ! []\OML/cmm/m/it/10 ; \OT1/cmr/m
 /n/10 (\OML/cmm/m/it/10 g; g[]H\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 7! \OML/cmm/m
 /it/10 gg[]H$ \OT1/cmr/m/n/10 Die Klassen $\OML/cmm/m/it/10 gH$ \OT1/cmr/m/n/10
@@ -753,21 +753,21 @@ Overfull \hbox (7.57716pt too wide) in paragraph at lines 92--93
  []
 
 
-Overfull \hbox (40.22739pt too wide) in paragraph at lines 103--104
+Overfull \hbox (40.22739pt too wide) in paragraph at lines 104--105
 \OT1/cmr/m/it/10 ist $\OML/cmm/m/it/10 X$ \OT1/cmr/m/it/10 die dis-junkte Vere-
 ini-gung seiner Bah-nen. (Ist $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/
 n/10 )[]$ \OT1/cmr/m/it/10 ein Repr^^?asentantensystem
  []
 
 [3] [4]
-Overfull \hbox (15.43114pt too wide) in paragraph at lines 194--195
+Overfull \hbox (15.43114pt too wide) in paragraph at lines 198--199
 [][]\OT1/cmr/bx/n/10 Korollar 0.11. []\OT1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 X$
  \OT1/cmr/m/it/10 eine links-$\OML/cmm/m/it/10 G$\OT1/cmr/m/it/10 -Menge. Sei $
 \OML/cmm/m/it/10 x[]; :::; x[]$ \OT1/cmr/m/it/10 ein Repr^^?asentantensystem
  []
 
 
-Overfull \hbox (21.635pt too wide) in paragraph at lines 213--214
+Overfull \hbox (21.635pt too wide) in paragraph at lines 220--221
 [][]\OT1/cmr/bx/n/10 Satz 0.12 \OT1/cmr/m/n/10 (Klas-sen-gle-ichung)\OT1/cmr/bx
 /n/10 . []\OT1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 G$ \OT1/cmr/m/it/10 endlich. I
 st $\OML/cmm/m/it/10 g[]; :::; g[]$ \OT1/cmr/m/it/10 ein Repr^^?asentantensyste
@@ -777,10 +777,10 @@ m
 [5]
 
 Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead
- on input line 221.
+ on input line 229.
 
 [6] [7] [8] [9] [10] [11] [12]
-Overfull \hbox (5.07335pt too wide) in paragraph at lines 586--587
+Overfull \hbox (5.07335pt too wide) in paragraph at lines 599--600
 [][]\OT1/cmr/bx/n/10 Satz 0.30 \OT1/cmr/m/n/10 (Sy-low I; nach Wieland)\OT1/cmr
 /bx/n/10 . []\OT1/cmr/m/it/10 Sie $\OML/cmm/m/it/10 G$ \OT1/cmr/m/it/10 eine en
 dliche Gruppe, $\OML/cmm/m/it/10 p$ \OT1/cmr/m/it/10 eine Primzahl,
@@ -788,16 +788,16 @@ dliche Gruppe, $\OML/cmm/m/it/10 p$ \OT1/cmr/m/it/10 eine Primzahl,
 
 [13] [14] (./section2.aux)
 Package rerunfilecheck Info: File `section2.out' has not changed.
-(rerunfilecheck)             Checksum: 3A2525FFA4B00C41F93EFFC980A3AD8C;1572.
+(rerunfilecheck)             Checksum: 33E6059E10A6BCF32F5F84F2EFA79E14;3190.
  ) 
 Here is how much of TeX's memory you used:
- 21656 strings out of 477476
- 419364 string characters out of 5824243
- 1883388 words of memory out of 5000000
- 41408 multiletter control sequences out of 15000+600000
+ 21667 strings out of 477476
+ 419468 string characters out of 5824243
+ 1882388 words of memory out of 5000000
+ 41419 multiletter control sequences out of 15000+600000
  517394 words of font info for 50 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,15n,117p,542b,1172s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,15n,117p,542b,1173s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/
 ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
@@ -817,10 +817,10 @@ e/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/tex
 live/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/
 local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
 fb>
-Output written on section2.pdf (14 pages, 262430 bytes).
+Output written on section2.pdf (14 pages, 265111 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
- 275 compressed objects within 3 object streams
+ 364 PDF objects out of 1000 (max. 8388607)
+ 311 compressed objects within 4 object streams
  127 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -24,12 +24,24 @@
 \contentsline {subsection}{Semi-direktes Produkt}{26}{thm.1.56}%
 \contentsline {chapter}{\numberline {2}Gruppen Strukturtheorie}{27}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Strukturtheorie zu Gruppen (``Einige Aussagen'')}{27}{section.2.1}%
-\contentsline {section}{Wirkung}{27}{section.2.1}%
+\contentsline {section}{Wirkungen}{27}{section.2.1}%
 \contentsline {subsection}{Eigenschaften von Wirkungen}{28}{Item.176}%
+\contentsline {subsection}{Bahn}{28}{thm.2.3}%
 \contentsline {subsection}{Satz von Cayley}{30}{Item.195}%
 \contentsline {subsection}{Stabilisator}{30}{thm.2.6}%
+\contentsline {subsection}{Bahngleichung}{31}{Item.199}%
+\contentsline {subsection}{Freie Operation}{31}{thm.2.10}%
+\contentsline {subsection}{Fixpunkte}{31}{Item.200}%
+\contentsline {subsection}{Konjugationsklasse}{32}{Item.203}%
+\contentsline {subsection}{Klassengleichung}{32}{Item.203}%
+\contentsline {subsection}{p-Gruppe}{32}{thm.2.12}%
 \contentsline {subsection}{Satz von Cauchy}{33}{thm.2.14}%
 \contentsline {section}{\numberline {2.2}Permutationsgruppen}{33}{section.2.2}%
+\contentsline {subsection}{Träger}{33}{thm.2.17}%
+\contentsline {subsection}{disjunkte Permutationen}{33}{Item.206}%
+\contentsline {subsection}{Zykel/Transposition}{34}{thm.2.21}%
 \contentsline {subsection}{Zykeldarstellung von Permutationen}{35}{Item.215}%
+\contentsline {subsection}{Young-Diagramm/Partition}{36}{thm.2.23}%
+\contentsline {subsection}{Signum-Funktion/Alternierende Gruppe}{37}{Item.227}%
 \contentsline {subsection}{Einfache Gruppe}{38}{Item.240}%
 \contentsline {section}{\numberline {2.3}Sylow Theoreme}{40}{section.2.3}%
