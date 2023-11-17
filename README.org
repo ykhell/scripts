@@ -1,0 +1,4 @@
+#+title: Readme
+
+* Bemerkung
+Dies sind meine persönlichen Notizen, die ich teile. Das Skript ist nicht offiziell und entählt wahrscheinlich Fehler.
