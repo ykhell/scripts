@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  17 NOV 2023 05:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  20 NOV 2023 19:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -109,6 +109,10 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/local/texlive/2023basic/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
 )
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
@@ -655,9 +659,9 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip58
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 21.
+Package hyperref Info: Option `colorlinks' set `true' on input line 22.
 \c@thm=\count305
-\symmathx=\mathgroup6
+\symmathx=\mathgroup7
 )
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.d
 ef
@@ -726,6 +730,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 5.
+
+
+(/usr/local/texlive/2023basic/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
 Overfull \hbox (0.29237pt too wide) in paragraph at lines 50--51
 []$\OML/cmm/m/it/10 '$ \OT1/cmr/m/n/10 ist ein Grup-pen-ho-mo-mor-phis-mus: fol
 gt aus $(\OMS/cmsy/m/n/10 ^^C\OT1/cmr/m/n/10 )$ (Verkn^^?upfung in $[](\OML/cmm
@@ -780,47 +790,87 @@ Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead
  on input line 229.
 
 [6] [7] [8] [9] [10] [11] [12]
-Overfull \hbox (5.07335pt too wide) in paragraph at lines 599--600
-[][]\OT1/cmr/bx/n/10 Satz 0.30 \OT1/cmr/m/n/10 (Sy-low I; nach Wieland)\OT1/cmr
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 599.
+
+
+Overfull \hbox (2.9011pt too wide) in paragraph at lines 601--602
+[][]\OT1/cmr/bx/n/10 Satz 0.30 \OT1/cmr/m/n/10 (Sy-low I, nach Wieland)\OT1/cmr
 /bx/n/10 . []\OT1/cmr/m/it/10 Sie $\OML/cmm/m/it/10 G$ \OT1/cmr/m/it/10 eine en
-dliche Gruppe, $\OML/cmm/m/it/10 p$ \OT1/cmr/m/it/10 eine Primzahl,
+dliche Gruppe, $\OML/cmm/m/it/10 p$ \OT1/cmr/m/it/10 ein Primteiler
  []
 
-[13] [14] (./section2.aux)
+[13] [14]
+Overfull \hbox (5.4962pt too wide) in paragraph at lines 656--657
+[]\OT1/cmr/m/n/10 Betrachte nun $\OML/cmm/m/it/10 G$\OT1/cmr/m/n/10 -Bahn durch
+ $\OML/cmm/m/it/10 S \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 X[]$\OT1/cmr/m/n/10 , 
+Be-haup-tung: $#\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 S$ \OT
+1/cmr/m/n/10 ist Vielfaches
+ []
+
+[15]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 685.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 685.
+
+[16] [17]
+Overfull \hbox (19.82184pt too wide) in paragraph at lines 805--807
+[][]\OT1/cmr/bx/n/10 Korollar 0.38. []\OT1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 G$
+ \OT1/cmr/m/it/10 endlich, seien $\OML/cmm/m/it/10 p[]; :::; p[]$ \OT1/cmr/m/it
+/10 die paar-weise ver-schiede-nen Primteiler
+ []
+
+
+Overfull \hbox (2.1929pt too wide) in paragraph at lines 842--843
+[]\OT1/cmr/m/n/10 Idee: Sei $\OML/cmm/m/it/10 P \OMS/cmsy/m/n/10 2 \OML/cmm/m/i
+t/10 Syl[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$, be-tra-chte $\
+OML/cmm/m/it/10 G$\OT1/cmr/m/n/10 -Wirkung auf $[]$ durch Linkstrans-
+ []
+
+[18] [19] [20] [21] (./section2.aux)
 Package rerunfilecheck Info: File `section2.out' has not changed.
-(rerunfilecheck)             Checksum: 33E6059E10A6BCF32F5F84F2EFA79E14;3190.
+(rerunfilecheck)             Checksum: 1A7500955E2DF29A0AE41DC7DC3DDCE5;4047.
  ) 
 Here is how much of TeX's memory you used:
- 21667 strings out of 477476
- 419468 string characters out of 5824243
+ 21786 strings out of 477476
+ 421133 string characters out of 5824243
  1882388 words of memory out of 5000000
- 41419 multiletter control sequences out of 15000+600000
- 517394 words of font info for 50 fonts, out of 8000000 for 9000
+ 41468 multiletter control sequences out of 15000+600000
+ 517889 words of font info for 53 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  113i,15n,117p,542b,1173s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/
-ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023basic/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023basic/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023basic/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023basic/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023basic/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023basic/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023basi
-c/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023b
-asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/20
-23basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texliv
-e/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/tex
-live/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/
-local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb>
-Output written on section2.pdf (14 pages, 265111 bytes).
+ </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/public/ma
+thabx/mathx10.600pk> </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/p
+k/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023bas
+ic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023
+basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2
+023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texl
+ive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
+xlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/l
+ocal/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
+r/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+</usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.p
+fb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msam7.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/typ
+e1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2023basic/texmf-dist/f
+onts/type1/public/rsfs/rsfs10.pfb>
+Output written on section2.pdf (21 pages, 322281 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 311 compressed objects within 4 object streams
- 127 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 502 PDF objects out of 1000 (max. 8388607)
+ 432 compressed objects within 5 object streams
+ 187 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

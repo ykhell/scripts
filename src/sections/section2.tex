@@ -595,17 +595,376 @@ Für $n \ge 5$ ist $A_{n}$ einfach.
 \end{bem*}
 
 \section{Sylow Theoreme}
-\begin{satz}[Sylow I; nach Wieland]
-  Sie $G$ eine endliche Gruppe, $p$ eine Primzahl, $k \in \N$ sodass $p^{k} | \#G$, sei
+
+\addcontentsline{toc}{subsection}{Sylow I}
+\begin{satz}[Sylow I, nach Wieland]
+  Sie $G$ eine endliche Gruppe, $p$ ein Primteiler von $\#G$, $k \in \N$ sodass $p^{k} | \#G$, setze
   \[n_{k}:= \#\{H \le G \mid \#H = p^{k}\}\]
-  Dann ist
+  Dann gilt:
   \[n_{k} \equiv 1 \mod p\]
-  insbesondere $\exists H \le G$ mit $\#H = p^{k}$
+  Insbesondere ist $n_{k} \ne 0$, d.h. $\exists H \le G$ mit $\#H = p^{k}$.
 \end{satz}
 \begin{ubng*}[Vorbereitung]
   Sei $p$ eine Primzahl, $k \in \Nn, m \in \N$, dann:
   \[\binom {mp^{k}}{p^{k}} = m \cdot u\]
   wobei $\N \ni u \equiv 1 \mod p.$
-
 \end{ubng*}
+\begin{proof}[Beweis](zu 30)
+  Durch Analyse der Wirkung von $G$ auf $X:= \{S \subseteq G \mid \#S=p^{k}\}$
+  gegeben durch
+  \[\lm: G \times X \to X, (g, S) \mps g \cdot S = \{g \cdot s \mid s \in S\}\]
+  (beachte: $\ell_{g} : h \mps g \cdot h$ ist bijektiv $\imp \#gS = \#S = p^{k}$ d.h. $g \cd S  \in X$)
+  Setze $m:= \# \fak G{p^{k}}$, für $S \in X$ definiere
+  \[G_{S} := \mathrm{Stab}_{G}(S) = \{g \in G \mid gS = S\}\]
+\begin{enumerate}
+  \item $\forall S \in X : \#G_{S} | p^{k}$:
+
+        Beachte: $G_{S}$ wirkt auf $S$ (da $gS = S \forall g \in G_{S}$) durch Linkstranslation:\[G_{S} \tm S \to S, (g, s) \mps g \cd s\]
+        Scchreibe $S$ als disjunkte Vereinigung seiner $G_{S}$-Bahnen.
+        \[S = \bigsqcup_{i \in \eb \ell} G_{S}h_{i}\]
+        wobei $h_{1}, ..., h_{\ell}$ ein Repräsentantensystem der Bahnen ist.
+
+        Beachte: $r_{h_{i}}: g \mps gh_{i}$ ist bijektiv.
+        Also folgt $\#G_{S}h_{i} = \#G_{S}$
+        \[\imp p^{k} = \#S = \sum_{i=1}^{\ell} \#G_{S}h_{i} = \sum_{i=1}^{\ell} \#G_{S} = \ell \#G_{S}\]
+        d.h. $\#G_{S} | p^{k}$.
+  \item Sei $X_{0}:= \{S \in X \mid \#G_{S} = p^{k}\}$ und $X_{1}:= X \setminus X_{0}$
+
+        Behauptung: $\#X_{0} = m \cdot n_{k}$
+        \begin{enumerate}[(a)]
+          \item Sei $H \le G$ eine Untergruppe mit $\#H = p^{k}$, dann:
+                \[\{S \in X_{0} \mid G_{S} = H\} = \{Hg \mid g \in G\}\]
+                Denn:
+                \begin{itemize}
+                  \item ``$\subseteq$'': Gelte $G_{S} = H$, d.h. $H \cd S = S \imp H\cd s \subseteq S, \forall s \in S$.
+
+                        Aber: $\#H\cd s \underset{r_{s}\text{ist bij.}}= \#H = p^{k} = \#S \imp H\cd s = S \imp s$ (ist das gesuchte $g$)
+                  \item ``$\supseteq$'': Zu zeigen: $\stb_{G}(H \cd s) = H$. Sei $g \in G$.
+                        \[g \in \stb_{G}(Hs) \iff g Hs = Hs \underset{r_{s}\text{ist bij.}} \iff gH = H \underset{H\le G} \iff g \in H\]
+                \end{itemize}
+          \item \[X_{0} = \bigsqcup_{H \le G, \#H = p^{k}}\{S \in X \mid G_{S} = H\} \overset{(a)} = \bigsqcup_{H \le G, \#H = p^{k}}\{Hg \mid g \in G\}\]
+                \[\#X_{0} = \sum_{H \le G, \#H = p^{k}}\#\ubr{\{Hg \mid g \in G\}}_{= \mfaktor HG} \overset{\text{Lagrange}} = \frac{\#G}{\#H} = \frac{\#G}{p^{k}} =m\]
+                \[ = m\l(\sum_{H \le G, \#H = p^{k}} 1\r) = m \cdot n_{k}\]
+        \end{enumerate}
+  \item $pm | \#X_{1}$
+        \begin{enumerate}[(a)]
+          \item $G$ wirkt auf $X_{1}$ (durch $(g, S) \mps gS$)
+
+                d.h. gilt $S \in X_{1}$ und $g \in G$, so auch $gS \in X_{1}$. Es genügt also zu zeigen: $\#G_{gS} = \#G_{S}$
+
+                Dazu: \[G_{gS} = \stb_{G}(gS) = g \stb_{G}(S)g^{-1} = gG_{S}g^{-1} \overunderset{\text{Konj. mit }g}{\text{ist Gruppenisom.}} \cong G_{S}. \]
+          \item Betrachte nun $G$-Bahn durch $S \in X_{1}$, Behauptung: $\#G\cdot S$ ist Vielfaches von $p\cdot m$
+
+                Dazu: Bahngleichung:
+                \[\#G\cdot S = \fak{\#G}{\#G_{S}} = \fak{mp^{k}}{\#G_{S}}\]
+                da $\#G_{S}$ echter Teiler von $p^{k}$, also Teiler von $p^{k-1} \imp \#GS$ ist Vielfaches von $\fak{mp^{k}}{p^{k-1}} = mp$
+                \[(m \cd \fak{2^{5}}{2^{4}} = m \cd 2, \quad m \cd \fak{2^{5}}{2^{2}} = m \cd 2^{3},)\]
+          \item Schreibe nun $X_{1}$ als disjunkte Vereinigung seiner Bahnen
+                \[X_{1} = \bigsqcup_{j \in I}G \cdot \ubr{S_{j}}_{\text{Bahnrepr.}}\]
+                und $\#G \cdot S_{j} = m \cd p \cd a_{j}, a_{j} \in \N$
+                \[\imp \#X_{1} = \sum_{j \in J}\#G \cd S_{j} = m \cd p \cd \ubr{\sum_{j \in J}a_{j}}_{=: N \in \N}\]
+        \end{enumerate}
+  \item $\#X = \#X_{0} + \#X_{1} = m \cd n_{k} + m \cd p \cd N = m(n_{k}+pN)$
+
+        gleichzeitig: \[\#X = \#\{S \subseteq G \mid \#S = p^{k}\} \underset{\#G = m \cd p^{k}} = \binom{m\cd p^{k}}{p^{k}} \underset{\text{Übung}} = m \cd u\]
+        für ein $u \in \N : u \equiv 1 \mod p$.
+        \[\imp m(n_{k} + pN) = n \cd u \imp n_{k}+pN = u \underset{\mod p} n_{k} \equiv u \equiv 1 \mod p. \qedhere\]
+\end{enumerate}
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Satz von Cauchy}
+\begin{kor}[\textbf{Satz von Cauchy}]
+  Sei $G$ eine endliche Gruppe mit $p | \#G$ für $p$ eine Primzahl, dann $\ex g \in G : \ord(g) = p$
+  \begin{proof}[Beweis]
+    Nach Sylow I $\ex H \le G : \#H = p$, sei $g \in H \setminus \{e\}$. Dann gilt $\ord(g) = p$.
+
+    ($\ord(g) \ne 1$ und $\ord(g) | \#G=p$).
+  \end{proof}
+\end{kor}
+
+\addcontentsline{toc}{subsection}{$p$-Sylow Gruppe}
+\begin{defi}[\textbf{$p$-Sylow Gruppe}]
+  Sei $G$ endlich, gelte $\#G = p^{f} \cd m$ für $m, f \in \N$ sodass $p \not | m$. Eine Untergruppe $H \le G$ mit $\#H = p^{f}$ heißt $p$-Sylow (Unter-)Gruppe von $G$, schreiben \[\mathrm{Syl}_{p}(G) = \{H \le G \mid H \text{ ist }p-\text{Sylow}\}\]
+  \[\mathrm{syl}_p(G) = \#\mathrm{Syl}_{p}(G)\]
+\end{defi}
+
+\addcontentsline{toc}{subsection}{Normalisator}
+\begin{defi}[\textbf{Normalisator}]
+  Der Normalisator einer Untergruppe $H \le G$ ist \[N_{G}(H):=\{g \in G \mid gHg^{-1} = H\}\]
+  ($c_{g}$ ist Automorphismus $\imp \#gHg^{-1} = \#H, \forall g \in G$)
+\end{defi}
+
+
+\begin{int*}
+Sei $X:= \{H \mid H \le G\}$, $X$ ist eine $G$-Menge durch Konjugation $c: G \times X \to X, (g, H) \mps gHg^{-1}$
+\end{int*}
+
+
+\begin{prop}[Übung]
+\begin{enumerate}[(a)]
+  \item $N_{G}(H) \underset{\text{für }H \le G} = \stb_{G}(H)$
+
+        (Insbesondere ist $N_{G}(H) \le G$ eine Untergruppe.)
+  \item Es gelten: $H \nt N_{G}(H)$ und $N_{G}(H)$ ist die größte Untergruppe von $G$, sodass $H$ ein Normalteiler in dieser ist.
+\end{enumerate}
+\end{prop}
+
+
+\begin{lemm}
+  Sei $H \le G$ eine $p$-Gruppe, $P \in \mathrm{Syl}_{p}(G)$ ($p$ eine Primzahl), dann:
+  \begin{enumerate}[(a)]
+    \item Gilt $P \le H$, so folgt $P = H$.
+    \item Ist $H \le N_{G}(P)$, so gilt $H \le P$.
+    \item Gilt $H \nsubseteq P$ , so folgt $\stb_{H}(P) < H$ (ist echte Untergruppe)
+  \end{enumerate}
+\begin{proof}[Beweis]
+  \begin{enumerate}[(a)]
+          \item Schreibe $\#G = p^{f}\cd m$, so dass $p \not | m$ ($m, f \in \N$), $P$ $p$-Sylow Untergruppe $\imp \#P = p^{f}$.
+
+          $H$ eine $p$-Gruppe in $G \underset{\text{Lagrange}}\imp \#H | p^{f} \cd m$. also $\#H | p^{f}$
+
+          Nun: $P \subseteq H$ und $p^{f} = \#P \ge \#H \imp P = H$ (und $\#H = p^{f}$)
+    \item Sei $G' = N_{G}(P)$. Aus Proposition
+          \[\imp P \nt G' \overunderset{\text{Nach}}{\text{Voraussetzung}}\imp H \le G' \overunderset{\text{Erster}}{\text{Isomorphiesatz}} \imp P \nt P \cd H\] und
+          \[\fak {(P \cd H)}{P} \cong \fak H{P \cap H}\]
+          Ordnung ist $p$-Potenz, evtl $p^{f}$
+          \[\underset{\text{Lagrange}}\imp \#P \cd H = \ubr{\#P}_{p\text{-Potenz}} \cd \ubr{\#\fak{P \cd H}{P}}_{p\text{-Potenz}}\]
+          Also ist $P \cd H$ eine $p$-Gruppe mit $P \subseteq PH$
+          \[\underset{(a)} \imp PH = P \underset{eH \subseteq P}\imp H \subseteq P\]
+    \item Gelte $H \nsubseteq P$. zu zeigen: $\stb_{H}(P) < H$
+
+          Angenommen: $H = \stb_{H}(P) = \ubr{\{h \in H \mid hPh^{-1} = P\}}_{=H \cap \stb_{G}(P)} = H \cap N_{G}(P)$
+          Dann folgt
+          \[H \subseteq N_{G}(P) \underset{(b)} \imp H \subseteq G. \qedhere\]
+  \end{enumerate}
+\end{proof}
+\end{lemm}
+
+\addcontentsline{toc}{subsection}{Sylow II}
+\begin{satz}[\textbf{Sylow II}]
+  Sei $G$ endlich, $p$ ein Primteiler von $\#G$. Dnan:
+  \begin{enumerate}[(a)]
+    \item Je 2 $p$-Sylow Gruppen von $G$ sind kunjugiert.
+    \item Jede $p$-Gruppe $H$ mit $H \le G$ liegt in einer $p$-Sylow Gruppe von $G$.
+    \item $\forall P \in \Syl_{p}(G): \syl_{p}(G) = [G : N_{G}(P)]$ und insbesondere $(P \le N_{G}(P))$ gilt $\syl_{p}(G) | [G : P]$
+  \end{enumerate}
+  \begin{proof}[Beweis]
+    \begin{enumerate}[(a)]
+      \item $X:= \Syl_{p}(G)$ ist $G$-Menge via Konjugation ($P \in \Syl_{p}(G)$ und $g \in G \imp \#gPg^{-1} = \#P \imp gPg^{-1} \in \Syl_{p}(G)$)
+
+      Zu zeigen: $G$ wirkt transitiv auf $X$.
+
+      Annahme: $X$ besteht aus $t \ge 2$ Bahnen, also \[X = \bigsqcup_{i \in \eb t} G \circ P_{i}\]
+      für geeignete Repräsentantensystem $P_{1}, ..., P_{t} \in \Syl_{p}(G)$ ($g \circ P = gPg^{-1}$)
+
+      Behauptung: $p | \#G \circ P_{i}, \forall i \in \eb t$.
+
+      Dazu: Wähle $j \ne i$ betrachte die $P_{j}$-Wirkung auf $G \circ P_{i}$. Schreibe wieder $G \circ P_{i}$ als disjunkte Vereinigung von $P_{j}$-Bahnen:
+      \[G \circ P_{i} = P_{j} \circ Q_{1} \sqcup \cdots \sqcup P_{j}\circ Q_{s} \quad (*)\]
+      ($s \in \N$ geeignet, $Q_{\ell} \in \Syl_{p}(G)$ geeignet)
+
+      Bahngleichung:
+      \[\#P_{j}\circ Q_{\ell} = \fak{\#P_{j}}{\#\stb_{P_{j}}(Q_{\ell})}\]
+      beachte: $P_{j} \notin G \circ P_{i}$, d.h. $P_{j} \ne Q_{\ell}$
+      \[\underset{35(c)} \imp \stb_{P_{j}}(Q_{\ell}) < P_{j} \imp \#P_{j} \circ Q_{\ell} \ne 1 \text{ und teilt } \#P_{j} \imp p | \#P_{j}\circ Q_{\ell}\]
+      $\imp p$ alle Bahnlängen in $(*)$ von $G \circ P$ als $P_{j}$-Menge $\imp p | \#G \circ P_{i}, \forall i \imp p | \#\Syl_{p}(G)$
+      \[\imp \Syl_{p}(G) = \bigsqcup_{i \in \eb t}G \circ P_{i}\]
+      Widerspruch zu (0): $\syl_{p}(G) \equiv 1 \mod p$.
+      \item Annahme: $H \le G$ eine $p$-Gruppe liegt in keiner $p$-Sylow. Betrachte Konjugationswirkung von $H$ auf $X = \Syl_{p}(G)$. Schreibe
+            \[X= H \circ R_{1} \sqcup \cdots \sqcup H \circ R_{w}\]
+            ($w \in \N$) die $R_{i}$ sind Repräsentanten der Bahnen. Beachte $H \nsubseteq R_{i}$ ($i \in \eb w$). Wie in $(a)$ gilt $\stb_{H}(R_{i}) < H$ also, dass $p | \#H \circ R_{i}, \forall i \imp p | \#X$ Widerspruch zu (0).
+      \item Bahngleichung für $P \in \Syl_{p}(G)$
+            (Verwenden (a), d.h. $G \circ P = \Syl_{p}(G)$)
+            \[\syl_{p}(G)=\#\Syl_{p}(G) = \fak {\#G}{\#\stb_{G}(P)} : \fak {\#G}{\#N_{G}(P)} = [G : N_{G}(P)]\]
+            ($\syl_{p}(G)$ teilt $[G: P]$ schon oben eingesehen, da $P \le N_{G}(P)$)
+    \end{enumerate}
+
+\end{proof}
+\end{satz}
+
+\begin{kor}
+  Sei $G$ endlich und $p$ ein Primteiler von $\#G$, dann $\syl_{p}(G) = 1 \iff$ jede $p$-Sylow ist ein Nullteiler in $G$.
+  \begin{proof}[Beweis]
+    Für $P \in \Syl_{p}(G)$ gilt:
+    \[P \nt G \iff N_{G}(P) = G \underset{36(c)}\iff \syl_{p}(G) = [G : N_{p}(G)] = 1.\qedhere\]
+  \end{proof}
+\end{kor}
+
+% \begin{satz} % TODO Supposed to be 36
+%   Sei $G$ eine endliche Gruppe, $p$ Primteiler von $\#$, dann:
+%   \begin{enumerate}[(a)]
+%     \item $Syl_p(G) = 1 \mod p$
+%     \item $G$ wirkt transitiv auf $Syl_{p}(G)$
+%     \item $\forall H \le G$ mit $H$ eine $p$-Gruppe $\exists P \in Syl_{p}(G) : H \le G$
+%     \item $Syl_{p}(G) = [G : N_{G}(\cdot)] \#P \in Syl_{p}(G)$
+%           Insbesondere $Syl_{p}(G)$ teilt $[G: P] = \fak{\#G}{\#P}$
+%   \end{enumerate}
+% \end{satz}
+
+\begin{kor}% KOROLLAR 38
+  Sei $G$ endlich, seien $p_{1}, ..., p_{t}$ die paarweise verschiedenen Primteiler von $\#G$. Sei $P_{i} \in \Syl_{p_{i}}(G)$. Dann gilt:
+  sind $P_{1}, ..., P_{t}$ Normalteiler von $G$, so folgt: die Abbildung $P_{1} \times \cdots \times P_{t} \to G, (g_{1}, ..., g_{t}) \mapsto g_{1}\cdot ... \cdot g_{t}$ ist ein Gruppenisomorphismus.
+\end{kor}
+\begin{proof}[Beweis]
+  $P_{i} \nt G$ für $i \in \eb t$
+
+  und $\ggt(\#P_{i}, \#P_{j}) \underset{i \ne j} = 1$ ($p_{i}, p_{j}$ versch. Primzahlen)
+  und $\prod_{i=1}^{t}\#P_{i} = \#G$
+$\underset{\text{Kor. 1.55}}\imp $ die angegebene Abbildung ist ein Gruppenisomorphismus.
+\end{proof}
+
+\begin{bsp*}
+  Ist $G$ abelsch, so sind alle Untergruppen Normalteiler.
+\end{bsp*}
+
+\begin{kor} %39
+  $G$ endlich abelsch und $p_{i}$ und $P_{i}$ wie in Korollar 38. So gilt: $\bigtimes_{i=1}^{t}P_{i} \xrightarrow{\text{wie in Kor. 38}} G$ ist Gruppenisomorphismus. ($P_{i}$ sind abelsche $p_{i}$-Gruppen).
+\end{kor}
+
+\begin{satz} %40
+Sei $G$ eine endliche abelsche $p$-Gruppe, dann $\ex ! t \in \N, \ex! e_{1} \ge e_{2} \ge \cdots \ge e_{t} \in \N$, sodass
+\[G \cong \bigtimes_{i=1}^{t}\fak{\Z}{p^{e_{i}}}\]
+\end{satz}
+
+\begin{bsp*}
+$G$ abelsch mit $\ord(G) = 105 \imp G \cong \fak \Z {3\Z} \times \fak \Z {5\Z} \times \fak \Z {7\Z}$
+\end{bsp*}
+
+\begin{whg*}
+$G$ heißt einfach $\iff $ einzige Nullteiler von $G$ sind $\{e\}$ und $G$.
+\end{whg*}
+
+
+\begin{lemm}[Übung] %41
+  sei $G$ endlich, $\# G = p^{f}\cd  m$ mit $f, m \in \N, p$ Primzahl und $p \not | m$. Dann:
+  $p^{f} \not |(m-1)! \imp G$ ist nicht einfach.
+\begin{proof}[Beweis]
+  Idee: Sei $P \in Syl_{p}(G)$, betrachte $G$-Wirkung auf $\fak GP$ durch Linkstranslation, d.h.
+  \[\rho: G \to \Bij(\fak GP), g \mapsto \ell g\]
+  Trick: $\ker(\rho)$ ist der gesuchte Normalteiler.
+\end{proof}
+\end{lemm}
+
+\begin{satz}
+Ist $G$ einfache Gruppe mit $\#G < 60$, so gilt $G \cong \fak \Z p$ für $p$ eine Primzahl.
+\end{satz}
+\begin{proof}[Beweis]
+  Sei $G$ einfach mit $\#G < 60$. o.E. $\#G$ keine Primzahl, sonst fertig.
+  o.E. $G$ ist keine $p$-Gruppe für Primzahl $p$. (sonst: $Z(G) \supsetneq \{e\} \overunderset{G \text{ einfach}}{Z(G) \nt G} \imp G = Z(G)$, d.h. $G$ abelsch. $\underset{G \text{ einfach}} \imp G \cong \fak \Z p$)
+
+  Fall $\# = p^{f}m$ mit $p^{f} \not | (n-1)! \imp G$ nicht einfach (Lemma 41)
+
+  (Übung)Es bleiben $\#G \in \{\ubr{30}_{2 \cdot 3 \cdot 5}, \ubr{40}_{2^{3} \cdot 5}, \underbrace{56}_{2^{3}\cdot 7}\}$
+
+  Fall 1: $\#G = 2^{3} \cdot 5$, dann:
+  $Syl_{5}(G) \cong 1(5)$ (Sylow I)
+
+  $Syl_{5}(G)$ teilt $\fak {\#G}5 = 8$ (Sylow II)
+
+  Teiler von $8: 1, 2, 4, 8$
+  Kongruenz erzwingt $Syl_{5}(G) = 1 \underset{37} \imp$ die einzige $5$-Sylow Untergruppe von $G$ ist ein Normalteiler (Widerspruch zu $G$ einfach)
+
+  Fall 2: $\# G = 2^{3} \cdot 7$, dann (Shritte wie im Fall 1 für $p=7$)
+  \[Syl_{7}(G) \in \{1, 8\}\]
+  (teilt $8$, $\cong 1 \mod 7$)
+
+  Fall: Es gibt $8$ $7$-Sylow Untergruppen, isomorph zu $\fak \Z 7$
+
+  Beachte: 2 $7$-Sylow's schneiden sich nur in $\{e\}$ (sonst sinid sie gleich, Elemente $\ne e$ sind Erzeuer)
+
+  $\imp$ es gibt $8\cdot 6$ Elemente in $G$ der Ordnung $7$
+
+  $\imp$ Es gibt $56-48 = 8$ Elemente in $G$ der Ordnung $\ne 7$
+
+  Aber: Es gibt (mindestens) eine 2-Sylow Untergruppe von $G$ und die hat Ordnung $8 = 2^{3}$.
+
+  Es folgt: Die 8 obigen Elemente bilden die einzig mögliche 2-Sylow Untergruppe von $G$.
+
+  $\imp Syl_{2}(G) = 1 \imp$ die 2-Sylow ist ein nicht triviale Normalteiler von $G$.
+
+
+  Fall 3 (Übung)
+\end{proof}
+\begin{bem*} Die Zahl 60 ist optimal, denn $A_{5}$ ist einfach, nicht zyklisch (von Primzahlordnung) und hat 60 Elemente.
+\end{bem*}
+
+\section{Auflösbare Gruppen} %TODO FROM HERE
+\begin{defi}
+  \begin{enumerate}[(a)]
+    \item Eine aufsteigende Folge von Untergruppen $G_{0} < G_{1} < G_{2} < \cdots < G_{t} = G$ von $G$ heißt Normalreihe, wenn
+          $\forall i \in \eb t : G_{i-1} \nt G_{i}$ ist Normalteiler.
+
+          Schreibe auch $(G_{i})_{i=0}^{t}$ oder $\&$ für die Folge.
+    \item die Faktorgruppe $(\fak{G_{i}}{G_{i-1}})_{i=1}^{t}$ heißen Faktoren der Normalreihe.
+    \item Eine Normalreihe $\G$ heißt Zerlegungsreihe $\iff$ alle Faktoren sind einfach.
+    \item $X$ heißt abelsch $\iff$ alle Faktoren sind abelsch.
+    \item $G$ heißt auflösbar $\iff G$ besitzt eine abelsche Normalreihe.
+    \item Ist $\G': G_{0}' < G_{1}' < \cdots < G'_{t'} = G$ eine weitere Normalreihe, so heißt $\G'$ \textbf{echt} feiner als $\G \iff$
+          \[\{G_{i} \mid i \in \{0, ..., t\}\} \subsetneq \{G_{j}' \mid j \in \{0, ..., t'\}\}\]
+  \end{enumerate}
+\end{defi}
+\begin{bsp*} %TODO Did not write this weew
+
+\end{bsp*}
+
+
+\begin{prop} %44
+  Sei $G " \{e\} = G_{0} \nt G_{1} \nt \cdots G_{t} = G$ eine Normalereihe, dann:
+  \begin{enumerate}[(a)]
+    \item $G$ ist eine Zerlegungsreihe $iff G$ besitzt keine echte Verfeinerung.
+    \item Es gilt $2^{t} \le \#G$
+    \item Ist $G$ endlich, so besitzt $G$ eine Verfeinerung, die eine Zerlegungsreihe ist.
+    \item Ist $G$ abelsch, so ist auch Verfeinerung abelsch.
+  \end{enumerate}
+\begin{proof}[Beweis]
+  \begin{enumerate}[(a)]
+    \item $G$ ist keine Zerlegungsreihe $\iff \ex i \in \eb t : \fak {G_{i}}{G_{i-1}}$ nicht einfach $\iff \ex i \in \eb t : \bar H \nt \fak {G_{i}}{G_{i-1}}$ ein Normalteiler mit $\bar H \ne \{e\}, \bar H \subsetneq \fak {G_{i}}{G_{i-1}}$
+          $\overset{\text{2. Isometriesatz}} \iff \{e\} i \in \eb t : \ex H \triangleleft G_{i} $ ein Normalteiler mit $G_{i-1} \triangleleft H$
+
+          $\iff \ex i \in \eb t : G$ kann zwischen $G_{i-1}$ und $G_{i}$ echt verfeinert werden $\iff G$ besitzt eine echte Verfeinerung.
+    \item Lagrange: (Für $H \le G : \#G = \#H \cdot \# \fak GH$)
+
+          \[G = G_{t} = \#G_{t-1} \cdot \#\fak{G_{t}}{G_{t-1}} = \#G_{t-2} \cdot \# \fak {G_{t-1}}{G_{t-2}}\cdot \#\fak{G_{t}}{G_{t-1}}\]
+          \[\vdots\]
+          \[\prod_{i=1}^{t}\#\fak{G_{i}}{G_{i-1}} \ge 2^{t}\]
+          $\imp t \le \log_{2} \#G$
+    \item Sei $G'$ eine Verfeinerung von $G$, maximaler Länge $t'$. Das gibt es, da $t' \le \log_{2} \#G$ dieses $G'$ kann nicht echt verweinert werden ($t'$ maximal!)
+
+          $\imp G'$ ist Zerlegungsreihe, die $G$ verfeinert.
+    \item Sei $G$ abelsch und $G'$ eine Verfeinerung von $G$, z.z. $G'$ ist abelsch.
+          ($G' :\quad G_{0}' = \{e\} \triangleleft G_{1}' \triangleleft \cdots \triangleleft G_{t'}' = G$)
+          Sei $j \in \eb {t'}$, z.z. $\fak{G_{j}'}{G_{j-1}'}$ abelsch. Finde zu $j, j-1$ ein $i \in \eb t$, sodass
+          \[\begin{matrix}
+              G & \cdots & G_{i-1} & \triangleleft & G_{i} & \cdots \\
+                & & = \\
+                & & G_{\ell}' & \le G_{j-1}' \triangleleft G_{j'} \\
+%TODO its a mess
+            \end{matrix}
+          \]
+  \end{enumerate}
+\end{proof}
+\end{prop}
+
+\addcontentsline{toc}{subsection}{Jordan-Hölder Satz}
+\begin{satz}[\textbf{Jordan-Hölder}]
+Ist $G$ endlich, so ist die Folge der Faktoren einer Zerlegungsreihe $G(srqa)$ von $G$ bis auf Reihenfolge der Faktoren unabhängig von der Wahl der Zerlegungsreihe von $G$.
+\end{satz}
+\begin{proof}[Beweis] %TODO See it
+  \item Jantzen Schwermer Satz II. 2.4
+  \item Jacobson §4.6
+\end{proof}
+\begin{kor} %46
+$G$ endlich, dann $G$ auflösbar $\iff$ die Faktoren jeder Zerlegungsreihe sind (abelsch und ) von Primzahlordnung.
+\end{kor}
+\begin{proof}[Beweis]
+  \item ``$\imp$'': Sei $\G$ eine abelsche Normalreihe
+  \(\underset{44} \imp \ex \) Zerlegungsreihe $G'$ die $G$ verfeinert, diese ist dann (stets) wiederr abelsch.
+
+  Ihre Faktoren sind einfach und ablesch (und endliche Gruppen), also zyklisch von Primzahlordnung.
+
+  Wende nun Jordan-Hölder an.
+
+\item ``$\impliedby$'': Hat man $G$ wie angegeben (zu $G$), dann ist $\G$ abelsch, also $G$ auflösbar.
+\end{proof}
+asdasdasd
 \end{document}
