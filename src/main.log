@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  20 NOV 2023 19:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  23 NOV 2023 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -740,7 +740,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39 ...{2.2}Permutationsgruppen}{31}{section.2.2}
+l.39 ...{2.2}Permutationsgruppen}{33}{section.2.2}
                                                   % [1
 
 ])
@@ -883,6 +883,9 @@ OML/cmm/m/it/10 G$\OT1/cmr/m/n/10 -Wirkung auf $[]$ durch Linkstrans-
  []
 
 [43] [44]) [45] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: BC4F61A1D49E259F4D0202282F7A43DC;7640.
  ) 
@@ -920,7 +923,7 @@ public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023basic/texmf-dist/font
 s/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023basic/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2023basi
 c/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on main.pdf (46 pages, 447146 bytes).
+Output written on main.pdf (46 pages, 447134 bytes).
 PDF statistics:
  1093 PDF objects out of 1200 (max. 8388607)
  987 compressed objects within 10 object streams
