@@ -1,0 +1,328 @@
+\documentclass[a4paper]{report}
+\usepackage{../template}
+\begin{document}
+\addcontentsline{toc}{section}{Ringe}
+\section{Ringe}
+\addcontentsline{toc}{subsection}{Ring/Einheitengruppe}
+\begin{whg*}
+  $(R, 0, 1, +, \cd)$ ist ein \textbf{Ring} $\iff (R, 0, +)$ ist eine Gruppe, $(R, 1, \cd)$ ist ein Monoid und es gelten die Distributivgesetze.
+  \[R^{\tm} = \{r \in R \mid \ex s \in R : rs = sr = 1\}\]
+  ist die Einheitengruppe von $R$
+\end{whg*}
+\begin{bsp*}
+(Übung) $\Zn\en = \{\bar a \mid \ggt(a, n) = 1\}$, wobei $\Zn = \fak \Z{n\Z} = \fak {\Z} {(n)}$
+\end{bsp*}
+
+\addcontentsline{toc}{subsection}{Ringhomomorphismus}
+\begin{defi}[\textbf{Ringhomomorphismus}]
+  Seien $R, R'$ Ringe, eine Abbildung $\ph : R \to R'$ heißt Ringhomomorphismus wenn:
+  \begin{itemize}
+    \item $\ph : (R, 0, +) \to (R', 0', +')$ ist ein Gruppenhomomorphismus.
+    \item $\ph : (R, 1, \cd) \to (R', 1', \cd')$ ist ein Monoidhomomorphismus.
+  \end{itemize}
+  $\ph$ ist ein Ringisomorphismus $\iff \ph$ ist bijektiver Ringhomomorphismus $\underset{\text{Übung}}\iff \ex \ph': R' \xrightarrow{\text{Ringhom.}} R$, sodass $\ph \circ \ph' = \id_{R'}$ und $\ph' \circ \ph = \id_{R}$. In diesem Fall schreibe $R \cong R'$ ($R$ isomorph zu $R'$).
+\end{defi}
+\begin{bsp*} $R$ heißt Nullring $\iff 0_{R} = 1_{R} \ueb\iff R = \{0_{R}\}$ (alle Nullringe sind isomorph.)
+\end{bsp*}
+\begin{bsp*}(Übung)
+  Sei $R$ beliebig $\imp \ex!$ Ringhomomorphismus $\ph: \Z \to R$ nämlich
+  \[\ph : \Z \to R, n \mapsto \ph(n) = n\cdot 1_{R}\]
+  (wegen $\ph(1) = 1_{R}$)
+\end{bsp*}
+
+\addcontentsline{toc}{subsection}{Unterring}
+\begin{defi}[\textbf{Unterring}]
+  $S \subseteq R$ heißt Unterring, falls
+  \begin{itemize}
+    \item $1 \in S$
+    \item $S - S = \{s_{1}-s_{2} \mid s_{1}, s_{2} \in S\} \subseteq S$
+    \item $S + S = \{s_{1}+s_{2} \mid s_{1}, s_{2} \in S\} \subseteq S$
+  \end{itemize}
+\end{defi}
+\addcontentsline{toc}{subsection}{Produkt von Ringen}
+\begin{defi*}[\textbf{Produkt von Ringen}]
+  Seien $R_{1}, R_{2}$ Ringe, dann ist $(R_{1} \tm R_{2}, (0,0), (1,1), +, \cd)$ ein Ring mit komponentenweiser Addition und Multiplikation.
+  \[+ : (R_{1} \times R_{2})^{2} \to R_{1} \times R_{2}, (r_{1}, r_{2}) + (s_{1}, s_{2}) = (r_{1} + s_{1}, r_{2} + s_{2})\]
+  \[\cd : (R_{1} \times R_{2})^{2} \to R_{1} \times R_{2}, (r_{1}, r_{2}) \cd (s_{1}, s_{2}) = (r_{1} \cd s_{1}, r_{2} \cd s_{2})\]
+\end{defi*}
+
+\begin{bem*}[Übung]\item
+  \begin{enumerate}[(a)]
+    \item Sei $R$ ein kommutativer Ring, $S \subseteq R$ ein Unterring, dann ist $S$ kommutativ.
+    \item Seien $R_{1}, R_{2}$ kommutative Ringe, so ist auch $R_{1} \tm R_{2}$ kommutativ.
+  \end{enumerate}
+\end{bem*}
+
+\begin{whg*}
+Seien $I, X$ Mengen. Eine Folge/Familie in $X$ über (Indexmenge ) $I$, geschrieben $(x_{i})_{i \in I}$ ist eine Abbildung $x: I \to X, i \mapsto x-I$. Schreibe $X^{I}$ für die Menge aller Folgen in $X$ über $I$ ($=\Abb(I,X)$)
+\end{whg*}
+
+\addcontentsline{toc}{subsection}{Monoidring}
+\begin{bsp}[\textbf{Monoidring}]
+  Sei $R = (R, 0, 1, +, \cd)$ ein kommutativer Ring und $M = (M, e, \circ)$ ein Monoid. Definiere
+  \begin{enumerate}[(i)]
+    \item $R[M] := \{(a_{m})_{m \in M} \in R^{M} \mid (E): \# \{m \in M : a_{m} \ne 0\} < \infty\}$
+    \item $\underline 0 = $ die Abbildung $M \to \{0\} \subseteq R$
+    \item $\underline 1 = $ die Folge $(S_{em})_{m \in M}$ mit $S_{em} = \begin{cases} 1, & m = e, \\ 0, & m \ne e.\end{cases}$
+    \item Verknüpfungen $+, \cd : R[M] \tm R[M] \to R[M]$ durch:
+          \[(a_{m})_{m \in M} + (b_{m})_{m \in M} := (a_{m}+b_{m})_{m \in M}\]
+          und
+          \[(a_{m})_{m \in M} \cd (b_{m})_{m \in M} := (c_{m})_{m \in M}\]
+          mit (Übung)
+          \[c_{m}:= \sum_{\substack{(m', m'') \in M \tm M \\ m' \cd m'' = m}}a_{m'} \cd b_{m''}\]
+          die Summe ist endlich wegen $(E)$ und wegen $(E)$ gilt: $\#\{m \mid c_{m \ne 0}\} < \infty$
+  \end{enumerate}
+\end{bsp}
+
+\begin{nota*}
+\[\sum_{m \in M}a_{m} \cd m \text{ für } (a_{m})_{m \in M} \in R[M]\]
+\end{nota*}
+
+\begin{ubng}\item
+\begin{enumerate}[(a)]
+  \item $(R[M], \underline 0, \underline 1, +, \cd)$ ist ein Ring, ($R[M]$ heißt \textbf{Monoidring} zu $M$ über $R$)
+  \item Ist $M$ abelsch, so ist $R[M]$  kommutativ.
+  \item Ist $\ph: R \to S$ ein Ringhomomorphismus und $\s : M \to (S, 1, \cd)$ ein Monoidhomomorphismus, so $\ex !$ Ringhomomorphismus $\psi : R[M] \to S$ mit $\psi|_{R} = \ph$ und $\psi_{M} = \s$. (dabei wir identifizieren $R$ mit $R \cd e = R \cd 1$ (1-Folge) und $M$ mit $1_{R} \cd M$), nämlich:
+        \[\psi\ubr{\l(\sum a_{m}\cd m\r)}_{\text{in }R[M]} = \ubr{\sum \ph(a_{m})\cd \s(m)}_{\text{in } S}\]
+\end{enumerate}
+\end{ubng}
+
+\begin{kon*}
+Ab nun seien alle Ringe $R, R', S, R_{i}$ kommutativ, (und es Seien in §3 stets Ringe)
+\end{kon*}
+
+\section{Polynomringe}
+\begin{bsp}
+  Die folgenden Strukturen sind abelsche Monoide:
+  \begin{enumerate}[(i)]
+    \item $(\Nn, 0, +) = \Nn$
+    \item $(\Nn^{n}, (0,...,0), +) = \bigtimes_{i \in \eb n} \Nn$ (Komponentenweise Addition)
+    \item Für $I$ eine beliebige Menge:
+          \((\Nn^{(I)}, \underline 0, \underline +)\) mit
+          \[\Nn^{(I)}= \{(a_{i})_{i \in I} \in \Nn \text{ Folgen über }I \mid \#\{i \in I : a_{i} \ne 0\} < \infty\}\]
+          $\underline 0 = 0$-Folge und $\underline +$ komponentenweise Addition in $\Nn^{(I)}$.
+  \end{enumerate}
+\end{bsp}
+\begin{facts}[Übung]\item
+\begin{enumerate}[(i)]
+  \item $\Nn^{n} \cong \Nn^{(\eb n)}, (a_{i})_{i \in \eb n} \mps (a_{i})_{i \in \eb n}$
+  \item Für $i \in I$ sei $e_{i} \in \Nn^{(I)}$ die Folge mit $e_{i}(j) =
+        \begin{cases}
+          1, & j = i, \\ 0 & j \ne i.
+        \end{cases}$
+
+        (betrachte $e_{i} : I \to \Nn$ als Abbildung) Damit ist jede Folge $\underline a = (a_{i})_{i \in I} \in \Nn^{(I)}$ eindeutige Linearkombination mit Koeffizienten in $\Nn$, nämlich:
+        \[\underline a = \sum_{i \in I}a_{i} \cd e_{i} = \sum_{i \in I, a_{i} \ne 0}a_{i} \cd e_{i}\]
+        Beachte: $\Nn^{(I)} \subseteq \Q^{(I)}$ (analog definiert, Folgen in $\Q$ über $I$) mit Endlichkeitsbedingung $(E)$. Und $(e_{i})_{i \in I}$ ist eine Basis von $\Q^{(I)}$ als $\Q$-Vektorraum. Man sagt auch $\Nn^{(I)}$ ist freies abelsches Monoid über der Basis $(e_{i})_{i \in I}$.
+    \item Ist $M$ ein abelsches Monoid und $(m_{i})_{i \in I}$ eine Folge in $M$, so $\ex!$ Monoidhomomorphismus \[\ph: \Nn^{(I)} \to M, \ph(e_{i}) = m_{i}\]
+\end{enumerate}
+\end{facts}
+
+\begin{whg*}
+  $R[X]$ ist der Polynomring über $R$ in Variablen $X$. Elemente sind $\sum_{n \ge 0} a_{n}X^{n}, (a_{n} \in R)$ nur endlich viele $a_{n} \ne 0$. $+, \cd$ auf $R[X]$ sind definiert durch
+  \[\sum a_{i}X^{i} + \sum b_{i}x^{i} = \sum(a_{i}+b_{i})X^{i}\]
+  \[\l(\sum a_{i}X^{i}\r)\l(\sum b_{i}X^{i}\r) = \sum_{i}\l(\sum_{j=0}^{i}a_{j}b_{i-j}\r)X^{i}\]
+\end{whg*}
+
+\begin{prop}
+  Die folgende Abbildung ist ein Ringisomorphismus.
+  \[\psi : R[\Nn] \to R[X], \sum_{i \in \Nn} r_{i}i \mapsto \sum_{i \in \Nn}r_{i}X^{i}\]
+  \begin{proof}[Beweis]\item
+    \begin{itemize}
+      \item $\psi$ wohldefiniert und bijektiv:
+            \[R[\Nn] = \text{ Folgen } (r_{i})_{i \in \Nn} \text{ mit } \#\{i \mid r_{i} \ne 0\} < \infty\]
+            \[R[X] = \text{ analog }\]
+      \item Ringstruktur:
+            \begin{itemize}
+              \item Addition (Übung)
+              \item Multiplikation
+                    \[\ubr{\l(\sum_{i \in \Nn} r_{i}\cd i\r)}_{f \in R[\Nn]}\ubr{\l(\sum_{j \in \Nn} s_{j}\cd j\r)}_{g} \underset{\text{Nach Def.}}= \sum_{k \in \Nn} s_{k}\cd k, \quad s_{k}\]
+                    \[= \sum_{0 \le i,j, i+j = k}r_{i}s_{j} = \sum_{j=0}^{k}r_{j}s_{k-j}\]
+                    \[\imp \psi(f \cd g) = \psi\l(\sum_{k} s_{k}\cd k\r) = \sum_{k}g_kX^{k}\]
+                    \[ = \sum_{i}a_{i}\cd  \sum_{j}b_{j}X^{j} = \psi(f)\psi(g).\qedhere\]
+            \end{itemize}
+    \end{itemize}
+  \end{proof}
+  Formal: $\{0, 1, \cdots\} \to \{X^{i} \mid i \in \Nn\}$.
+\end{prop}
+
+\begin{prop}[Universelle Eigenschaft von {$K[X] \cong R[\Nn]$}] $\forall \psi : R \to S$ Ringhomomorphismen und $\forall s \in S \ex !$ Ringhomomorphismus $\hat \psi : R[X] \to S$ mit $\hat \psi|_{R} = \psi$ und $\hat \psi(X) = s$
+\begin{proof}[1. Beweis]
+  Definiere $\hat\psi(\sum_{i \ge 0}r_{i}X^{i}) := \sum_{i \ge 0}\underbrace{\psi(r_{i})}_{\in S}s^{i}$. Dann die Behauptung nachprüfen.
+\end{proof}
+\begin{proof}[2. Beweis]
+  Facts 6(iii) $\ex !$ Monoidhomomorphismus $\s : \Nn \to (S, 1, \cd)$ mit $\s(1) = s$ und Übung 4(c) (universelle Eigenschaft des Monoidrings) $\ex !$ Ringhomomorphismus $\hat \psi : R[\Nn] \to S$ mit $\hat \psi|_{R} = \psi$ und $\hat\psi|_{\Nn} = 0$. Dieser erfüllt die Aussagen in Prop 8, denn $\hat \psi(X) = \hat \psi(1) = s$, $X$ entspricht $1 \in \Nn $ (Unter Isomorphismus von Proposition 7).
+  Für $n \ge 1$ Variable: ($n \in \N$)
+  \[R[X_{1}, \ldots, X_{n}] := (R[X_{1}, \ldots, X_{n-1}])[X_{n}] = \cdots = (\cdots((R[X_{1}])[X_{2}]) \cdots)[X_{n}]\]
+\end{proof}
+\end{prop}
+
+\begin{satz}
+  Sei $\ph : \Nn^{n} \to (R[X_{1}, \ldots X_{n}], 1, \cd)$ der eindeutige Monoidhomomorphismus mit $\ph(e_{i}) = X_{i}$, wobei $e_{i} = (\delta_{i,j})_{j} = (0, \cdots, 1, \cdots 0)$ für $i \in \eb n$. Dann ist (nach 4(c) eindeutige) Ringhomomorphismus $\hat \psi : R[\Nn^{n}] \to R[X_{1}, \ldots, X_{n}]$ mit $\hat \psi|_{R} = \id_{R}$ und $\hat \psi|_{\Nn^{n}} = \ph$ ein Ringisomorphismus.
+  \begin{proof}[Beweis]
+    (Übung) Hierbei wird $m = (m_{1}, ..., m_{n}) \in \Nn^{n}$ identifiziert (unter $\hat \psi$) mit $X_{1}^{m_{1}}\cdot \ldots \cd X_{n}^{m_{n}}$
+  \end{proof}
+\end{satz}
+
+\begin{defi}
+  Der Polynomring in den Variablen $(X_{i})_{i \in I}$ ($I$ beliebige Menge) ist definiert als
+  \[R[X_{i} \mid i \in I] := R[\Nn^{(I)}]\]
+  Elemente in diesem Ring sind
+  \[\sum_{a \in \Nn^{(I)}}r_{a}\cd a\]
+  mit $r_{a} \in R$ und es gilt $\{a \in \Nn^{(I)} \mid r_{a} \ne 0\} \le \infty$.
+\end{defi}
+\begin{nota*}
+  Andere Notation: Für $a \in \Nn^{(I)}$ schreibe für $a$ \[X^{a} \text{ oder } \prod_{i \in I, a_{i} \ne 0} X_{i}^{a_{i}}\]
+  Insbesondere ist \(X^{e_{i}} = X_{i}\), wobei $e_{i}$ die Folge in $\Nn^{(I)}$ mit $e_{i}(j) = \delta_{i,j}$ ist.
+  \item Monoidaddition $a + b$ entspricht \[X^{a} \cd X^{b} = X^{a + b}\]
+  (bilden $a + b$ in $(\Nn^{(I)}, \underline 0, +)$ und $(a_{i})_{i \in I} + (b_{i})_{i \in I} = (a_{i} +_{\Nn} b_{i})_{i \in I}$) Also $+$ ist nicht die Addition im Ring.
+\end{nota*}
+\begin{defi*}[Primitive Monomen]
+Die Elemete in $R[\Nn^{(I)}]$ sind Summen \[\sum_{a \in \Nn^{(I)}}r_{a} \cd X^{a}\] (Polynome wie gewohnt.) Die Elemente $X^{a}, a \in \Nn^{(I)}$ heißen primitive Monome. Jedes Element in $R[X_{i} \mid i \in I]$ ist eine eindeutige Linearkombination in den Monomen $X^{a}, a \in \Nn^{(I)}$, mit Koeffizienten $r_{a}$ aus $R$, sodass $\#{a \in \Nn^{(I)} \mid r_{a} \ne 0} \le \infty$, d.h. als $R$-Modul ist $R[X_{i} \mid i \in I]$ frei über $R$ mit Basis $X^{a}, a \in \Nn^{(I)}$
+\end{defi*}
+\begin{bsp*}
+$(2, 5, 3) \in \Nn^{3}$ entspricht $X_{1}^{2}X_{2}^{5}X_{3}^{3}$
+\end{bsp*}
+
+\begin{satz}[Universelle Eigenschaft von {$R[X_{i} \mid i \in I]$}] Zu Ringhomomorphismus $\psi : R \to S$ und einer Folge $(s_{i})_{i \in I}$ aus $S$ über $I$ $\ex !$ Ringhomomorphismus $\hat \psi : T[X_{i}\mid i \in I] \to S$ mit $\hat \psi|_{R} = \psi$ und $\hat \psi(X_{i}) = s_{i}$
+\end{satz}
+
+\begin{facts*}\item
+\begin{enumerate}[(a)]
+  \item Für $J \subseteq I$ existiert eindeutiger Monoidhomomorphismus $\Nn^{(J)} \to \Nn^{(I)}$ mit $e_{j} \mps e_{j}$ und ein induzierter Ringhomomorphismus (für $j \in J$) \[\hat \psi: R[\Nn^{(J)}] = R[X_{j} \mid j \in J] \to R[\Nn^{(I)}] = R[X_{i} \mid i \in I]\]
+        mit $\hat \psi|_{R} = \id_{R}$ und $\hat \psi (X_{j}) = X_{j}$ ($j \in J$). Die Abbildung $\hat \psi$ ist injektiv deswegen betrachten wir $R[X_{j} \mid j \in J]$ als Unterring von $R[X_{i} \mid i \in I]$
+  \item Es gilt: \[R[X_{i} \mid i \in I] = \bigcup_{J \subseteq I \text{ endl.}} R[X_{j} \mid j \in J]\]
+        d.h. jedes Polynom im Ring ist Polynom in nur endlich vielen Variablen.
+\end{enumerate}
+\end{facts*}
+
+\begin{defi}\item
+\begin{enumerate}[(a)]
+  \item $\grad : R[X] \to \Nn \cup \{- \infty\}$ ist die eindeutige Abbildung mit
+        \[\grad(f) = \grad\l( \sum_{i \ge 0}r_{i}X^{i} \r) = \begin{cases} -\infty, & f = 0, \\
+                                                          \max\{i \in \Nn \mid r_{i} \ne 0\}, & f \ne 0
+                                                        \end{cases}\]
+  \item Der Leitkoeffizient von $f \ne 0$ ist $a_{\grad(f)}$.
+  \item $f \ne 0$ heißt normiert $\iff a_{\grad(f)} = 1$.
+  \item Ist $R = K$ ein Körper, so gelten außerdem
+        \[\grad(fg) = \grad(f) + \grad(g)\]
+        wobei $-\infty + n = n + -\infty = - \infty + (- \infty) = - \infty$ für $n \in \Nn$. Genügt: $R$ ist Integritätsbereich.
+  \item Falls $R$ ein Körper (oder Integritätsbereich), so gilt
+        \[(R[X])\en = \{f \in R[X] \mid \ex g \in R[X] : fg = 1\}\]
+        \[\ueb = \{f \in R[X] \mid \grad(f) = 0, \ex g \in R[X] : \grad g = 0 : fg = 1\} \]
+        \[ = \{f \in R \mid \ex g \in R : fg = 1\} = R\en\]
+\end{enumerate}
+\end{defi}
+\section{Symmetrische Polynome}%
+Sei $R$ ein kommutativer Ring, $n \in \N$ fest.
+\begin{bez*}
+\begin{enumerate}[(a)]
+  \item Ein Monom in $R[X_{1}, ..., X_{n}]$ ist ein Polynom der Form $aX^{m} = aX_{1}^{m_{1}}\cdot\ldots\cdot X_{n}^{m_{n}}$ für $a \in R \setminus \{0\}$ und $m = (m_{i})_{i \in \eb n} \in \Nn^{n}$ und $X^{m}$ (falls $a = 1$) heißt primitives Monom.
+  \item Der (Total-)Grad des Monoms $aX^{m}$ für $a \in R \setminus \{0\}$ und $m = (m_{i})$ ist $|m| := \sum_{i} m_{i}$. Der (Total-)Grad von $f = \sum a_{m}X^{m}$ ist $\grad(f) = \max\{|m| : a_{m} \ne 0\}$. ($\max(\emptyset) := - \infty$)
+  \item $f \in R[X_{1}, \ldots X_{n}]$ heißt homogen vom Grad $t \iff f$ ist Summe von Monomen $aX^{m}$, die alle vom Grad $|m| = t$ sind.
+\end{enumerate}
+\end{bez*}
+
+\begin{bsp*}
+\begin{enumerate}[(a)]
+  \item $f = X_{1}^{3}X_{2}^{2}X_{3}$ ist primitiver Monom mit $\grad(f) = 11$
+  \item $g = X_{1}^{3}X_{2}^{2} + X_{1}X_{2}^{4}$ ist homogen vom Grad $5$
+\end{enumerate}
+\end{bsp*}
+
+\begin{lemm}
+\begin{enumerate}[(a)]
+  \item $\forall \s \in \Sn \ex !$ Ringhomomorphismus $\tilde \s : R[X_{1}, \ldots, X_{n}] \to R[X_{1}, \ldots, X_{n}]$ mit $\tilde s|_{R} = \id_{R}$ und $\tilde \s(X_{i}) = X_{\s(i)}$ für $i \in \eb n$
+  \item $\tilde{\id} = \id_{R[X_{1}, \ldots, X_{n}]}$ (für $\id \in \Sn$ die Eins).
+  \item $\forall \s, \tau \in \Sn : \tilde{\s \circ \tau} = \tilde \s \circ \tau$ Ringhomomorphismen.
+\end{enumerate}
+\begin{proof}[Beweis]
+\begin{enumerate}[(a)]
+  \item $\tilde \s$ existiert und ist eindeutig nach universeller Eigenschaft (Satz 10) für $R[X_{1}, \ldots X_{n}]$.
+  \item $\alpha:= \id_{R[X_{1}, \ldots, X_{n}]}$ ist ein Ringhomomorphismus $R[X_{1}, \ldots, X_{n}] \to R[X_{1}, \ldots, X_{n}]$ mit $\alpha|_{R} = \id_{R}$ und $\alpha(X_{i}) = X_i \overset{(a)}\imp \alpha = \tilde \id$.
+  \item Wende universelle Eigenschaft von $R[X_{1}, \ldots, X_{n}]$ an. Wir haben:
+        \[\tilde{\s \circ \tau}|_{R} \underset{\text{Def. in (a)}}= \id_{R} = \id_{R} \circ \id_{R} = \tilde \s|_{R} \circ \tilde \tau|_{R} = \tilde \s \circ \tilde \tau |_{R}\]
+        und
+        \[\tilde{\s \circ \tau}(X_{i})= X_{\s \circ \tau(i)} = X_{\s(\tau(i))} = \tilde \s(X_{\tau(i)}) = \tilde \s(\tilde \tau(X_{i})) = (\tilde \s \circ \tilde \tau)(X_{i})\]
+        \[ \overunderset{\text{Eindeutigkeit}}{\text{in (a)}} \imp \tilde{\s \circ \tau} = \tilde \s \circ \tilde \tau. \qedhere\]
+\end{enumerate}
+\end{proof}
+\end{lemm}
+
+\begin{bem*}[Übung] Ist $\alpha : R \to R$ ein Ringhomomorphismus, so ist $R^{\alpha} := \{r \in R \mid \alpha(r) = r\}$ ein Unterring von $R$.
+
+\end{bem*}
+
+\begin{kor}
+$R[X_{1}, \ldots, X_{n}]^{S_{n}} := \{f \in R[X_{1}, \ldots, X_{n}] \mid \tilde \s (f) = f, \forall \s \in \Sn\} = \bigcap_{\s \in \Sn}R[X_{1}, \ldots, X_{n}]^{\tilde \s}$ ist ein Unterring von $R[X_{1}, \ldots, X_{n}]$.
+\end{kor}
+
+\begin{defi}[Symmetrische Polynom]
+Die Elemente in $R[X_{1}, \ldots, X_{n}]^{\Sn}$ heißen symmetrische Polynome.
+\end{defi}
+
+\begin{kor} Die Abbildung
+  \[\tilde \cd : \Sn \to \Aut(R[X_{1}, \ldots, X_{n}]), \s \mps \tilde \s\]
+  ist wohl-definiert und ein injektiver Gruppenhomomorphismus.
+
+ \begin{proof}[Beweis]\item
+\begin{enumerate}[1)]
+  \item $\tilde \cd$ wohl-definiert: Zu zeigen $\tilde \s$ ist Automorphismus (bijektiver Ringhomomorphismus). Dazu beachte
+        \[\tilde \s \circ \tilde {\s^{-1}} \underset{12} = \tilde{\s \circ \s^{-1}} = \tilde \id = \id_{R[X_{1}, \ldots, X_{n}]} = \cdots = \tilde {\s^{-1}} \circ \tilde \s\]
+        folglich: $\tilde \s$ ist Ringautomorphismus.
+  \item Gruppenhomomorphismus: folgt aus 12(c)
+  \item $\s \mps \tilde \s$ injektiv: Denn verschiedene $\s, \tau$ wirken unterschiedlich auf $\{X_{1}, \ldots, X_{n}\}$
+\end{enumerate}
+ \end{proof}
+\end{kor}
+
+\begin{bem*}[Ziel von diesem Abschnitt]
+Explizite Beschreibung von $R[X_{1}, \ldots, X_{n}]^{\Sn}$
+\end{bem*}
+\section{Elementar symmetrische Polynome}%
+\begin{prop*}
+Zu $\s \in \Sn$ erweitern $\tilde \s$ zu $\s'$ Ringautomorphismus von $R[X_{1}, \ldots, X_{n}][X]$ durch \[\s'|_{R} = \id_{R}, \s'(X_{i}) = X_{\s(i)} \text{ und } \s'(X) := X\]
+Behauptung: $g:= \prod_{i = 1}^{n}(X - X_{i}) \overset ! \in R[X_{1}, \ldots, X_{n}]^{S_{n}} \ueb = R[X_{1}, \ldots, X_{n}]^{\Sn}[X]$.
+\begin{proof}[Beweis]
+  $\s'(g) = \prod_{i=1}^n (\s'(X) - \s'(X_{i})) = \prod_{i=1}^n (X - X_{\s(i)}) = \prod_{i=1}^n (X-X_{i}) = g$ da $\tilde \s$ eine Bijektion auf $\{X_{1}, ..., X_{n}\}$ definiert.
+\end{proof}
+\end{prop*}
+
+\begin{bem*}
+  Schreibe $g$ als Polynom in $X$ mit Koeffizienten $s_{i}$ in
+  \[R[X_{1}, \ldots, X_{n}] \imp g = \sum_{i=0}^n (-1)^{n-i}X^{i}s_{n-i}(X_{1},...,X_{n})\]
+  \[ = X^{n} - s_{1}(X_{1}, ..., X_{n})X^{n-1}i + s_{2}(X_{1}, ..., X_{n})X^{n-2} \mp \cdots + (-1)^{n}s_{n}(X_{1}, ..., X_{n})\]
+  Das definiert $s_{1}, ..., s_{n} \in R[X_{1}, \ldots, X_{n}]^{S_{n}}$
+  \item Insbesondere:
+  \begin{enumerate}[(i)]
+    \item $s_{1}, ..., s_{n} \in R[X_{1}, \ldots, X_{n}]^{S_{n}}$
+    \item $s_{i}$ ist homogen vom Grad $i$, denn $g$ ist homogen vom Grad $n \imp $ Koeffizient von $X^{n-i}$ in $g$ ist homogen vom Grad $i$.
+  \end{enumerate}
+\end{bem*}
+
+\begin{ubng}
+  Es gelten:
+  \[s_{1} = \sum_{i=1}^n X_{i}, \quad s_{n} \prod_{i=1}^n X_{i}\]
+  \[s_{i}(X_{1}, ..., X_{n}) = \sum_{1 \le j_{1} < j_{2} < \cdots < j_{i} \le n} X_{j_{1}}X_{j_{2}}\cdots X_{j_{i}}\]
+  ($n=3, i = 2 \rightsquigarrow s_{2} = X_{1}X_{2} + X_{1}X_{3} + X_{2}X_{3}$)
+\end{ubng}
+
+\begin{defi}
+Die Polynome $s_{1}, ..., s_{n} \in R[X_{1}, \ldots, X_{n}]^{S_{n}}$ sind die elementar symmetrischen Polynome in $X_{1}, ..., X_{n}$ (homogen vom Grad $1, 2, ..., n$) ($s_{i} = i$-tes elementar symmetrisches Polynom)
+\end{defi}
+
+\begin{satz}
+  Sei $\psi: R[Y_{1}, \ldots, Y_{n}] \to R[X_{1}, \ldots, X_{n}]$ der Ringhomomorphismus \[h(Y_{1}, ..., Y_{n}) \mps h(s_{1}, ..., s_{n})\]
+  Dann ist
+  \begin{enumerate}[(a)]
+    \item $\psi$ ist Ringhomomorphismus mit $\bil(\psi) \subseteq R[X_{1}, ..., X_{n}]^{S_{n}}$
+    \item $\psi$ ist ein Ringisomorphismus.
+  \end{enumerate}
+\end{satz}
+
+\begin{bsp*}
+  $n = 4, f = X_{1}^{2} + X_{2}^{2} + X_{3}^{2} + X_{4}^{2}$
+  \[(\underbrace{X_{1} + \cdots + X_{4}}_{s_{1}})^{2} - 2(\ubr{X_{1}X_{2} + X_{1}X_{3} + X_{2}X_{3} + X_{1}X_{4} + X_{2}X_{4} + X_{3}X_{4}}_{s_{2}})\]
+  \[ = s_{1}^{2} - 2s^{2} = h(s_{1}, s_{2}), h = Y_{1}^{2} - 2Y_{2}\]
+\end{bsp*}
+\end{document}

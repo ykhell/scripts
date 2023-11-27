@@ -888,82 +888,181 @@ Ist $G$ einfache Gruppe mit $\#G < 60$, so gilt $G \cong \fak \Z p$ für $p$ ein
 \begin{bem*} Die Zahl 60 ist optimal, denn $A_{5}$ ist einfach, nicht zyklisch (von Primzahlordnung) und hat 60 Elemente.
 \end{bem*}
 
-\section{Auflösbare Gruppen} %TODO FROM HERE
-\begin{defi}
+\section{Auflösbare Gruppen}
+\begin{defi} \item
   \begin{enumerate}[(a)]
-    \item Eine aufsteigende Folge von Untergruppen $G_{0} < G_{1} < G_{2} < \cdots < G_{t} = G$ von $G$ heißt Normalreihe, wenn
+    \item Eine aufsteigende Folge von Untergruppen
+          \[\{e\} = G_{0} < G_{1} < G_{2} < \cdots < G_{t} = G\]
+          von $G$ heißt Normalreihe (von $G$), wenn
           $\forall i \in \eb t : G_{i-1} \nt G_{i}$ ist Normalteiler.
 
-          Schreibe auch $(G_{i})_{i=0}^{t}$ oder $\&$ für die Folge.
-    \item die Faktorgruppe $(\fak{G_{i}}{G_{i-1}})_{i=1}^{t}$ heißen Faktoren der Normalreihe.
+          Schreibe auch $(G_{i})_{i=0}^{t}$ oder $\G$ für die Folge.
+    \item die Faktorgruppe $\l(\fak{G_{i}}{G_{i-1}}\r)_{i=1}^{t}$ heißen Faktoren der Normalreihe.
     \item Eine Normalreihe $\G$ heißt Zerlegungsreihe $\iff$ alle Faktoren sind einfach.
-    \item $X$ heißt abelsch $\iff$ alle Faktoren sind abelsch.
+    \item $\G$ heißt abelsch $\iff$ alle Faktoren sind abelsch.
     \item $G$ heißt auflösbar $\iff G$ besitzt eine abelsche Normalreihe.
-    \item Ist $\G': G_{0}' < G_{1}' < \cdots < G'_{t'} = G$ eine weitere Normalreihe, so heißt $\G'$ \textbf{echt} feiner als $\G \iff$
-          \[\{G_{i} \mid i \in \{0, ..., t\}\} \subsetneq \{G_{j}' \mid j \in \{0, ..., t'\}\}\]
+    \item Ist $\G': \{e\} = G_{0}' < G_{1}' < \cdots < G'_{t'} = G$ eine weitere Normalreihe, so heißt $\G'$ (echt) feiner als $\G \iff$
+          \[\ubr{\{G_{i} \mid i \in \{0, ..., t\}\}}_{\text{von } \G} \subsetneq \ubr{\{G_{j}' \mid j \in \{0, ..., t'\}\}}_{\text{von  }\G'}\]
   \end{enumerate}
 \end{defi}
-\begin{bsp*} %TODO Did not write this weew
-
+\begin{bsp*}
+  \[\obr{S_{4}}^{G_{4}} \etn \obr{A_{4}}^{G_{3}} \etn \ubr{\obr{V}^{G_{2}}}_{\{e, (1\ 2)(3\ 4), (1\ 3)(2\ 4), (1\ 4)(2\ 3)\}} \etn \obr{\{e, (1\ 2)(3\ 4)\}}^{G_{1}} \etn \obr{\{e\}}^{G_{0}}\]
+  ist eine Zerlegungsreihe mit den Faktoren:
+  \[
+  \begin{tabular}{c|c|c|c|c}
+    $i$ & $4$ & $3$ & $2$ & $1$ \\
+    \hline
+    \hline
+    \rule{0pt}{4ex}
+    $\faktor{G_{i}}{G_{i-1}}$ & $\faktor \Z 2$ & $\faktor \Z 3$ & $\faktor \Z 2$ & $\faktor \Z 2$
+  \end{tabular}
+\]
+Insbesondere ist $\G$ abelsch (und $S_{4}$ ist auflösbar).
+Beachte: $G_{1} \ent G_{2}$ ist Normalteiler $G_{1} \ent G_{3}$ (Übung)
 \end{bsp*}
 
-
 \begin{prop} %44
-  Sei $G " \{e\} = G_{0} \nt G_{1} \nt \cdots G_{t} = G$ eine Normalereihe, dann:
+  Sei $\G : \{e\} = G_{0} \ent G_{1} \ent \cdots \ent G_{t} = G$ eine Normalereihe, dann:
   \begin{enumerate}[(a)]
-    \item $G$ ist eine Zerlegungsreihe $iff G$ besitzt keine echte Verfeinerung.
+    \item $\G$ ist eine Zerlegungsreihe $\iff \G$ besitzt keine echte Verfeinerung.
     \item Es gilt $2^{t} \le \#G$
-    \item Ist $G$ endlich, so besitzt $G$ eine Verfeinerung, die eine Zerlegungsreihe ist.
-    \item Ist $G$ abelsch, so ist auch Verfeinerung abelsch.
+    \item Ist $G$ endlich, so besitzt $\G$ eine Verfeinerung, die eine Zerlegungsreihe ist.
+    \item Ist $\G$ abelsch, so ist auch die Verfeinerung abelsch.
   \end{enumerate}
 \begin{proof}[Beweis]
   \begin{enumerate}[(a)]
-    \item $G$ ist keine Zerlegungsreihe $\iff \ex i \in \eb t : \fak {G_{i}}{G_{i-1}}$ nicht einfach $\iff \ex i \in \eb t : \bar H \nt \fak {G_{i}}{G_{i-1}}$ ein Normalteiler mit $\bar H \ne \{e\}, \bar H \subsetneq \fak {G_{i}}{G_{i-1}}$
-          $\overset{\text{2. Isometriesatz}} \iff \{e\} i \in \eb t : \ex H \triangleleft G_{i} $ ein Normalteiler mit $G_{i-1} \triangleleft H$
+    \item $G$ ist keine Zerlegungsreihe
 
-          $\iff \ex i \in \eb t : G$ kann zwischen $G_{i-1}$ und $G_{i}$ echt verfeinert werden $\iff G$ besitzt eine echte Verfeinerung.
+          $\iff \ex i \in \eb t : \fak {G_{i}}{G_{i-1}}$ nicht einfach
+
+          $\iff \ex i \in \eb t : \bar H \nt \fak {G_{i}}{G_{i-1}}$ mit $\bar H \ne \{e\}, \bar H \subsetneq \fak {G_{i}}{G_{i-1}}$
+
+          $\overset{\text{2. Isometriesatz}} \iff \ex i \in \eb t : \ex H \triangleleft G_{i} $ mit $G_{i-1} \triangleleft H$
+
+          $\iff \ex i \in \eb t : \G$ kann zwischen $G_{i-1}$ und $G_{i}$ echt verfeinert werden
+
+          $\iff \G$ besitzt eine echte Verfeinerung.
+
     \item Lagrange: (Für $H \le G : \#G = \#H \cdot \# \fak GH$)
 
-          \[G = G_{t} = \#G_{t-1} \cdot \#\fak{G_{t}}{G_{t-1}} = \#G_{t-2} \cdot \# \fak {G_{t-1}}{G_{t-2}}\cdot \#\fak{G_{t}}{G_{t-1}}\]
-          \[\vdots\]
-          \[\prod_{i=1}^{t}\#\fak{G_{i}}{G_{i-1}} \ge 2^{t}\]
-          $\imp t \le \log_{2} \#G$
-    \item Sei $G'$ eine Verfeinerung von $G$, maximaler Länge $t'$. Das gibt es, da $t' \le \log_{2} \#G$ dieses $G'$ kann nicht echt verweinert werden ($t'$ maximal!)
+          \[\#G = \#G_{t} = \#G_{t-1} \cdot \#\fak{G_{t}}{G_{t-1}}\]
+          \[= \#G_{t-2} \cdot \# \fak {G_{t-1}}{G_{t-2}}\cdot \#\fak{G_{t}}{G_{t-1}} = \cdots = \prod_{i=1}^{t}\#\ubr{\fak{G_{i}}{G_{i-1}}}_{\substack{\text{nichttriviale}\\ \text{ endliche Gruppe}}} \ge 2^{t}\]
+          \[\imp t \le \log_{2} \#G\]
+    \item Sei $\G'$ eine Verfeinerung von $\G$, maximaler Länge $t'$. Das gibt es, da $t' \le \log_{2} \#G$. Dieses $\G'$ kann nicht echt verweinert werden ($t'$ maximal!)
 
-          $\imp G'$ ist Zerlegungsreihe, die $G$ verfeinert.
-    \item Sei $G$ abelsch und $G'$ eine Verfeinerung von $G$, z.z. $G'$ ist abelsch.
-          ($G' :\quad G_{0}' = \{e\} \triangleleft G_{1}' \triangleleft \cdots \triangleleft G_{t'}' = G$)
-          Sei $j \in \eb {t'}$, z.z. $\fak{G_{j}'}{G_{j-1}'}$ abelsch. Finde zu $j, j-1$ ein $i \in \eb t$, sodass
+          $\imp \G'$ ist Zerlegungsreihe, die $\G$ verfeinert.
+
+    \item Sei $\G$ abelsch und $\G'$ eine Verfeinerung von $\G$, z.z. $\G'$ ist abelsch.
+          \[(\G' :\quad G_{0}' = \{e\} \triangleleft G_{1}' \triangleleft G_{2}' \triangleleft \cdots \triangleleft G_{t'}' = G)\]
+          Sei $j \in \eb {t'}$, z.z. $\fak{G_{j}'}{G_{j-1}'}$ ist abelsch. Finde zu $j, j-1$ ein $i \in \eb t$, sodass
           \[\begin{matrix}
               G & \cdots & G_{i-1} & \triangleleft & G_{i} & \cdots \\
-                & & = \\
-                & & G_{\ell}' & \le G_{j-1}' \triangleleft G_{j'} \\
-%TODO its a mess
+                & & \rotatebox{90}{=} & &\rotatebox{90}{=} & \\
+                & & G_{\ell}' \le & G_{j-1}' \triangleleft G_{j'} & \le G'_{m}\\
             \end{matrix}
           \]
+          Wir wissen: $\fak{G_{i}}{G_{i-1}} = \fak{G'_{m}}{G'_{\ell}}$ ist eine abelsche Gruppe, wir wissen auch:
+          \[\fak{G_{\ell}'}{G_{\ell}'} \le \fak{G_{j-1}'}{G_{\ell}}\le \fak{G_{j}'}{G_{\ell}} \le \fak{G'_{m}}{G'_{\ell}}\] (2. Isomorphiesatz für $G_{m}' \to \fak{G'_{m}}{G_{\ell}}$) Beachte: $\fak{G'_{m}}{G'_{\ell}}$ ist abelsch $\implies \fak{G'_{j-1}}{G'_{\ell}}, \fak{G'_{j}}{G'_{\ell}}$ sind abelsch, und (2. Isomorphiesatz)
+          \[\fak{G'_{j}}{G'_{j-1}} \cong \fak{\ubr{\l(\fak{G'_{j}}{G'_{\ell}}\r)}_{\text{abelsch}}}{\l(\fak{G'_{j-1}}{G'_{\ell}}\r)} \imp \fak{G_{j}'}{G_{j-1}'} \text{ abelsch. } \qedhere\]
   \end{enumerate}
 \end{proof}
 \end{prop}
 
-\addcontentsline{toc}{subsection}{Jordan-Hölder Satz}
-\begin{satz}[\textbf{Jordan-Hölder}]
-Ist $G$ endlich, so ist die Folge der Faktoren einer Zerlegungsreihe $G(srqa)$ von $G$ bis auf Reihenfolge der Faktoren unabhängig von der Wahl der Zerlegungsreihe von $G$.
+\addcontentsline{toc}{subsection}{Satz von Jordan-Hölder}
+\begin{satz}[\textbf{Satz von Jordan-Hölder}]
+Ist $G$ endlich, so ist die Folge der Faktoren einer Zerlegungsreihe $\G$ von $G$ bis auf Reihenfolge der Faktoren unabhängig von der Wahl der Zerlegungsreihe von $G$.
 \end{satz}
-\begin{proof}[Beweis] %TODO See it
-  \item Jantzen Schwermer Satz II. 2.4
-  \item Jacobson §4.6
+\begin{proof}[Beweis] Siehe Jantzen Schwermer Satz II. 2.4 oder Jacobson §4.6
 \end{proof}
 \begin{kor} %46
-$G$ endlich, dann $G$ auflösbar $\iff$ die Faktoren jeder Zerlegungsreihe sind (abelsch und ) von Primzahlordnung.
+Sei $G$ endlich, dann ist $G$ auflösbar $\iff$ die Faktoren jeder Zerlegungsreihe sind abelsch und von Primzahlordnung.
 \end{kor}
 \begin{proof}[Beweis]
   \item ``$\imp$'': Sei $\G$ eine abelsche Normalreihe
-  \(\underset{44} \imp \ex \) Zerlegungsreihe $G'$ die $G$ verfeinert, diese ist dann (stets) wiederr abelsch.
-
+  \(\underset{\text{Prop. 44}} \imp \ex \) Zerlegungsreihe $\G'$ die $\G$ verfeinert, diese ist dann (stets) wieder abelsch.
   Ihre Faktoren sind einfach und ablesch (und endliche Gruppen), also zyklisch von Primzahlordnung.
-
   Wende nun Jordan-Hölder an.
-
-\item ``$\impliedby$'': Hat man $G$ wie angegeben (zu $G$), dann ist $\G$ abelsch, also $G$ auflösbar.
+\item ``$\impliedby$'': Hat man $\G$ wie angegeben (zu $G$), so ist $\G$ abelsch, also $G$ auflösbar.
 \end{proof}
+\begin{bsp}
+  Sei $G$ eine $p$-Gruppe $\imp G$ ist auflösbar
+  \begin{proof}[Beweis]
+    Sei $\G$ eine Zerlegungsreihe von $G$, dann sind die Faktoren $H_{i}$ einfache $p$-Gruppen. Wir wissen, dass $Z(H_{i}) \supsetneq \{e\}$ nicht-trivial ist.
+    \[\overunderset{H_{i} \text{ einfach}}{Z(H_{i}) \nt H_{i}} \imp H_{i} = Z(H_{i})\]
+    Da $Z(H_{i})$ eine einfache abelsche $p$-Gruppe ist folgt $\G$ ist eine abelsche Normalreihe. Nach dem Satz von Cauchy finde $\fak \Z p$ als Untergruppe von $H_{i} \imp H_{i}$ einfach abelsch $(\fak \Z p \nt H_{i})$.
+  \end{proof}
+\end{bsp}
+\begin{bsp}
+  Gilt $\#G < 60$, so ist $G$ auflösbar.
+  \begin{proof}[Beweis]
+    Sei $\G$ eine Zerlegungsreihe mit einfachen Faktoren $H_i$ mit $\#H_{i} < 60$. Nach Satz 42 sind $H_{i}$ sind zyklisch von Primzahlordnung $\imp G$ auflösbar.
+  \end{proof}
+\end{bsp}
+
+\begin{prop}[übung]
+  Sei $G$ endlich, $N \nt G$ ein Normalteiler, $H \le G$ eine Untergruppe, dann:
+  \begin{enumerate}[(a)]
+    \item $G$ auflösbar $\iff N$ und $\fak GN$ sind auflösbar.
+    \item $G$ auflösbar $\imp H$ auflösbar.
+  \end{enumerate}
+\begin{whg*}
+  Die Kommutatoruntergruppe von $G$ ist
+  \[[G,G] = \<[g, h] := ghg^{-1}h^{-1}\mid g, h \in G\>\]
+  Eigenschaften:
+  \begin{enumerate} [(a)]
+    \item $[G, H] \nt G$
+    \item $\fak G{[G,G]}$ ist abelsch
+    \item Ist $N \nt G$ ein Normalteiler mit $\fak GN$ abelsch, so gilt $[G, G] \le N$ ist Untergruppe.
+    \item $H \le G$ Untergruppe $\imp [H, H] \le [G, G]$ nach Definition.
+    \item $\pi : G \to G'$ ein surjektiver Gruppenhomomorphismus, dann: \[\pi([G, G]) = [G', G']\]
+          Denn: \begin{proof}[Beweisskizze]
+           \[\pi(\{[g, h] \mid g, h \in G\}) = \{[\pi(g), \pi(h)] \mid g, h \in G\} \underset{\pi \text{surj.}} = \{[g', h'] \mid g', h' \in G'\} \cdots \qedhere\]
+          \end{proof}
+  \end{enumerate}
+\end{whg*}
+\end{prop}
+\addcontentsline{toc}{subsection}{Abgeleitete Reihe}
+\begin{defi}[\textbf{Abgeleitete Reihe}]
+  Die abgeleitete Reihe von $G$ ist definiert als die Folge \[D^{0}(G) \ge D^{1}(G) \ge D^{2}(G) \ge \cdots\]
+  mit $D^{0}(G) := G$ und $D^{i+1}(G) := [D^{i}, D^{i}(G)]$ für $i \ge 0$
+\end{defi}
+\begin{bem}\item
+\begin{enumerate}[(a)]
+  \item Gilt $D^{i+1}(G) = D^{i}(G)$, so folgt $D^{n}(G) = D^{i}(G), \forall n \ge i$
+  \item Nach Wiederholung (a) folgt: $D^{i}(G) \nt D^{i-1}(G), \forall i \ge 1$. Es gilt sogar: (Übung 3) $D^{i}(G) \nt G, \forall i \ge 0$
+  \item $H \le G \overunderset{\text{vgl (d)}}{\text{von Whg.}}\imp D^{i}(H) \le D^{i}(G) \cap H$ (induktiv)
+    \item $\pi: G \to G'$ surjektiv $\overunderset{\text{Übung, Induktion}}{\text{zu (e) Whg.}} \imp  \pi(D^{i}(G)) = D^{i}(G')$
+\end{enumerate}
+\end{bem}
+
+\addcontentsline{toc}{subsection}{Auflösbarkeitskriterium}
+\begin{satz}[\textbf{Auflösbarkeitskriterium}]
+  Sei $G$ endlich, dann ist $G$ aufl¨ $\iff \ex i : D^{i}(G) = \{e\}$.
+  \begin{proof}[Beweis]
+    \item ``$\imp$'': Sei $G = G_{t} \etn G_{t-1} \etn G_{t-2} \etn \cdots \etn G_{1} \etn G_{0} = \{e\}$ eine abelsche Normalreihe. Dann folgt aus Wiederholung (c)
+    \[\forall i : [G_{i}, G_{i}] \le G_{i-1} \quad \text{(da } \fak {G_{i}}{G_{i-1}} \text{ abelsch)}\]
+    \[\imp D^{1}(G) \le G_{t-1} \imp D^{2}(G) \le D^{1}(G_{t-1}) \le G_{t-2} \text{ etc. }\]
+    \[\underset{\text{Ind.}}\imp D^{t}(G) = \{e\} \quad (D^{i}(G) \le G_{t-i}, \forall i \in \{0, \ldots, t\})\]
+    \item ``$\impliedby$'': Trivial. Sei $t \ge 0$  minimal mit $D^{t}(G) = \{e\}$, dann gilt
+    \[G = D^{0}(G) \etn D^{1}(G) \etn D^{2}(G) \etn \cdots \etn D^{t-1}(G) \etn D^{t}(G) = \{e\}\]
+    (echte Normalteiler wegen Sylow I (a) und $t$ minimal.) ist eine Normalreihe, Faktoren sind abelsch nach Definition der abgeleiteten Reihe (da $\fak{H}{[H, H]}$ abelsch).
+  \end{proof}
+\end{satz}
+
+\begin{bsp}\item
+ \begin{enumerate}[(a)]
+  \item  $G$ abelsch $\imp D^{1}(G) = \{e\}$
+  \item (Übung) $D^{1}(D_{n}) \le C_{n}$, wobei $D_{n}$ die Diedergruppe bezeichnet.
+   \item (Übung) Für $n \ge 5$ gezeigt $D^{1}(A_{n}) = A_{n} \imp A_{n}$ nicht auflösbar.
+         (Wissen auch $A_{n}$ ist einfach und nicht abelsch $\imp A_{n}$ ist nicht auflösbar.)
+ \end{enumerate}
+\end{bsp}
+
+\addcontentsline{toc}{subsection}{Perfekte Gruppe}
+\begin{defi}[\textbf{Perfekte Gruppe}]
+  Eine Gruppe $G$ heißt perfekt $\iff G = [G, G] = G^{1}(G)$. Damit (Übung) ist $A_{n}$ perfekt für $n \ge 5$.
+  \begin{bem*}[ohne Beweis] $\SLn(K)$ ist perfekt, falls $\#K \notin \{2, 3\}$
+  \end{bem*}
+\end{defi}
+
 \end{document}
