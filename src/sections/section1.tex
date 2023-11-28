@@ -130,9 +130,9 @@ $$b' = e \circ b' = (b \circ a) \circ b' = b \circ (a \circ b') = b \circ e = b.
 
 \addcontentsline{toc}{subsection}{Ring}
 \begin{defi}[\textbf{Ring}]
-  Ein [[Ring]] ist ein [[Tupel]] $(R, 0, 1, +, \cdot)$, sodass
+  Ein Ring ist ein Tupel $(R, 0, 1, +, \cdot)$, sodass
   \begin{enumerate}[(R1)]
-    \item $(R, 0, +)$ eine [[abelsche Gruppe]],
+    \item $(R, 0, +)$ eine abelsche Gruppe,
     \item $(R, 1, \cdot)$ ein Monoid,
     \item Es gelten die Distributivgesetze
   \end{enumerate}
@@ -671,7 +671,7 @@ Es gilt $[G, G] \trianglelefteq G.$
   \begin{proof}[Beweis] \item
   \begin{enumerate}[(i)]
     \item $G = S_{3} = \mathrm{Bij}(\{1,2,3\}) \supseteq H = \{\mathrm{id}, \sigma\}$ mit $\sigma = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3\end{pmatrix}$. Dann $H \le G$ Klar, aber $H \not \trianglelefteq G$, denn für $\tau = \begin{pmatrix} 1 & 2 & 3 \\ 1 & 3 & 2\end{pmatrix}$ gilt $\tau \sigma \tau^{-1}$ (Übung) $\implies \tau H\tau^{-1} \not \subseteq H$
-    \item Betrachte $\varphi: H \to G$ Inklusion mit $G, H$ aus (i), dann gilt $H \trianglelefteq H$ aber $\varphi(H) = H$ nein Nullteiler von $G = S_{3}$.
+    \item Betrachte $\varphi: H \to G$ Inklusion mit $G, H$ aus (i), dann gilt $H \trianglelefteq H$ aber $\varphi(H) = H$ kein Normalteiler von $G = S_{3}$.
     \item Später.
    \end{enumerate}
   \end{proof}
@@ -890,7 +890,7 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
 \begin{lemm}[Übung]
   Seien $(G_{1}, e_{1}, \circ_{1})$ und $(G_{2}, e_{2}, \circ_{2})$ Gruppen, dann ist $G = (G_{1} \times G_{2}, (e_{1}, e_{2}), \circ)$ eine Gruppe mit
   $$(g_{1}, g_{2}) \circ (h_{1}, h_{2}) = (g_{1} \circ h_{1}, g_{2} \circ h_{2})$$
-  Analog für $k \ge 2$ Faktoren. Dabei sind $G_{1} \times \{e_{2}\} \trianglelefteq G$ und $\{e_{1}\} \times G_{2} \trianglelefteq G$ Nullteiler von $G$.
+  Analog für $k \ge 2$ Faktoren. Dabei sind $G_{1} \times \{e_{2}\} \trianglelefteq G$ und $\{e_{1}\} \times G_{2} \trianglelefteq G$ Normalteiler von $G$.
 \end{lemm}
 \begin{defi}[\textbf{Direktes Produkt}] Die Gruppe $G$ aus Lemma 52 heißt das direkte Produkt von $G_{1}$ und $G_{2}$, Notation $G_{1} \times G_{2}$.
 \end{defi}
@@ -899,7 +899,7 @@ $$(\Bbb R^{n}, \underline 0, +) = (\Bbb R, 0, +) \times \cdots \times (\Bbb R, 0
 \end{bsp*}
 
 \begin{prop}
-  Sei $G$ eine Gruppe, seien $N_{1}, N_{2} \trianglelefteq G$ Nullteiler mit $N_{1} \cap N_{2} = \{e\}$, dann gelten:
+  Sei $G$ eine Gruppe, seien $N_{1}, N_{2} \trianglelefteq G$ Normalteiler mit $N_{1} \cap N_{2} = \{e\}$, dann gelten:
   \begin{enumerate}[(a)]
     \item $\forall n_{1} \in N_{1}, n_{2} \in N_{2}: n_{1}n_{2} = n_{2}n_{1}$
     \item $N_{1}N_{2} \trianglelefteq G$ ist ein Normalteiler in G
