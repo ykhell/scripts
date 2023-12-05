@@ -204,9 +204,9 @@ $\GLn(K)$ operiert frei auf der Menge der geordneten Basen von $K^{n}$.
 \begin{proof}[Beweis]
 Aus Proposition 5 folgt (a), Lemma 9 gibt (b).
 \end{proof}
+\addcontentsline{toc}{subsection}{Konjugationsklasse}
 \begin{anw*}
 Sei $X:= G$. Sei die $G$-Wirkung durch Konjugation gegeben, d.h. \[g \ubr {\circ}_{\text{Wirk.}} h = ghg^{-1}\]
-\addcontentsline{toc}{subsection}{Konjugationsklasse}
 Die Bahnen unter dieser $G$-Wirkung heißen \textbf{Konjugationsklassen}. Die Konjugationsklasse zu $h \in G = X$ ist \[G_{h} := \{ghg^{-1} \mid g \in G\}\]
 Bahnen der Länge 1 sind Fixpunkte unter Konjugation mit allen $g \in G$
 \[= \{h \in G \mid \forall g \in G : \ubr{ghg^{-1} = h}_{gh = hg} \} =: Z(G) \text{ das Zentrum von }G\]
@@ -285,7 +285,7 @@ Dabei gilt: $(\sigma(1), ..., \sigma(n))$ ist eine Permutation von $\{1, ..., n\
 \end{defi}
 
 \begin{bem*}
-$\supp(\sigma) = \emptyset \iff 0 = \id$
+$\supp(\sigma) = \emptyset \iff \s = \id$
 \end{bem*}
 
 \begin{lemm}[Andere Interpretation des Trägers]
@@ -341,7 +341,7 @@ Also $\s(\tau(i)) = \s(i) = i = \tau(i) = \tau(\sigma(i)).$
 
 \begin{defi}
 \addcontentsline{toc}{subsection}{Zykel/Transposition}
-  Seien $i_{1}, ..., i_{r} \in \{1, ..., n\}$ paarweise verschieden. Der $r$-\textbf{Zykel} \[(i_{1} \ i_{2}\ \cdots \ i_{r})(j) =
+  Seien $i_{1}, ..., i_{r} \in \{1, ..., n\}$ paarweise verschieden. Der $r$-\textbf{Zykel} ist \[(i_{1} \ i_{2}\ \cdots \ i_{r})(j) =
   \begin{cases}
     j & j \notin \{i_{1}, ..., i_{r}\} \\
     i_{s+1} & j = i_{s} \ (s \in \{1, ..., n\}) \\
@@ -742,9 +742,9 @@ Sei $X:= \{H \mid H \le G\}$, $X$ ist eine $G$-Menge durch Konjugation $c: G \ti
 
 \addcontentsline{toc}{subsection}{Sylow II}
 \begin{satz}[\textbf{Sylow II}]
-  Sei $G$ endlich, $p$ ein Primteiler von $\#G$. Dnan:
+  Sei $G$ endlich, $p$ ein Primteiler von $\#G$. Dann:
   \begin{enumerate}[(a)]
-    \item Je 2 $p$-Sylow Gruppen von $G$ sind kunjugiert.
+    \item Je 2 $p$-Sylow Gruppen von $G$ sind konjugiert.
     \item Jede $p$-Gruppe $H$ mit $H \le G$ liegt in einer $p$-Sylow Gruppe von $G$.
     \item $\forall P \in \Syl_{p}(G): \syl_{p}(G) = [G : N_{G}(P)]$ und insbesondere $(P \le N_{G}(P))$ gilt $\syl_{p}(G) | [G : P]$
   \end{enumerate}
@@ -1024,7 +1024,7 @@ Sei $G$ endlich, dann ist $G$ auflösbar $\iff$ die Faktoren jeder Zerlegungsrei
 \addcontentsline{toc}{subsection}{Abgeleitete Reihe}
 \begin{defi}[\textbf{Abgeleitete Reihe}]
   Die abgeleitete Reihe von $G$ ist definiert als die Folge \[D^{0}(G) \ge D^{1}(G) \ge D^{2}(G) \ge \cdots\]
-  mit $D^{0}(G) := G$ und $D^{i+1}(G) := [D^{i}, D^{i}(G)]$ für $i \ge 0$
+  mit $D^{0}(G) := G$ und $D^{i+1}(G) := [D^{i}(G), D^{i}(G)]$ für $i \ge 0$
 \end{defi}
 \begin{bem}\item
 \begin{enumerate}[(a)]
@@ -1037,7 +1037,7 @@ Sei $G$ endlich, dann ist $G$ auflösbar $\iff$ die Faktoren jeder Zerlegungsrei
 
 \addcontentsline{toc}{subsection}{Auflösbarkeitskriterium}
 \begin{satz}[\textbf{Auflösbarkeitskriterium}]
-  Sei $G$ endlich, dann ist $G$ aufl¨ $\iff \ex i : D^{i}(G) = \{e\}$.
+  Sei $G$ endlich, dann ist $G$ auflösbar $\iff \ex i : D^{i}(G) = \{e\}$.
   \begin{proof}[Beweis]
     \item ``$\imp$'': Sei $G = G_{t} \etn G_{t-1} \etn G_{t-2} \etn \cdots \etn G_{1} \etn G_{0} = \{e\}$ eine abelsche Normalreihe. Dann folgt aus Wiederholung (c)
     \[\forall i : [G_{i}, G_{i}] \le G_{i-1} \quad \text{(da } \fak {G_{i}}{G_{i-1}} \text{ abelsch)}\]
@@ -1060,7 +1060,7 @@ Sei $G$ endlich, dann ist $G$ auflösbar $\iff$ die Faktoren jeder Zerlegungsrei
 
 \addcontentsline{toc}{subsection}{Perfekte Gruppe}
 \begin{defi}[\textbf{Perfekte Gruppe}]
-  Eine Gruppe $G$ heißt perfekt $\iff G = [G, G] = G^{1}(G)$. Damit (Übung) ist $A_{n}$ perfekt für $n \ge 5$.
+  Eine Gruppe $G$ heißt perfekt $\iff G = [G, G] = D^{1}(G)$. Damit (Übung) ist $A_{n}$ perfekt für $n \ge 5$.
   \begin{bem*}[ohne Beweis] $\SLn(K)$ ist perfekt, falls $\#K \notin \{2, 3\}$
   \end{bem*}
 \end{defi}

@@ -63,7 +63,7 @@ Seien $I, X$ Mengen. Eine Folge/Familie in $X$ über (Indexmenge ) $I$, geschrie
   \begin{enumerate}[(i)]
     \item $R[M] := \{(a_{m})_{m \in M} \in R^{M} \mid (E): \# \{m \in M : a_{m} \ne 0\} < \infty\}$
     \item $\underline 0 = $ die Abbildung $M \to \{0\} \subseteq R$
-    \item $\underline 1 = $ die Folge $(S_{em})_{m \in M}$ mit $S_{em} = \begin{cases} 1, & m = e, \\ 0, & m \ne e.\end{cases}$
+    \item $\underline 1 = $ die Folge $(\delta_{em})_{m \in M}$ mit $\delta_{em} = \begin{cases} 1, & m = e, \\ 0, & m \ne e.\end{cases}$
     \item Verknüpfungen $+, \cd : R[M] \tm R[M] \to R[M]$ durch:
           \[(a_{m})_{m \in M} + (b_{m})_{m \in M} := (a_{m}+b_{m})_{m \in M}\]
           und
@@ -313,10 +313,11 @@ Die Polynome $s_{1}, ..., s_{n} \in R[X_{1}, \ldots, X_{n}]^{S_{n}}$ sind die el
 
 \begin{satz}
   Sei $\psi: R[Y_{1}, \ldots, Y_{n}] \to R[X_{1}, \ldots, X_{n}]$ der Ringhomomorphismus \[h(Y_{1}, ..., Y_{n}) \mps h(s_{1}, ..., s_{n})\]
-  Dann ist
+  Dann gilt
   \begin{enumerate}[(a)]
-    \item $\psi$ ist Ringhomomorphismus mit $\bil(\psi) \subseteq R[X_{1}, ..., X_{n}]^{S_{n}}$
-    \item $\psi$ ist ein Ringisomorphismus.
+    \item $\psi$ ist Ringhomomorphismus mit $\psi|_{R} = \id_{R}$ und $\psi(Y_{i}) = s_{i}$ und $\bil(\psi) \subseteq R[X_{1}, ..., X_{n}]^{S_{n}}$
+    \item $\psi$ definiert einen Ringisomorphismus
+          \[R[Y_{1}, \ldots, Y_{n}] \to R[X_{1}, \ldots, X_{n}]^{\Sn}\]
   \end{enumerate}
 \end{satz}
 
@@ -325,4 +326,332 @@ Die Polynome $s_{1}, ..., s_{n} \in R[X_{1}, \ldots, X_{n}]^{S_{n}}$ sind die el
   \[(\underbrace{X_{1} + \cdots + X_{4}}_{s_{1}})^{2} - 2(\ubr{X_{1}X_{2} + X_{1}X_{3} + X_{2}X_{3} + X_{1}X_{4} + X_{2}X_{4} + X_{3}X_{4}}_{s_{2}})\]
   \[ = s_{1}^{2} - 2s^{2} = h(s_{1}, s_{2}), h = Y_{1}^{2} - 2Y_{2}\]
 \end{bsp*}
+
+\begin{whg*}\item
+\begin{enumerate}[(a)]
+  \item $R[X_{1}, \ldots, X_{n}] \subseteq R[X_{1}, \ldots, X_{n}]^{\Sn}$ symmetrische Polynome.
+  \item Elementar symmetrische Polynome $s_{1}, \ldots, s_{n} \in K[X_{1}, \ldots, X_{n}]^{\Sn}$ mit \[s_{i}(X_{1}, \ldots, X_{n}) = \sum_{1 \le j_{1} < \cdots < j_{i} \le n}\prod_{1 \le k \le i}X_{j_{k}} = \sum_{1 \le j_{1} < \cdots < j_{i} \le n}X_{j_{1}}\cdot \ldots \cdot X_{j_{i}}\]
+\end{enumerate}
+\end{whg*}
+
+\begin{proof}[Beweis](zu Satz 3.19)
+\begin{enumerate}[{Teil} (a)]
+  \item Klar
+        \[\bil(\psi) = \l\{ \sum_{m \in \Nn} \ubr{a_{m}}_{\in R} \cd \ubr{s_{1}^{m_{1}}\cdot \ldots \cd s_{n}^{m_{n}}}_{\text{symm. Pol.}} \r\}\]
+  \item benötigt Vorbereitungen.
+\end{enumerate}
+\end{proof}
+
+\begin{bem*}
+Sei $R = K$ ein Körper, $\a_{1}, \ldots, \a_{n}$ die Nullstellen von $f = X^n - \a_{1}X^{n-1} + a_{2}X^{n-2} \mp \cdots + (-1)^{n}a_{n} \in K[X]$, dann gilt $\a_{i} = s_{i}(\a_{1}, \ldots, \a_{n})$, denn: $f = (X-\a_{1})\cdot \ldots \cdot (X-\a_{n})$. (hatten $s_{i}$ erhalten als die Koeffizienten von $(-1)^iX^{n-i}$ in $(X-X_{1})\cdot \ldots \cd (X-X_{n})$)
+\end{bem*}
+
+\begin{defi}[Lex-Ordnung]\item
+\begin{enumerate}[(a)]
+  \item Definiere auf $\Nn^{n}$ die Relation $\le$ durch $\ell = (\ell_{1}, \ldots, \ell_{n}) \le m = (m_{1}, \ldots, m_{n}) :\iff \ell = m$ oder $\ex i \in \eb n$ mit $\ell_{1} = m_{1}, \ldots \ell_{i-1} = m_{i-1}, \ell_{i} < m_{i}$. Dies definiert eine Totalordnung auf $\Nn^{n}$, die lexikographische Ordnung. Schreibe $\ell < m$ für $\ell \le m$ und $\ell \ne m$. Für primitive Monome schreibe
+        \[X^{\ell} \le X^{m} \iff \ell \le m\]
+  \item Der leitgrad von $f = \sum_{m \in \Nn^{n}}a_{m}X^{m}$ ist $\mathrm{in}(f):= \max \{m\in \Nn^{n} \mid a_{m} \ne 0\} \in \Nn^{n} \cup \{-\infty\}$ (mit der Konvention $\mathrm{in}(0) = -\infty$) der Leitkoeffizient von $f \ne 0$ ist $a_{\mathrm{in}(f)}$.
+\end{enumerate}
+\end{defi}
+\begin{bsp*}
+$\mathrm{in}(\ubr{X_{1}^{3} X_{2}^{2} + X_{1}^{4}X_{3}}_{\in R[X_{1}, X_{2}, X_{3}]}) = (4, 0, 1) \in \Nn^{3}$
+\end{bsp*}
+
+\begin{prop}
+  Seien $f = \sum_{\ell \in \Nn^{n}}a_{\ell} X^{\ell}, g = \sum_{m \in \Nn^{n}}b_{m} X^{m}, \ell_{0} = \mathrm{in}(f), m_{0} = \mathrm{in}(g)$. Dann:
+  \begin{enumerate}[(a)]
+    \item Für $m, \ell, m', \ell' \in \Nn^{n}$ gilt
+          \[m \ge \ell, m' \ge \ell' \imp m+m' \ge \ell + \ell'\]
+          (gilt dabei $m \ne \ell$ oder $m' \ne \ell'$, so folgt $m+m' > \ell + \ell'$)
+    \item $\mathrm{in}(f \cd g) \le \ell_{0}+m_{0}$ und es gilt $\mathrm{in}(f \cd g) = \ell_{0} + m_{0}$ falls die Leitkoeffizienten $a_{\ell_{0}} \cd b_{m_{0}} \ne 0$.
+    \item $\mathrm{in}(f \cd g) \le \max{\mathrm{in}(f), \mathrm{in}(g)}$ und es gilt Gleichheit falls $\mathrm{in}(f) \ne \mathrm{in}(g)$.
+    \item $\mathrm{in}(s_{i}) = (\ubr{1, \ldots, 1}_{i \text{ Terme}}\ubr{0, \ldots, 0}_{n-i \text{ Terme}}) =: \xi_{i} \in \Nn^{n}$ für $i \in \eb n$.
+    \item $\xi_{1}, \ldots, \xi_{n}$ sind linear unabhängig als Elemente von $\Q^{n}$, und also ist $\ph_{i}: \Nn^{n} \to \Nn^{n}, (a_{i}) \mps \sum a_{i} \xi_{i}$ injektiv und $\ph^{-1}$ ist durch die Formel (für Elemente im Bild) \[(b_{i}) \mps (b_{1}-b_{2}, b_{2}-b_{3}, \ldots, b_{n-1}-b_{n}, b_{n})\]
+  \end{enumerate}
+\begin{proof}[Beweis]
+\begin{enumerate}[(a)]
+  \item (Übung) Es genügt zu zeigen $m \ge \ell \imp m+m' \ge \ell+m'$ (mit $> \imp >$) genügt mit Induktion zu zeigen: $m \ge \ell \imp m + e_{j} \ge \ell + e_{j}$, ($e_{j} = (0, \ldots, 0,1,0, \ldots 0)$)
+  \item $f \cd g = (\sum a_{\ell}X^{\ell})(\sum b_{m}X^{m}) = \sum_{\ell, m}a_{\ell}b_{m}X^{\ell+m}$ falls $a_{\ell} b_{m} \ne 0$ (nur solche Terme tragen zu $f \cd g$ bei), so folgt $\ell \le \ell_{0}$ und $m \le m_{0}$, $\ell_{0}, m_{0}$ die Leitkoeffizienten. $\underset{(a)}\imp \ell + m \ge \ell_{0} + m_{0} \imp \mathrm{in}(f \cd g) \le \ell_{0} + m_{0}$.
+
+  Außerdem: (Koeffizient von $X^{\ell_{0}+m_{0}} = ?$) gilt $\ell + m = \ell_{0}=m_{0}$, so muss wegen (a) $\ell = \ell_{0}$ und $m = m_{0}$ gelten, falls $a_{\ell} \ne 0$ und $b_{m} \ne 0 \imp $ Koeffizient von $X^{\ell_{0}+m_{0}}$ ist $a_{\ell_{0}}\cd b_{m_{0}}$. Also $\mathrm{in}(fg) = m_{0} + \ell_{0}$, falls $a_{\ell_{0}} b_{m_{0}} \ne 0$.
+  \item $f + g = \sum_{m}(a_{m} + b_{m})X^{m}$: Im Fall $a_{m} + b_{m} \ne 0$, so folgt $a_{m} \ne 0$ oder $b_{m} \ne 0 \imp m \le \ell_{0}$ oder $m \le m_{0} \imp m \le \max\{\ell_{0}, m_{0}\}$.
+
+  Für Zusatz: Gelte o.E. $\ell_{0} < m_{0}$, dann ist der Koeffizient von $X^{m_{0}}$ gleich $a_{m_{0}} + b_{m_{0}} \ne 0$, wobei $a_{m_{0}} = 0$ wegen $m_{0} \ge \mathrm {in}(f)$, und $b_{m_{0}} \ne 0$, da $m_{0} = \mathrm{in}(f)$. Also folgt $\mathrm{in}(f+g) = \max\{\ell_{0}, m_{0}\}$.
+
+  \item $s_{i} = \sum_{i \le j_{1} < j_{2} < \cdots < j_{i} \le n} X_{j_{1}}\cdot \ldots \cdot X_{j_{i}}$ größtes Monom (mit Koeffizient $\ne 0$) in der Summe ist $X_{1} \cdot \ldots \cdot X_{i} \imp \mathrm{in}(s_{i}) = (1, \ldots, 1, 0, \ldots 0) = (\delta_{j \le i})_{1 \le j \le n}$.
+  \item (Übung) zur linearen Algebra, $\ph$ hat Darstellungsmatrix
+        \[
+        \begin{pmatrix}
+           1 & 1 & \cdots & 1 \\
+           0 & 1 & \cdots & 1 \\
+           \vdots & \vdots & \ddots & \vdots \\
+           0 & \cdots& \cdots & 1
+        \end{pmatrix}\]
+        und $\ph^{-1}$
+        \[
+        \begin{pmatrix}
+          1 & -1 \\
+            & 1 & -1 \\
+            & & \ddots & \ddots \\
+            & & &  1 & -1 \\
+            & & & & 1
+        \end{pmatrix} :
+        \begin{pmatrix}
+          t_{1} \\ t_{2} \\ \vdots  \\ t_{n-1} \\ t_{n}
+        \end{pmatrix} \mps
+        \begin{pmatrix}
+          t_{1} - t_{2} \\
+          t_{2} - t_{3} \\
+          \vdots \\
+          t_{n-1} - t_{n} \\
+          t_{n}\\
+        \end{pmatrix}. \qedhere\]
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+\begin{proof}[Beweis von Satz 3.19] %TODO
+
+\end{proof}
+\begin{defi}
+Die Diskriminante von $f(X) = X^{n} - a_{1}X^{n-1} + a_{2}X^{n-2} \mp \cdots + (-1)^{n}a_{n} \in R[T]$ ist $D(f):= d_{n}(a_{1}, \ldots, a_{n})$ Polynom in $n$-Variablen über $R$.
+\end{defi}
+\begin{bed*}
+  Sei $R$ ein Körper und seien $\a_{1}, \ldots \a_{n}$ die Nullstellen von $f$, so dass $\a_{i} = s_{i}(\a_{1}, \ldots, \a_{n})$, dann folgt:
+  \[D(f) = d_{n}(s_{1}(\a_{1}, \ldots, \a_{n}), \ldots, s_{n}(\a_{1}, \ldots, \a_{n}))\]
+  \[= D_{n}(\a_{1}, \ldots, \a_{n}) = \prod_{1 \le i < j \le n}(\a_{i} - \a_{j})^{2}.\]
+  d.h. $D(f)$ erkennt ob merhfache Nullstelle vorliegt. Jedes symmetrische Polynom in den Nullstellen von $f$ lässt sich schreiben als ein Polynom in den Koeffizienten von $f$.
+\end{bed*}
+\begin{whg}
+  Sei $R$ ein kommutativer Ring (im Weiteren), $I \subseteq R$ ist ein Ideal von $R$, falls $RI \subseteq I, I+I \subseteq I$.
+\end{whg}
+\begin{nota*}
+  Für $a \in R$ sei $(a) = Ra$ das Hauptideal in $R$, Erzeuger $a$. Für $a_{1}, \ldots, a_{n} \in R$ sei $(a_{1}, \ldots, a_{n}) = Ra_{1} + R{a_{2}} + \ldots + Ra_{n} \subseteq R$ Ideal.
+\end{nota*}
+\begin{bem*}[Übung]
+Für $ I \subseteq R$ ein Ideal: $1 \in I \iff I = R$, für $S \subseteq R$ Unterring: $S = R \iff RS \subseteq S$.
+\end{bem*}
+
+
+\begin{prop}
+  Sei $\ph: R \to R'$ ein Ringhomomorphismus, dann gelten:
+  \begin{enumerate}[(i)]
+    \item Ist $I' \subseteq R'$ ein Ideal, so ist $\ph^{-1}(I') \subseteq R$ ein Ideal.
+    \item $\ker \ph = \ph^{-1}(\{0\}) \subseteq R$ ist ein Ideal.
+    \item $\bil(\ph) = \{\ph(r) \mid r \in R\} \subseteq R'$ ist ein Unterring.
+    \item Ist $\ph$ surjektiv und $I \subseteq R$ ein Ideal, so ist $\ph(I) \subseteq R'$ ein Ideal.
+  \end{enumerate}
+  \begin{proof}[Beweis] nur (iv)
+    \begin{enumerate}[(iv)]
+      \item \[\ph(I) + \ph(I) = \{\ubr{\ph(a) + \ph(b)}_{\ph(a+b)} \mid a, b \in I\} = \ph(I + I) \underset{I + I \subseteq I} \subseteq \ph(I)\]
+            (benötigt nicht, dass $\ph$ surjektiv)
+            \[R' \cd \ph(I) \underset{\ph \text{ surj.}} = \ph(R)\ph(I) = \{\ph(r)\ph(a) \mid r \in R, a \in I\} = \ph(RI) \underset{RI \subseteq I} \subseteq \ph(I)\]
+            Also $\ph(I) \subseteq R'$ ist ein Ideal.\qedhere
+    \end{enumerate}
+  \end{proof}
+\end{prop}
+
+\begin{defi}[Charakteristik]
+  Die Charakteristik von $R$ ist
+  \[\chr(R) :=
+  \begin{cases}
+    0, & n \cd 1_{R} \ne 0_{R}, \forall n \in N \\
+    \min\{n \in \N \mid n \cd 1_{R} = 0_{R}\}, & \ex n \in \N : n\cd 1_{R} = 0_{R}
+  \end{cases}\]
+\end{defi}
+
+\begin{bsp*}
+\item $\chr(\Z) = 0, \chr(\fak Z{nZ}) = n, n \in \N$
+\end{bsp*}
+
+\begin{bem*}[Übung]
+\begin{enumerate}[(a)]
+  \item Sei $\ord(1_{R})$ die Ordnung von $1_{R}$ in $(R, 0_{R}, +)$, dann
+        \[\chr(R) =
+        \begin{cases}
+          \ord(1_{R}), & \ord(1_{R}) \ne \infty \\
+          0, & \ord(1_{R}) = \infty \\
+        \end{cases}\]
+  \item Sei $\ph: \Z \to R$ der eindeutige Ringhomomorphismus
+        \[\ph(1_{\Z}) := 1_{R} \imp \ph (n_{\Z}) = n \cd 1_{R}, \forall n \in \Z\]
+        Dann gilt: $\chr (R)$ ist der (eindeutige) Erzeuger in $\N$ von $\ker (\ph) \subseteq \Z$ (ein Ideal) (``Grund für die Definition von $\chr (R)$'')
+\end{enumerate}
+\end{bem*}
+
+\begin{prop}
+  Ist $K$ ein Körper, so ist $\chr K$ Null oder eine Primzahl.
+  \begin{proof}[Beweis]Annahme: $\chr K \in \N$ und ist keine Primzahl $\imp \ex n, m \in \N$ mit $n > 1, m > 1$, sodass $\chr K = n \cd m > \max\{n,m\}$
+
+    Definition der Charakteristik gibt:
+    \[n \cd m \cd 1_{K} = 0_{K} \imp \ubr{n\cd 1_{K}}_{\ne 0\ (*)} \cd \ubr{m \cd 1_{K}}_{\ne 0\ (*)} = 0\]
+    $(*)$ da $n, m < n \cd m = \chr K$. Da $K$ ein Körper $\imp K$ ist nullteilerfrei $\imp n \cd 1_{K} = 0$ oder $m \cd 1_{K} = 0$. Widerspruch zu $(*)$. \qedhere
+  \end{proof}
+\end{prop}
+
+\begin{bsp*}[Übung]
+  Sei $R$ ein Ring mit $\chr (R) = p$ eine Primzahl, dann gelten:
+  \begin{enumerate}[(a)]
+    \item $\ph_{R} = R \to R, a \mps a^{p}$ ist ein Ringhomomorphismus.
+    \item Es gilt $\ph_{\Fp} = \id_{\Fp}$, wobei $\Fp = \fak \Z {p\Z}$, d.h. $\forall a \in \Fp$ gilt $a^{p} = a$.
+  \end{enumerate}
+\end{bsp*}
+
+\begin{whg*}
+Für $I \subseteq R$ ein Ideal, hatten Faktorring $\fak RI$ und Faktorabbildung $\pi : R \to \fak RI, r \mps r+I$ (vgl. Satz 1.49)
+\end{whg*}
+
+\begin{satz}[Homomorphiesatz für Ringe]
+  Sei $\ph : R \to R'$ ein Ringhomomorphismus und $I \subseteq \ker(\ph)$ ein Ideal von $R$, dann:
+  \begin{enumerate}[(a)]
+          \item $\ex !$ Ringhomomorphismus $\bar \ph : \fak RI \to R'$ mit $\bar \ph (r+I) = \ph(r)$, d.h. folgendes Diagramm kommutiert:
+\[\begin{tikzcd}
+R \arrow[d, "\pi"'] \arrow[r, "\ph"] & R' \\
+\fak RI \arrow[ru, "\bar \ph"']       &
+\end{tikzcd}\]
+          \item Ist $I = \ker(\varphi)$, so definiert $\bar \ph$ aus (a) einen Ringisomorphismus \[\fak R{\ker(\ph)} \to \bil(\ph) \subseteq R', r+\ker(\varphi) \mps \ph(r)\]
+  \end{enumerate}
+  \begin{proof}[Beweis] (Übung) analog zum Beweis vom Homomorphiesatz für Gruppen (Satz 1.45).
+  \end{proof}
+\end{satz}
+\begin{satz}[Isomorphiesatz für Ringe]
+  Sei $\ph : R \to R'$ ein surjektiver Ringhomomorphismus $\l(R' \cong \fak R{\ker(\ph)}\r)$, seien $X = \{I \subseteq R \text{ Ideal} \mid  \ker(\ph) \subseteq I\}, X' = \{I' \subseteq R' \mid I' \text{ Ideal }\}$. Dann gelten:
+  \begin{enumerate}[(a)]
+    \item Die Abbildung $X' \to X, I' \to \ph^{-1}(I')$ ist eine Bijektion mit Umkehrabbildung $X \to X', I \mps \ph(I)$.
+    \item Für $I \subseteq R'$ einIdeal und $I = \ph^{-1}(I')$ ist die Abbildung
+          \[\fak RI \to \fak{R'}{I'}, r+I \mps \ph(r) + I'\]
+          ein Ringisomorphismus.
+  \end{enumerate}
+  \begin{proof}[Beweis]
+  (Übung) analog zum Beweis vom 2. Isomorphiesatz für Gruppen (Satz 1.51).
+  \end{proof}
+\end{satz}
+
+\begin{nota*}
+Für $I, J \subseteq R$ sei $I \cd J = \{\sum_{i}a_{i}b_{i} \mid a_{i} \in I, b_{i} \in J\}$, d.h. (Übung) $I \cd J$ ist das kleinste Ideal in $R$, das $\{a \cd b \mid a \in I, b \in J\}$ enthält.
+\end{nota*}
+
+\begin{satz}[Chinesischer Restsatz]
+  Seien $I_{1}, \ldots, I_{t} \subseteq R$ Ideale, die ``paarweise Koprim'' sind, d.h. $I_{i} + I_{j} = R$ für $i \ne j \in \eb t$. Dann gelten:
+  \begin{enumerate}[(a)]
+    \item $I_{i}$ und $\prod_{j \ne i \in \eb t}I_{j}$ sind Koprim.
+    \item $I_{1}\cd \ldots \cd I_{t} = \bigcap_{i \in \eb t} I_{i}$.
+    \item Die Abbildung
+          \[\fak R{\textstyle \prod_{i \in \eb t}I_{i}} = \fak R{I_{1}\cd \ldots \cd I_{t}} \overset \cong \longrightarrow \bigtimes_{i \in \eb t} \fak R{I_{i}} = \fak R{I_{1}} \tm \cdots \tm \fak R{I_{t}}\]
+          \[r+I_{1}\cd \ldots I_{t} \mps (r+I_{1}, \ldots r+I_{t})\]
+          ist wohl-definiert und ein Ringisomorphismus. Also gilt
+          \[\fak R{\textstyle \prod_{i \in \eb t}I_{i}} \cong\bigtimes_{i \in \eb t} \fak R{I_{i}}\]
+  \end{enumerate}
+
+  \begin{proof}[Beweis]
+    In der LA2 für $R$ ein Hauptidealring, allgemein: siehe Jantzen-Schwermer, Satz III.3.10
+  \end{proof}
+\end{satz}
+
+
+\section{Ringe von Brüchen/Lokalisierung}%
+\begin{defi}
+Eine Teilmenge $S \subseteq R$ heißt multiplikativ abgeschlossen $\iff S$ ist ein Untermonoid von $(R, 1, \cd)$.
+\end{defi}
+\begin{bsp*}
+  \begin{enumerate}[(i)]
+    \item $S = \Z \setminus \{0\} \subseteq \Z$ ist multiplikativ abgeschlossen.
+    \item $S^{p} = \Z \setminus p \Z \subseteq \Z$ ist multiplikativ abgeschlossen.
+    \item $S_{p} = \{p^{n} \mid n \in \Nn\} \subseteq \Z$ ist multiplikativ abgeschlossen.
+  \end{enumerate}
+  \item Es gilt $S = S^{P} \cd S_{p}$
+\end{bsp*}
+
+\begin{defi}
+  Definiere eine Äquivalenzrelation auf $R \tm S$ ($S \subseteq R$ multiplikativ abgeschlossen) durch \[(r,s) \sim(r',s') :\iff \ex t \in S : t (rs' - r's)\]
+  Denn:
+  \item $\sim$ reflexiv: $(r,s) \sim r,s$, da $1 \cd (rs-rs) = 0$.
+  \item $\sim$ symmetrisch: Gelte $(r,s) \sim (r', s')$, d.h. $\ex t \in S : t(rs' - r's) = 0 \imp t(r's - rs') = 0 \imp (r',s') \sim (r,s)$.
+  \item $\sim$ transitiv: Gelte $(r,s) \sim (r',s')$ und $(r',s') \sim (r'',s'')$, d.h. $\ex t, t' \in S : t(rs' - r's) = 0$ und $t'(r's'' - r''s') = 0$. Gemeinsamer Nenner $tt'ss's''$
+  \[\imp tt's''(rs'-r's) = 0, tt's(r's''-r''s) = 0\]
+  \[\imp tt's''rs' - tt'sr{''}s' = 0 = tt's'(rs'' - r''s) \imp (r,s) \sim (r'',s'')\]
+  Schreibe: $\frac rs$ für die Äquivalenzklasse von $(r,s)$ und $S^{-1}R$ für $\fak {R \tm S}\sim$.
+  \item Beachte: $\frac rs = \frac{r'}{s'} \iff \ex t \in S : \frac{ts'r}{tss'} = \frac{tsr'}{tss'}$ gilt $ts'r = tsr'$, beachte zudem $\frac rs \ueb = \frac {tr}{ts}$, für $t \in S$.
+\end{defi}
+
+\begin{satz}
+  Sei $S \subseteq R$ multiplikativ abgeschlossen, dann:
+  \begin{enumerate}[(a)]
+    \item Die Verknüpfungen $+, \cd$ auf $S^{-1}R$ definiert durch
+          \[\frac rs + \frac {r'}{s'} = \frac{rs'+r's}{ss'}, \quad \frac rs \cd \frac {r'}{s'} = \frac{rr'}{ss'}\]
+          sind wohl-definiert.
+    \item $S^{-1}R = (S^{-1}R, \frac 01, \frac 11, +, \cd)$ ist ein kommutativer Ring.
+    \item Die Lokalisierung von $R$ an $S$
+          \[\ph : R \to S^{-1}R, r \mps \frac r1\]
+          ist ein Ringhomomorphismus. (Klar aus dem Definition von $+$ und $\cd$)
+    \item (Universelle Eigenschaft) Ist $\psi : R \to R'$ ein Ringhomomorphismus, sodass $\psi(S) \le (R')\en$, so existiert ein eindeutiger Ringhomomorphismus $\hat \psi : S^{-1}R \to R'$ mit $\hat \psi |_{R} = \psi$, nämlich $\hat \psi (\frac rs) = \psi(r) \cd \psi(s)^{-1}$.
+  \end{enumerate}
+\end{satz}
+\begin{bsp*}$(\Z \setminus \{0\})^{-1}\Z = \Q, \Z^{-1}\Z = 0$-Ring.
+\end{bsp*}
+\begin{proof}[Beweis]\item
+\begin{enumerate}[(a)]
+  \item $+$ und $\cd$ sind wohldefiniert:
+        Gelte $\frac rs = \frac ab$ und $\frac {r'}{s'} = \frac {a'}{b'}$ mit $r, r', a, a' \in R, s, s', b, b' \in S$, zu zeigen ist: \[\frac{rs' + r's}{ss'} = \frac{ab' + a'b}{bb'}\]
+        Voraussetzung: $\ex t, t' \in S : t(rb - as) = 0, t'(r'b' - a's') = 0$. Gemeinsamer Nenner: $ss'bb'tt'$, also
+        \[tt'b's'(rb - as) = 0, \quad tt'sb(r's'-a's) = 0\]
+        \[\imp tt'b's'rb - tt'b's'as + tt'sbr'b' - tt'sba's' = 0\]
+        \[ = tt'b'b(rs'+r's) - tt'ss'(ab'-a'b) \imp \frac{rs' + r's}{ss'} = \frac{ab' + a'b}{bb'}\]
+  \item - (d) Siehe Jantzen Schwermer III.4.2 oder Übung.
+\end{enumerate}
+\end{proof}
+
+\begin{defi}[Nullteiler]
+\begin{enumerate}[(a)]
+  \item $x \in R$ heißt Nullteiler $\iff \ex y \in R \setminus \{0\}$ mit $xy = 0$
+  \item $R$ heißt Integritätsbereich (IB) $\iff 0_{R} \ne 1_{R}$ und $0_{R}$ ist der einzige Nullteiler.
+\end{enumerate}
+\end{defi}
+
+\begin{bem}
+  $R$ ist Itdentitätsbereich $\iff$ man darf in $R$ kürzen und $0_{R} \ne 1_{R}$
+  \[\ueb \iff \forall a, b, c \in R : a \ne 0 : a\cd b = a\cd c \imp b = c\]
+  Denn $ab = ac \iff a(b-c) = 0$
+\end{bem}
+\begin{bsp*}
+\begin{enumerate}[(i)]
+  \item Jeder Körper ist ein Integritätsbereich.
+  \item $\Z, K[X]$ sind Integritätsbereich.
+  \item Jeder Unterring eines Körpers ist ein Integritätsbereich.
+  \item Jeder Unterring eines Integritätsbereichs ist ein Integritätsbereich.
+\end{enumerate}
+\end{bsp*}
+
+\begin{lemm}
+  Sei $S \subseteq R$ multiplikativ abgeschlossen, dann gilt: enthält $S$ keine Nullteiler, so ist \[\ph : R \hookrightarrow S^{-1}R, r \mps \frac r1\] injektiv.
+  \begin{proof}[Beweis]
+    Für $r \in R: \ph(r) = 0 \iff \frac r1 = \frac 01 \iff \ex t \in S : t(r \cd 1 - 0\cd 1) = 0 = tr$, da $S$ nullteilerfrei $\iff r = 0.$
+  \end{proof}
+\end{lemm}
+
+\begin{kor}
+  Sei $R$ ein Integritätsbereich, dann:
+  \begin{enumerate}[(a)]
+    \item $S = R \setminus \{0\}$ multiplikativ abgeschlossen.
+    \item $S^{-1}R$ ist ein Körper.
+    \item $R \to S^{-1}R$ ist injektiv (also ist $R$ Unterring des Körpers $S^{-1}R$)
+  \end{enumerate}
+\begin{proof}[Beweis]
+  \begin{enumerate}[(a)]
+    \item Klar, $a,b \ne 0 \imp a\cd b \ne 0$ ($a,b$ keine Nullteiler)
+    \item Sei $\frac rs \in S^{-1}R \setminus \{\frac 01\}$, Behauptung: $r \ne 0$ (also $r \in S$) $\imp \frac sr$ ist Inverses von $\frac rs$
+          Beweis der Behauptung: Angenommen $r = 0 \imp \frac 0s \ne \frac 01$, Widerspruch, da $\frac 01 = \frac 01$ ($1 \cd(0\cd1 - 0 \cd s) = 0$)
+    \item Folgt aus Lemma 3.35.
+  \end{enumerate}
+
+\end{proof}
+\end{kor}
+
+\begin{defi}[Quotientenkörper]
+$S^{-1}R = \Quot(R)$ heißt Quotientenkörper von $R$.
+\end{defi}
+
+\begin{bem}
+Jeder Integritätsbereich ist Unterring eines Körpers (seinem Quotientenkörpers).
+\end{bem}
+
 \end{document}

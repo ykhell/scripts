@@ -117,7 +117,7 @@ $$b' = e \circ b' = (b \circ a) \circ b' = b \circ (a \circ b') = b \circ e = b.
     \item Ist $V = \Bbb R^{2}$ und $P_{n}:=\{\cos \frac{2\pi j}{n}, \sin \frac{2\pi j}{n} \mid j = 0, ..., n-1\}$, dann ist
     \begin{enumerate}[(a)]
         \item $C_{n}:= \{\varphi \in SO(V) \mid \varphi(P_{n}) = P\}$ die Gruppe der Drehungen um 0 von Winkel $\frac{2\pi j}{n}, (j=0, ..., n=1)$ und
-        \item $D_{n}:= \{\varphi \in O(V) \mid \varphi(P_{n})=P\}$ die [[Diedergruppe]] der Ordnung $2n$
+        \item $D_{n}:= \{\varphi \in O(V) \mid \varphi(P_{n})=P\}$ die Diedergruppe der Ordnung $2n$
 
     \end{enumerate}
         (Übung) $\#C_{n} = n, \#D_{n} = 2n$.
@@ -415,7 +415,7 @@ Sei $G$ eine Gruppe, der Exponent von $G$ ist $\exp(G) = \min \{n \in \Bbb N \mi
 \item $\exp(S_{3}) = 6$
 \item $\exp(S_{4}) = 12$
 \item $\exp(G) = 2 \implies G$ abelsch
-\item $\Bbb F_{p}$ Körper mit $p$ Elementen und $0 \neq V$ ein $\Bbb F_{p}$-[[Vektorraum]], so gilt $\exp(V, 0, +) = p$
+\item $\Bbb F_{p}$ Körper mit $p$ Elementen und $0 \neq V$ ein $\Bbb F_{p}$-Vektorraum, so gilt $\exp(V, 0, +) = p$
 \end{enumerate}
 \end{bsp*}
 
@@ -592,7 +592,7 @@ $\mathrm{Bild}(c_{\cdot}) =: \mathrm{Inn}(G)$ die Gruppe der \textbf{inneren Aut
     \item ``$\implies$'':
           \begin{enumerate}[1)]
             \item Zeige $H := \{g \in G \mid \varphi(g) = \varphi'(g)\}i \le G$ ist eine Untergruppe.
-            \item Da $S \subseteq$ nach Definition von $H$ und Voraussetzung von ``$\implies$'', folgt $G = \langle S \rangle \subseteq H \le G$
+            \item Da $S \subseteq$ nach Definition von $H$ und Voraussetzung von ``$\implies$'', folgt $G = \langle S \rangle \subseteq H \le G$. \qedhere
           \end{enumerate}
   \end{itemize}
 \end{proof}
@@ -681,7 +681,7 @@ Es gilt $[G, G] \trianglelefteq G.$
     \item Aus $gN = g'N$ und $hN = h'N$ für $g, g', h, h' \in G$ folgt $ghN = g'h'N$ und insbesondere ist die Verknüpfung $$\circ : \underbrace{\faktor GN}_{\{gN \mid g \in G\}} \times \faktor GN \longrightarrow \faktor GN,\  (gN, hN) \longmapsto gN \circ hN = ghN$$
           wohl-definiert.
     \item $\faktor GN, \underbrace{N}_{=eN}, \circ)$ ist eine Gruppe.
-    \item $gN = g'N \iff g^-1g' \in N$.
+    \item $gN = g'N \iff g^{-1}g' \in N$.
     \item $\pi : G \to \faktor GN, g \mapsto gN$ ist ein Gruppenhomomorphismus mit $\mathrm{Kern}(\pi) = N$.
   \end{enumerate}
 \begin{proof}[Beweis]
@@ -755,7 +755,7 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
   für $m \in \Bbb N_{0}$, so dass $\mathrm{Kern}(\varphi) = \Bbb Zm$.
   \begin{itemize}
 \item Fall (b): $\mathrm{ord}(G) = \infty \implies \mathrm{Kern}(\varphi) = \{0\} \implies \varphi : \Bbb Z \to G$ ist ein Isomorphismus.
-\item Fall (a): $\mathrm{ord}(G) = m \in \Bbb N$ dann ist $\overline\varphi$ der gewünschte Isomorphismus.
+\item Fall (a): $\mathrm{ord}(G) = m \in \Bbb N$ dann ist $\overline\varphi$ der gewünschte Isomorphismus.\qedhere
  \end{itemize}
 \end{proof}
 \end{kor}
@@ -801,7 +801,7 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
         ``$\cdot$''  wohl-definiert: Gelte $a+I = a'+I$ und $b+I = b'+I$.
         $$\implies a'b' + I = ab + aj + bi + ij + I = ab + I$$
   \item (Übung)
-  \item Wie in 45 (d)
+  \item Wie in 45 (d). \qedhere
 \end{enumerate}
 \end{proof}
 \end{satz}
@@ -922,7 +922,7 @@ $$(\Bbb R^{n}, \underline 0, +) = (\Bbb R, 0, +) \times \cdots \times (\Bbb R, 0
         $\{(e, e)\} = \mathrm{Kern}(\psi)$:
         $$\psi(n_{1}, n_{2}) = e \iff n_{1}n_{2} = e \iff n_{1} = n_{2}^{-1} \in N_{1}\cap N_{2} = \{e\}$$
         $$\iff n_{1} = n_{2} = e$$
-$\mathrm{Bild}(\psi) = N_{1}N_{2}$.
+$\mathrm{Bild}(\psi) = N_{1}N_{2}$.\qedhere
 \end{enumerate}
   \end{proof}
 \end{prop}

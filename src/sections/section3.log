@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  27 NOV 2023 17:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  1 DEC 2023 20:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -803,18 +803,39 @@ L/cmm/m/it/10 ^^[[]$ \OT1/cmr/m/it/10 Ringau-to-mor-phis-mus von $\OML/cmm/m/it
 m/it/10 X\OT1/cmr/m/n/10 ]$
  []
 
-[7] [8] (./section3.aux)
+[7] [8]
+Overfull \hbox (5.78152pt too wide) in paragraph at lines 361--362
+[][]\OT1/cmr/bx/n/10 Proposition 0.21. []\OT1/cmr/m/it/10 Seien $\OML/cmm/m/it/
+10 f \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 a[]X[]; g \OT1/cmr/m/n/10 = [][] \
+OML/cmm/m/it/10 b[]X[]; `[] \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 f\OT1/cmr/m/n
+/10 )\OML/cmm/m/it/10 ; m[] \OT1/cmr/m/n/10 =
+ []
+
+[9] [10] [11] [12]
+Overfull \hbox (9.80377pt too wide) in paragraph at lines 546--547
+[]\OT1/cmr/m/n/10 In der LA2 f^^?ur $\OML/cmm/m/it/10 R$ \OT1/cmr/m/n/10 ein Ha
+up-tide-al-ring, all-ge-mein: siehe Jantzen-Schwermer,
+ []
+
+[13] [14]
+Overfull \hbox (1.62503pt too wide) in paragraph at lines 650--651
+[][]\OT1/cmr/bx/n/10 Definition 0.37 \OT1/cmr/m/n/10 (Quo-tien-tenk^^?orper)\OT
+1/cmr/bx/n/10 . []$\OML/cmm/m/it/10 S[]R \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 
+R\OT1/cmr/m/n/10 )$ hei^^Yt Quo-tien-tenk^^?orper
+ []
+
+[15] (./section3.aux)
 Package rerunfilecheck Info: File `section3.out' has not changed.
-(rerunfilecheck)             Checksum: 6479BC08E3944744DFC8B1931A83B65B;1249.
+(rerunfilecheck)             Checksum: E5C9789F9670BBCF14316DDE80B65419;1459.
  ) 
 Here is how much of TeX's memory you used:
- 21413 strings out of 477476
- 414094 string characters out of 5824243
- 1870388 words of memory out of 5000000
- 41210 multiletter control sequences out of 15000+600000
+ 21610 strings out of 477476
+ 417307 string characters out of 5824243
+ 1874388 words of memory out of 5000000
+ 41329 multiletter control sequences out of 15000+600000
  517889 words of font info for 53 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,12n,117p,567b,719s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,18n,117p,567b,1173s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/public/ma
 thabx/mathx10.600pk> </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/p
 k/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fo
@@ -837,10 +858,10 @@ i10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm
 /symbols/msam10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm7.pfb>
-Output written on section3.pdf (8 pages, 241815 bytes).
+Output written on section3.pdf (15 pages, 286659 bytes).
 PDF statistics:
- 257 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 378 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,7 +4,7 @@
 \contentsline {subsection}{Gruppe}{3}{Item.2}%
 \contentsline {subsection}{Ring}{5}{Item.26}%
 \contentsline {subsection}{Ordnung}{5}{Item.29}%
-\contentsline {subsection}{Untermonoid/Untergruppe}{6}{thm.1.9}%
+\contentsline {subsection}{Untermonoid/Untergruppe}{5}{thm.1.9}%
 \contentsline {subsection}{Erzeuger}{7}{thm.1.14}%
 \contentsline {subsection}{Zyklische Gruppe}{7}{thm.1.16}%
 \contentsline {subsection}{Satz von Lagrange}{9}{thm.1.21}%
@@ -21,7 +21,7 @@
 \contentsline {subsection}{Erster Isomorphiesatz}{20}{section*.6}%
 \contentsline {subsection}{Zweiter Isomorphiesatz}{20}{Item.148}%
 \contentsline {section}{(Semi-)direkte Produkte}{22}{Item.152}%
-\contentsline {subsection}{Semi-direktes Produkt}{24}{thm.1.56}%
+\contentsline {subsection}{Semi-direktes Produkt}{23}{thm.1.56}%
 \contentsline {chapter}{\numberline {2}Gruppen Strukturtheorie}{25}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Strukturtheorie zu Gruppen (``Einige Aussagen'')}{25}{section.2.1}%
 \contentsline {section}{Wirkungen}{25}{section.2.1}%
@@ -66,3 +66,4 @@
 \contentsline {section}{\numberline {3.2}Polynomringe}{51}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Symmetrische Polynome}{54}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Elementar symmetrische Polynome}{56}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Ringe von Brüchen/Lokalisierung}{61}{section.3.5}%
