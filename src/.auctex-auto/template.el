@@ -101,6 +101,7 @@
     "defi"
     "rem"
     "bem"
+    "kon"
     "facts"
     "exmp"
     "bsp"

@@ -596,8 +596,7 @@ $\mathrm{Bild}(c_{\cdot}) =: \mathrm{Inn}(G)$ die Gruppe der \textbf{inneren Aut
           \end{enumerate}
   \end{itemize}
 \end{proof}
-\addcontentsline{toc}{section}{Normalteiler}
-\section*{Normalteiler (Normal Subgroup)}
+\section{Normalteiler}
 \begin{nota*}
   Für $X \subseteq G$ und $g \in G$ setze $$\ell_{g}(X) = \{gx \mid x \in X\} = gX \text{ und } r_{g}(X) = \{xg \mid x \in X\} = Xg$$
   Gruppenverknüpfung assoziaativ $\implies$
@@ -711,7 +710,7 @@ Es gilt $[G, G] \trianglelefteq G.$
 $G$ abelsch $\implies \faktor{G}{N}$ abelsch.
 \end{bem*}
 
-\addcontentsline{toc}{section}{Homomorphiesatz für Gruppen}
+\section{Homomorphiesatz für Gruppen}
 \begin{satz}[Homomorphiesatz für Gruppen]
   Sei $\varphi: G \to G'$ ein Gruppenhomomorphismus mit $N = \mathrm{Kern}(\varphi)$, dann existiert genau ein Gruppenhomomorphismus $\overline \varphi : \faktor GN \longrightarrow G'$, sodass
   $$
@@ -768,8 +767,7 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
         $$\faktor GN \text{ abelsch} \iff [G, G] \le N$$
 \end{enumerate}
 \end{ubng*}
-\addcontentsline{toc}{section}{Einschub: Faktorringe}
-\subsection*{Einschub: Faktorringe}
+\section{Einschub: Faktorringe}
 \begin{defi}[\textbf{Ideal}]
   Sei $R$ ein kommutativer Ring. $I \subseteq R$ heißt Ideal wenn
   \begin{enumerate}[(i)]
@@ -805,8 +803,7 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
 \end{enumerate}
 \end{proof}
 \end{satz}
-\addcontentsline{toc}{section}{Die Isomorphiesätze}
-\subsection*{Die Isomorphiesätze}
+\section{Die Isomorphiesätze}
 \addcontentsline{toc}{subsection}{Erster Isomorphiesatz}
 \begin{satz}[\textbf{Erster Isomorphiesatz}]
   Sei $G$ eine Gruppe, $N \trianglelefteq G$ ein Normalteiler und $H \le G$ eine Untergruppe, dann gelten:
@@ -859,7 +856,7 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
 
           \item $\nu \circ \psi = \mathrm{id}_{X}$: Sei $H \le G$ mit $N \subseteq H$, zu zeigen ist $\pi^{-1}(\pi(H)) = H$. Es gilt:
           $$g \in \pi^{-1}(\pi(H)) \iff \pi(g) \in \pi(H) \iff gN \in \bigcup_{h \in H}hN$$
-          $$\iff \exists h \in H : gN = hN \underset{44(c)}\implies h^{-1}g \in N \subseteq H \implies g \in hH = H.$$
+          $$\iff \exists h \in H : gN d= hN \underset{44(c)}\implies h^{-1}g \in N \subseteq H \implies g \in hH = H.$$
           (``$\impliedby$'' klar: $g \in H \implies g \in \pi^{-1}(\pi(H))$).
 
           \item $\psi \circ \nu = \mathrm{id}_{\overline X}$: Für $\overline H \in \overline X$ (d.h. $\overline H \le \faktor GN$) ist zu zeigen $\pi(\pi^{-1}(\overline H)) = \overline H$. Dies gilt, denn $\pi$ ist surjektiv.
@@ -884,14 +881,14 @@ Für $n \in \Bbb N$ sei $\Bbb Z_{n} = \faktor {\Bbb Z}{(n)} = \faktor{\Bbb Z}{n\
 \end{proof}
 \end{satz}
 
-\addcontentsline{toc}{section}{(Semi-)direkte Produkte}
-\subsection*{(Semi-)direkte Produkte}%
+\section{(Semi-)direkte Produkte}%
 \label{sec:Direkte Produkte}
 \begin{lemm}[Übung]
   Seien $(G_{1}, e_{1}, \circ_{1})$ und $(G_{2}, e_{2}, \circ_{2})$ Gruppen, dann ist $G = (G_{1} \times G_{2}, (e_{1}, e_{2}), \circ)$ eine Gruppe mit
   $$(g_{1}, g_{2}) \circ (h_{1}, h_{2}) = (g_{1} \circ h_{1}, g_{2} \circ h_{2})$$
   Analog für $k \ge 2$ Faktoren. Dabei sind $G_{1} \times \{e_{2}\} \trianglelefteq G$ und $\{e_{1}\} \times G_{2} \trianglelefteq G$ Normalteiler von $G$.
 \end{lemm}
+\addcontentsline{toc}{subsection}{Direktes Produkt}
 \begin{defi}[\textbf{Direktes Produkt}] Die Gruppe $G$ aus Lemma 52 heißt das direkte Produkt von $G_{1}$ und $G_{2}$, Notation $G_{1} \times G_{2}$.
 \end{defi}
 \begin{bsp*}

@@ -1,8 +1,6 @@
 \documentclass[a4paper]{report}
 \usepackage{../template}
 \begin{document}
-\addcontentsline{toc}{section}{Ringe}
-\section{Ringe}
 \addcontentsline{toc}{subsection}{Ring/Einheitengruppe}
 \begin{whg*}
   $(R, 0, 1, +, \cd)$ ist ein \textbf{Ring} $\iff (R, 0, +)$ ist eine Gruppe, $(R, 1, \cd)$ ist ein Monoid und es gelten die Distributivgesetze.
@@ -79,7 +77,8 @@ Seien $I, X$ Mengen. Eine Folge/Familie in $X$ über (Indexmenge ) $I$, geschrie
 \end{nota*}
 
 \begin{ubng}\item
-\begin{enumerate}[(a)]
+\begin{enumerate}[ a)]
+\addcontentsline{toc}{subsection}{Ringhomomorphismus}
   \item $(R[M], \underline 0, \underline 1, +, \cd)$ ist ein Ring, ($R[M]$ heißt \textbf{Monoidring} zu $M$ über $R$)
   \item Ist $M$ abelsch, so ist $R[M]$  kommutativ.
   \item Ist $\ph: R \to S$ ein Ringhomomorphismus und $\s : M \to (S, 1, \cd)$ ein Monoidhomomorphismus, so $\ex !$ Ringhomomorphismus $\psi : R[M] \to S$ mit $\psi|_{R} = \ph$ und $\psi_{M} = \s$. (dabei wir identifizieren $R$ mit $R \cd e = R \cd 1$ (1-Folge) und $M$ mit $1_{R} \cd M$), nämlich:
@@ -164,8 +163,9 @@ Ab nun seien alle Ringe $R, R', S, R_{i}$ kommutativ, (und es Seien in §3 stets
   \end{proof}
 \end{satz}
 
-\begin{defi}
-  Der Polynomring in den Variablen $(X_{i})_{i \in I}$ ($I$ beliebige Menge) ist definiert als
+\addcontentsline{toc}{subsection}{Polynomring}
+\begin{defi}[\textbf{Polynomring}]
+  Der \textbf{Polynomring} in den Variablen $(X_{i})_{i \in I}$ ($I$ beliebige Menge) ist definiert als
   \[R[X_{i} \mid i \in I] := R[\Nn^{(I)}]\]
   Elemente in diesem Ring sind
   \[\sum_{a \in \Nn^{(I)}}r_{a}\cd a\]
@@ -177,8 +177,9 @@ Ab nun seien alle Ringe $R, R', S, R_{i}$ kommutativ, (und es Seien in §3 stets
   \item Monoidaddition $a + b$ entspricht \[X^{a} \cd X^{b} = X^{a + b}\]
   (bilden $a + b$ in $(\Nn^{(I)}, \underline 0, +)$ und $(a_{i})_{i \in I} + (b_{i})_{i \in I} = (a_{i} +_{\Nn} b_{i})_{i \in I}$) Also $+$ ist nicht die Addition im Ring.
 \end{nota*}
-\begin{defi*}[Primitive Monomen]
-Die Elemete in $R[\Nn^{(I)}]$ sind Summen \[\sum_{a \in \Nn^{(I)}}r_{a} \cd X^{a}\] (Polynome wie gewohnt.) Die Elemente $X^{a}, a \in \Nn^{(I)}$ heißen primitive Monome. Jedes Element in $R[X_{i} \mid i \in I]$ ist eine eindeutige Linearkombination in den Monomen $X^{a}, a \in \Nn^{(I)}$, mit Koeffizienten $r_{a}$ aus $R$, sodass $\#{a \in \Nn^{(I)} \mid r_{a} \ne 0} \le \infty$, d.h. als $R$-Modul ist $R[X_{i} \mid i \in I]$ frei über $R$ mit Basis $X^{a}, a \in \Nn^{(I)}$
+\addcontentsline{toc}{subsection}{Primitives Monom}
+\begin{defi*}[\textbf{Primitives Monom}]
+Die Elemete in $R[\Nn^{(I)}]$ sind Summen \[\sum_{a \in \Nn^{(I)}}r_{a} \cd X^{a}\] (Polynome wie gewohnt.) Die Elemente $X^{a}, a \in \Nn^{(I)}$ heißen \textbf{primitive Monome}. Jedes Element in $R[X_{i} \mid i \in I]$ ist eine eindeutige Linearkombination in den Monomen $X^{a}, a \in \Nn^{(I)}$, mit Koeffizienten $r_{a}$ aus $R$, sodass $\#{a \in \Nn^{(I)} \mid r_{a} \ne 0} \le \infty$, d.h. als $R$-Modul ist $R[X_{i} \mid i \in I]$ frei über $R$ mit Basis $X^{a}, a \in \Nn^{(I)}$
 \end{defi*}
 \begin{bsp*}
 $(2, 5, 3) \in \Nn^{3}$ entspricht $X_{1}^{2}X_{2}^{5}X_{3}^{3}$
@@ -196,14 +197,15 @@ $(2, 5, 3) \in \Nn^{3}$ entspricht $X_{1}^{2}X_{2}^{5}X_{3}^{3}$
 \end{enumerate}
 \end{facts*}
 
+\addcontentsline{toc}{subsection}{Grad, Lietkoeffizient, normiertes Polynom}
 \begin{defi}\item
 \begin{enumerate}[(a)]
   \item $\grad : R[X] \to \Nn \cup \{- \infty\}$ ist die eindeutige Abbildung mit
         \[\grad(f) = \grad\l( \sum_{i \ge 0}r_{i}X^{i} \r) = \begin{cases} -\infty, & f = 0, \\
                                                           \max\{i \in \Nn \mid r_{i} \ne 0\}, & f \ne 0
                                                         \end{cases}\]
-  \item Der Leitkoeffizient von $f \ne 0$ ist $a_{\grad(f)}$.
-  \item $f \ne 0$ heißt normiert $\iff a_{\grad(f)} = 1$.
+  \item Der \textbf{Leitkoeffizient} von $f \ne 0$ ist $a_{\grad(f)}$.
+  \item $f \ne 0$ heißt \textbf{normiert} $\iff a_{\grad(f)} = 1$.
   \item Ist $R = K$ ein Körper, so gelten außerdem
         \[\grad(fg) = \grad(f) + \grad(g)\]
         wobei $-\infty + n = n + -\infty = - \infty + (- \infty) = - \infty$ für $n \in \Nn$. Genügt: $R$ ist Integritätsbereich.
@@ -653,5 +655,213 @@ $S^{-1}R = \Quot(R)$ heißt Quotientenkörper von $R$.
 \begin{bem}
 Jeder Integritätsbereich ist Unterring eines Körpers (seinem Quotientenkörpers).
 \end{bem}
+\section{Spezielle Ideale}%
+\begin{defi}
+  Sei $I \subseteq R$ ein echtes Ideal (d.h. $I \subsetneq R$), dann
+  \begin{enumerate}[(a)]
+    \item $I$ ist \textbf{Primideal} $\iff \forall a, b \in R$ gilt:
+          \[a \cd b \in I \imp a \in I \vee b \in I\]
+    \item $I$ heißt \textbf{maximales Ideal} $\iff \forall J \subsetneq R$ Ideale mit $I \subseteq J$ gilt $I = J$
+  \end{enumerate}
+\end{defi}
 
+\begin{prop}
+  Seien $P, M \subseteq R$ Ideale, dann:
+  \begin{enumerate}[(a)]
+    \item $P$ ist ein Primideal $\iff \fak RP$ ist ein Integritätsbereich.
+    \item $R$ ist ein Körper $\iff \{0\}$ und $R$ sind die einzigen Ideale von $R$ und $0_{R} \ne 1_{R}$.
+    \item $M$ ist ein maximales Ideal $\iff \fak RM$ ist ein Körper.
+    \item Jedes maximale Ideal ist ein Primideal.
+  \end{enumerate}
+
+  \begin{proof}[Beweis] \item
+    \begin{enumerate}[(a)]
+      \item $P$ Primideal $\imp P \subsetneq R$ und $\forall a, b \in R : a \cd b \in P \imp a \in P \vee b \in P \imp \fak RP \ne 0$-Ring und $\forall a, b \in R :$
+      \[(a+P)(b + P) \subseteq P \imp a+P = P \vee b+P = P\]
+      $\imp \fak RP \ne 0$-Ring und $\forall \bar a, \bar b \in \fak RP :$
+      \[\bar a \cd \bar b = 0 \imp \bar a = 0 \vee \bar b = 0\]
+      $\imp \fak RP$ ist ein Integritätsbereich. Man kann auch ''rückwarts laufen'' $\imp$ die Äquivalenz in (a).
+      \item Übung.
+      \item Folgt aus (b) und dem Isomorphiesatz für Ringe. (der postuliert Bijektion : $\{$Ideale $J \subseteq R \mid M \subseteq J \subseteq R\}$ und $\{$Ideale $\bar J \subseteq \fak RM \mid \{\bar 0\} \subseteq \bar J \subseteq \fak RM\}$).
+      \item Folgt aus (c) und (a), da Körper Integritätsbereiche sind. \qedhere
+    \end{enumerate}
+\end{proof}
+\end{prop}
+\begin{bsp}
+  \begin{enumerate}[(a)]
+    \item Ist $R$ ein Integritätsbereich und kein Körper, so ist $\{0\}$ ein Primideal, aber nicht maximal.
+    \item In $R = K[X, Y]$ sind $\{0\} \subsetneq X \subsetneq (X, Y) \subsetneq K$ Primideal.
+   \end{enumerate}
+ \end{bsp}
+
+ \begin{whg*}[Grundlagen]
+   Eine Relation $\le$ auf einer Menge $M$ heißt \textbf[Halbordnung] $\iff \le$ ist reflexiv, transitiv und antisymmetrisch. ($\le$ antisymmetrisch bedeutet: $x \le y \wedge y \le x \imp x = y$). Eine Halbordnung heißt \textbf{Totalordnung} $\iff \forall x, y \in M : x \le y \vee y \le x$.
+ \end{whg*}
+
+ \begin{defi}
+   Sei $(M \le)$ eine halbgeordnete Menge.
+   \begin{enumerate}[(a)]
+     \item Eine Teilmenge $N \subseteq M$ heißt \textbf{Kette} $\iff (N, \le|_{N \times N})$ ist eine Totalordnung.
+     \item Eine Teilmenge $P \subseteq M$ besitzt eine obere Schranke (in $M$) $\iff \ex m \in M$, sodass $\forall p \in P : p \le m$.
+     \item $m \in M$ heißt maximales Element $\iff \nexists m' \in M : m' > m$
+   \end{enumerate}
+ \end{defi}
+ \begin{bsp*}
+\begin{enumerate}[(a)]
+  \item Ist $M$ eine beliebige Menge und $\mathcal P(M)$ eine Potenzmenge, so ist $(\mathcal P(M), \subseteq)$ eine Halbordnung. $M$ ist obere Schranke für jede Teilmenge von $\mathcal P(M)$.
+  \item $\Nn$ besitzt keine obere Schranke.
+\end{enumerate}
+ \end{bsp*}
+ Wir betrachten nun die folgenden beiden Axiome der axiomatischen Mengenlehre:
+\begin{axiom*}[Zorn's Lemma]
+  Sei $(M, \le)$ eine Halbordnung ($M \ne \emptyset$). Besitzt jede Kette in $M$ eine obere Schranke, so besitzt $M$ ein maximales Element.
+  Dies nehmen wir als Axiom an.
+\end{axiom*}
+\begin{axiom*}[Auswahlaxiom]
+  Ist $I$ eine Menge und $(A_{i})_{i \in I}$ eine Familie von nichtleeren Mengen (indiziert mit $I$), so $\ex$ Funktion $f: I \to \bigcup_{i \in I}A_{i}$, mit $f(i) \in A_{i}$.
+\end{axiom*}
+
+\begin{satz*}[Halmos, Naive Set Theory, 62-65]
+Zorn's Lemma $(\forall (M, \le))$ und das Auswahlaxiom $(\forall I, \forall (A_{i})_{i \in I})$ sind äquivalent.
+\end{satz*}
+\begin{satz}
+  Sei $I \subseteq R$ ein echtes Ideal, dann $\ex$ maximales Ideal $M \subsetneq R$ mit $I \subseteq M$. Insbesondere hat $R$ maximale Ideale (Satz für $I = (0)$)
+  \begin{proof}[Beweis]
+    Sei $X$ die Menge aller Ideale $J \subsetneq R$ mit $I \subseteq J$. Wegen $I \in X$ gilt $X \ne \emptyset$. $(X, \subseteq)$ ist halbgeordnete Menge.
+    \item Behauptung: Zorn's Lemma ist anwendbar.
+    \item Denn: Sei $X_{0} \subseteq X$ eine Kette (o.E. $X_{0} \ne 0$). Definiere $J_{\infty} := \bigcup_{J \in X_{0}}J$.
+    \item Zu zeigen: $J_{\infty} \in X \imp J_{\infty}$ ist obere Schranke von $X_{0}$. Klar ist $I \subseteq J_{\infty}$ und $1 \notin J_{\infty}$ ($\imp J_{\infty} \subsetneq R$)
+    \item Zu zeigen: $J_{\infty}$ ist ein Ideal. Seien $a, b \in J_{\infty}$ und $r \in R$. Nach Definition von $J_{\infty} \ex J, J' \in X_{0}$ mit $a \in J, b \in J'$. Nun ist aber $X_{0}$ totalgeordnet unter $\subseteq$. D.h. $J \subseteq J'$ oder $J' \subseteq J$. o.E. $J' \subseteq J \imp a, b \in J \imp a + b, r \cd a \in J \imp a+b , ra \in J_{\infty}$, da $J \subseteq J_{\infty}$, damit ist die Behauptung gezeigt.
+    \item Sei $M$ ein maximales Element von $X$. Dann ist $M$ ein maximales Ideal von $R$ (mit $I \subseteq M$) sonst $\ex J'' \subsetneq R$ ideal mit $M \subsetneq J''$, Widerspruch zu $M$ maximales Element in $X$.
+  \end{proof}
+\end{satz}
+\begin{ubng*} (Plenarübung 3)
+Zorn's Lemma $\imp$ jeder Vektorraum hat eine Basis.
+\end{ubng*}
+\section{Teilbarkeit in Integritätsbereichen}%
+\begin{defi}
+  Sei bis auf Weiteres $R$ ein Integritätsbereich, $a, b \in R$.
+  \begin{enumerate}[(a)]
+    \item $a$ ist Teiler von $b$ ($a$ teilt $b$, $a \mid b$)$:\iff \ex c \in R : a \cd c = b$.
+    \item $a, b$ sind assoziiert $(a \simeq b):\iff \ex c \in R\en : a \cd c = b$.
+    \item $a$ heißt irreduzibel (bzw. unzerlegbar) $:\iff a \in R \setminus (R \en \cup \{0\})$ und $\forall c \in R : c \mid a \imp c \simeq a \vee c \simeq 1$.
+    \item $a$ heißt Primelement $:\iff a \in R \setminus (R\en \cup \{0\})$ und $\forall b, c \in R : a \mid bc \imp a \mid b \vee a \mid c$.
+  \end{enumerate}
+\end{defi}
+
+\begin{bem}[Übung]\item
+\begin{enumerate}[(a)]
+  \item $a \mid b \iff (b) \subseteq (a)$.
+  \item $a \simeq b \iff a \mid b \wedge b \mid a \iff (a) = (b)$ und $\simeq$ ist eine Äquivalenzrelation. (``denn:'' $(R\en, 1, \cd)$ ist eine Gruppe).
+  \item $Ra = (a) = (0) \iff a = 0$. $Ra = (1) \iff a \in R\en \iff a \simeq 1$
+  \item $a$ Primelement $\iff (a)$ ist ein Primideal.
+  \item $a$ ist irreduzibel $\iff (0) \subsetneq (a) \subsetneq R$ und $\nexists b \in R : (a) \subsetneq (b) \subsetneq R$. (d.h. $(a)$ ist maximal unter den Hauptidealen) und $a \in R \setminus (R\en \cup \{0\})$ ist reduzibel $\iff \ex b, c \in R \setminus (R\en \cup \{0\}): a = b \cd c \iff \ex b, c \in R : a = b \cd c$ und $(a) \subsetneq (b), (c) \subsetneq R$.
+  \item $a$ Primelement $\imp a$ ist irreduzibel.
+\end{enumerate}
+\end{bem}
+\begin{proof}[Beweis zu (f)]
+  Annahme: $a$ ist reduzibel. Nach letzte Formulierung von (c) $\ex b, c \in R : a = b \cd c \wedge (a) \subsetneq (b), (c) \subsetneq R \imp$ in $\fak R{(a)}$ gilt $\bar 0 = \bar a = \bar b \cd \bar c$ und $\bar 0 \ne \bar b, \bar c \imp \fak R {(a)}$ kein Integritätsbereich $\imp (a)$ kein Primideal, Widerspruch zu (d), da $a$ Primelement.
+\end{proof}
+
+\begin{defi}[\textbf{Hauptidealring}]
+Ein Integritätsbereich heißt \textbf{Hauptidealring} (HI-Ring), wenn jedes Ideal ein Hauptideal ist.
+\end{defi}
+\begin{defi}
+  Ein Integritätsbereich $R$ heißt \textbf{euklidischer Ring}, wenn $\ex \lambda : R \setminus \{0\} \to \Nn$, sodass gilt:
+  \[\forall a, b \in R \ex q, r \in R : a = qb + r, (r = 0 \vee \lambda (r) < \lambda(b)) \quad (*)\]
+\end{defi}
+\begin{bez*}\item
+\begin{enumerate}[(a)]
+  \item $(*)$ heißt Division mit Rest.
+  \item $\lambda$ heißt euklidische Funktion.
+\end{enumerate}
+\end{bez*}
+
+\begin{bsp}
+\begin{enumerate}[(a)]
+  \item $\Z$ ist ein euklidischer Ring mit \[\lambda : | \cd | : \Z \setminus \{0\} \to \Nn, n \mps |n|\]
+  \item $K[X]$ ist ein euklidischer Ring mit \[\lambda = \grad : K[X] \setminus \{0\} \to \Nn, f \mps \grad f\]
+\end{enumerate}
+\end{bsp}
+
+\begin{prop}
+  Ist $R$ ein euklidischer Ringe $\imp R$ ist ein Hauptidealring.
+  \begin{proof}[Beweis]
+    Sei $I \ne \{0\}$ ein Ideal. Sei $a \in I \setminus \{0\}$ ein Element, sodass \[\lambda(a) = \min \{\lambda(b) \mid b \in I \setminus \{0\}\} \subsetneq \Nn \]
+    \item Behauptung: $I = (a)$ ($I \supseteq$ klar, da $a \in I$).
+    \item Dazu: Sei $b \in I$ beliebig. Wende Division mit Rest an
+    \[b = qa + r, \quad r = 0 \vee \lambda(r) < \lambda(a)\]
+    \[\imp r = b - qa \in I - I \subseteq I \imp b = qa \in (a). \qedhere\]
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  Sei $R$ ein Hauptidealring und $a \in R \setminus (R\en \cup \{0\})$, dann sind äquivalent:
+  \begin{enumerate}[(i)]
+    \item $a$ irreduzibel.
+    \item $a$ Primelement.
+    \item $(a)$ ist Primideal.
+    \item $(a)$ ist maximales Ideal.
+    \item $\fak R{(a)}$ ist ein Körper.
+  \end{enumerate}
+  \begin{proof}[Beweis]
+    \begin{itemize}
+\item (iv) $\iff$ (v) folgt aus Bemerkung 40(c)
+\item (i) $\imp$ (iv) folgt aus Bemerkung 45(e) ($a$ irreduzibel $\imp (a)$ ist maximal unter Hauptidealen)
+\item (iv) $\imp$ (iii) folgt aus Bemerkung 40(d)
+\item (iii) $\imp$ (ii) folgt aus Bemerkung 45(d)
+\item (ii) $\imp$ (i) folgt aus Bemerkung 45(f)
+    \end{itemize}
+\end{proof}
+\end{prop}
+
+\begin{defi}
+  Seien $a, b \in R$
+  \begin{enumerate}[(a)]
+    \item $d \in R$ heißt ggT (\textbf{größter gemeinsamer Teiler}) von $a, b$, wenn $d \mid a, d \mid b$ und $\forall c \in R : c \mid a, c \mid b \imp c \mid d$.
+    \item $d \in R$ heißt kgV (\textbf{kleinstes gemeinsames Vielfaches}) von $a, b$, wenn $a \mid d, b \mid d$ und $\forall c \in R: a \mid c, b \mid c \imp d \mid c$.
+    \item $a, b$ heißen \textbf{teilerfremd}, wenn $\ggt(a, b) \simeq 1$.
+  \end{enumerate}
+\end{defi}
+
+\begin{bem*}[Übung]
+ggT und kgV sind (sofern sie existieren) eindeutig bis auf Assoziiertheit.
+\end{bem*}
+\begin{nota*}
+$d \simeq \ggt(a, b)$ bedeutet $d$ ist ggT von $a, b$.
+$d \simeq \kgv(a, b)$ bedeutet $d$ ist kgV von $a, b$.
+\end{nota*}
+
+\begin{kon}
+  Sei $K[X]_{+} = \{f \in K[X] \setminus \{0\} \mid f \text{ normiert}\} \cup \{0\}$. In
+  $\l\{ \begin{matrix}
+          \Z \\ K[X]
+        \end{matrix} \r\}$ ist jedes Element zu einem eindeutigen Element in
+$\l\{ \begin{matrix}
+          \Nn \\ K[X]_{+}
+        \end{matrix} \r\}$ assoziiert. Für $f, g \in \l\{ \begin{matrix}
+          \Z \\ K[X]
+        \end{matrix} \r\}$ schreibe $d = \ggt(f, g)$ bzw. $d = \kgv(f, g)$ $\iff d \simeq \ggt(f,g)$ bzw. $d \simeq \kgv(f,g)$ und $d \in \l\{ \begin{matrix}
+          \Nn \\ K[X]_{+}
+        \end{matrix} \r\}$.
+\end{kon}
+
+\begin{satz} Sei $R$ ein Hauptidealring, dann gelten für $a, b, c \in R$:
+  \begin{enumerate}[(a)]
+    \item $(i) \quad c \simeq \ggt(a, b) \iff (ii) \quad (c) = (a) + (b)$
+    \item $(i) \quad c = \kgv(a, b) \iff (ii) \quad (c) = (a) \cap (b)$
+    \item $\ggt(a, b)$ und $\kgv(a, b)$ existieren $\forall a, b \in R$
+    \item Es sind Äquivalent: $(i) \quad \ggt(a,b) \simeq 1$ ($a,b$ teilerfremd) $\iff (ii) \quad (a)+(b) = R \iff (iii) \quad \ex \a, \beta \in R : \a a + \beta b = 1$
+  \end{enumerate}
+\begin{proof}[Beweis]
+(Übung)
+\end{proof}
+\end{satz}
+
+\begin{bem*}
+\begin{enumerate}[(a)]
+  \item Hauptidealringe haben die Bezout-Eigenschaft, d.h. zu $a, b \in R \ex \alpha, \beta \in R : \a \a + \beta b \simeq \ggt(a,b)$.
+  \item In euklidischen Ringen kann man den ggT mit dem euklidischen Algorithmus berechnen und $\alpha, \beta$ wie in (a) mit dem erweiterten euklidischen Algorithmus.
+\end{enumerate}
+\end{bem*}
 \end{document}
