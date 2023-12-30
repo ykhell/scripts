@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  21 DEC 2023 05:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  30 DEC 2023 19:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/yousef/scripts/src/sections/section3.tex
-(/Users/yousef/scripts/src/sections/section3.tex
+**/Users/yousef/scripts/src/sections/section4.tex
+(/Users/yousef/scripts/src/sections/section4.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/base/report.cls
@@ -697,8 +697,8 @@ ef
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count310
 \l__pdf_internal_box=\box67
-) (./section3.aux)
-\openout1 = `section3.aux'.
+) (./section4.aux)
+\openout1 = `section4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -744,9 +744,9 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package hyperref Info: Link coloring ON on input line 3.
- (./section3.out) (./section3.out)
+ (./section4.out) (./section4.out)
 \@outlinefile=\write4
-\openout4 = `section3.out'.
+\openout4 = `section4.out'.
 
 \docmute@nestinglevel=\count317
 LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
@@ -764,172 +764,80 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 6.
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1
-
-{/usr/local/texlive/2023basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
-]
-Overfull \hbox (5.94083pt too wide) in paragraph at lines 114--116
-\OT1/cmr/m/n/10 Beachte: $\U/msb/m/n/10 N[] \OMS/cmsy/m/n/10 ^^R \U/msb/m/n/10 
-Q[]$ \OT1/cmr/m/n/10 (ana-log definiert, Fol-gen in $\U/msb/m/n/10 Q$ \OT1/cmr/
-m/n/10 ^^?uber $\OML/cmm/m/it/10 I$\OT1/cmr/m/n/10 ) mit Endlichkeits-
+)
+Overfull \hbox (11.34781pt too wide) in paragraph at lines 55--57
+\OT1/cmr/m/n/10 universelle Eigen-schaft der Lokalisierung ($\OML/cmm/m/it/10 S
+$ \OT1/cmr/m/n/10 mul-ti-p-lika-tiv abgeschlossen,
  []
 
-[3]
-Overfull \hbox (10.13676pt too wide) in paragraph at lines 160--161
-\OT1/cmr/m/it/10 Dann ist (nach 4(c) ein-deutige) Ringho-mo-mor-phis-mus $[] \O
-T1/cmr/m/n/10 : \OML/cmm/m/it/10 R\OT1/cmr/m/n/10 [\U/msb/m/n/10 N[]\OT1/cmr/m/
-n/10 ] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 R\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X
-[]; [] ; X[]\OT1/cmr/m/n/10 ]$
+[1
+
+{/usr/local/texlive/2023basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2] [3]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 178
+.
+ (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Overfull \hbox (0.87105pt too wide) in paragraph at lines 179--181
+$ \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )  []\OT1/cmr/m/n/10 ([][])$ ist ein K^^?
+orper. Aber: $[]([][]) = \OML/cmm/m/it/10 K\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 \
+OT1/cmr/m/n/10 ]$, also $\OML/cmm/m/it/10 K\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 \
+OT1/cmr/m/n/10 ] = \OML/cmm/m/it/10 K\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cm
+r/m/n/10 ) (\OMS/cmsy/m/n/10 ^^C\OT1/cmr/m/n/10 )$,
  []
 
-[4]
-Overfull \hbox (8.18834pt too wide) in paragraph at lines 182--183
-\OT1/cmr/m/n/10 (Polynome wie gewohnt.) Die El-e-mente $\OML/cmm/m/it/10 X[]; a
- \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 N[]$ \OT1/cmr/m/n/10 hei^^Yen \OT1/cmr/bx/n/1
-0 prim-i-tive Monome\OT1/cmr/m/n/10 .
+[4] [5] [6]
+Overfull \hbox (7.83081pt too wide) in paragraph at lines 326--327
+[][]\OT1/cmr/bx/n/10 Definition 0.25. []\OT1/cmr/m/n/10 Sei $\OML/cmm/m/it/10 f
+ \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 K\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X\OT1/c
+mr/m/n/10 ]$ ir-red. Ein Oberk^^?orper $\OML/cmm/m/it/10 E \OMS/cmsy/m/n/10 ^^S
+ \OML/cmm/m/it/10 K$ \OT1/cmr/m/n/10 hei^^Yt Stammk^^?orper
  []
 
-[5]
-Overfull \hbox (8.48157pt too wide) in paragraph at lines 222--223
-[]\OT1/cmr/m/n/10 Ein Monom in $\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 [\OML/cmm/m/i
-t/10 X[]; :::; X[]\OT1/cmr/m/n/10 ]$ ist ein Poly-nom der Form $\OML/cmm/m/it/1
-0 aX[] \OT1/cmr/m/n/10 =
+[7]
+Overfull \hbox (0.9317pt too wide) in paragraph at lines 333--334
+[]$\OML/cmm/m/it/10 K \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 E;  \OMS/cmsy/m/n/10
+ ! []$ \OT1/cmr/m/it/10 ist ein Ringho-mo-mor-phis-mus, also K^^?orperhomomorph
+ismus.
  []
 
-
-Overfull \hbox (17.49104pt too wide) in paragraph at lines 244--245
-[]$\OML/cmm/m/it/10  \OT1/cmr/m/n/10 := [][]$ ist ein Ringho-mo-mor-phis-mus $
-\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X[]; [] ; X[]\OT1/cmr/m/n/1
-0 ] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 R\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X[];
- [] ; X[]\OT1/cmr/m/n/10 ]$
- []
-
-[6]
-Overfull \hbox (10.83232pt too wide) in paragraph at lines 276--277
-[]$\OML/cmm/m/it/10 ^^[ \OMS/cmsy/m/n/10 7! []$ \OT1/cmr/m/n/10 in-jek-tiv: Den
-n ver-schiedene $\OML/cmm/m/it/10 ^^[; ^^\$ \OT1/cmr/m/n/10 wirken un-ter-schie
-dlich auf $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 X[]; [] ; X[]\OMS/cmsy/m/n/10 g$ 
-
- []
-
-
-Overfull \hbox (32.0668pt too wide) in paragraph at lines 282--283
-[]\OT1/cmr/bx/n/10 Bemerkung \OT1/cmr/m/n/10 (Ziel von diesem Ab-schnitt)\OT1/c
-mr/bx/n/10 . []\OT1/cmr/m/n/10 Ex-plizite Beschrei-bung von $\OML/cmm/m/it/10 R
-\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X[]; [] ; X[]\OT1/cmr/m/n/10 ][]$ 
- []
-
-
-Overfull \hbox (31.30573pt too wide) in paragraph at lines 286--286
-[]\OT1/cmr/bx/n/10 Proposition. []\OT1/cmr/m/it/10 Zu $\OML/cmm/m/it/10 ^^[ \OM
-S/cmsy/m/n/10 2 \OML/cmm/m/it/10 S[]$ \OT1/cmr/m/it/10 er-weit-ern $[]$ zu $\OM
-L/cmm/m/it/10 ^^[[]$ \OT1/cmr/m/it/10 Ringau-to-mor-phis-mus von $\OML/cmm/m/it
-/10 R\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X[]; [] ; X[]\OT1/cmr/m/n/10 ][\OML/cmm/
-m/it/10 X\OT1/cmr/m/n/10 ]$
- []
-
-[7] [8]
-Overfull \hbox (5.78152pt too wide) in paragraph at lines 363--364
-[][]\OT1/cmr/bx/n/10 Proposition 0.21. []\OT1/cmr/m/it/10 Seien $\OML/cmm/m/it/
-10 f \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 a[]X[]; g \OT1/cmr/m/n/10 = [][] \
-OML/cmm/m/it/10 b[]X[]; `[] \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 f\OT1/cmr/m/n
-/10 )\OML/cmm/m/it/10 ; m[] \OT1/cmr/m/n/10 =
- []
-
-[9] [10] [11] [12]
-Overfull \hbox (9.80377pt too wide) in paragraph at lines 548--549
-[]\OT1/cmr/m/n/10 In der LA2 f^^?ur $\OML/cmm/m/it/10 R$ \OT1/cmr/m/n/10 ein Ha
-up-tide-al-ring, all-ge-mein: siehe Jantzen-Schwermer,
- []
-
-[13] [14]
-Overfull \hbox (1.62503pt too wide) in paragraph at lines 652--653
-[][]\OT1/cmr/bx/n/10 Definition 0.37 \OT1/cmr/m/n/10 (Quo-tien-tenk^^?orper)\OT
-1/cmr/bx/n/10 . []$\OML/cmm/m/it/10 S[]R \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 
-R\OT1/cmr/m/n/10 )$ hei^^Yt Quo-tien-tenk^^?orper
- []
-
-[15]
-Overfull \hbox (35.05571pt too wide) in paragraph at lines 698--699
-[]\OT1/cmr/bx/n/10 Wiederholung \OT1/cmr/m/n/10 (Grund-la-gen)\OT1/cmr/bx/n/10 
-. []\OT1/cmr/m/n/10 Eine Re-la-tion $\OMS/cmsy/m/n/10 ^^T$ \OT1/cmr/m/n/10 auf 
-einer Menge $\OML/cmm/m/it/10 M$ \OT1/cmr/m/n/10 hei^^Yt \OT1/cmr/bx/n/10 [\OT1
-/cmr/m/n/10 Halbordnung]
- []
-
-[16]
-Overfull \hbox (15.17871pt too wide) in paragraph at lines 721--722
-[]\OT1/cmr/bx/n/10 Axiom \OT1/cmr/m/n/10 (Auswahlax-iom)\OT1/cmr/bx/n/10 . []\O
-T1/cmr/m/it/10 Ist $\OML/cmm/m/it/10 I$ \OT1/cmr/m/it/10 eine Menge und $\OT1/c
-mr/m/n/10 (\OML/cmm/m/it/10 A[]\OT1/cmr/m/n/10 )[]$ \OT1/cmr/m/it/10 eine Fam-i
--lie von nichtleeren
- []
-
-[17] [18] [19] [20]
-
-Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 898.
-
-
-Overfull \hbox (35.88902pt too wide) in paragraph at lines 903--904
-[][]\OT1/cmr/bx/n/10 Korollar 0.55 \OT1/cmr/m/n/10 ([]Ubung)\OT1/cmr/bx/n/10 . 
-[]\OT1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 R$ \OT1/cmr/m/it/10 ein fak-to-rieller
- Ring und sei $\U/msb/m/n/10 P$ \OT1/cmr/m/it/10 ein Repr^^?asentantensystem
- []
-
-[21] [22]
-
-Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 965.
-
-
-Overfull \hbox (5.0704pt too wide) in paragraph at lines 987--992
-[]\OT1/cmr/m/n/10 Schreibe $\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 = []$ it $\OML
-/cmm/m/it/10 b[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R; d[] \OMS/cmsy/m/n/10 2 
-\OML/cmm/m/it/10 R \OMS/cmsy/m/n/10 n f\OT1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g$ \OT
-1/cmr/m/n/10 als gek^^?urzten Bruch (d.h. $[](\OML/cmm/m/it/10 b[]; d[]\OT1/cmr
-/m/n/10 ) \OMS/cmsy/m/n/10 '
- []
-
-[23] (./section3.aux)
-Package rerunfilecheck Info: File `section3.out' has not changed.
-(rerunfilecheck)             Checksum: 3A186A3D83C218A22B982A5754968EB2;2265.
+[8] (./section4.aux)
+Package rerunfilecheck Info: File `section4.out' has not changed.
+(rerunfilecheck)             Checksum: 7607BB477F1A4197113F88FE6ED3D7AC;344.
  ) 
 Here is how much of TeX's memory you used:
- 22211 strings out of 477476
- 425046 string characters out of 5824243
- 1874388 words of memory out of 5000000
- 41812 multiletter control sequences out of 15000+600000
- 517889 words of font info for 53 fonts, out of 8000000 for 9000
+ 21951 strings out of 477476
+ 421422 string characters out of 5824243
+ 1875388 words of memory out of 5000000
+ 41705 multiletter control sequences out of 15000+600000
+ 518956 words of font info for 57 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,18n,117p,775b,1190s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/public/ma
-thabx/mathx10.600pk> </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/p
-k/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf
--dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/t
-exmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/202
-3basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive
-/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texl
-ive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/t
-exlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/lo
-cal/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
-local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
-></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
-pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti7.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msam10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public
-/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2023basic/texmf-dist/f
-onts/type1/public/rsfs/rsfs10.pfb>
-Output written on section3.pdf (23 pages, 335904 bytes).
+ 113i,14n,117p,616b,725s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/
+ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023basic/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023basic/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023basic/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023basic/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023basi
+c/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023ba
+sic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+23basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
+/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
+live/2023basic/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/lo
+cal/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></
+usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm7.pfb>
+Output written on section4.pdf (8 pages, 225678 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
- 479 compressed objects within 5 object streams
- 257 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 253 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 97 named destinations out of 1000 (max. 500000)
+ 29 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -72,3 +72,6 @@
 \contentsline {section}{\numberline {3.4}Ringe von Brüchen/Lokalisierung}{61}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Spezielle Ideale}{64}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Teilbarkeit in Integritätsbereichen}{65}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Körper}{72}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Grundlagen}{72}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Algebraische und transzendente Elemente}{75}{section.4.2}%

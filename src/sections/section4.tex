@@ -1,0 +1,374 @@
+\documentclass[a4paper]{report}
+\usepackage{../template}
+\begin{document}
+\section{Grundlagen}%
+\begin{defi*}[Körper]
+$K = (K, 0_{K}, 1_{K}, +, \cd)$ ist Körper $\iff K$ ist ein kommutativer Ring und $(K \setminus \{0\}, 1_{K}, \cd)$ ist eine Gruppe ($0_{K} \ne 1_{K}$).
+\end{defi*}
+\begin{bem*}Im weiteren seien $K, K'$ stets Körper.
+
+\end{bem*}
+
+\begin{defi}[Unterkörper/Oberkörper]
+  \begin{enumerate}[(i)]
+    \item $L \subseteq K$ heißt Unterkörper $:\iff L$ ist ein Unterring und $L$ ist ein Körper.
+    \item $E \supseteq K$ heißt Oberkörper $:\iff E$ ist ein Körper und $K \subseteq R$ ist ein Unterkörper.
+  \end{enumerate}
+\end{defi}
+
+\begin{bem}[Übung]
+Sind $(K_{i})_{i \in I}$ Unterkörper von $K$, so ist $\bigcap_{i \in I}K_{i}$ ein Unterkörper von $K$.
+\end{bem}
+
+\begin{defi}[Körperhomomorphismus]
+  Eine Abbildung $\ph : K \to K'$ heißt Körperhomomorphismus $:\iff \ph$ ist ein Ringhomomorphismus (der Ringe $K \to K'$)
+\end{defi}
+
+\begin{bem}
+  Sei $R$ ein Ring mit $0_{R} \ne 1_{R}$ und $\ph : K \to R$ ein Ringhomomorphismus, dann:
+  \begin{enumerate}[(a)]
+    \item $\ker(\ph) = \{0\}$  ($\imp \ph$ ist injektiv)
+    \item $R$ ist ein $K$-Vektorraum (vermöge $\ph$) durch
+          \[\cd : K \tm R \to R, (\alpha, r) \mps \ph(\alpha) \cd r,\quad +: R \tm R \to R := +_{R}\]
+  \end{enumerate}
+\begin{proof}[Beweis]
+  \begin{enumerate}[(a)]
+          \item Nur zu zeigen: $\ker(\ph) \subsetneq K$. Dies ist klar wegen $\ph(1_{K}) = 1_{R} \ne 0_{R}$. (einzige Ideale von $K$ sind $\{0\}, K$)
+          \item Übung.\qedhere
+\end{enumerate}
+\end{proof}
+\end{bem}
+
+\begin{prop}[\textbf{Primkörper}]
+  Jeder Körper $K$ enthält einen kleinsten Unterkörper $K_{0} \subseteq K$, der sogenannte \textbf{Primkörper} von $K$: es gilt:
+  \[K_{0} \cong \begin{cases}\Q, & \chr(K) = 0, \\ \Fp, & \chr(K) = p > 0.
+            \end{cases}\]
+          \begin{proof}[Beweis]\item
+            \begin{itemize}
+            \item Existenz: Nach Bemerkung 2 ist \(K_{0}:= \bigcap_{L \subseteq K \text{ Unterkörper}}L\) ein Körper, sicher auch der kleinste.
+              \item Isomorphietyp: betrachte $\ph: \Z \to K, n \mps n \cd 1_{K}$
+                    \begin{itemize}
+                        \item Fall 1: $\ker(\ph) \supsetneq \{0\}$: Hatten schon gesehen $\ker(\ph) = p\Z$ für $p = \chr (K)$. Homomorphiesatz gibt Isomorphismus
+                            \[\ubr{\fak \Z{p\Z}}_{\text{Körper}} \xrightarrow{\cong} \bil(\ph) \ubr{\subseteq}_{\text{Unterring}}K \imp \text{Unterkörper.}\]
+                            $\bil(\ph) \subseteq K_{0}$, denn $1_{K} \in K_{0}$ und also $\Z\cd 1_{K} \subseteq K_{0} \imp \bil(\ph) = K_{0}$ ist der kleinste $\imp K_{0} \cong \fak \Z{p\Z} \cong \Fp$.
+                      \item Fall 2: $\ker(\ph) = \{0\}$, d.h. $\ph$ ist injektiv, und es gilt $\chr(K) = 0$. Beachte:
+                            \[\ph(\ubr{\Z \setminus \{0\}}_{S}) \underset{\ph \text{ inj. Hom.}}\subseteq K_{0} \setminus \{0\} \subseteq K \setminus \{0\}\]
+                            universelle Eigenschaft der Lokalisierung ($S$ multiplikativ abgeschlossen, $\ph(S) \subseteq K\en$) $\imp \ex!$ Ringhomomorphismus $\hat \ph : S^{-1}\Z = \Q \to K_{0}$, der $\ph$ fortsetzt; und $\hat \ph \l(\frac ab\r) = \ph(a)\ph(b)^{-1}, z, b \in \Z, b \ne 0$. Erhalten: $\hat \ph$ gibt Isomorphismus $\Q \xrightarrow{\cong} \hat \ph(\Q) \underset{\text{Unterkörper}}\subseteq K_{0}, K_{0}$ minimal $\imp \hat \ph$ ist Isomorphismus $\Q \cong K_{0}$.\qedhere
+                    \end{itemize}
+            \end{itemize}
+          \end{proof}
+\end{prop}
+
+\begin{defi}
+  Sei $E \supseteq K$ ein Oberkörper. Der \textbf{Grad} von $E$ über $K$ ist die Vektorraumdimension.
+  \[[E:K]:= \dim_{K}E \in \N \cup \{\infty\}\]
+\end{defi}
+
+\begin{satz}
+  Sei $E \supseteq K$ ein Oberkörper und $V$ ein $E$-Vektorraum, dann gilt; $\dim_{K}V = [E:K]\dim_{E}V$.
+    \begin{proof}[Beweis]
+      Sei $B = (b_{i})_{i \in I}$ eine Basis von $E$ als $K$-Vektorraum, $C = (c_{j})_{j \in J}$ eine Basis von $V$ als $E$-Vektorraum.
+      \begin{itemize}
+        \item Behauptung: $D = (b_{i}c_{j})_{(i,j) \in I \tm J}$ ist eine Basis von $V$ als $K$-Vektorraum ($\imp \dim_{K}V = \#(I \tm J) = \#I \#J = [E : K] \dim_{E}V$).
+        \item Dazu: $D$ ist Erzeugendensystem (von $V$ als $K$-Vektorraum) Sei $v \in V$, schreibe $v = \sum_{j \in J}\lm_{j}c_{j}, (\lm_{j} \in E)$. Für jedes $j$ schreibe
+        \[\lm_{j} = \sum_{i \in I} \mu_{ij} b_{i} \imp v = \sum_{j \in J}(\sum_{i \in I} \mu_{ij}b_{i})c_{j} = \sum_{(i, j) \in I \tm J}\mu_{ij}(b_{i}c_{j}).\]
+        \item $D$ ist linear unabhängig (über $K$):
+              Seien $\b_{ij} \in K$ für alle $(i, j) \in I \tm J$ (nur endlich viele $\ne 0$), sodass
+              \[0 = \sum_{(i,j) \in I \tm J}\b_{ij}b_{i}c_{j} = \sum_{j \in J}\ubr{\l(\sum_{i \in I}\b_{ij}b_{i}\r)}_{\in E}\cd \ubr{c_{j}}_{\text{ bilden } E\text{-Basis von } V} \]
+              \[\imp \forall j \in J: \sum_{i \in I}\ubr{\b_{ij}}_{\in K} \cd \ubr{b_{i}}_{\text{ bilden } K\text{-Basis von } E} = 0.\]
+              \[\imp \forall j \in J \forall i \in I: \b_{ij} = 0. \qedhere\]
+      \end{itemize}
+    \end{proof}
+\end{satz}
+
+\begin{kor}[Gradformel für Körpertürme]
+  Seien $L \supseteq E$ und $E \supseteq K$ Oberkörper. Dann ist $L \supseteq K$ ein Oberkörper und \[[L:K] = [L:E]\cd[E:K]\]
+  \begin{proof}[Beweis] (der Formel)
+    \[[L:K] = \dim_{K} L \underset{\text{Satz 7}}= [E:K]\cd \dim_{E}L = [E:K]\cd [L:E].\]
+  \end{proof}
+\end{kor}
+
+\begin{prop}[Übung]
+  Sei $K$ ein Körper mit $\#K < \infty$ und seien $p$ die Charakteristik, $K_{0}$ der Primkörper von $K$, dann gilt
+  \[\#K= p^{n}, \text{ für } n = \dim_{K_{0}}K\]
+\end{prop}
+
+\begin{bem*}
+Zu jeder Primpotenz $p^{n} \ex K$ Körper mit $\#K = p^{n}$
+\end{bem*}
+
+\begin{defi}
+  Sei $E \supseteq K$ ein Oberkörper und $S \subseteq E$ eine Teilmenge, dann:
+  \begin{enumerate}[(a)]
+          \item $K(S):=$ der kleinste Oberkörper von $K$, der $S$ enthält, d.h.
+          \[K(S):=\bigcap \{L \subseteq E \text{ Unterkörper} \mid K \cup S \subseteq L \}\]
+    \item $K[S]:=$ der kleinste Oberring von $K$, der $S$ enthält, d.h. (Übung)
+          \[K[S]:=\bigcap \{L \subseteq E \text{ Unterring} \mid K \cup S \subseteq L \}\]
+          Falls $S = \{\a_{1}, \ldots, \a_{n}\}$, schreibe auch $K(\a_{1}, \ldots, \a_{n})$ für $K(\{\a_{1}, \ldots, \a_{n}\})$ und $K[\a_{1}, \ldots, \a_{n}]$ für $K[\{\a_{1}, \ldots, \a_{n}\}]$.
+  \end{enumerate}
+\end{defi}
+
+\begin{bem*}\item
+  \begin{enumerate}[(a)]
+    \item $K[\a_{1}, \ldots, \a_{n}] = \{f(\a_{1}, \ldots, \a_{n}) \mid f \in K[X_{1}, \ldots, X_{n}]\}$
+    \item $K(S) = \Quot (K[S]) = \{\frac fg \mid f, g \in K[S], g \ne 0\}$
+    \item $K(S_{1})(S_{2}) = K(S_{1} \cup S_{2})$ und $K[S_{1}][S_{2}] = K[S_{1} \cup S_{2}]$
+  \end{enumerate}
+\end{bem*}
+\begin{bsp*}\item
+\begin{enumerate}[(a)]
+  \item $E = \Quot(K[X]) = K(X)$ rationaler Funktionenkörper über $K$ in Variablen $X$. Hier gilt $K[X] \subsetneq K(X)$ und $[K[X] : K] = \infty$ ($\dim_{K}K[X] = \infty$)
+  \item $\sqrt 3 \subseteq \R \subseteq \C$, dann
+        \[\Q[\sqrt 3] = \{\a + \b \sqrt 3 \mid \a, \b \in \Q\} \subseteq \R\]
+        und
+        \[\Q(\sqrt 3) \ueb = \Q[\sqrt 3], ([\Q(\sqrt 3) : \Q] = 2)\]
+\end{enumerate}
+
+\end{bsp*}
+
+\section{Algebraische und transzendente Elemente}
+\begin{defi}
+  Sei $E \supseteq K$ ein Oberkörper und seien $\a, \a_{1}, \ldots, \a_{n} \in E$. Dann
+  \begin{enumerate}[(i)]
+    \item $\a$ heißt algebraisch über $K:\iff [K(\alpha) : K] < \infty$
+    \item $\a$ heißt transzendent über $K:\iff [K(\alpha) : K] = \infty$
+  \end{enumerate}
+\end{defi}
+\begin{bspe*}[ohne Beweis]\item
+\begin{enumerate}[(a)]
+  \item $X \in K(X)$ ist transzendent über $K$.
+  \item $\sqrt 3 \in \R$ ist algebraisch über $\Q$.
+  \item $e = \sum_{n \ge 0} \frac 1{n!} \in \R$ ist transzendent über $\Q$
+  \item $\pi \in \R$ ist transzendent über $\Q$
+\end{enumerate}
+\end{bspe*}
+
+\begin{whg} (Propositionen 3.49 und 3.50)
+  \begin{enumerate}[(a)]
+    \item $K[X]$ ist Hauptidealring.
+    \item $f \in K[X]$ irreduzibel $\iff (f) \subseteq K[X]$ ist maximales Ideal.
+    \item Ist $0 \ne P \subseteq K[X]$ Primideal, so $\ex f \in K[X]$ irred. $P = (f)$.
+    \item (Übung, s. LA) für $f \in K[X] \setminus K$ von Grad $n > 0$, dann hat $\fak {K[X]}{(f)}$ als $K$-Vektorraum die Basis $\{1, X, \ldots, X^{n-1}\}$.
+  \end{enumerate}
+\end{whg}
+\begin{defi*}
+  Die Auswertungsabbildung an $\alpha \in E$ ist der Ringhomomorphismus
+  \[\ev_{\alpha} : K[X] \to E, f = \sum a_{i}X^{i} \mps f(\a) = \sum a_{i} \a^{i}\]
+\end{defi*}
+\begin{satz}
+  Für $\alpha \in E$ sind äquivalen:
+  \begin{enumerate}[(a)]
+    \item $\a$ ist algebraisch über $K$.
+    \item $\ex n \in \N : 1, \a, \ldots, \a^{n}$ sind linear unabhängig über $K$.
+    \item $\ex g \in K[X] \setminus \{0\}$ mit $g(\a) = 0$.
+    \item $\ker(\ev_{\a}) \subseteq K[X]$ ist maximales Ideal.
+    \item $K(\a) = K[\a]$.
+  \end{enumerate}
+\end{satz}
+\begin{proof}[Beweis]
+  \item (a) $\imp$ (b):
+  Sei $n := [K (\a) : K] = \dim_{K}K(\a) < \infty \imp 1, \a, \ldots, \a^{n}$ sind l.u. über $K$.
+  \item (b) $\imp$ (c): Voraussetzung in (b) $\imp \ex(c_{0}, \ldots, c_{n}) \in K^{n+1} \setminus \{0\}$ mit \(\sum_{0 \le i \le n} c_{i}\a^{i} = 0\), dann ist
+  \[\imp g(X) = \sum_{0 \le i \le n}c_{i}X^{i} \in K[X] \setminus \{0\}. \text{ und } g(\a) = 0\]
+  \item (c) $\imp$ (d):
+  Homomorphiesatz gibt und den Isomorphismus
+  \[\fak{K[X]}{\ker(\ev_{\a})} \xrightarrow{\cong}\bil(\ev_{\a}) \underset{\text{Unterring}}\subseteq E\]
+  $\bil(\ev_{\a})$ ist Integritätsbereich $\imp \ker(\ev_{\a})$ ist Primideal. Da $0 \ne g \in \ker(\ev_{\a})$ ($g$ aus (c)) folgt: $\ker(\ev_{\a})$ ist Primideal $\ne 0$ also ein maximales Ideal.
+  \item (d) $\imp$ (a):
+  Voraussetzung: $\mathfrak m_{\a}:= \ker(\ev_\a) \subseteq K[X]$ ist maximales Ideal.
+  \[\overset{\text{Homomorphiesatz}} \imp \ubr{\fak{K[X]}{\mathfrak m_{\a}}}_{\text{Körper, da }\mathfrak m_{\a} \text{ max.}} \xrightarrow{\cong} \bil(\ev_{\a})\subseteq E\]
+  $\imp \bil(\ev_{\a})$ ist ein Körper. Aber: $\bil(\ev_{\a}) = K[\a]$, also $K[\a] = K(\a)\quad (*)$, und sei $f \in K[X]$ irreduzibler Erzeuger von $\mathfrak m_{\a}$, dann:
+  \[\dim_{K} \fak{K[X]}{(f)} = \grad f < \infty \imp \dim_{K} K(\a) = \grad f < \infty.\]
+  \item (d) $\imp$ (e): gezeigt wegen $(*)$.
+  \item (e) $\imp$ (a): Zu zeigen: $K[\a] = K(\a) \imp [K(\a) : K] < \infty$, wir zeigen (b). o.E. $\a \ne 0$, wesentliche Beobachtung: $\a^{-1} \in K[\a]$. d.h. $\ex c_{0}, \ldots, c_{n} \in K$ mit $\a^{-1} = c_{0}+c_{1}\a + \cdots + c_{n}\a^{n}$
+  \[\imp 0 = -1 + c_{0}\a+c_{1}\a^{2} + \cdots + c_{n}\a^{n+1}\]
+  d.h. $1, \a, \ldots, \a^{n+1}$ sind linear abhängig über $K$.
+\end{proof}
+
+\begin{defi}
+Sei $\a \in E$ algebraisch über $K$. Das Minimalpolynom $\mu_{\a}$ (oder $\mu_{\a, K}$) von $\a$ über $K$ ist das normierte Polynom in $K[X] \setminus \{0\}$ kleinsten Grades mit $\mu_{\a}(\a)= 0$.
+\end{defi}
+
+\begin{prop}
+  Sei $\a \in E$ algebraisch über $K$, dann:
+  \begin{enumerate}[(a)]
+    \item $(\mu_{\a}) = K[X]\cd\mu_{\a} = \ker(\ev_{\a})$.
+    \item $\mu_{\a}$ ist irred. und $\fak {K[X]}{(\mu_{a})}$ ist ein Körper.
+    \item $[K(\a) : K] = \grad \mu_{\a}$
+  \end{enumerate}
+
+  \begin{proof}[Beweis]\item
+    \begin{enumerate}[(a)]
+      \item
+            \begin{itemize}
+              \item ``$\subseteq$'': Klar, da $\mu_{\a} = 0$ also $\ev_{\a}(\mu_{\a}) = 0$
+              \item ``$\supseteq$'': $K[X]$ ist Hauptidealring $\imp \ex g \in K[X] : (g) = \ker(\ev_{\a})$ mit $g \ne 0, g \mid \mu_{\a}$ und $\ker(\ev_{\a})$ ist ein maximales Ideal $(\ne 0)$ folgt aus 13. $\mu_{\a}$ hat den kleinsten Grad unter allen solchen $f \ne 0$ mit $f(\a) = 0 \imp g \simeq \mu_{\a} \imp (g) = (\mu_{\a})$.
+            \end{itemize}
+      \item $\ker(\ev_{\a})$ maximal $\ne 0 \imp$ Erzeuger $\mu_{\a}$ von $\ker(\ev_{\a})$ ist irred. und $\fak{K[X]}{(\mu_{\a})}$ ist ein Körper, da $(\mu_{\a})$ maximal.
+      \item Im Beweis von Satz 13: $K(\a) \cong \fak{K[X]}{(\mu_{\a})}$
+            \[\imp [K[\a] : K] = \dim_{K} \fak{K[X]}{(\mu_{\a})} \underset{\text{Whg. 12}} = \grad \mu_{\a}. \qedhere\]
+    \end{enumerate}
+  \end{proof}
+\end{prop}
+
+\begin{kor}
+  Sei $f \in K[X]$ irred. normiert und $\a \in E$ eine Nullstelle von $f$, dann ist $\a$ algebraisch über $K$ und $\mu_{\a} = f$ und $[K(\a) : K] = \grad f$
+  \begin{bsp*}
+    $X^{2} - 3 \in \Q[X]$  ist irreduzibel (Eisenstein mit $p = 3$) \[\imp \mu_{\sqrt 3, \Q} = X^{2} - 3\]
+    analog: $\a = \sqrt[3]{2}$ algebraisch über $\Q$ mit $\mu_{\a} = X^{3} - 2$ und
+    \[\Q[\a] = \Q(\a) = \{a + b\a + c\a^{2} \mid a, b, c \in \Q\}\]
+  \end{bsp*}
+\end{kor}
+
+\begin{kor}
+  Für $\a \in E$ sind äquivalent:
+  \begin{enumerate}[(a)]
+    \item $\a$ ist transzendent über $K$
+    \item $K[\a] \subsetneq K(\a)$
+    \item $\ev_\a: K[X] \to K[\a]$ ist ein Isomorphismus.
+  \end{enumerate}
+  \begin{proof}[Beweis]
+    \item $\neg (a) \iff \neg (b)$, folgt aus Satz 13 $(a) \iff (e)$.
+    \item Beachte weiter: $(c) \iff \ker(\ev_{\a}) = \{0\}$, also: $\neg(c) \iff \ex g \in K[X] \setminus \{0\} : g(\a) = a \iff \a$ ist algebraisch $\iff \neg (a)$.
+\end{proof}
+\end{kor}
+
+\begin{bem*}
+Ist $\a \in E$ transzendent über $K$, so setzt sich $\ev_{\a} : K[X] \xrightarrow{\cong} K[\a]$ fort zu einem Körperisomorphismus $K(X) = \Quot(K[X])\to K(\a)$.
+\end{bem*}
+
+\begin{defi}[Algebraischer Oberkörper]
+Ein Oberkörper $E \supseteq K$ heißt algebraisch über $K :\iff$ jedes $\a \in E$ ist algebraisch über $K$.
+\end{defi}
+
+\begin{lemm}
+  Seien $F \supseteq E \supseteq K$ Oberkörper, dann:
+  \begin{enumerate}[(a)]
+    \item $[E:K] < \infty \imp E$ ist algebraisch über $K$.
+    \item $\a_{1}, \ldots, \a_{n} \in E$ mit $\a_{i}$ algebraisch über $K, \forall i \imp K(\a_{1}, \ldots, \a_{n}) \supseteq K$ algebraisch.
+    \item $F \supseteq K$ ist algebraisch $\iff F \supseteq E$ und $E \supseteq K$ sind algebraisch.
+    \item Ist $K = K_{0} \subseteq K_{1} \subseteq \cdots $ eine Kette (indiziert über $\N$) von Oberkörpern, so ist $K_{\infty} = \bigcup_{n} K_{n}$ ein Oberkörper von $K$, und sind alle $K_{i+1}\supseteq K_{i}$ algebraisch, so ist $K_{\infty} \supseteq K$ algebraisch.
+    \item Ist $S \subseteq E$ eine beliebige Teilmenge, so dass alle $\a \in S$ algebraisch über $K$ sind, so gilt $K(S) = K[S]$ und $K(S)$ ist algebraisch über $K$.
+  \end{enumerate}
+\begin{proof}[Beweis]
+\begin{enumerate}[(a)]
+  \item Für $\a \in E$ gilt: $K \subseteq K(\a) \subseteq E$ und wegen Gradformel folgt $[K(\a):K] \le [E:K] < \infty \imp \a$ algebraisch über $K$.
+  \item Definiere $K_{i} = K(\a_{1}, \ldots, \a_{i}), i \in \eb n$, wir wissen $\a_{i}$ algebraisch über $K$, d.h. $\ex g \in K[X] \setminus \{0\} = g(\a_{i})=0 \imp g \in K_{i-1}[X] \setminus \{0\}$ ($K_{i-1} \supseteq K$), $\ex g \in K_{i-1} \setminus \{0\} : g(\a_{i}) = 0 \imp \a_{i}$ algebraisch über $K_{i-1}$
+        \[\imp [K_{i}:K_{i-1}] = [K_{i-1}(\a): K_{i-1}] < \infty \underset{\text{Ind. + Gradformel}} \imp [K_{n}:K] < \infty\]
+        \[\underset{(a)}\imp K_{n} = K(\a_{1}, \ldots, \a_{n}) \supseteq K \text{ algebraisch.}\]
+  \item \begin{itemize}
+          \item ``$\imp$'':
+                Sei $F \supseteq K$ algebraisch, sei $\a \in E \imp \a \in F \imp \a$ algebraisch über $K$. Und sei $\a \in F$. Dann argumentiere wie in (b) um $\a$ algebraisch über $E$ zu folgen $\imp F \supseteq E$ algebraisch.
+          \item ``$\impliedby$'': (Problem: $[E:K]$ könnte unendlich sein.) Es gelte: $F \supseteq E$ und $E \supseteq K$ sind algebraisch. $\a \in F$ (zz: $[K(\a) : K] < \infty$). Wir wissen $\a$ algebraisch über $E \imp $ haben $\mu_{\a, E} \in E[X] \setminus E$ schreibe $\mu_{\a, E} = a_{0} + a_{1}X + \cdots + a_{n-1}X^{n-1} + X^{n}$ mit $a_{i} \in E$ algebraisch über $K \imp E' = K[a_{0}, \ldots, a_{n-1}]$ hat endlichen Grad über $K$ (nach (b)) und $\a$ ist algebraisch über $E'$, da $\mu_{\a, E} \in E'[X] \imp [E'[\a]:E'] < \infty$.
+          Nach Definition von algebraisch und Gradformel $[E'[\a] : K] < \infty \imp \a$ algebraisch über $K$.
+          \item Gegeben eine Körperkette $K = K_{0} \subseteq K_{1} \subseteq \cdots K_{n} \subseteq \cdots$, $K_{\infty} = \bigcup K_{n}$ ist Oberkörper von $K$ (Übung). Gilt zusätzlich $K_{i+1} \supseteq K_{i}$ algebraisch $\forall i$, so folgt mit Induktion und (c): $K_{i} \supseteq K$ algebraisch $\forall i.$ Sei $\a \in K_{\infty} \imp \ex n: \a \in K_{n} \imp \a$ ist algebraisch über $K$.
+          \item Übung.
+        \end{itemize}
+\end{enumerate}
+\end{proof}
+\end{lemm}
+
+\begin{kor}
+  Sei $E \supseteq K$ ein Oberkörper und
+  \[F:= \{ \a \in E \mid \a \text{ algebraisch über } K\}\]
+  Dann gilt:
+  \begin{enumerate}[(a)]
+    \item $F \subseteq E$ Unterkörper.
+    \item $F \supseteq K$ algebraisch.
+    \item $K[F] = F$.
+  \end{enumerate}
+\begin{proof}[Beweis]
+  19(e) $\imp K[F] \supseteq K$ ist algebraischer Oberkörper und $K[F] \subseteq E \imp K[F] = F$, d.h. (c) gilt. Und (a), (b) folgen. ((a),(b) gelten für $K[F]$ nach 19(e)).
+\end{proof}
+\end{kor}
+
+\begin{bsp}[Übung]
+  Sei $\a_{n}:= \sqrt[2^{n}]2 \in R$ für $n \ge 0$, dann: $[\Q(\a_{n}): \Q] = 2^{n}$. $\imp \Q_{\infty} = \bigcup_{n}\Q(\a_{n})$ ist algebraisch über $\Q$, aber $[\Q_{\infty} : \Q] = \infty$.
+\end{bsp}
+\begin{bsp*}
+$\tilde \Q := \{\a \in \C \mid \a \text{ ist algebraisch über } \Q\} \imp [\tilde \Q : \Q] = \infty$ und $\tilde \Q \supseteq \Q$ ist algebraisch.
+\end{bsp*}
+\begin{leitfragen*}
+\begin{enumerate}[(a)]
+  \item Gegeben $f \in K[X]$ irred. Finde Oberkörper $E$ und $\a \in E$ mit $f(\a) = 0$.
+  \item Finde Oberkörper $E \supseteq K$  in dem alle irred. $f \in K[X]$ eine Nullstelle (alle Nullstellen) haben.
+\end{enumerate}
+Sei $f = \sum_{0 \le i \le n} a_{i}X^{i} \in K[X] \setminus K$, sei $E \supseteq K$ Oberkörper, hatten schon gesehen $f(\a) = 0 \iff \ev_{\a}(f) = 0 \iff \mu_{\a, K} \mid f$.
+\end{leitfragen*}
+\begin{prop}
+  $\#\{\a \in E \mid f(\a) = 0\} \le \grad f$.
+  \begin{proof}[Beweis]
+    TODO
+  \end{proof}
+\end{prop}
+\begin{defi}
+  \begin{enumerate}[(a)]
+    \item $f \in K[X] \setminus K$ zerfällt in Linearfaktoren über $K: \iff$ jeder irred. normierte Faktor von $f$ ist der Form $X - \a$ für ein $\a \in K$.
+    \item $K$ heißt algebraisch abgeschlossen $\iff$ jedes $f \in K[X] \setminus K$ zerfällt in Linearfaktoren über $K$.
+  \end{enumerate}
+\end{defi}
+
+\begin{bem}
+  $K$ ist algebraisch abgeschlossen $\iff$ jedes $f \in K[X] \setminus K$ hat eine Nullstelle $\a \in K$.
+  \begin{proof}[Beweis]\item
+\begin{itemize}
+\item ``$\imp$'': Klar
+\item ``$\impliedby$'': Sei $f \in K[X] \setminus K$ irred. normiert, nach Voraussetzung hat $f$ eine Nullstelle $\a \in K \imp f = X - \a$ (alle irred. Polynome sind linear).
+\end{itemize}
+  \end{proof}
+\end{bem}
+
+\begin{bsp*}
+  \item $\C$ ist algebraisch abgeschlossen.
+  \item TODO
+\end{bsp*}
+\begin{defi}
+Sei $f \in K[X]$ irred. Ein Oberkörper $E \supseteq K$ heißt Stammkörper zu $f \iff \ex \a \in E$ mit $f(\a) = 0$ und $E = K(\a)$.
+\end{defi}
+
+\begin{satz}
+  Sei $f \in K[X]$ irred. von Grad $n$, dann:
+  \begin{enumerate}[(a)]
+    \item $E:= \fak{K[X]}{(f)}$ ist ein Körper (schreibe $\bar g$ für die Klasse zu $g \in K[X]$).
+    \item $K \to E, \a \to \bar \a$ ist ein Ringhomomorphismus, also Körperhomomorphismus. (Betrachte $K$ als Unterkörper von $E$, schreibe $\a$ für $\bar \a$)
+    \item Es gilt $f(\bar X) = 0$, d.h. $f$ hat keine Nullstelle in $E$.
+    \item Es gilt $E = K[\bar X]$ und $[E : K] = n$
+    \item Ist $F$ ein Oberkörper von $K$ mit Nullstelle $\b \in F$ von $f$, so gilt $n \mid [F: K]$, falls $[F : K] < \infty$.
+  \end{enumerate}
+\begin{proof}[Beweis]
+TODO
+\end{proof}
+\end{satz}
+
+\begin{kor}
+  Seien $f_{1}, \ldots, f_{t} \in K[X]$ irred. Dann $\ex$ Oberkörper $E \supseteq K$ mit $\b_{1}, \ldots, \b_{t} \in E$, so dass $f_{i}(\b_{i}) = 0, \forall i \in \eb t$ und $E = K(\b_{1}, \ldots \b_{t})$.
+\end{kor}
+\begin{bem*}
+Es gilt nur $[E : K] \le \prod_{1 \le i \le t} \grad f_{i}$.
+\end{bem*}
+\begin{bsp*}
+Seien $f_{1}, f_{2} \in \R[X]$ irred. quadr. Polynome $\imp E = \C$ und $[E : \R] = 2 < 2 \cd 2$. z.B. $f_{1} = X^{2}+1$ und $f_{2} = X^{2} + \pi$.
+\end{bsp*}
+
+\begin{satz}
+Jeder Körper $K$ hat einen (inj.) Körperhomomorphismus in einen algebraisch abgeschlossen Körper $\tilde K$.
+\end{satz}
+
+\begin{defi}[Algebraischer Abschluss]
+  Ein Oberkörper $E \supseteq K$ heißt algebraischer Abschluss, wenn
+  \begin{enumerate}[(a)]
+    \item $E$ ist algebraisch abgeschlossen.
+    \item $E \supseteq K$ ist algebraisch.
+  \end{enumerate}
+\end{defi}
+\begin{bez*}
+$\bar K$ sei immer ein algebraischer Abschluss von $K$.
+\end{bez*}
+\begin{bem*}[zu Satz 28]
+$\tilde K$ ist ein algebraischer Abschluss.
+\end{bem*}
+\begin{proof}[Beweis](von Satz 28)
+  TODO.
+
+\end{proof}
+\end{document}

@@ -864,4 +864,135 @@ $\l\{ \begin{matrix}
   \item In euklidischen Ringen kann man den ggT mit dem euklidischen Algorithmus berechnen und $\alpha, \beta$ wie in (a) mit dem erweiterten euklidischen Algorithmus.
 \end{enumerate}
 \end{bem*}
+
+
+\begin{satzdef}
+  Für einen Integritätsbereich $R$ sind äquivalent:
+  \begin{enumerate}[(i)]
+    \item $\forall a \in R \setminus (R\en \cup \{0\}) \ex t \in \N \ex$ Primelemente $p_{1}, \ldots, p_{t} \in R$ mit $a \simeq p_{1}\cdot  \ldots \cd p_{t}$
+    \item $\forall a \in R \setminus (R\en \cup \{0\}) \ex t \in \N \ex$ irreduzible Elemente $p_{1}, \ldots, p_{t} \in R$ mit $a \simeq p_{1}\cdot  \ldots \cd p_{t}$ und diese Darstellung ist eindeutig bis auf Indexpermutation und Assoziiertheit, d.h. gilt $a \simeq q_{1}\cd \ldots \cd q_{s}$ mit $q_{1}, \ldots, q_{s}$ irred., so gilt $s = t$ und nach Indexpermutation $q_{i} \simeq p_{i}$ für $i = 1, \ldots, t$.
+  \end{enumerate}
+  Ein Integritätsbereich, der (i) und (ii) erfüllt heißt faktorieller Ring (oder EPZ-Ring: Ring mit eindeutiger Primfaktorzerlgung)
+  \begin{bem*}\item
+\begin{enumerate}[(a)]
+  \item (i) $\imp$ irred. Elemente in $R$ sind Primelemente. Denn: Sei $q$ irred. in $R$, schreibe Faktorisierung wie in (i) für $q$, d.h. $q \simeq p_{1}\cd \ldots \cd p_{t} \underset{q \text{ irred.}}\imp t = 1$ also $q \simeq p_{1}$. Primelement.
+  \item In (b) ist $R$ beliebiger Integritätsbereich (so zwigt man mit Induktion) Ist $p$ ein Primelement in $R$ und ein Teiler von $a_{1}\cd \ldots \cd a_{t}$ (mit $a_{i} \in R$), so $\ex i \in \eb t$ mit $p | a_{i}$.
+  \item Für $R$ wie in 54 ist $R$ faktoriell, so ist die Länge $r$ einer Primfaktorzerlgung $r \simeq p_{1} \cld p_{t}$ ($p_{i}$ prim) von $r \in R \setminus \{0\}$ unabhängig von der Faktorisierung (vgl (ii)). Schreibe $r(r) \in \Nn$ für diese Länge.
+\end{enumerate}
+\end{bem*}
+\begin{proof}[Beweis](von Satz 54)
+  \item (i) $\imp$ (ii): Existenz der Faktorisierung in (ii) ist klar nach (i), da Primelemente irreduzibel sind.
+  \item Eindeutigkeit: Gelte $p_{1} \cld p_{t} \overset{(*)}\simeq q_{1} \cld q_{t}, s \in \N, p_{i}$ prim, $q_{i}$ irred. Zeige mit Induktion über $t$: $s = t$ und nach Indexpermutation $q_{i} \simeq p_{i}$
+  \begin{itemize}
+    \item $t = 1$: $p_{1} \simeq q_{1}\cld q_{s} \imp s = 1$ ($p_{1}$ prim, also irred.)
+    \item $t-1 \to t$: $(*)$ und Bemerkung (b) $\imp \ex j \in \eb s$ mit $p_{t} \mid q_{j}$, o.E. $j = s$ (Umindizieren) und also $p_{t} \simeq q_{s}$ ($q_{s}$ irreduzibel). teile beide Seiten durch $p_{t}$
+          \[p_{1} \cld p_{t-1} \simeq q_{1} \cld q_{s-1} \ubr{u}_{\in R\en} \simeq q_{1} \cld q_{s-1}\]
+          Nun: wende Induktionsvoraussetzung an. $\implies s-1 = t-1$ (also $s=t$) und nach Indexpermutation: $q_{i} \simeq p_{i}$ für $i = \eb{t-1}$
+  \end{itemize}
+  \item (ii) $\implies$ (i): Zeige irred. Elemente in $R$ sind Primelemente. Sei also $q \in R$ irreduzibel. Seien weiter $a, b \in R$, sodass $q \mid ab$.
+  \item Zu zeigen: $q \mid a$ oder $q \mid b$: o.E. $a, b \ne 0$ (sonst $q \mid a \vee q \mid b$), o.E. $a, b \notin R\en$, ist z.B. $a \in R\en$, so folgt aus $q \mid ab$ direkt $q \mid b$. Sei $c \in R$ mit $qc = ab$. Schreibe $c , a, b$ einer Faktorisierung wie in (ii) geg.
+  \[a \simeq p_{1} \cld p_{t}, \quad b \simeq q_{1} \cld q_{s},\quad c \simeq r_{1}\cld r_{u}\]
+  ($p_{i}, q_{j}, r_{k}$ irred. $t, s \in \N, u \in \Nn$)
+  \[qr_{1}\cld r_{u} \simeq p_{1}\cld p_{t}\cd q_{1}\cld q_{s}\]
+  Wende Eindeutigkeitsaussage von (ii), um zu folgen:
+  \item $q \simeq p_{i}, i \in \eb t$ oder $q \simeq q_{j}, j \in \eb s \imp q \mid a$ oder $q \mid b.\qedhere$
+\end{proof}
+\end{satzdef}
+
+\begin{kor}[Übung]
+  Sei $R$ ein faktorieller Ring und sei $\P$ ein Repräsentantensystem der Primelemente von $R$ modulo Assoziiertheit, dann gelten:
+  \begin{enumerate}[(a)]
+    \item $\forall p \in \P$ ist die Abbildung $v_{p}: R \setminus \{0\} \to \Nn, r \mps \max\{n \in \Nn : p^{n} \mid r\}$ wohl-definiert (genauer $v_{p}(r) \le t(r)$) und $v_{p}$ ist ein Monoidhomomorphismus (für $(R, 1, \cd)$)
+    \item $\forall r \in R \setminus \{0\}$ gilt $\#\{p \in \P : p \mid r\} \le t(r) < \infty$
+    \item $\forall r \in R \setminus \{0\} \ex ! u \in R\en :$ \[r = u \prod_{p \in \P}p^{v_{p}(r)} = u\prod_{p \in P, v_{p} > 0}p^{v_{p}(r)}\] (Primfaktorzerlgung von $r$)
+    \item Für $r, s \in R \setminus \{0\}$ gilt: \[r \mid s \iff \bigforall_{p \in \P} r_{p}(r) \le v_{p}(s)\]
+    \item Für $r, s \in R \setminus \{0\}$ gelten:
+          \[\ggt(r, s) \simeq \prod_{p \in \P}p^{\min(v_{p}(r), v_{p}(s))},\quad \kgv(r, s) \simeq \prod_{p \in \P}p^{\max(v_{p}(r), v_{p}(s))}\]
+          ($\ggt$ und $\kgv$ existieren also in faktoriellen Ringen)
+    \item Sei $K = \Quot(R)$, dann $\ex!$ Fortsetzung $v_{p} : K\en \to \Z$ (ein Gruppenhomomorphismus, der den Monoidhomomorphismus $v_{p} : R \setminus \{0\} \to \Nn$ fortsetzt) und $\forall r \in K\en \ex ! u \in R\en:$
+          \[r = u \prod_{p \in \P}p^{v_{p}(r)}\]
+          (dabei $\#\{p : v_{p}(r) \ne 0\}$ endlich.)
+  \end{enumerate}
+\end{kor}
+
+\begin{ubng}[vgl. LA2] Für einen (beliebigen kommutativen) Ring $R$ sind äquivalent:
+  \begin{enumerate}[(a)]
+    \item Jede aufsteigende Kette von Idealen \[I_{0} \subseteq I_{1} \subseteq I_{2} \subseteq \cdots \subseteq I_{n} \subseteq \cdots \subseteq R\]
+          ($\Nn$ indiziert) wird stationär, d.h. $\ex n_{0} : \forall n \in n_{0} : I_{n} = I_{n_{0}}$
+    \item Jede nichtleere Teilmenge $\mathscr M$ von Idealen enthält ein bzgl. der Inklusion maximales Element.
+    \item Jedes Ideal $I \subseteq R$ ist endlich erzeugt, d.h. $\ex n \in \N \ex a_{1}, \ldots, a_{n} \in R$ mit $I = (a_{1}, \ldots, a_{n})$
+  \end{enumerate}
+\begin{defi*}[Noetherscher Ring]
+Gelten (a)-(c) für $R$, so heißt $R$ \textbf{noethersch}
+\end{defi*}
+\end{ubng}
+\begin{bem*} $R$ noethersch $\underset{\text{ohne Zorn's Lemma}}\imp \forall$ echte Ideal $I \subsetneq R \ex$ maximales Ideal mit $I \subseteq \mathscr M$ denn ein solches findet sich in $\mathscr M = \{J \subsetneq R \mid I \subseteq J\}$
+\end{bem*}
+
+\begin{kor}
+  Ist $R$ ein HI-Ring, so gelten:
+  \begin{enumerate}[(a)]
+    \item $R$ ist noethersch.
+    \item $\forall r \in R \setminus (R\en \cup \{0\}) \ex t \in \N \ex$ Primelemente $p_{1}, \ldots, p_{t} \in R$, sodass $r \simeq p_{1} \cld p_{t}$
+    \item $R$ ist faktoriell.
+  \end{enumerate}
+\begin{proof}[Beweis]
+  \begin{enumerate}[(a)]
+    \item folgt aus 56, da jedes Ideal von $R$ ein Hauptideal ist.
+    \item folgt aus (b).
+    \item Bei HI-Ringen, wissen schon Primelemente sind irred. und umgekehrt. (Prop. 50).
+          Zu zeigen: Sei $r \in R \setminus (R\en \cup \{0\})$, dann existiert eine Faktorisierung wie in (b). Definiere: \[\mathscr M_{a}:=\{(b) \subseteq R \mid \ex t \in \Nn \ex \ubr{q_{1}, \ldots, q_{t}}_{\text{irred.}} \in R : bq_{1}\cld q_{t} \simeq a\}\]
+          $\mathscr M_{a} \ne \emptyset$: denn $(a) \in \mathscr M_{a}$ für $t = 0$. Sei nun $(b) \in \mathscr M_{a}$ ein maximales Element (bzgl. $\subseteq$). Behauptung: $(b) = R$ (Dann $b \simeq 1 \imp q_{1} \cld q_{t} \simeq a$ für Faktorisierung in Definition von $\mathscr M_{a}$ zu $b$). Dazu: Nehme an: $(b) \subsetneq R$, dann ist wegen $R$ noethersch $\ex$ maximales Ideal $M \subsetneq R$ mit $(b) \subseteq M$, da $R$ HI-Ring ist $M= (p)$ für $p$ ein Primelement (Proposition 50) und aus $(b) \subseteq (p)$ folgt $p \mid b$ und $(\fak bp) \supsetneq (b)$ ($p$ keine Einheit) und $(\fak bp) \in \mathscr M_{a}$, da $\fak bp \cd p \cd q_{1} \cld q_{t}\simeq a$. Widerspruch zur Maximalität von $(b)$.
+  \end{enumerate}
+\end{proof}
+\end{kor}
+\begin{bem*}
+Nächstes Ziel $R$ faktoriell $\imp R[X]$ faktoriell.
+\end{bem*}
+\begin{prop}[Übung]\item
+  \begin{enumerate}[(a)]
+    \item Für einen kommutativen Ring $R$ sind äquivalent:
+          \begin{enumerate}[(i)]
+            \item $R$ ist ein Integritätsbereich.
+            \item $R[X]$ ist ein Integritätsbereich
+                  \item $\forall f, g \in R[X]$ gilt: $\grad(fg) = \grad f + \grad g$
+          \end{enumerate}
+          \item Ist $R$ ein Integritätsbereich, so gilt $(R[X])\en = R\en$
+  \end{enumerate}
+\begin{proof}[Beweis]
+\begin{enumerate}[(a)]
+  \item Zeige (i) $\imp$ (iii) $\imp $ (ii) $\imp$ (i)
+  \item $u \in R[X]\en \imp \ex r : vu = 1$, dann Grad Identität anwenden...$\qedhere$
+\end{enumerate}
+\end{proof}
+\end{prop}
+\begin{bsp*}
+$\Z[X]\en = \Z\en = \{\pm 1\}, K[X_{1}, X_{2}]\en = K\en$.
+\end{bsp*}
+\begin{defi}
+  Sei bis auf Widerruf $R$ ein faktorieller Ring mit Quotientenkörper $K = \Quot(R) \supseteq R$, $f = \sum_{i=0}^{n}a_{i}X^{i} \in K{X} \setminus \{0\}$ heißt primitiv wenn:
+  \begin{enumerate}[(a)]
+    \item $f \in R[X]$ (alle $a_{i} \in R$)
+    \item $\ggt(a_{0}, \ldots, a_{n}) \simeq 1$
+  \end{enumerate}
+\end{defi}
+
+\begin{lemm} Sei $f = \sum_{i=0}^n a_{i}X^{i} \in K[X] \setminus \{0\}$, dann:
+  \begin{enumerate}[(a)]
+    \item $\ex c \in K\en \ex g \in K[X] \setminus \{0\}$ primitiv, so dass $f = cg$
+          \item Gelte $cg = c'g'$ mit $c, c' \in R\en, g, g' \in K[X] \setminus \{0\}$ primitive Polynome, so folgt $\frac cc \in R\en$, d.h. $c$ in (a) ist eindeutig bis auf Faktor in $R\en$
+  \end{enumerate}
+\begin{proof}{Beweis}
+  \begin{enumerate}[(a)]
+    \item Schreibe $a_{i} = \frac {b_{i}}{d_{i}}$ it $b_{i} \in R, d_{i} \in R \setminus \{0\}$ als gekürzten Bruch (d.h. $\ggt(b_{i}, d_{i}) \simeq 1$ geht $R$ faktoriell.) \newline
+          Sei $d = \kgv(d_{0}, \ldots, d_{n})$ (Hauptnenner), $b = \ggt(b_{0}, \ldots, b_{n})$. Es folgt $g:= f \cd \frac ab = \sum_{i=0}^n \l( \frac{b_{i}}b \cd \frac d {d_{i}} \r)X^{i} \in R[X] (\setminus \{0\})$.\newline
+          Behauptung: $g$ ist primitiv. $\l(\implies c= \frac bd = \frac{\ggt(b_{0}, ..., b_{n})}{\kgv(d_{0}, ..., d_{n})}\r)$.\newline
+          Annahme: $g$ ist nicht primitiv. Dann $\ex$ Primelement $p \in R$, sodass $p \mid \frac {b_{i}}b \cd \frac d{d_{i}}, \forall i$. Nach der Wahl von $b$ gilt $\frac {b_{0}}b, \ldots ,\frac {b_{n}}b$ sind insgesamt teilerfremd $\implies \ex i : p \not |\  \frac {b_{i}}b \imp \ex i : p \mid \frac d{d_{i}} \imp p \mid d$. Sei $k = v_{p}(d)$, d.h. $p^{k}$ teilt $d, p^{k+1} \not | \ d \underset{d = \kgv(...)} \imp \ex i : p^{k} \mid d_{i}, p^{k+1} \not | \ d_{j}, j \in \{0, \ldots, n\}$, sei dieses $i_{0}$. Insbesondere ist $p \mid d_{i_{0}}$.\newline
+          Beachte: $\frac {b_{i_{0}}}{d_{i_{0}}}$ gekürzter Bruch $\imp p \not | \ b_{i_{0}}$, aber nach Voraussetsung ($g$ nicht primitiv) $p$ teilt $\frac{b_{i_{0}}} b \cd \frac d{d_{i_{0}}}$. Widerspruch, da $p$ kein Teiler von $b$ oder $d_{i_{0}}$ ist.
+    \item Haben $c \cd g = c' \cd g'$ für $c, c' \in K\en, g,g'$ primitiv. Schreibe $u = \frac {c'}c$ als gekürzter Bruch $u = \frac {d'}d \imp d \cd h = d' \cd g' = d \cd \sum b_{i}X^{i} = d' \cd \sum b_{i}'X^{i}$. $g, g'$ primitiv heißt $\imp d = \ggt(b_{0}d, \ldots, b_{n}d) = \ggt(b'_{0}d', \ldots, b'_{n}d') = d' \imp \frac {d'}d \in R\en$ und $\frac{c'}c = \frac{d'}d.$
+  \end{enumerate}
+
+\end{proof}
+
+\end{lemm}
 \end{document}

@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{mathrsfs}
 \usepackage{amsthm}
+\usepackage{scalerel}
 %\usepackage{mathabx}
 \usepackage{graphicx}
 \usepackage{enumerate}
@@ -31,7 +32,9 @@
 \newtheorem{lemm}[thm]{Lemma}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem*{prop*}{Proposition}
+\newtheorem*{leitfragen*}{Leitfragen}
 \newtheorem{satz}[thm]{Satz}
+\newtheorem{satzdef}[thm]{Satz/Definition}
 \newtheorem*{satz*}{Satz}
 \newtheorem*{axiom*}{Axiom}
 \newtheorem*{satz45'}{Satz 45'}
@@ -82,6 +85,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\F}{\mathbb{F}}
+\renewcommand{\P}{\mathbb{P}}
 \newcommand{\Fp}{\mathbb{F}_p}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Rn}{\mathbb{R}^n}
@@ -113,9 +117,8 @@
 
 % Algebra
 \DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\kn}{Kern}
 \renewcommand{\ker}{\operatorname{Kern}}
-\DeclareMathOperator{\bil}{Kern}
+\DeclareMathOperator{\bil}{Bild}
 
 \DeclareMathOperator{\Abb}{Abb}
 \DeclareMathOperator{\Bij}{Bij}
@@ -145,6 +148,7 @@
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\ini}{in}
 \DeclareMathOperator{\chr}{char}
+\DeclareMathOperator{\ev}{ev}
 \DeclareMathOperator{\Quot}{Quot}
 
 \newcommand{\eb}[1]{\{1, \ldots, #1\}}
@@ -154,10 +158,14 @@
 \newcommand{\T}{\mathcal{T}}
 \newcommand{\lm}{\lambda}
 \renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
 \newcommand{\mps}{\mapsto}
 \newcommand{\tm}{\times}
 \newcommand{\en}{^\times}
 \newcommand{\cd}{\cdot}
+\newcommand{\ld}{\ldots}
+\newcommand{\cds}{\cdots}
+\newcommand{\cld}{\cdot \ldots \cdot}
 
 \makeatletter
 \DeclareRobustCommand*{\mfaktor}[3][]
@@ -184,3 +192,5 @@
 \DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
 \DeclareFontSubstitution{U}{mathx}{m}{n}
 \DeclareMathSymbol{\bigtimes}{1}{mathx}{"91}
+
+\DeclareMathOperator*{\bigforall}{\scalerel*{\forall}{\sum}}
