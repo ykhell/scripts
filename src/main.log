@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  30 DEC 2023 19:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  14 JAN 2024 13:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1122,18 +1122,69 @@ Overfull \hbox (0.9317pt too wide) in paragraph at lines 333--334
 ismus.
  []
 
-) [79] (./main.aux)
+[79]
+Overfull \hbox (18.91756pt too wide) in paragraph at lines 378--379
+[]\OT1/cmr/m/it/10 Ist $\OML/cmm/m/it/10 E \OMS/cmsy/m/n/10 ^^S \OML/cmm/m/it/1
+0 K$ \OT1/cmr/m/it/10 al-ge-braisch abgeschlossen, so ist $\OML/cmm/m/it/10 F \
+OT1/cmr/m/n/10 := \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10  \OMS/cmsy/m/n/10 2 \OML/
+cmm/m/it/10 E \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 []K\OMS/cmsy/m/n/10 g$
+ []
+
+[80]
+Overfull \hbox (6.61472pt too wide) in paragraph at lines 454--455
+[][]\OT1/cmr/bx/n/10 Satz 4.36. []\OT1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 E$ \OT
+1/cmr/m/it/10 al-ge-braisch abgeschlossener K^^?orper, $\OML/cmm/m/it/10 ' \OT1
+/cmr/m/n/10 : \OML/cmm/m/it/10 K \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 E$ \OT1/cm
+r/m/it/10 ein K^^?orperhom.
+ []
+
+[81]
+Overfull \hbox (1.66444pt too wide) in paragraph at lines 461--462
+[][]\OT1/cmr/bx/n/10 Definition 4.37. []\OT1/cmr/m/n/10 Seien $\OML/cmm/m/it/10
+ E[]; E[]$ \OT1/cmr/m/n/10 Oberk^^?orper von $\OML/cmm/m/it/10 K$\OT1/cmr/m/n/1
+0 . Ein K^^?orperhomomorphismus
+ []
+
+
+Overfull \hbox (22.97008pt too wide) in paragraph at lines 484--485
+[]\OT1/cmr/m/it/10 Ist $[]$ ein al-ge-brais-cher Ab-schluss von $\OML/cmm/m/it/
+10 E$ \OT1/cmr/m/it/10 und $\OML/cmm/m/it/10 ' \OT1/cmr/m/n/10 : \OML/cmm/m/it/
+10 E \OMS/cmsy/m/n/10 ! []$ \OT1/cmr/m/it/10 ein $\OML/cmm/m/it/10 K$\OT1/cmr/m
+/it/10 -Homomorphismus,
+ []
+
+
+Overfull \hbox (18.48962pt too wide) in paragraph at lines 490--490
+[]\OT1/cmr/bx/n/14.4 Normale Er-weiterun-gen und Zerf^^?allungsk^^?orper 
+ []
+
+
+Overfull \hbox (13.26767pt too wide) in paragraph at lines 510--511
+[]$\OML/cmm/m/it/10 f$ \OT1/cmr/m/it/10 be-sitzt einen ein-deuti-gen Zerf^^?all
+ungsk^^?orper in $[]$, n^^?amlich $\OML/cmm/m/it/10 E \OT1/cmr/m/n/10 = \OML/cm
+m/m/it/10 K\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 []; [] ; []\OT1/cmr/m/n/10 )$
+ []
+
+[82]
+Overfull \hbox (13.76347pt too wide) in paragraph at lines 511--512
+[]\OT1/cmr/m/it/10 Ist $\OML/cmm/m/it/10 E$ \OT1/cmr/m/it/10 ein Zerf^^?allungs
+k^^?orper von $\OML/cmm/m/it/10 f$\OT1/cmr/m/it/10 , und $\OML/cmm/m/it/10 ' \O
+T1/cmr/m/n/10 : \OML/cmm/m/it/10 E \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 F$ \OT1/
+cmr/m/it/10 ein K^^?orperhomomorphismus,
+ []
+
+[83] [84]) [85] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F0201D1BD1EF6ADA94653290BE64ABCC;11173.
+(rerunfilecheck)             Checksum: 7D254194D515BF18A6DA3110FFAE8E0E;11581.
  ) 
 Here is how much of TeX's memory you used:
- 23153 strings out of 477476
- 436858 string characters out of 5824243
+ 23337 strings out of 477476
+ 440067 string characters out of 5824243
  1884388 words of memory out of 5000000
- 42152 multiletter control sequences out of 15000+600000
+ 42256 multiletter control sequences out of 15000+600000
  527341 words of font info for 88 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,19n,117p,793b,1189s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,22n,117p,793b,1189s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/public/ma
 thabx/mathx10.600pk> </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/p
 k/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fo
@@ -1165,10 +1216,10 @@ e/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/loc
 al/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><
 /usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></us
 r/local/texlive/2023basic/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
-Output written on main.pdf (80 pages, 626144 bytes).
+Output written on main.pdf (86 pages, 649605 bytes).
 PDF statistics:
- 1807 PDF objects out of 2073 (max. 8388607)
- 1650 compressed objects within 17 object streams
- 825 named destinations out of 1000 (max. 500000)
- 629 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1934 PDF objects out of 2073 (max. 8388607)
+ 1770 compressed objects within 18 object streams
+ 905 named destinations out of 1000 (max. 500000)
+ 645 words of extra memory for PDF output out of 10000 (max. 10000000)
 

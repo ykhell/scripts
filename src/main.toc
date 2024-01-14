@@ -75,3 +75,5 @@
 \contentsline {chapter}{\numberline {4}Körper}{72}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Grundlagen}{72}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Algebraische und transzendente Elemente}{75}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Normale Erweiterungen und Zerfällungskörper}{82}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Seperabilität}{84}{section.4.4}%

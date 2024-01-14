@@ -369,6 +369,283 @@ $\tilde K$ ist ein algebraischer Abschluss.
 \end{bem*}
 \begin{proof}[Beweis](von Satz 28)
   TODO.
-
 \end{proof}
+
+\begin{prop}\item
+\begin{enumerate}[(a)]
+  \item $K$ ist algebraisch abgeschlossen $\iff \forall$ algebraischer Oberkörper $E \supseteq K$ gilt $E = K$
+  \item Ist $E \supseteq K$ algebraischer Oberkörper und $\bar E \supseteq E$ ein algebraischer Abschluss. Dann ist $\bar E \supseteq K$ ein algebraischer Abschluss.
+  \item Ist $E \supseteq K$ algebraisch abgeschlossen, so ist $F:= \{\a \in E \mid \a \text{ algebraisch über } K\}$ ein algebraischer Abschluss von $K$.
+\end{enumerate}
+\begin{proof}[Beweis]\item
+\begin{enumerate}[(a)]
+  \item
+        \begin{itemize}
+          \item ``$\imp$'': Sei $\a \in E$, z.z. $\a \in K$. Betrachte $\mu_{\a, K} \in K[X]$, $K$ algebraisch abgeschlossen $\imp$ irred. Polynome haben Grad $\imp \grad \mu_{\a, K} = 1 \imp \mu_{\a, K} = X - \a \in K[X]$ also $\a \in K$.
+          \item ``$\impliedby$'': Sei $f \in K[X]$ irred. normiert. Sei $E$ sein Stammkörper $\imp \ex \a \in E$ mit $f(\a)  = 0 \underset{E \supseteq K \text{ alg.}} \imp E = K$ und also $\a \in K \imp f = X - \a$.
+        \end{itemize}
+  \item Folgt aus Proposition 19.
+  \item Nach Korollar 20 ist $F$ ein alg. Oberkörper von $K$.
+        Noch z.z: $f \in F[X]$ irred. normiert $\imp f$ linear. $f$ faktorisiert in $E[X]$ also $f = \prod_{1 \le i \le n} (X - \a_{i})$ ($n = \grad f, \a_{i} \in E$). Nun sind die $\a_{i}$ algebraisch über $F$, also auch über $K \imp \a_{1}, \ldots, \a_{n} \in F \underset{f \text{ irr. }} \imp n = 1.$ \qedhere
+\end{enumerate}
+\end{proof}
+\end{prop}
+\begin{bsp}
+  $\bar \Q:= \{\a \in \C \mid \a \text{ ist alg. über } \Q\}$ ist ein algebraischer Abschluss von $\Q$. Es gilt $\bar \Q \subsetneq \C$, denn $\bar \Q$ ist abzählbar, $\C$ aber nicht.
+\end{bsp}
+
+\begin{bem*}
+  Nächste Ziele:
+  \begin{enumerate}[(a)]
+    \item $\bar K$ ist eindeutig bis auf Isomorphie.
+    \item ``Verstehe'' Körperautomorphismen von $\bar K$ über $K$.
+  \end{enumerate}
+\end{bem*}
+
+\begin{bezen}
+  Sei $\ph_{i} : K \to K'$ ein Körperhomomorphismus.
+  \begin{enumerate}[(a)]
+    \item Schreibe $\ph_{*}$ für den induzierten Ringhomomorphismus \[\ph_{*} : K[X] \to K'[X], \sum a_{i}X^{i} \mps \sum \ph(a_{i})X^{i}\]
+    \item Sei $L \supseteq K$ ein Oberkörper, Nenne einen Körperhomomorphismus $\psi : L \to K'$ eine Ausdehnung von $\ph$, falls $\psi|_{K} = \ph$, also wenn
+\[\begin{tikzcd}
+L \arrow[r, "\psi"]                           & K' \\
+K \arrow[ru, "\varphi"'] \arrow[u, "i", hook] &
+\end{tikzcd}\]
+  \end{enumerate}
+\end{bezen}
+\begin{lemm}
+  Sei $L \supseteq K$ ein Stammkörper zu $f \in K[X]$ irred. und sei $\a \in L$ eine Nullstelle von $f$, sei $\ph: K \to E$ ein Körperhomomorphismus, dann gilt: Die Abbildung
+\[
+  % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12HPhOAjGAHMsYYAFs6OAE5YAHgF8ABJzTZEigDLL2OCIoCi2nDFk5gimCJjzOnIybMBBJnFgALMEzCDFNAoqUVN20YMChxSRkFTilOeRB5UnRMXHxCFAAmcipaRhY2Tm52XnY+bREDbW0xLCgoBhhtGhgpHDttAWFRCWk5JUUBwYH+e1NzLDgcCytA21GzADlJgDpff1m0NwB9YAAqeQAKADMASkHOUPCeqJt2WPZ4xOTsPAIiMgBGHPpmVkQOdiqLAJJIgDAvNJELJfag-fL-FTYA6cRibOgnBI5GBQQTwIigI5SCBiJBkEC6JAfJ4gQnEpBZckQJAAZmoODoWAYbAkqgp8go8iAA
+\begin{tikzcd}[row sep = 0.5]
+\l\{\begin{matrix} \psi: L \to E \text{ eine}\\ \text{Ausdehnung von } \ph \end{matrix}\r\} \arrow[rr] &  & \l\{\b \in E \ \middle \vert\  \begin{matrix}         \b \text{ ist eine} \\ \text{Nst. von } \ph_{*}(f)   \end{matrix}\r\} \\
+\psi \arrow[rr, maps to]                                                                               &  & \psi(\alpha)
+\end{tikzcd}
+\]
+ist wohl-definiert und bijektiv, insbesondere:
+\[\# \l\{\begin{matrix} \psi: L \to E \text{ eine}\\ \text{Ausdehnung von } \ph \end{matrix}\r\} = \# \l\{\b \in E \ \middle \vert\  \begin{matrix}         \b \text{ ist eine} \\ \text{Nst. von } \ph_{*}(f)   \end{matrix}\r\} \le \grad f = [L : K]\]
+\end{lemm}
+\begin{proof}[Beweis]
+  \begin{itemize}
+    \item Abbildung ist wohl-definiert: Sei $f = \sum {a_{i}}X^{i}$
+          \[\ph_{*}(f)(\psi(\a)) = \sum_{i} \underbrace{\ph(a_{i})}_{\psi(a_{i})} \psi(\alpha)^{i}\]
+          \[\underset{ \psi \text{ Körperhom.}} = \psi(\sum_{i}a_{i}\a^{i}) = \psi(f(\a)) = \psi(0)=0\]
+    \item Abbildung ist injektiv: $L = K[\a] \imp$ Ausdehnungen $\psi : L \to E$ sind eindeutig bestimmt durch $\psi \mid_{K} = \ph$ und Angabe von $\psi(\a)$. D.h. unterschiedliche Ausdehnungen führen auf verschiedene Nullstellen von $\ph_{*}(f)$.
+    \item Abbildung ist surjektiv: Sei $\b \in E$ Nullstelle von $\ph_{*}(f)$. Betrachte den Ringhomomorphismus: \[\xi: K[X] \to E, \sum \a_{i}X^{i} \mps \sum \ph(\a_{i})\b^{i}\]
+          Beachte: $f \in \ker(\xi)$, nach der Wahl von $\b$, nach dem Homomorphiesatz erhalten wir einen Ringhomomorphismus
+          \[\bar \xi : \fak{K[X]}{(f)} \to E, [g] \mps \ph_{*}(g)(\b)\]
+          Wir erinnern uns, dass $L$ konstruiert wurde als $\fak {K[X]}{(f)}$, d.h. wir haben einen Isomorphismus \[\bar \rho : \fak {K[X]}{(f)} \to L, [g] \to g(\a)\]
+          Erhalten $\psi : L \to E$ als $\psi = \bar \xi \circ \bar \rho ^{-1}$ (prüfe $\psi|_{K} = \ph$ und $\psi (\a) = \bar \xi(\bar \rho^{-1}(\a)) = \bar \xi(\bar X) = \b$). \qedhere
+  \end{itemize}
+\end{proof}
+
+\begin{lemm}
+  Sei $L \supseteq K$ ein Oberkörper mit $[L : K] < \infty$, dann $\ex$ Oberkörper $F \supseteq K$ mit $L \supsetneq F$ und $f \in F[X]$ irred., sodass $L \supseteq F$ Stammkörper von $f$ ist.
+  \begin{proof}[Beweis]
+TODO.
+  \end{proof}
+\end{lemm}
+\begin{kor}
+  Sei $L \supseteq K$ ein Oberkörper mit $[L : K] < \infty$ und sei $\ph : K \to E$ ein Körperhomomorphismus, dann gilt:
+  \[\#\{\psi : L \to E \text{ Ausdehnung von } \ph\} \le [L : K]\]
+\end{kor}
+
+\begin{satz}
+  Sei $E$ algebraisch abgeschlossener Körper, $\ph :  K \to E$ ein Körperhom. Sei $L \supseteq K$ ein algebraischer Oberkörper, dann $\ex $ Ausdehnung $\psi : L \to E$ von $\ph$.
+  \begin{proof}[Beweis]
+    TODO.
+  \end{proof}
+\end{satz}
+
+\begin{defi}
+  Seien $E_{1}, E_{2}$ Oberkörper von $K$. Ein Körperhomomorphismus $\ph : E_{1} \to E_{2}$ heißt
+  \begin{enumerate}[(a)]
+    \item $K$-Homomorphismus $:\iff \ph|_{K} = \id_{K}$
+    \item $K$-Isomorphismus $:\iff \ph$ ist bij. und $\ph|_{K} = \id_{K}$
+    \item $K$-Automorphismus $: \iff E_{1} = E_{2}$ und $\ph$ ist $K$-Isomorphismus.
+  \end{enumerate}
+\end{defi}
+\begin{nota*}\item
+\begin{enumerate}[(a)]
+\item $\Hom_{K}(E_{1}, E_{2}) := \{\ph : E_{1} \to E_{2} \mid \ph \text{ ist } K\text{-Hom.}\}$
+\item $\Iso_{K}(E_{1}, E_{2}) := \{\ph : E_{1} \to E_{2} \mid \ph \text{ ist } K\text{-Isom.}\}$
+\item $\Aut_{K}(E_{1}) := \Iso_{K}(E_{1}, E_{1})$
+\end{enumerate}
+\end{nota*}
+
+
+\begin{kor}
+  Sei $E \supseteq K$ ein algebraischer Oberkörper und $\bar K \supseteq K$ ein algebraischer Abschluss von $K$, dann:
+  \begin{enumerate}[(a)]
+    \item $\Hom_{K}(E, \bar K) \ne \emptyset$ (Satz 36). Ist $[E : K] < \infty$, so gilt $\# \Hom_{K}(E, \bar K) \le [E : K]$ (Kor 35). Ist $E$ Stammkörper zu $f \in K[X]$ irred, so gilt
+          \[\# \Hom_{K}(E, \bar K) = \#\{\a \in E \mid f(\a)\}\]
+          (Lemma 33)
+    \item Ist $E$ algebraisch abgeschlossen, so gilt $\Hom_{K}(E, \bar K) = \Iso(K)(E, \bar K)$ ($ \ne \emptyset$ wegen (a))
+    \item Ist $\bar E$ ein algebraischer Abschluss von $E$ und $\ph : E \to \bar K$ ein $K$-Homomorphismus, so $\ex K$-Isomorphismus $\psi : \bar E \to \bar K$, der $\ph$ ausdehnt. ((b) und Satz 36)
+  \end{enumerate}
+\begin{proof}[Beweis]
+TODO
+\end{proof}
+\end{kor}
+\section{Normale Erweiterungen und Zerfällungskörper}
+\begin{bez*}
+Nenne Oberkörper $E \supseteq K$ auch Erweiterungskörper oder Erweiterung.
+\end{bez*}
+
+\begin{defi}
+  \begin{enumerate}[(a)]
+    \item Eine algebraische Erweiterung $E \supseteq K$ heißt normal $:\iff \forall \a \in E: \mu_{\a, K}$ zerfällt in Linearfaktoren über $E[X] \underset{\text{Übung}} \iff \forall f \in K[X]$ irred. mit Nullstellen $\a_{1}, \ldots, \a_{n}$ in $\bar K$ gilt: liegt ein $\a_{i}$ in $E$, so folgt $\{\a_{1}, \ldots, \a_{n}\} \subseteq E$.
+    \item Eine Erweiterung $E \supseteq K$ heißt Zerfällungskörper (ZK) über $K$  von $f \in K[X] \setminus K$ normiert $: \iff$
+          \begin{enumerate}[(i)]
+            \item $\ex \a_{1}, \ldots \a_{n} \in E : f = \prod_{1 \le i \le n}(X-\a_{i})$
+            \item Kein echter Unterkörper von $E$ enthält $\a_{1}, \ldots, \a_{n}$.
+          \end{enumerate}
+  \end{enumerate}
+\end{defi}
+
+
+\begin{prop}
+  Sei $f \in K[X] \setminus K$ normiert, dann gilt:
+  \begin{enumerate}[(a)]
+    \item $f$ besitzt einen eindeutigen Zerfällungskörper in $\bar K$, nämlich $E = K(\a_{1}, \ldots, \a_{n})$ mit $\a_{1}, \ldots, \a_{n}$ die Nst. von $f$ in $\bar K$. (so dass $f = \prod_{1 \le i \le n}(X - \a_{i}), n = \grad f$)
+    \item Ist $E$ ein Zerfällungskörper von $f$, und $\ph : E \to F$ ein Körperhomomorphismus, so ist $\ph(E)$ der Zerfällungskörper über $\ph(K)$ von $\ph_{*}(f)$
+    \item Je zwei Zerfällungskörper $E, E'$ zu $f$ (über $K$) sind $K$-isomorph.
+  \end{enumerate}
+\begin{proof}[Beweis]
+TODO.
+\end{proof}
+\end{prop}
+
+\begin{bsp}
+  \[f = X^{4} - 5 \underset{\text{Übung}} = (X - \sqrt[4]5)(X - i\sqrt[4]5)(X + \sqrt[4]5)(X + i\sqrt[4]5)\in \Q[X]\]
+  Zerfällungskörper von $f$ über $\Q$ ist (Übung)
+  \[E = \Q(i, \sqrt[4] 5)\]
+  und es gilt (Übung) $[E : \Q] = 8$.
+\end{bsp}
+
+\begin{whg*}
+$E \supseteq K$ algebraische Erweiterung heißt normal $\iff \forall \a \in E$ zerfällt $\mu_{\a, K}$ in $E[X]$ über Linearfaktoren.
+\end{whg*}
+\begin{satz}
+  Für eine algebraische Erweiterung $E \supseteq K$ sind äquivalent:
+    \item (i) $\forall \psi, \psi' \in \Hom_{K}(E, \bar K)$ gilt $\psi(E) = \psi'(E)$
+    \item (i') $\forall \psi \in \Hom_{K}(E, \bar K)$ gilt $\psi(E) = E$
+    \item (ii) $E \supseteq K$ ist normale Erweiterung.
+    \item Gilt $[E : K] < \infty$, so sind (i), (ii) äquivalent zu
+    \item (iii) $E$ ist der Zerfällungskörper eines Polynoms in $K[X]$.
+\begin{proof}[Beweis]
+TODO.
+\end{proof}
+\end{satz}
+
+\begin{kor}
+  Sei $E$ ein Oberkörper von $K$ in $\bar K$ mit $[E:K] < \infty$, dann $\ex$ kleinster Oberkörper $F \supseteq E$ in $\bar K$, sodass $F \supseteq K$ normal ist, für diesen gilt $[F:K] < \infty$.
+  \begin{proof}[Beweis]
+    TODO.
+  \end{proof}
+\end{kor}
+
+\begin{defi}
+Der Körper $F \supseteq \bar K$ aus Korollar 43 heißt normale Hülle von $E \supseteq K$.
+\end{defi}
+
+\section{Seperabilität}
+Sei $\bar K$ ein algebraischer Abschluss von $K$.
+\begin{vor*}
+ ``Formale Ableitung.''
+\end{vor*}
+
+\begin{defi}
+  \[\frac d{dX}: K[X] \to K[X],\]
+  \[f = \sum_{0 \le i \le n}a_{i}X^{i} \mps f':= \frac d{dX}f = \sum_{0 \le i \le n}ia_{i}X^{i-1}\]
+  Hierbei steht $i$ für $i \cd 1 = 1 + \cdots + 1 \in K$ i-fache Summe.
+\end{defi}
+
+\begin{prop}[Rechenregeln]\item
+\begin{enumerate}[(a)]
+  \item $\frac d{dX}$ ist $K$-linear.
+  \item $\frac d{dX}(f\cd g) = \frac {df}{dX} \cd g + f \cd \frac {dg}{dX}$.
+  \item $\frac d{dX} f(g(X)) = \frac {df}{dX}(g(X)) \cd \frac d{dX}g$. Insbesondere $\frac d{dX}(g^{n}) = ng^{n-1}$.
+        \begin{proof}[Beweis]Übung.\qedhere
+        \end{proof}
+\end{enumerate}
+\end{prop}
+
+\begin{lemm}Sei $p = \chr(K)$, sei $f \in K[X] \setminus \{0\}$, dann gilt
+  \begin{enumerate}[(a)]
+    \item $p \not \mid  \grad f \imp \grad \frac d{dX} f = \grad f - 1$.
+    \item $f' = 0 \iff f \in K[X^{p}]$ mit der Konvention $X^{0} = 1$
+  \end{enumerate}
+\begin{proof}[Beweis]
+TODO.
+\end{proof}
+\end{lemm}
+
+\begin{defi}
+$f \in K[X]$ hat mehrfache Nullstelle in $\bar K \iff \ex \a \in \bar K$ mit $f(\a) = 0$ und $(X - \a)^2$ teilt $f$ in $\bar K$.
+\end{defi}
+\begin{bem}[Übung]
+$\a \in \bar K$ ist mehrfache Nullstelle von $f \iff f(\a) = f'(\a) = 0$.
+\end{bem}
+\begin{prop} Sei $f \in K[X] \setminus \{0\}$ und $g:= \ggt(f, f') \in K[X]$. Dann: $f$ hat mehrfache Nullstellen in $\bar K \iff \grad g = 0$.
+  \begin{proof}[Beweis]
+TODO.
+  \end{proof}
+\end{prop}
+\begin{kor}
+  Sei $p = \chr K$ und $f \in K[X]$ irred. Dann sind äquivalent:
+  \begin{enumerate}[(i)]
+    \item $f$ hat mehrfache Nullstelle in $\bar K$.
+    \item $p > 0$ und $f' = 0$.
+    \item $p > 0$ und $\ex g \in K[X]$ ohne mehrfache Nst. und $\ex  > 0$ sodass $f = g(X^{p^m})$ und $g$ irred.
+  \end{enumerate}
+  Insbesondere gelten für $g, m$ aus (iii):
+  \begin{enumerate}[(a)]
+    \item $p^{m} \mid \grad f$
+    \item $\#\{\b \in \bar K \mid f(\b) = 0\}$
+    \item Ist $\xi : K \to K'$ ein Körperhomomorphismus, so gilt $\xi_{*}f = (\xi_{*}g)(X^{p^{m}})$ und
+          \[\# \{\b \in \bar K' \mid \xi_{*}f(\b) = 0\} = \grad g = \grad(\xi_{*}(g))\]
+  \end{enumerate}
+\begin{proof}[Beweis]
+TODO.
+\end{proof}
+\end{kor}
+\begin{defi}
+  Sei $f \in K[X] \setminus K$, und $E \supseteq K$ Oberkörper.
+  \begin{enumerate}[(a)]
+    \item $f$ heißt seperabel $\iff$ Kein irred. Faktor von $f$ hat mehrfache Nst.
+    \item $\a \in E$ heißt seperabel über $K \iff \mu_{\a, K}$ ist seperabel.
+    \item $E \supseteq K$ heißt seperabel $\iff$ alle $\a \in E$ sind seperabel über $K$.
+    \item $K$ heißt perkeft $\iff$ alle $g \in K[X] \setminus K$ sind seperabel ($\iff$ alle algebraische Erweiterungen $E \supseteq K$ sind seperabel.)
+    \item Ist $f$ irred., so heißt $f$ rein inseperabel $\iff f$ besitzt genau eine Nst. in $\bar K$.
+    \item $E \supseteq K$ ist rein inseperabel $\iff \forall \a \in E : \mu_{\a, K}$ ist rein inseperabel.
+  \end{enumerate}
+\end{defi}
+\begin{bsp*}[zu 52(e)] in 54 geg. $X^{p} - Y$
+
+\end{bsp*}
+\begin{bsp}
+  Gelte $\chr K = p > 0$, sei $f = X^{p} - a \in K[X]$ und sei $b \in \bar K$ eine Nst. von $f$, dann:
+  \begin{enumerate}[(a)]
+    \item $(X - b)^{p} = f(X)$ in $\bar K[X]$
+    \item $f$ ist irred. $\iff b \in \bar K \setminus K$.
+  \end{enumerate}
+\begin{proof}[Beweis]Übung.
+\end{proof}
+\end{bsp}
+\begin{bsp}
+$K = \Fp(Y) = \Quot(\Fp[Y])$, sei $f(X) = X^{p} - Y \in (\Fp[Y])[X] \subseteq K[X]$ irred. nach Existenz ($Y \in \Fp[Y]$ prim). Haben TODO.
+\end{bsp}
+\begin{satz}
+  $K$ ist perfekt $\iff$ es gelten $(i)$ oder $(ii)$.
+  \begin{enumerate}[(i)]
+    \item $\chr K = 0$.
+    \item $\chr K = p > 0$ und der Frobeniushomomorphismus \[\ph_{K} : K \to K, \a \mps \a^{p}\] ist surjektiv. ($\ph_{K}$ ist Ringhomomorphismus, da $\chr K = p$, also ein Körperhomomorphismus)
+  \end{enumerate}
+\end{satz}
+
+\begin{bsp*}
+  \[\ph_{K} : \Fp \to \Fp(Y) = K,\quad \bil(\ph_{K}) \overset{\text{Übung}} = \Fp(Y^{p})\]
+  und $\Fp$ ist perfekt.
+\end{bsp*}
 \end{document}
