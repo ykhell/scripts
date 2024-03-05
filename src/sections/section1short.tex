@@ -1,0 +1,164 @@
+\documentclass[twocolumn]{report}
+\usepackage{../template}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[inline]{enumitem}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+\setlength{\columnsep}{20pt}
+\begin{document}
+\section*{1.1 Gruppen und Monoide}
+\subsection*{Definitionen}
+\begin{enumerate*}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item[1.1:] Monoid
+    \item[1.2:] Gruppe
+    \item[1.4:] Abelsche Gruppe/Abelsches Monoid
+    \item[1.8:] Ring
+    \item[1.9:] Ordnung einer Gruppe/Ordnung eines Monoids
+    \item[1.10:] Untergruppe/Untermonoid
+    \item Zentralisator/Zentrum
+    \item[1.15:] Erzeuger
+    \item[1.17:] Ordnung eines Gruppenelements/Zyklische Gruppe
+    \item[1.25:] Gruppenexponent
+\end{enumerate*}
+
+\subsection*{Sätze}
+\begin{enumerate}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item[1.3:] Assoziativität gilt für mehrere Elemente
+    \item[1.5:] Neutrales Element und Inverse sind eindeutig in einem Monoid
+    \item[1.6:] Linkseins und Linksinverse $\Rightarrow$ Gruppe
+    \item $H \leq G \Leftrightarrow \forall a, b \in H : ab^{-1} \in H$
+    \item[1.7:] $xg = h$ hat genau eine Lösung in $G$ und $r_g, \ell_g$ sind bijektiv.
+    \item[1.8:] $(ab)^n=a^nb^n \Leftrightarrow ab = ba$
+    \item[1.12:] $H_i \leq G \Rightarrow \bigcap H_i \leq G$
+    \item[1.13:] $\forall S \subseteq G \exists$ kleinste Gruppe $\<S\>$, die $S$ enthält
+    \item[1.14:] $S \subseteq G$, dann $\<S\> = \{$Worte in $S \cup S^{-1} \cup \{e\}\}$
+    \item[1.16:] $\<g\> = \{g^n \mid n \in \mathbb{Z}\}$
+    \item[1.18:] zyklisch $\Rightarrow$ abelsch
+    \item[1.19:] $g \in G, n = \text{ord}(g), n' = \sup\{m \in \mathbb{N} \mid g^k \neq g^j \forall k \neq j < n\}$
+        \begin{enumerate*}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+            \item $n' = n$
+            \item $n < \infty \Rightarrow \forall m, m' \in \mathbb{Z}: g^m = g^{m'} \Leftrightarrow m \equiv m' \mod n$ und $g^m = e \Leftrightarrow n \mid m$
+            \item $\forall s \in \mathbb{Z}: \text{ord}(g^s) = \frac{n}{\text{ggT}(n,s)}$
+        \end{enumerate*}
+    \item[1.20:]
+        \begin{enumerate*}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+            \item $\text{ord}(g) = \infty \Leftrightarrow g^n$ paarw. versch $\forall n \in \mathbb{Z}$
+            \item $G$ zyklisch $\Rightarrow \forall H \leq G$ zyklisch
+        \end{enumerate*}
+    \item[1.21:] Untergruppen von $\mathbb{Z}$ sind $n\mathbb{Z}, n \in \mathbb{N}$
+    \item[1.22:] Satz von Lagrange
+    \item[1.23:] $F \leq H \leq G$, dann $[G: F] = [G:H]\cdot[H:F]$
+    \item[1.24:] $G$ endlich, dann
+        \begin{enumerate*}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+            \item $\forall g \in G: \text{ord}(g) \mid \text{ord}(G)$
+            \item $\text{ord}(G) = p$ Primzahl, dann $G$ zyklisch
+        \end{enumerate*}
+    \item[1.26:] $G$ endlich, dann
+        \begin{enumerate*}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+            \item $\text{exp}(G) \mid \text{ord}(G)$
+            \item $\text{exp}(G) = \text{kgV}(\text{ord} g \mid g \in G)$
+        \end{enumerate*}
+    \item $\text{ord}(gh) = \text{ord}(hg) \forall g \in G$
+    \item[1.27:] $G$ endlich, dann
+        \begin{enumerate*}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+            \item $gh = hg$ und $\text{ggT}(\text{ord} g, \text{ord} h) = 1$ dann $\text{ord}(gh) = \text{ord} g \cdot \text{ord} h$
+            \item $p^f \mid \text{exp} G$ für $p$ prim, $f \in \mathbb{N}$, dann $\exists g \in G : \text{ord} g = p^f$
+            \item $G$ abelsch, dann $\exists g \in G : \text{exp}(G) = \text{ord}(g)$
+        \end{enumerate*}
+    \item[1.28:] $G$ endlich abelsch, dann $G$ zyklisch $\Leftrightarrow \text{ord}(G) = \text{exp}(G)$
+\end{enumerate}
+
+\section*{1.2 Gruppenhomomorphismen}
+\subsection*{Definitionen}
+\begin{enumerate*}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item[1.29:] Monoidhomomorphismus/Gruppenhomomorphismus
+    \item[1.38:] Konjugation/Innerer Automorphismus
+\end{enumerate*}
+
+\subsection*{Sätze}
+\begin{enumerate}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item[1.33:] $H \leq G, \varphi: G \to G' \geq H'$, dann $\varphi(H) \leq G'$, $\varphi^{-1}(H') \leq G$
+    \item[1.39:] $G$ erzeugt von $S$, dann $\varphi(s) = \psi(s) \forall s \Leftrightarrow \varphi =\psi$
+\end{enumerate}
+
+\section*{1.3 Normalteiler}
+\subsection*{Definitionen}
+\begin{itemize}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item Nebenklasse
+    \item[1.40:] Normalteiler
+    \item Normale Hülle (Körper)
+    \item[1.44:] Faktorgruppe
+\end{itemize}
+
+\subsection*{Sätze}
+\begin{enumerate}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item[1.41:] $gN = Ng \Leftrightarrow gNg^{-1} = N \Leftrightarrow gNg^{-1} \subseteq N \Leftrightarrow N \trianglelefteq G$
+    \item[1.42:] $\ker(\varphi) \trianglelefteq G$
+    \item[1.43:] $N' \trianglelefteq G', \varphi: G \to G'$, dann:
+        \begin{enumerate}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+            \item $\varphi^{-1}(N') \trianglelefteq G$
+            \item $[G:H] = 2 \Rightarrow H \trianglelefteq G$
+            \item $G$ abelsch, $H \leq G \Rightarrow H \trianglelefteq G$
+            \item $[G, G] \trianglelefteq G$
+        \end{enumerate}
+    \item[1.44:] Faktorgruppe
+    \item $G$ abelsch $\Rightarrow \faktor{G}{N}$ auch
+\end{enumerate}
+
+\section*{1.4 Homomorphiesatz für Gruppen}
+\subsection*{Sätze}
+\begin{itemize}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item[1.45:] Homomorphiesatz für Gruppen
+    \item[1.46:] $G$ zyklisch, dann $G \cong \faktor{\mathbb{Z}}{n\mathbb{Z}}$ oder $\mathbb{Z}$
+    \item[1.47:] $\faktor{G}{N}$ abelsch $\Leftrightarrow [G,G] \leq N$
+\end{itemize}
+
+\section*{1.5 Einschub: Faktorringe}
+\subsection*{Definitionen}
+\begin{itemize}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item[1.48:] Ideal
+    \item[1.49:] Faktorring
+\end{itemize}
+
+\section*{1.6 Die Isomorphiesätze}
+\subsection*{Sätze}
+\begin{itemize}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item[1.50:] Erster Isomorphiesatz
+    \item[1.51:] Zweiter Isomorphiesatz
+\end{itemize}
+
+\section*{1.7 (Semi-)direkte Produkte}
+\subsection*{Definitionen}
+\begin{enumerate*}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item[1.53:] Direktes Produkt von Gruppen
+    \item[1.57:] Semidirektes Produkt
+\end{enumerate*}
+
+\subsection*{Sätze}
+\begin{enumerate}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item[1.54:] $N_1, N_2 \trianglelefteq G$ disjunkt, dann:
+        \begin{enumerate}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+            \item $n_1n_2 = n_2n_1, \forall n_1, n_2$
+            \item $N_1N_2 \trianglelefteq G$
+            \item $N_1 \times N_2 \cong N_1N_2$, insbesondere $\#N_1N_2 = \#N_1\#N_2$
+        \end{enumerate}
+    \item[1.55:] $G$ endlich, $\{N_i\}_{i \leq k} \trianglelefteq G$ und gelte $\#N_i$ paarw. teilerfremd und $\prod \#N_i = \#G$, dann $\prod N_i \cong G$ via $(n_i) \mapsto \prod n_i$
+    \item $n = \prod p_i^{f_i}$ für paarw. versch. Primzahlen, dann $\prod \faktor{\mathbb{Z}}{(p_i^{f_i})} \cong \faktor{\mathbb{Z}}{(n)}$
+    \item[1.56:] Semidirektes Produkt
+    \item[1.58:] $N \trianglelefteq G, H \leq G$, dann:
+        \begin{enumerate}[itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+            \item $\varphi: H \to \text{Aut}(N), h \mapsto c_h$ ist Homomorphismus
+            \item Gelten $NH = G$ disjunkt, so ist $\psi: N \rtimes_{\varphi} H \to G, (n,h) \mapsto n \cdot_G h$
+        \end{enumerate}
+\end{enumerate}
+
+\end{document}

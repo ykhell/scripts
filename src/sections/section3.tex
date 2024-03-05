@@ -52,7 +52,7 @@
 \end{bem*}
 
 \begin{whg*}
-Seien $I, X$ Mengen. Eine Folge/Familie in $X$ über (Indexmenge ) $I$, geschrieben $(x_{i})_{i \in I}$ ist eine Abbildung $x: I \to X, i \mapsto x-I$. Schreibe $X^{I}$ für die Menge aller Folgen in $X$ über $I$ ($=\Abb(I,X)$)
+Seien $I, X$ Mengen. Eine Folge/Familie in $X$ über (Indexmenge ) $I$, geschrieben $(x_{i})_{i \in I}$ ist eine Abbildung $x: I \to X, i \mapsto x_{i}$. Schreibe $X^{I}$ für die Menge aller Folgen in $X$ über $I$ ($=\Abb(I,X)$)
 \end{whg*}
 
 \addcontentsline{toc}{subsection}{Monoidring}
@@ -81,7 +81,7 @@ Seien $I, X$ Mengen. Eine Folge/Familie in $X$ über (Indexmenge ) $I$, geschrie
 \addcontentsline{toc}{subsection}{Ringhomomorphismus}
   \item $(R[M], \underline 0, \underline 1, +, \cd)$ ist ein Ring, ($R[M]$ heißt \textbf{Monoidring} zu $M$ über $R$)
   \item Ist $M$ abelsch, so ist $R[M]$  kommutativ.
-  \item Ist $\ph: R \to S$ ein Ringhomomorphismus und $\s : M \to (S, 1, \cd)$ ein Monoidhomomorphismus, so $\ex !$ Ringhomomorphismus $\psi : R[M] \to S$ mit $\psi|_{R} = \ph$ und $\psi_{M} = \s$. (dabei wir identifizieren $R$ mit $R \cd e = R \cd 1$ (1-Folge) und $M$ mit $1_{R} \cd M$), nämlich:
+  \item Ist $\ph: R \to S$ ein Ringhomomorphismus und $\s : M \to (S, 1, \cd)$ ein Monoidhomomorphismus, so $\ex !$ Ringhomomorphismus $\psi : R[M] \to S$ mit $\psi|_{R} = \ph$ und $\psi|_{M} = \s$. (dabei wir identifizieren $R$ mit $R \cd e = R \cd 1$ (1-Folge) und $M$ mit $1_{R} \cd M$), nämlich:
         \[\psi\ubr{\l(\sum a_{m}\cd m\r)}_{\text{in }R[M]} = \ubr{\sum \ph(a_{m})\cd \s(m)}_{\text{in } S}\]
 \end{enumerate}
 \end{ubng}
@@ -145,17 +145,18 @@ Ab nun seien alle Ringe $R, R', S, R_{i}$ kommutativ, (und es Seien in §3 stets
   Formal: $\{0, 1, \cdots\} \to \{X^{i} \mid i \in \Nn\}$.
 \end{prop}
 
-\begin{prop}[Universelle Eigenschaft von {$K[X] \cong R[\Nn]$}] $\forall \psi : R \to S$ Ringhomomorphismen und $\forall s \in S \ex !$ Ringhomomorphismus $\hat \psi : R[X] \to S$ mit $\hat \psi|_{R} = \psi$ und $\hat \psi(X) = s$
+\begin{prop}[Universelle Eigenschaft von {$R[X] \cong R[\Nn]$}] $\forall \psi : R \to S$ Ringhomomorphismen und $\forall s \in S \ex !$ Ringhomomorphismus $\hat \psi : R[X] \to S$ mit $\hat \psi|_{R} = \psi$ und $\hat \psi(X) = s$
 \begin{proof}[1. Beweis]
   Definiere $\hat\psi(\sum_{i \ge 0}r_{i}X^{i}) := \sum_{i \ge 0}\underbrace{\psi(r_{i})}_{\in S}s^{i}$. Dann die Behauptung nachprüfen.
 \end{proof}
 \begin{proof}[2. Beweis]
   Facts 6(iii) $\ex !$ Monoidhomomorphismus $\s : \Nn \to (S, 1, \cd)$ mit $\s(1) = s$ und Übung 4(c) (universelle Eigenschaft des Monoidrings) $\ex !$ Ringhomomorphismus $\hat \psi : R[\Nn] \to S$ mit $\hat \psi|_{R} = \psi$ und $\hat\psi|_{\Nn} = 0$. Dieser erfüllt die Aussagen in Prop 8, denn $\hat \psi(X) = \hat \psi(1) = s$, $X$ entspricht $1 \in \Nn $ (Unter Isomorphismus von Proposition 7).
-  Für $n \ge 1$ Variable: ($n \in \N$)
-  \[R[X_{1}, \ldots, X_{n}] := (R[X_{1}, \ldots, X_{n-1}])[X_{n}] = \cdots = (\cdots((R[X_{1}])[X_{2}]) \cdots)[X_{n}]\]
 \end{proof}
 \end{prop}
-
+\begin{defi*}
+  Für $n \ge 1$ Variable: ($n \in \N$)
+  \[R[X_{1}, \ldots, X_{n}] := (R[X_{1}, \ldots, X_{n-1}])[X_{n}] = \cdots = (\cdots((R[X_{1}])[X_{2}]) \cdots)[X_{n}]\]
+\end{defi*}
 \begin{satz}
   Sei $\ph : \Nn^{n} \to (R[X_{1}, \ldots X_{n}], 1, \cd)$ der eindeutige Monoidhomomorphismus mit $\ph(e_{i}) = X_{i}$, wobei $e_{i} = (\delta_{i,j})_{j} = (0, \cdots, 1, \cdots 0)$ für $i \in \eb n$. Dann ist (nach 4(c) eindeutige) Ringhomomorphismus $\hat \psi : R[\Nn^{n}] \to R[X_{1}, \ldots, X_{n}]$ mit $\hat \psi|_{R} = \id_{R}$ und $\hat \psi|_{\Nn^{n}} = \ph$ ein Ringisomorphismus.
   \begin{proof}[Beweis]
@@ -169,7 +170,7 @@ Ab nun seien alle Ringe $R, R', S, R_{i}$ kommutativ, (und es Seien in §3 stets
   \[R[X_{i} \mid i \in I] := R[\Nn^{(I)}]\]
   Elemente in diesem Ring sind
   \[\sum_{a \in \Nn^{(I)}}r_{a}\cd a\]
-  mit $r_{a} \in R$ und es gilt $\{a \in \Nn^{(I)} \mid r_{a} \ne 0\} \le \infty$.
+  mit $r_{a} \in R$ und es gilt $\#\{a \in \Nn^{(I)} \mid r_{a} \ne 0\} < \infty$.
 \end{defi}
 \begin{nota*}
   Andere Notation: Für $a \in \Nn^{(I)}$ schreibe für $a$ \[X^{a} \text{ oder } \prod_{i \in I, a_{i} \ne 0} X_{i}^{a_{i}}\]
@@ -179,13 +180,13 @@ Ab nun seien alle Ringe $R, R', S, R_{i}$ kommutativ, (und es Seien in §3 stets
 \end{nota*}
 \addcontentsline{toc}{subsection}{Primitives Monom}
 \begin{defi*}[\textbf{Primitives Monom}]
-Die Elemete in $R[\Nn^{(I)}]$ sind Summen \[\sum_{a \in \Nn^{(I)}}r_{a} \cd X^{a}\] (Polynome wie gewohnt.) Die Elemente $X^{a}, a \in \Nn^{(I)}$ heißen \textbf{primitive Monome}. Jedes Element in $R[X_{i} \mid i \in I]$ ist eine eindeutige Linearkombination in den Monomen $X^{a}, a \in \Nn^{(I)}$, mit Koeffizienten $r_{a}$ aus $R$, sodass $\#{a \in \Nn^{(I)} \mid r_{a} \ne 0} \le \infty$, d.h. als $R$-Modul ist $R[X_{i} \mid i \in I]$ frei über $R$ mit Basis $X^{a}, a \in \Nn^{(I)}$
+Die Elemete in $R[\Nn^{(I)}]$ sind Summen \[\sum_{a \in \Nn^{(I)}}r_{a} \cd X^{a}\] (Polynome wie gewohnt.) Die Elemente $X^{a}, a \in \Nn^{(I)}$ heißen \textbf{primitive Monome}. Jedes Element in $R[X_{i} \mid i \in I]$ ist eine eindeutige Linearkombination in den Monomen $X^{a}, a \in \Nn^{(I)}$, mit Koeffizienten $r_{a}$ aus $R$, sodass $\#\{a \in \Nn^{(I)} \mid r_{a} \ne 0\} < \infty$, d.h. als $R$-Modul ist $R[X_{i} \mid i \in I]$ frei über $R$ mit Basis $X^{a}, a \in \Nn^{(I)}$
 \end{defi*}
 \begin{bsp*}
 $(2, 5, 3) \in \Nn^{3}$ entspricht $X_{1}^{2}X_{2}^{5}X_{3}^{3}$
 \end{bsp*}
 
-\begin{satz}[Universelle Eigenschaft von {$R[X_{i} \mid i \in I]$}] Zu Ringhomomorphismus $\psi : R \to S$ und einer Folge $(s_{i})_{i \in I}$ aus $S$ über $I$ $\ex !$ Ringhomomorphismus $\hat \psi : T[X_{i}\mid i \in I] \to S$ mit $\hat \psi|_{R} = \psi$ und $\hat \psi(X_{i}) = s_{i}$
+\begin{satz}[Universelle Eigenschaft von {$R[X_{i} \mid i \in I]$}] Zu Ringhomomorphismus $\psi : R \to S$ und einer Folge $(s_{i})_{i \in I}$ aus $S$ über $I$ $\ex !$ Ringhomomorphismus $\hat \psi : R[X_{i}\mid i \in I] \to S$ mit $\hat \psi|_{R} = \psi$ und $\hat \psi(X_{i}) = s_{i}$
 \end{satz}
 
 \begin{facts*}\item

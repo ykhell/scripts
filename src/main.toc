@@ -1,79 +1,88 @@
-\contentsline {chapter}{\numberline {1}Gruppentheorie}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Gruppen und Monoide}{3}{section.1.1}%
-\contentsline {subsection}{Monoid}{3}{section*.2}%
-\contentsline {subsection}{Gruppe}{3}{Item.2}%
-\contentsline {subsection}{Ring}{5}{Item.26}%
-\contentsline {subsection}{Ordnung}{5}{Item.29}%
-\contentsline {subsection}{Untermonoid/Untergruppe}{5}{thm.1.9}%
-\contentsline {subsection}{Erzeuger}{7}{thm.1.14}%
-\contentsline {subsection}{Zyklische Gruppe}{7}{thm.1.16}%
-\contentsline {subsection}{Satz von Lagrange}{9}{thm.1.21}%
-\contentsline {subsection}{Exponent einer Gruppe}{11}{Item.60}%
-\contentsline {section}{\numberline {1.2}Gruppenhomomorphismen}{12}{section.1.2}%
-\contentsline {subsection}{Homomorphismus}{12}{section*.3}%
-\contentsline {subsection}{Isomorphismus}{13}{Item.88}%
-\contentsline {section}{\numberline {1.3}Normalteiler}{14}{section.1.3}%
-\contentsline {subsection}{Kommutator/Kommutatoruntergruppe}{15}{thm.1.42}%
-\contentsline {subsection}{Faktor-/Quotientengruppe}{17}{Item.128}%
-\contentsline {section}{\numberline {1.4}Homomorphiesatz für Gruppen}{17}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Einschub: Faktorringe}{19}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Die Isomorphiesätze}{19}{section.1.6}%
-\contentsline {subsection}{Erster Isomorphiesatz}{19}{section*.4}%
-\contentsline {subsection}{Zweiter Isomorphiesatz}{20}{Item.148}%
-\contentsline {section}{\numberline {1.7}(Semi-)direkte Produkte}{22}{section.1.7}%
-\contentsline {subsection}{Direktes Produkt}{22}{thm.1.52}%
-\contentsline {subsection}{Semi-direktes Produkt}{23}{thm.1.56}%
-\contentsline {chapter}{\numberline {2}Gruppen Strukturtheorie}{25}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Strukturtheorie zu Gruppen (``Einige Aussagen'')}{25}{section.2.1}%
-\contentsline {section}{Wirkungen}{25}{section.2.1}%
-\contentsline {subsection}{Eigenschaften von Wirkungen}{26}{Item.176}%
-\contentsline {subsection}{Bahn}{26}{thm.2.3}%
-\contentsline {subsection}{Satz von Cayley}{28}{Item.195}%
-\contentsline {subsection}{Stabilisator}{28}{thm.2.6}%
-\contentsline {subsection}{Bahngleichung}{29}{Item.199}%
-\contentsline {subsection}{Freie Operation}{29}{thm.2.10}%
-\contentsline {subsection}{Fixpunkte}{29}{Item.200}%
-\contentsline {subsection}{Konjugationsklasse}{30}{Item.203}%
-\contentsline {subsection}{Klassengleichung}{30}{Item.203}%
-\contentsline {subsection}{p-Gruppe}{30}{thm.2.12}%
-\contentsline {subsection}{Satz von Cauchy}{31}{thm.2.14}%
-\contentsline {section}{\numberline {2.2}Permutationsgruppen}{31}{section.2.2}%
-\contentsline {subsection}{Träger}{31}{thm.2.17}%
-\contentsline {subsection}{disjunkte Permutationen}{31}{Item.206}%
-\contentsline {subsection}{Zykel/Transposition}{32}{thm.2.21}%
-\contentsline {subsection}{Zykeldarstellung von Permutationen}{33}{Item.215}%
-\contentsline {subsection}{Young-Diagramm/Partition}{34}{thm.2.23}%
-\contentsline {subsection}{Signum-Funktion/Alternierende Gruppe}{35}{Item.227}%
-\contentsline {subsection}{Einfache Gruppe}{36}{Item.240}%
-\contentsline {section}{\numberline {2.3}Sylow Theoreme}{38}{section.2.3}%
-\contentsline {subsection}{Sylow I}{38}{section*.5}%
-\contentsline {subsection}{Satz von Cauchy}{40}{Item.254}%
-\contentsline {subsection}{$p$-Sylow Gruppe}{40}{thm.2.31}%
-\contentsline {subsection}{Normalisator}{40}{thm.2.32}%
-\contentsline {subsection}{Sylow II}{41}{Item.262}%
-\contentsline {section}{\numberline {2.4}Auflösbare Gruppen}{44}{section.2.4}%
-\contentsline {subsection}{Satz von Jordan-Hölder}{45}{Item.282}%
-\contentsline {subsection}{Abgeleitete Reihe}{47}{Item.289}%
-\contentsline {subsection}{Auflösbarkeitskriterium}{47}{Item.293}%
-\contentsline {subsection}{Perfekte Gruppe}{48}{Item.296}%
-\contentsline {chapter}{\numberline {3}Ringe}{49}{chapter.3}%
-\contentsline {subsection}{Ring/Einheitengruppe}{49}{section*.6}%
-\contentsline {subsection}{Ringhomomorphismus}{49}{section*.6}%
-\contentsline {subsection}{Unterring}{49}{thm.3.1}%
-\contentsline {subsection}{Produkt von Ringen}{49}{thm.3.2}%
-\contentsline {subsection}{Monoidring}{50}{Item.298}%
-\contentsline {subsection}{Ringhomomorphismus}{50}{thm.3.4}%
-\contentsline {section}{\numberline {3.1}Polynomringe}{51}{section.3.1}%
-\contentsline {subsection}{Polynomring}{52}{thm.3.9}%
-\contentsline {subsection}{Primitives Monom}{53}{thm.3.10}%
-\contentsline {subsection}{Grad, Lietkoeffizient, normiertes Polynom}{54}{Item.313}%
-\contentsline {section}{\numberline {3.2}Symmetrische Polynome}{54}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Elementar symmetrische Polynome}{56}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Ringe von Brüchen/Lokalisierung}{61}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Spezielle Ideale}{64}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Teilbarkeit in Integritätsbereichen}{65}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Körper}{72}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Grundlagen}{72}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Algebraische und transzendente Elemente}{75}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Normale Erweiterungen und Zerfällungskörper}{82}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Seperabilität}{84}{section.4.4}%
+\contentsline {chapter}{\numberline {1}Gruppentheorie}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Gruppen und Monoide}{4}{section.1.1}%
+\contentsline {subsection}{Monoid}{4}{section*.2}%
+\contentsline {subsection}{Gruppe}{4}{Item.2}%
+\contentsline {subsection}{Ring}{6}{Item.26}%
+\contentsline {subsection}{Ordnung}{6}{Item.29}%
+\contentsline {subsection}{Untermonoid/Untergruppe}{6}{thm.1.9}%
+\contentsline {subsection}{Erzeuger}{8}{thm.1.14}%
+\contentsline {subsection}{Zyklische Gruppe}{8}{thm.1.16}%
+\contentsline {subsection}{Satz von Lagrange}{10}{thm.1.21}%
+\contentsline {subsection}{Exponent einer Gruppe}{12}{Item.60}%
+\contentsline {section}{\numberline {1.2}Gruppenhomomorphismen}{13}{section.1.2}%
+\contentsline {subsection}{Homomorphismus}{13}{section*.3}%
+\contentsline {subsection}{Isomorphismus}{14}{Item.88}%
+\contentsline {section}{\numberline {1.3}Normalteiler}{15}{section.1.3}%
+\contentsline {subsection}{Kommutator/Kommutatoruntergruppe}{16}{thm.1.42}%
+\contentsline {subsection}{Faktor-/Quotientengruppe}{18}{Item.128}%
+\contentsline {section}{\numberline {1.4}Homomorphiesatz für Gruppen}{18}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Einschub: Faktorringe}{20}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Die Isomorphiesätze}{20}{section.1.6}%
+\contentsline {subsection}{Erster Isomorphiesatz}{20}{section*.4}%
+\contentsline {subsection}{Zweiter Isomorphiesatz}{21}{Item.148}%
+\contentsline {section}{\numberline {1.7}(Semi-)direkte Produkte}{23}{section.1.7}%
+\contentsline {subsection}{Direktes Produkt}{23}{thm.1.52}%
+\contentsline {subsection}{Semi-direktes Produkt}{24}{thm.1.56}%
+\contentsline {chapter}{\numberline {2}Gruppen Strukturtheorie}{26}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Strukturtheorie zu Gruppen (``Einige Aussagen'')}{26}{section.2.1}%
+\contentsline {section}{Wirkungen}{26}{section.2.1}%
+\contentsline {subsection}{Eigenschaften von Wirkungen}{27}{Item.176}%
+\contentsline {subsection}{Bahn}{27}{thm.2.3}%
+\contentsline {subsection}{Satz von Cayley}{29}{Item.195}%
+\contentsline {subsection}{Stabilisator}{29}{thm.2.6}%
+\contentsline {subsection}{Bahngleichung}{30}{Item.199}%
+\contentsline {subsection}{Freie Operation}{30}{thm.2.10}%
+\contentsline {subsection}{Fixpunkte}{30}{Item.200}%
+\contentsline {subsection}{Konjugationsklasse}{31}{Item.203}%
+\contentsline {subsection}{Klassengleichung}{31}{Item.203}%
+\contentsline {subsection}{p-Gruppe}{31}{thm.2.12}%
+\contentsline {subsection}{Satz von Cauchy}{32}{thm.2.14}%
+\contentsline {section}{\numberline {2.2}Permutationsgruppen}{32}{section.2.2}%
+\contentsline {subsection}{Träger}{32}{thm.2.17}%
+\contentsline {subsection}{disjunkte Permutationen}{32}{Item.206}%
+\contentsline {subsection}{Zykel/Transposition}{33}{thm.2.21}%
+\contentsline {subsection}{Zykeldarstellung von Permutationen}{34}{Item.215}%
+\contentsline {subsection}{Young-Diagramm/Partition}{35}{thm.2.23}%
+\contentsline {subsection}{Signum-Funktion/Alternierende Gruppe}{36}{Item.227}%
+\contentsline {subsection}{Einfache Gruppe}{37}{Item.240}%
+\contentsline {section}{\numberline {2.3}Sylow Theoreme}{39}{section.2.3}%
+\contentsline {subsection}{Sylow I}{39}{section*.5}%
+\contentsline {subsection}{Satz von Cauchy}{41}{Item.254}%
+\contentsline {subsection}{$p$-Sylow Gruppe}{41}{thm.2.31}%
+\contentsline {subsection}{Normalisator}{41}{thm.2.32}%
+\contentsline {subsection}{Sylow II}{42}{Item.262}%
+\contentsline {section}{\numberline {2.4}Auflösbare Gruppen}{45}{section.2.4}%
+\contentsline {subsection}{Satz von Jordan-Hölder}{46}{Item.282}%
+\contentsline {subsection}{Abgeleitete Reihe}{48}{Item.289}%
+\contentsline {subsection}{Auflösbarkeitskriterium}{48}{Item.293}%
+\contentsline {subsection}{Perfekte Gruppe}{49}{Item.296}%
+\contentsline {chapter}{\numberline {3}Ringe}{50}{chapter.3}%
+\contentsline {subsection}{Ring/Einheitengruppe}{50}{section*.6}%
+\contentsline {subsection}{Ringhomomorphismus}{50}{section*.6}%
+\contentsline {subsection}{Unterring}{50}{thm.3.1}%
+\contentsline {subsection}{Produkt von Ringen}{50}{thm.3.2}%
+\contentsline {subsection}{Monoidring}{51}{Item.298}%
+\contentsline {subsection}{Ringhomomorphismus}{51}{thm.3.4}%
+\contentsline {section}{\numberline {3.1}Polynomringe}{52}{section.3.1}%
+\contentsline {subsection}{Polynomring}{53}{thm.3.9}%
+\contentsline {subsection}{Primitives Monom}{54}{thm.3.10}%
+\contentsline {subsection}{Grad, Lietkoeffizient, normiertes Polynom}{55}{Item.313}%
+\contentsline {section}{\numberline {3.2}Symmetrische Polynome}{55}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Elementar symmetrische Polynome}{57}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Ringe von Brüchen/Lokalisierung}{62}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Spezielle Ideale}{65}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Teilbarkeit in Integritätsbereichen}{66}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Körper}{73}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Grundlagen}{73}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Algebraische und transzendente Elemente}{76}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Normale Erweiterungen und Zerfällungskörper}{83}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Seperabilität}{85}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Galoistheorie und Anwendungen}{88}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Galoistheorie und Anwendungen}{88}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Beispielklassen von Galoiserweiterungen}{93}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Endliche Körper}{93}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Einheitswurzelkörper (Kreisteilungskörper)}{93}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Galoiserweiterungen von Grad $p$ (eine Primzahl)}{94}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Auflösbarkeit durch Radikale}{96}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Konstruierbarkeit mit Zirkel und Lineal}{97}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Anwendungen}{99}{section.5.5}%

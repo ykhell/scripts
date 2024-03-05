@@ -1,0 +1,547 @@
+\documentclass[a4paper]{report}
+\usepackage{../template}
+\begin{document}
+\section{Galoistheorie und Anwendungen}%
+\begin{defi}[Fixkörper]
+  Seien $E, K$ Körper, ist $G \le \Aut(E)$ eine Untergruppe, so heißt
+  \[E^{G} = \{\a \in E \mid \s(\a) = \a,\forall \s \in G\}\]
+  der Fixkörper von $E$ unter $G$.
+\end{defi}
+\begin{bem*} $E^{G} \subseteq E$ ist ein Unterkörper
+\begin{proof}[Beweis] (Übung)
+  Sei $\a \in E^{G} \setminus \{0\}$, dann: $1 = \s(1) = \s(\alpha \cd \a^{-1}) = \s(\a)\s(\a^{-1}), \forall \s \in G \imp \a^{-1} = \s(\a^{-1}) \forall \s \in G$.
+\end{proof}
+\end{bem*}
+
+\begin{defi}\item
+\begin{enumerate}[(a)]
+  \item $\Gamma_{E}:= \{G \le \Aut(E)\}$
+  \item $\Sigma_{E}:= \{K \subseteq E \mid K \text{ Unterkörper}\}$
+  \item $\Inv_{E}: \Gamma_{E} \to \Sigma_{E}, G \mps E^{G} = \Inv_{E}(G)$
+  \item $\Gal_{E}: \Sigma_{E} \to \Gamma_{E}, K \mps \Gal_{E}(K) := \Aut_{K}(E) = \{\s \in \Aut(E) \mid \s|_{K} = \id_{K}\}$
+\end{enumerate}
+\end{defi}
+
+\begin{lemm}
+\begin{enumerate}[(a)]
+  \item Die Abbildungen $\Inv_{E}$ und $\Gal_{E}$ sind inklusionsumkehrend.
+  \item $\Inv_{E}(\Gal_{E}(K)) \supseteq K$
+\item $\Gal_{E}(\Inv_{E}(G)) \supseteq G$
+\end{enumerate}
+\begin{proof}[Beweis]
+TODO
+\end{proof}
+\end{lemm}
+
+\begin{bem*}
+  Ziel: Unter geeigneten Einschränkungen an $G$ bzw. $K$ wollen wir ``Gleichheit'' in (b) und (c) (für $\Gamma_{E / K}$ und $\Sigma_{E / K}$), dann erhalten wir eine Bijektion: \[G \in \Gamma_{E / K}\overset{1-1} \longleftrightarrow F \in \Sigma_{E/K}\]
+\end{bem*}
+
+\begin{satz}
+  Für eine endliche Körpererweiterung $E \supset K$ sind äquivalent:
+  \begin{enumerate}[(i)]
+    \item $E$ ist Zerfällungskörper eines seperablen Polynoms in $K[X]$
+    \item $E \supseteq K$ ist normal und seperabel.
+    \item $E \supseteq K$ ist seperabel und $\Hom_{K}(E, \bar E) = \Aut_{K}(E)$
+    \item $\#\Aut_{K}(E) = [E:K]$
+  \end{enumerate}
+  \begin{proof}[Beweis]
+TODO.
+  \end{proof}
+\end{satz}
+
+\begin{defi}[Galoiserweiterung/Galoisgruppe]
+Erfüllt $E \supseteq K$ Oberkörper mit $[E:K] < \infty$ die äquivalenten Bedingungen aus Satz 4, so heißt $E/K$ Galoissch (oder eine Galoiserweiterung von $K$) (genauer $E \supseteq K$ ist endlich Galoissch)In diesem Fall definiert man die \textbf{Galoisgruppe} von $E$ über $K$ als \[\Gal(E/K) := \Aut_{K}(E) = \Gal_{E}(K)\]
+\end{defi}
+\begin{kor}
+  Sei $E \supseteq K$ Galoissch und sei $F \subseteq E$ Unterkörper mit $F \supseteq K$, dann:
+  \begin{enumerate}[(a)]
+    \item $E \supseteq F$ ist Galoissch.
+    \item Es sind äquivalent:
+          \begin{enumerate}[(i)]
+            \item $F \supseteq K$ Galoissch
+            \item $F \supseteq K$ normal
+                  \item $\forall \s \in \Gal(E/K): \s(F) = F$.
+          \end{enumerate}
+  \end{enumerate}
+\begin{proof}[Beweis]
+TODO
+\end{proof}
+\end{kor}
+
+\begin{satz}
+  Sei $G \le \Aut(E)$ endliche Untergruppe, dann gelten
+  \begin{enumerate}[(a)]
+    \item $[E:E^{G}] = \#G$
+          \item $E \supseteq E^{G}$ ist Galoissch und $G:\Gal(E/E^{G}) = \Aut_{E^{G}}(E)$
+  \end{enumerate}
+\begin{proof}[Beweis]
+TODO
+\end{proof}
+\end{satz}
+
+\begin{kor}
+$G \le \Aut(E)$ endliche Untergruppe $\imp G = \Gal_{E}(\Inv_{E}(G))$
+\end{kor}
+\begin{kor}
+Sei $E \supseteq K$ Galoissch, dann gilt $\Inv_{E}(\Gal_{E}(K)) = K$
+\begin{proof}[Beweis]
+TODO
+\end{proof}
+\end{kor}
+
+\begin{ubng}
+  Sei $G \le \Aut(E)$ endliche Untergruppe und $K = E^{G}$, $G$ wirkt auf $E$ durch
+  \[G \tm E \to E, (\s, \a) \mps \s(\a)\]
+  Sei $\a \in E$ und $A = G\a$ die $G$-Bahn durch $\a$, definiere $\mu:= \prod_{\beta \in A}(X-\beta)$, dann gelten: $\mu \in K[X], \mu = \mu_{\a, K}$ und $\mu$ ist seperabel.
+\end{ubng}
+
+\begin{satz}[Hauptsatz der Galoistheorie]
+  Sei $E \supseteq K$ Galoissch mit Galoisgruppe $G = \Gal(E/K)$, seien \[\Gamma_{E/K}=\{H \le G\},\quad \Sigma_{E/K} = \{F \subseteq E \text{ Unterkörper} \mid K \subseteq F\}\]
+  dann gelten:
+  \begin{enumerate}[(a)]
+    \item Die Abbildungen:
+          \[\begin{tikzcd}[column sep = 40]
+\Gamma_{E/K} \arrow[rr, "\mathrm{Inv}_E:H \mapsto E^H", shift left] &  & \Sigma_{E/K} \arrow[ll, "\mathrm{Gal}(E/F) \mpsfrom F: \mathrm{Gal}_E", shift left]
+\end{tikzcd}\]
+          sind zueinander inverse Bijektionen.
+    \item $\Inv_{E}$ und $\Gal_{E}$ sind inklusionsumkehrend.
+    \item Es gelten $[E:E^{H}] = \#H$ und $\#\Gal(E/F) = [E:F]$
+    \item Sei $F \in \Sigma_{E/K}$ und $H = \Gal(E/F)$, dann:
+          \begin{enumerate}[(i)]
+            \item $\forall \s \in G$ gilt
+                  \[
+                  \begin{tikzcd}
+\s(F) \arrow[rr, "\mathrm{Gal}_E(\cdot)", maps to, shift left] &  & \s H \s^{-1} \arrow[ll, "\mathrm{Inv}_E(\cdot)", maps to, shift left]
+\end{tikzcd}
+                  \]
+                  d.h. $E^{\s H \s^{-1}} = \s(E^{H}) = \s(F)$ und $\Gal(E/\s(F)) = \s \Gal(E/F)\s^{-1}$
+            \item Die Abbildung
+                  \begin{align*}
+                    \psi: \fak{N_{G}(H)}H & \longrightarrow \Aut_{K}(F) \\
+                    \s H & \longmapsto \s|_{F}
+                  \end{align*}
+                  ist wohl-definiert und ein Gruppenisomorphismus.
+                  \item $F \supseteq K$ Galoissch $\iff H \nt G$ ist Normalteiler, in diesem Fall definiert $\psi$ einen Gruppenisomorphismus
+                  \begin{align*}
+                    \psi: \fak GH & \longrightarrow \Gal(F/K) \\
+                    \s H & \longmapsto \s|_{F}
+                  \end{align*}
+          \end{enumerate}
+  \end{enumerate}
+\end{satz}
+\begin{whg*}
+$N_{G}(H) := \{g \in G \mid gHg^{-1} = H\}$
+\end{whg*}
+\begin{proof}[Beweis]
+TODO
+\end{proof}
+\begin{kor}
+  $E \supseteq K$ endlich seperabel, dann gilt: \[M = \{F \subseteq E \text{ Unterkörper} \mid K \subseteq F\} \text{ ist endlich. }\]
+
+\begin{proof}[Beweis]
+TODO
+\end{proof}
+\end{kor}
+\begin{satz}
+  Jede endliche Gruppe $G$ ist die Galoisgruppe für eine geeignete Galoiserweiterung $E \supseteq K$.
+\begin{proof}[Beweis]
+TODO
+\end{proof}
+\end{satz}
+\begin{bem}
+                  \begin{align*}
+                    \psi: G = \Gal(E/K) & \longrightarrow \Bij(\{\a_{1}, \ldots, \a_{n}\}) \cong S_{n}\\
+                    \s & \longmapsto \s|_{\{\a_{1}, \ldots \a_{n}\}}
+                  \end{align*}
+                  ist wohl-definiert und ein injektiver Gruppenhomomorphismus. D.h. $G$ ist isomorph zu einer Untergruppe von $S_{n}$. Ist $f$ irred. so wirkt $G$ transitiv.
+\end{bem}
+
+\begin{bsp}
+  Sei $E \subseteq \C$ der Zerfällungskörper über $\Q$ zu $f = X^{4} - 5 \in \Z[X] \subseteq \Q[X]$. Wir wissen:
+  \begin{enumerate}[(a)]
+    \item $f$ seperabel ($\Q$ perfekt)
+    \item $f$ irred. (Eisenstein mit $p=5$)
+    \item Nullstellenmenge von $f$ ist $Z = \{\pm \sqrt[4] 5, \pm i\sqrt[4] 5\}$
+    \item $E = \Q(Z) = \Q(i, \sqrt[4] 5)$
+          \item Einige Unterkörper von $E$:
+  \[\begin{tikzcd}[row sep= 5, column sep = 4]                                   &  & E                                                   &                                        &                                               \\
+                                   &  &                                                     &                                        &                                               \\
+\mathbb Q(i) \arrow[rruu, no head] &  &                                                     &                                        & {\mathbb Q(\sqrt[4] 5)} \arrow[lluu, no head] \\
+                                   &  &                                                     & \mathbb Q(\sqrt 5) \arrow[ru, no head] &                                               \\
+                                   &  & \mathbb Q \arrow[lluu, no head] \arrow[ru, no head] &                                        &
+                                 \end{tikzcd}\]
+    \item $[E:\Q] = 8$. $f$ ist irred. als Polynom in $\Q(i)[X]$ und $E \supseteq \Q(i)$ ist der Stammkörper zu $f$. (und auch der Zerfällungskörper von $f$ über $\Q(i)$)
+    \item $\Q(i) \supseteq \Q$ ist Galoissch, denn $\Q(i) \supseteq \Q$ ist der Zerfällungskörper von $X^{2} + 1$.
+    \item $G = \Gal(E/Q)$ ist eine Gruppe mit $8$ Elementen. $G$ wirkt auf $Z \overset{\#Z}\imp G$ ist isomorph zu einer Untergruppe von $S_{4}$
+    \item $[E:\Q(i)] = 4$ (nach (f) und (a)) und $N:= \Gal(E/\Q(i)) \subseteq \Bij(Z) \cong S_{4}$ und sie ist transitiv, da $f \in \Q(i)[X]$ irred. Sei $\rho \in N$ der Automorphismus mit $\rho(\ubr{\sqrt[4]5}_{\a_{1}}) = \ubr{i\sqrt[4]5}_{\a_{2}}$ (Gruppe transitiv).
+          \[\imp \rho^{2}(\sqrt[4]5) = \rho(i\sqrt[4]5) \underset{\rho|_{\Q(i)}=\id_{\Q(i)}} = i\rho(\sqrt[4]5) = i i \sqrt[4]5 = \ubr{-\sqrt[4]5}_{\a_{3}}\]
+          analog ist
+          \[\rho^{3}(\sqrt[4]5) = \ubr{-i \sqrt[4]5}_{\a_{4}},\quad \rho^{4} = \id_{E}\]
+          d.h. $N = \<\rho\>$ unr $\rho$ hat Ordnung $4$ ($N \cong \fak \Z{4\Z}$)
+    \item Wir wissen $N \nt G$, da $\Q(i) \supseteq \Q$ Galoissch ($\imp \Gal(E/\Q(i)) \nt \Gal(E/\Q)$ normal) \[\overunderset{\text{als U.G}}{\text{von }S_{4}}\imp G \le N_{S_{4}}(\ubr{N}_{\<(1\ 2\ 3\ 4)\>})\]
+          Behauptung: $\#N_{S_{4}}(N) = 8 \iff G = N_{S_{4}}(N)$ ist vollständig bestimmt.
+          \begin{proof}[Beweis]
+            Sei $\tau \in N_{S_{4}}(N)$ $\imp \tau \rho \tau^{-1} \in \<\rho\> \imp \tau \rho \tau^{-1} \in \{\rho, \rho^{-1}\}$
+\begin{enumerate}[{Fall} 1:]
+  \item Betrachte $\tau \rho \tau^{-1} = \rho$ ($\iff \tau(1\ 2\ 3\ 4)\tau^{-1} = (1\ 2\ 3\ 4)$)
+        \[(\tau(1)\ \tau(2) \ \tau(3)\ \tau(4)) = (1\ 2\ 3\ 4)\]
+        Zykeldarstellung ist eindeutig bis auf Zykelpermutation der Einträge.
+        \[\imp \tau = \id, \tau = \rho, \ubr{\tau = \rho^{2}}_{(\tau(1)\ \tau(2) \ \tau(3)\ \tau(4)) = (3\ 4\ 1\ 2)} , \tau = \rho^{3}\]
+        $\iff \tau \in \<\rho\>$.
+  \item Für $\tau \rho \tau^{-1} = \rho^{-1} \iff (\tau(1)\ \tau(2) \ \tau(3)\ \tau(4)) = (4\ 3\ 2\ 1)$ also $( = (3\ 2\ 1\ 4) = (2\ 1\ 4\ 3) = (1\ 4\ 3\ 2) ) \imp 4$ Möglichkeiten für $\tau:$
+        \[\tau \in \{\ubr{(1\ 3)}_{=:\s}, (2\ 4), (1\ 4)(2\ 3), (1\ 2)(4\ 3)\} = \s \cd \<\rho\>\]
+\end{enumerate}
+          \end{proof}
+Fazit: $G = N_{S_{4}}(N)$ hat 8 Elemente. Veranschaulichung der Permutationen $(1\ 2\ 3\ 4), (1\ 3)(2\ 4), (1\ 2)(3\ 4)$ und $(1\ 4)(2\ 3)$
+\[
+  \begin{tikzcd}[column sep = 20]
+                                               & 2 \arrow[ld, "\rho^2" description, bend right] &                                                       \\
+3 \arrow[rd, "\rho^3" description, bend right] &                                                & 1 \arrow[lu, "\rho" description, maps to, bend right] \\
+                                               & 4 \arrow[ru, "\rho^4" description, bend right] &
+                                             \end{tikzcd}
+                                                       \begin{tikzcd}[column sep = 20]
+                                             & 2 \arrow[ld, no head, bend right] \arrow[dd] &                                              \\
+3 \arrow[rd, no head, bend right] \arrow[rr] &                                              & 1 \arrow[lu, no head, bend right] \arrow[ll] \\
+                                             & 4 \arrow[ru, no head, bend right] \arrow[uu] &
+                                           \end{tikzcd}
+                                           \begin{tikzcd}[column sep = 20]
+                                             & 2 \arrow[ld, no head, bend right] \arrow[rd] &                                              \\
+3 \arrow[rd, no head, bend right] \arrow[rd] &                                              & 1 \arrow[lu, no head, bend right] \arrow[lu] \\
+                                             & 4 \arrow[ru, no head, bend right] \arrow[lu] &
+                                           \end{tikzcd}
+                                           \begin{tikzcd}[column sep = 20]
+                                             & 2 \arrow[ld, no head, bend right] \arrow[ld] &                                              \\
+3 \arrow[rd, no head, bend right] \arrow[ru] &                                              & 1 \arrow[lu, no head, bend right] \arrow[ld] \\
+                                             & 4 \arrow[ru, no head, bend right] \arrow[ru] &
+\end{tikzcd}
+          \]
+          $G \cong D_{4}$ Diedergruppe auf regulärem $4$-Eck.
+  \end{enumerate}
+  \item Untergruppenverband:
+                                                     \[\begin{tikzcd}
+                                                         &                                                          & \{\mathrm{id}\}                                                &                                                          &                                                     \\
+\<\sigma \rho\> \arrow[rru, no head] \arrow[rd, no head] & \<\sigma \rho^3\> \arrow[ru, no head] \arrow[d, no head] & \<\sigma\> \arrow[u, no head] \arrow[rd, no head]              & \<\sigma \rho^2\> \arrow[lu, no head] \arrow[d, no head] & \<\rho^2\> \arrow[llu, no head] \arrow[ld, no head] \\
+                                                         & {\<\rho^2, \sigma \rho\>} \arrow[rrru, no head]          &                                                                & {\<\rho^2, \sigma\>}                                     & \<\rho\> \arrow[u, no head]                         \\
+                                                         &                                                          & G \arrow[lu, no head] \arrow[ru, no head] \arrow[rru, no head] &                                                          &
+\end{tikzcd}\]
+                                                     \[\begin{tikzcd}
+                                                                       &                                                                      & E                                                                      &                                                                 &                                                                  \\
+{\mathbb Q((1+i) \sqrt[4] 5)} \arrow[rru, no head] \arrow[rd, no head] & {\mathbb Q((1-i) \sqrt[4] 5)} \arrow[ru, no head] \arrow[d, no head] & {\mathbb Q(i \sqrt[4] 5)} \arrow[u, no head] \arrow[rd, no head]       & {\mathbb Q( \sqrt[4] 5)} \arrow[lu, no head] \arrow[d, no head] & {\mathbb Q(i, \sqrt 5)} \arrow[llu, no head] \arrow[ld, no head] \\
+                                                                       & \mathbb Q(i \sqrt 5) \arrow[rrru, no head]                           &                                                                        & \mathbb Q(\sqrt 5)                                              & \mathbb Q(i) \arrow[u, no head]                                  \\
+                                                                       &                                                                      & \mathbb Q \arrow[lu, no head] \arrow[ru, no head] \arrow[rru, no head] &                                                                 &
+                                                                     \end{tikzcd}\]
+                                                                   $5$ Unterkörper mit $[E:F] = 2, [F: \Q] = 4$ und $3$ Unterkörper mit $[F:\Q] = 2$
+\end{bsp}
+
+\section{Beispielklassen von Galoiserweiterungen}
+\subsection{Endliche Körper}
+Sei $p$ Primzahl und $\bar \F_{p}$ ein (fest gewählter) algebraischer Abschluss von $\F_{p}$. Sei $\ph: \bar \F_{p} \to \bar \F_{p} , \a \mps \a^{p}$, es gilt $\ph \in \Aut(\bar \F_{p})$. $\ph$ ist surjektiv, da $\bar \F_{p}$ perfekt (als algebraischer Abschluss) und $\ph$ injektiv, Homom. klar
+\newline$\imp$ Es gibt auch $\ph^{-1}$, d.h. jedes $\a \in \bar \F_{p}$ besitzt eine eindeutige $p$-te Wurzel.
+\newline$\imp \forall m \in \Z$ haben $\ph^{m} \in \Aut(\bar \F_{p})$, d.h. $\Z \cong \{\ph^{m}:m \in \Z\} \le \Aut(\bar \F_{p})$ ist Untergruppe.
+\begin{satz}\item
+\begin{enumerate}[(a)]
+  \item $\F_{p^{n}} := (\bar \F_{p})^{\ph^{n}} = \{\a \in \bar \F_{p} \mid \ph^{n}(\a) = \a^{p^{n}} \overset != \a\} \subseteq \bar \F_{p}$ ist Unterkörper.
+  \item $\# \F_{p^{n}} = p^{n}$ und $\F_{p^{n}}$ ist der Zerfällungskörper von $f_{n}:= X^{p^{n}} - X \in \Fp[X]$.
+  \item Bis auf Isomorphie $\ex !$ Körper mit $p^{n}$ Elementen.
+  \item Für $m, n \in \N$ gilt: $\F_{p^{m}} \subseteq \F_{p^{n}} \iff m \mid n$
+  \item Gilt $m \mid n$, so ist $\F_{p^{n}} \supseteq \F_{p^{m}}$ Galoissch mit Gruppe $\Gal(\F_{p^{n}}/ \F_{p^{m}})= \<\ph^{m}\>$ ist zyklisch von der Ordnung $\ell = \frac nm$.
+\end{enumerate}
+\begin{proof}[Beweis]
+TODO
+\end{proof}
+\end{satz}
+
+\subsection{Einheitswurzelkörper (Kreisteilungskörper)}
+\begin{defi}
+  Sei $n \in \N$, ein Element $\rho \in \bar K\en$ heißt primitive $n$-te Einheitswurzel (EW) $\iff \ord(\rho) = n$ als Element der Gruppe $(\bar K\en, 1, \cd)$.
+\end{defi}
+\begin{lemm}
+  Sei $G \le (\bar K\en, 1, \cd)$ endliche Untergruppe, dann ist $G$ zyklisch.
+  \begin{proof}[Beweis]
+    Sei $n = \#G$ und $n' := \exp(G)$, wir wissen $n' \mid n$. Da $G$ abelsch: $G$ zyklisch $\iff n' = n$. Annahme $n' < n$ ($\imp \forall \a \in G$ gilt $\a^{n'} - 1 = 0$)
+    \[\imp G \subseteq \ubr{\{\a \in K \mid \a \text{ ist Nst. von }X^{n'} - 1\}}_{\text{Menge hat höchstens Kardinalität }n'} \imp n = \#G \le n' \text{ Widerspruch.}\]
+    $\imp n' = n$ (wissen schon $n'$ teilt $n$).
+  \end{proof}
+\end{lemm}
+\begin{bsp*}
+$\F_{p^{n}}\en$ ist zyklische Gruppe der Ordnung $p^{n-1}$
+\end{bsp*}
+\begin{prop}
+Sei $p = \chr K$, sei $n \in \N$, dann: $\bar K$ enthält eine primitive $n$-te Einheitswurzel $\iff p \nmid n.$
+\end{prop}
+\begin{bsp*}\item
+\begin{enumerate}[(a)]
+  \item $\chr K = 0 \imp \bar K$ enthält primitive $n$-te Einheitswurzel für alle $n \in \N$
+  \item $K = \C \imp e^{2\pi i/n}$ ist primitive $n$-te Einheitswurzel. Die Elemente  \[\{(e^{2\pi i/n})^{j} \mid j \in \{0, \ldots, n-1\}\}\]
+  bilden ein regelmäßiges $n$-Eck, deswegen heißt auch $\Q(e^{2\pi i/n})$ $n$-ter Kreisteilungskörper (über $\Q$). $e^{2\pi i/n}$ ist algebraisch, da Nst. von $X^{n} - 1$
+\end{enumerate}
+\end{bsp*}
+
+\begin{proof}[Beweis (von Proposition 19)]
+  TODO.
+\end{proof}
+
+\begin{prop}
+  Sei $\zeta \in \bar K \en $ primitive $n$-te Einheitswurzel (insbesondere $p = \chr K \nmid n$), dann:
+  \begin{enumerate}[(a)]
+    \item $K(\zeta)$ ist Zerfällungskörper des seperablen Polynoms $h_{n} = X^{n} - 1$ über $K$ und insbesondere ist $K(\zeta)$ Galoissch über $K$.
+    \item Sei $H := \{\xi \in \bar K\en \mid \xi^{n} = 1\}$, dann gibt es zu $\xi$ ein eindeutiges $n_{\xi} \in \{1, \ldots , n\}$ mit $\zeta^{n_{\xi}} = \xi$.
+    \item Die Abbildung
+          \[G:= \Gal(K(\zeta)/K) \to \l(\fak \Z{n\Z}\r)\en, \s \mps n_{\s(\zeta)} \mod n\]
+          ist wohl-definiert und ein Gruppenmonomorphismus. Insbesondere ist $G$ abelsch (also auflösbar)
+  \end{enumerate}
+\begin{proof}[Beweis]TODO.
+
+\end{proof}
+\end{prop}
+\begin{satz}\item
+\begin{enumerate}[(a)]
+  \item $\phi_{n}$ ist irred. in $\Z[X]$
+  \item ${\Q(\zeta_{n}):\Q} = \grad \phi_{n} = \# \Zn\en$
+        \item $\Gal(\Q(\zeta_{n})/\Q) \to \l(\fak \Z{n\Z}\r)\en, \s \mps \bar m_{\s}$ aus Bew. von 20 ist Gruppenisomorphismus.
+\end{enumerate}
+\begin{proof}[Beweis]TODO.
+
+\end{proof}
+\end{satz}
+
+\subsection{Galoiserweiterungen von Grad $p$ (eine Primzahl)}
+\begin{satz}[Kummererweiterungen] Gelte $p$ Primzahl, $p \nmid \chr K$, gelte: $K$ enthält eine primitive $p$-te Einheitswurzel $\zeta_{p}$ (d.h. $K\en \supseteq N_{p}:= \<\zeta_{p}\>$ und $N_{p} \cong \fak \Z{p\Z}$). Sei $f = X^{p} - a, a \in K$, sei $E$ ein Zerfällungskörper von $f$ und $b \in \bar K$ eine Nullstelle von $f$. Dann:
+  \begin{enumerate}[(a)]
+    \item $f$ hat die Nullstelle $b \cd \zeta_{p}^{i}, i \in \{0, \ldots, p-1\}$
+    \item $E = K(b)$ ist Zerfällungskörper von $f$ und $E \supseteq K$ Galoissch. ($f$ seperabel)
+    \item Die Abbildung $\ph: \Gal(E/K) \to N_{p}, \s \mps \frac{\s(b)}b$ ist wohl-definiert und ein Gruppenmonomorphismus.
+    \item Es sind äquivalent:
+          \begin{enumerate}[(i)]
+            \item $[E:K] = p$
+            \item $f$ ist irred.
+            \item $f$ hat keine Nullstelle in $K$
+            \item $\ph$ ist ein Isomorphismus.
+          \end{enumerate}
+\item Ist Umgekehrt $E \supseteq K$ Galoissch mit $\Gal(E/K) \cong\fak \Z{p\Z}$, so ist $E$ ein Zerfällungskörper über $K$ eines irred. Polynoms der Form $X^{p} - c \in K[X]$, wobei $c \in K\en / {K\en}^{p}$.
+  \end{enumerate}
+\end{satz}
+
+\begin{prop}[Übung, Lineare Algebra]
+  Sei $V$ ein endlich dimensionaler $K$-Vektorraum und $\s \in \Aut_{K}(V)$ mit $\ord(\s) = p$, dann:
+  \begin{enumerate}[(a)]
+    \item Das Minimalpolynom von $\s$ ist $X^{p} - 1$
+    \item Gilt $p \ne \chr K$, so besitzt $\s$ einen Eigenwert $\zeta$, welcher eine primitive $p$-te Einheitswurzel ist.
+    \item Gilt $p = \chr K$, so enthält die Jordanform von $\s$ einen $d \tm d$-Block folgender Form mit $d > 1$
+          \[\begin{pmatrix}
+              1 & 1 \\
+                & \ddots & \ddots \\
+                & & \ddots & 1\\
+              & & & 1
+            \end{pmatrix}\]
+  \end{enumerate}
+\end{prop}
+\begin{nota*}
+Für $m \in \N$ mit $\chr K \nmid n$, so sei $N_{k}:= \{\zeta \in \bar K \mid \zeta^{n} = 1\}$ ($= \fak \Z{n\Z}$)
+\end{nota*}
+
+\begin{satz}[Kummererweiterungen]
+  Sei $p$ primzahl mit $p \nmid \chr K$ und gelte: $K$ enthält eine primitive $p$-te Einheitswurzel $\zeta_{p}$ (d.h. $K\en \supseteq N_{p} := \<\zeta_{p}\>$ und $N_{p} \cong \fak \Z{p\Z}$) und $b \in \bar K$ eine Nst. von $f$, dann:
+  \begin{enumerate}[(a)]
+    \item $f$ hat die Nst. $b \cd \zeta_{p}^{i}, i \in \{0, \ldots ,p-1\}$
+    \item $E = K(b)$ ist ZK von $f$ und $E / K$ galoissch. ($f$ seperabel)
+    \item Die Abbildung $\varphi : \Gal(E/K) \to N_{p}, \s \mps \frac {\s(b)}b$ ist wohl-def Gruppennmonomorphismus.
+    \item Es sind äquivalent:
+          \begin{enumerate}[(i)]
+            \item $[E:K] = p$
+            \item $f$ ist irred.
+            \item $f$ hat keine Nst in $K$
+                  \item $\varphi$ ist ein Isomorphismsus.
+          \end{enumerate}
+\item Ist umgekehrt $E / K$ galoissch mit $\Gal(E/K) \cong \Z_{p}$, so ist $E$ ZK über $K$ eines irred. Polynoms der Form $X^{p} - c \in K[X]$ (wobei $c \in K\en \setminus {K\en}^{p}$)
+  \end{enumerate}
+\end{satz}
+
+\begin{satz}[Artin-Schreier Erweiterungen]
+  Sei $p = \chr K > 0, f = X^{p} - X - a \in K[X]$ und sei $E/K$ der ZK von $f$ in $\bar K$ und sei $\b \in E$ ein Nst. von $f$, dann:
+  \begin{enumerate}[(a)]
+    \item $E = K(\b)$ und $T = \{\b + i \cd 1_{K}\}, i \\in \{0, \ldots, p-1\}$ ist die Nullstellenmenge von $f$.
+    \item $E/K$ ist galoiisch
+    \item $\varphi: \Gal(E/K) \to \F_{p}, \s \mps \s(\beta) - \b$ ist ein Gruppenmonom. ($\F_{p}$ sei identifiziert mit dem Primkörper von $K$)
+    \item Es sind äquivalent
+          \begin{enumerate}[(i)]
+            \item $[E:K] = p$
+            \item $f$ ist irred.
+            \item $f$ hat keine Nst. in $K$
+            \item $\varphi$ ist bijektiv
+                  \item $a \in K \setminus y(K)$ für $y : K \to K$ der Gruppenhom. $X \mps X^{p} - X$
+          \end{enumerate}
+\item Ist Umgekehrt $F / K$ galoissch vom Grad $p$, so ist $F$ ZK eines Polynoms der Form $X^{p} - X - b \in K[X]$ mit $b \in K \setminus y(K)$ (verwendet z.B. 23c)
+  \end{enumerate}
+
+\end{satz}
+\section{Auflösbarkeit durch Radikale}%
+\begin{defi}
+  Sei $p = \chr K \ge 0$,
+  \begin{enumerate}[(i)]
+    \item Eine Kette von Körpererweiterungen $K = K_{0} \subseteq K_{1} \subseteq \cdots \subseteq K_{n}$ heißt:
+          \begin{enumerate}[(a)]
+            \item Wurzelturm $\iff$ für $i \in \eb n$ existieren $\alpha_{i} \in K_{i}$ und $e_{i} \in \N \setminus p\N$ sodass $K_{i} = K_{i-1}(\a_{i})$ und $\a_{i}^{e_{i}} \in K_{i-1}$.
+            \item Quadratwurzelturm $\iff p \ne 2$ und für $i \in \eb n$ existieren $\a_{i} \in K_{i}$ mit $\a_{i}^{2} \in K_{i-1}$ und $K_{i} = K_{i}(\a_{i})$.
+          \end{enumerate}
+    \item Ein Oberkörper $E/K$ heißt (Quadrat-)Wurzelerweiterung $\iff \ex$ (Quadrat-)Wurzelturm wie in (i) mit $E \subseteq K_{n}$
+          \item $f \in K[X]$ heißt auflösbar durch Radikale (Wurzelausdrücke) $\iff$ der ZK von $f$ ist eine Wurzelerweiterung.
+  \end{enumerate}
+\begin{nota*}
+QW = Quadratwurzel und W- = Wurzel
+\end{nota*}
+\end{defi}
+
+\begin{bem*}[Übung]
+Wegen $e_{i} \in \N \setminus p \N$ ist $K_{i} \supseteq K_{i-1}$ stets seperabel ($X^{e_{i}} - \a_{i}^{e_{i}} \in K_{i-1}[X]$)
+\end{bem*}
+\begin{lemm}
+  Seien $E, E' \subseteq \bar K$ Oberkörper von $K$, dann:
+  \begin{enumerate}[(a)]
+    \item Ist $E/K$ eine (Q)W-Erweiterung und $\s \in \Hom_{K}(E,\bar E)$, so ist $\s(E) \supseteq K$ eine (Q)W-Erweiterung
+    \item Sind $E, E'$ (Q)W-Erweiterungen von $K$, so auch $E[E'] = E'[E]$
+    \item Ist $E/K$ eine Q(W)-Erweiterung, so ist die normale Hülle von $E$ eine (Q)W-Erweiterung von $K$.
+  \end{enumerate}
+\end{lemm}
+\begin{bem*}
+Gilt $E' = K[\a_{1}, \ldots, \a_{n}]$, so hat man $E[E'] = E[\a_{1}, \ldots, \a_{n}]$
+\end{bem*}
+\begin{bsp}
+  Sei $n \in \N$ mit $p \nmid n$ und $\zeta \in \bar K$ eine primitive $n$-te EW, dann ist $K[\zeta] \supseteq K$ eine W-Erweiterung $(\zeta^{n} = 1 \in K)$
+\end{bsp}
+
+\begin{bem}[Übung]
+  Sei $\zeta \in \bar K$ eine primitive $n$-te EW, und $E \subseteq \bar K$ ein Oberkörper von $K$, mit $[E:K] < \infty$, dann:
+  \begin{enumerate}[(a)]
+    \item Die Abbildung $\ph:\Gal(E(\zeta)/E) \to \Gal(K(\zeta)/K), \s \mps \s|_{K(\zeta)}$ ist wohl def und ein Gruppenmonom.
+    \item $[E(\zeta):E]$ teilt $[K(\zeta):K]$
+    \item $[E(\zeta):K]$ teilt $[E:K]$
+          \[\begin{tikzcd}
+                      & E(\zeta)                                                      &                              \\
+E \arrow[ru, no head] &                                                               & K(\zeta) \arrow[lu, no head] \\
+                      & K \arrow[ru, no head] \arrow[lu, no head] \arrow[uu, no head] &
+\end{tikzcd}
+          \]
+  \end{enumerate}
+\end{bem}
+
+\begin{satz} Für eine Galoiserweiterung $E/K$ sind äquivalent:
+  \begin{enumerate}[(i)]
+    \item $E / K$ ist Wurzelerweiterung
+          \item $\Gal(E/K)$ ist auflösbar und $\ex m \in \N,  p \nmid m : p \nmid [E[N_{m}] : K[N_{m}]]$
+  \end{enumerate}
+  \begin{bem*}
+Im Fall $p = 0$ entfällt.
+  \end{bem*}
+\end{satz}
+\begin{kor}
+  Sei $f \in K[X] \setminus K$ seperabel mit ZK $E_{f}/K$, dann: $f$ ist auflösbar durch Radikale $\overset{5.30}\iff \Gal(E_{f}/K)$ ist auflösbar und $\ex m$ (mit $\chr K \nmid m$), sodass $\chr K \nmid [E_{f}(\zeta_{m}) : K(\zeta_{m})]$.
+  \item In den Übungen: $\ex f \in \Q[X] \setminus \Q, \deg f = 5, \Gal(\Q_{f}/\Q) \cong S_{5} \imp f$ nicht auflösbar durch Radikale.
+  \item Andersherum: Alle Untergruppen von $S_{n}$ für $n \le 4$ sind auflösbar (Ordnung $<60$) $\imp$ ist $f \in \Q[X] \setminus \Q$ irred. vom Grad $n \le 4$, so ist $f$ auflösbar durch Radikale $\imp$ Die allgemeine Gleichung vom Grad $5$ (oder $n \ge 5$) ist nicht auflösbar.
+\end{kor}
+\begin{bem}
+  Die Galoistheorie hilft auch, die Lösungsformeln zu finden $(n \le 4)$ (Hungerford - Algebra).
+\end{bem}
+
+
+\section{Konstruierbarkeit mit Zirkel und Lineal}
+Sei $S$ eine endliche Teilmenge der reellen Ebene $\R^2$ (üblicherweise $S = \{(0,0), (1,0)\}$), Frage: Welche Punkte der Ebene lassen sich mit Zirkel und Lineal aus $S$ konstruieren? \newline
+Konkrete Fragen (alle Konstr. mit Zirkel und Lineal):
+\begin{enumerate}[A)]
+  \item Lassen sich beliebige Winkel $3$-teilen?
+  \item Kann ein zum Einheitskreis flächengleiches Quadrat konstruieren? (Quadratur des Kreises)
+  \item Kann man die Seitenlänge eines Würfels mit Volumen 2 konstruieren?
+  \item Für welche $n \in \N$ kann man ein regelmäßiges $n$-Eck konstruieren.
+\end{enumerate}
+Im Weiteren: Wir identifizieren $R^{2}$ mit $\C$ und nehmen an, $0, 1 \in S \subset \C$ mit der Metrik $d(z, z') = |z-z'|$.
+\begin{itemize}
+  \item Für $P \ne Q$ in $\C$ sei $\bar{PQ}$ die Gerade durch $P$ und $Q$
+        \item Für $P \in \C, r \in \R_{\ge 0}$ sei $C_{r}(P) = \{z \in \C \mid |z - P| = r\}$ die Kreislinie um $P$ zum Radius $r$.
+\end{itemize}
+\begin{defi}[Elementare Konstruktionen mit Zirkel und Lineal]
+Zu $P_{1} \ne P_{2}, P_{3} \ne P_{4}, P_{5} \ne P_{6}$ in $S$ konstruiere
+\begin{enumerate}[(1)]
+  \item Schnittpunkt $\bar{P_{1}P_{2}} \cap \bar{P_{3}P_{4}}$
+  \item Schnittpunkte $\bar{P_{1}P_{2}} \cap C_{r}(P_{5}), r = |P_{6} - P_{5}|$
+  \item Schnittpunkte $C_{r_{1}}(P_{1}) \cap C_{r_{3}}(P_{3}), r_{1} = |P_{1} - P_{2}|,r_{3} = |P_{3} - P_{4}| $
+\end{enumerate}
+\begin{nota*}
+Zu geg. $S$ definiere $\tilde S = S \cup$ Menge der aus $S$ elementar konstruierbaren Punkte.
+\end{nota*}
+
+\end{defi}
+\begin{defi}
+(rekursiv) $S_{0} = S$, $S_{n+1} = \tilde S_{n}$ und $C(S) = \cup_{{n \in \Nn}}S_{n} \subseteq \C$ Menge aller aus $S$ konstruierbaren Punkte.
+\end{defi}
+\begin{bsp}Folgende Konstruktionen sind mit Zirkel und Lineal durchführbar (siehe Schule Klasse 9)
+  \begin{enumerate}[(a)]
+    \item Die Parallele zu einer Geraden durch einer geg. Punkt
+    \item Die Senkrechte zu einer Geraden durch einer geg. Punkt
+    \item die Mittepunkt zu 2 geg. Punkten
+    \item Das Spiegelbild eines Punktes an einer Geraden
+    \item Die Summe von Winkeln
+    \item Die Halbierung von Winkeln
+    \item Die Negation von Winkeln
+  \end{enumerate}
+\end{bsp}
+\begin{lemm}
+  Seien $z, z_{1}, z_{2} \in C(S), S \supseteq \{0,1\}, z \ne 0$, dann:
+  \begin{enumerate}[(a)]
+    \item $z_{1} + z_{2} \in C(S)$
+    \item $-z \in C(S)$
+    \item $\Re(z), \Im(z), \bar z \in C(S)$
+    \item $|z| \in C(S)$
+    \item $|z_{1}| \cd |z_{2}|$ und $z_{1}\cd z_{2} \in C(S)$
+    \item $|z|^{-1}, z^{-1} \in C(S)$
+    \item $\sqrt {|z|} \in C(S)$
+          \item $\{\xi \in \C \mid \xi^{2} = z\} \subseteq C(S)$ (2 Punkte in $\C$)
+  \end{enumerate}
+\end{lemm}
+\begin{satz}
+  Sei $\bar S = \{\bar z \mid z \in S\}$, dann gelten:
+  \item $C(S)$ ist ein Unterkörper von $\C$ der $C(S \cup \bar S)$ enthält.
+  \item $z \in C(S) \iff \Q(S \cup \bar S)(z)$ ist eine QW-Erweiterung von $\Q(S \cup \bar S)$
+\end{satz}
+\begin{kor}
+  Für $S = \{0,1\}$ sind äquivalent:
+  \begin{enumerate}[(a)]
+    \item $z \in C(S)$
+    \item $\Q(z)/\Q$ ist eine QW-Erweiterung von $\Q$
+    \item $z$ ist algebraisch über $\Q$ und der ZK $E$ von $\mu_{z, \Q}$ erfüllt $[E:\Q]$ ist 2-Potenz
+          \item $z$ ist algebraisch über $\Q$ und für $E$ aus (c) gilt $\Gal(E/\Q)$ ist 2-Gruppe
+  \end{enumerate}
+\end{kor}
+\section{Anwendungen}
+\begin{satz}
+$\pi, \sqrt[3] 2, \zeta_{n} = e^{2\pi i/n}$ sind nicht konstruierbar über $\Q$
+\end{satz}
+\begin{bem*}
+Frage D: reguläre $n$-Ecke. die eulersche $\phi$-Funktion ist die Abbildung:  \[\N \to \N, n \mps \#\Z_{n}\en =: \phi(n)\]
+\end{bem*}
+\begin{lemm}
+  Sei $p$ Primzahl, $k \in \N$, es gelten:
+  \begin{enumerate}[(a)]
+    \item $\phi(p^{k}) = p^{k} - p^{k-1} = \phi(p) p^{k-1}$ ($\phi(p) = p-1$)
+    \item $\phi(mn) = \phi(m)\phi(n)$ sofern $\ggt(n,m) = 1$
+          \item Für $n = 2^{k} p_{1}^{e_{1}} \cd \ldots \cd p_{k}^{e_{k}}$ mit Primzahlen $2 < p_{1} < \cdots < p_{k}$ und $e_{i} \in \N$ gilt \[\phi(n) = 2^{k-1}(p_{1} - 1)\cdots (p_{k-1})p_{1}^{e_{1}-1} \cd \ldots \cd p_{k}^{e_{k}-1}\]
+  \end{enumerate}
+\end{lemm}
+
+\begin{satz}[Gauß]
+  Sei $\zeta_{n} = e^{2\pi i / n}$, dann sind äquivalent:
+  \begin{enumerate}[(a)]
+    \item Das reguläre $n$-Eck (mit Umkreisradius $1$) ist konstruierbar
+    \item $\zeta_{n} \in C(\{0,1\})$
+    \item $\phi(n)$ ist 2-Potenz
+          \item $n$ ist von der Form $2^{k}p_{1} \cd \ldots \cd p_{k}$ mit $p_{1} < \cdots <p_{k}$ Fermatprimzahlen
+  \end{enumerate}
+\end{satz}
+
+\begin{defi}
+  $F_{\ell} = 2^{2^{\ell}} + 1$ heißt $\ell$-te Fermatzahl.
+\end{defi}
+Fermat vermutet: $F_{\ell}$ ist eine Primzahl $\forall \ell \in \Nn$, falsch! da
+$F_{0} = 3, F_{1} = 5, F_{2} = 17, F_{3} = 257, F_{4} = 65537, F_{5} = 2^{32}+1 \approx 4$ Milliarden. Nach Euler ist $641 \mid F_{5}$.
+Inzwischen ist bekannt $F_{5}, \ldots, F_{11}$ sind keine Primzahlen und für 324 Fermatzahlen bekannt, sie sind nicht Primzahlen. Außer $F_{0}$ bis $F_{4}$ keine Primzahlen bisher. Neue Vermutung: Das sind alle??
+\end{document}

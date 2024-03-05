@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  18 FEB 2024 18:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  21 FEB 2024 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/yousef/scripts/src/sections/section4.tex
-(/Users/yousef/scripts/src/sections/section4.tex
+**/Users/yousef/scripts/src/sections/section2short.tex
+(/Users/yousef/scripts/src/sections/section2short.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/base/report.cls
@@ -692,46 +692,83 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 23.
 \c@thm=\count309
 \symmathx=\mathgroup7
 )
+(/usr/local/texlive/2023basic/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip69
+\enit@outerparindent=\dimen270
+\enit@toks=\toks47
+\enit@inbox=\box67
+\enit@count@id=\count310
+\enitdp@description=\count311
+)
+(/usr/local/texlive/2023basic/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2023basic/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count312
+\Gm@cntv=\count313
+\c@Gm@tempcnt=\count314
+\Gm@bindingoffset=\dimen271
+\Gm@wd@mp=\dimen272
+\Gm@odd@mp=\dimen273
+\Gm@even@mp=\dimen274
+\Gm@layoutwidth=\dimen275
+\Gm@layoutheight=\dimen276
+\Gm@layouthoffset=\dimen277
+\Gm@layoutvoffset=\dimen278
+\Gm@dimlist=\toks48
+)
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (483.69684pt) is ignored.
+
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (731.23582pt) is ignored.
+
+
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.d
 ef
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count310
-\l__pdf_internal_box=\box67
-) (./section4.aux)
-\openout1 = `section4.aux'.
+\l__color_backend_stack_int=\count315
+\l__pdf_internal_box=\box68
+) (./section2short.aux)
+\openout1 = `section2short.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count311
-\scratchdimen=\dimen270
-\scratchbox=\box68
-\nofMPsegments=\count312
-\nofMParguments=\count313
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count314
-\MPscratchDim=\dimen271
-\MPnumerator=\count315
-\makeMPintoPDFobject=\count316
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count316
+\scratchdimen=\dimen279
+\scratchbox=\box69
+\nofMPsegments=\count317
+\nofMParguments=\count318
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count319
+\MPscratchDim=\dimen280
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
+\everyMPtoPDFconversion=\toks50
 )
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.s
 ty
@@ -743,152 +780,108 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 3.
- (./section4.out) (./section4.out)
+Package hyperref Info: Link coloring ON on input line 18.
+ (./section2short.out) (./section2short.out)
 \@outlinefile=\write4
-\openout4 = `section4.out'.
+\openout4 = `section2short.out'.
 
-\docmute@nestinglevel=\count317
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(28.45274pt, 540.60239pt, 28.45274pt)
+* v-part:(T,H,B)=(28.45274pt, 788.14136pt, 28.45274pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=540.60239pt
+* \textheight=788.14136pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-80.81725pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=20.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\docmute@nestinglevel=\count322
+LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 6.
-
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 28
+.
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Overfull \hbox (11.34781pt too wide) in paragraph at lines 55--57
-\OT1/cmr/m/n/10 universelle Eigen-schaft der Lokalisierung ($\OML/cmm/m/it/10 S
-$ \OT1/cmr/m/n/10 mul-ti-p-lika-tiv abgeschlossen,
+Underfull \hbox (badness 3557) in paragraph at lines 23--30
+[][]\OT1/cmr/m/n/10 2.1[]  Grup-pen-wirkung (Wirkung)[] []2.2[]  Bahn (Tran-si-
+tive
+ []
+
+
+Underfull \hbox (badness 3861) in paragraph at lines 23--30
+\OT1/cmr/m/n/10 Wirkung, Treue Wirkung)[] []2.3[]  Sta-bil-isator[] []2.4[]  Fr
+eie
  []
 
 [1
 
 {/usr/local/texlive/2023basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 178
-.
- (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Overfull \hbox (0.87105pt too wide) in paragraph at lines 179--181
-$ \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )  []\OT1/cmr/m/n/10 ([][])$ ist ein K^^?
-orper. Aber: $[]([][]) = \OML/cmm/m/it/10 K\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 \
-OT1/cmr/m/n/10 ]$, also $\OML/cmm/m/it/10 K\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 \
-OT1/cmr/m/n/10 ] = \OML/cmm/m/it/10 K\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cm
-r/m/n/10 ) (\OMS/cmsy/m/n/10 ^^C\OT1/cmr/m/n/10 )$,
- []
-
-[4] [5] [6]
-Overfull \hbox (7.83081pt too wide) in paragraph at lines 326--327
-[][]\OT1/cmr/bx/n/10 Definition 0.25. []\OT1/cmr/m/n/10 Sei $\OML/cmm/m/it/10 f
- \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 K\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X\OT1/c
-mr/m/n/10 ]$ ir-red. Ein Oberk^^?orper $\OML/cmm/m/it/10 E \OMS/cmsy/m/n/10 ^^S
- \OML/cmm/m/it/10 K$ \OT1/cmr/m/n/10 hei^^Yt Stammk^^?orper
- []
-
-[7]
-Overfull \hbox (0.9317pt too wide) in paragraph at lines 333--334
-[]$\OML/cmm/m/it/10 K \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 E;  \OMS/cmsy/m/n/10
- ! []$ \OT1/cmr/m/it/10 ist ein Ringho-mo-mor-phis-mus, also K^^?orperhomomorph
-ismus.
- []
-
-
-Overfull \hbox (18.91756pt too wide) in paragraph at lines 378--379
-[]\OT1/cmr/m/it/10 Ist $\OML/cmm/m/it/10 E \OMS/cmsy/m/n/10 ^^S \OML/cmm/m/it/1
-0 K$ \OT1/cmr/m/it/10 al-ge-braisch abgeschlossen, so ist $\OML/cmm/m/it/10 F \
-OT1/cmr/m/n/10 := \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10  \OMS/cmsy/m/n/10 2 \OML/
-cmm/m/it/10 E \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 []K\OMS/cmsy/m/n/10 g$
- []
-
-[8] [9]
-Overfull \hbox (6.61472pt too wide) in paragraph at lines 454--455
-[][]\OT1/cmr/bx/n/10 Satz 0.36. []\OT1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 E$ \OT
-1/cmr/m/it/10 al-ge-braisch abgeschlossener K^^?orper, $\OML/cmm/m/it/10 ' \OT1
-/cmr/m/n/10 : \OML/cmm/m/it/10 K \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 E$ \OT1/cm
-r/m/it/10 ein K^^?orperhom.
- []
-
-
-Overfull \hbox (1.66444pt too wide) in paragraph at lines 461--462
-[][]\OT1/cmr/bx/n/10 Definition 0.37. []\OT1/cmr/m/n/10 Seien $\OML/cmm/m/it/10
- E[]; E[]$ \OT1/cmr/m/n/10 Oberk^^?orper von $\OML/cmm/m/it/10 K$\OT1/cmr/m/n/1
-0 . Ein K^^?orperhomomorphismus
- []
-
-[10]
-Overfull \hbox (22.97008pt too wide) in paragraph at lines 484--485
-[]\OT1/cmr/m/it/10 Ist $[]$ ein al-ge-brais-cher Ab-schluss von $\OML/cmm/m/it/
-10 E$ \OT1/cmr/m/it/10 und $\OML/cmm/m/it/10 ' \OT1/cmr/m/n/10 : \OML/cmm/m/it/
-10 E \OMS/cmsy/m/n/10 ! []$ \OT1/cmr/m/it/10 ein $\OML/cmm/m/it/10 K$\OT1/cmr/m
-/it/10 -Homomorphismus,
- []
-
-
-Overfull \hbox (18.48962pt too wide) in paragraph at lines 490--490
-[]\OT1/cmr/bx/n/14.4 Normale Er-weiterun-gen und Zerf^^?allungsk^^?orper 
- []
-
-
-Overfull \hbox (13.26767pt too wide) in paragraph at lines 510--511
-[]$\OML/cmm/m/it/10 f$ \OT1/cmr/m/it/10 be-sitzt einen ein-deuti-gen Zerf^^?all
-ungsk^^?orper in $[]$, n^^?amlich $\OML/cmm/m/it/10 E \OT1/cmr/m/n/10 = \OML/cm
-m/m/it/10 K\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 []; [] ; []\OT1/cmr/m/n/10 )$
- []
-
-
-Overfull \hbox (13.76347pt too wide) in paragraph at lines 511--512
-[]\OT1/cmr/m/it/10 Ist $\OML/cmm/m/it/10 E$ \OT1/cmr/m/it/10 ein Zerf^^?allungs
-k^^?orper von $\OML/cmm/m/it/10 f$\OT1/cmr/m/it/10 , und $\OML/cmm/m/it/10 ' \O
-T1/cmr/m/n/10 : \OML/cmm/m/it/10 E \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 F$ \OT1/
-cmr/m/it/10 ein K^^?orperhomomorphismus,
- []
-
-[11] [12] [13] [14] [15] (./section4.aux)
-Package rerunfilecheck Info: File `section4.out' has not changed.
-(rerunfilecheck)             Checksum: 17137AB79F36CA08168E45B01261DF14;732.
+(./section2short.aux)
+Package rerunfilecheck Info: File `section2short.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22240 strings out of 477476
- 426794 string characters out of 5824243
- 1875388 words of memory out of 5000000
- 41898 multiletter control sequences out of 15000+600000
- 518956 words of font info for 57 fonts, out of 8000000 for 9000
+ 22757 strings out of 477476
+ 434910 string characters out of 5824243
+ 1909388 words of memory out of 5000000
+ 42521 multiletter control sequences out of 15000+600000
+ 516807 words of font info for 50 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,22n,117p,616b,1182s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/
-ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023basic/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023basic/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023basic/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023basic/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023basi
-c/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023ba
-sic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-23basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
-/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
-live/2023basic/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/lo
-cal/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></
-usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm7.pfb>
-Output written on section4.pdf (15 pages, 263049 bytes).
+ 113i,8n,117p,551b,434s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/public/ma
+thabx/mathx10.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023basic/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023basic/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023basic/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023basic/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023basic/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023basic
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
+2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local
+/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on section2short.pdf (1 page, 138266 bytes).
 PDF statistics:
- 397 PDF objects out of 1000 (max. 8388607)
- 341 compressed objects within 4 object streams
- 193 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 187 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

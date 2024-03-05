@@ -1,0 +1,141 @@
+\documentclass[twocolumn]{report}
+\usepackage{../template}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[inline]{enumitem}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+\setlength{\columnsep}{20pt}
+
+\begin{document}
+
+\section*{2.1 Einige Aussagen}
+\subsection*{Definitionen}
+\begin{enumerate*}[label=2.\arabic*, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item Gruppenwirkung (Wirkung)
+    \item Bahn (Transitive Wirkung, Treue Wirkung)
+    \item Stabilisator
+    \item Freie Wirkung (Fixpunkt)
+    \item Konjugationsklasse
+    \item p-Gruppe ($\#G = p^m$)
+\end{enumerate*}
+
+\subsection*{Sätze}
+\begin{enumerate}[label=2.\arabic*, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item $\lambda:G \times X \to X$ Wirkung, dann $\varphi: G \to \text{Bij}(X), g \mapsto \ell_g$ ist Hom. und ist $\varphi: G \to \text{Bij}(X)$ ein Hom, dann $\lambda: G \times X \to X, (g,x) \mapsto \varphi(g)(x)$ Wirkung.
+    \item $G \underset{\lambda}\curvearrowright X$, dann $x\sim y \iff \exists g \in G : gx = y$ ist äquiv. Und die Klassen sind die Bahnen.
+    \item Satz von Cayley: $\forall G \exists H \le \text{Bij}(G) : G \cong H$
+    \item $G \curvearrowright X$ treu $\iff \bigcap_{x \in X}\text{Stab}_G(x) = \{e\}$
+    \item $\text{Stab}_G(x) \le G, \forall x \in X$ und $\text{Stab}_G(gx) = g\text{Stab}_G(x)g^{-1}$
+    \item Bahngleichung: $\frac{G}{\text{Stab}_G(x)} \cong Gx$
+    \item $X = X^G \sqcup \bigsqcup_{1 \le i \le n}Gx_i$ und $\#X = \#X^G + \sum_{i \le n}[G:Gx_i]$
+    \item Klassengleichung: $\# G = \#\text{Z}(G) + \sum_{i = 1}^{n}[G : C_{G}(g_{i})]$
+    \item $G$ $p$-Gruppe, dann ist das Zentrum $Z(G)$ auch $p$-Gruppe
+    \item Satz von Cauchy
+\end{enumerate}
+
+\section*{2.2 Permutationsgruppen}
+\subsection*{Definitionen}
+\begin{enumerate*}[label=2.\arabic*, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item Träger einer Permutation (Disjunkte Permutationen)
+    \item Zykel (Transposition)
+    \item Young-Diagramm (Partition)
+    \item Signum
+    \item Einfache Gruppe
+\end{enumerate*}
+
+\subsection*{Sätze}
+\begin{enumerate}[label=2.\arabic*, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item $\# S_n = n!$
+    \item $\sigma \in S_n$, dann $\text{supp}(\sigma) = \bigcup$ Bahnen von $\< \sigma\> \curvearrowright [n]$ der Länge $\ge 2$.
+    \item $i \in \text{supp}(\sigma) \iff \sigma(i) \in \text{supp}(\sigma)$, und auf jeder $\<\sigma\>$-Bahn wirkt $\sigma$ als zyklische Permutation auf $[n]$.
+    \item $\sigma, \tau$ disjunkt $\Rightarrow \sigma \tau = \tau \sigma$
+    \item Zykeldarstellung von Permutationen
+    \item $\forall i_k, \sigma \in S_n:$ $\sigma \circ (i_1 \ \cdots \ i_r) \circ \sigma^{-1} = (\sigma(i_1)\ \cdots \ \sigma(i_r))$ und falls $\sigma_1, \sigma_2$ in dieselben Konjugationsklasse $\iff$ sie haben dasselbe Youngdiagramm.
+    \item Formeln für sgn
+    \item $C_3:= \{\sigma \in A_n \mid \sigma$ 3-Zykel$\}$, $C_{2,2}:=\{\sigma \in A_n \mid \sigma = \tau_1 \tau_2$ disj.$\}$, dann
+    \begin{enumerate}[label=(\arabic*), itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+        \item $A_n \cong \<C_3\> =: H_3$ für $n \ge 3$
+        \item $A_n \cong \<C_{2,2}\> =: H_{2,2}$ für $n \ge 5$
+        \item $C_3$ und $C_{2,2}$ sind $A_n$-Konjugationsklassen für $n \ge 5$.
+    \end{enumerate}
+    \item $A_n$ ist einfach für $n \ge 5$.
+\end{enumerate}
+
+\section*{2.3 Sylow Theoreme}
+\subsection*{Definitionen}
+\begin{enumerate*}[label=2.\arabic*, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item $p$-Sylow Gruppe
+    \item Normalisator
+\end{enumerate*}
+
+\subsection*{Sätze}
+\begin{enumerate}[label=2.\arabic*, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item Erster Sylow-Satz (Sylow I): $p^k \mid \#G$, $n_k:= \#\{H \le G \mid \# H = p^k\}$, dann gilt $n_k \equiv 1 \mod p$, insb. $\exists H \le G$ mit Ord. $p^k$.
+    \item Satz von Cauchy
+    \item Für $H \le G$ ist $N_G(H) = \text{Stab}_G(H)$, $H \trianglelefteq N_G(H)$ und $N_G(H)$ ist die größte U.G von $G$ mit $H$ Normalteiler.
+    \item $H \le G$ $p$-Gruppe, $P \in \text{Syl}_p(G)$, dann:
+    \begin{enumerate}[label=(\arabic*), itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+        \item $P \le H \Rightarrow P = H$
+        \item $H \le N_G(P) \Rightarrow H \le P$
+        \item $H \not\subseteq P \Rightarrow \text{Stab}_H(P) < H$
+    \end{enumerate}
+    \item Zweiter Sylow-Satz (Sylow II): $p \mid \#G$, dann:
+    \begin{enumerate}[label=(\arabic*), itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+        \item Je 2 $p$-Sylow Gruppen von $G$ sind konjugiert.
+        \item $H \le G$ $p$-Gruppe $\Rightarrow H$ liegt in einer $p$-Sylow Gruppe
+        \item $\forall P \in \text{Syl}_p(G):\text{Syl}_p(G) = [G:N_G(P)]$ und insb. $(P \le N_G(P))$ gilt $\text{Syl}_p(G)$ teilt $[G:P]$.
+    \end{enumerate}
+    \item $p \mid \#G, \text{Syl}_p(G) = 1 \iff$ alle $p$-Sylow Gruppen sind Nullteiler von $G$.
+    \item $p_1, \ldots, p_t$ die Primteiler von $\#G, P_i \in \text{Syl}_{p_i}(G)$, dann: $P_1, \ldots P_t \trianglelefteq G \Rightarrow \bigtimes P_i \to G, (g_i) \mapsto \prod g_i$ ist Isomorphismus. Insb. $\bigtimes P_i \cong G$.
+    \item $G$ abelsch $\Rightarrow$ alle Untergruppen sind Normalteiler.
+    \item $G$ endl. abelsch, $p_i, P_i$ wie in vorigem Satz, dann ist $G \cong \bigtimes P_i$.
+    \item $G$ endl. abelsche $p$-Gruppe, dann $\exists ! e_1 \ge \cdots \ge e_t \in \mathbb{N}$ mit $G \cong \bigtimes_{i \le t}\frac{\mathbb{Z}}{p^{e_i}\mathbb{Z}}$
+    \item $\#G = p^f m, p \nmid m$, dann $p^f \nmid (m-1)! \Rightarrow G$ nicht einfach.
+    \item $G$ einfach $\#G < 60 \Rightarrow G \cong \frac{\mathbb{Z}}{p\mathbb{Z}}$ für $p$ Prim.
+\end{enumerate}
+
+\section*{2.4 Auflösbare Gruppen}
+\subsection*{Definitionen}
+\begin{enumerate*}[label=2.\arabic*, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item Normalreihe (Faktor, Zerlegungsreihe, Abelsche Normalreihe, Auflösbare Gruppe, Verfeinerung)
+    \item Kommutatoruntergruppe
+    \item Abgeleitete Reihe
+    \item Perfekte Gruppe
+\end{enumerate*}
+
+\subsection*{Sätze}
+\begin{enumerate}[label=2.\arabic*, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+    \item $\Gamma: \{e\} \triangleleft \cdots \triangleleft G$  Normalreihe, dann:
+    \begin{enumerate}[label=(\arabic*), itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+        \item $\Gamma$ Zerlegungsreihe $\iff \Gamma$ hat keine Verfeinerung.
+        \item $2^t \le \#G$
+        \item $G$ endl., dann $\Gamma$ hat eine Zerlegungsreihe als Verfeinerung.
+        \item $\Gamma$ abelsch., dann Verfeinerungen sind abelsch.
+    \end{enumerate}
+    \item Satz von Jordan-Hölder
+    \item $G$ endl. dann $G$ auflösbar $\iff$ die Faktoren jeder Zerlegungsreihe sind abelsch und von Primzahlordnung.
+    \item $p$-Gruppe $\Rightarrow$ auflösbar.
+    \item $\#G < 60 \Rightarrow$ auflösbar.
+    \item $N \triangleleft G, H \le G$, dann:
+    \begin{enumerate}[label=(\arabic*), itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]
+        \item $G$ auflösbar $\iff N$ und $\frac{G}{N}$ auflösbar
+        \item $G$ auflösbar $\Rightarrow H$ auch.
+    \end{enumerate}
+    \item $D^{i+1}(G) = D^i(G)$, dann $D^n(G) = D^i(G), \forall n \ge i$
+    \item Es gilt $D^i(G) \triangleleft D^{i-1}(G), \forall i \ge 1$, insb. $D^i(G) \triangleleft G \forall i$.
+    \item $H \le G \Rightarrow D^i(H) \le D^i(G) \cap H$
+    \item $\pi: G \to G'$ surj $\Rightarrow \pi(D^i(G)) = D^i(G')$
+    \item Auflösbarkeitskriterium: $G$ endl, dann auflösbar $\iff \exists i : D^i(G) = \{e\}$.
+    \item $G$ abelsch $\Rightarrow D^1(G) = \{e\}$.
+\end{enumerate}
+
+\end{document}

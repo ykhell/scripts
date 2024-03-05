@@ -597,12 +597,12 @@ TODO.
   \begin{enumerate}[(i)]
     \item $f$ hat mehrfache Nullstelle in $\bar K$.
     \item $p > 0$ und $f' = 0$.
-    \item $p > 0$ und $\ex g \in K[X]$ ohne mehrfache Nst. und $\ex  > 0$ sodass $f = g(X^{p^m})$ und $g$ irred.
+    \item $p > 0$ und $\ex g \in K[X]$ ohne mehrfache Nst. und $\ex m > 0$ sodass $f = g(X^{p^m})$ und $g$ irred.
   \end{enumerate}
   Insbesondere gelten für $g, m$ aus (iii):
   \begin{enumerate}[(a)]
     \item $p^{m} \mid \grad f$
-    \item $\#\{\b \in \bar K \mid f(\b) = 0\}$
+    \item $\#\{\b \in \bar K \mid f(\b) = 0\} = \grad g$
     \item Ist $\xi : K \to K'$ ein Körperhomomorphismus, so gilt $\xi_{*}f = (\xi_{*}g)(X^{p^{m}})$ und
           \[\# \{\b \in \bar K' \mid \xi_{*}f(\b) = 0\} = \grad g = \grad(\xi_{*}(g))\]
   \end{enumerate}
@@ -648,4 +648,68 @@ $K = \Fp(Y) = \Quot(\Fp[Y])$, sei $f(X) = X^{p} - Y \in (\Fp[Y])[X] \subseteq K[
   \[\ph_{K} : \Fp \to \Fp(Y) = K,\quad \bil(\ph_{K}) \overset{\text{Übung}} = \Fp(Y^{p})\]
   und $\Fp$ ist perfekt.
 \end{bsp*}
+
+\begin{kor}
+$K$ endlicher Körper $\imp K$ ist perfekt.
+\end{kor}
+\begin{proof}[Beweis]
+TODO.
+\end{proof}
+\begin{bsp}
+$K$ algebraisch abgeschlossen $\imp K$ perfekt, denn jede algebraische Erweiterung $E$ ist seperabel, da $E = K$.
+\end{bsp}
+
+\begin{defi}Sei $E \supseteq K$ ein Oberkörper mit $[E:K] < \infty$, der seperable Grad von $E \supseteq K$ ist \[[E:K]_{s}:= \#\Hom_{K}(E, \bar K)\quad (=\Hom_{K}(E, \bar E))\]
+\end{defi}
+
+\begin{facts}
+\begin{enumerate}[(a)]
+  \item $[E:K]_{s} \le [E:K]$
+  \item Ist $E$ Stammkörper über $K$ zu $\alpha \in E \imp [E:K]_{s} \underset{38a}= \#\{\beta \in \bar K \mid \mu_{\alpha, K}(\beta) = 0\}$
+  \item Seien $E, \a$ wie in (b), dann ist $\grad \mu_{\a, K} = [E:K] = [E:K]_{s} \iff \mu_{\a, K}$ ist seperabel $\iff \#\{\b \in \bar K \mid \mu_{\a, K}(\b) = 0\} = \grad \mu_{\a, K}$
+\end{enumerate}
+\end{facts}
+
+\begin{lemm}
+  Seien $K \subseteq E \subseteq F$ Oberkörper mit $[F:K] < \infty$, dann
+  \[[F:K]_{s} = [F:E]_{s} \cd [E:K]_{s} \quad (*)\]
+  \begin{proof}[Beweis]
+TODO.
+  \end{proof}
+\end{lemm}
+
+\begin{satz}
+  Für Oberkörper $E \supseteq K$ mit $[E:K] < \infty$ sind äquivalent:
+  \begin{enumerate}[(i)]
+    \item $E \supseteq K$ seperabel.
+    \item Für $\a_{1}, \ldots, \a_{n} \in E : E = K[\a_1, \ldots, \a_{n}]$, gilt $f = \prod_{i}\mu_{\a_{i}, K}$ ist seperabel.
+    \item $[E:K]_{s} = [E:K]$
+  \end{enumerate}
+
+\end{satz}
+
+
+\begin{kor}
+Seien $F \supseteq E \supseteq K$ Oberkörper mit $[F:K] < \infty$, dann: $F \supseteq K$ seperabel $\iff F \supseteq E$ und $E \supseteq K$ sind seperabel.
+\end{kor}
+
+\begin{kor}[Übung] Sei $E \supseteq K$ algebraischer Oberkörper, dann ist $E_{0}= \{\a \in E \mid \a \text{ seperabel über } K\}$ der größte Unterkörper von $E$, der seperabel über $K$ ist.
+\end{kor}
+\begin{bem*}
+  Der Beweis verwendet, dass Kor. 62 auch dann gilt, wenn $F \supseteq K$ eine beliebiege algebraische Erweiterung ist und $F \supseteq E \supseteq K$ Erweiterungen sind.
+
+\end{bem*}
+
+\begin{kor}
+  Sei $E \subseteq \bar K$ Oberkörper von $K$ mit $[E:K] < \infty$, ist $E \supseteq K$ seperabel, so ist auch die normale Hülle $F$ von $E$ über $K$ seperabel.
+\begin{proof}[Beweis]
+Gelte $E = K[\a_{1}, \ldots, \a_{n}]$ für $\a_{1}, \ldots, \a_{n} \in E$, dann ist $F$ der ZK in $\bar K$ von $\mu_{\a_{1}, K} \cd \ldots \cd \mu_{\a_{n}, K}$, es folgt, dass $F$ seperabel über $K$ ist, wegen Satz 61, Formulierung in (ii) (Die $\mu_{\a_{i}, K}$ sind seperabel, da $\a_{i}$ über $K$ seperabel.)
+\end{proof}
+\end{kor}
+
+
+\begin{satz}[Satz von primitiven Elementen]
+Sei $E \supseteq K$ Oberkörper mit $[E:K] < \infty$, ist $E \supseteq K$ seperabel, so $\ex \a \in E$ mit $E = K(\a)$
+\end{satz}
+
 \end{document}

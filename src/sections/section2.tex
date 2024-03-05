@@ -2,7 +2,7 @@
 \usepackage{../template}
 \begin{document}
 \section{Strukturtheorie zu Gruppen (``Einige Aussagen'')}
-Sei im Weiteren $M$ ein Monoid, $G$ eine Gruppe und $X$ eine Menge.
+Sei 'im Weiteren $M$ ein Monoid, $G$ eine Gruppe und $X$ eine Menge.
 \addcontentsline{toc}{section}{Wirkungen}
 \begin{defi}[\textbf{Wirkung}]
 \label{def:Wirkung}
@@ -207,7 +207,7 @@ Aus Proposition 5 folgt (a), Lemma 9 gibt (b).
 \addcontentsline{toc}{subsection}{Konjugationsklasse}
 \begin{anw*}
 Sei $X:= G$. Sei die $G$-Wirkung durch Konjugation gegeben, d.h. \[g \ubr {\circ}_{\text{Wirk.}} h = ghg^{-1}\]
-Die Bahnen unter dieser $G$-Wirkung heißen \textbf{Konjugationsklassen}. Die Konjugationsklasse zu $h \in G = X$ ist \[G_{h} := \{ghg^{-1} \mid g \in G\}\]
+Die Bahnen unter dieser $G$-Wirkung heißen \textbf{Konjugationsklassen}. Die Konjugationsklasse zu $h \in G = X$ ist \[G{h} := \{ghg^{-1} \mid g \in G\}\]
 Bahnen der Länge 1 sind Fixpunkte unter Konjugation mit allen $g \in G$
 \[= \{h \in G \mid \forall g \in G : \ubr{ghg^{-1} = h}_{gh = hg} \} =: Z(G) \text{ das Zentrum von }G\]
 Stabilisator zu $h \in G$ (unter Konjugationswirkung)
@@ -223,7 +223,7 @@ Aus Korollar 11 ergibt sich nun:
 
 \addcontentsline{toc}{subsection}{p-Gruppe}
 \begin{defi}[\textbf{$p$-Gruppe}]
-Sei $p$ eine Primzahl, eine Gruppe $G$ heißt $p$-Gruppe $\iff \# = p^{m}$ füe ein $m \in \N$
+Sei $p$ eine Primzahl, eine Gruppe $G$ heißt $p$-Gruppe $\iff \# G = p^{m}$ füe ein $m \in \N$
 \end{defi}
 \begin{bsp*}
   \[\fak \Z{(p^{m})} \text{ oder } U_{3}(\Bbb F_{p}) =
@@ -684,7 +684,7 @@ Für $n \ge 5$ ist $A_{n}$ einfach.
 
 \addcontentsline{toc}{subsection}{$p$-Sylow Gruppe}
 \begin{defi}[\textbf{$p$-Sylow Gruppe}]
-  Sei $G$ endlich, gelte $\#G = p^{f} \cd m$ für $m, f \in \N$ sodass $p \not | m$. Eine Untergruppe $H \le G$ mit $\#H = p^{f}$ heißt $p$-Sylow (Unter-)Gruppe von $G$, schreiben \[\mathrm{Syl}_{p}(G) = \{H \le G \mid H \text{ ist }p-\text{Sylow}\}\]
+  Sei $G$ endlich, gelte $\#G = p^{f} \cd m$ für $m, f \in \N$ sodass $p \nmid | m$. Eine Untergruppe $H \le G$ mit $\#H = p^{f}$ heißt $p$-Sylow (Unter-)Gruppe von $G$, schreiben \[\mathrm{Syl}_{p}(G) = \{H \le G \mid H \text{ ist }p-\text{Sylow}\}\]
   \[\mathrm{syl}_p(G) = \#\mathrm{Syl}_{p}(G)\]
 \end{defi}
 
@@ -719,7 +719,7 @@ Sei $X:= \{H \mid H \le G\}$, $X$ ist eine $G$-Menge durch Konjugation $c: G \ti
   \end{enumerate}
 \begin{proof}[Beweis]
   \begin{enumerate}[(a)]
-          \item Schreibe $\#G = p^{f}\cd m$, so dass $p \not | m$ ($m, f \in \N$), $P$ $p$-Sylow Untergruppe $\imp \#P = p^{f}$.
+          \item Schreibe $\#G = p^{f}\cd m$, so dass $p \nmid | m$ ($m, f \in \N$), $P$ $p$-Sylow Untergruppe $\imp \#P = p^{f}$.
 
           $H$ eine $p$-Gruppe in $G \underset{\text{Lagrange}}\imp \#H | p^{f} \cd m$. also $\#H | p^{f}$
 
@@ -836,8 +836,8 @@ $G$ heißt einfach $\iff $ einzige Nullteiler von $G$ sind $\{e\}$ und $G$.
 
 
 \begin{lemm}[Übung] %41
-  sei $G$ endlich, $\# G = p^{f}\cd  m$ mit $f, m \in \N, p$ Primzahl und $p \not | m$. Dann:
-  $p^{f} \not |(m-1)! \imp G$ ist nicht einfach.
+  sei $G$ endlich, $\# G = p^{f}\cd  m$ mit $f, m \in \N, p$ Primzahl und $p \nmid | m$. Dann:
+  $p^{f} \nmid |(m-1)! \imp G$ ist nicht einfach.
 \begin{proof}[Beweis]
   Idee: Sei $P \in Syl_{p}(G)$, betrachte $G$-Wirkung auf $\fak GP$ durch Linkstranslation, d.h.
   \[\rho: G \to \Bij(\fak GP), g \mapsto \ell g\]
@@ -852,7 +852,7 @@ Ist $G$ einfache Gruppe mit $\#G < 60$, so gilt $G \cong \fak \Z p$ für $p$ ein
   Sei $G$ einfach mit $\#G < 60$. o.E. $\#G$ keine Primzahl, sonst fertig.
   o.E. $G$ ist keine $p$-Gruppe für Primzahl $p$. (sonst: $Z(G) \supsetneq \{e\} \overunderset{G \text{ einfach}}{Z(G) \nt G} \imp G = Z(G)$, d.h. $G$ abelsch. $\underset{G \text{ einfach}} \imp G \cong \fak \Z p$)
 
-  Fall $\# = p^{f}m$ mit $p^{f} \not | (n-1)! \imp G$ nicht einfach (Lemma 41)
+  Fall $\# = p^{f}m$ mit $p^{f} \nmid | (n-1)! \imp G$ nicht einfach (Lemma 41)
 
   (Übung)Es bleiben $\#G \in \{\ubr{30}_{2 \cdot 3 \cdot 5}, \ubr{40}_{2^{3} \cdot 5}, \underbrace{56}_{2^{3}\cdot 7}\}$
 
@@ -1010,7 +1010,7 @@ Sei $G$ endlich, dann ist $G$ auflösbar $\iff$ die Faktoren jeder Zerlegungsrei
   \[[G,G] = \<[g, h] := ghg^{-1}h^{-1}\mid g, h \in G\>\]
   Eigenschaften:
   \begin{enumerate} [(a)]
-    \item $[G, H] \nt G$
+    \item $[G, G] \nt G$
     \item $\fak G{[G,G]}$ ist abelsch
     \item Ist $N \nt G$ ein Normalteiler mit $\fak GN$ abelsch, so gilt $[G, G] \le N$ ist Untergruppe.
     \item $H \le G$ Untergruppe $\imp [H, H] \le [G, G]$ nach Definition.
