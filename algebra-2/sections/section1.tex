@@ -1,0 +1,186 @@
+\documentclass[a4paper]{report}
+\usepackage{../template}
+\begin{document}
+
+% Lecture 1
+\section{Modules}
+Let $(R, 0, 1, +, \cd)$ or simply $R$ be a ring.
+\begin{defi}
+\begin{enumerate}[(a)]
+        \item A left $R$-module $(M, 0, +, \cd)$ or simply $M$ is an abelian group $(M, 0, +)$, together with an operation $\cd: R \tm M \to M, (r,m) \mps r \cd m = rm$, such that for all $a, b \in R, m, n \in M$
+        \begin{enumerate}[(M1)]
+          \item $a(m+n) = am+an$ and $(a+b)m = am + bm$
+          \item $a(b \cd m) = (ab) \cd m$
+                \item $1 \cd m = m$
+        \end{enumerate}
+  \item Let $M, N$ be left $R$-modules. A map $\ph : M \to N$ is called $R$-linear or a left $R$-module homomorphism $:\iff \ph: (M, 0, +) \to (N,0,+)$ is a group homomorphism, and $\forall a \in R, m \in M : \ph(am) = a\ph(m)$. Define $\Hom_{R}(M,N) = \{\ph: M \to N \mid \ph$ is $R$-linear$\}$.
+\end{enumerate}
+\end{defi}
+
+\begin{facts}[Excers.]$\forall x \in M, a \in R: 0_{R} \cd x = 0_{M}, a \cd 0_{M} = 0_{M}, (-1)\cd x = -x$
+\end{facts}
+\begin{rem}[Excers.]
+\begin{enumerate}[(a)]
+  \item $\Hom_{R}(M,N)$ is an abelian group with $0 =$ the map $M \to \{0_{N}\}$ and $\ph + \psi: M \to N, m \mps \ph(m)+\psi(m)$.
+  \item If $R$ is commutative, then $\Hom_{R}(M,N)$ is an $R$-module via \[r \cd \ph : M \to N, m \mps r \cd \ph(m)\]
+  \item If an abelian group $(M,0,+)$ carries an operation $\cd: M \tm R \to M, (m,r) \mps m \cd r$ such that:
+        \begin{enumerate}[(M1')]
+          \item $(m+n) \cd a = m \cd a + n \cd a, m \cd (a+b) = ma + mb$
+          \item $(m \cd a)\cd b = m \cd (ab)$
+                \item $m \cd 1 = m$
+        \end{enumerate}
+then $(M,0,+,\cd)$ is called a right $R$-module. Analogously we can define right $R$-module homomorphisms.
+\end{enumerate}
+\end{rem}
+\begin{conv} We shall use the term $R$-module for left $R$-module, since we will mainly work with these. In fact right $R$-modules are left $R^{\op}$-modules.
+\end{conv}
+\begin{defi}
+The opposite ring (Gegenring) of $(R,0,1,+,\cd)$ is $R\op = (R,0,1,+,\cd\op)$ with $a \cd\op b = b \cd a$
+\end{defi}
+\begin{facts}[Excersize]
+  \begin{enumerate}[(a)]
+    \item $R\op$ is a ring
+    \item $\id_{R}: R \to R$ is a ring homomorphism $\iff R$ is commutative.
+    \item $\id_{R}: R \to (R\op)\op$ is an isomorphism.
+    %\item Let $(M, 0, +)$ be an abelian group, with an operation $\cd: R \tm M \to M, (r,m) \mps m \cd\op r := r \cd m$, then $(M, 0, +, \cd)$ is a left $R$-module $\iff (M, 0, +, \cd\op)$ is a right $R\op$-module.
+  \end{enumerate}
+In particular: If $R$ is commutative, then left $R$-modules are right $R$-modules.
+\end{facts}
+\begin{rem}[Excersize]
+  Let $(M, 0, +)$ be an abelian group.
+  \begin{enumerate}[(a)]
+    \item The abelian group $\End_{\Z}(M) = \Hom_{\Z}(M,M)$ is a ring with composition as multiplication.
+    \item There is a bijection $\{$operations $*: R \tm M \to M \mid (M,0,+,*)$ is an $R$-module$\} \leftrightarrow \{$ring homomorphisms $\ph: R \to \End_{\Z}(M)\}$ via \[* \mps \ph_{*}: R \to \End_{\Z}(M), r \mps (\ph_{*}(r): m \mps r \cd m)\]figure out an inverse.
+    \item If $M$ is an $R$-module, then $\End_{R}(M) \subseteq \End_{\Z}(M)$ is a subring
+    \item The map $R\op \to \End_{R}(R), r \mps \rho_{r}: a \mps a \cd r$ is a ring isomorphism. The inverse is $\End_{R}(R) \to R\op, \ph \mps \ph(1)$
+  \end{enumerate}
+\end{rem}
+
+\begin{exmp}
+\begin{enumerate}[(a)]
+        \item Let $K$ be a field, $K$-modules are $K$-vector spaces and vice versa.
+  \item If $(M, 0, +)$ is an abelian group, it is in a unique way a $\Z$-module.
+  \item Let $K$ be a field, $R = M_{n \tm n}(K), n > 1, V_{n}(K) =$ column $Z_{n}(K)$ row vectors of length $n$ over $K$, then:
+        \begin{itemize}
+          \item $V_{n}(K)$ is a left $R$-module.
+                \item $Z_{n}(K)$ is a right $R$-module.
+        \end{itemize}
+  \item $R$ is a left $R$-module and right $R$ module with multiplication.
+  \item If $M_{1}$ and $M_{2}$ are $R$-modules, we can define on $M_{1} \tm M_{2}$ a $R$-module structure via
+        \[r \cd (m_{1}, m_{2}) := (rm_{1}, rm_{2})\] (group structure from Algebra 1)
+        \item $\Hom_{R}(R, M) \to M, \ph: \ph(1)$ is an isomorphism of abelian groups, and if $R$ is commutative, then also an isomorphism of $R$-modules.
+\end{enumerate}
+\end{exmp}
+
+\begin{defi}
+An $R$-linear map $\ph: M \to M'$ is called a monomorphism/epimorphism/isomorphism $\iff \ph$ is injective/surjective/bijective respectively. We say $R$-modules $M, M'$ are isomorphic if there exists an isomorphism $M \to M'$.
+\end{defi}
+\begin{rem*}
+$\ph$ is an $R$-linear isomorphism $\iff \ph^{-1}$ is an $R$-linear isomorphism.
+\end{rem*}
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item Let $M$ be an $R$-module. A subset $N \subseteq M$ is an $R$-submodule if it is a subgroup and $\forall a \in R, n \in N : a \cd n \in N$ (i.e. $R \cd N \subseteq N$)
+  \item An $R$-submodule $I \subseteq R$ is called a left ideal.
+        \item $I \subseteq R$ is called a two sided ideal iff it is a left ideal and $I \cd R \subseteq I$
+\end{enumerate}
+\end{defi}
+
+\begin{exmp}
+\begin{enumerate}[(a)]
+  \item If $N' \subseteq N$ and $M' \subseteq M$ are $R$-submodules of $R$-modules $M$ and $N$ and if $\ph: M \to N$ is an $R$-linear map, then: \[\ph(M') \subseteq N \text{ and } \ph^{-1}(N') \subseteq M\]
+        are $R$-submodules. In particular $\ker(\ph) \le M$ and $im(\ph) \le N$ are submodules.
+  \item If $(M_{i})_{i \in I}$ is a family of submodules of $M$, then $\bigcap_{i \in I}M_{i} \subseteq M$ is the largest submodule of $M$ contained in all $M_{i}$, and \[\sum_{i \in I} M_{i} = \{\sum_{i \in I}m_{i} \mid m_{i \in M)i}, \#\{i \mid m_{i \ne 0}\} < \infty\}\]
+        is the smallest submodule of $M$ containing all $M_{i}$.
+        \item 2-sided ideals of $M_{n \tm n}(R)$ are of the form $M_{n \tm n}(I)$ for $I \subseteq R$ a 2-sided ideal.
+\end{enumerate}
+\end{exmp}
+
+\subsection*{Quotient Modules}
+\begin{defi}
+  Let $N \subseteq N$ be a submodule. From linear algebra $(\fak MN, \bar 0, \bar +)$ is an abelian group. ($\bar m = m + N$ are the equivalence classes and $\bar m + \bar m' = \bar{m+m'}$). This is an $R$-module (exercise) via \[\bar \cd : R \tm \fak MN \to \fak MN: (r, m+N) \mps rm + N\]
+  We call $\fak MN$ (with $\bar 0, \bar +, \bar \cd$) the quotient module of $M$ by $N$, and we write \[\pi_{N \subseteq M}: M \twoheadrightarrow \fak MN, m \mps m+N\]
+\end{defi}
+\begin{defi}
+  If $I \subseteq R$ is a 2-sided ideal of $R$, then
+  \begin{enumerate}[(a)]
+    \item $I \cd M := \{\sum_{i \in I} a_{i} \cd m_{i} \mid I$ finite, $a_{i \in I, m_{i} \in M}\}$ is an $R$-submodule of $M$ ($M$ an $R$-module)
+          \item $(\fak RI, \bar 0, \bar 1, \bar +, \bar \cd)$ is a ring, and $\fak M{I \cd M}$ is an $\fak RI$-module.
+  \end{enumerate}
+\end{defi}
+The following 3 results are proved as for groups:
+\begin{thm}[Homomorphism theorem]
+  Let $\ph: M \to M'$ be an $R$-linear map, then
+  \begin{enumerate}[(a)]
+    \item $\forall$ submodules $N \subseteq \ker(\ph): \ex ! R$-linear map $\bar \ph : \fak MN \to M', m+N \mps \ph(m)$ such that $\ph = \bar \ph \circ \pi_{N \subseteq M}$
+          \item For $N = \ker(\ph)$, the map $\bar \ph : \fak M{\ker(\ph)} \to im(\ph)$ is an $R$-module isomorphism.
+  \end{enumerate}
+\end{thm}
+\begin{thm}(First isomorphism theorem)
+  Let $M$ be an $R$-module and $N_{1}, N_{2} \le M$ be $R$-submodules. Then the map \[\fak {N_{1}}{N_{1} \cap N_{2}} \to \fak {N_{1} + N_{2}}{N_{2}}, n_{1} + N_{1} \cap N_{2} \mps n_{1} + N_{2}\]
+  is a well-defined $R$-linear isomorphism.
+  \[\begin{tikzcd}
+                        & N_1+N_2 \arrow[ld, no head]      &                         \\
+N_1 \arrow[rd, no head] &                                  & N_2 \arrow[lu, no head] \\
+                        & N_1 \cap N_2 \arrow[ru, no head] &
+\end{tikzcd}\]
+\end{thm}
+\begin{thm}[Second isomorphism theorem]
+  Let $M$ be an $R$-module and $N \le M$ an $R$-submodule. Then
+  \begin{enumerate}[(a)]
+    \item The following maps are bijective and mutually inverse to each other:
+          \begin{align*}
+            \{N' \subseteq M \text{ submodule} \mid N \subseteq N'\} &{\overunderset \ph \psi \rightleftarrows} \{\bar N \subseteq \fak MN \text{ submodule}\} \\
+            \ph: N {\mps} \fak {N'}N \quad & \quad\ \pi_{N \subseteq M}^{-1}(\bar N) {\mpsfrom} \bar N : \psi
+          \end{align*}
+    \item For $N' \subseteq M$ a submodule with $N \subseteq N'$ we have the $R$-linear isomorphism:
+          \[\fak{(M/N)}{(N'/N)} \to \fak M{N'}, \bar m + \fak {N'}M \mps m+N'\]
+  \end{enumerate}
+\end{thm}
+
+\subsection*{Direct sums and products}
+Let $(M_{i})_{i \in I}$ be a family of $R$-modules.
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item $\prod_{i \in I}M_{i} = \{(m_{i})_{i \in I} \mid m_{i} \in M_{i}, \forall i \in I\}$ is an $R$-module with component-wise operations:
+        \[(m_{i})_{i \in I} + (n_{i})_{i \in I} =(m_{i}+n_{i})_{i \in I}\]
+        \[r \cd (m_{i})_{i \in I} = (r \cd m_{i})_{i \in I}, \quad r \in R\]
+        is called the (direct) product of $(M_{i})_{i \in I}$. One has the projection maps ($R$-module epimorphisms):\[\pi_{i_{0}}: \prod_{i \in I} M_{i} \to M_{i_{0}}, (m_{i}) \mps m_{i_{0}}\]
+        \item $\bigoplus_{i \in I}M_{i} = \{(m_{i})_{i \in I} \in \prod_{i \in I} M_{i} \mid \{i \mid m_{i} \ne 0\} < \infty \}$ is an $R$-submodule of $\prod_{i \in I} M_{i}$. It is called the direct sum of $(M_{i})_{i \in I}$. One has $R$-module monomorphisms \[\iota_{i_{0}} : M_{i_{0}} \to \bigoplus_{i \in I} M_{i}, m_{i_{0}} \mps (\iota_{i_{0}}(m_{i_{0}}))\]
+where the $i$-th component of $\iota_{i_{0}}(m_{i_{0}})$ is given by $\begin{cases} m_{i_{0}}, & i = i_{0}, \\ 0, & \text{otherwise}
+\end{cases}$
+\end{enumerate}
+\end{defi}
+\begin{thm}[Universal property of the direct product/sum]
+\begin{enumerate}[(a)]
+        \item $\forall R$-modules $M$, the map
+        \[\Hom_{R}(M, \prod_{i \in I}M_{i}) \xrightarrow{\cong} \prod_{i \in I} \Hom_{R}(M, M_{i}), \ph \mps (\pi_{i} \circ \ph)_{i \in I}\]is well defined, bijective and a group isomorphism.
+        \item $\forall R$-modules $M$, the map
+        \[\Hom_{R}(\bigoplus_{i \in I}M_{i}, M) \xrightarrow{\cong} \prod_{i \in I} \Hom_{R}(M_{i}, M), \psi \mps (\psi \cd \iota_{i})_{i \in I}\]is well defined, bijective and a group isomorphism.
+\end{enumerate}
+\begin{proof}
+  \begin{enumerate}[(a)]
+    \item The inverse map is given by sending \[\underline \ph:= (\ph_{i}: M \to M_{i})_{i \in I} \in \prod_{i \in I}\Hom_{R}(M, M_{i})\]
+          to \[\pi_{\underline \ph} : M \to \prod_{i \in I}M_{i}, m \mps (\ph_{i}(m))_{i \in I}\]
+          now check: $\underline \ph \mps \pi_{\underline \ph}$ is inverse to the map in (a).
+    \item The map is given by sending $\bar \ph = (\ph_{i} : M _{i} \to M)_{i \in I}$ to
+          \[\coprod_{\bar \ph} : \bigoplus_{i \in I}: M_{i} \to M, (m_{i})_{i \in I} \mps \sum_{i \in I} \ph_{i}(m_{i})\]
+          %TODO remark about finiteness
+  \end{enumerate}
+\end{proof}
+\end{thm}
+
+\begin{cor}[Important special case]
+  Let $I$ be finite, then:
+  \begin{enumerate}[(a)]
+    \item $M := \prod_{i \in I} M_{i} \overset != \bigoplus_{i \in I}M_{i}$
+    \item The maps $M_{i} \overunderset {\iota_{i}}{\pi_{i}}\rightleftarrows M$ satisfy \[\pi_{i} \circ \iota_{j} = \begin{cases} \id_{M_{i}},& i = j, \\ 0, &\text{otherwise}\end{cases}\quad \text{and}\quad \sum_{i \in I}\iota_{i} \circ \pi_{i} = \id_{M}\]
+          \item If $M'$ is a module with maps $M_{i} \overunderset {\iota_{i}'}{\pi_{i}'}\rightleftarrows M'$ such that the formulas above hold, then $M \cong M'$
+  \end{enumerate}
+\end{cor}
+
+
+
+% Lecture 2
+\end{document}
