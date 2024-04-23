@@ -64,11 +64,13 @@
 \newtheorem*{rem*}{Remark}
 \newtheorem{conv}[thm]{Convention}
 \newtheorem{exmp}[thm]{Example}
+\newtheorem*{exmp*}{Example}
 \newtheorem{bsp}[thm]{Beispiel}
 \newtheorem*{bsp*}{Beispiel}
 \newtheorem*{defi*}{Definition}
 \newtheorem*{bspe*}{Beispiele}
 \newtheorem{Conc}[thm]{Conclusion}
+\newtheorem{nota}[thm]{Notation}
 \newtheorem*{nota*}{Notation}
 \newtheorem*{rech*}{Rechenregeln}
 \newtheorem{whg}[thm]{Wiederholung}
@@ -79,6 +81,7 @@
 \newtheorem*{ubng*}{Übung}
 \newtheorem{loes}[thm]{Lösung}
 \newtheorem{exer}[thm]{Exercise}
+\newtheorem*{exer*}{Exercise}
 \newtheorem{soln}[thm]{Solution}
 
 \let \ph \varphi
@@ -109,7 +112,7 @@
 \newcommand{\imp}{\implies}
 \newcommand{\impb}{\impliedby}
 %\newcommand{\1n}{ \{1, \dots, n\} }
-\newcommand{\fak}{\faktor}
+%\newcommand{\fak}{\faktor}
 \renewcommand{\l}{\left}
 \renewcommand{\r}{\right}
 \newcommand{\nt}{\trianglelefteq}
@@ -123,6 +126,7 @@
 \DeclareMathOperator{\id}{id}
 %\renewcommand{\ker}{\operatorname{Kern}}
 %\DeclareMathOperator{\bil}{Bild}
+\DeclareMathOperator{\im}{im}
 
 \DeclareMathOperator{\Abb}{Abb}
 \DeclareMathOperator{\Bij}{Bij}
@@ -158,6 +162,7 @@
 \DeclareMathOperator{\Quot}{Quot}
 
 \newcommand{\eb}[1]{\{1, \ldots, #1\}}
+\newcommand{\nb}[1]{\{0, \ldots, #1\}}
 
 \newcommand{\Sn}{S_n}
 % Topologie
@@ -166,6 +171,7 @@
 \renewcommand{\a}{\alpha}
 \renewcommand{\b}{\beta}
 \newcommand{\mps}{\mapsto}
+\newcommand{\m}{\mathfrak{m}}
 \newcommand{\mpsfrom}{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
 \newcommand{\tm}{\times}
 \newcommand{\en}{^\times}
@@ -202,3 +208,19 @@
 \DeclareMathSymbol{\bigtimes}{1}{mathx}{"91}
 
 \DeclareMathOperator*{\bigforall}{\scalerel*{\forall}{\sum}}
+
+\newcommand\fak[2]{
+        \mathchoice
+            {% \displaystyle
+                \text{\raise1ex\hbox{$#1$}\Big/\lower1ex\hbox{$#2$}}%
+            }
+            {% \textstyle
+                #1/#2
+            }
+            {% \scriptstyle
+                #1\,/\,#2
+            }
+            {% \scriptscriptstyle
+                #1\,/\,#2
+            }
+    }

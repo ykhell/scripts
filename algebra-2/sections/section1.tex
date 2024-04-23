@@ -166,7 +166,7 @@ where the $i$-th component of $\iota_{i_{0}}(m_{i_{0}})$ is given by $\begin{cas
           now check: $\underline \ph \mps \pi_{\underline \ph}$ is inverse to the map in (a).
     \item The map is given by sending $\bar \ph = (\ph_{i} : M _{i} \to M)_{i \in I}$ to
           \[\coprod_{\bar \ph} : \bigoplus_{i \in I}: M_{i} \to M, (m_{i})_{i \in I} \mps \sum_{i \in I} \ph_{i}(m_{i})\]
-          %TODO remark about finiteness
+          %LATER remark about finiteness
   \end{enumerate}
 \end{proof}
 \end{thm}
@@ -183,4 +183,196 @@ where the $i$-th component of $\iota_{i_{0}}(m_{i_{0}})$ is given by $\begin{cas
 
 
 % Lecture 2
+\subsection{Generators and bases}
+From now onwards let $R$ be a unitary ring and $M, M', N$ be $R$-modules.
+\begin{nota*}
+  \begin{itemize}
+    \item For $I$ a set we write $M^{I}:= \prod_{i \in I}M$ and $M^{(I)}:= \bigoplus_{i \in I}M$ (where $M_{i} = M, \forall i \in I$).
+          \item For $r \in \N$ we will write $M^{r}:= M^{\eb r}$, so if $I$ is finite then $M^{I} = M^{\#I} = M^{(I)}$
+  \end{itemize}
+\end{nota*}
+
+\begin{defi} %20
+  For $\underline m = (m_{i})_{i \in I} \in M^{(I)}$ we define a map $\ph_{\underline m}: R^{(I)} \to M, (r_{i}) \mps \sum_{i \in I}r_{i} \cd m_{i}$ where $r_{i}$ is non-zero only for finitely many $i$. %TODO organize
+  We can also define $\ph_{\underline m}$ via the universal property of $R^{(I)}$ using maps $R \to M, r \mps r \cd m_{i}$ at component $i \in I$. %TODO make sure statement is right, watch the video.
+  \begin{enumerate}[(a)]
+    \item $\underline m$ is a generating set of $M \iff \ph_{\underline m}$ is surjective.
+    \item $\underline m$ is a basis of $M \iff \ph_{\underline m}$ is an isomorphism.
+    \item $M$ is a free $R$-module $\iff M$ has a basis.
+    \item $\underline m$ is finitely generated $\iff$ it has a finite generating set.
+    \item $\underline m$ is linearly independent $\iff \ph_{\underline m}$ is injective.
+  \end{enumerate}
+\end{defi}
+
+\begin{rem*}
+  Let $\iota_{j}: R \to R^{(I)}$ be the inclusion of the component $j \in I$ (1.18) and set $e_{j}:= \iota_{j}(1)$. Then we call $(e_{j})_{j \in I}$ the standard basis of $R^{(I)}$.
+\end{rem*}
+  \begin{exmp*}
+\begin{enumerate}[(a)]
+  \item If $K$ is a field, then any $K$-vector space has a basis.
+        \item If $R = \Z$, then $M = \fak \Z{(3)}$ is finitely generated but not free (exercise).
+\end{enumerate}
+
+  \end{exmp*}
+  \begin{rem}%21
+    Every $R$-module is a quotient of a free $R$-module.
+\end{rem}
+\begin{proof}
+Let $R^{(M)}$ be the free $R$-module over the index set $M$, then \[\ph_{\underline m}: R^{(M)} \to M, (r_{m})_{m \in M} \mps \sum_{m \in M}r_{m} \cd m\] is surjective for $\underline m = (m)_{m \in M}$.
+\end{proof}
+\begin{thm}%22
+Let $R$ be commutative, then for $n_{1}, n_{2} \in \Nn$, then we have $R^{n_{1}} \cong R^{n_{2}} \iff n_{1} = n_{2}$.
+\end{thm}
+\begin{proof}
+\begin{itemize}%TODO look at the whole thing
+  \item ``$\impliedby$'': (By induction to linear algebra.) Let $\m \subseteq R$ be a maximal ideal. (Axiom of choice) Consider for $n \in \N$ the map $\ph_{n}: R^{n} \to (\fak R\m)^{n}, (r_{1}, \ldots r_{n}) \mps (r_{i} \mod n)_{i \in \eb n}$. Then $\ph_{n}$ is surjective with kernel $\m^{n} \in R^{n} \imp \fak{R^{n}}{\m^{n}} \cong (\fak R\m)^{n}$ by the homomorphism theorem. Now suppose $\psi: R^{n_{1}} \to R^{n_{2}}$ is an isomorphism. We show $n_{1} \ge n_{2}$ (by symmetry of argument we get $n_{1} = n_{2}$).
+        Consider the map
+        \[\begin{tikzcd}
+R^{n_1} \arrow[r, "\cong"] \arrow[rr, "\rho"', bend right] & R^{n_2} \arrow[r, two heads] & \displaystyle\fak{R^{n_2}}{\m^{n_2}}
+\end{tikzcd}\]
+        this map is surjective and contains $\m^{n_{1}}$ in its kernel (check this). By the homomorphism theorem we get a surjective homomorphism \[\l(\fak R\m\r)^{n_{1}} = \fak{R^{n_{1}}}{\m^{n_{1}}} \to \fak{R^{n_{2}}}{\m^{n_{2}}} = \l(\fak R\m\r)^{n_{2}}\]
+        by linear algebra we conclude that $n_{1} \ge n_{2}$.
+\end{itemize}
+\end{proof}
+
+\begin{defi}%23
+If $M$ is free and finitely generated, then define $\mathrm{rank}(M)$ (the rank of $M$) as the unique $n \in \Nn$ such that $M \cong R^{n}$.
+\end{defi}
+
+\begin{rem*}
+If $R$ is non-commutative, then the rank of the finitely generated $R$-modules is not well-defined. (Jantzen Schwermer Bsp VII.4.2: $R \cong M \cong R^{2}$ for $R = \End_{K}(K[X])$)
+\end{rem*}
+
+\subsection{Exact sequences}
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item A diagram of $R$-modules \[M' \xrightarrow{f} M \xrightarrow{g}M''\]
+        is called exact (at $M$) $:\iff \ker(g) = \mathrm{im}(f)$
+  \item An exact sequence of $R$-modules is a family $(f_{j})_{j \in J}$ of $R$-module homomorphisms $f_{j}: M_{j} \to M_{j+1}$ index of an interval $J \subseteq \Z$, such that $\forall j \in J : j+1 \in J$, the sequence
+        \[M_{j} \xrightarrow{f_{j}} M_{j+1} \xrightarrow{f_{j+1}}M_{j+2}\]
+        is exact (at $M_{j+1}$). Other notation: %Read what he says
+        \[M_{j_{0}} \xrightarrow{f_{j_{0}}} M_{j_{0}+1} \xrightarrow{f_{j_{0}+1}} \cdots \to M_{j+2}\]
+        \item An exact sequence $0 \to M' \to M \to M'' \to 0$ is called a short exact sequence (s.e.s.)
+\end{enumerate}
+\end{defi}
+
+\begin{rem*}
+  \begin{itemize}
+  \item $0 \to M' \xrightarrow{f} M$ is exact $\overset{\text{Exercise}}\iff f$ is injective.
+  \item $M \xrightarrow{g} M'' \to 0$ is exact $\overset{\text{Exercise}}\iff g$ is surjective.
+  \end{itemize}
+  ($0$ stands for the $0$-module $\{0\}$)
+\end{rem*}
+\begin{exmp}
+  Let $f: M \to N$ be an $R$-module homomorphism. Then one defines
+  \[\mathrm{coker}(f):= \fak N{\mathrm{im}(f)}\]
+ as the cokernel of $f$ , it comes toether with an $R$-module epimorphism $\pi: N \to \mathrm{coker}(f)$. As an exercise: The sequence
+  \[0 \to \ker(f) \xrightarrow{i} M \xrightarrow f N \xrightarrow \pi \mathrm{coker}(f) \to 0\]
+  is exact. Subexamples:
+  \begin{itemize}
+    \item If $f$ is injective, then $0 \to M \xrightarrow f N \to \mathrm{coker}(f) \to 0$ is exact.
+          \item If $f$ is surjective, then $0 \to \ker(f) \to M \xrightarrow f N \to 0$ is exact.
+  \end{itemize}
+\end{exmp}
+
+\begin{rem*}
+  For $R$-module homomorphisms $M' \xrightarrow \a M \xrightarrow \b M''$ with $\b \circ \a = 0$, the following are equivalent:
+  \begin{enumerate}[(i)]
+    \item $0 \to M' \xrightarrow \a M \xrightarrow \b M'' \to 0$ is a s.e.s.
+    \item $\b$ is surjective and $\a: M' \to \ker(\b)$ is an isomorphism.
+          \item $\a$ is injective and the homomorphism theorem induces an isomorphism $\mathrm{coker}(\a) \cong \fak M{\mathrm{im}(\a)} \to M''$
+  \end{enumerate}
+  ($\b \circ \a = 0 \iff \mathrm{im}(\a) \subseteq \ker(\b)$)
+\end{rem*}
+
+
+\begin{prop}[Exercise]
+\begin{enumerate}[(a)]
+  \item Let $0 \to M_{i}' \to M_{i} \to M_{i}'' \to 0$ be short exact sequences $\forall i \in I$, then we get short exact sequences
+        \[0 \to \bigoplus_{i \in I}M_{i}' \to \bigoplus_{i \in I}M_{i} \to \bigoplus_{i \in I}M_{i}'' \to 0\]
+        \[0 \to \prod_{i \in I}M_{i}' \to \prod_{i \in I}M_{i} \to \prod_{i \in I}M_{i}'' \to 0\]
+      \item Suppose $0 \to V_{0} \xrightarrow {f_{0}} V_{1} \xrightarrow{f_{1}} \cdots \xrightarrow {f_{n-1}} V_{n} \to 0$ is an exact sequence of finite dimensional $K$-vector spaces, then: \[\sum(-1)^{i} \dim_{K}(V_{i}) = 0.\]
+\end{enumerate}
+
+\end{prop}
+
+\begin{nota}[Commutativity of diagrams]
+A diagram of $R$-modules is a directed graph, where any vertex is an $R$-module and any arrow is an $R$-linear map from the module at its source to the module at its target. We call two arrows composable if the target of the first arrow is the source of the second; then the correspoding maps can be composed. So to any chain of composable arrows, the composition of maps defines a map from the source of the first to the target of the last arrow in the chain. A diagram is \textbf{commutative} if for any two chains of arrows with the same source and target, the resulting two maps agree.
+\end{nota}
+\begin{exmp*}
+  \begin{enumerate}[(a)]
+  \item To say that the diagram
+\[\begin{tikzcd}.
+M_1 \arrow[r, "f"] \arrow[d, "g"'] & M_2 \arrow[d, "g'"] \\
+M_3 \arrow[r, "f'"']               & M_4
+\end{tikzcd}\]
+commutes means that $g' \circ f = f' \circ g$.
+\item $M \overunderset fg \rightleftarrows N$ commutes $\iff g = h$
+   \end{enumerate}
+ \end{exmp*}
+
+\begin{thm-defi}
+  For a short exact sequence of $R$-modules %TODO fix the thing like in the VL
+  \[\begin{tikzcd}
+0 \arrow[r] & M' \arrow[r, "f"] & M \arrow[r, "g"] \arrow[l, "s", dashed, bend left] & M'' \arrow[r] \arrow[l, "t", dashed, bend left] & 0
+\end{tikzcd} \quad (*)\]
+  the following are equivalent:
+  \begin{enumerate}[(a)]
+    \item $\ex R$-linear map $t: M'' \to M$ such that $g \circ t = \id_{M''}$
+    \item $\ex$ submodule $N \subseteq M$ such that \[\psi: \im(f) \oplus N \to M, (b,n) \mps b+n\]
+          is an isomorphism.
+          \item $\ex R$-linear map $s: M \to M'$ such that $s \circ f = \id_{M'}$.
+  \end{enumerate}
+  In this case (if (a) - (c) hold), then the sequence $(*)$ is called a split exact sequence. (simply $(*)$ is split or splits), and $t$ (or $s$) is called a splitting of $g$ (or of $f$ respectively).
+  \begin{proof}
+    \begin{itemize}
+      \item $(a){\imp}(b)$: Given $t$, define $N:= \im(t)$ and $\psi$ as above, i.e. $\psi: \im(f) \oplus N \to M, (b,n) \mps b+n$
+            \begin{itemize}
+              \item $\ker(\psi) = 0$: Let $(b,n) \in \ker(\psi)$, i.e. $n = t(m'')$, for some $m'' \in M''$ and $b = f(m')$ for some $m' \in M'$ and $n+b = 0$ ($\psi(b,n) = 0$).
+              \item Apply $g: M \to M''$: \[\ubr{g(n+b)}_{0} = \ubr{g(t(m''))}_{g \circ t = \id_{M''}} + \ubr{g(f(m'))}_{g \circ f = 0} = m''+0\]
+                    $\imp m'' = 0 \imp n = t(m'') = 0 \underset{n+b=0}\imp b=0 \imp (b,n) = (0,0)$
+                    \item $\im(\psi) = M$: Let $m \in M$, define $n = t(g(m))$ and $b = m-n$. So $n \in N = \im(f)$. $b \in \im(f)$?, to show $b \in \ker(g)$. For this $g(b) = g(m-n) = g(m) - \ubr{g(t(g(m)))}_{g\circ t = \id_{M''}} = g(m) - g(m)= 0$, so $(b,n) \in \im(f) \oplus N$ and $\psi(b,n) = b+n = m$ by definition of $b$.
+            \end{itemize}
+      \item $(c) {\imp} (b)$ analogous. Define $N = \ker(s)$ ($M' \overunderset fs \rightleftarrows M$). We want to show $\im(f) \oplus N \to M, (b,n) \to b+n$ is an isomorphism.
+            \begin{itemize}
+              \item $\ker(\psi) = 0$: Check.
+              \item $\im(\psi) = M$: For $m \in M$ observe that \[\ubr{f \circ s(m)}_{\in \im(f)} + \ubr{(m-f\circ s(m))}_{\in \ker(s) \text{ check. }} = m\]
+            \end{itemize}
+
+      \item $(b) \to (a)$ and $(c)$: Consider the diagram:
+            \[
+\begin{tikzcd}[column sep= 20, row sep = 20]
+0 \arrow[r] & M' \arrow[r, "f'"] \arrow[d, "\id_{M'}"] \arrow[r, "{\small \ \ \ \ m' \mps (f(m'),0)}"'] & \im(f) \oplus N \arrow[r, "g'"] \arrow[d, "\psi"] \arrow[l, dashed, bend right] \arrow[r, "{\small (b,n) \mps g(n)}"'] & M'' \arrow[r] \arrow[d, "\id_{M''}"]            & 0 \\
+0 \arrow[r] & M' \arrow[r, "f"]                                                                 & M \arrow[r, "g"] \arrow[l, "?", dashed, bend left]                                                                     & M'' \arrow[r] \arrow[l, "?", dashed, bend left] & 0
+\end{tikzcd}
+            \]
+            The diagram commutes. $\psi \circ f' = f, g \circ \psi = g'$, e.g: \[\psi \circ f'(m') = \psi(f(m'), 0) = f(m') + 0 = f(m')\] and
+            \[g \circ \psi(b,n) = g(b+n) = \ubr{g(b)}_{=0} = g(n) = g(n) = g'(b,n)\]
+            ($g(b) = 0$ is because $b \in \im(f) = \ker(g)$).
+
+      \item For $s$: $f: M' \to \im(f)$ is an isomorphism ($f$ is injective) $\imp f^{-1}: \im(f) \to M'$ is an isomorphism. Check
+            \[s = (f^{-1},0) \circ \psi^{-1}: \begin{tikzcd}[row sep = 30]
+M \arrow[r, "\psi^{-1}"] & \im(f) \oplus N \arrow[r, "{\begin{matrix}(b,n) \mps f^{-1}(b) \\ \end{matrix}}"] & M'
+\end{tikzcd}\]
+      \item For $t$: Check that $s : N \to M''$ is an isomorphism using (b). Set $t:= i \circ g^{-1}$ for $i$ the inclusion so \[t: M'' \to N \hookrightarrow M\]Check. \qedhere
+\end{itemize}
+  \end{proof}
+\end{thm-defi}
+\begin{rem*}
+  $M' \overunderset fs \rightleftarrows M $ and $M'' \overunderset tg \rightleftarrows M $ satisfy the condition from corollary 1.19, namely:
+  \begin{itemize}
+    \item $s \circ f = \id_{M'}$
+    \item $g \circ t = \id_{M''}$
+    \item $t \circ g + f \circ s = \id_{M}$
+  \end{itemize}
+  shows again: the sequence is split if $M \cong M' \oplus M''$ (for the ``right maps'')
+\end{rem*}
+\begin{rem*}
+  One also has short exact sequences for groups
+  \[1 \to \ker(\pi) \overset s \leftrightarrows G \overunderset t \pi \leftrightarrows \bar G \to 1\]
+  Here one has to be careful what splitting means. Having a $t$ is not equivalent to having an $s$.
+  \[\ex t \iff G \cong \ker(\pi) \rtimes \bar G\]
+  \[\ex s \iff G \cong \ker(\pi) \tm \bar G\]
+\end{rem*}
+
 \end{document}

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  17 APR 2024 16:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  23 APR 2024 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/yousef/scripts/algebra2/sections/section1.tex
-(/Users/yousef/scripts/algebra2/sections/section1.tex
+**/Users/yousef/scripts/algebra-2/sections/section1.tex
+(/Users/yousef/scripts/algebra-2/sections/section1.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/base/report.cls
@@ -789,24 +789,31 @@ Overfull \hbox (12.3032pt too wide) in paragraph at lines 157--158
 []$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules
  []
 
-[4] [5] (./section1.aux)
+[4] [5]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 228
+.
+ (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+[6] [7] [8]
 
-Package rerunfilecheck Warning: File `section1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Font Warning: Command \small invalid in math mode on input line 347.
 
-Package rerunfilecheck Info: Checksums for `section1.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  891677EAC87545043B8E714ADABB9CA5;80.
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 347.
+
+[9] [10] (./section1.aux)
+Package rerunfilecheck Info: File `section1.out' has not changed.
+(rerunfilecheck)             Checksum: D9FC120FDCC77E1404D5BB285425E818;386.
  ) 
 Here is how much of TeX's memory you used:
- 22025 strings out of 477476
- 423741 string characters out of 5824243
- 1872388 words of memory out of 5000000
- 41818 multiletter control sequences out of 15000+600000
- 518494 words of font info for 55 fonts, out of 8000000 for 9000
+ 22420 strings out of 477476
+ 432381 string characters out of 5824243
+ 1880388 words of memory out of 5000000
+ 42172 multiletter control sequences out of 15000+600000
+ 519501 words of font info for 59 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,15n,117p,547b,1080s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,21n,117p,673b,1204s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/
 ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
@@ -822,14 +829,15 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023basi
 c/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023b
 asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/20
 23basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texliv
-e/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/loc
-al/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-</usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm7.pfb>
-Output written on section1.pdf (5 pages, 187082 bytes).
+e/2023basic/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local
+/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></
+usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm7.pfb>
+Output written on section1.pdf (10 pages, 228718 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
- 65 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 264 PDF objects out of 1000 (max. 8388607)
+ 214 compressed objects within 3 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 37 words of extra memory for PDF output out of 10000 (max. 10000000)
 
