@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  23 APR 2024 16:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  30 APR 2024 09:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -812,44 +812,84 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 347.
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 347.
 
-[9]) [10] (./main.aux)
+[9] [10] [11]
+Overfull \hbox (6.14203pt too wide) in paragraph at lines 439--440
+[]\OT1/cmr/m/it/10 If $\OML/cmm/m/it/10 M[] [] R[]$ \OT1/cmr/m/it/10 and $\OML/
+cmm/m/it/10 M[] [] R[]$\OT1/cmr/m/it/10 , then $\OML/cmm/m/it/10 M [] R[]$\OT1/
+cmr/m/it/10 . In par-tic-u-lar, $\OML/cmm/m/it/10 rank\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 M\OT1/cmr/m/n/10 ) =
+ []
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: (c) on input line 443.
+
+[12]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 499.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\oplus' on input line 499.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 499.
+
+[13] [14] [15] [16]
+Overfull \hbox (4.47374pt too wide) in paragraph at lines 699--700
+[]\OT1/cmr/m/n/10 Assume $\OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 n[]; n[] \OMS/cmsy
+/m/n/10 2 \U/msb/m/n/10 N[]$ \OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 R[] []
+ R[]$\OT1/cmr/m/n/10 , then $\OML/cmm/m/it/10 R[] [] R[] \OMS/cmsy/m/n/10 ^^H \
+OML/cmm/m/it/10 R[]  \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )
+ []
+
+
+Overfull \hbox (19.43883pt too wide) in paragraph at lines 717--718
+[]\OT1/cmr/m/n/10 Simple $\OML/cmm/m/it/10 K$\OT1/cmr/m/n/10 -vector spaces are
+ the 1-dimensional $\OML/cmm/m/it/10 K$\OT1/cmr/m/n/10 -vectorspaces. 
+ []
+
+[17]) [18] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C346756F0CE00F910098FE135B35A56F;473.
+(rerunfilecheck)             Checksum: 5AC595DC3B940FF368DA973A527D7699;1592.
  ) 
 Here is how much of TeX's memory you used:
- 22466 strings out of 477476
- 432879 string characters out of 5824243
- 1878388 words of memory out of 5000000
- 42204 multiletter control sequences out of 15000+600000
- 526670 words of font info for 86 fonts, out of 8000000 for 9000
+ 23310 strings out of 477476
+ 452643 string characters out of 5824243
+ 1889388 words of memory out of 5000000
+ 42954 multiletter control sequences out of 15000+600000
+ 528383 words of font info for 93 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,21n,117p,691b,1204s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,21n,117p,691b,1220s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/
 ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023basic/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023basic/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023basic/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023basic/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023basic/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023basic/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023basi
-c/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023ba
-sic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-23basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive
-/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
-ive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
-texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr
-/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
-pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfon
-ts/symbols/msbm7.pfb>
-Output written on main.pdf (11 pages, 253204 bytes).
+pe1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2023basic/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023basic/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023basic/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023basic/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023basi
+c/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023b
+asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/20
+23basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/
+2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local
+/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/lo
+cal/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
+r/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.p
+fb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publi
+c/amsfonts/symbols/msbm7.pfb>
+Output written on main.pdf (19 pages, 306335 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
- 100 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 444 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
+ 194 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

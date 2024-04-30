@@ -1,12 +1,12 @@
 (TeX-add-style-hook
  "template"
  (lambda ()
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "amsfonts"
@@ -27,6 +27,7 @@
    (TeX-add-symbols
     '("mfaktor" ["argument"] 2)
     '("fak" 2)
+    '("ebe" 2)
     '("nb" 1)
     '("eb" 1)
     "N"
@@ -46,6 +47,7 @@
     "obr"
     "ex"
     "imp"
+    "nimp"
     "impb"
     "nt"
     "ent"
@@ -60,9 +62,11 @@
     "m"
     "mpsfrom"
     "tm"
+    "opl"
+    "otm"
+    "cd"
     "en"
     "op"
-    "cd"
     "ld"
     "cds"
     "cld"
@@ -84,6 +88,7 @@
     "facts"
     "conv"
     "exmp"
+    "exmps"
     "bsp"
     "Conc"
     "nota"

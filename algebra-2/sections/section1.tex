@@ -97,7 +97,7 @@ $\ph$ is an $R$-linear isomorphism $\iff \ph^{-1}$ is an $R$-linear isomorphism.
 \end{enumerate}
 \end{exmp}
 
-\subsection*{Quotient Modules}
+\section{Quotient Modules}
 \begin{defi}
   Let $N \subseteq N$ be a submodule. From linear algebra $(\fak MN, \bar 0, \bar +)$ is an abelian group. ($\bar m = m + N$ are the equivalence classes and $\bar m + \bar m' = \bar{m+m'}$). This is an $R$-module (exercise) via \[\bar \cd : R \tm \fak MN \to \fak MN: (r, m+N) \mps rm + N\]
   We call $\fak MN$ (with $\bar 0, \bar +, \bar \cd$) the quotient module of $M$ by $N$, and we write \[\pi_{N \subseteq M}: M \twoheadrightarrow \fak MN, m \mps m+N\]
@@ -139,7 +139,7 @@ N_1 \arrow[rd, no head] &                                  & N_2 \arrow[lu, no h
   \end{enumerate}
 \end{thm}
 
-\subsection*{Direct sums and products}
+\section{Direct sums and products}
 Let $(M_{i})_{i \in I}$ be a family of $R$-modules.
 \begin{defi}
 \begin{enumerate}[(a)]
@@ -183,7 +183,7 @@ where the $i$-th component of $\iota_{i_{0}}(m_{i_{0}})$ is given by $\begin{cas
 
 
 % Lecture 2
-\subsection{Generators and bases}
+\section{Generators and bases}
 From now onwards let $R$ be a unitary ring and $M, M', N$ be $R$-modules.
 \begin{nota*}
   \begin{itemize}
@@ -243,7 +243,7 @@ If $M$ is free and finitely generated, then define $\mathrm{rank}(M)$ (the rank 
 If $R$ is non-commutative, then the rank of the finitely generated $R$-modules is not well-defined. (Jantzen Schwermer Bsp VII.4.2: $R \cong M \cong R^{2}$ for $R = \End_{K}(K[X])$)
 \end{rem*}
 
-\subsection{Exact sequences}
+\section{Exact sequences}
 \begin{defi}
 \begin{enumerate}[(a)]
   \item A diagram of $R$-modules \[M' \xrightarrow{f} M \xrightarrow{g}M''\]
@@ -367,12 +367,362 @@ M \arrow[r, "\psi^{-1}"] & \im(f) \oplus N \arrow[r, "{\begin{matrix}(b,n) \mps 
   \end{itemize}
   shows again: the sequence is split if $M \cong M' \oplus M''$ (for the ``right maps'')
 \end{rem*}
-\begin{rem*}
+\begin{rem}
   One also has short exact sequences for groups
   \[1 \to \ker(\pi) \overset s \leftrightarrows G \overunderset t \pi \leftrightarrows \bar G \to 1\]
   Here one has to be careful what splitting means. Having a $t$ is not equivalent to having an $s$.
   \[\ex t \iff G \cong \ker(\pi) \rtimes \bar G\]
   \[\ex s \iff G \cong \ker(\pi) \tm \bar G\]
+\end{rem}
+
+\section{Projective Modules}
+\begin{defi}
+  An $R$-module $P$ is called projective $\iff$ it has the following lifting property (LP; Hochhebungseigenschaft): In every diagram of $R$-modules
+  \[\begin{tikzcd}
+                   & P \arrow[ld, "\hat \varphi"', dashed] \arrow[d, "\varphi"] &   \\
+M \arrow[r, "\pi"] & M' \arrow[r]                                               & 0
+\end{tikzcd}\]
+with $\pi$ surjective, there exists a lifting $\hat \ph : P \to M$ such that $\pi \circ \hat \ph = \ph$.
+\end{defi}
+
+\begin{prop}%31
+\begin{enumerate}[(a)]
+  \item Every free $R$-module is projective.
+  \item For an $R$-module $P$ TFAE:
+        \begin{enumerate}[(i)]
+          \item $P$ is projective
+          \item every s.e.s. $0 \to M' \to M \to P \to 0$ of $R$-modules splits.
+                \item $P$ is a direct summand of a free module, i.e. $\ex R$-module $Q$, such that $P \oplus Q$ is a free $R$-module.
+        \end{enumerate}
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}[(a)]
+  \item Let $P = R^{(I)}$ for a set $I$. Consider the diagram
+        \[\begin{tikzcd}
+                   & R^{(I)} \arrow[ld, "\hat \varphi"', dashed] \arrow[d, "\varphi"] &   \\
+M \arrow[r, "\pi"] & M' \arrow[r]                                                     & 0
+\end{tikzcd}\]
+
+        Denote by $(e_{i})_{i \in I}$ the standard basis of $R^{(I)}$. $\ph$ is characterized by $m_{i}' := \ph(e_{i})$ for all $ i \in I$. (by universal property of $R^{(I)} = \bigoplus_{i \in I} R$). Because $\pi$ is surjective, we can choose a preimage $m_{i} \in M$ with $\pi(m_{i}) = m_{i}'$. Define $\hat \ph: R^{(I)} \to M$ as the unique $R$-module-homomorphism with $\hat \ph(e_{i}) = m_{i}$. Then $(\pi \circ \hat \ph)(e_{i}) = \pi(m_{i}) = m_{i}' = \ph(e_{i}) \imp \pi \circ \hat \ph = \ph.$
+  \item
+        \begin{itemize}
+          \item (i)$\imp$(ii): Let $P$ be projective, consider a s.e.s.
+                \[\begin{tikzcd}
+0 \arrow[r] & M' \arrow[r] & M \arrow[r, "\pi"] & P \arrow[r]                                      & 0 \\
+            &              &                    & P \arrow[u, "\id_P"'] \arrow[lu, "\psi", dashed] &
+          \end{tikzcd}\]
+                By the lifting property $\ex \psi: P \to M$ such that $\pi \circ \psi = \id_{P}$, i.e. $\psi$ is a splitting $\imp$ the s.e.s. splits.
+          \item (ii)$\imp$(iii): From Remark 21 we have an $R$-module epimorphism $R^{(I)} \xrightarrow \pi P$ (for $I = P$). Take $Q:= \ker \pi$ ($\imp$ s.e.s. $0 \to Q \to R^{(I)} \to P \to 0$) By splitness $R^{(I)} = P \oplus Q$ (by Theorem 28).
+          \item (iii)$\imp$(i): Start with a diagram
+          % TODO
+                \[\begin{tikzcd}
+                   & P \arrow[d, "\ph"] &   \\
+M \arrow[r, "\pi"] & M' \arrow[r]       & 0
+\end{tikzcd}\]
+                and assume $\ex R$-module $Q$ such that $P \oplus Q = R^{(I)}$ (really $\cong$). Extend $\ph$ to \[P \oplus Q \xrightarrow {\tilde \ph} M', (p,q) \mps \ph(p) + 0\]
+                By (a) $\ex \hat{\tilde \ph} : P \oplus Q \to M$ with $\pi \circ \hat{\tilde \ph} = \tilde \ph$.
+                \[\begin{tikzcd}
+                   & P \oplus Q \arrow[d, "\tilde \ph"] \arrow[ld, "\hat{\tilde \ph}"', dashed] \\
+M \arrow[r, "\pi"] & M'
+\end{tikzcd}\]
+                Set $\hat \ph:= \hat{\tilde \ph}|_{P \oplus Q}: P \to M$, check $\pi \circ \hat \ph = \ph$. \qedhere
+        \end{itemize}
+\end{enumerate}
+\end{proof}
+
+\begin{cor}%32
+  Let $0 \to M' \to M \to M'' \to 0$ be a s.e.s. of $R$-modules.
+  \begin{enumerate}[(a)]
+    \item $M''$ projective $\imp$ ($M \cong M' \oplus M''$ and $M$ is projective $\iff M'$ projective).
+    \item If $M'$ and $M''$ are free $R$-modules, then so is $M$. %make the union in the exponent next line a cupdot TODO
+          \item If $M' \cong R^{(I)}$ and $M'' \cong R^{(I'')}$, then $M \cong R^{(I' \cup I'')}$. In particular, $rank(M) = rank(M') + rank(M'')$ if $I' \cup I''$ is finite.
+  \end{enumerate}
+\end{cor}
+\begin{proof}
+  \begin{enumerate}[(c)] %c b a order TODO
+    \item clear: $R^{(I')} \oplus R^{(I'')} \cong R^{I'  \cup I''}$
+    \item Follows from (a)
+    \item
+          \begin{itemize}
+            \item First assertion in (a) $(M'' \imp M \cong M' \oplus M'')$ from Proposition 31.
+            \item Second assertion: we know $M \cong M' \oplus M''$.
+                  \item Suppose first: $M$ is projective. Then by 31(b)(iii): $\ex Q$ an $R$-module such that $M \oplus Q$
+          \end{itemize}
+
+\end{enumerate}
+
+\end{proof}
+\begin{thm}[Horse shoe lemma] Given a diagra of $R$-modules with $P', P''$ projective, and the first row exact
+  \[\begin{tikzcd}
+0 \arrow[r] & M' \arrow[r, "f"]  & M \arrow[r, "g"] & M'' \arrow[r]           & 0 \\
+            & P' \arrow[u, "\a"] &                  & P'' \arrow[u, "\gamma"] &
+\end{tikzcd}\]
+\begin{enumerate}[(a)]
+  \item The diagram can be completed by the dotted part to a commutative diagram, for a suitable $\beta: P' \oplus P'' \to M$, so that:
+        \[\begin{tikzcd}
+0 \arrow[r]         & M' \arrow[r, "f"]                                             & M \arrow[r, "g"]                                                                    & M'' \arrow[r]                             & 0 \\
+0 \arrow[r, dashed] & P' \arrow[u, "\a"] \arrow[r, "{f': p' \mps (p',0)}"', dashed] & P' \oplus P'' \arrow[u, "\b", dashed] \arrow[r, "{g': (p',p'') \mps p''}"', dashed] & P'' \arrow[u, "\gamma"] \arrow[r, dashed] & 0
+\end{tikzcd}\] and the second row is then also exact.
+        \item If $\a$ and $\gamma$ are surjective, then so is $\b$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\begin{enumerate}[(a)]
+  \item Construction of $\b$: Use the lifting property of $P''$ to complete
+        \[\begin{tikzcd}
+M \arrow[r, "g"] & M'' \arrow[r]                                               & 0 \\
+                 & P'' \arrow[u, "\gamma"'] \arrow[lu, "\hat \gamma ", dashed] &
+               \end{tikzcd}\]
+        By the diagonal arrow $\hat \gamma : P'' \to M$ to a commutative diagram. Define \[\b : P' \oplus P'' \to M, (x',x'') \mps f \circ \a(x') + \hat \gamma (x'')\]
+        Check commutativities:
+        \begin{itemize}
+          \item $\b \circ f' \overset ? = f \circ \a$: \[\beta \circ f' (x') = \b(x',0) = f \circ \a(x') + \hat \gamma(0)\]
+          \item $\gamma \circ g' \overset ?= g \circ \b$:
+                \[g \circ \b(x',x'') = g(f \circ \a(x') + \hat \gamma(x'')) = TODO
+                \]
+
+        \end{itemize}
+  \item Diagram chase:
+        \[\begin{tikzcd}
+0 \arrow[r] & M' \arrow[r, "f"]                      & M \arrow[r, "g"]                     & M'' \arrow[r]                      & 0 \\
+0 \arrow[r] & P' \arrow[r, "f'"] \arrow[u, "\alpha"] & P \arrow[r, "g'"] \arrow[u, "\beta"] & P'' \arrow[u, "\gamma"'] \arrow[r] & 0
+\end{tikzcd} TODO\]
+        To show: $\b$ is surjective. Let $m \in M$, $\gamma$ surjective $\imp \ex x'' \in P'' : \gamma(x'') = g(m)$.
+        $g'$ surjective $\imp \ex x \in P : g'(x) = x'$.
+
+        Compare $m$ with $\b(x)$, consider $m - \b(x)$. Observe: $g(m-\b(x)) = g(m) - g \circ \b(x) = \gamma(x'') - g(x'') = 0$ TODO %Whole thing
+\end{enumerate}
+\end{proof}
+
+\section{Finite generation, exact sequences and $\oplus$}
+\begin{cor}
+  Let $0 \to M' \xrightarrow f M \xrightarrow g M'' \to 0$ be a s.e.s. of $R$-modules, then
+  \begin{enumerate}[(a)]
+    \item If $M$ is finitely generated as $R$-module, then so is $M''$
+    \item If $M'$ and $M''$ are finitely generated (as $R$-modules), then so is $M$.
+  \end{enumerate}
+\end{cor}
+\begin{proof}
+\begin{enumerate}[(a)]
+  \item $M$ finitely generated $R$-module means $\ex$ finite set $I$ and $R$-module epimorphism $\pi: R^{(I)} \to M \imp R^{(I)} \to M''$ is given by $g \circ \pi$ is an epimorphism $\\imp M''$ is finitely generated as an $R$-module.
+  \item Suppose we know $R$-module epimorphisms $\a: R^{(I')} \to M'$ and $\gamma: R^{(I'')} \to M''$, then Theorem 33 gives an $R$-module epimorphism \[\beta: R^{(I')} \oplus R^{(I'')} \to M\]
+        $\imp M$ is finitely generated. \qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{rem*}
+  $M$ is finitely generated as an $R$-module $\not \imp M' \le M$ is finitely generated. Example:
+  let $R = M = K[X_{i} \mid i \in \N]$ and consider \[g: M \to K, X_{i} \mps 0, \forall i\]
+  The kernel is the ideal $I$ of $R$ generated by $\{X_{i} \mid i \in \N\}$. We can check: $I$ is not a finitely generated $R$-module. If $I = (f_{1}, \ldots, f_{m})$ say $f_{1}, \ldots, f_{m} \in K[X_{1}, \ldots, X_{n}]$ TODO
 \end{rem*}
 
+\begin{cor}[exer]
+  Let $M_{1}, \ldots, M_{n}$ be $R$-modules, then
+  \begin{enumerate}[(a)]
+    \item $M = \bigoplus_{1 \le i \le n}M_{i}$ is finitely generated $\iff M_{i}$ is finitely generated $\forall i$
+          \item Suppose $M_{0} \subseteq \cdots \subseteq M_{n}$ with $\fak {M_{i}}{M_{i-1}}$ finitely generated for all $i \in \eb n$. Then $M_{n}$ is finitely generated.
+  \end{enumerate}
+\end{cor}
+
+\begin{thm}[Snake lemma]
+  Suppose we are given the following commutative diagram of $R$-modules with exact rows.
+  \[\begin{tikzcd}
+            & M' \arrow[r, "f"] \arrow[d, "\ph'"] & M \arrow[r, "g"] \arrow[d, "\ph"] & M'' \arrow[r] \arrow[d, "\ph''"] & 0 \\
+0 \arrow[r] & N' \arrow[r, "f'"]                  & N \arrow[r, "g'"]                 & N''                              &
+\end{tikzcd}\]
+Then:
+\begin{enumerate}[(a)]
+  \item $\ex R$-linear map $\delta$ (called the connecting homomorphism) from $\ker(\ph'')$ to $\mathrm{coker}(\ph')$, such that the following sequence of $R$-modules is exact:
+        TODO
+  \item If $f$ is injective, then so is $f$.
+        \item If $g'$ is surjective, then so is
+\end{enumerate}
+\end{thm}
+\begin{proof}
+  Construction of $\delta$: Given $m'' \in \ker \ph''$ map it to $m'' \in M''$ not $\ph''(m'') = 0$
+
+\end{proof}
+
+% Lecture 4
+
+\begin{thm}[5-lemma]
+  Suppose we are given the following commutative diagram of $R$-modules with exact rows
+  \[\begin{tikzcd}
+M_1 \arrow[r, "\alpha"] \arrow[d, "\varphi_1", two heads] & M_2 \arrow[r, "\beta"] \arrow[d, "\varphi_2"] & M_3 \arrow[r, "\gamma"] \arrow[d, "\varphi_3"] & M_4 \arrow[r, "\delta"] \arrow[d, "\varphi_4"] & M_5 \arrow[d, "\varphi_5", hook] \\
+N_1 \arrow[r, "\alpha'"]                                  & N_2 \arrow[r, "\beta'"]                       & N_3 \arrow[r, "\gamma'"]                       & N_4 \arrow[r, "\delta'"]                       & N_5
+\end{tikzcd}\]
+and suppose that $\ph_{1}$ is surjective, $\ph_{5}$ is injective, and $\ph_{2}$ and $\ph_{4}$ are isomorphisms, then $\ph_{3}$ is also an isomorphism.
+\end{thm}
+\begin{proof} (in parts) Exercise.
+  \begin{enumerate}
+    \item version: diagram chase. %make sure break up into 3 TODO
+          \item version: break up the diagram into 3 diagrams to which the snake lemma applies. \qedhere
+  \end{enumerate}
+\end{proof}
+
+\section{Noetherian and Artinian modules and rings}
+
+Let $R$ be a ring, $M, M', M'', M_i$ $R$-modules. A sequence $(M_{i})_{i \in \N}$ is said to \emph{become stationary} if $\ex i_{0} : \forall i \ge i_{0} : M_{i} = M_{i_{0}}$.
+\begin{defi}
+  $M$ is called
+  \begin{enumerate}[(a)]
+    \item noetherian$:\iff$ each ascending chain of submodules \[M_{0} \subseteq M_{1} \subseteq \cdots \subseteq M_{n} \subseteq \cdots \subseteq M\] becomes stationary (ACC for ascending chain condition)
+    \item artinian$:\iff$ each descending chain of submodules \[M \supseteq M_0 \supseteq M_{1} \supseteq \cdots \supseteq M_{n} \supseteq \cdots\] becomes stationary (DCC for descending chain condition)
+  \end{enumerate}
+  and $R$ is called
+  \begin{enumerate}[(a)]
+          \setcounter{enumi}{2}
+    \item left noetherian$:\iff$ it is noetherian as a left $R$-module
+    \item left artinian$:\iff$ it is artinian as a left $R$-module
+  \end{enumerate}
+  analogously one defines right artinian/noetherian rings and modules.
+\end{defi}
+
+\begin{exmps}
+  \begin{enumerate}[(a)]
+    \item $\Z$ is noetherian but not artinian.
+    \item Finite dimensional $K$-vector spaces are noetherian and artinian (use the dimension-function)
+    \item (Exersize) Let $D$ be a skew field (division algebra), then any $D$-module is a free $D$-module. If a $D$-module is finitely generated, it is artinian and noetherian.\emph{In the present case one has a well-defined dimension for finitely generated $D$-modules}.
+          \item Every field and every skew field is left and right artinian and noetherian. ($D\op$ is a skew field if $D$ is a skew field)
+  \end{enumerate}
+\end{exmps}
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item The center of $R$ is $Z(R) := \{r \in R \mid \forall r' \in R: r \cd r' = r' \cd r\}$, $Z(R)$ is a commutative subring (exersize)
+  \item Let $S$ be any commutative ring and $\ph: S \to R$ be a ring homomorphism such that $\ph(S) \subseteq Z(R)$, then $R$ is called an $S$-algebra (via $\ph$).
+\end{enumerate}
+\end{defi}
+
+
+\begin{exmps*}
+  \begin{enumerate}[(a)]
+  \item Every ring is a $\Z$-algebra (in a unique way)
+    \item $K[X]$ is a $K$-algebra.
+    \item If $R$ is finite dimensional $K$-algebra, then $R$ is left and right noetherian and artinian. (exercise) For instance, if $M$ is a finite monoid (or a finite group), then the monoid ring $K[M]$ is left and right artinian and noetherian.
+          \item $S = \Q$-subalgebra of $2 \tm 2$ matrices over $\Q$ generated by $E = \begin{pmatrix} 1 & 0 \\ 0 & 1
+
+          \end{pmatrix}$ and $\begin{pmatrix} 1 & 1 \\ 0 & 1
+          \end{pmatrix} \imp S$ is commutative, but $MM_{2\tm 2}(\Q)$ over $S$ is not an $S$-algebra.
+  \end{enumerate}
+\end{exmps*}
+
+\begin{facts}[Exercise; compare to linear algebra 2 (or Jantzen-Schwermer Ch. VIII.)]\item
+
+  \begin{enumerate}[(a)]
+    \item For $M$ the following are equivalent:
+          \begin{enumerate}[(i)]
+            \item Each subset of submodules of $M$ contains a maximal element.
+                  \item Each submodule of $M$ is finitely generated.
+          \end{enumerate}
+    \item For $M$ the following are equivalent:
+          \begin{enumerate}[(i)]
+            \item $M$ is artinian
+            \item Each subset of submodules of $M$ contains a minimal element.
+          \end{enumerate}
+  \end{enumerate}
+\end{facts}
+\begin{lemm}
+  For submodules $N, P_{1}, P_{2} \subseteq M$ with
+  \begin{enumerate}[(i)]
+    \item $P_{1} \supseteq P_{2}$
+    \item $P_{1} + N = P_{2} + N$
+    \item $P_{1} \cap N = P_{2} \cap N$
+  \end{enumerate}
+  it follows that $P_{1} = P_{2}$.
+\end{lemm}
+\begin{proof}
+  We need to show that $P_{1} \subseteq P_{2}$. Take $m_{1} \in P_{1} \underset{(ii)} \imp \ex m_{2} \in P_{2}, n \in N$ such that $m_{1} = m_{2} + n$. $\imp n = m_{1} - m_{2} \underset{P_{2} \subseteq P_{1}}\in P_{1} \cap N \underset{(iii)}= P_{2} \cap N$. $\imp m_{1} = m_{2} + \underbrace{n}_{\in P_{2} \cap N} \in  P_{2}$. \qedhere
+\end{proof}
+
+\begin{thm}
+  Let $N \subseteq M$ be a submodule, then
+  \begin{enumerate}[(a)]
+    \item $M$ is noetherian (artinian) $\imp N$ and $\fak MN$ are noetherian (artinian).
+          \item $N$ and $\fak MN$ are noetherian $\iff M$ is noetherian (artinian).
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+\begin{enumerate}[(a)]
+  \item For $N$: use directly the characterization (ii) from Facts 41. For $\fak MN$: use the homomorphism theorem to identify submodules of $\fak MN$ with those of $M$ containing $N$ and apply again (ii) from 41.
+  \item Proof only in the artinian case: assume that $N$ and $\fak MN$ are artinian. Let $M \supseteq M_0 \supseteq M_{1} \supseteq \cdots \supseteq M_{n} \supseteq \cdots$ be a descending chain. Then by hypothesis: \[M \cap N\supseteq M_0 \cap N\supseteq M_{1} \cap N\supseteq \cdots \supseteq M_{n} \cap N \supseteq \cdots\]
+        becomes stationary, as does \[M + N\supseteq M_0 + N\supseteq M_{1} + N\supseteq \cdots \supseteq M_{n} + N \supseteq \cdots\]
+        $\imp \ex i_{0} : \forall i \ge i_{0}: M_{i} + N = M_{i_{0}} + N$ and $M_{i} \cap N = M_{i_{0}} \cap N$, we also have $M_{i} \subseteq M_{i_{0}}$, so by lemma 42 we have $M_{i} = M_{i_{0}} \imp (M_{i})$ becomes stationary. \qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{cor}[Exercise]\item
+  \begin{enumerate}[(a)]
+    \item Let $0 \to M' \to M \to M'' \to 0$ be a short exact sequence of $R$-modules. Then $M$ is noetherian (artinian) $\iff M'$  and $M''$ are noetherian (artinian).
+          \item If $I$ is a finite set and $M := \bigoplus_{i \in I} M_{i}$, then $M$ is noetherian (artinian) $\iff$ all $M_{i}$ are noetherian (artinian).
+  \end{enumerate}
+Note: $R$ left-right noetherian (artinian) $\imp R^{n}$ is also left-right noetherian (artinian) $R$-module.
+\end{cor}
+\begin{cor}
+  Let $R$ be left noetherian (artinian) and $M$ a finitely generated $R$-module, then $M$ is noetherian (artinian).
+\end{cor}
+\begin{proof}
+$\ex$ an epimorphism $R^{n} \to M$. Now apply 44(a).\qedhere
+\end{proof}
+\begin{cor}
+  Let $R$ be left noetherian (artinian) and $I \subseteq R$ a two-sided ideal, then the ring $\fak RI$ is also left noetherian (artinian).
+\end{cor}
+\begin{proof} $\fak RI$ is a ring (because $I$ is a two-sided ideal). $\fak RI$ is left noetherian (artinian) as an $R$-module by 44(a) $\imp \fak RI$ is left noetherian (artinian) as an $\fak RI$-module. \qedhere
+\end{proof}
+\begin{rem*}
+$R$ is noetherian and $S \subseteq R$ a subring $\nimp S$ is noetherian because not every integral domain is noetherian, but its fraction field certainly is.
+\end{rem*}
+
+\begin{prop}
+  Suppose we have $M \cong M \opl N$ for some $R$-module $N \ne 0$. Then $M$ is neither noetherian nor artinian.
+\end{prop}
+\begin{proof}[proof sketch]
+  \begin{enumerate}
+    \item $M \ne 0$ because $N \ne 0$ is a direct summand of it.
+    \item $M \cong M \opl N \cong (M \opl N) \opl N \cong ((M \opl N) \opl N) \opl N \cong \cdots$.
+  \end{enumerate}
+  \begin{itemize}
+    \item $\infty$ ascending chain:
+          \[0 \opl N \subsetneq (0 \opl N) \opl N \subsetneq ((0 \opl N) \opl N) \opl N \subsetneq \cdots\]
+          $\imp M$ is not noetherian.
+    \item $\infty$ descending chain:
+          \[M \supsetneq (M \opl 0) \supsetneq (M \opl 0) \opl 0 \supsetneq ((M \opl 0) \opl 0) \opl 0 \supsetneq \cdots\]
+          $\imp M$ is not artinian. \qedhere
+  \end{itemize}
+\end{proof}
+
+\begin{cor}[Exercise from 42 and 45]
+  Suppose $R \ne 0$ is left noetherian (artinian), then for $n_{1}, n_{2} \in \Nn : R^{n_{1}} \cong R^{n_{2}} \imp n_{1} = n_{2}$ (In particular a rank of free finitely generated $R$-modules is defined.)
+  \begin{proof}
+    Assume $\ex n_{1}, n_{2} \in \Nn$ such that $R^{n_{1}} \cong R^{n_{2}}$, then $R^{n_1} \cong R^{n_{1}} \opl R^{n_{2} + n_{1}} \imp R^{n_{1}}$ not left noetherian (artinian). But 45 implies that $R^{n_1}$ is left noetherian (artinian) because $R$ has these properties. \qedhere
+  \end{proof}
+\end{cor}
+
+\begin{thm}[Hilbert's basis theorem]
+  If $R$ is left noetherian, then $R[X]$ is left noetherian (here $X$ commutes with elements of $R$).
+  \begin{proof}
+    TODO
+  \end{proof}
+\end{thm}
+\section{Simple modules}
+Let $R$ be a ring, $M, M', M'', M_{i}$ $R$-modules.
+\begin{defi}
+$M$ is called simple (or irreducibile) if $M \ne 0$ and $0$ and $M$ are the only $R$-submodules of $M$.
+\end{defi}
+\begin{exmps}
+
+  \begin{enumerate}[(a)]
+    \item Simple $K$-vector spaces are the 1-dimensional $K$-vectorspaces.
+    \item Simple $\Z$-modules are $\fak \Z{p\Z}$ for $p$ a prime.
+          \item A simple $M_{n \tm n}(K)$-module is $V_{n}(K)$ (space of column vectors).
+  \end{enumerate}
+\end{exmps}
+
+\begin{defi}
+  $M$ is said to have a composition series $\iff \ex$ finite descending chain of submodules \[M = M_{n} \supsetneq M_{n-1} \supsetneq \cdots \supsetneq M_{1} \supsetneq M_{0} = 0\]
+  such that $\forall i \in \eb n$: the quotients $\fak{M_{i}}{M_{i-1}}$ are simple.
+  The index $n$ is called the \emph{length} of $M$ and the quotients $\fak{M_{i}}{M_{i-1}}$ are called the \emph{factors} of $M$.
+\end{defi}
 \end{document}
