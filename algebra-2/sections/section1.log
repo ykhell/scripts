@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  28 APR 2024 19:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  5 MAY 2024 16:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -841,18 +841,36 @@ Overfull \hbox (19.43883pt too wide) in paragraph at lines 717--718
  the 1-dimensional $\OML/cmm/m/it/10 K$\OT1/cmr/m/n/10 -vectorspaces. 
  []
 
-[17] (./section1.aux)
+[17] [18]
+Overfull \hbox (16.89523pt too wide) detected at line 800
+\OT1/cmr/m/n/10 0 \U/msb/m/n/10 ( \OML/cmm/m/it/10 ^^S\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 M[]\OT1/cmr/m/n/10 ) \U/msb/m/n/10 ( [] ( \OML/cmm/m/it/10 ^^S\OT1/cmr
+/m/n/10 (\OML/cmm/m/it/10 M[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^S\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 M[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m
+/n/10 (0) \U/msb/m/n/10 ( \OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 ([][]) \U/msb/m
+/n/10 ( [] ( \OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 ([][]) = \OML/cmm/m/it/10 M
+ []
+
+
+Overfull \hbox (20.3512pt too wide) in paragraph at lines 825--825
+[][]\OT1/cmr/bx/n/10 Theorem 0.59. []\OT1/cmr/m/it/10 Sup-pose $\OML/cmm/m/it/1
+0 M$ \OT1/cmr/m/it/10 is noethe-rian or ar-tinian, then $\OMS/cmsy/m/n/10 9\OML
+/cmm/m/it/10 n \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 N\OML/cmm/m/it/10 ; \OMS/cmsy/m
+/n/10 f\OML/cmm/m/it/10 M[]; [] ; M[]\OMS/cmsy/m/n/10 g ^^R
+ []
+
+[19] [20] (./section1.aux)
 Package rerunfilecheck Info: File `section1.out' has not changed.
-(rerunfilecheck)             Checksum: D75B0011BC4F7A36757E40CBF4A1B097;1432.
+(rerunfilecheck)             Checksum: B5178E6A86DC0DD3C54D365052E415E3;1592.
  ) 
 Here is how much of TeX's memory you used:
- 23263 strings out of 477476
- 452130 string characters out of 5824243
+ 23289 strings out of 477476
+ 452345 string characters out of 5824243
  1891388 words of memory out of 5000000
- 42921 multiletter control sequences out of 15000+600000
+ 42923 multiletter control sequences out of 15000+600000
  520916 words of font info for 65 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,21n,117p,673b,1220s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,21n,117p,702b,1220s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/
 ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
@@ -874,10 +892,10 @@ sr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
 0.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msbm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm7.pfb>
-Output written on section1.pdf (17 pages, 281826 bytes).
+Output written on section1.pdf (20 pages, 297857 bytes).
 PDF statistics:
- 421 PDF objects out of 1000 (max. 8388607)
- 361 compressed objects within 4 object streams
- 192 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 462 PDF objects out of 1000 (max. 8388607)
+ 399 compressed objects within 4 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

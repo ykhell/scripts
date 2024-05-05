@@ -725,4 +725,122 @@ $M$ is called simple (or irreducibile) if $M \ne 0$ and $0$ and $M$ are the only
   such that $\forall i \in \eb n$: the quotients $\fak{M_{i}}{M_{i-1}}$ are simple.
   The index $n$ is called the \emph{length} of $M$ and the quotients $\fak{M_{i}}{M_{i-1}}$ are called the \emph{factors} of $M$.
 \end{defi}
+
+\begin{prop}
+$M$ has a decomposition series $\iff M$ is artinian and noetherian.
+\begin{proof}
+\begin{itemize}
+  \item ``$\impliedby$'': Construct an ascending chain of submodules of $M$ as follows:
+        \begin{align*}
+          M_{0} &= 0 \\
+          \rotatebox[origin=c]{270}{$\subseteq$}&\  \\
+          M_{1} &= \text{a minimal submodule in } \{M' \le M \mid 0 \subsetneq M'\} \\
+          \rotatebox[origin=c]{270}{$\subseteq$}&\  \\
+          M_{2} &= \text{a minimal submodule in } \{M' \le M \mid M_{1} \subsetneq M'\}
+          \rotatebox[origin=c]{270}{$\subseteq$}&\  \\
+          \vdots  \\
+        \end{align*}
+        because $M$ is artinian, the $M_{i}$ exist (unless $M_{i+1} = M$), and because $M$ is noetherian, we will find an $n$ such that $M_{n} = M$. By the Homomorphism theorem: $\fak {M_{i}}{M_{i-1}}$ is simple $\forall i \in \eb n$.
+  \item ``$\imp$'' : Suppose $M$ has a decomposition series and do induction on the minimal length of the series:
+        \begin{itemize}
+          \item $n = 1$: $M$ is simple.
+                \item Induction step: Let $0 \subsetneq M_{1} \subsetneq \cdots \subsetneq M_{n+1} = M$, then $0 \subsetneq M_{1} \subsetneq \cdots \subsetneq M_{n}$ is a decomposition series of $M_{n}$ of minimal length $n$. (otherwise there would exist a shorter decomposition series of $M$ which would be a contradiction.) Induction hypothesis implies $M_{n}$ is artinian and noetherian, but also: $\fak M{M_{n}} = \fak {M_{n+1}}{M_{n}}$ is simple and hence artinian and noetherian. Consider $0 \to M_{n} \to M \to \fak M{M_{n}} \to 0 \underset{44}\imp M$ is artinian and noetherian. \qedhere
+        \end{itemize}
+\end{itemize}
+\end{proof}
+\end{prop}
+
+\begin{thm}[Jordan-Hölder]
+  Suppose $M$ has a decomposition series, then
+  \begin{enumerate}[(a)]
+    \item Any 2 decomposition series have the same length.
+          \item The list of factors of $M$ (coming from any decomposition series) is unique up to  permutation (and isomorphism).
+  \end{enumerate}
+\end{thm}
+
+\begin{defi*}
+  Consider chains of submodules of $M$ (not necessarily decomposition series)
+  \[\underline{\mathcal M}:= 0 \subsetneq M_{1} \subsetneq \cdots \subsetneq M_{n} = M\]
+  \[\underline{\mathcal N}:= 0 \subsetneq N_{1} \subsetneq \cdots \subsetneq N_{n} = N\]
+  \begin{enumerate}[(a)]
+    \item Call $\underline{\mathcal N}$ a \emph{refinement} of $\underline{\mathcal M} :\iff \ebe{N_{1}}{N_{\ell}} \supseteq \ebe {M_{1}}{M_{n}}$.
+    \item Call $\underline{\mathcal N}$ and $\underline{\mathcal M}$ \emph{equivalent} if $\ell = n$ and $\ex \s \in S_{k}$ such that $\forall i \in \eb k:$ \[\fak{N_{i}}{N_{i-1}} \cong \fak{M_{\s(i)}}{M_{\s(i)-1}}\]
+  \end{enumerate}
+\end{defi*}
+
+\begin{lemm}[Schreier refinement lemma] [Jacobson Basic Algebra II, 3.6]%TODO Reference
+  Any two finite length submodule chains possess equivalent refinements.
+  \begin{proof}[Proof idea:] Use $\underline{\mathcal M}$ to refine each step $N_{i-1} \subsetneq N_{i}$.
+    \begin{enumerate}[(1)]
+\item $N_{i-1} \subseteq N_{i-1} + (M_{1} \cap N_{i}) \subseteq N_{i-1} + (M_{2} \cap N_{i}) \subseteq \cdots \subseteq N_{i-1} + (M_{k} \cap N_{i}) = N_{i}$.
+\item Similarly $M_{j-1} \subseteq M_{j-1} + (N_{1} \cap M_{j}) \subseteq \cdots \subseteq M_{j-1} + (N_{ell} \cap M_{j}) = M_{j}$. Schreier verifies that the $j$-th subquotient of (1) and the $i$-th subquotient of (2) are isomorphic. (Butterfly lemma) \qedhere
+    \end{enumerate}
+  \end{proof}
+\end{lemm}
+
+\begin{proof}[Proof of Jordan-Hölder using Schreier refinement]
+  Suppose $\underline{\mathcal M}$ and $\underline{\mathcal N}$ are decomposition series of $M$. Schreier refinement gives us refinements $\underline{\mathcal M}'$ of $\underline{\mathcal M}$ and $\underline{\mathcal N}$ of $\underline{\mathcal N}'$ such that $\underline{\mathcal M}'$ and $\underline{\mathcal N}'$ are equivalent, i.e. they have the same length and the same subfactors up to permutation and isomorphism. But $\underline{\mathcal M}$ and $\underline{\mathcal N}$ have no proper refinements $\imp \underline{\mathcal M}' = \underline{\mathcal M}$ and $\underline{\mathcal N}' = \underline{\mathcal N}$. \qedhere
+\end{proof}
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item We say $M$ has finite length if $M$ is artinian and noetherian.
+        \item If $M$ has finite length, then its length $\mathrm{len}(M)$ is the length of any decomposition series.
+\end{enumerate}
+\end{defi}
+
+\begin{prop}
+  Let $0 \to M' \xrightarrow \iota M \xrightarrow \pi M'' \to 0$ be a short exact sequence of $R$-modules, then:
+  \begin{enumerate}[(a)]
+    \item $M$ has finite length $\iff M'$ and $M''$ have finite length.
+          \item $\mathrm{len}(M) = \mathrm{len}(M') + \mathrm{len}(M'')$.
+  \end{enumerate}
+\begin{proof}
+\begin{enumerate}[(a)]
+  \item See Cor. 44.
+  \item Say $0 \subsetneq M_{1} \subsetneq \cdots \subsetneq M_{k} = M'$ and $0 \subsetneq \bar{M_{1}} \subsetneq \cdots \subsetneq \bar{M_{\ell}} = M''$ are decomposition series, then check (2nd isomorphism theorem) \[0 \subsetneq \iota(M_{1}) \subsetneq \cdots \subsetneq \iota(M_{k}) = \iota(M') = \pi^{-1}(0) \subsetneq \pi^{-1}(\bar M_{1}) \subsetneq \cdots \subsetneq\pi^{-1}(\bar M_{\ell}) = M\]
+        is a decomposition series of $M$ of length $\ell + k = \mathrm{len}(M'') + \mathrm{len}(M')$. \qedhere
+\end{enumerate}
+\end{proof}
+\end{prop}
+
+\section{Indecomposable modules}
+\begin{defi}
+An $R$-module $M$ is indecomposable $\iff M \ne 0$ and there are no proper submodules $0 \subsetneq M_{1}, M_{2} \subsetneq M$ such that $M_{1} \opl M_{2} \xrightarrow \cong M, (m_{1},m_{2}) \mps m_{1}+m_{2}$.
+\end{defi}
+\begin{rem*}
+\begin{enumerate}[(a)]
+  \item If $M$ is simple, $M$ is indecomposable.
+        \item If eveery submodule of finite length is a direct sum of simples submodules, then $M$ (indecomposable) of finite length $\imp M$ is simple.
+\end{enumerate}
+E.g. if $R$ is a field/skew field/$R = \Q[G]$ finite group, then indecomposable $\iff$ simple.
+\end{rem*}
+\begin{exmps*}
+  \begin{itemize}
+  \item Indecomposable $\Z$-modules are $\fak \Z{p^{n}\Z}$ for $p$ prime and $n \in\N$.
+    \item All non-zero $\Z$-submodules of $\Q$ are indecomposable (e.g. $\Z, \Q$).
+    \item Simple $\Z$-modules are $\fak \Z{p\Z}$ for $p$ prime.
+          \item Indecomposable $K[X]$-modules are $\fak{K[X]}{(f^{n})}$ for $f \in K[X]$ irreducible and $n \in \N$ and $K[X]$-submodules of $K(X)$. (Any propoer submodule of $\fak{K[X]}{(f^{n})}$ is contained in $\fak{f K[X]}{(f^{n})}$)
+  \end{itemize}
+\end{exmps*}
+\begin{thm}Suppose $M$ is noetherian or artinian, then $\ex n \in \N, \ebe {M_{1}}{M_{n}} \subseteq M$ indecomposable submodules such that \[M = \bigoplus_{1 \le i \le n} M_{i}.\]
+  Call this statement $(*)_{M}$ for $M$. (A generalization of the structure theorem of finitely generated modules over a principle ideal domain; existence part onca indecomposable $R$-modules are understood).
+  \begin{proof}(Assuming $M$ is artinian; other case is an exercise)
+    Assume the statement of the theorem $(*)_{M}$ does not hold for $M$. Define $X = \{M' \le M \mid \neg (*)_{M'}\}$, then $X \ne \emptyset$ because $M \in X$ (by assumption). Let $M' \in X$ be a minimal element under $\subseteq$ (this existst since $M$ is artinian) , then $M'$ decomposable $\imp M' = M_{1} \opl M_{2}$ for proper submodules $0 \ne M_{1}, M_{2} \subsetneq M' \imp  M_{1}$ and $M_{2} \notin X \imp (*)_{M_{1}}$ and $(*)_{M_{2}}$ hold, i.e.
+    \[M_{1} = \bigoplus_{1 \le i \le t}N_{i}, \quad M_{2} = \bigoplus_{1 \le j \le s}P_{j}\]where $N_{i}, P_{j}$ are indecomponible. \[\imp M_{1} \opl M_{2} = \bigoplus_{1 \le i \le t}N_{i} \opl \bigoplus_{1 \le j \le s}P_{j} \imp (*)_{M_{1} \opl M_{2}}.\]
+    This is a contradiction to $M' \in X$ so $X$ must be empty.\qedhere
+  \end{proof}
+\end{thm}
+\begin{rem*}
+The decomposition in Theorem 59 is not unique
+\end{rem*}
+\begin{exer*}
+  Let $M$ be a finitely generated module over a principle ideal domain, then $M$ is indecomposable $\iff M \cong R$ or $\ex n \in \N, \ex$ prime element $p \in R$ such that $M \cong \fak R{p^{n}}$.
+  \begin{proof}Using structure theorem for modules over PIDs.
+  \end{proof}
+\end{exer*}
+
+\begin{rem*}[Exercise]
+  Recall: $e \in S$ a ring is called an idoempotent $\iff e^{2} = 2$ (nontrivial $\iff e \ne 0, 1$)
+  $M$ is indecomposable $\iff 0_{M}, \id_{M} \in \End_{R}(M)$ are the only idempotents in $\End_{R}(M)$ (or else $M = e\cd M \opl (1-e)\cd M$).
+\end{rem*}
 \end{document}

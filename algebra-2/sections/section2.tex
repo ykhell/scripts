@@ -1,0 +1,41 @@
+\documentclass[a4paper]{report}
+\usepackage{../template}
+\begin{document}
+\section{Preliminary remarks on set theory}
+\begin{refs*}Literature for this chapter:
+  \begin{itemize}
+\item Sophie Morel - Homological Algebra I.1,
+    \item Daniel Murfet - Foundations for Category Theory,
+          \item Saunders MacLane - Categories for the Working Mathematician I.6.
+  \end{itemize}
+  In this course we always assume a model of set theory that satisfies the Zermelo-Fraenkel axioms + the axiom of choice (ZFC).
+\end{refs*}
+\begin{defi*}[Grothendieck universe; we assume ZFC]
+  A \emph{universe} $\U$ is a set which has the following properties:
+  \begin{enumerate}[(i)]
+    \item $\emptyset, \N \in \U$,
+    \item $X \in \U$ and $y \in X \imp y \in \U$,
+    \item $X \in \U \imp \{X\} \in \U$,
+    \item $X \in \U \imp \mathcal{P}(X) \in \U$,
+          \item If $I \in \U$ and $\{X_{i}\}_{i \in I}$ is a family of members $X_{i} \in \U$, then $\bigcup_{i \in I}X_{i} \in \U$.
+  \end{enumerate}
+The existence of a universe is equivalent to the existence of a strongly inaccessible cardinal. (Thomas Jech - Set Theory)
+\end{defi*}
+
+\begin{axiom*}[Axiom of universes (Grothendieck)]
+Every set lies in a universe. (We will assume this)
+\end{axiom*}
+\begin{defi*}
+  If $\U$ is our chosen universe, then:
+  \begin{itemize}
+    \item A $\U$-set is an element in $\U$.
+    \item A $\U$-class is a subset of $\U$.
+    \item A $\U$-group is a group $(G,e,\cd)$ with $G \in \U$ and $\cd: G \tm G \to G \in \U$.
+    \item A $\U$-ring is a ring $(R, 0, 1, +, \cd)$ with $R \in \U$ and also $+, \cd$
+          \item etc.
+  \end{itemize}
+\end{defi*}
+\begin{conv*}
+We fix a $\U$ and drop $\U$- in all terms.
+\end{conv*}
+\end{document}

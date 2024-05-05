@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  5 MAY 2024 17:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  5 MAY 2024 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/yousef/scripts/algebra-2/main.tex
-(/Users/yousef/scripts/algebra-2/main.tex
+**/Users/yousef/scripts/algebra-2/sections/section2.tex
+(/Users/yousef/scripts/algebra-2/sections/section2.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/base/report.cls
@@ -24,9 +24,12 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
 )
-(./template.sty
-Package: template 
+(../template.sty
 
+LaTeX Warning: You have requested package `../template',
+               but the package provides `template'.
+
+Package: template 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks16
@@ -694,27 +697,27 @@ ef
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count310
 \l__pdf_internal_box=\box67
-) (./main.aux)
-\openout1 = `main.aux'.
+) (./section2.aux)
+\openout1 = `section2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -740,25 +743,25 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 7.
- (./main.out) (./main.out)
+Package hyperref Info: Link coloring ON on input line 3.
+ (./section2.out) (./section2.out)
 \@outlinefile=\write4
-\openout4 = `main.out'.
+\openout4 = `section2.out'.
 
 \docmute@nestinglevel=\count317
-LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
 
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
 
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 14
 .
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/jknapltx/ursfs.fd
@@ -766,152 +769,34 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 {/usr/local/texlive/2023basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Chapter 1.
-(./sections/section1.tex
-Overfull \hbox (29.25327pt too wide) in paragraph at lines 38--39
-[][]\OT1/cmr/bx/n/10 Definition 1.5. []\OT1/cmr/m/n/10 The op-po-site ring (Geg
-en-ring) of $(\OML/cmm/m/it/10 R; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/
-m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 +\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10
- ^^A\OT1/cmr/m/n/10 )$ is $\OML/cmm/m/it/10 R[] \OT1/cmr/m/n/10 = (\OML/cmm/m/i
-t/10 R; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ;
- \OT1/cmr/m/n/10 +\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A[]\OT1/cmr/m/n/10 )$
- []
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.43     \item $
-                \id_{R}: R \to R$ is a ring homomorphism $\iff R$ is commuta...
-[1
-
-]
-Overfull \hbox (92.46877pt too wide) in paragraph at lines 76--77
-[][]\OT1/cmr/bx/n/10 Definition 1.9. []\OT1/cmr/m/n/10 An $\OML/cmm/m/it/10 R$\
-OT1/cmr/m/n/10 -linear map $\OML/cmm/m/it/10 ' \OT1/cmr/m/n/10 : \OML/cmm/m/it/
-10 M \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 M[]$ \OT1/cmr/m/n/10 is called a monom
-or-phism/epimorphism/isomorphism
- []
-
-[2] [3]
-Overfull \hbox (12.3032pt too wide) in paragraph at lines 157--158
-[]$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules
- []
-
-[4] [5]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 228
-.
- (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-[6] [7] [8]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 347.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 347.
-
-[9] [10] [11]
-Overfull \hbox (6.14203pt too wide) in paragraph at lines 439--440
-[]\OT1/cmr/m/it/10 If $\OML/cmm/m/it/10 M[] [] R[]$ \OT1/cmr/m/it/10 and $\OML/
-cmm/m/it/10 M[] [] R[]$\OT1/cmr/m/it/10 , then $\OML/cmm/m/it/10 M [] R[]$\OT1/
-cmr/m/it/10 . In par-tic-u-lar, $\OML/cmm/m/it/10 rank\OT1/cmr/m/n/10 (\OML/cmm
-/m/it/10 M\OT1/cmr/m/n/10 ) =
- []
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: (c) on input line 443.
-
-[12]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 499.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\oplus' on input line 499.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 499.
-
-[13] [14] [15] [16]
-Overfull \hbox (4.47374pt too wide) in paragraph at lines 699--700
-[]\OT1/cmr/m/n/10 Assume $\OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 n[]; n[] \OMS/cmsy
-/m/n/10 2 \U/msb/m/n/10 N[]$ \OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 R[] []
- R[]$\OT1/cmr/m/n/10 , then $\OML/cmm/m/it/10 R[] [] R[] \OMS/cmsy/m/n/10 ^^H \
-OML/cmm/m/it/10 R[]  \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )
- []
-
-
-Overfull \hbox (19.43883pt too wide) in paragraph at lines 717--718
-[]\OT1/cmr/m/n/10 Simple $\OML/cmm/m/it/10 K$\OT1/cmr/m/n/10 -vector spaces are
- the 1-dimensional $\OML/cmm/m/it/10 K$\OT1/cmr/m/n/10 -vectorspaces. 
- []
-
-[17] [18]
-Overfull \hbox (16.89523pt too wide) detected at line 800
-\OT1/cmr/m/n/10 0 \U/msb/m/n/10 ( \OML/cmm/m/it/10 ^^S\OT1/cmr/m/n/10 (\OML/cmm
-/m/it/10 M[]\OT1/cmr/m/n/10 ) \U/msb/m/n/10 ( [] ( \OML/cmm/m/it/10 ^^S\OT1/cmr
-/m/n/10 (\OML/cmm/m/it/10 M[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^S\OT1/cmr/m
-/n/10 (\OML/cmm/m/it/10 M[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m
-/n/10 (0) \U/msb/m/n/10 ( \OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 ([][]) \U/msb/m
-/n/10 ( [] ( \OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 ([][]) = \OML/cmm/m/it/10 M
- []
-
-[19]
-Overfull \hbox (20.3512pt too wide) in paragraph at lines 825--825
-[][]\OT1/cmr/bx/n/10 Theorem 1.59. []\OT1/cmr/m/it/10 Sup-pose $\OML/cmm/m/it/1
-0 M$ \OT1/cmr/m/it/10 is noethe-rian or ar-tinian, then $\OMS/cmsy/m/n/10 9\OML
-/cmm/m/it/10 n \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 N\OML/cmm/m/it/10 ; \OMS/cmsy/m
-/n/10 f\OML/cmm/m/it/10 M[]; [] ; M[]\OMS/cmsy/m/n/10 g ^^R
- []
-
-[20]) [21]
-Chapter 2.
-(./sections/section2.tex) [22
-
-] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 353D04766D9487A9A19AE8A04A1CFF7D;2115.
+(./section2.aux)
+Package rerunfilecheck Info: File `section2.out' has not changed.
+(rerunfilecheck)             Checksum: E904EA10B6C4F88BAE9FEFBEB5BC7169;222.
  ) 
 Here is how much of TeX's memory you used:
- 23355 strings out of 477476
- 453110 string characters out of 5824243
- 1889388 words of memory out of 5000000
- 42964 multiletter control sequences out of 15000+600000
- 528383 words of font info for 93 fonts, out of 8000000 for 9000
+ 21876 strings out of 477476
+ 420627 string characters out of 5824243
+ 1862388 words of memory out of 5000000
+ 41727 multiletter control sequences out of 15000+600000
+ 517191 words of font info for 51 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,21n,117p,720b,1220s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,5n,117p,548b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/
 ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/ty
-pe1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2023basic/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023basic/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023basic/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023basic/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023basi
-c/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023b
-asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/20
-23basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/
-2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local
-/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/lo
-cal/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
-r/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.p
-fb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msam10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publi
-c/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (23 pages, 327052 bytes).
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023basic/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023basic/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023basic/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023basic/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023basic/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023basi
+c/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on section2.pdf (1 page, 108514 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 435 compressed objects within 5 object streams
- 226 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 83 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
