@@ -38,4 +38,621 @@ Every set lies in a universe. (We will assume this)
 \begin{conv*}
 We fix a $\U$ and drop $\U$- in all terms.
 \end{conv*}
+
+\section{Categories}
+
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item A \emph{directed graph} (a diagram scheme) is a tuple $(O, A, \mathrm{dom}, \mathrm{cod})$ consisting of $\U$-classes $O$ and $A$ and maps $\mathrm{dom}, \mathrm{cod}: A \to O$. We call elements of $O$ \emph{objects} (or vertices) and elements of $A$ \emph{arrows} (or directed edges). For an arrow $f \in A$ call $\mathrm{dom}(f)$ the \emph{source} (or domain) of $f$ and $\mathrm{cod}(f)$ the target (or codomain) of $f$.
+  \item For a graph as in (a) call $A \tm_{O} A :=\{ (g,f) \in A \tm A \mid \dom(g) = \cod(f)\}$ set of composable arrow pairs.
+        \item A subgraph of $(O, A, \dom, \cod)$ is a graph $(O', A', \dom', \cod')$ such that $O' \subseteq O, A' \subseteq A, \dom ' = \dom|_{A'}$ and $\cod' = \cod|_{A'}$.
+\end{enumerate}
+
+\end{defi}
+\begin{exmp}
+  Let $O = \{X, Y, Z\}, A = \{f, g, h\}, \dom, \cod : A \to O$ given by the table
+  \[\begin{tabular}{ c|c|c|c }
+     & $f$ & $g$ & $h$ \\
+    \hline
+    $\dom$ & $X$ & $Y$ & $X$ \\
+    \hline
+    $\cod$ & $Y$ & $Z$ & $Z$ \\
+  \end{tabular}\]
+Illustration:
+\[\begin{tikzcd}
+X \arrow[rr, "f"] \arrow[rd, "h"'] &   & Y \arrow[ld, "g"] \\
+                                   & Z &
+\end{tikzcd}\]
+\end{exmp}
+
+\begin{defi}
+  A \emph{category} $\mathcal C$ is a tuple $(\Ob \mathcal C, \Mor \mathcal C, \dom, \cod, \circ, 1)$ consisting of a graph $(\Ob \C, \Mor \C, \dom , \cod)$ and maps
+  \[1: \Ob \C \to \Mor \C, X \mps 1_{X}\]
+  and \[\circ: \Mor \C \tm_{\Ob \C} \Mor \C \to \Mor \C, (g,f) \mps g \circ f\]
+  such that:
+  \begin{enumerate}[(i)]
+    \item $\dom (1_{X}) = \cod(1_{X}) = X, \forall X \in \Ob \C$,
+    \item $\dom(g \circ f)=\dom (f)$ and $\cod(g \circ f)=\cod (g)$,
+    \item $\forall f \in \Mor \C$ with $X = \dom (f), Y = \cod (f)$\[f \circ 1_{X} = 1_{Y} \circ f = f\]
+    \item $\forall $ arrows $f, g, h \in \Mor \C$ such that $(h,g)$ and $(g,f)$ are composable aarrow pairs we have \[h \circ (g \circ f) = (h \circ g) \circ f\]
+  \end{enumerate}
+  Call elements of $\Ob \C$ the objects of $\C$ and elements of $\Mor \C$ the morphisms of $\C$.
+
+\end{defi}
+
+\begin{nota}
+  For a category $\C$ as in definition 3
+  \begin{enumerate}[(a)]
+    \item (often) write $X, Y \in \C$ to mean $X, Y \in \Ob \C$
+          \item For $X, Y \in \C$ write \[\C(X,Y):= \Mor_{\C}(X,Y) := \{f \in \C \mid \dom f = X, \cod f = Y\}\]
+  \end{enumerate}
+\end{nota}
+
+
+\begin{defi}
+  \begin{enumerate}[(a)]
+    \item Call a category $\C$ locally small if $\C(X,Y)$ is a set $\forall X, Y \in \C$,
+          \item Call $\C$ small if $\Ob \C, \Mor \C$ are sets.
+  \end{enumerate}
+\end{defi}
+
+\begin{rem}[Extension of example 2 to a category]
+  Let $O = \{X, Y, Z\}, A = \{f, g, h\} \cup \{1_{X}, 1_{Y}, 1_{Z}\}$, $\cod, \dom$ as before on $\{f, g, h\}$ and uniquely extended to $\{1_{X}, 1_{Y}, 1_{Z}\}$ by axiom (i) and $\circ$ the only possible composition satisfying the axioms
+  \[\begin{tikzcd}
+X \arrow["1_X"', loop, distance=2em, in=215, out=145] \arrow[rr, "f"] \arrow[rd, "h"'] &                                                       & Y \arrow["1_Y"', loop, distance=2em, in=35, out=325] \arrow[ld, "g"] \\
+                                                                                      & Z \arrow["1_Z"', loop, distance=2em, in=305, out=235] &
+\end{tikzcd}\]
+  composable arrow pairs:
+  \[(1_{X}, 1_{X}), (f, 1_{X}), (1_{Y}, 1_{Y}), (1_{Y}, f), (g, 1_{Y}), (1_{Z}, 1_{Z}), (1_{Z}, g) , (1_{Z}, h), (h, 1_{X}), (g,h)\]
+  Canonical universal extension would contain a second arrow $X \to Z$ since it would not want to impose the condition $g \circ f = h$.
+\end{rem}
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item A diagram in $\C$ is a subgraph $\Gamma$ of $(\Ob \C, \Mor \C, \dom, \cod)$.
+        \item A diagram is commutative if for all objects $X, Y$ of $\Gamma$ and all chains of arrows from $X$ to $Y$, their composition is the same (i.e. it only depends on $X$ and $Y$).
+\end{enumerate}
+\end{defi}
+\begin{exmp*}[For associativity]
+\[\begin{tikzcd}[row sep = 20]
+                                                                                                    & W                                         &                   \\
+X \arrow[rd, "f"'] \arrow[rr, ""] \arrow[ru, "h \circ (g \circ f) = (h \circ g) \circ f"] &                                           & Z \arrow[lu, "h"'] \\
+                                                                                                    & Y \arrow[ru, "g"'] \arrow[uu, ""] &
+\end{tikzcd}\]
+\end{exmp*}
+\begin{exmps*}[Examples of categories]
+  \begin{itemize}
+    \item $\mathsf{Set}$ (category of $\U$-sets): where
+          \begin{itemize}
+          \item  $\Ob \Set = $ class of all $\U$-sets,
+          \item  $\Mor \Set = $ class of all $\U$-maps between sets,
+          \item  $\dom, \cod$ are the domain and codomain (range) of a map. (Think of a map as a triple $(X, Y, $ graph map in $X \tm Y)$)
+          \item  $\circ =$ composition of maps,
+          \item $1_{X} = \id_{X}$ the identity map.
+          \end{itemize}
+    \item $\Grp$ (category of abelian groups)
+          \item $\Ring$
+          \item $\CRing$
+    \item $\Top$
+          \item $_{R}\Mod$
+    \item $\Mod_{R}$
+    \item $\Vec_{K}$
+          \item $\Ab = _{\Z}\Mod$
+  \end{itemize}
+\end{exmps*}
+
+\begin{exmps*}[Abstract examples]
+\begin{enumerate}
+  \item $\Ob \C = \Mor \C = \emptyset$ (empty category)
+  \item $\Ob \C = \{X\}, \Mor \C = \{1_{X}\}$ (1 arrow category)
+  \item Let $G$ be a group, define a category $\underline G$ by $\Ob \underline G = \{*\}$ (singleton set) and $\Mor \underline G = G$, $\dom, \cod$ the unique map $G \to \{*\}$, $1_{*} = e$ (unit element of $G$). $\circ =$ composition in $G$: \[\Mor \underline G \tm \Mor \underline G = G \tm G \to G = \Mor \underline G\]
+        \item Let $\underline A = (M, \le)$ be a partially ordered set. Define the associated category $\Ord \underline M$ with $\Ob \Ord \underline M =$ elements of $M$, morphisms are determined by \[\Ord \underline M(X,Y) = \begin{cases}\text{singleton set}, & X \le Y, \\ \emptyset , & \text{otherwise.}
+        \end{cases}\]
+        Unit is clear. composition dictated by $\Mor(\Ord \underline M)$ (i.e. by $\le$)
+\end{enumerate}
+\end{exmps*}
+
+
+\begin{defi}
+For a category $\C = (\Ob \C, \Mor \C, \dom, \cod, \circ, 1)$ define the tuple $\C\op = (\Ob \C, \Mor \C, \cod, \dom, \circ\op, 1)$ with \begin{align*}
+  \circ\op : \{(f,g) \in \Mor \C \tm \Mor \C \mid \cod f = \dom g\} &\to \Mor \C \\
+  (f,g) &\mps f \circ\op g := g \circ f
+\end{align*}(change the direction of arrows!)
+\end{defi}
+
+\begin{prop}[Exercise]
+$\C \op$ is a category, the \emph{opposite category} to $\C$.
+\end{prop}
+
+\begin{exmp*}
+$(\underline G){\op} = \underline{(G\op)}$, ($G\op = (G, e, \circ\op)$ with $g \circ\op h = h \circ g$).
+\end{exmp*}
+
+\begin{warn}
+$\Vec_{K}\op(V,W) \ne$ not the set of maps $V \to W$, it is $\{f: W \to V \mid f $ is $K$-linear$\}$
+\end{warn}
+
+\begin{defi}
+A subcategory of $\C = (\Ob \C, \Mor \C, \dom, \cod, \circ, 1)$ is a category $\C' = (\Ob \C', \Mor \C', \dom', \cod', \circ', 1')$ such that $\Ob \C' \subseteq \Ob \C, \Mor \C' \subseteq \Mor \C, \dom ' = \dom|_{\Mor \C'}, \cod ' = \cod|_{\Mor \C'}, \circ' = \circ|_{\Mor \C ' \tm_{\Ob \C} \Mor \C '}, 1' = 1|_{\Ob \C '}$. We write $\C' \subseteq \C$.
+\end{defi}
+\begin{exmp*}
+$\Ab \subseteq \Grp$ and $\CRing \subseteq \Ring$, etc.
+\end{exmp*}
+
+\begin{defi}[Product of categories] The product of two categories $\C$ and $\C'$ is the six-tuple: \[(\Ob \C \tm \Ob \C', \Mor \C \tm \Mor \C', \dom \tm \dom ', \cod \tm \cod', \circ, 1)\] where $\circ$ is componentwise composition $(g, g') \circ (f, f') = (g \circ f, g' \circ f')$ and $1_{X \tm X'} = (1_{X}, 1_{X'})$
+
+\end{defi}
+
+\begin{defi}[Concepts inside categories]
+  Let $X, Y \in \C$, then call $f \in \C(X,Y)$
+  \begin{enumerate}[(a)]
+    \item an \emph{isomorphism} $\iff \ex g \in \C(Y,X)$ such that $g \circ f = 1_{X}, f \circ g = 1_{Y}$,
+    \item an \emph{endomorphism} $\iff X =Y$,
+    \item an \emph{automorphism} $\iff$ it is an isomorphism and an endomorphism
+  \end{enumerate}
+  Moreover $\C$ is called a groupoid category $\iff$ all morphisms are isomorphisms.
+\end{defi}
+\begin{exmp*}
+Let $G$ be a group, then $\underline G$ is a groupoid category. $\C$ a groupoid category $\imp \C(X,X)$ is a group (under $\circ, \forall X \in \Ob \C$).
+\end{exmp*}
+
+\begin{defi}
+  Let $X, Y \in \C$, then call $f \in \C(X,Y)$:
+  \begin{enumerate}[(a)]
+    \item a \emph{monomorphism} $\iff f$ is left cancellable $\iff \forall W \in \C$ the map $f_{*}: \C(W,X) \to \C(W,Y), g \mps f \circ g$ is injective. \[W \overunderset {g_{1}}{g_{2}}\rightrightarrows X \xrightarrow f Y : f \circ g_{1} = f \circ g_{2} \imp g_{1}= g_{2}.\]
+    \item an \emph{epimorphism $\iff f$} is right cancellable $\iff \forall Z \in \C$ the map $f^{*}: \C(Y,Z) \to \C(X,Z), h \mps h \circ f$ is injective. \[X \xrightarrow f Y \overunderset {h_{1}}{h_{2}}\rightrightarrows  Z: h_{1} \circ f = h_{2} \circ f \imp h_{1}= h_{2}.\]
+          \item a \emph{split monomorphism} $\iff \ex g \in \C(Y,X)$ such that $g \circ f = 1_{X}$ \[\begin{tikzcd}
+X \arrow[r, "f"'] & Y \arrow[l, "g"', dashed, bend right]
+\end{tikzcd}\]
+
+          \item a \emph{split epimorphism} $\iff \ex h \in \C(Y,X)$ such that $f \circ h = 1_{Y}$ \[\begin{tikzcd}
+X \arrow[r, "f"'] & Y \arrow[l, "h"', dashed, bend right]
+\end{tikzcd}\]
+  \end{enumerate}
+\end{defi}
+
+\begin{facts}
+\begin{enumerate}[(a)]
+  \item $f$ split mono-/epimorphism $\imp f$ mono-/epimorphism.
+  \item $f$ (split) mono-/epimorphism in $\C \imp f$ (split) mono-/epimorphism in $\C\op$.
+  \item (Exercise) For $f \in \C(X, Y), (X, Y) \in \C$ the following are equivalent:
+        \begin{enumerate}[(i)]
+          \item $f$ is an isomorphism
+                \item $\forall W \in \C : f_{*}: \C(W, X) \to \C(W, Y), g \mps f \circ g$ is bijective.
+                \item $\forall Z \in \C : f^{*}: \C(Y, Z) \to \C(X, Z), h \mps h \circ f$ is bijective.
+        \end{enumerate}
+\end{enumerate}
+\begin{enumerate}[(b')]
+\item $f$ is an isomorphism in $\C \iff f$ is an isomorphism in $\C\op$.
+\end{enumerate}
+
+\begin{proof}(b), (b') are exercises. (c) ``serious'' exercise.
+  \begin{enumerate}[(a)]
+    \item For an epimorphism (check right cancellability) consider
+          \[X \xrightarrow f Y \overunderset {h_{1}}{h_{2}}\rightrightarrows  Z: h_{1} \circ f \overset{(1)}= h_{2} \circ f\]
+          By $f$ a split epimorphism, we have $h: Y \to X$ such that $f \circ h = 1_{Y}$ (2). Apply $-\circ h$ to (1):
+          \begin{align*} % IDEA make command for vertical equals (fix spacing)
+            \underset {\verteq} {(h_{1} \circ f)} \circ h & = \underset{\verteq}{(h_{2} \circ f) \circ h}\\
+             h_{1} = h_{1} \circ 1_{Y}= h_{1} \circ (f \circ h) &= h_{2} \circ (f \circ h) = h_{2} \circ 1_{Y} = h_{2}
+          \end{align*}\qedhere
+  \end{enumerate}
+\end{proof}
+\end{facts}
+
+
+\begin{exmps*}
+In $\Set, \Grp, \Ring$ the monomorphisms are the injective maps and in $\Set, \Grp$ the epimorphisms are the surjective maps. But $\Z \to \Q$ (inclusion) is an epimorphism in $\Ring$. If $K \subseteq E$ is purely inseperable, then it's an epimorphism in the category of fields.
+\end{exmps*}
+
+
+\begin{defi}
+  \begin{enumerate}[(a)]
+\item $X \in \C$ is called an \emph{initial object} $\iff \forall Y \in \C : \#\C(X, Y) = 1$
+\item $X \in \C$ is called a \emph{terminal object} $\iff \forall Z \in \C : \#\C(Z, X) = 1$
+\item $X \in \C$ is called a \emph{null object} $\iff X$ is initial and terminal.
+  \end{enumerate}
+\end{defi}
+\begin{exmp*}
+\begin{itemize}
+  \item $\emptyset$ is initial in $\Set, \Top$,
+  \item $\{*\}$ is terminal in $\Set, \Top$
+        \item $0 = \{0\}$ is a null object in $_{R}\Mod, \Ab, \Vec_{K}$
+\end{itemize}
+\end{exmp*}
+
+\section{Functors}
+Let $\C, \C', \D$ be categories.
+\begin{defi}
+A \emph{functor} $F$ from $\C$ to $\D$ ($F: \C \to \D$) is a pair of maps \begin{align*}
+  F: \Ob \C &\to \Ob \D, X \mps F(X),\\
+  F: \Mor \C &\to \Mor \D, f \mps F(f).
+\end{align*}
+that ``preserve sources, targets, units and composition'', i.e.
+\begin{enumerate}[(i)]
+  \item $\forall f \in \Mor \C : \dom (Ff) = F(\dom f)$ and $\cod (Ff) = F(\cod f)$
+  \item $\forall X \in \Ob \C: F(1_{X}) = 1_{FX}$
+      \item $\forall$ composable pairs $(g,f)$ in $\Mor \C \tm_{\Ob \C} \Mor \C : F(g \circ f) = F(g) \circ F(f)$. (other notation $F(X \xrightarrow f Y ) = FX \xrightarrow {Ff} FY$)
+\end{enumerate}
+\end{defi}
+\begin{exmps*}
+\begin{enumerate}[(a)]
+  \item Powerset: \begin{align*}
+    \mathcal P : \Set &\to \Set \\
+    X &\mps \mathcal P(X) \\
+    f: X \to Y &\mps \mathcal Pf: \mathcal PX \to \mathcal PY, \\
+    &\quad\ \  (U \subseteq X) \mps (f(U) \subseteq Y)
+  \end{align*}
+
+  \item Forgetful functor (it forgets structure)
+  \begin{align*}
+  V: \Grp & \to \Set, (G, e, \circ) \mps G \\
+  V: \Top & \to \Set, (X, \T) \mps X \\
+  V: \RMod & \to \Ab, (M, 0, +, \cd) \mps (M, 0, +)
+  \end{align*}
+  \item $\RMod \to \Mod_{R\op},$ left $R$-modules $\mps$ right $R$-modules.
+
+\end{enumerate}
+\end{exmps*}
+
+\begin{rem*}
+Functors in definition 17 are also called covariant functors.
+\end{rem*}
+
+\begin{defi}
+  A \emph{contravariant} functor from $\C \to \D$ is a functor $F: \C\op \to \D$, i.e. \[F(X \xrightarrow f Y) = (FX \xleftarrow{Ff} FY)\]
+  $= (Y \xrightarrow f X)$ in $\C\op$ and \[F((Y \xrightarrow g Z) \circ (X \xrightarrow f Y)) = F(X \xrightarrow f Y) \circ F(Y \xrightarrow g Z)\]
+  Visually:
+ \[\begin{tikzcd}[row sep = 14, column sep = 10]
+X \arrow[d, "f"] & X                & FX                 \\
+Y \arrow[d, "g"] & Y \arrow[u, "f"] & FY \arrow[u, "Ff"] \\
+Z                & Z \arrow[u, "g"] & FZ \arrow[u, "Fg"] \\
+\text{in } \C    & \text{in } \C\op &
+\end{tikzcd}\]
+\end{defi}
+\begin{rem*}[Exercise]
+Let $F: \C \to \D$ be any functor $\imp F$ maps isomorphisms to isomorphisms.
+\end{rem*}
+
+% 10.5.24
+\begin{exmps*}[Contravariant functors]
+  \begin{enumerate}[(a)]
+    \item Passage to the dual vector space
+          \[\begin{tikzcd}
+              {D: \Vec_{K}\op} \arrow[r] & \Vec_{K} \\[-20pt]
+V \arrow[r, maps to] \arrow[d, "f"'] & {V^* = \Hom_K(V,K)}        \\
+W \arrow[r, maps to]                 & W^* \arrow[u, "Df = f^*"']
+\end{tikzcd}\]
+          linear algebar: $(f \circ g)^{*} = g^{*} \circ f^{*}$ for $(f,g)$ a composable pair.
+    \item Let $\mathsf{Poset}$ be the category of partially ordered sets, then we have a contravariant functor
+          \[\begin{tikzcd}
+\mathcal O: \mathsf{Top}^\mathrm{op} \arrow[r]       & \mathsf{Poset}                                        &[-20pt]                                  \\[-20pt]
+{(X, \mathcal T)} \arrow[r, maps to] \arrow[d, "f"'] & {(\mathcal T, \subseteq)} \arrow[r, phantom, "\ni"]                            &[-20pt] f^{-1}(V) \underset{\text{open}}\subseteq X            \\
+{(Y, \mathcal T')} \arrow[r, maps to]                & {(\mathcal T, \subseteq)} \arrow[u, "\mathcal O(f)"'] \arrow[r, phantom, "\ni"] &[-20pt] V \underset{\text{open}}\subseteq Y \arrow[u, maps to]
+\end{tikzcd}\]
+    \item The contravariant powerset functor:
+          \[\begin{tikzcd}
+\mathcal P^*: \Set \arrow[r]                  & \Set                                                        \\[-20pt]
+X \arrow[r, maps to] \arrow[d, "f"'] & \mathcal P^*(X) = \mathcal P(X)                             \\
+Y \arrow[r, maps to]                 & \mathcal P^*(Y) = \mathcal P(Y) \arrow[u, "\mathcal P^*f"']
+\end{tikzcd}\]
+  \end{enumerate}
+\end{exmps*}
+
+\begin{defi}
+  Let $\C, \C', \D$ be categories, a functor $\C \tm \C' \to \D$ is called a \emph{bifunctor}.
+\end{defi}
+\begin{exmp}[Important example]
+  Let $\C$ be any category
+  \[\begin{tikzcd}
+{\mathcal C(-,-): \mathcal C^{\mathrm{op}} \times \mathcal C} \arrow[r] & \mathsf{Set}                  &[-20pt]                      \\[-20pt]
+{(X,Y)} \arrow[r, maps to] \arrow[d, "h", shift left]                   & {\mathcal C (X, Y)} \arrow[d] \arrow[r, phantom, "\ni"]& g \arrow[d, maps to] \\
+{(W,Z)} \arrow[r, maps to] \arrow[u, "f", shift left=2]                 & {\mathcal C (W,Z)} \arrow[r, phantom, "\ni"]           & h \circ g \circ f
+\end{tikzcd}
+  \]
+  If we fix a first argument $X$, we get \begin{align*}
+h_{X}:= \C(X,-) &\to \Set
+  \end{align*}
+  If we fix a second argument $Y$, we get \begin{align*}
+h^{Y}:=\C(-,Y) &\to \Set
+  \end{align*}
+  Soon: we will also have another important bifunctor \begin{align*}
+- \otm - : \Mod_{R} \tm {}_{R}\Mod \to \Ab
+  \end{align*}
+\end{exmp}
+
+\begin{defi}
+  Let $F: \C \to \D$ be a functor, $F$ is called
+  \begin{enumerate}[(a)]
+    \item \emph{faithful} $\iff \forall X, Y \in \C:$
+          \(\C(X,Y) \to \D(FX,FY)\)is injective.
+    \item \emph{full} $\iff \forall X, Y \in \C:$
+          \(\C(X,Y) \to \D(FX,FY)\)is surjective.
+    \item \emph{fully faithful} $F$ is full and faithful.
+    \item \emph{essentially surjective} $\iff \forall Y \in \D \ex X \in \C \ex$ isomorphism $FX \xrightarrow \cong Y$.
+    \item \emph{conservative} $\iff \forall f \in \Mor \C: f$ is an isomorphism $\iff Ff \i \Mor \D$ is an isomorphism. ($\imp$ always holds)
+\item \emph{an isomorphism} $\iff \ex G: \D \to \C$ functor such that $F \circ G = \id_{\D}$ and $G \circ F = \id_{\C}$.
+  \end{enumerate}
+\end{defi}
+\begin{exmps*}
+  \begin{enumerate}[(a)]
+    \item Forgetful functors are ``often'' faithful but not full
+          \[V: \Grp \to \Set, \Ab \to \Set, {_{R}}\Mod \to \Set, \Ring \to \Set\]
+          are conservative.
+    \item The forgetful functor $V: \Top \to \Set$ is not conservative and not full but essentially surjective.
+          \item The inclusion of a subcategory $\C'$ into its ambient category $\C$ is always faithful. Call $\C'$ a \emph{full subcategory} $\iff \forall X, Y \in \C' : \C'(X,Y) = \C(X,Y)$ ($\iff i: \C' \to \C$ is full)
+  \end{enumerate}
+\end{exmps*}
+
+\section{Natural transforations}
+They are morphisms between functors.
+\begin{defi} Let $F, G: \C \to \D$ be functors.
+  \begin{enumerate}[(a)]
+    \item A morphism from $F$ to $G$ (or a \emph{natural transforation}) is a family $u = (u_{X}: FX \to GX)_{X \in \Ob \C}$ of morphisms in $\D$, such that forall $f: X \to Y$ in $\C$ we have the commutative diagram:
+          \[\begin{tikzcd}
+              FX \arrow[d, "Ff"'] \arrow[r, "u_X"] & GX \arrow[d, "Gf"] \\
+FY \arrow[r, "u_Y"']                 & GY
+\end{tikzcd}\]
+          Notation:
+          \[\begin{tikzcd}[row sep = 8]
+& {} \arrow[dd, "u", Rightarrow] &    \\
+\C \arrow[rr, "F", bend left=45] \arrow[rr, "G"', bend right=45] &                                & \D \\
+& {}                             &
+\end{tikzcd}\]
+    \item Composition: Let $F, G, H: \C \to \D$ be functors and $u: F \Rightarrow G, v: G \Rightarrow H$ natural transformations. The composition $v \circ u : F \Rightarrow H$ is the natural transformation (check) $(v_{X} \circ u_{X}: FX \xrightarrow{u_{X}}GX\xrightarrow{v_{X}}HX)_{X \in \Ob \C}$
+\[\begin{tikzcd}[row sep = 10]
+                                                                                             & {} \arrow[d, "u", Rightarrow] &    \\
+                                                                                             \C \arrow[rr, "F", bend left=45] \arrow[rr, "H"', bend right=45] \arrow[rr, "G\quad \quad "'] & {} \arrow[d, "v", Rightarrow] & \D \\
+                                                                                             & {}                            &
+\end{tikzcd}\]
+
+    \item The category $\D^{\C}$ (or $\mathrm{Fun}(\C, \D)$) whose objects are the functors $\C \to \D$ and whose morphisms are the natural transformations $(F: \C \to \D) \Rightarrow (G: \C \to \D)$. The composition is from (b), and the unit natural transforation is \[\begin{tikzcd}[row sep = 8]
+& {} \arrow[dd, "1_{F}", Rightarrow] &    \\
+\C \arrow[rr, "F", bend left=45] \arrow[rr, "F"', bend right=45] &                                & \D \\
+& {}                             &
+\end{tikzcd}, 1_{F} = (FX \xrightarrow{1_{FX}} FX)_{X \in \Ob \C}\]($\dom, \cod$ are clear).
+  Remark: One can also define 2-categories (and the category of categories is an example of such, objects: $\C, \D, ...$ and morphisms are $F: \C \rightrightarrows \D$ 2-morphisms = natural transformations)
+  \item A natural transformation $u: F \Rightarrow G$ is called a \emph{natural isomorphism} $\iff \forall X \in \Ob \C : u_{X}: FX \to GX$ is an isomorphism $\underset{\text{Exerc.}} \iff \ex$ natural transformation $v: G \Rightarrow F : v \circ u = \id_{F}, u \circ v = \id_{G}$.
+  \end{enumerate}
+\end{defi}
+
+
+\begin{exmp*}[Famous linear algebra example of a natural transformation]
+  Let $(\cd)^{**}: \Vec_{K} \to \Vec_{K}, V \mps V^{**}, f \mps f^{**}$ be the (covariant) bidual functor. $\id: \Vec_{K} \to \Vec_{K}$ denotes the identity, we set $u_{V}: V \to V^{**}, v \mps (b_{v}: V^{*} \to K, \xi \mps \xi(v))$ then $u = (u_{V})_{V \in \Vec_{K}}$ is a natural transformation $u: \id \Rightarrow (\cd)^{**}$ and restricted to the full subcategory $\Vec_{K}^{\text{f.d.}} \subseteq \Vec_{K}$ on finite dimensional $K$-vector spaces, it gives a natural isomorphism $u: \id \Rightarrow (\cd)^{**}$
+  \[\begin{tikzcd}[row sep = 8]
+& {} \arrow[dd, "u", Rightarrow] &    \\
+\Vec_{K}^{\text{f.d.}} \arrow[rr, "\id", bend left=45] \arrow[rr, "(\cd)^{**}"', bend right=45] &                                &\Vec_{K}^{\text{f.d.}}\\
+& {}                             &
+\end{tikzcd}\]
+\end{exmp*}
+
+\begin{defi}[important concept]
+A functor $F: \C \to \D$ is called an equivalence of categories $\iff \ex$ functor $G: \D \to \C$ such that one has natural transforations $\id_{\C} \Rightarrow G \circ F$ and $\id_{\D} \Rightarrow F \circ G$. Call $\C$ and $\D$ \emph{equivalent categories} $\iff \ex$ equivalence of categories $F: \C \to \D$.
+\end{defi}
+\begin{rem*}
+The notion of ``equivalence of categories'' is far more important than the notion of isomorphism of categories.
+\end{rem*}
+
+
+\begin{exmp*}[linear algebra]
+  Let $\Vec_{K}^{\text{std.}}$ be the full subcategory of the $\Vec_{K}^{\text{f.d.}}$ on the object set $\{K^{n} \mid n \in \Nn\}$. Then the inclusion $\iota: \Vec_{K}^{\text{std.}} \to \Vec_{K}^{\text{f.d.}}$ is an equivalence of categories. For $G: \Vec_{K}^{\text{std}} \to \Vec_{K}^{\text{std}}$ take $V \mps K^{\dim_{K} V}$, choose a basis $\underline B_{V}$ for any $V \in \Vec_{K}^{\text{f.d.}}$ then we get an isomorphism $K^{\dim_{K} V} \xrightarrow{\a_{V}} V$. Define:
+  \[\begin{tikzcd}
+      V \arrow[d, "f"'] \arrow [r, mapsto] & K^{\dim_{K} V} \arrow[d, "\alpha_{W}^{-1} \circ f \circ \a_{V}"] \\
+      W \arrow [r, mapsto]& K^{\dim_{K} W}
+    \end{tikzcd}\]
+  Find natural isomorphism $G \circ \iota \Leftarrow \id \Rightarrow \iota \circ G.$
+\end{exmp*}
+
+\begin{rem*}
+One also calls $\Vec_{K}^{\text{std.}}$ a \emph{skeleton} of $\Vec_{K}^{\text{f.d.}}$
+\end{rem*}
+
+\begin{thm}
+  For a functor $F: \C \to \C'$ the following are equivalent:
+  \begin{enumerate}[(i)]
+    \item $F$ is an equivalence of categories.
+    \item $F$ is fully faithful and essentially surjective.
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+\begin{itemize}
+  \item (i)$\imp$(ii): Exercise.
+        \item (ii)$\imp$(i): Standard textbook. \qedhere
+\end{itemize}
+\end{proof}
+
+\begin{defi}
+The \emph{essential image} of a functor $F: \C \to \D$ in $\D$ is the full subcategory $\D'$ of $\D$ on objects isomorphic to $FX$ for some $X \in \Ob \C$.
+\end{defi}
+\begin{cor}[of 24 and the definition]
+  Suppose $F: \C \to \D$ is fully faithful. Let $\D' \subseteq \D$ be the essential image of $F$, then $F: \C \to \D'$ is an equivalence of categories.
+\end{cor}
+
+\section{The Yoneda lemma and presheaves}
+Let $\C, \C', \D$ be categories.
+\begin{defi}
+  \begin{enumerate}[(a)]
+    \item A $\D$-valued presheaf on $\C$ is a functor \[\mathcal F: \C\op \to \D\]
+    \item The category of $\D$-valued presheaves on $\C$ is $\mathrm{PSh}(\C,\D) = \D^{\C\op}$
+          \item If $\D = \Set$, then we omit it from the notation, so $\mathrm{PSh}(\C) = \Set^{\C\op}$
+  \end{enumerate}
+Note that if $\D$ is a small category, then $\D^{\C\op}$ is a category.
+\end{defi}
+\begin{rem*}[On the terminoloy]
+  (Pre-)sheaves come from topology/geometry. Example: Let $(X,\T)$ be a topological space (e.g. $\mathbb C$ with the metric topology), For $U \subseteq X$ define $O_{X}(U):= \{f: U \to \mathbb C\text{ continuous}\}$ or ($O_{\mathbb C}(U):= \{f: U \to \mathbb C \text{ holomorphic }\}$). Check:
+  \[\begin{tikzcd}
+{O_X: \mathsf{ord}(T, \subseteq)}\arrow[r]                           & \Set                                   \\[-20pt]
+U \arrow[r, maps to]                                        & O_X(U) \arrow[d, "\text{restriction}"] \\
+V \arrow[u, "\vsubseteq"] \arrow[r, maps to] & O_X(V)
+\end{tikzcd}
+  \]this is a presheaf.
+\end{rem*}
+
+\begin{defi}The Yoneda embedding is the functor $h: \C \to \mathrm{PSh}(\C) = \text{Fun}(\C\op, \Set), X \mps h_{X}:= \C(-, X): \C\op \to \Set$
+  \[\begin{tikzcd}
+h: \cal C \arrow[r]                 & \mathrm{PSh}(\cal C)                                                  &                                           &                      \\
+X \arrow[r, maps to]                & {h_X:= \mathrm{Hom}_\mathcal C(-,X):\mathcal C^\mathrm{op}} \arrow[r] & \mathsf{Set}                              &                      \\
+                                    & Y \arrow[d, "\ell"] \arrow[r, maps to]                                & {\mathrm{Hom}_\mathcal{C}(Y,X)}           & g \circ \ell         \\
+                                    & Z \arrow[r, maps to]                                                  & {\mathrm{Hom}_\mathcal{C}(Z,X)} \arrow[u] & g \arrow[u, maps to] \\
+X \arrow[d, "f"] \arrow[r, maps to] & h_X \arrow[d, "h_f", Rightarrow]                                      & {\mathrm{Hom}_\mathcal{C}(Z,X)} \arrow[d] & g \arrow[d, maps to] \\
+Y \arrow[r, maps to]                & h_Y                                                                   & {\mathrm{Hom}_\mathcal{C}(Z,Y)}           & f \circ g
+\end{tikzcd}\]
+\end{defi}
+
+\begin{lemm}
+  For $X \in \C, F \in \mathrm{PSh}(\C) = \mathrm{Fun}(\C\op, \Set)$
+  \[\begin{tikzcd}
+{\mathrm{Mor}_{\mathrm{PSh}(\mathcal C)}(h_X, \mathcal F)} \arrow[r, "\Phi"]       & \mathcal F X \\[-20]
+u:= (u_Y: h_XY \to \mathcal FY)_{Y \in \mathrm{Ob}\cal C} \arrow[r, maps to] & u_X1_X
+\end{tikzcd}\]
+is a bijection. ($\Mor_{\mathrm{PSh}(\C)}(h_{x}, \mathcal F)$ is a set.)
+\begin{proof}
+  Reconstruct a natural transformation $u^{\a}$ from $\a \in \mathcal FX$, first consider what $u \in \Mor_{\mathrm{PSh}(\C)}(h_{x}, \mathcal F)$ gives us
+  \[\begin{tikzcd}
+X                &[-20] {h_X = \Hom_\C(X,X)} \arrow[r, "u_X"] \arrow[d, "- \circ g"] & \mathcal FX \arrow[d, "\mathcal Fg"] &[-20] 1_X \arrow[d, maps to] \arrow[r, maps to] & u_X(1_X) = \alpha \arrow[d, maps to] \\
+Y \arrow[u, "g"] & {h_X(Y) = \Hom_\C(Y,X)} \arrow[r, "u_Y"]                     & \mathcal FY                          & g \arrow[r, maps to]                      & u_Y(g) = \mathcal Fg(\a)
+\end{tikzcd}\]
+Define $\psi: \mathcal F(X) \to \Mor_{\mathrm{PSh}(\C)}(h_{X}, \mathcal F), \a \mps (u_{Y}^{\a})_{Y \in \Ob \C}$ by setting $u_{Y}^{\a}: h_{X}(Y) \to \mathcal FY, g \mps \mathcal Fg(\a)$. Check $u_{Y}^{\a}$ is a natural transforation. Then for any $f: Z \to Y$ in $\C$ we get TODO
+\end{proof}
+\end{lemm}
+
+\begin{cor}The functor $h : \C \to \mathrm{PSh}(\C)$ is fully faithful, i.e. $\C(X,Y) \leftrightarrow \Mor_{\psh (\C)}(h_{X},h_{Y})$.
+\begin{proof}
+We need to show $\forall X, Y \in \ob \C$ the map $\C(X,Y) \to \Mor_{\psh(\C)}(h_{X}, h_{Y}), f \mps h(f) = f \circ -$ is bijective. Observe: Yoneda $\Phi: \Mor_{\psh(\C)}(h_{X},h_{Y}) \to h_{y}(X) = \C(X,Y), u \mps u_{X}(1_{X})$ is a bijection, so it suffices to show $\Phi \circ h$ is a bijection. For this: $\Phi \circ h(f: X \to Y) = f \circ 1_{X} = f \imp \Phi \circ h = \id$.
+\end{proof}
+\end{cor}
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item Call $\mathcal F \in \psh (\C)$ \emph{representable} $\iff \ex X \in \C$ such that $h_{X} \cong \mathcal F$.
+  \item A presentation of a (representable) $\mathcal F \in \psh (\C)$ is a pair $(X,\a)$ with $X \in \ob \C, \a \in \mathcal FX$ such that $\Psi(\a): h_{X} \Rightarrow \mathcal F$ from the proof of lemma 29 is a natural isomorphism. %TODO complete until prop
+\end{enumerate}
+\end{defi}
+\begin{prop}
+  Suppose $(X, \a)$ and $(Y,\b)$ are presentations of $\mathcal F \in \psh (\C)$, then $\ex!$ isomorphism $f: X \to Y$ such that $\mathcal F(f)(\b) = \a$
+  \begin{proof}
+Exercise.
+  \end{proof}
+\end{prop}
+
+\section{Conatravariant Yoneda}
+\begin{prop}
+  The functor
+  \[\begin{tikzcd}
+h\op: \C\op \arrow[r]               & \Fun(\C, \Set)                        \\[-20]
+X \arrow[r, maps to] \arrow[d, "f"'] & {\C(X, -)}                      \\
+Y \arrow[r, maps to]                 & {\C(Y,-)} \arrow[u, "h\op(f)"']
+\end{tikzcd}\]
+is fully faithful and for $X \in \ob \C$ and $\mathcal F: \C \to \Set$ a functor, the map $\Phi': \Mor_{\Set^{\C}}(h\op_{X}, \mathcal F) \to \mathcal F(X), u \mps u_{X}(1_{X})$ is bijective.
+\begin{proof}
+(Exercise) Apply Yoneda to $\C\op$.
+\end{proof}
+\end{prop}
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item A covariant functor $F: \C \to \Set$ is \emph{corepresentable} $\iff F \cong h_{X}\op$ for some $X \in \C$.
+        \item A presentation of a (corepresentable) functor $F$ is a pair $(X, \a)$ such that $(\Phi')^{-1}(\a)$ is an isomorphism $h_{X}\op \to \mathcal F$
+\end{enumerate}
+\end{defi}
+
+\begin{prop}[analog of 32] If $(X, \a)$ and $(Y, \b)$ are 2 presentations of $F: \C \to \Set$, then $\ex!$ isomorphism $f: X \to Y$ such that $F(f)(\a) = \b$.
+\end{prop}
+\begin{rem*}
+We mostly drop co- in corepresentable because the functor dictates if it is representable or corepresentable (if $F$ co- or contravariant)
+\end{rem*}
+\begin{rem*}
+  For $f: X \to Y$ we have
+  \begin{align*}
+    f \circ -  : \C(Z,X) \to \C(X,Y) \text{ bij.} &\iff h(f) \cong \iff f \cong \iff h\op(f) \cong \\&\iff -\circ f : \C(Y,Z) \to \C(X,Z) \text{ bij.}
+  \end{align*} because $h$ is fully faithful.
+
+\end{rem*}
+
+\section{Universal pairs}
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item Let $F: \C \to \D$ be a functor and $B \in \ob \D$. A pair $(U, \b)$ with $U \in \ob \C$ and $\beta: B \to F(U)$ (in $\D$) is \emph{(co-)universal} for $(F, \b):\iff (U,\b)$ (co-)represents $\D(B, F(-)) = h_{B}\op \circ F: \C \to \Set$.
+  \item Let $G: \D \to \C$ be a functor and $A \in \ob \C$. A pair $(V, \a)$ with $V \in \ob \D$ and $\a : G(V) \to A$ (in $\C$) is universal for $(G, A) \iff (V, \a)$ represents $(\C(G(-), A)) = h_{A} \circ G: \D\op \to \Set$.
+\end{enumerate}
+TODO: interpretation
+\end{defi}
+\begin{exmps}
+\begin{enumerate}[(a)]
+TODO
+\end{enumerate}
+
+\end{exmps}
+
+\section{Limits and colimits}
+Let $\C$ be a category.
+\begin{defi}
+  A diagram in $\C$ is a functor $F: J \to \C$ for $J$ a small category (call $J$ the \emph{index category} of the diagram.)
+\end{defi}
+\begin{rem*}[Relation to previous notions of diagrams]Let $V: \Cat \to \Diag$, [MacLane II.7]: $\ex$ functor TODO
+
+\end{rem*}
+
+\begin{defi}
+  A diagram $F: J \to \C$ \emph{commutes} $\iff \forall i, j \in J$: \[\ubr{F(J(i,j))}_{\text{is a singleton}} \subseteq \C(F i, Fj)\]
+  (naive diagram commutes $\iff F\varphi$ commutes.)
+\end{defi}
+\begin{defi} Let $F: J \to \C$ denote a diagram in $\C$.
+  \begin{enumerate}[(a)]
+    \item The \emph{constant functor} from $J$ to $\C$ for $X \in \ob \C$ is $\Delta X: J \to \C$ with $\Delta X(i) = X, \forall i \in J$ and $\Delta X(h) = 1_{X}, \forall h \in \Mor J$.
+    \item The \emph{diagonal} $\Delta: \C \to \C^{J} = \Fun(J, \C)$ with $\Delta(X) := \Delta X$ from (a) and $\Delta(f):= $ the natural transformation $\Delta X \Rightarrow \Delta Y$ given for any $i \in J$ by $\Delta X(i) = X \xrightarrow f \Delta Y(i) = Y$.
+    \item A \emph{cone} to $F: J \to \C$ (any fixed $F$) with apex $X \in \C$ is a natural transforation $\Delta X \Rightarrow F$. A \emph{cocone} from $F$ with vertex $X \in \ob \C$ is a natural transforation $F \Rightarrow \Delta X$.
+    \item Cones and cocones give rise to the following functors:
+\begin{itemize}
+  \item $\cone(-, F): \C\op \to \Set$ defined by $\cone(X,F) = $ set of cones  $\Delta X \Rightarrow F$, $\cone(f: X \to Y, F)$ maps $\cone(Y,F) \to \cone(X,F), (\Delta Y \Rightarrow F) \mps (\Delta X \Rightarrow \Delta Y \Rightarrow F)$.
+        \item Similarly $\coc(F, -): \C \to \Set$ is the functor defined by $\coc(F, X) =$ set of cocones $F \Rightarrow \Delta X$ etc.
+\end{itemize}
+          Observe: \begin{align*}
+            \cone(-,F) &= \C^{J}(\Delta(-),F)\\
+            \coc(F,-) &= \C^{J}(F, \Delta(-))
+          \end{align*}
+          Visualization: a natural transforation $u: \Delta X \Rightarrow F$ (where $X \in\C, F: J \to \C$) is for any $i \in J$ a morphism $X = \Delta X(i) \xrightarrow{u_{i}} F(i)$ such that $\forall h: i \to j$ in $J$ the following diagram commutes:
+          \[\begin{tikzcd}
+\Delta X(i) = X \arrow[d, "u_i"] \arrow[rd, "u_j"] \arrow[r, "1_X"] & X = \Delta X(j) \arrow[d, "u_j"] \\
+Fi \arrow[r, "Fh"']                                                 & Fj
+\end{tikzcd}\]
+          for instance if TODO
+  \end{enumerate}
+\end{defi}
+\begin{rem}
+\begin{enumerate}[(a)]
+  \item The cones to $F$ form a full subcategory $F$-cones $\subseteq \C^{J}/F$ on objects $\Delta X \Rightarrow F$ ($X \in \C$).
+        \item Similarly cocones from $F$ form a full subcategory $F$-cocones $\subseteq F/{\C^{J}}$ on objects $F \Rightarrow \Delta X$.
+\end{enumerate}
+\end{rem}
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item If $\cone(-,F): \C\op \to \Set$ is representable, the representing object is called a \emph{limit} over $F$. Notation: $\lim F$ or $\lim_{J} F$ for the representing universal object.
+  \item If $\coc(F, -): \C \to \Set$ is representable, the representing object is called a \emph{colimit} over $F$. Notation: $\colim F$ or $\colim_{J} F$
+\end{enumerate}
+
+More explicitly: $\lim_{J} F$ is an object $L \in \C$ together with a (universal) ocne $\Delta L \Rightarrow F$ such that $\forall$ cones $\ph: \Delta X \Rightarrow F$ in $\C^{J} \ex!$ morphism $\psi: X \to L$ such that the diagram commutes \[\begin{tikzcd}
+                               & \Delta X \arrow[d, "\varphi", Rightarrow] \arrow[ld, "\psi"', dashed] \\
+\Delta L \arrow[r, Rightarrow] & X
+\end{tikzcd}\]
+Yoneda implies that $\lim F$ (if it exists) is unique up to unique isomorphism (similarly for $\colim F$).
+\end{defi}
+
+\begin{exer}
+          \begin{enumerate}[(a)]
+\item $\lim F$ exists $\iff$ category of $F$-cones has a terminal object.
+\item $\colim F$ exists $\iff$ category of $F$-cocones has an initial object.
+          \end{enumerate}
+        \end{exer}
+\begin{prop}[Exercise]
+  Let $\Delta : \C \to \C^{J}$ be the diagonal from above and $F$ any diagram in $\C^{J}$. Then
+  \begin{enumerate}[(a)]
+    \item $\lim F$ is a universal object for the pair $(\Delta, F)$ i.e. $\C^{J}(\Delta(-), F) \leftrightarrow \C(-, \lim_{J} F)$.
+          \item $\colim F$ is a couniveral object for the pair $(\Delta, F)$ i.e. $\C^{J}(F, \Delta(-)) = \C(\colim_{J} F, -)$.
+  \end{enumerate}
+
+\end{prop}
+        \begin{exmps}
+
+        \end{exmps}
 \end{document}

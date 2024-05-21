@@ -80,6 +80,7 @@
 \newtheorem*{whg*}{Wiederholung}
 \newtheorem*{int*}{Interpretation}
 \newtheorem{auf}[thm]{Aufgabe}
+\newtheorem{warn}[thm]{Warning}
 \newtheorem{ubng}[thm]{Übung}
 \newtheorem*{ubng*}{Übung}
 \newtheorem{loes}[thm]{Lösung}
@@ -98,7 +99,7 @@
 \newcommand{\F}{\mathbb{F}}
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\Fp}{\mathbb{F}_p}
-\newcommand{\C}{\mathbb{C}}
+%\newcommand{\C}{\mathbb{C}}
 \newcommand{\Rn}{\mathbb{R}^n}
 \newcommand{\<}{\langle}
 \renewcommand{\>}{\rangle}
@@ -134,6 +135,20 @@
 %\DeclareMathOperator{\bil}{Bild}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\cok}{coker}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\ob}{Ob}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\mor}{Mor}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\psh}{PSh}
+\DeclareMathOperator{\cone}{Cone}
+\DeclareMathOperator{\coc}{Cocone}
+\DeclareMathOperator{\cocone}{Cocone}
+
+\DeclareMathOperator*{\colim}{colim}
+
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\cod}{cod}
 
 \DeclareMathOperator{\Abb}{Abb}
 \DeclareMathOperator{\Bij}{Bij}
@@ -172,7 +187,26 @@
 \newcommand{\nb}[1]{\{0, \ldots, #1\}}
 \newcommand{\ebe}[2]{\{#1, \ldots, #2\}}
 
+\DeclareMathOperator{\Ord}{Ord}
 \newcommand{\Sn}{S_n}
+
+
+% Categories
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\Set}{\mathsf{Set}}
+\newcommand{\Grp}{\mathsf{Grp}}
+\newcommand{\Ring}{\mathsf{Ring}}
+\newcommand{\CRing}{\mathsf{CRing}}
+\newcommand{\Top}{\mathsf{Top}}
+\newcommand{\Mod}{\mathsf{Mod}}
+\newcommand{\RMod}{{}_R\mathsf{Mod}}
+\newcommand{\ModR}{\mathsf{Mod}_R}
+\renewcommand{\Vec}{\mathsf{Vec}}
+\newcommand{\Ab}{\mathsf{Ab}}
+\newcommand{\Cat}{\mathsf{Cat}}
+\newcommand{\Diag}{\mathsf{Diag}}
+
 % Topologie
 \newcommand{\T}{\mathcal{T}}
 \newcommand{\lm}{\lambda}
@@ -221,6 +255,8 @@
 \DeclareMathSymbol{\bigtimes}{1}{mathx}{"91}
 
 \DeclareMathOperator*{\bigforall}{\scalerel*{\forall}{\sum}}
+\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
+\newcommand{\vsubseteq}{\rotatebox{90}{$\,\subseteq$}}
 
 \newcommand\fak[2]{
         \mathchoice
