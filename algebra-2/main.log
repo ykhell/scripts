@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  21 MAY 2024 17:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  4 JUN 2024 12:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -746,26 +746,37 @@ Package hyperref Info: Link coloring ON on input line 7.
 \openout4 = `main.out'.
 
 \docmute@nestinglevel=\count317
-LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
-.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 9.
+
 
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 {/usr/local/texlive/2023basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./main.toc)
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.11 \chapter
+             {Modules} [1
+
+]
 Chapter 1.
 (./sections/section1.tex
 Overfull \hbox (29.25327pt too wide) in paragraph at lines 38--39
@@ -777,14 +788,7 @@ t/10 R; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ;
  \OT1/cmr/m/n/10 +\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A[]\OT1/cmr/m/n/10 )$
  []
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.43     \item $
-                \id_{R}: R \to R$ is a ring homomorphism $\iff R$ is commuta...
-[1
+[2
 
 ]
 Overfull \hbox (92.46877pt too wide) in paragraph at lines 76--77
@@ -794,25 +798,25 @@ OT1/cmr/m/n/10 -linear map $\OML/cmm/m/it/10 ' \OT1/cmr/m/n/10 : \OML/cmm/m/it/
 or-phism/epimorphism/isomorphism
  []
 
-[2] [3]
+[3] [4]
 Overfull \hbox (12.3032pt too wide) in paragraph at lines 157--158
 []$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules
  []
 
-[4] [5]
+[5] [6]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 228
 .
  (/usr/local/texlive/2023basic/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-[6] [7] [8]
+[7] [8] [9]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 347.
 
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 347.
 
-[9] [10] [11]
+[10] [11] [12]
 Overfull \hbox (6.14203pt too wide) in paragraph at lines 439--440
 []\OT1/cmr/m/it/10 If $\OML/cmm/m/it/10 M[] [] R[]$ \OT1/cmr/m/it/10 and $\OML/
 cmm/m/it/10 M[] [] R[]$\OT1/cmr/m/it/10 , then $\OML/cmm/m/it/10 M [] R[]$\OT1/
@@ -824,7 +828,7 @@ cmr/m/it/10 . In par-tic-u-lar, $\OML/cmm/m/it/10 rank\OT1/cmr/m/n/10 (\OML/cmm
 LaTeX Warning: The counter will not be printed.
              The label is: (c) on input line 443.
 
-[12]
+[13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 499.
@@ -837,7 +841,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 499.
 
-[13] [14] [15] [16]
+[14] [15] [16] [17]
 Overfull \hbox (4.47374pt too wide) in paragraph at lines 699--700
 []\OT1/cmr/m/n/10 Assume $\OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 n[]; n[] \OMS/cmsy
 /m/n/10 2 \U/msb/m/n/10 N[]$ \OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 R[] []
@@ -851,7 +855,7 @@ Overfull \hbox (19.43883pt too wide) in paragraph at lines 717--718
  the 1-dimensional $\OML/cmm/m/it/10 K$\OT1/cmr/m/n/10 -vectorspaces. 
  []
 
-[17] [18]
+[18] [19]
 Overfull \hbox (16.89523pt too wide) detected at line 800
 \OT1/cmr/m/n/10 0 \U/msb/m/n/10 ( \OML/cmm/m/it/10 ^^S\OT1/cmr/m/n/10 (\OML/cmm
 /m/it/10 M[]\OT1/cmr/m/n/10 ) \U/msb/m/n/10 ( [] ( \OML/cmm/m/it/10 ^^S\OT1/cmr
@@ -861,7 +865,7 @@ Overfull \hbox (16.89523pt too wide) detected at line 800
 /n/10 ( [] ( \OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 ([][]) = \OML/cmm/m/it/10 M
  []
 
-[19]
+[20]
 Overfull \hbox (20.3512pt too wide) in paragraph at lines 825--825
 [][]\OT1/cmr/bx/n/10 Theorem 1.59. []\OT1/cmr/m/it/10 Sup-pose $\OML/cmm/m/it/1
 0 M$ \OT1/cmr/m/it/10 is noethe-rian or ar-tinian, then $\OMS/cmsy/m/n/10 9\OML
@@ -869,7 +873,7 @@ Overfull \hbox (20.3512pt too wide) in paragraph at lines 825--825
 /n/10 f\OML/cmm/m/it/10 M[]; [] ; M[]\OMS/cmsy/m/n/10 g ^^R
  []
 
-[20]) [21]
+[21]) [22]
 Chapter 2.
 (./sections/section2.tex
 Overfull \hbox (18.57794pt too wide) in paragraph at lines 47--48
@@ -877,9 +881,9 @@ Overfull \hbox (18.57794pt too wide) in paragraph at lines 47--48
 am scheme) is a tu-ple $(\OML/cmm/m/it/10 O; A; []; []\OT1/cmr/m/n/10 )$
  []
 
-[22
+[23
 
-] [23]
+] [24]
 Overfull \hbox (5.13696pt too wide) detected at line 107
 \OT1/cmr/m/n/10 (1[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1[])\OML/cmm/m/it/10 ; \
 OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f; \OT1/cmr/m/n/10 1[])\OML/cmm/m/it/10 ; \OT1
@@ -893,7 +897,7 @@ OML/cmm/m/it/10 h; \OT1/cmr/m/n/10 1[])\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML
 /cmm/m/it/10 g; h\OT1/cmr/m/n/10 )
  []
 
-[24]
+[25]
 Overfull \hbox (3.04295pt too wide) in paragraph at lines 176--177
 [] \OMS/cmsy/m/n/10 C\OML/cmm/m/it/10 ; [][] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n
 /10 j[]\OML/cmm/m/it/10 ; [][] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 j[]\OML/cm
@@ -901,17 +905,17 @@ m/m/it/10 ; \OMS/cmsy/m/n/10 ^^N[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^Nj[]\OM
 L/cmm/m/it/10 ; \OT1/cmr/m/n/10 1[] = 1\OMS/cmsy/m/n/10 j[]$\OT1/cmr/m/n/10 .
  []
 
-[25]
+[26]
 
 LaTeX Warning: The counter will not be printed.
              The label is: (b') on input line 225.
 
-[26] [27] [28]
+[27] [28] [29]
 
 LaTeX Warning: Command \i invalid in math mode on input line 372.
 
-[29] [30] [31] [32]
-Overfull \hbox (3.5827pt too wide) in paragraph at lines 513--515
+[30] [31] [32] [33]
+Overfull \hbox (3.5827pt too wide) in paragraph at lines 510--512
 \OT1/cmr/m/n/10 Define $\OML/cmm/m/it/10   \OT1/cmr/m/n/10 : \OMS/cmsy/m/n/10 F
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ! [][]\OT
 1/cmr/m/n/10 (\OML/cmm/m/it/10 h[]; \OMS/cmsy/m/n/10 F\OT1/cmr/m/n/10 )\OML/cmm
@@ -921,7 +925,7 @@ m/n/10 )[]$ by set-ting $\OML/cmm/m/it/10 u[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/1
  []
 
 
-Overfull \hbox (13.8667pt too wide) in paragraph at lines 520--521
+Overfull \hbox (12.38243pt too wide) in paragraph at lines 517--518
 []\OT1/cmr/m/n/10 We need to show $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 X; Y \OMS
 /cmsy/m/n/10 2 [] C$ \OT1/cmr/m/n/10 the map $\OMS/cmsy/m/n/10 C\OT1/cmr/m/n/10
  (\OML/cmm/m/it/10 X; Y\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ! [][]\OT1/cmr/m/n/10
@@ -929,15 +933,15 @@ Overfull \hbox (13.8667pt too wide) in paragraph at lines 520--521
 10 7!
  []
 
-[33] [34]
-Overfull \hbox (15.72379pt too wide) in paragraph at lines 607--608
+[34] [35]
+Overfull \hbox (15.72379pt too wide) in paragraph at lines 604--605
 []\OT1/cmr/m/n/10 Similarly $[](\OML/cmm/m/it/10 F; \OMS/cmsy/m/n/10 ^^@\OT1/cm
 r/m/n/10 ) : \OMS/cmsy/m/n/10 C ! []$ \OT1/cmr/m/n/10 is the func-tor de-fined 
 by $[](\OML/cmm/m/it/10 F; X\OT1/cmr/m/n/10 ) =$
  []
 
-[35]
-Overfull \hbox (13.08595pt too wide) in paragraph at lines 650--651
+[36]
+Overfull \hbox (13.08595pt too wide) in paragraph at lines 647--648
 []$[] \OML/cmm/m/it/10 F$ \OT1/cmr/m/it/10 is a uni-ver-sal ob-ject for the pai
 r $\OT1/cmr/m/n/10 (^^A\OML/cmm/m/it/10 ; F\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 
 i.e. $\OMS/cmsy/m/n/10 C[]\OT1/cmr/m/n/10 (^^A(\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n
@@ -947,7 +951,7 @@ i.e. $\OMS/cmsy/m/n/10 C[]\OT1/cmr/m/n/10 (^^A(\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n
  []
 
 
-Overfull \hbox (32.13033pt too wide) in paragraph at lines 651--652
+Overfull \hbox (32.13033pt too wide) in paragraph at lines 648--649
 []$[] \OML/cmm/m/it/10 F$ \OT1/cmr/m/it/10 is a couni-veral ob-ject for the pai
 r $\OT1/cmr/m/n/10 (^^A\OML/cmm/m/it/10 ; F\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 
 i.e. $\OMS/cmsy/m/n/10 C[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F; \OT1/cmr/m/n/10 
@@ -956,48 +960,103 @@ i.e. $\OMS/cmsy/m/n/10 C[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F; \OT1/cmr/m/n/10
 0 . 
  []
 
-) [36] (./main.aux)
+) [37]
+Chapter 3.
+(./sections/section3.tex [38
+
+]
+Overfull \hbox (57.64384pt too wide) detected at line 48
+\OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 
+[] \OML/cmm/m/it/10 N \OT1/cmr/m/n/10 = []
+ []
+
+
+Overfull \hbox (4.4289pt too wide) in paragraph at lines 55--56
+[]\OT1/cmr/m/it/10 If ad-di-tion-ally we have $\OML/cmm/m/it/10 '[] \OMS/cmsy/m
+/n/10 2 [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M[]; M[]\OT1/cmr/m/n/10 )$ \OT1/c
+mr/m/it/10 and $\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 2 [][]\OT1/cmr/m/n/10 (\O
+ML/cmm/m/it/10 N[]; N[]\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 ,
+ []
+
+[39]
+Overfull \hbox (6.63818pt too wide) detected at line 94
+[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) := []
+ []
+
+
+Overfull \hbox (12.00903pt too wide) in paragraph at lines 137--137
+[][]\OT1/cmr/bx/n/10 Definition 3.10. []\OT1/cmr/m/n/10 An $(\OML/cmm/m/it/10 R
+; R[]\OT1/cmr/m/n/10 )$-\OT1/cmr/m/it/10 bimodule \OT1/cmr/m/n/10 is a tu-ple $
+(\OML/cmm/m/it/10 M; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 +\OML/
+cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A[]\OT1
+/cmr/m/n/10 )$, where $(\OML/cmm/m/it/10 M; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ;
+ \OT1/cmr/m/n/10 +\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 ) \OMS
+/cmsy/m/n/10 2
+ []
+
+[40]
+Overfull \hbox (4.64235pt too wide) in paragraph at lines 170--171
+[]\OT1/cmr/bx/n/10 Remark. []\OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 R$ \OT1/cmr/
+m/n/10 be com-mu-ta-tive and $\OML/cmm/m/it/10 M[]; [] ; M[] \OMS/cmsy/m/n/10 2
+ \OML/cmm/m/it/10 R[]$\OT1/cmr/m/n/10 , then $[][] \OML/cmm/m/it/10 M[] \OT1/cm
+r/m/n/10 =
+ []
+
+[41]) [42]
+Chapter 4.
+(./sections/section4.tex
+Overfull \hbox (22.05048pt too wide) in paragraph at lines 17--18
+[]\OT1/cmr/m/n/10 For $\U/msb/m/n/10 Z$\OT1/cmr/m/n/10 -linear (pread-di-tive) 
+cat-e-gories $\OMS/cmsy/m/n/10 A$ \OT1/cmr/m/n/10 and $\OMS/cmsy/m/n/10 A[]$\OT
+1/cmr/m/n/10 , the full sub-cat-e-gory $[](\OMS/cmsy/m/n/10 A\OML/cmm/m/it/10 ;
+ \OMS/cmsy/m/n/10 A[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^R
+ []
+
+[43
+
+] [44] [45] [46]) [47] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C92474DFFB2C05E27693C0DE50250B63;3157.
+(rerunfilecheck)             Checksum: BE7564152BE800BF9DC4163624ECD5BB;4419.
  ) 
 Here is how much of TeX's memory you used:
- 24976 strings out of 477476
- 491275 string characters out of 5824243
- 1889388 words of memory out of 5000000
- 44449 multiletter control sequences out of 15000+600000
- 529288 words of font info for 96 fonts, out of 8000000 for 9000
+ 25525 strings out of 477476
+ 502215 string characters out of 5824243
+ 1888388 words of memory out of 5000000
+ 44868 multiletter control sequences out of 15000+600000
+ 529587 words of font info for 97 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  113i,21n,117p,720b,1220s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/
-ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/ty
-pe1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2023basic/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023basic/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023basic/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023basic/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023basi
-c/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023b
-asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/20
-23basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/
-2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/te
-xlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local
-/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
-ocal/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></us
-r/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
-/usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
-fb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-7.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/eule
-r/eufm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfon
-ts/symbols/msam10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
-ic/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/t
-ype1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (37 pages, 430245 bytes).
+ </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/public/ma
+thabx/mathx10.600pk> </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/p
+k/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/t
+exmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/202
+3basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive
+/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texl
+ive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/t
+exlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
+r/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></
+usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+</usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.
+pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+s8.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy5.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy7.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publi
+c/amsfonts/euler/eufm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023basic/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023basic/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/local/texlive/2023b
+asic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on main.pdf (48 pages, 478117 bytes).
 PDF statistics:
- 750 PDF objects out of 1000 (max. 8388607)
- 657 compressed objects within 7 object streams
- 360 named destinations out of 1000 (max. 500000)
- 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1019 PDF objects out of 1200 (max. 8388607)
+ 911 compressed objects within 10 object streams
+ 481 named destinations out of 1000 (max. 500000)
+ 237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

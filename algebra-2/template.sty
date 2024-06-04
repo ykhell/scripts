@@ -90,6 +90,8 @@
 \newtheorem{soln}[thm]{Solution}
 
 \let \ph \varphi
+
+% Numbers
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Nn}{\mathbb{N}_0}
 \newcommand{\Z}{\mathbb{Z}}
@@ -101,70 +103,37 @@
 \newcommand{\Fp}{\mathbb{F}_p}
 %\newcommand{\C}{\mathbb{C}}
 \newcommand{\Rn}{\mathbb{R}^n}
+
+% Greeks
+\newcommand{\s}{\sigma}
+
+
+% Algebra
 \newcommand{\<}{\langle}
 \renewcommand{\>}{\rangle}
 \newcommand{\skl}{\langle\cdot,\cdot\rangle}
-\newcommand{\G}{\mathscr{G}}
 \newcommand{\U}{\mathcal{U}}
+\renewcommand{\c}{\circ}
 
-% generally useful things
-\renewcommand{\hat}{\widehat}
-\renewcommand{\tilde}{\widetilde}
-\renewcommand{\bar}{\overline}
-\newcommand{\und}{\underline}
-\newcommand{\ubr}{\underbrace}
-\newcommand{\obr}{\overbrace}
-\newcommand{\ex}{\exists}
-\newcommand{\imp}{\implies}
-\newcommand{\nimp}{\;\not\!\!\!\implies}
-\newcommand{\impb}{\impliedby}
-%\newcommand{\1n}{ \{1, \dots, n\} }
-%\newcommand{\fak}{\faktor}
-\renewcommand{\l}{\left}
-\renewcommand{\r}{\right}
+% Groups
 \newcommand{\nt}{\trianglelefteq}
 \newcommand{\ent}{\triangleleft}
 \newcommand{\tn}{\trianglerighteq}
 \newcommand{\etn}{\triangleright}
-\newcommand{\s}{\sigma}
-\newcommand{\ueb}{\underset{\text{Übung}}}
-
-% Algebra
-\DeclareMathOperator{\id}{id}
-%\renewcommand{\ker}{\operatorname{Kern}}
-%\DeclareMathOperator{\bil}{Bild}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\cok}{coker}
-\DeclareMathOperator{\Ob}{Ob}
-\DeclareMathOperator{\ob}{Ob}
-\DeclareMathOperator{\Mor}{Mor}
-\DeclareMathOperator{\mor}{Mor}
-\DeclareMathOperator{\Fun}{Fun}
-\DeclareMathOperator{\psh}{PSh}
-\DeclareMathOperator{\cone}{Cone}
-\DeclareMathOperator{\coc}{Cocone}
-\DeclareMathOperator{\cocone}{Cocone}
-
-\DeclareMathOperator*{\colim}{colim}
-
-\DeclareMathOperator{\dom}{dom}
-\DeclareMathOperator{\cod}{cod}
-
-\DeclareMathOperator{\Abb}{Abb}
-\DeclareMathOperator{\Bij}{Bij}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Iso}{Isom}
-\DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\Mon}{Mon}
-\DeclareMathOperator{\Inv}{Inv}
+\newcommand{\G}{\mathcal{G}}
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Ord}{Ord}
 \DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\kgv}{kgV}
-\DeclareMathOperator{\ggt}{ggT}
+\DeclareMathOperator{\stb}{Stab}
+\DeclareMathOperator{\syl}{syl}
+\DeclareMathOperator{\Syl}{Syl}
+\newcommand{\Sn}{S_n}
+\DeclareMathOperator{\bal}{Bal}
+\DeclareMathOperator{\Bil}{Bil}
+\DeclareMathOperator{\Multi}{Multi}
 
+% Lie Groups
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\GLn}{GL_n}
 \DeclareMathOperator{\SL}{SL}
@@ -174,26 +143,85 @@
 \DeclareMathOperator{\SO}{SO}
 \DeclareMathOperator{\SOn}{SO_n}
 
-\DeclareMathOperator{\stb}{Stab}
+% Modifiers
+\renewcommand{\hat}{\widehat}
+\renewcommand{\tilde}{\widetilde}
+\renewcommand{\bar}{\overline}
+\newcommand{\und}{\underline}
+\newcommand{\ubr}{\underbrace}
+\newcommand{\obr}{\overbrace}
+\renewcommand{\l}{\left}
+\renewcommand{\r}{\right}
+
+% Modified Symbols
+\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
+\newcommand{\vsubseteq}{\rotatebox{90}{$\,\subseteq$}}
+\DeclareMathOperator*{\bigforall}{\scalerel*{\forall}{\sum}}
+\newcommand{\vimp}{\rotatebox{270}{$\,\Rightarrow$}}
+
+
+
+% Quantifiers & Logic
+\newcommand{\ex}{\exists}
+\newcommand{\imp}{\implies}
+\newcommand{\nimp}{\;\not\!\!\!\implies}
+\newcommand{\impb}{\impliedby}
+\newcommand{\ueb}{\underset{\text{Übung}}}
+
+% Operators
+\DeclareMathOperator{\id}{id} % Identity
+\DeclareMathOperator{\im}{im} % Image
+\DeclareMathOperator{\coim}{coim} % Image
+\DeclareMathOperator{\cok}{coker} % Cokernel
+\DeclareMathOperator{\coker}{coker} % Cokernel
+\DeclareMathOperator{\Ob}{Ob} % Objects
+\DeclareMathOperator{\ob}{Ob} % Objects
+\DeclareMathOperator{\Mor}{Mor} % Morphisms
+\DeclareMathOperator{\mor}{Mor} % Morphisms
+\DeclareMathOperator{\Fun}{Fun} % Functors
+\DeclareMathOperator{\Add}{Add} % Functors
+\DeclareMathOperator{\cone}{Cone} % Cone
+\DeclareMathOperator{\coc}{Cocone} % Cocone
+\DeclareMathOperator{\cocone}{Cocone} % Cocone
+\DeclareMathOperator*{\colim}{colim} % Colimit
+\DeclareMathOperator{\eq}{eq} % Colimit
+\DeclareMathOperator{\coeq}{coeq} % Colimit
+\DeclareMathOperator{\dom}{dom} % Domain
+\DeclareMathOperator{\cod}{cod} % Codomain
+
+\DeclareMathOperator{\Tor}{Tor} % Torsion
+\DeclareMathOperator{\Ext}{Ext} % Ext Functor
+
+\DeclareMathOperator{\Abb}{Abb} % Abbildungen
+\DeclareMathOperator{\Map}{Map} % Maps
+\DeclareMathOperator{\Hom}{Hom} % Homomorphisms
+\DeclareMathOperator{\Bij}{Bij} % Bijections
+\DeclareMathOperator{\Iso}{Isom} % Isomorphisms
+\DeclareMathOperator{\End}{End} % Endomorphisms
+\DeclareMathOperator{\Aut}{Aut} % Automorphisms
+\DeclareMathOperator{\Mon}{Mon} % Monomorphisms
+\DeclareMathOperator{\Inv}{Inv} % Invariant field
+
+\DeclareMathOperator{\supp}{supp} % Support
+
+\DeclareMathOperator{\kgv}{kgV}
+\DeclareMathOperator{\ggt}{ggT}
+
 \DeclareMathOperator{\grad}{Grad}
-\DeclareMathOperator{\syl}{syl}
-\DeclareMathOperator{\Syl}{Syl}
-\DeclareMathOperator{\ini}{in}
-\DeclareMathOperator{\chr}{char}
-\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\ini}{in} % content/inhalt
+\DeclareMathOperator{\chr}{char} % characteristic
+\DeclareMathOperator{\ev}{ev} % evaluation map
 \DeclareMathOperator{\Quot}{Quot}
 
+% Macros
 \newcommand{\eb}[1]{\{1, \ldots, #1\}}
 \newcommand{\nb}[1]{\{0, \ldots, #1\}}
 \newcommand{\ebe}[2]{\{#1, \ldots, #2\}}
 
-\DeclareMathOperator{\Ord}{Ord}
-\newcommand{\Sn}{S_n}
-
-
 % Categories
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\D}{\mathcal{D}}
+\newcommand{\A}{\mathcal{A}}
 \newcommand{\Set}{\mathsf{Set}}
 \newcommand{\Grp}{\mathsf{Grp}}
 \newcommand{\Ring}{\mathsf{Ring}}
@@ -206,6 +234,7 @@
 \newcommand{\Ab}{\mathsf{Ab}}
 \newcommand{\Cat}{\mathsf{Cat}}
 \newcommand{\Diag}{\mathsf{Diag}}
+\newcommand{\psh}{\mathsf{PSh}}
 
 % Topologie
 \newcommand{\T}{\mathcal{T}}
@@ -223,7 +252,7 @@
 \newcommand{\cd}{\cdot}
 
 \newcommand{\en}{^\times}
-\newcommand{\op}{^\text{op}}
+\newcommand{\op}{^\mathrm{op}}
 \newcommand{\ld}{\ldots}
 \newcommand{\cds}{\cdots}
 \newcommand{\cld}{\cdot \ldots \cdot}
@@ -254,9 +283,6 @@
 \DeclareFontSubstitution{U}{mathx}{m}{n}
 \DeclareMathSymbol{\bigtimes}{1}{mathx}{"91}
 
-\DeclareMathOperator*{\bigforall}{\scalerel*{\forall}{\sum}}
-\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
-\newcommand{\vsubseteq}{\rotatebox{90}{$\,\subseteq$}}
 
 \newcommand\fak[2]{
         \mathchoice

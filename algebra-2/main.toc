@@ -1,2 +1,28 @@
 \contentsline {chapter}{\numberline {1}Modules}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Modules}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Quotient Modules}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Direct sums and products}{5}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Generators and bases}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Exact sequences}{8}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Projective Modules}{12}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Finite generation, exact sequences and $\oplus $}{14}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Noetherian and Artinian modules and rings}{16}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Simple modules}{19}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Indecomposable modules}{21}{section.1.10}%
+\contentsline {chapter}{\numberline {2}Category Theory}{23}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Preliminary remarks on set theory}{23}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Categories}{24}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Functors}{28}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Natural transforations}{31}{section.2.4}%
+\contentsline {section}{\numberline {2.5}The Yoneda lemma and presheaves}{33}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Conatravariant Yoneda}{34}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Universal pairs}{35}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Limits and colimits}{35}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Adjoint Functors}{37}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Tensor Products}{38}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Tensor products over commutative rings}{40}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Tensor product of algebras}{40}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Abelian Categories}{43}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Kernels and cokernels}{45}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Abelian categories}{47}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Exactness}{47}{section.4.3}%

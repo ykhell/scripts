@@ -1,0 +1,240 @@
+\documentclass[a4paper]{report}
+\usepackage{../template}
+\begin{document}
+\begin{defi}
+  Let $R$ be a commutative ring.
+  \begin{enumerate}[(a)]
+    \item A category $\A$ is called $R$-linear if
+          \begin{enumerate}[(i)]
+            \item $\forall X, Y \in \A, \A(X,Y)$ is an $R$-module $(\A(X,Y), 0_{X,Y}, +_{X,Y}, \cd_{X,Y})$.
+                  \item $\forall X, Y, Z \in \A$ the composition map \begin{align*}
+                    \A(X,Y) \tm \A(Y,Z) & \to \A(X,Z) \\
+                    (\ph, \psi) &\mps \psi \c \ph
+                  \end{align*}
+                  is $R$-bilinear. (in particular $r(\psi \c \ph) = (r \cd \psi) \c \ph = \psi \c(r \ph)$).
+          \end{enumerate}
+    \item A functor $F: \A \to \A'$ between $R$-linear categories is called $R$-linear if $\forall X, Y \in \A$ the map $F: \A(X,Y) \to \A'(FX,FY)$ is $R$-linear.
+          \item For $\Z$-linear (preadditive) categories $\A$ and $\A'$, the full subcategory $\Add(\A,\A') \subseteq \Fun(\A,\A')$ of $\Z$-linear (additive) functors between them is again a $\Z$-linear category, i.e. there is a natural addition on natural transforations.
+  \end{enumerate}
+\end{defi}
+
+\begin{exmps*}
+\begin{enumerate}[(a)]
+  \item $\RMod$ is $\Z$-linear and in fact ($R$ is commutative) $R$-linear.
+  \item $\A$ is $R$-linear $\iff \A\op$ is also $R$-linear.
+  \item If $\A$ and $\A'$ are $R$-linear, then $\A \tm \A'$ is $R$-linear.
+        \item Let $S$ be a (not necessarily commutative) ring and $\underline S$ the category \[(\{*\}, S, \dom = \{*\}, \cod = \{*\}, \id_{*} = \id_{S}, \c = \cd_{S})\] associated to $S$, then $\underline S$ is $\Z$-linear $(\Hom_{\underline S}(*,*) = S)$.
+\end{enumerate}
+\end{exmps*}
+
+\begin{lemm}
+  If $\A$ is $\Z$-linear, then for $X \in \A$ the following are equivalent:
+  \begin{enumerate}[(i)]
+\item $X$ is initial.
+    \item $X$ is terminal.
+          \item $\A(X,X)=0$ (in particular $\id_{X} = 0$)
+  \end{enumerate}
+\begin{proof}
+Exercise.
+\end{proof}
+\end{lemm}
+
+
+\begin{defi}
+  An $X \in \A$ satisfying conditions of Lemma 2 is called a \emph{zero object}
+\end{defi}
+\begin{nota*}
+The zero object of $\A$ (if it exists) is unique up to unique isomorphism so we just write $0$ or $0_{A}$ for this object.
+\end{nota*}
+
+\begin{lemm}
+  Let $\A$ be $\Z$-linear with a 0-object and $X, Y \in \A$, then the zero map $0_{X,Y} \in \A(X,Y)$ (remember $\A(X,Y)$ is an abelian group) is equal to the composition $X \xrightarrow{\ex !} 0\xrightarrow{\ex !} Y$
+  \begin{proof}
+Exercise.
+  \end{proof}
+\end{lemm}
+
+\begin{prop}
+  Let $\A$ be $\Z$-linear, then for $X_{1}, X_{2} \in \A$ the following are equivalent:
+  \begin{enumerate}[(i)]
+    \item The product $X_{1} \mathrel{\Pi} X_{2}$ exists.
+    \item The coproduct $X_{1} \amalg X_{2}$ exists.
+          \item $\ex Y \in \A, p_{1}, p_{2}: Y \to X_{i}$ and $\iota_{1}, \iota_{2}: X_{i} \to Y$ such that \[p_{i} \c \iota_{j} = \begin{cases}
+            1_{X_{i}}, & i = j \\
+            0, & i \ne j
+          \end{cases}\]
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+TODO.
+\end{proof}
+\begin{rem*}
+In (iii) $(Y,\iota_{1}, \iota_{2})$ is the coproduct and $(Y, p_{1}, p_{2})$ is the product.
+\end{rem*}
+
+\begin{defi}
+In a $\Z$-linear category we deonte $X \mathrel \Pi Y = X \amalg Y$ by $X \opl Y$ and call it the \emph{direct sum} of $X$ and $Y$.
+\end{defi}
+
+\begin{lemm}
+  Let $\A$ and $\A'$ be $\Z$-linear and $F: \A \to \A'$ an additive functor, then
+  \begin{enumerate}[(i)]
+    \item If $0_{\A}$ exists then $0_{\A'}$ exists and $F(0_{\A}) \cong 0_{\A'}$.
+          \item If $X, Y \in \A$ and $X \opl Y$ exists, then $FX \opl FY$ exists and $FX \opl FY \cong F(X\opl Y)$.
+  \end{enumerate}
+\begin{proof}
+Exercise.
+\end{proof}
+\end{lemm}
+
+
+\begin{defi}
+A category $\A$ is called \emph{additive} (or $R$-linear additive) if $\A$ is $\Z$-linear (or $R$-linear), $0_{\A}$ exists and $\forall X, Y \in \A: X \opl Y$ exists.
+\end{defi}
+
+\begin{rem*}
+If $\A$ is additive then the addition on $\A(X,Y)$ is determined by the composition map! (Morel II 1.2.4)
+\end{rem*}
+
+\section{Kernels and cokernels}
+Recall that the equalizer of two morphisms $f, g: X \to Y$ is the limit of the diagram $X \overunderset fg \rightrightarrows Y$, so $Z \xrightarrow u X\overunderset fg \rightrightarrows Y$ such that for every $W \xrightarrow v X \overunderset fg \rightrightarrows Y$ with $f \c v = g \c v$, $v$ factors through $u$:
+\[\begin{tikzcd}
+Z \arrow[r, "u"]                     & X \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & Y \\
+W \arrow[ru, "v"'] \arrow[u, dashed] &                                                           &
+\end{tikzcd}\]similarly the coequalizer is the colimit of $X\overunderset fg \rightrightarrows Y$.
+\newline
+In the category of $R$-modules, $\eq(f,g) = \ker(f - g)$ and $\coeq(f,g) = \cok(f - g)$. In particular $\ker f = \eq(f,0)$.
+
+\begin{defi}
+  Let $\A$ be a $\Z$-linear category and $f \in \A(X,Y)$.
+  \begin{enumerate}[(a)]
+    \item define $\ker f := \eq(f,0)$ and $\cok f = \coeq(f,0)$ (if they exist)
+    \item If $\ker f$ exists, define the coimage as $X \to \coim f = \cok(\ker f \to X)$ (it might not exist).
+          \item If $\coker f$ exists, define the image as $\im f \to Y = \ker(Y \to \cok f)$.
+  \end{enumerate}
+\end{defi}
+
+\begin{exmp}
+Let $X_{1}, X_{2} \in \A$ and $(X_{1} \opl X_{2}, \iota_{1}, \iota_{2}, p_{1}, p_{2})$ the direct sum. Then $\iota_{1} = \ker p_{2}, \iota_{2} = \ker p_{1}, p_{1} = \cok \iota_{2}, p_{2} = \cok \iota_{1}$
+\end{exmp}
+
+\begin{lemm}
+  Kernels are monomorphisms and cokernels are epimorphisms.
+\end{lemm}
+\begin{proof}
+  We only prove the statement for kernels. Let $\ker f \xrightarrow \iota X \overunderset f0 \rightrightarrows Y$, now assume $\iota \c \ph = \iota \c \ph'$
+  \[\begin{tikzcd}
+Z \arrow[r, "\varphi", shift left] \arrow[r, "\varphi'"', shift right] & \ker f \arrow[r, "\iota"] & X \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & Y
+\end{tikzcd}\]
+By the definition of equalizer \begin{align*}
+  \A(Z, \ker f) &\simeq \{\psi: Z \to X \mid f \c \psi = 0\} \\
+  \ph &\mps \iota \c \ph
+\end{align*}
+is bijective, so $\ph = \ph'$.
+\end{proof}
+
+
+\begin{thm}Let $f \in \A(X,Y)$ and assume $\ker f, \cok f, \im f, \coim f$ exist. Then there exists a unique morphism $u: \coim f \to \im f$ such that $f$ is equal to the composition
+  \[\begin{tikzcd}
+      X \arrow[r, "c"] & \coim f \arrow[r, "\ex!u", dashed] & \im f \arrow[r, "d"] & Y
+    \end{tikzcd}\]
+  This is called the \emph{canonical factorization} of $f$ (or epi-mono factorization).
+\end{thm}
+\begin{rem*}
+Note that by lemma 11, $c$ is an epimorphism and $d$ is a monomorphism.
+\end{rem*}
+\begin{proof}TODO.
+
+\end{proof}
+Note that in the category of $R$-modules, $u$ is an isomorphism.
+
+
+\begin{defi}
+  A category $\A$ is called \emph{abelian} if
+  \begin{enumerate}[(i)]
+    \item $\A$ is additive ($\Z$-linear, 0 exists and $X \opl Y$ exists)
+    \item $\forall f \in \A(X,Y): \ker f, \coker f$ exist.
+          \item $\forall f \in \A(X,Y)$ with canonical factorization $f = d \c u \c c$, $u$ is an isomorphism.
+  \end{enumerate}
+\end{defi}
+
+\begin{exmp}
+\begin{itemize}
+  \item For any ring $R$ the category $\RMod$ is abelian.
+        \item For rings $R, R'$ the category $\RMod_{R'}$ is abelian $( \cong {}_{R \otm_{\Z}(R')\op}\Mod )$.
+\end{itemize}
+\end{exmp}
+
+\begin{exmp}
+    \item Let $\A \subseteq \Ab$ be the fullsubcategory of finitely generated free $\Z$-modules, then $\A$ is additive.
+    \item For $f: X \to Y$ in $\A$ the usual $\ker_{\Ab} f$ as abelian group is again a finitely generated free abelian group and is also the kernel in $\A$.
+    \item The cokernel however might have torsion. In fact \[\coker_{\A} f = \fak{\coker_{\Ab} f}{\Tor(\coker_{\Ab} f)}\]
+          So kernels and cokernels exists in $\A$, now let $f: \Z \to \Z, n \mps 2n$, the canonical factorization is \[\begin{tikzcd}
+\Z \arrow[r, "\id"] & \Z \arrow[r, "u"]    & \Z \arrow[r, "\id"] & \Z \\[-20]
+                    & n \arrow[r, maps to] & 2n                  &
+\end{tikzcd}\]since $u$ is not an isomorphism, $\A$ is not abelian.
+\end{exmp}
+
+
+\begin{prop}
+  Let $\C$ be a category, then
+ \begin{enumerate}[(i)]
+   \item $\C$ is $\Z$-linear $\iff \C\op$ is $\Z$-linear.
+   \item $\C$ is additive $\iff \C\op$ is additive.
+         \item $\C$ is abelian $\iff \C\op$ is abelian.
+ \end{enumerate}
+ Moreover (if they exist) $\ker_{\C} f = \coker _{\C\op} f$ and $\im_{\C} f = \coim_{\C\op} f$.
+\end{prop}
+
+
+\section{Abelian categories}
+From now on let $\A$ be an abelian category.
+\begin{rem*}
+Let $f: X \to Y$ and $X \twoheadrightarrow \coim f \overunderset \cong u \rightarrow \im f \hookrightarrow Y$ be the canonical factorization. Then either $X \twoheadrightarrow \coim f \hookrightarrow Y$ or $X \twoheadrightarrow \im f \hookrightarrow Y$ (or anything else isomorphic to them) is called ``the'' canonical factorization for $f$.
+\end{rem*}
+
+\begin{prop}
+  Let $X, Y \in \A$
+  \begin{enumerate}[(a)]
+    \item $\coker (0 \to X) = X \xrightarrow \id X$ and $\ker(X \to 0) = X \xrightarrow \id X$.
+    \item $f: X \to Y$ is a monomorphism $\iff \ker f = 0 \iff$ the canonical factorization of $f$ is $X \xrightarrow \id X \overset f \hookrightarrow Y \iff f$ is a kernel.
+    \item $g: C \to Y$ is an epimorphism $\iff \coker g= 0 \iff$ the canonical factorization of $g$ is $X \xrightarrow g Y \xrightarrow \id Y \iff g$ is a cokernel.
+          \item $u$ is an isomorphism $\iff u$ is a monomorphism and an epimorphism.
+  \end{enumerate}
+\end{prop}
+
+
+\begin{cor}
+$X \xrightarrow a Z \xrightarrow b Y$ is the canonical factorization for $f = b \c a \iff a$  ia a monomorphism and $b$ an epimorphism.
+\end{cor}
+
+\begin{defi}
+In an abelian category $f \in \A(X,Y)$ is called injective if $\ker f = 0$ and surjective if $\coker f = 0$.
+\end{defi}
+
+\begin{cor}
+  Let $f \in \A(X,Y)$, then
+ \begin{enumerate}[(a)]
+\item $f$ is injective $\iff f$ is a monomorphism.
+\item $f$ is surjective $\iff f$ is a epimorphism.
+\item $f$ is injective and surjective $\iff f$ is a isomorphism.
+ \end{enumerate}
+\end{cor}
+
+
+\section{Exactness}
+\begin{lemm}
+  Let $(g,f)$ be a composable pair of morphisms in $\A$ such that $g \c f = 0$, then $\ex$ a canonical injection $\im f \hookrightarrow \ker g$.
+\end{lemm}
+\begin{proof}
+  Let $f: X \to Y$ and $g: Y \to Z$ and write the epi-mono factorization of $f$:
+  \[\begin{tikzcd}
+X \arrow[r, "c", two heads] & \coim f \arrow[r, "\cong"] & \im f \arrow[r, "d", hook] & Y \arrow[r, "g"] & Z
+\end{tikzcd}\]and call the isomorphism in the middle $u: \coim f \cong \im f$.
+Now $g \c d \c u \c c = 0 \imp g \c d \c u = 0$ since $c$ is an epimorphism and $u$ isomorphism $\imp g \c d = 0$. By the definition of the kernel $d$ must factor through $\ker g$:
+\[\begin{tikzcd}
+\im f \arrow[r, "e"] & \ker g \arrow[r, "\iota", hook] & Y \arrow[r, "g"] & Z
+\end{tikzcd}\]
+Since $d$ is injective: if $e \c \ph = c \c \ph ' \imp \iota \c c \c \ph = \iota \c c \c \ph' \imp d \c \ph = d \c \ph' \imp \ph = \ph ' \imp e$ is a monomorphism $\imp \im f \hookrightarrow \ker g$.
+\end{proof}
+\end{document}

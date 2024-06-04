@@ -488,30 +488,27 @@ V \arrow[u, "\vsubseteq"] \arrow[r, maps to] & O_X(V)
 \end{rem*}
 
 \begin{defi}The Yoneda embedding is the functor $h: \C \to \mathrm{PSh}(\C) = \text{Fun}(\C\op, \Set), X \mps h_{X}:= \C(-, X): \C\op \to \Set$
-  \[\begin{tikzcd}
-h: \cal C \arrow[r]                 & \mathrm{PSh}(\cal C)                                                  &                                           &                      \\
-X \arrow[r, maps to]                & {h_X:= \mathrm{Hom}_\mathcal C(-,X):\mathcal C^\mathrm{op}} \arrow[r] & \mathsf{Set}                              &                      \\
-                                    & Y \arrow[d, "\ell"] \arrow[r, maps to]                                & {\mathrm{Hom}_\mathcal{C}(Y,X)}           & g \circ \ell         \\
-                                    & Z \arrow[r, maps to]                                                  & {\mathrm{Hom}_\mathcal{C}(Z,X)} \arrow[u] & g \arrow[u, maps to] \\
-X \arrow[d, "f"] \arrow[r, maps to] & h_X \arrow[d, "h_f", Rightarrow]                                      & {\mathrm{Hom}_\mathcal{C}(Z,X)} \arrow[d] & g \arrow[d, maps to] \\
-Y \arrow[r, maps to]                & h_Y                                                                   & {\mathrm{Hom}_\mathcal{C}(Z,Y)}           & f \circ g
+\[\begin{tikzcd}
+h: \mathcal C \arrow[r]     & \mathsf{PSh}(\mathcal C)        &[-20]                                            \\[-20]
+X \arrow[r, maps to] \arrow[d, "f"'] & h_X \arrow[d, "hf", Rightarrow] & {\mathrm{Hom}(-,X)} \arrow[d, "f \circ -"] \\
+Y \arrow[r, maps to]                 & h_Y                             & {\mathrm{Hom}(-,Y)}
 \end{tikzcd}\]
 \end{defi}
 
 \begin{lemm}
   For $X \in \C, F \in \mathrm{PSh}(\C) = \mathrm{Fun}(\C\op, \Set)$
   \[\begin{tikzcd}
-{\mathrm{Mor}_{\mathrm{PSh}(\mathcal C)}(h_X, \mathcal F)} \arrow[r, "\Phi"]       & \mathcal F X \\[-20]
+{\mathrm{Hom}_{\mathrm{PSh}(\mathcal C)}(h_X, \mathcal F)} \arrow[r, "\Phi"]       & \mathcal F X \\[-20]
 u:= (u_Y: h_XY \to \mathcal FY)_{Y \in \mathrm{Ob}\cal C} \arrow[r, maps to] & u_X1_X
 \end{tikzcd}\]
-is a bijection. ($\Mor_{\mathrm{PSh}(\C)}(h_{x}, \mathcal F)$ is a set.)
+is a bijection. ($\Hom_{\mathrm{PSh}(\C)}(h_{x}, \mathcal F)$ is a set.)
 \begin{proof}
   Reconstruct a natural transformation $u^{\a}$ from $\a \in \mathcal FX$, first consider what $u \in \Mor_{\mathrm{PSh}(\C)}(h_{x}, \mathcal F)$ gives us
   \[\begin{tikzcd}
-X                &[-20] {h_X = \Hom_\C(X,X)} \arrow[r, "u_X"] \arrow[d, "- \circ g"] & \mathcal FX \arrow[d, "\mathcal Fg"] &[-20] 1_X \arrow[d, maps to] \arrow[r, maps to] & u_X(1_X) = \alpha \arrow[d, maps to] \\
-Y \arrow[u, "g"] & {h_X(Y) = \Hom_\C(Y,X)} \arrow[r, "u_Y"]                     & \mathcal FY                          & g \arrow[r, maps to]                      & u_Y(g) = \mathcal Fg(\a)
+X                &[-20] {h_X X = \Hom_\C(X,X)} \arrow[r, "u_X"] \arrow[d, "- \circ g"] & \mathcal FX \arrow[d, "\mathcal Fg"] &[-20] 1_X \arrow[d, maps to] \arrow[r, maps to] & u_X(1_X) = \alpha \arrow[d, maps to] \\
+Y \arrow[u, "g"] & {h_XY = \Hom_\C(Y,X)} \arrow[r, "u_Y"]                     & \mathcal FY                          & g \arrow[r, maps to]                      & u_Y(g) = \mathcal Fg(\a)
 \end{tikzcd}\]
-Define $\psi: \mathcal F(X) \to \Mor_{\mathrm{PSh}(\C)}(h_{X}, \mathcal F), \a \mps (u_{Y}^{\a})_{Y \in \Ob \C}$ by setting $u_{Y}^{\a}: h_{X}(Y) \to \mathcal FY, g \mps \mathcal Fg(\a)$. Check $u_{Y}^{\a}$ is a natural transforation. Then for any $f: Z \to Y$ in $\C$ we get TODO
+Define $\psi: \mathcal F(X) \to \Mor_{\mathrm{PSh}(\C)}(h_{X}, \mathcal F), \a \mps (u_{Y}^{\a})_{Y \in \Ob \C}$ by setting $u_{Y}^{\a}: h_{X}(Y) \to \mathcal FY, g \mps \mathcal Fg(\a)$. Check $u_{Y}^{\a}$ is a natural transforation: For any $f: Z \to Y$ in $\C$ we get TODO
 \end{proof}
 \end{lemm}
 
@@ -653,6 +650,44 @@ Yoneda implies that $\lim F$ (if it exists) is unique up to unique isomorphism (
 
 \end{prop}
         \begin{exmps}
-
+TODO
         \end{exmps}
+   \begin{defi}
+$\C$ is \emph{(co-)complete} $\iff \C$ contains all (co)-limits.
+\end{defi}
+\begin{thm}
+  \begin{enumerate}[(a)]
+\item If $\C$ contains all products and equalizers, then $\C$ is complete.
+\item If $\C$ contains all coproducts and coequalizers, then $\C$ is cocomplete.
+  \end{enumerate}
+
+\end{thm}
+\begin{cor}
+$\Set$ and $\RMod$ are complete and cocomplete.
+\end{cor}
+\section{Adjoint Functors}
+% TODO. recall the definition of universal pairs
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item Functors $F: \C \to \D$ and $G: \D \to \C$ form an \emph{adjoint pair}, when one has a natural isomorphism $\a$ of bifunctors
+        \[\begin{tikzcd}
+{\C\op \tm \D} \arrow[r, "\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! {\D(F(-),-)}", bend left] \arrow[r, "{\C(-,G(-))}"', bend right] \arrow[r, "\vimp", phantom] & \Set
+\end{tikzcd}\]
+        In this situation one says that $F$ is a \emph{left adjoint} for $G$ and $G$ is a \emph{right adjoint} for $F$. We write $F \dashv G$ or $\begin{tikzcd}
+\cal C \arrow[r, "F", bend left] \arrow[r, "G"', bend right] \arrow[r, "\perp", phantom] & \cal D
+\end{tikzcd}$.
+  \item The tuple $(F,G,\a)$ is called an \emph{adjunction}.
+        \item We say $F: \C \to \D$ has a \emph{right adjoint} if $\ex G: \D \to \C: F \dashv G$ (similarly $G: \D \to \C$ has left adjoint.)
+\end{enumerate}
+\end{defi}
+
+\begin{thm}
+  For functors $F; \C \to \D$ and $G: \D \to \C$ we have:
+  \begin{enumerate}[(a)]
+    \item $F$ has a right adjoint $\iff \forall B \in \D \ex$ universal pair $(A, v: FA \to B)$ for $(F, B)$ such that $\Hom_{\D}(F(-),B) \cong \Hom_{\C}(-,A)$.
+          \item $G$ has a left adjoint $\iff \forall A \in \C \ex$ universal pair $(B, u: A \to GB)$ for $(G,A)$ such that $\Hom_{\C}(A, G(-)) \cong \Hom_{\D}(B,-)$.
+  \end{enumerate}
+
+
+\end{thm}
 \end{document}

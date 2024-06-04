@@ -1,0 +1,190 @@
+\documentclass[a4paper]{report}
+\usepackage{../template}
+\begin{document}
+Let $R$ be a ring.
+\begin{defi}
+  Let $M \in \ModR$ and $N \in \RMod$ and $A$ an abelian group,
+  \begin{enumerate}[(a)]
+    \item A map $f: M  \tm N \to A$ is called $R$\emph{-balanced} if
+          \begin{itemize}
+            \item its left $\Z$-linear, i.e. $f(m_{1}+m_{2}, n) = f(m_{1}, n) + f(m_{2}, n)$.
+            \item its right $\Z$-linear, i.e. $f(m, n_{1}+n_{2}) = f(m, n_{1}) + f(m, n_{2})$
+                  \item $\forall r \in R: f(mr, n) = f(m, rn)$.
+          \end{itemize}
+    \item $\bal_{M,N}^{R}(A) = \{f: M \tm N \to A\mid f \text{ is }R\text{-balanced}\}$ is an abelian group.
+          \item $\bal_{M,N}^{R}(-): \Ab \to \Ab$ is a functor via \[\begin{tikzcd}
+M \times N \arrow[r, "f"] \arrow[rd, "{\mathrm{Bal}_{M,N}^R(\varphi)}"', dashed] & A \arrow[d, "\varphi"] \\
+                                                                                 & A'
+                                                                               \end{tikzcd}\]
+  \end{enumerate}
+  Idea: $R$-balaned (bilinear) maps appear naturally, but one needs to treat them seperately (they don't live in $\Ab$). To fix this we want to turn these $R$-balanced maps $M\tm N \xrightarrow f A$ into a usual group homomorphism \[\begin{tikzcd}
+M \times N \arrow[r, "f"] \arrow[d, "- \otimes -"'] & A \\
+M \otimes N \arrow[ru, "\in \mathsf{Ab}"', dashed]  &
+\end{tikzcd}\]
+\end{defi}
+\begin{thm}
+ With the notation from definition 1, the functor $\bal_{M,N}^{R}: \Ab \to \Ab$ is representable, we denote the universal pair by \[(M \otm_{R} N, - \otm - : M\tm N \to M \otm N)\]
+More concretely, $- \otm -: M \tm N \to M \otm N$ is an $R$-balanced map, such that \begin{align*}
+\bal_{M,N}^{R}(A) &\cong \Hom_{\Z}(M \otm_{R} N , A) \\ \ph \c (- \otm -) &\mpsfrom \ph
+\end{align*}
+\end{thm}
+
+\begin{defi}
+  $M \otm_{R} N$ is called the \emph{tensor product} of $M$ and $N$ and elements $m \otm n$ in the $\im(- \otm -: M \tm N \to M \otm_{R} N)$ are called \emph{tensors}.
+\end{defi}
+
+\begin{rem*}
+  Its easy to see from the universal property that $m \otm n$'s generate the group $M \otm_{R} N$ (exercise)
+  \[\begin{tikzcd}
+M \times N \arrow[r, "-\otm -"] \arrow[rd] & M \otimes N \arrow[d, "q"', shift right] \arrow[d, "0", shift left] \\
+                                           & \displaystyle \fak{M \otimes N}{\<\im(-\otm -)\>}
+                                         \end{tikzcd} \imp q = 0\]
+                                       we have \[M \otm_{R} N = \fak{\bigoplus_{(m,n) \in M \tm N} \Z (m \otm n)}{\l\< \begin{array}{l}
+                                         (m_{1}+m_{2}) - m_{1} \otm n - m_{2} \otm n \\
+                                         m \otm (n_{1}+n_{2}) - m \otm n_{1} - m \otm n_{2} \\
+                                         mr \otm n - m \otm rn
+                                       \end{array} \middle \vert \begin{array}{l}
+                                         m, m_{1}, m_{2} \in M \\ n, n_{1}, n_{2} \in N \\ r \in R
+                                       \end{array}\r\>}\]
+                                 \end{rem*}
+
+                                 \begin{prop}
+                                   $- \otm_{R} - : \ModR \tm \RMod \to \Ab$ is a bifunctor. More explicitly, for $M, M', M'' \in \ModR$ and $N, N', N'' \in \RMod$, the following holds:
+                                   \begin{enumerate}[(a)]
+                                     \item For any $\ph \in \Hom_{\ModR}(M,M')$ and $\psi \in \Hom_{RMod}(N,N') \ex !$ homomorphism $\ph \otm \psi \in \Hom_{\Ab}(M \otm_{R} N, M' \otm_{R}N')$ such that $(\ph \otm \psi)(m \otm n) = \ph(m) \otm \psi(n)$
+                                     \item If additionally we have $\ph' \in \Hom_{ModR}(M',M'')$ and $\psi' \in \Hom_{\RMod}(N',N'')$, then $(\ph' \c \ph) \otm (\psi' \c \psi) = (\ph' \otm \psi') \c (\ph \otm \psi)$.
+                                     \item $\id_{M} \otm \id_{N} = \id_{M \otm N}$.
+                                   \end{enumerate}
+\begin{proof}TODO.\qedhere
+
+\end{proof}
+\end{prop}
+
+\begin{prop}
+For $M \in \ModR$ and $N \in \RMod$
+\end{prop} one has:
+\begin{enumerate}[(a)]
+  \item $M \to M \otm_{R} R$ given by $m \mps m \otm 1_{R}$ is an isomorphism in $\Ab$.
+  \item $N \to R \otm_{R} N$ given by $n \mps 1_{R} \otm n$ is an isomorphism in $\Ab$.
+\end{enumerate}
+\begin{proof}
+Only (a): This map is clearly $\Z$-linear, we construct the inverse map by TODO.
+\end{proof}
+\begin{prop}
+  Let $I$ be a set and $(M_{i})_{i \in I}$ a family $M_{i} \in \ModR$ and $N \in \RMod$ (or the opposite), then $\ex !$ isomorphism \[\psi: \l(\bigoplus_{i \in I} M_{i}\r) \otm N \xrightarrow \cong \bigoplus_{i \in I} (M_{i} \otm N), (m_{i})_{i} \otm n \mps (m_{i} \otm n)_{i}.\]
+  \begin{proof}TODO.
+
+  \end{proof}
+\end{prop}
+
+
+\begin{cor}
+For sets $I$ and $J$, $R^{(I)} \otm_{R} R^{(J)} \cong R^{(I \tm J)}$ given by $e_{i} \otm f_{j} \mps e_{(i,j)}$ on the basis.
+\end{cor}
+
+\section{Tensor products over commutative rings}
+When $R$ is commutative, $R \cong R\op$ and $\ModR \cong \RMod$, in this casse $M \otm_{R} N$ admits further structures:
+\begin{prop}
+  Suppose that $R$ is commutative and $M, N$ are two $R$-modules, then
+  \begin{enumerate}[(a)]
+\item $M \otm_{R} N$  is an $R$-module with scalar multiplication given by \[r(m\otm n) := rm \otm n = m \otm rn\]on pure tensors. For $A \in \RMod$ define \[\Bil_{M \tm N}^{R}(A):= \l\{ f: M \tm N \to A \ \middle \vert \begin{array}{l}
+f(m_{1}+m_{2}, n) = f(m_{1}, n) + f(m_{2},n) \\
+  f(m, n_{1}+n_{2}) = f(m, n_{1}) + f(m, n_{2}) \\
+  f(rm,n) = f(m,rn) = rf(m,n)
+\end{array} \r\}\]
+          to be the set of $R$-bilinear maps from $M \tm N$ to $A$.
+    \item The functor $\Bil_{M \tm N}^{R}: \RMod \to \Set$ is representable by $(M \otm_{R} N, - \otm -)$.
+          \item $- \otm -: \RMod \tm \RMod \to \RMod$ is a bifunctor.
+  \end{enumerate}
+  \begin{proof}
+    \begin{enumerate}[(a)]
+      \item   Let $\ell_{r}: M \to M$ be given by $m \mps rm$, this gives $\ell_{r} \otm \id_{N} : M \otm_{R} N \to M \otm_{R} N$ by proposition 4. We define scalar multiplication by $r$ on $M \otm_{R} N$ to be the above $r \cd - := \ell_{r} \otm \id$. Check that this gives $M \otm_{R} N$ on $\RMod$ structure.
+            \item and (c) exercises.
+    \end{enumerate}
+  \end{proof}
+\end{prop}
+\begin{rem*}
+  Note that we have less bilinear maps than balanced maps:
+  \[\Hom_{R}(M \otm_{R} N, A) \cong \Bil_{M \tm N}^{R}(A) \subseteq \bal_{M \tm N}^{R}(A) \cong \Hom_{\Z}(M \otm_{R} N, A)\]
+
+\end{rem*}
+
+\section{Tensor product of algebras}
+Let $A$ be a commutative ring and $R, R'$ two $A$-algebras via $\ph: A \to R$ and $\ph' A \to R'$ (where $\ph(A) \subseteq Z(R), \ph'(A) \subseteq Z(R')$).
+\begin{prop}
+  \begin{enumerate}[(a)]
+    \item $\ex! A$-bilinear multiplication $- \cd -: (R \otm_{A} R') \tm (R \otm_{A} R') \to R \otm_{A} R'$ given by \[(r \otm r') \cd (s \otm s') := rs \otm r's'\]on pure tensors.
+    \item $(R \otm_{A} R', +, \cd, 0_{R} \otm 0_{R'}, 1_{R} \otm 1_{R'})$ is a ring.
+          \item $R \otm_{A} R'$ is an $A$-algebra via $\ph_{\otm}: A \to R \otm_{A}R', a \mps a \otm 1 = 1 \otm a = a(1 \otm 1)$.
+  \end{enumerate}
+\begin{proof}
+TODO.
+\end{proof}
+\end{prop}
+
+\begin{exmps*}
+\begin{enumerate}[(a)]
+  \item If $R$ is an $A$-algebra then $M_{n \tm n}(A) \otm_{A} R \cong M_{n \tm n}(R)$.
+  \item $M_{n \tm n}(A) \otm_{A} M_{m \tm m}(A) = M_{nm \tm nm}(A)$.
+  \item $\mathbb C \otm_{\R} \mathbb C \cong \mathbb C \tm \mathbb C$.
+\item $\mathbb H \otm_{\R} \mathbb C \cong M_{2 \tm 2}(\C)$ where $\mathbb H$ is Hamilton's quaternion algebra.
+\end{enumerate}
+
+\end{exmps*}
+
+
+\begin{defi}
+  An $(R,R')$-\emph{bimodule} is a tuple $(M, 0, +, \cd, \cd')$, where $(M, 0, +, \cd) \in \RMod$ and $(M, 0, +, \cd) \in \Mod_{R'}$ such that $\forall r \in R, r' \in R', m \in M$ we have \[r\cd(m\cd' r') = (r \cd m)\cd' r'\]
+  We denote the category of bimodules by $\RMod_{R'}$.
+\end{defi}
+\begin{rem*}
+  \begin{enumerate}[(a)]
+  \item If $M \in \RMod_{R'}$ then one has ring homomorphisms
+  \begin{align*}
+  R &\to \End_{\Mod_{R'}}(M), r \mps r \cd - \\
+  (R')\op &\to \End_{RMod}(M), r' \mps - \cd r'
+  \end{align*}
+    \item We have an equivalence of categories $\RMod_{R'} \cong {}_{R \otm_{\Z}(R')\op}\Mod$. The $R \otm_{\Z}(R')\op$-module structure comes from \[R \tm (R')\op \to \End_{\Z}(M), (r,r') \mps r \cd - \cd r', r \otm r' \in R \otm_{\Z}(R')\op\]
+          notice that this is bilinear.
+  \end{enumerate}
+\end{rem*}
+
+\begin{prop}
+  The bifunctor $-\otm-$ extends to a bifunctor \[- \otm_{R'} - : \RMod_{R'} \tm {}_{R'}\Mod_{R''} \to \RMod_{R''}\]
+  More explicitly for $M \in \RMod_{R'}$ and $N \in {}_{R'}\Mod_{R''}$ we define the $(R,R'')$-bimodule on $M \otm_{R'} N$ by \[r \cd (m \otm n) \cd r'' := rm \otm nr''\]
+\begin{proof}
+Exercise.
+\end{proof}
+\end{prop}
+\begin{rem*}
+Similarly one has $- \otm - : \RMod_{R'} \tm {}_{R'}\Mod \to \RMod$ and $- \otm - : \Mod_{R'} \tm {}_{R'}\Mod_{R''} \to \Mod_{R''}$.
+\end{rem*}
+\begin{exmps*}\item
+  \begin{enumerate}
+    \item \textbf{Base change:} Let $\ph: R \to S$ be a ring homomorphism, then $S$ is an $(S, R)$-bimodule. The functors $\RMod \to {}_{S}\Mod, M \mps S \otm_{R} M$ and $\ModR \to \Mod_{S}, N \mps N \otm_{R} S$ are called \emph{base change} or base extension from $R$ to $S$. These are left adjoints to restriction of scalars, for example: \[S \otm_{R} R = S, \quad S \otm_{R}R^{(I)} = S^{(I)}\]
+    \item \textbf{Associativity of $\otm$:} There exists a natural isomorphism
+          \[(- \otm_{R} -) \otm_{S} - \cong - \otm_{R} (- \otm_{S} - ) : {}_{T}\Mod_{R} \tm \RMod_{S} \tm {}_{S}\Mod_{Q} \to {}_{T}\Mod_{Q}\]
+  \end{enumerate}
+\end{exmps*}
+\begin{rem*}
+Let $R$ be commutative and $M_{1}, \ldots, M_{n} \in R\mathsf{-Mod}$, then $\bigotimes_{R}^{1 \le i \le n} M_{i} = M_{1} \otm_{R} \cdots \otm_{R} M_{n}$ represents the functor $\Multi_{M_{1} \tm \cdots \tm M_{n}}^{R}(-)$ of $R$-multilinear maps on $\bigtimes_{1 \le i \le n}M_{i}$.
+\end{rem*}
+
+\begin{prop}
+  Another functor on bimodules:
+  \begin{enumerate}[(a)]
+    \item For $M \in {}_{S}\ModR$ and $N \in {}_{T}\ModR$ the abelian group $\Hom_{R}(M,N)$ carries a natural $(T,S)$-bimodule structure defined by \[(t \cd f \cd s)(x) = t \cd f(sx)\]
+          for $f \in \Hom_{R}(M,N), s \in S, t \in T, x \in M$ , this gives a bifunctor \[{}_{S}\ModR \tm {}_{T}\ModR \to {}_{T}\Mod_{S}\]
+          \item Similarly one has a bifunctor $\RMod_{S} \tm \RMod_{T} \to {}_{S}\Mod_{T}$
+  \end{enumerate}
+\begin{proof}
+Exercise.
+\end{proof}
+\end{prop}
+
+\begin{thm} [$\Hom, \otm$ adjunction, Jacobson Prop. 3.8] Let Let $R, S, T, U$ be rings and $M \in \RMod_S, N \in {}_{S}\Mod_{T}, P \in {}_{U}\Mod_{T}$. There exists a natural isomorphism:
+\[\begin{tikzcd}
+{}_R\Mod_S^{\operatorname{op}} \tm {}_U\Mod_T \arrow[r, bend left] \arrow[r, bend right] \arrow[r, "\vimp", phantom] & {}_U\ModR TODO
+\end{tikzcd}\]
+\end{thm}
+\end{document}
