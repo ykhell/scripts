@@ -12,7 +12,7 @@
 \usepackage{faktor}
 \usepackage{tikz-cd} % Commutative diagrams
 \usepackage{ytableau} % Young diagrams
-\usepackage{color}
+\usepackage{xcolor}
 \usepackage{docmute}
 \usepackage{import}
 \usepackage{hyperref}
@@ -30,6 +30,7 @@
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[chapter]%[subsection]
 \newtheorem{lemm}[thm]{Lemma}
+\newtheorem*{lemm*}{Lemma}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem*{prop*}{Proposition}
 \newtheorem*{leitfragen*}{Leitfragen}
@@ -48,6 +49,8 @@
 
 \theoremstyle{definition}
 %\renewcommand{\thethm}{\arabic{thm}}
+\newtheorem{const}[thm]{Construction}
+\newtheorem*{intro*}{Introduction}
 \newtheorem{defi}[thm]{Definition}
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{bem}[thm]{Bemerkung}
@@ -116,7 +119,7 @@
 \renewcommand{\c}{\circ}
 
 % Groups
-\newcommand{\nt}{\trianglelefteq}
+\newcommand{\nt}{\trianglelefteq} % Normal subgroup
 \newcommand{\ent}{\triangleleft}
 \newcommand{\tn}{\trianglerighteq}
 \newcommand{\etn}{\triangleright}
@@ -157,9 +160,19 @@
 \newcommand{\verteq}{\rotatebox{90}{$\,=$}}
 \newcommand{\vsubseteq}{\rotatebox{90}{$\,\subseteq$}}
 \DeclareMathOperator*{\bigforall}{\scalerel*{\forall}{\sum}}
+\DeclareMathOperator*{\bigast}{\scalerel*{\ast}{\sum}}
 \newcommand{\vimp}{\rotatebox{270}{$\,\Rightarrow$}}
 
-
+% Homological Algebra
+\newcommand{\del}{\partial}
+\renewcommand{\d}{\delta}
+\newcommand{\ch}{\mathsf{Ch}_*}
+\newcommand{\chh}{\mathsf{Ch}_{**}}
+\newcommand{\coch}{\mathsf{Ch}^*}
+\newcommand{\cochh}{\mathsf{Ch}^{**}}
+\DeclareMathOperator{\tot}{Tot}
+\DeclareMathOperator{\inj}{Inj}
+\DeclareMathOperator{\proj}{Proj}
 
 % Quantifiers & Logic
 \newcommand{\ex}{\exists}
@@ -188,6 +201,7 @@
 \DeclareMathOperator{\coeq}{coeq} % Colimit
 \DeclareMathOperator{\dom}{dom} % Domain
 \DeclareMathOperator{\cod}{cod} % Codomain
+\DeclareMathOperator{\pr}{pr} % Projection
 
 \DeclareMathOperator{\Tor}{Tor} % Torsion
 \DeclareMathOperator{\Ext}{Ext} % Ext Functor
@@ -213,6 +227,10 @@
 \DeclareMathOperator{\ev}{ev} % evaluation map
 \DeclareMathOperator{\Quot}{Quot}
 
+% Representation theory
+\DeclareMathOperator{\res}{Res}
+\DeclareMathOperator{\ind}{Ind}
+
 % Macros
 \newcommand{\eb}[1]{\{1, \ldots, #1\}}
 \newcommand{\nb}[1]{\{0, \ldots, #1\}}
@@ -222,6 +240,8 @@
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\D}{\mathcal{D}}
 \newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\Ex}{\mathsf{Ex}}
 \newcommand{\Set}{\mathsf{Set}}
 \newcommand{\Grp}{\mathsf{Grp}}
 \newcommand{\Ring}{\mathsf{Ring}}
@@ -235,6 +255,8 @@
 \newcommand{\Cat}{\mathsf{Cat}}
 \newcommand{\Diag}{\mathsf{Diag}}
 \newcommand{\psh}{\mathsf{PSh}}
+\newcommand{\adj}{\dashv}
+\newcommand{\radj}{\vdash}
 
 % Topologie
 \newcommand{\T}{\mathcal{T}}
@@ -242,8 +264,11 @@
 \renewcommand{\a}{\alpha}
 \renewcommand{\b}{\beta}
 \newcommand{\mps}{\mapsto}
+\newcommand{\xto}{\xrightarrow}
+\newcommand{\tto}{\xrightarrow}
+\newcommand{\toto}{\rightrightarrows}
 \newcommand{\m}{\mathfrak{m}}
-\newcommand{\mpsfrom}{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\newcommand{\mpsfrom}{\mathrel{\reflectbox{\ensuremath{\mapsto}}}} % Maps from
 
 % operations
 \newcommand{\tm}{\times}
@@ -299,3 +324,7 @@
                 #1\,/\,#2
             }
     }
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{<-> mathx10}{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathAccent{\widebar}{0}{mathx}{"73}

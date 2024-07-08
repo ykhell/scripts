@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  3 JUN 2024 15:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  28 JUN 2024 16:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -691,6 +691,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package hyperref Info: Option `colorlinks' set `true' on input line 23.
 \c@thm=\count309
 \symmathx=\mathgroup7
+LaTeX Font Info:    Redeclaring symbol font `mathx' on input line 317.
+LaTeX Font Info:    Overwriting symbol font `mathx' in version `normal'
+(Font)                  U/mathx/m/n --> U/mathx/m/n on input line 317.
+LaTeX Font Info:    Overwriting symbol font `mathx' in version `bold'
+(Font)                  U/mathx/m/n --> U/mathx/m/n on input line 317.
 )
 (/usr/local/texlive/2023basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.d
 ef
@@ -786,14 +791,14 @@ Overfull \hbox (6.63818pt too wide) detected at line 94
  []
 
 [2]
-Overfull \hbox (12.00903pt too wide) in paragraph at lines 137--137
-[][]\OT1/cmr/bx/n/10 Definition 0.10. []\OT1/cmr/m/n/10 An $(\OML/cmm/m/it/10 R
-; R[]\OT1/cmr/m/n/10 )$-\OT1/cmr/m/it/10 bimodule \OT1/cmr/m/n/10 is a tu-ple $
-(\OML/cmm/m/it/10 M; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 +\OML/
-cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A[]\OT1
-/cmr/m/n/10 )$, where $(\OML/cmm/m/it/10 M; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ;
- \OT1/cmr/m/n/10 +\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 ) \OMS
-/cmsy/m/n/10 2
+Overfull \hbox (3.06464pt too wide) in paragraph at lines 137--137
+[][]\OT1/cmr/bx/n/10 Definition 10. []\OT1/cmr/m/n/10 An $(\OML/cmm/m/it/10 R; 
+R[]\OT1/cmr/m/n/10 )$-\OT1/cmr/m/it/10 bimodule \OT1/cmr/m/n/10 is a tu-ple $(\
+OML/cmm/m/it/10 M; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 +\OML/cm
+m/m/it/10 ; \OMS/cmsy/m/n/10 ^^A\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A[]\OT1/c
+mr/m/n/10 )$, where $(\OML/cmm/m/it/10 M; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \
+OT1/cmr/m/n/10 +\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 ) \OMS/c
+msy/m/n/10 2
  []
 
 [3]
@@ -809,10 +814,10 @@ Package rerunfilecheck Info: File `section3.out' has not changed.
 (rerunfilecheck)             Checksum: A317252E6DE273779064776247FB50DB;431.
  ) 
 Here is how much of TeX's memory you used:
- 22242 strings out of 477476
- 427617 string characters out of 5824243
+ 22277 strings out of 477476
+ 427764 string characters out of 5824243
  1887388 words of memory out of 5000000
- 42054 multiletter control sequences out of 15000+600000
+ 42089 multiletter control sequences out of 15000+600000
  518096 words of font info for 54 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  113i,21n,117p,548b,1178s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -838,7 +843,7 @@ fb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 bols/msbm10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msbm5.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm7.pfb>
-Output written on section3.pdf (4 pages, 208386 bytes).
+Output written on section3.pdf (4 pages, 208378 bytes).
 PDF statistics:
  186 PDF objects out of 1000 (max. 8388607)
  140 compressed objects within 2 object streams

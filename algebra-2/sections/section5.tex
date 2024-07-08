@@ -1,0 +1,852 @@
+\documentclass[a4paper]{report}
+\usepackage{../template}
+\begin{document}
+
+\section{Exact functors}
+Let $F: \A \to \A'$ be an additive functor.
+\begin{defi}
+  $F$ is called
+  \begin{enumerate}[(a)]
+    \item \emph{left exact} $\iff F$ commutes with finite limits.
+    \item \emph{right exact} $\iff F$ commutes with finite colimits.
+    \item \emph{exact} $\iff F$ is left and right exact.
+  \end{enumerate}
+\end{defi}
+\begin{rem*}
+  Since $\A, \A'$ are additive categories, all finite limits and colimits exist in $\A$ and $
+  \A'$. So if $D: J \to \A$ is a finite diagram, we have $\lim_{J} D$ exists in $\A$, $\lim_{J} F \c D$ exists in $\A'$ and we have a natural morphism \[F(\lim_{J} D) \to \lim_{J}F \c D\]in $\A'$. $F$ is left exact if this morphism is an isomorphism $\forall D$.
+\end{rem*}
+
+\begin{prop}
+  Let $F: \A \to \A'$ be additive, then:
+  \begin{enumerate}[(a)]
+    \item The following are equivalent:
+          \begin{enumerate}[(i)]
+            \item $F$ is left exact.
+            \item $F$ commutes with the formation of kernels, i.e. $\forall f: X \to Y$ in $\A$, the natural morphism \[F(\ker f) \to \ker F(f)\]is an isomorphism.
+            \item $\forall$ exact sequence $0 \to X' \to X \to X''$ in $\A$, the sequence $0 \to FX' \to FX \to FX''$ is exact in $\A'$.
+            \item $\forall$ exact sequence $0 \to X' \to X \to X'' \to 0$ in $\A$, the sequence $0 \to FX' \to FX \to FX''$ is exact in $\A'$.
+          \end{enumerate}
+    \item The following are equivalent:
+          \begin{enumerate}[(i)]
+            \item $F$ is right exact.
+            \item $F$ commutes with the formation of cokernels.
+            \item $\forall$ exact sequence $X' \to X \to X'' \to 0$ in $\A$, the sequence $FX' \to FX \to FX'' \to 0$ is exact in $\A'$.
+            \item $\forall$ exact sequence $0 \to X' \to X \to X'' \to 0$ in $\A$, the sequence $FX' \to FX \to FX'' \to 0$ is exact in $\A'$.
+          \end{enumerate}
+          \item $F$ is exact $\iff \forall$ exact sequences $X' \tto f X \tto g X''$, the sequence \[FX' \tto {Ff} FX \tto {Fg} FX''\]is exact.
+  \end{enumerate}
+\begin{proof}
+TODO.
+\end{proof}
+\end{prop}
+
+\begin{prop}
+  $\forall X \in \A$ the co- and contravariant Hom functors $\Hom_{\A}(X,-), \Hom_{\A}(-,X)$ are left exact.
+  \begin{proof}
+TODO.
+  \end{proof}
+\end{prop}
+
+
+\begin{prop}
+  Let $F: \A \to \A'$ and $G: \A' \to \A$ be additive functors with $F \adj G$. Then $F$ is right exact and $G$ is left exact.
+  \begin{proof}
+TODO.
+  \end{proof}
+\end{prop}
+
+\begin{exmp}
+  By $\Hom$-$\otm$ Adjunction (roughly $\Hom(M \otm -, N) = \Hom(M, \Hom(-,N))$) $M \otm -$ is left adjoint to $\Hom(-,) \imp M \otm_{R} -: \RMod \to \Ab$ is right exact, as is $- \otm_{R} M: \Mod_{R} \to \Ab$.
+  \[(- \otm_{R} M: \Mod_{R} \to Ab) = (M \otm_{R\op}-: {}_{R\op}\Mod \to \Ab)\]
+\end{exmp}
+
+\begin{rem*}
+Next small goal: $J$ any small index category. Are $\lim_{J}: \A^{J} \to \A, \colim_{J}\A^{J} \to \A$ exact?
+\end{rem*}
+
+
+\begin{prop}
+$\A^{J}  = \Fun(J,\A)$ is an abelian category.
+\end{prop}
+\begin{prop}
+  Suppose $\A$ contains all limits (colimits) for a given small index category $J$, then $\lim_{J}: \A^{J} \to \A$ is left exact. ($\colim_{J}: \A^{J} \to \A$ is right exact.)
+\end{prop}
+
+\begin{cor}
+  Let $I$ be a set and $\underline I$ the discrete category associated to $I$. Then:
+  \begin{enumerate}[(a)]
+    \item $\prod_{i \in I}: A^{I} \to A, (A_{i})_{i \in I} \mps \prod_{i \in I} A_{i}$
+    \item $\bigoplus_{i \in I}: A^{I} \to A, (A_{i})_{i \in I} \mps \bigoplus_{i \in I}A_{i})$
+          assuming existance, are exact functors.
+  \end{enumerate}
+
+\end{cor}
+
+
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item A non-empty category $J$ is called \emph{filtered} iffy
+        \begin{enumerate}[(i)]
+          \item $\forall i, j \in J: \ex$ diagram \begin{tikzcd}[row sep=0]
+i \arrow[rd] &   \\
+j \arrow[r]  & k
+\end{tikzcd} $\in J$.
+          \item $\forall f, g : i \rightrightarrows j \ex h: j \to k$ such that \[h \c f = h \c g: i \to k\]
+        \end{enumerate}
+        \item A directed poset $(I, \subseteq)$ is a poset such that $\forall i, j \in I \ex h \in I$ such that $h \ge i, h \ge j$ ($\imp (I, \subseteq)$ is directed $\imp \ord(I,\subseteq)$ is filtered.)
+
+\end{enumerate}
+\end{defi}
+
+
+\begin{defi}
+$\A$ has exact filtered colimits $\iff$ for each filtered index category $J$, the functor $\colim \A^{J} \to \A$ is exact (and defined).
+\end{defi}
+
+\begin{thm}
+$\RMod$ has exact filtered colimits.
+\end{thm}
+
+Fundamental question: how to investigate the non-exactness of functors (that are left or right exact).
+Answer of homological algebra: e.g. $F: A \to B$ left exact, define ``higher right derived functors'' $(R^{i}F)_{i \ge 0}$ from $F$ such that $\forall$ s.e.s. \[0 \to X' \to X \to X'' \to 0\] in $A$
+\[\begin{tikzcd}
+0 \arrow[r] & FX' \arrow[r]    & FX \arrow[r]    & FX'' \arrow[lld]    &        \\
+            & R^1FX' \arrow[r] & R^1FX \arrow[r] & R^1FX'' \arrow[lld] &        \\
+            & R^2FX' \arrow[r] & R^2FX \arrow[r] & R^2FX'' \arrow[r]   & \cdots
+          \end{tikzcd}\]
+        and $R^{0}F = F$. Study $R^{i}F$ to understand the nonexactness of $F$, or to gain insight into some invariants of $\A$. Some $R^{i}F$ (typically $i \le 3$) have concrete meanings.
+
+\subsection{To define $R^{i}F$ (or $L_{i}F$)}
+One wants ``enough'' injectives (projectives) in $\A$.
+
+\begin{thm-defi}For $I \in \A$ the following are equivalent:
+  \begin{enumerate}[(i)]
+\item $\forall$ diagrams with $\iota$ monomorphism $\ex$ extension $g: B \to I$ such that the following commutes\[\begin{tikzcd}
+0 \arrow[r] & A \arrow[r, "\iota"] \arrow[d, "f"'] & B \arrow[ld, "g", dashed] \\
+            & I                                &
+          \end{tikzcd}\]
+    \item The functor $\Hom_{\A}(-, I) : \A\op \to \Ab$ is exact.
+    \item Every s.e.s. $0 \to I \tto h C \tto k D \to 0$ in $\A$ is split.
+  \end{enumerate}
+  If any of these hold then $I$ is called an injective object.
+\end{thm-defi}
+
+\begin{thm-defi}For $P \in \A$ the following are equivalent:
+  \begin{enumerate}[(i)]
+    \item $\forall$ diagrams with $\pi$ epimorphism $\ex$ lifting $g: P \to B$ such that $\pi \c g = f$
+          \[\begin{tikzcd}
+                    & P \arrow[ld, "g"', dashed] \arrow[d, "f"] &   \\
+B \arrow[r, "\pi"'] & C \arrow[r]                               & 0
+\end{tikzcd}\]
+    \item The functor $\Hom_{\A}(P,-): \A \to \Ab$ is exact.
+    \item Every s.e.s. $0 \to A \to B \to P \to 0$ is split.
+  \end{enumerate}
+  If these hold, then $P$ is called a projective object in $\A$.
+\end{thm-defi}
+
+\begin{rem*}
+$I$ injective in $\A\iff I$ projective in $\A\op$.
+\end{rem*}
+
+\begin{prop}
+\begin{enumerate}[(a)]
+  \item If $(I_{j})_{j \in J}$ ($J$ a set) is a family of injectives in $\A$, such that $\prod_{J}I_{j}$ exist, then $\prod_{J}I_{j}$ is injective.
+  \item If $(P_{j})_{j \in J}$ ($J$ a set) is a family of projectives in $\A$, such that $\bigoplus_{j \in J}P_{j}$ exist, then $\bigoplus_{J}P_{j}$ is projective.
+\end{enumerate}
+\end{prop}
+
+\begin{exmp}
+\begin{enumerate}[(a)]
+  \item $R$ is a projective $R$-module (hence so is $R^{(I)}$)
+        \item $\fak \Q\Z$ is an injective in ${}_{\Z}\Mod$.
+\end{enumerate}
+\end{exmp}
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item $\A$ has enough injective $\iff \forall X\in \A \ex$ monomorphism $X \to I$ with $I \in \A$ injective.
+  \item $\A$ has enough projectives $\iff \forall X \in \A \ex$ epimorphism $P \to X$ with $P \in \A$ projective.
+\end{enumerate}
+
+\end{defi}
+
+
+\begin{defi} $Q \in \A$ is called a
+  \begin{enumerate}[(a)]
+    \item \emph{generator} $\iff \Hom_{\A}(Q,-): \A \to \Ab$ is faithful.
+    \item \emph{cogenerator} $\iff \Hom_{A}(-,Q): \A\op \to \Ab$ is faithful.
+  \end{enumerate}
+\end{defi}
+\begin{rem}
+  For $Q \in \A$ the following are equivalent:
+  \begin{enumerate}
+    \item $Q$ is a generator.
+    \item $\forall X, Y \in \A \forall f, g \in \A(X,Y):$\[f \ne g \imp \ex h \in \A(Q,X): f \c h \ne g \c h\]
+    \item $\forall X, Y \in \A \forall f \in \A(X,Y):$\[f \ne 0 \imp \ex h \in \A(Q,X): f \c h = 0\]
+  \end{enumerate}
+\end{rem}
+\begin{exmps}
+  \begin{enumerate}
+    \item $R$ is a generator for $\RMod$: Suppose $f: M \to N$ in $\RMod$ is nonzero. Then $\ex m \in M: f(m) \ne 0$. Define $h: R \to M, r \mps rm \imp f \c h: R \to N$ is nonzero.
+    \item $\Q/\Z$ is a cogenerator in $\Ab = {}_{\Z}\Mod$ let $f: M \to N$ be non-zero in $\Ab$. Let $X \in \im(f) \setminus \{0\}$. TODO
+  \end{enumerate}
+\end{exmps}
+\begin{defi}$\A$ is called a \emph{Grothendieck abelian category} (GAC) iffy
+  \begin{enumerate}
+    \item $\A$ is cocomplete.
+    \item For any filtered small category $J: \colim: A^{J} \to A$ is exact.
+    \item $\A$ possesses a cogenerator.
+  \end{enumerate}
+\end{defi}
+\begin{thm} For a GAC $\A$ the following hold:
+  \begin{enumerate}
+    \item The subobjects and quotient objects of any $A \in \A$ form a set.
+    \item $\A$ has enough injectives.
+    \item $\A$ has an injective cogenerator.
+          \item $\A$ is complete.
+  \end{enumerate}
+\end{thm}
+\begin{exmp}
+\begin{enumerate}
+  \item $\RMod$ is a GAC by examples 19(a) Thm 11 Cor II48
+  \item If $\A$ is a GAC and $J$ is a small category then $\psh(J,A)$ is a GAC
+\end{enumerate}
+\end{exmp}
+\begin{lemm}
+  Suppose $F: \A \to \A'$ and $G: \A' \to \A$ are functors such that $F \dashv G$, then:
+  \begin{enumerate}
+\item $F$ exact $\imp G$ maps injectives in $\A'$ to injectives in $\A$.
+\item $G$ exact $\imp F$ maps projectives in $\A$ to projectives in $\A'$.
+\item $F$ faithful $\imp G$ maps cogenerators in $\A'$ to cogenerators in $\A$.
+\item $G$ faithful $\imp F$ maps generators in $\A$ to generators in $\A'$.
+  \end{enumerate}
+\end{lemm}
+\begin{thm}
+  Let $\A$ be a GAC with generator $Q$, then:
+%   $I$ in $\A$ is injective $\iff$ for all diagrams\[\begin{tikzcd}
+% 0 \arrow[r] & X \arrow[r, hook] \arrow[d] & Q \arrow[ld, dashed] \\
+%             & I                           &
+% \end{tikzcd}\]
+\end{thm}
+\begin{cor}
+$\fak \Q\Z$ is injective in $\Ab$.
+\end{cor}
+\begin{cor}
+  For any ring $R$, $\Hom(R, \fak \Q\Z)$ is an injective $R$-module and a cogenerator.
+\end{cor}
+\begin{prop} Let $Q, J \in \A$, then
+  \begin{enumerate}
+\item Suppose $\A$ contains all coproducts  over index sets. Then the following are equivalent:
+  \begin{enumerate}
+    \item $Q$ is a generator.
+    \item $\forall X \in \A \ex$ set $I, \ex$ epimorphism $Q^{(I)}:= \coprod_{i \in I} Q \to X$. Moreover, if $Q$ is a rojective generator then $\A$ has enough projectievs of the form $Q^{(I)}$, where $I$ is a set.
+  \end{enumerate}
+    \item Suppose $\A$ contains all products over index sets then the following are equivalent:
+          \begin{enumerate}
+            \item $J$ is a cogenerator.
+                  \item $\forall Y \in \A \ex$ set $I$, monomorphism $Y \to J^{I}:= \prod_{i \in I} J$. Moreover if $J$ is an injective cogenerrator then $\A$ has enough injectives of the form $J^I$ where $I$ is a set.
+          \end{enumerate}
+  \end{enumerate}
+\end{prop}
+\begin{cor}
+$\RMod$ has enough injectives of the form $\Hom_{\Z}(R, \fak \Q\Z)^{I}$, $I$ a set.
+\end{cor}
+\begin{rem}
+TODO
+\end{rem}
+\section{(Co-)chain complexes, (co-)homology}
+Let $\A$ be an additive category.
+\begin{defi}
+  \begin{enumerate}[(a)]
+  \item A \emph{chain complex} $(C_{*}, \del_{*})$ over $\A$ is a sequence $(\del_{i}: C_{i} \to C_{i-1})_{i \in \Z}$ of morphisms in $\A$ such that $\del_{i} \c \del_{i+1} = 0, \forall i \in \Z$.
+  The map $\del_{i}$ is called the $i$-th \emph{differential} or $i$-th \emph{boundary map} of the complex.
+  A morphism $f_{*}: C_{*} \to D_{*}$ of chain complexes is a sequence of morphisms $f_{*}= (f_{i}: C_{i} \to D_{i})_{i \in \Z}$ such that the diagram commutes $\forall i \in \Z$
+  \[\begin{tikzcd}
+C_{i-1} \arrow[d, "f_{i-1}"'] & C_i \arrow[d, "f_i"] \arrow[l, "\partial_i^C"'] \\
+D_{i-1}                       & D_i \arrow[l, "\partial_i^D"]
+\end{tikzcd}\]
+The \emph{category of chain complexes} over $\A$ is denoted $\ch(\A)$.
+    \item A \emph{cochain complex} $(C^{*}, \d^{*})$ over $\A$ is a  sequence $(\d^{i}: C^{i} \to C^{i+1})_{i \in \Z}$ of morphisms in $\A$, such that $\d^{i+1} \c\d^{i}=0, \forall i \in \Z$. A morphism $f^{*}: C^{*} \to D^{*}$ of cochain complexes is a sequence $f^{*}=(f^{i}: C^{i} \to D^{i})_{i \in \Z}$ of morphisms in $\A$ such that the following diagram commutes $\forall i \in \Z$
+          \[\begin{tikzcd}
+D_i \arrow[r, "\delta_D^i"]                  & D_{i+1}                       \\
+C_i \arrow[r, "\delta^i_C"] \arrow[u, "f_i"] & C_{i+1} \arrow[u, "f_{i+1}"']
+\end{tikzcd}\]
+          The \emph{category of cochain complexes} over $\A$ is denoted $\coch(\A)$
+  \end{enumerate}
+
+\end{defi}
+
+\begin{exer}
+TODO
+\end{exer}
+In the following we do most things only for cochain complexes.
+\begin{defi}
+  \begin{enumerate}[(a)]
+    \item The \emph{support} of a cochain complex $C^{*} \in \coch(\A)$ is $\supp C = \{i \in \Z \mid C^{i} \ne 0\}$
+    \item The full subcategory of $\coch(\A)$ on complexes supported on $\Nn$ (or on $-\Nn$) is denoted $\coch_{\ge 0}(\A)$ (or $\coch_{\le 0}(\A)$).
+  \end{enumerate}
+\end{defi}
+
+
+\begin{prop}
+If $\A$ is additive (or abelian), then so are $\coch(\A), \coch_{\ge 0}(\A), \coch_{\le 0}(\A)$.
+\end{prop}
+
+\begin{defi}
+  For $i \in \Z$ define left shift by $i$ by
+  \[\begin{tikzcd}
+      \coch(\A) \arrow[r] & \coch(\A) \\[-20]
+      C \arrow[r, mapsto] \arrow[d, "f"'] & C[i] \arrow[d, "{f[i]}"] \\
+      D \arrow[r, mapsto] & D[i]
+    \end{tikzcd}\]
+  where $C[i]^{n} = C^{n+i}, \d_{C[i]}^{n} = \d_{C}^{n+i}$ and $f[i]^{n} = f^{n+1}$.
+\end{defi}
+
+
+\begin{conv}
+We regard $\A$ as a subcategory of $\coch(\A)$, as the subcategory of complexes $C^{*}$ with $\supp C^{*} \subseteq \{0\}$. Identify $X \in \A$ with complex \[cdots \to 0 \to 0 \to X \to 0 \to 0 \to \cdots\]
+\end{conv}
+
+\begin{exmp}
+TODO
+\end{exmp}
+
+\section{Double complexes}
+Can iterate the formation of $\A \to \coch(\A)$.
+\begin{defi}The category of double (cochain) complexes is $\cochh(\A):= \coch(\coch(\A))$, so objects of $\cochh(\A)$ are complexes of complexes
+\end{defi}
+
+\begin{defi}
+$C \in \cochh(\A)$ is called \emph{bounded} $\iff \forall k \in \Z: \#\{(i,j) \in \Z^{2} \mid i+j = k, C^{ij} \ne 0\} < \infty$. Write $\cochh_{b}(\A) \subseteq \cochh(\A)$ for the full subcategory on bounded double complexes.
+\end{defi}
+
+\begin{exer}
+If $\A$ is additive or abelian, then so is $\cochh_{b}(\A)$.
+\end{exer}
+
+\begin{defi}
+  The \emph{total complex} $\tot(C)$ of $C \in \cochh_{b}(\A)$ is the complex $\overline C \in \coch(\A)$ defined as follows:
+  \[\bar C^{k} := \bigoplus_{\substack{(i,j) \in \Z^{2} \\ i+j = k}}C^{ij}\]
+  $\d_{\bar C}^{k}$ is constructed as follows:
+  \[\d^{ij}: C^{ij} \tto{(\d_{1}^{ij}, (-1)^{i}\d_{2}^{ij})} C^{i+1, j} \oplus C^{i, j+1} \hookrightarrow \bigoplus_{i'+j' = k+1} C^{i'j'} = \bar C^{k+1}\]
+  Use the universal property of the direct sum to define
+  \[\d_{\bar C}^{k} = \bigoplus_{i+j=k}\d^{ij}: \bar C^{k}\to \bar C^{k+1}\]
+  TODO
+\end{defi}
+\begin{exer}
+TODO
+\end{exer}
+\begin{defi}
+  For $C = (C^{*}, \d^{*}) \in \coch(\A)$ define:
+  \begin{itemize}
+\item $Z^{i}(C) := \ker(\d^{i})$ as the $i$-th cocycle object.
+    \item $B^{i}(C) := \im(\d^{i-1})$ as the $i$-th coboundary object.
+    \item $u^{i}(C): B^{i}(C) \to Z^{i}(C)$ the canonical monomorphism.
+    \item $H^{i}(C) := \cok(u^{i}(C)) = \fak {Z^{i}(C)}{B^{i}(C)}$ as the $i$-th cohomology object.
+  \end{itemize}
+  (Co-)homology measures the non-exactness of the complex $C$.
+\end{defi}
+
+\begin{lemm}[Alternative description of cohomology object]
+  For $C \in \coch(\A)$ consider TODO
+\end{lemm}
+
+\begin{lemm}[exer]
+TODO
+\end{lemm}
+
+\begin{thm}
+\begin{enumerate}[(a)]
+  \item Given a s.e.s. \[\mathcal E: 0 \to C \tto f D \tto g E \to 0\]
+        one obtains a long exact sequence \[\cdots \to H^{i}(C) \tto {H^{i}(f)} H^{i}(D) \tto{H^{i}(g)} H^{i}(E) \tto{d^{i}_{\mathcal E}} H^{i+1}(C) \tto{H^{i+1}(f)} \cdots\]
+        for $i \in \Z$, where the connecting homomorphism $d^{i}_{\mathcal E}$ is defined by the snake lemma and $\mathcal E \mps d_{\mathcal E}^{i}$ is ``functorial''.
+  \item Given a morphism of short exact sequences $\ph: \mathcal E \to \mathcal E'$ in $\coch(\A)$: \[\begin{tikzcd}
+\mathcal E: \arrow[d, "\varphi"'] &[-30] 0 \arrow[r] & C \arrow[r, "f"] \arrow[d, "\alpha"] & D \arrow[r, "g"] \arrow[d, "\beta"] & E \arrow[r] \arrow[d, "\gamma"] & 0 \\
+\mathcal E':                      & 0 \arrow[r] & C' \arrow[r, "f'"']                  & D' \arrow[r, "g'"']                 & E' \arrow[r]                    & 0
+\end{tikzcd}\]
+        one obtains a commutative ladder of long exact sequences from (a)
+        \[\begin{tikzcd}
+\cdots \arrow[r] & H^i(C) \arrow[d, "H^{i}(\alpha)"] \arrow[r, "H^{i}(f)"] & H^i(D) \arrow[d, "H^{i}(\beta)"] \arrow[r, "H^{i}(g)"] & H^i(E) \arrow[d, "H^{i}(\gamma)"] \arrow[r, "d_{\mathcal E}^i"] & H^{i+1}(C) \arrow[d, "H^{i+1}(\alpha)"] \arrow[r] & \cdots \\
+\cdots \arrow[r] & H^i(C') \arrow[r, "H^{i}(f')"']                         & H^i(D') \arrow[r, "H^i(g')"']                          & H^i(E') \arrow[r, "d_{\mathcal E'}^i"']                         & H^{i+1}(C') \arrow[r]                             & \cdots
+\end{tikzcd}\]
+
+
+\end{enumerate}
+
+\end{thm}
+
+
+\begin{defi}
+$C \in \coch(\A)$ is called \emph{acyclic} if $C$ is exact $\iff H^{i}(C) = 0, \forall i \in \Z$.
+\end{defi}
+
+
+
+\begin{cor}[To theorem 45]
+Let $\mathcal E: 0 \to C' \to C \to C'' \to 0$ be a s.e.s. in $\coch(\A)$, then if any two of $C', C, C''$ are acyclic, then so is the third.
+\end{cor}
+
+
+\begin{thm}[Acyclicity criterion for total complexes]
+  Let $C \in \cochh_{b}(\A)$ such that
+  \begin{enumerate}[(a)]
+    \item Each row $(C^{ij}, \d_{1}^{ij})_{i \in \Z}$ is acyclic $\forall j \in \Z$, or
+    \item Each column $(C^{ij}, \d_{1}^{ij})_{j \in \Z}$ is acyclic $\forall i \in \Z$
+  \end{enumerate}
+  then $\mathrm{Tot}(C)$ is acyclic.
+
+
+\end{thm}
+
+
+\begin{defi}
+An arrow $f: C \to D$ in $\coch(\A)$ is called a \emph{quasi-isomorphism} (quism) $\iff \forall i \in \Z: H^{i}(f): H^{i}(C) \to H^{i}(D)$ is an isomorphism.
+\end{defi}
+
+\begin{lemm}
+TODO
+\end{lemm}
+\begin{cor}
+  For $f: C \to D$ in $\coch(\A)$ the following are equivalent:
+  \begin{enumerate}[(a)]
+    \item $f$ is a quasi-isomorphism.
+          \item $\cone f$ is acyclic.
+  \end{enumerate}
+
+\end{cor}
+
+\begin{defi}
+  Let $f, g : C \to D$ in $\coch(\A)$.
+  \begin{enumerate}[(a)]
+\item A \emph{homotopy} from $f$ to $g$ is a sequence of morphisms $(s^{i}: C^{i} \to D^{i-1})_{i \in \Z}$ such that $\forall i \in \Z: f^{i}-g^{i} = \d_{D}^{i-1} \c s^{i} + s^{i+1} \c \d^{i}_{C}$, i.e. \[\begin{tikzcd}
+                                     & C^i \arrow[r, "\delta^i_C"] \arrow[d, "f^i-g^i"] \arrow[ld, "s^i"'] & C^{i+1} \arrow[ld, "s^{i+1}"] \\
+D^{i-1} \arrow[r, "\delta^{i-1}_D"'] & D^i                                                                             &
+\end{tikzcd}\]
+    \item $f$ is called \emph{homotopic} to $g$ if $\ex$ homotopy from $f$ to $g$. Write $f \sim g$.
+    \item $f$ is called \emph{nullhomotopic} if $f \sim 0$.
+  \end{enumerate}
+Note: This definition only requires that $\A$ is additive.
+\end{defi}
+
+\begin{prop}
+\begin{enumerate}[(a)]
+  \item For $C, D \in \coch(\A)$, homotopy defines an equivalence relation on $\Hom_{\coch(\A)}(C,D)$.
+  \item For $f, f': C \to D$ and $g, g' : D \to E$ in $\coch \A$ one has: \[f \sim f', g \sim g' \imp g \c f \sim g' \c f'\]
+  \item Suppose $F: \A \to \mathcal B$ is an additive functor, then one has a functor $F: \coch \A \to \coch \mathcal B$ by \[F(\d^{n}: C^{n} \to C^{n+1})_{n \in \Z} = (F\d^{n}: FC^{n} \to FC^{n+1})_{n \in \Z}\]
+        This functor preserves homotopy, i.e. $f \sim g \imp Ff \sim Fg$.
+\end{enumerate}
+
+\end{prop}
+
+
+
+
+\begin{prop}
+Suppose $f, g : C \to D$ in $\coch \A$ are homotopic, then \[H^{i}(f)= H^{i}(g): H^{i}(C) \to H^{i}(D), \forall i \in \Z\]
+\end{prop}
+
+\begin{defi}
+  A morphism $f: C \to D$ in $\coch \A$ is called a \emph{homotopy equivalence} from $C$ to $D$ if $\ex g: D \to C$ in $\coch \A$ such that \[g \c f \sim 1_{C}, \quad f \c g \sim 1_{D}\]and in this case $C$ and $D$ are called homotopy equivalent.
+\end{defi}
+
+\begin{prop}
+Suppose $f: C \to D$ is a homotopy equivalence, then $f$ is a quasi-isomorphism.
+\end{prop}
+\begin{exmp*}TODO
+
+\end{exmp*}
+
+\section{Injective and projective resolutions}
+\begin{nota*}
+  $\inj$ or $\inj_{\A}$ and $\proj$ or $\proj_{\A}$ are the full subcategories of $\A$ on injective or projective objects respectively. Note that $\inj_{\A}\op = \proj_{\A\op}$.
+\end{nota*}
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item An \emph{injective resolution} of $A \in \A$ is a quism $f: \underline A \to I$ in $\coch_{\ge 0} \A$ with $I \in \coch_{\ge 0} (\inj_{\A})$ i.e. $\cone f$, which is \[0 \to A \to I^{0} \to I^{1} \to I^{2}\to \cdots\] is acyclic and all the $I^{j}$ are injective.
+  \item A \emph{projective resolution} of $A \in \A$ is a quism $g: P \to \underline A$ in $\coch_{\le 0} \A$ with $P \in \coch_{\le 0}(\proj \A)$.
+\end{enumerate}
+
+\end{defi}
+
+\begin{prop}Consider the functor
+  \[\begin{tikzcd}
+\hat \cd: \coch(\A)\op \arrow[r]          & \coch (\A\op)                                  \\[-20]
+{(C^n, \d_C^n)} \arrow[r, "\hat \cd"] \arrow[d, "f"'] & {(\hat C^n, \hat \d_C^n)}                      \\
+{(D^n, \d_D^n)} \arrow[r, "\hat \cd"]                 & {(\hat D^n, \hat \d_D^n)} \arrow[u, "\hat f"']
+\end{tikzcd}\]
+where $\hat C^{n} = C^{-n}$, $\hat \d^{n}_{C} = \d^{-n-1} \in \A(C^{-n-1}, C^{-n}) = \A\op(\hat C^{n}, \hat C^{n+1})$ and $\hat f^{n}:= f^{-n} \in \A(C^{-n}, D^{-n}) = \A\op(\hat D^{n}, \hat C^{n})$.
+Then
+\begin{enumerate}[(a)]
+  \item $\hat \cd$ is well defined, satisfies $\hat \cd \c \hat \cd = \id$ and $\hat \cd$ is an isomorphism of categories.
+  \item $\hat{\ }({\coch_{\ge 0/\le 0}(\A)\op}) = \coch_{\le 0/\ge 0}(\A\op)$.
+  \item $\hat{\ }(\coch_{\ge 0/\le 0}(\inj_{\A}/\proj_{\A}))\op = \coch_{\le 0/\ge 0}(\proj_{\A\op}/\inj_{\A\op})$
+        \item If $\underline A \to I$ is an injective resolution in $\coch \ge 0 (\A)$, then $\hat I \to \underline A$ is a projective resolution in $\coch_{\le 0}(\A\op)$
+\end{enumerate}
+\end{prop}
+
+\begin{thm}
+  Let $\A$ be an abelian category with enough injectives, then
+  \begin{enumerate}[(a)]
+    \item Each $A \in \A$ possesses an injective resolution.
+    \item Let $h: A \to B$ be a morphism, let $f: \underline B \to I^{\bullet}$ be an injective resolution and $g: \underline A \to C^{\bullet}$ be a quism in $\coch_{\ge 0}(\A)$ ($C^{\bullet}$ is a resolution of $A$), then there is a commutative diagram in $\coch_{\ge 0} \A$
+          \[\begin{tikzcd}
+\underline A \arrow[r, "g"] \arrow[d, "h"'] & C^\bullet \arrow[d, "H", dashed] \\
+\underline B \arrow[r, "f"]                 & I^\bullet
+\end{tikzcd}\]
+          \item If diagram in (b) commutes with $H, H': C^{\bullet} \to I^{\bullet}$, then $H' \sim H$.
+  \end{enumerate}
+\end{thm}
+
+
+\begin{cor}
+  Suppose $\underline A \tto g I^{\bullet}$ and $\underline A \tto g J^{\bullet}$ are inj resolutions of $A$. Then:
+\begin{enumerate}[(a)]
+  \item $\ex H : I^{\bullet} \to J^{\bullet}$ such that
+        \[\begin{tikzcd}
+          & \underline A \arrow[rd, "f"] \arrow[ld, "g"'] &                                   \\
+J^\bullet &                                               & I^\bullet \arrow[ll, "H", dashed]
+\end{tikzcd}\] commutes.
+        \item $H$ in (a) is always a homotopy equivalence.
+  \end{enumerate}
+\end{cor}
+
+
+\begin{lemm}[Horseshoe 2]
+  Let $0 \to A' \to A \to A'' \to 0$ be a s.e.s. in $\A$, let $\underline A' \tto {f'} I^{\bullet}$ and $\underline A'' \tto {f''} J^{\bullet}$ be injective resolutions. Then $\ex$ commutative diagram:
+  \[\begin{tikzcd}
+0 \arrow[r] & \underline A' \arrow[r] \arrow[d, "f'"] & \underline A \arrow[r] \arrow[d, "f", dashed] & \underline A'' \arrow[r] \arrow[d, "f''"] & 0 \\
+0 \arrow[r] & I^\bullet \arrow[r]                     & K^\bullet \arrow[r]                           & J^\bullet \arrow[r]                       & 0
+\end{tikzcd}\]
+in $\coch_{\ge 0} \A$ with exact rows and an injective resolution $f: \underline A \to K^{\bullet}$. Moreover $\forall n \ge 0$ the following commutative diagram has exact rows and columns:
+\[\begin{tikzcd}
+            & 0 \arrow[d]                                            & 0 \arrow[d]                                            & 0 \arrow[d]                                            &   \\
+0 \arrow[r] & \operatorname{im} (\delta_I^{n-1}) \arrow[r] \arrow[d] & \operatorname{im} (\delta_K^{n-1}) \arrow[r] \arrow[d] & \operatorname{im} (\delta_J^{n-1}) \arrow[r] \arrow[d] & 0 \\
+0 \arrow[r] & I^n \arrow[r] \arrow[d]                                & K^n \arrow[r] \arrow[d]                                & J^n \arrow[r] \arrow[d]                                & 0 \\
+0 \arrow[r] & \operatorname{im} (\delta_I^{n}) \arrow[r] \arrow[d]   & \operatorname{im} (\delta_K^{n}) \arrow[r] \arrow[d]   & \operatorname{im} (\delta_J^{n}) \arrow[r] \arrow[d]   & 0 \\
+            & 0                                                      & 0                                                      & 0                                                      &
+          \end{tikzcd}\]
+        So $f' = \d_{I}^{-1}, f = \d^{-1}_{K}$ and $f'' = \d_{J}^{-1}$.
+\end{lemm}
+
+\begin{defi}
+Define $\Ex_{\A}$ as the category of s.e.s. in $\A$ with objects: \[\mathcal E_{A}: 0 \to A' \to A \to A'' \to 0\]in $\A$, and morphisms are commutative diagrams \[\begin{tikzcd}
+0 \arrow[r] & A' \arrow[r] \arrow[d, "f'"] & A \arrow[r] \arrow[d, "f"] & A'' \arrow[r] \arrow[d, "f''"] & 0 \\
+0 \arrow[r] & B' \arrow[r]                   & B \arrow[r]               & B'' \arrow[r]                   & 0
+\end{tikzcd}\]in $\A$ with exact rows represented by $\underline f = (f', f, f'')$ in $\Ex_{\A}(\mathcal E_{A}, \mathcal E_{B})$. Composition of arrows is componentwise. TODO
+\end{defi}
+\begin{prop}
+\begin{enumerate}[(a)]
+  \item $\Ex_{\A}$ is an additive category.
+  \item We have additive functors $\pr_{i}: \Ex_{\A} \to \A$, mapping $0 \to A_{1} \to A_{2} \to A_{3} \to 0$ to $A_{i}$.
+  \item $\Ex_{\A}$ is not abelian.
+\end{enumerate}
+
+
+\begin{defi}
+  An arrow $\underline f = (f', f, f'')$ in $\Ex_{\A}$ is called
+  \begin{enumerate}[(a)]
+    \item a \emph{strict monomorphism (strict epimorphism)} $\iff f', f, f''$ are monics (epics) in $\A$.
+    \item \emph{strict} $\iff$ \[0 \to \ker f' \to \ker f \to \ker f'' \to 0\] is exact which is (by the snake lemma) equivalent to exactness of \[0 \to \cok f' \to \cok f \to \cok f'' \to 0\]
+  \end{enumerate}
+
+\end{defi}
+\end{prop}
+
+\begin{prop}
+If $\underline f$ is strict in $\mor (\Ex_{\A})$ then $\ker \underline f, \cok \underline f, \im \underline f, \coim \underline f$ exist in $\Ex_{\A}$ and the canonical map $\coim \underline f \to \im \underline f$ is an isomorphism.
+\end{prop}
+
+\begin{rem*}
+$\Ex_{\A}$ is an exact category.
+\end{rem*}
+
+\begin{defi}
+\begin{enumerate}[(a)]
+\item A complex $\mathcal E^{\bullet} = (\underline \d^{i}: )$ TODO
+\end{enumerate}
+
+\end{defi}
+\begin{thm}TODO
+
+\end{thm}
+
+
+\section{Derived Functors}
+Let $\A, \B$ be abelian categories.
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item A homological (resp. cohomological) $\delta$-functor $(T_{n}, \d_{n})_{n \ge 0}$ (resp $(T^{n}, \d^{n})_{n \ge 0}$) from $\A$ to $\B$ consists of
+        \begin{enumerate}[(i)]
+          \item a sequence of additive functors $(T_{n}: \A \to \B)_{n \ge 0}$ resp. $(T^{n}: \A \to \B)_{n \ge 0}$.
+                \item A sequence of natural transformations \[\begin{tikzcd}[row sep = 8]
+& {} \arrow[dd, "\d_{n}", Rightarrow] &    \\
+\Ex_{A} \arrow[rr, "T_{n+1} \c \pr_{3}", bend left=45] \arrow[rr, "T_{n} \c \pr_{1}"', bend right=45] &                                & \B \\
+& {}                             &
+\end{tikzcd} \quad \text{ resp. }\quad \begin{tikzcd}[row sep = 8]
+& {} \arrow[dd, "\d^{n}", Rightarrow] &    \\
+\Ex_{A} \arrow[rr, "T^{n} \c \pr_{3}", bend left=45] \arrow[rr, "T^{n+1} \c \pr_{1}"', bend right=45] &                                & \B \\
+& {}                             &
+\end{tikzcd}\]
+                such that this data assigns to each $\underline{\mathcal E}: 0 \to A_{1} \tto f A_{2} \tto g A_{3} \to 0$ in $\Ex_{\A}$ a long exact sequence in $\B$
+                \[\cdots \to T_{n+1} \tto{\d_{n}^{\underline{\mathcal E}}}T_{n}A_{1} \tto {T_{n}f} T_{n}A_{2} \tto{T_{n}g} T_{n}A_{3} \tto{\d_{n-1}^{\underline{\mathcal E}}}T_{n-1}A_{1} \to \cdots\]
+                resp.
+                \[\cdots \to T^{n-1}A_{3} \tto {\d^{n-1}_{\cal E}} T^{n}A_{1} \tto{T^{n}f} T^{n}A_{2} \tto {T^{n}g} T^{n}A_{3} \tto{\d_{\cal E}^{n}} T^{n+1}A_{1} \to \cdots\]
+                Moreover the assignmennt $\mathcal E \to $ l.e.s. is functorial in $\Ex_{\A}$
+                \item TODO WTF IS THIS?
+        \end{enumerate}
+
+\end{enumerate}
+
+\end{defi}
+
+\begin{exmp}TODO
+
+\end{exmp}
+
+\begin{const}
+  Suppose $\A$ has enough injectives and let $F: \A \to \B$ be a left exact additive functor.
+  \begin{enumerate}
+    \item $\forall A \in \A$ choose an injective resolution $\iota_{A}: \underline A \to I_{A}^{\bullet}$ in $\coch_{\ge 0}(\A)$ and define $R^{n}F(A) := H^{n}(FI^{\bullet}_{A})$ choice in $\B$ of $n$-th cohomology object.
+    \item $\forall f: A \to A'$ morphism in $\A$ choose an arrow $\iota_{f}$ such that
+          \[\begin{tikzcd}
+\underline A' \arrow[r, "\iota_{A'}"]             & I^\bullet_{A'}                    \\
+\underline A \arrow[u, "f"] \arrow[r, "\iota_A"'] & I^\bullet_A \arrow[u, "\iota_f"']
+\end{tikzcd}\]commutes in $\coch_{\ge 0}(\A)$ which implies that $F(\iota_{f}) : FI^{\bullet}_{A} \to FI^{\bullet}_{A'}$ morphism in $\coch_{\ge 0}(\B)$.
+          Define: $R^{n}F(f) := H^{n}(F(\iota_{f})) : R^{n}F(A) \to R^{n}F(A')$ ...
+  \end{enumerate}
+\end{const}
+
+\begin{lemm}
+\begin{enumerate}[(a)]
+  \item $R^{n}F$ is a functor $\A \to \B$ (additive.)
+        \item If one makes other choices of injective resolutions $\tilde \iota_{A}: A \to \tilde I^{\bullet}_{A}$ and $\tilde \iota_{f}: \tilde I^{\bullet}_{A} \to \tilde I^{\bullet}_{A'}$ then we  get a natural isomorphism $R^{n}F \cong \tilde R^{n}F$
+\end{enumerate}
+\end{lemm}
+\begin{enumerate}\setcounter{enumi}{2}
+\item Given $\mathcal E: 0 \to A_{1} \tto f A_{2} \tto g A_{3} \to 0$ in $\Ex_{\A}$ and an injective resolution $\iota_{\mathcal E}: \mathcal E \to J^{\bullet}_{\mathcal E}$ in $\coch_{\ge 0}(\Ex_{\A})$
+\end{enumerate}
+
+\begin{lemm}
+\begin{enumerate}[(a)]
+  \item $F J_{\cal E}^{\bullet}$ lies in $\coch_{\ge 0}(\Ex_{\B})$, in particular, it is a s.e.s. of complexes in $\coch_{\ge 0}(\B)$.
+  \item Write $J_{\cal E}^{\bullet} = 0 \to I_{1}^{\bullet} \to I_{2}^{\bullet} \to I_{3}^{\bullet} \to 0$ as a s.e.s. in $\coch_{\ge 0}(\A)$, then the $I_{i}^{n}$ are injective and by (a) we have a s.e.s. \[0 \to FI_{1}^{\bullet} \to FI_{2}^{\bullet} \to FI_{3}^{\bullet} \to 0\quad (*)\]in $\coch_{\ge 0}(\B)$, then the following diagram commutes and the top row is a l.e.s. in $\B$, and the vertical maps are isomorphisms.
+        \[\begin{tikzcd}
+\cdots \arrow[r] & H^{n-1}(FI_j^\bullet) \arrow[r, "\delta_{FJ_{\cal E}^\bullet}^{n-1}"] & H^{n}(FI_1^\bullet) \arrow[r]                              & H^{n}(FI_2^\bullet) \arrow[r]                              & H^{n}(FI_3^\bullet) \arrow[r, "\delta_{FJ_{\cal E}^\bullet}^{n}"] & \cdots \\
+\cdots \arrow[r] & R^{n-1}F(A_3) \arrow[r] \arrow[u, "u_{A_3}^{n-1}"]                    & R^{n}F(A_1) \arrow[r, "R^nF(f)"'] \arrow[u, "u_{A_1}^{n}"] & R^{n}F(A_2) \arrow[r, "R^nF(g)"'] \arrow[u, "u_{A_2}^{n}"] & R^{n}F(A_3) \arrow[r] \arrow[u, "u_{A_3}^{n}"]                    & \cdots
+\end{tikzcd}\]
+        This is not even funny anymore. Define $\delta_{RF}^{n}: R^{n}F\c \pr_{3} \Rightarrow R^{n}F \c \pr_{1}$ for $\cal E$ as $(u_{A_{1}}^{n+1})^{-1} \c \delta_{FJ_{\cal E}^{\bullet}}^{n} \c u^{n}_{A_{3}}$.
+\end{enumerate}
+
+\end{lemm}
+
+\begin{enumerate}\setcounter{enumi}{3}
+        \item Show that $\delta_{RF}^{n}$ is well defined.
+\end{enumerate}
+\begin{lemm}
+TODO
+\end{lemm}
+\begin{thm}
+  Suppose $\A$ has enouguh injectives and $F$ is an additive left exact functor, then $RF:= (R^{n}F, \delta_{RF}^{n})_{n \ge 0}$ is a \emph{universal cohomological $\delta$-functor} and $R^{n}F$ is called the \emph{$n$-th right derived functor of $F$}. It satisfies:
+  \begin{enumerate}[(a)]
+    \item $R^{0}F = F$.
+          \item $I \in \inj_{\A} \imp \forall n \ge 1, R^{n}F(I)=0$.
+  \end{enumerate}
+  Suppose $\A$ has enough projectives, let $G: \A\to \B$ be right exact, then
+  \begin{enumerate}[(a)]
+    \item $\ex$ homological $\delta$-functor $LG = (L_{i}G, \delta_{i})_{i \ge 0}$ such that $(*)$
+          \begin{enumerate}[(i)]
+            \item $L_{0}G = G$
+          \item $P \in \proj_{\A} \imp \forall n \ge 1, L_{n}G(P)=0$.
+          \end{enumerate}
+          \item $LG$ with $(*)$ is universal.
+    \item $LG$ with $(*)$ is unique up to unique isomorphism.
+          \item $LG$ can be computed via projective resolutions, i.e. $\forall A \in \A$ with projective resolution $P^{\bullet} \to A$ in $\coch_{\le 0}(\A)$ we have \[L_{i}G(A) = H^{-i}(GP^{\bullet})\]
+  \end{enumerate}
+\end{thm}
+
+\begin{lemm*}
+If $T=(T_{n},\d_{n})_{n \ge 0}$ is a homological $\d$-functor from $\A$ to $\B$ and if $\A$ has enough projectives and $T_{i}P=0, \forall P \in \proj_{\A}, i \ge 1$, then $T$ is universal.
+\end{lemm*}
+\section{The Ext Functor}
+Let $\A$ be abelian, $M, N \in \A$ and suppose $\A$ has enough projectives/injectives if needed.
+\begin{defi}
+  Define
+  \[\Ext_{\A}^{i}(-, N) := R^{i}\Hom_{\A}(-,N)\] with the natural transformations $\d^{i}$.
+\end{defi}
+\begin{exmp*}
+  To compute: if \[\cdots \to P^{-2} \to P^{1} \to P^{0} \to M\quad (*)\] is a projective resolution, then we have the complex $P^{\bullet}$, apply $\Hom_{\A}(-,N)$ and get \[0 \to \Hom_{\A}(P^{0}, N) \to \Hom_{\A}(P^{-1}, N) \to \Hom_{\A}(P^{-2}, N) \to \cdots\]
+  and $\Ext_{\A}^{i}(M,N) = H^{i}(\Hom_{\A}(P^{\bullet}, N))$
+\end{exmp*}
+\begin{prop}
+\begin{enumerate}[(a)]
+  \item $M$ projective $\imp \Ext_{\A}^{i}(M,N)= 0, \forall i \ge 1$.
+        \item $N$ injective $\imp \Ext_{\A}^{i}(M,N) = 0, \forall i \ge 1$.
+\end{enumerate}
+
+\end{prop}
+
+\begin{defi}
+Define \[\bar \Ext_{\A}^{i}(M,-) := R^{i}(\Hom_{\A}(M,-))\]with the natural transformations $\delta^{i}$.
+\end{defi}
+\begin{exmp*}Compute $\bar \Ext_{\A}^{i}(M,-)$ via injective resolutions of the 2nd argument: \[0 \to N \to I^{0} \to I^{1} \to I^{2} \to \cdots\]and we get \[\Hom_{\A}(M,I^{0}) \to \Hom_{\A}(M,I^{1}) \to \Hom_{\A}(M,I^{2}) \to \cdots\]
+  so $\bar \Ext_{\A}^{i}(M,-) = H^{i}(\A(M,I^{\bullet}))$.
+\end{exmp*}
+
+
+\begin{prop}
+  For $M$ projective or $N$ injective we have $\bar \Ext_{\A}^{i}(M,N) = 0, \forall i \ge 1$.
+\end{prop}
+\begin{rem*}
+If $\A$ has enough projectives and injectives, $\Ext_{\A}^{i}(-,-)$ and $\bar \Ext_{\A}^{i}(-,-)$ turn out to be isomorphic!
+\end{rem*}
+\begin{rem*}
+  $\Ext_{\A}^{i}(-,-)$ and $\bar \Ext_{\A}^{i}(-,-)$ are bifunctors.
+\end{rem*}
+
+\begin{thm}Suppose $\A$ has enough injectives and projectives, then $\ex$ natural isomorphisms as bifunctors \begin{align*}
+  \A\op \tm \A &\to \Ab \\
+               u^{i}_{M,N}: \Ext_{\A}^{i}(M,N) &\to \bar \Ext_{\A}^{i}(M,N)
+\end{align*}
+\end{thm}
+\subsection{Classical interpretation of $\Ext^{1}$ as extension objects}
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item An extension of $M$ by $N$ is a s.e.s. in $\A$:\[\mathcal E: 0 \to N \to E \to M \to 0\]
+  \item Extensions $\mathcal E$ and
+        \[\mathcal E': 0 \to N \to E' \to M \to 0\]
+        are called \emph{equivalent} (write $\sim$), iff $\ex$ commutative diagram:
+        \[\begin{tikzcd}
+\mathcal E: 0 \arrow[r]  & N \arrow[r] \arrow[d, "\mathrm{id}_N"] & E \arrow[r] \arrow[d, "\varphi"] & M \arrow[r] \arrow[d, "\mathrm{id}_M"] & 0 \\
+\mathcal E': 0 \arrow[r] & N \arrow[r]                            & E' \arrow[r]                     & M \arrow[r]                            & 0
+\end{tikzcd}\]
+  \item $\Ext_{\A}^{1}(M,N)$ denotes the set of equivalence classes of extensions of $M$ by $N$.
+\end{enumerate}
+\end{defi}
+
+\begin{rem*}
+  \begin{enumerate}[(a)]
+    \item By the snake lemma: $\mathcal E \sim \mathcal E' \imp E \cong E'$.
+          \item $\sim$ is an equivalence relation.
+  \end{enumerate}
+\end{rem*}
+
+\begin{prop}
+\begin{enumerate}[(a)]
+  \item $\Ext_{\A}(M,N)$ is an abelian group for addition $\cal E + E'$ defined by the \emph{Baer sum}:
+        \[\begin{tikzcd}
+0 \arrow[r] & N \oplus N \arrow[r] \arrow[d, "\sum"']         & E \oplus E' \arrow[r] \arrow[d]     & M \oplus M \arrow[r] \arrow[d, "\mathrm{id}_{M \oplus M}"] & 0 \\
+0 \arrow[r] & N \arrow[r]                            & E \oplus E' \amalg_{N \oplus N} N \arrow[r]            & M \oplus M \arrow[r]                                       & 0 \\
+0 \arrow[r] & N \arrow[r] \arrow[u, "\mathrm{id}_N"] & E+E' \arrow[r] \arrow[u] & M \arrow[r] \arrow[u, "\Delta"']                  & 0
+\end{tikzcd}\]
+        where $E \oplus E' \amalg_{N \oplus N} N$ is the pushout by the sum map $+: N \oplus N \to N, (n,m) \mps n+m$ and $E+E'$ is the pullback by the diagonal map $\Delta: M \to M \oplus M, m \mps (m,m)$.
+        And the zero object is given by the split s.e.s \[0 \to N \to N \oplus M \to M \to 0\]
+        \item One has a natural isomorphism as bifunctors \[u: \Ext_{\A}(-,-) \Rightarrow \Ext_{\A}^{1}(-,-)\]if $\A$ has enough projectives (or to $\bar \Ext_{\A}^{1}(-,-)$ if $\A$ has enough injectives).
+\end{enumerate}
+\end{prop}
+
+\begin{rem*}
+In fact, Yoneda also considered higher Ext-groups (in the absence of innjectives/projectives), e.g. $\Ext^{2}(M,N)$  is the ``group'' of exact sequences \[0 \to N \to E_{1} \to E_{2} \to M \to 0\]modulo a suitable equivalence relation.
+\end{rem*}
+
+\begin{nota*}
+For $\RMod$ one usually abbreviates \[\Ext_{R}^{i}(-,-) := \Ext^{i}_{\RMod}(-,-)\]
+\end{nota*}
+
+For $R = \Z[G]$ and a group $G$, one also considers the group cohomology for $M \in {}_{\Z[G]}\Mod$ as
+\begin{defi}
+  Define \[H^{i}(G,M) := \Ext^{i}_{\Z[G]}(\Z,M)\]such that $\Z$ is the trivial $G$-action.
+\end{defi}
+\begin{prop*}
+  In face $H^{i}(G,M)$ is the $i$-th right derived functor of
+  \begin{align*}
+  M \to \Hom_{\Z[G]}(\Z,M) &\overset{\text{exer.}} = M^{G}:= \{m \in M \mid \forall g \in G: g m = m\} \\
+  \ph_{m}: n \mps n m &\mpsfrom m \in M^{G}
+\end{align*}
+\end{prop*}
+So far we had $\Ext^{i}_{\A}$ valued in $\Ab$. But recall that $\Hom_{R}(-,-)$ is also a bifunctor \begin{align*}
+  \Hom_{R}(-,-): \RMod_{R'} \tm \RMod_{R''} &\to {}_{R'}\Mod_{R''} \\
+  (M,N) &\mps \Hom_{R}(M,N)
+\end{align*}
+Fact: $\RMod_{R'}$ and $\RMod_{R''}$ have enough injectives and projectives because $\RMod_{R'}$ is isomorphic to ${}_{R \otm (R')\op}\Mod$.
+
+\begin{prop}[Exer]
+  This Bifunctor induces
+  \[\Ext_{R}^{i}(-,-): \RMod_{R'} \tm \RMod_{R''} \to {}_{R'}\Mod_{R''}\]
+\end{prop}
+
+\section{The Tor Functor}
+Let $R$ be a ring, $M \in \ModR$ and $N \in \RMod$. We had the bifunctor \[- \otimes - : \ModR \tm \RMod \to \Ab\]
+and it is right exact, and also $\ModR$ and $\RMod$ have enough projectives.
+\begin{defi}
+For $i \ge 0$ define: \begin{align*}
+\Tor_{i}^{R}(M,-)&:= L_{i}(M \otm_{R} -) \\
+\bar \Tor_{i}^{R}(-,N)&:= L_{i}(- \otm_{R} N)
+\end{align*}
+\end{defi}
+
+\begin{prop}
+  If $P^{\bullet} \to M$ (or $Q^{\bullet} \to N$) are projective resolutions, then one has:
+  \begin{align*}
+\bar \Tor_{i}^{R}(M,N) &= H^{-i}(P^{\bullet} \otm_{R} N) \\
+\Tor_{i}^{R}(M,N) &= H^{-i}(M \otm_{R} Q^{\bullet})
+  \end{align*}
+  Moreover, if $M$ or $N$ are projective, then \[\Tor_{i}^{R}(M,N) \cong 0 \cong \bar \Tor_{i}^{R}(M,N)\]
+\end{prop}
+
+\begin{thm}
+  One has natural isomorphism of bifunctors \[\Tor_{i}^{R}(-,-) \cong \bar\Tor_{i}^{R}(-,-)\]
+\end{thm}
+Other ways to compute $Tor_{i}$, not using projective resolutions.
+
+\begin{defi}
+  Let $T = (T_{n},\d_{n})$ be a homological $\d$-functor from $\A$ to $\B$. Call $A \in \A$ $T$-acyclic if $T_{i} A = 0, \forall i \ge 1$ (with $T_{0}$ right exact)
+  For example $M$ projective $\imp M$ is $L(-\otm_{R}N)$-acyclic
+\end{defi}
+
+\begin{facts}
+  Let $0 \to A' \to A \to A'' \to 0$ be a s.e.s. in $\A$, then
+  \begin{enumerate}[(a)]
+    \item $A''$ is $T$-acyclic then
+          \[0 \to T_{0}A' \to T_{0}A \to T_{0}A'' \to 0\]
+          is a s.e.s. (because $T_{1}A'' = 0$ and l.e.s. from $\d$-functor).
+    \item If $A$ and $A''$ are $T$-acyclic, then so is $A'$ (because of the l.e.s. from being a $\d$-functor).
+          \[\to T_{2}A' \to \ubr{T_{2}A}_{=0} \to \ubr{T_{2}A''}_{=0} \to T_{1} A' \to \ubr{T_{1}A}_{=0} \to \ubr{T_{1}A''}_{=0} \to T_{0}A' \to T_{0} A \to T_{0}A''\]
+    \item If $0 \to A_{0} \to A_{1} \to \cdots \to A_{n} \to 0$ is exact in $\A$ and if $A_{1}, \cdots, A_{n}$ are $T$-acyclic then $A_{0}$ is also $T$-acyclic. This follows from (b) by ind. using the exact sequences $0 \to A_{0} \to A_{1} \to X \to 0$ and \[0 \to X \to A_{2} \to \cdots \to A_{n} \to 0\]
+  \end{enumerate}
+\end{facts}
+
+\begin{lemm}
+If $C^{\bullet} \in \coch_{\le 0}(\A)$ is acyclic with all $C^{i}$ $T$-acyclic, then $T_{0}C^{\bullet}$ is acyclic (we assume $T_{0}$ is right exact)
+\end{lemm}
+\begin{cor}
+  Suppose $\A$ has enough projectives, $G : \A \to \B$ is right exact and $T = LG$. If $Q^{\bullet} \tto g \underline A$ is a resolution by $T$-acyclic objects. Then:
+  \[L_{i}G(A) \cong H^{-i}(GQ^{\bullet})\]
+\end{cor}
+
+\begin{defi}
+$M \in \ModR$ is called \emph{flat} if $M \otm_{R} -: \RMod \to \Ab$ is exact.
+\end{defi}
+
+\begin{prop}
+  For $M \in \ModR$ the following are equivalent:
+  \begin{enumerate}[(a)]
+    \item $M$ is flat.
+    \item $\Tor_{1}^{R}(M,-) = 0$.
+    \item $\Tor_{i}^{R}(M,-) = 0 \forall i \ge 1$.
+  \end{enumerate}
+
+\end{prop}
+
+\begin{thm}For $M \in \ModR$ the following are equivalent:
+  \begin{enumerate}[(a)]
+    \item $M$ is flat.
+          \item $\forall N \in \RMod: M$ is $L(-\otm N)$-acyclic.
+  \end{enumerate}
+   And thus $\Tor_{i}^{R}$ can be computed via flat resolutions.
+
+
+\end{thm}
+\end{document}

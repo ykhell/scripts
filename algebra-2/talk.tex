@@ -1,0 +1,398 @@
+\documentclass[a4paper]{article}
+\usepackage{template}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ right=20mm,
+ top=10mm,
+ bottom=10mm,
+ }
+ \begin{document}
+\section{Normal subgroups}
+% \begin{defi}[Normal subgroup]
+%   A subgroup $N \le G$ is called \emph{normal}, if its invariant under conjugation from $G$, i.e. if $gNg^{-1} \subseteq N,\forall g \in G$, and we write $N \nt G$.
+% \end{defi}
+% \begin{defi}[Isotypic representation]
+%   A representation is called \emph{isotypic} if its a direct sum of isomorphic irred. representations.
+% \end{defi}
+\begin{intro*}
+  In the last talk we looked at induced representations and developed a nice way (Mackey's criterion) to check when the induced representation is also irreducible. Today we will continue this by showing some results on
+\end{intro*}
+\begin{prop}[Prop 24]
+  Let $A \nt G, \rho: G \to \GL(V)$ irreducible, then either (a) $\ex H \lneq G$ containing $A$ and $\s : H \to \GL(W)$ irred. which induces $\rho$, or (b) the restriction $\rho|_{A}$ is isotypical.
+  \begin{proof}\item
+    \begin{enumerate}[(1)]
+      \item Let $V = \bigoplus_{i \in I} V_{i}$ be the canonical decomposition of $\rho|_{A}$ into isotypical components.
+      \item $G \curvearrowright \{V_{i}\}_{i \in I}$ by $s \cd V_{i} := \rho_{s}(V_{i})$:
+            \begin{enumerate}[(i)]
+              \item $A \nt G \imp \forall s \in G, a \in A:$
+                    \[\rho_{s^{-1}as}(V_{i}) = V_{i} \imp \rho_{s^{-1}}\rho_{a}\rho_{s}(V_{i}) = V_{i} \imp \rho_{a}(\rho_{s}(V_{i})) = \rho_{s}(V_{i}) \imp \rho_{s}(V_{i}) \ \ A\text{-stable}\]
+                    \[\imp V = \rho_{s}(V) = \bigoplus_{i \in I}\rho_{s}(V_{i})\]
+              \item $V_{i} = \bigoplus V_{i,j}$ irreducible. Same argument gives us $\rho_{a}(\rho_{s}(V_{i,j})) = \rho_{s}(V_{i,j})$, so $\rho_{s}(V_{i,j})$ is $A$-stable and $\rho_{s}(V_{i}) = \bigoplus_{j} \rho_{s}(V_{i,j})$, we get an equivalence of $A$-representations:
+                      \[\begin{tikzcd}
+{V_{i,j}} \arrow[d, "\rho_s"'] \arrow[r, "\rho_{s^{-1}as}"] & {V_{i,j}} \arrow[d, "\rho_s"] \\
+{\rho_s(V_{i,j})} \arrow[r, "\rho_a"']                      & {\rho_s(V_{i,j})}
+\end{tikzcd}\]
+                    This means that $V_{i,j}$ irred. $\imp \rho_{s}(V_{i,j})$ irred.
+
+                    \[\rho_{s}(V_{i}) = \bigoplus_{j} \rho_{s}(V_{i,j})\]
+                    So the $\rho_{s}(V_{i})$ are also isotypical. Since $\bigoplus_{i \in I}V_{i}$ is the canonical decomposition, $\ex j: \rho_{s}(V_{i}) \le V_{j}$, and since $\bigoplus_{i \in I}\rho_{s}(V_{i}) = V$. This must be equality $\rho_{s}(V_{i})=V_{j}$
+            \end{enumerate}
+      \item The action $G \curvearrowright \{V_{i}\}$ is transitive by remark 1.4 of talk 9.
+            \begin{itemize}
+      \item \emph{Why?} Choose some $V_{i_{0}}$ and write $H:= \stb(V_{i_{0}})$, the orbit stabilizer theorem tells us that $G/H \simeq G\cd V_{i_{0}}$. Take the direct sum over the orbit
+            \[\bigoplus_{sH \in G/H}\rho_{s}(V_{i_{0}}) \color{blue} = V\]
+            This is clearly $G$-stable, and since $\rho$ is irreducible, \color{blue}it has to be $V$.\color{black}
+
+            \end{itemize}
+      \item Now fix a $V_{i_{0}}$, if $V_{i_{0}}= V$ then (b) holds.
+      \item If not, then $A \le H:= \stb_{G}(V_{i_{0}}) \lneq G$, and by proposition 1.3 from Talk 9 we have that $V = \ind_{H}^{G}(V_{i_{0}})$.
+            \begin{itemize}
+\item \emph{Why is $H$ a proper subgroup?} Because $\stb_{G}(V_{i_{0}}) = G$ means that the orbit is $V_{i_{0}}$ which contradicts $\rho$ being irreducible.
+\item \emph{Why is $V_{i_{0}}$ irreducible?} Since $V = \ind_{H}^{G}(V_{i_{0}})$ is irreducible, Mackey's Criterion tells us that $V_{i_{0}}$ has to be irred.
+            \end{itemize}
+
+\end{enumerate}  \end{proof}
+\end{prop}
+\begin{rem*}
+If $A$ is abelian, then (b) $\iff \res_{A}^{G}(\rho)$ is a homothety for each $a$.
+\end{rem*}
+
+\begin{cor}
+% https://groupprops.subwiki.org/wiki/Degree_of_irreducible_representation_divides_index_of_abelian_normal_subgroup
+  Let $A \nt G$ be abelian, $\rho$ an irred. repr. von $G$, then $\deg \rho \mid [G:A]$.
+  \begin{proof}
+    Induction on the order of $G$ in both cases of the proposition.
+    \textbf{What is the base case? $H=A$?}
+    \begin{enumerate}[{Case }(a):]
+            \item \begin{enumerate}[(1)]
+                    \item We show that $\deg \s \mid [H:A] \imp \deg \rho \mid [G:A]$
+                    \item $\deg \rho \overunderset{\text{Talk 5}}{\text{Rem. 1.2}} = [G:H] \deg \s \mid [G:H]\cd[H:A] = [G:A]$.
+                  \end{enumerate}
+      \item \begin{enumerate}[(1)]
+              % \item Since the canonical map $\ph: \fak GA \to \fak{\rho(G)}{\rho(A)}$ is surjective.
+              %       \begin{itemize}
+              %         \item \emph{Why surjective:} The map is given by \begin{align*}
+              %           \ph: \fak GA &\to \fak{\rho(G)}{\rho(A)}, \\
+              %           gA & \mps \rho(g)\rho(A)
+              %         \end{align*}
+              %               So 1st isomorphism theorem tells us \[\fak{G/A}{\ker \ph} \cong \ph(\fak GA) = \fak{\rho(G)}{\rho(A)}\]
+              %       \end{itemize}
+              %       \item so $[\rho(G): \rho(A)]$ divides $[G:A]$.
+              \item If $\rho$ is faithful, then $\rho(G) \cong G$. We know that $\rho(A)$ are homotheties by the remark, so $\rho(A) \le Z(\rho(G)) \imp A \le Z(G)$.
+              \item By proposition 4.5 from talk 6, since $\rho$ irred.
+                    \[\deg \rho \mid [G:Z(G)] \color{blue} \mid [G:Z(G)][Z(G):A] = [G:A]\]
+              \item If $\rho$ is not faithful, we can mod out the kernel $K := \ker \rho$ and get a faithful irred. representation $\tilde \rho$
+                    \[\begin{tikzcd}
+G \arrow[r, "\rho"] \arrow[d, "\pi"']               & \GL(V) \\
+\
+\fak{G}{K} \arrow[ru, "\tilde \rho"', hook] &
+\end{tikzcd}\]
+                    Note that $\deg \tilde \rho = \deg \rho$.
+              \item The image $\pi(A) \cong \ker \pi|_{A} = A/A \cap K \cong AK/K$ so the subgroup $AK/K \nt G/K $ is normal abelian.
+              \item Notice that if
+                    \begin{align}
+                      \color{blue} \deg \rho =&\ \deg \tilde \rho \mid \ubr{[G/K:AK/K]}_{\color{blue}=[G:AK]} \color{blue}\mid [G:AK][AK:A] = [G:A]
+                    \end{align}
+            \end{enumerate}
+    \end{enumerate}
+  \end{proof}
+\end{cor}
+
+\begin{rem}
+  If $A$ is abelian, but not necessarily normal, this doesn't hold in general, but we have the upper bound $\deg \rho \le [G: A]$ like we have seen in corollary 1.3. from talk 4.
+\end{rem}
+
+\section{$\rtimes$ by an abelian group}
+Let $A \nt G$ abelian, $H \le G$ so that $G = A \rtimes H$.
+  We want to find a way to construct the irred. reps of $G$ from irred. reps of certain subgroups of $H$. This is \emph{Wigner and Mackey's little groups method}.
+
+\begin{enumerate}
+  \item $A$ is abelian $\imp$ irred. characters have degree 1 and form a group $X = \Hom(A,\mathbb C\en)$. Let $G \curvearrowright X$ by \[(s \cd \chi)(a) = \chi(s^{-1} a s), \quad s \in G, \chi \in X, a \in A\]
+  \item Let $(\chi_{i})_{i \in X/H}$ be a system of representatives for the orbits of $H$ in $X$ and write $H_{i} := \stb_{H}(\chi_{i}) \le H$ and $G_{i} = A \rtimes H_{i} \le G$.
+  \item Extend $\chi_{i}$ to a degree 1 character $\tilde \chi_{i}$ of $G_{i}$ by
+\[\begin{tikzcd}
+\color{blue}A \rtimes H_i \arrow[r, "\pi_A", blue] \arrow[rr, "\tilde \chi_i"', bend right, blue] & A \arrow[r, "\chi_i"] & \mathbb C\en
+\end{tikzcd}\]
+        setting $\tilde \chi_{i}(a\cd h) = \chi_{i}(a)$ for $a \in A, h \in H_{i}$.
+        \begin{itemize}
+          \item \emph{Why is this a character of degree 1 of $G_{i}$:} Character of degree 1 is the same as a representation of degree 1 ($\Hom(G_{i}, \mathbb C\en)$),
+                \item
+                Let $g_{1}, g_{2} \in G_{i} = A \rtimes H_{i}$. Then
+                \begin{align*}
+                \tilde \chi_{i}(g_{1}\cd g_{2}) = \tilde \chi_{i}(a_{1}h_{1}\cd a_{2}h_{2}) &= \tilde \chi_{i}(\ubr{a_{1}h_{1}a_{2}h_{1}^{-1}}_{\in A}\cd \ubr{h_{1}h_{2}}_{\in H_{i}}) = \chi_{i}(a_{1}h_{1}a_{2}h_{1}^{-1}) \\
+                  = \chi_{i}(a_{1})\chi_{i}(h_{1}a_{2}h_{1}^{-1}) &\underset{(*)}= \chi_{i}(a_{1})\cd (h_{1}^{-1}\cd \chi_{i})(a_{2}) \\
+                  &\underset{h \in \stb}= \chi_{i}(a_{1})\chi_{i}(a_{2}) = \tilde \chi_{i}(g_{1}) \cd \tilde \chi_{i}(g_{2})
+                \end{align*}
+        \end{itemize}
+  \item Choose an irred. representation $\rho: H_{i} \to \GL(V)$ of $H_{i}$. Similarly, we can extend it to a representation of $G_{i}$:
+\[\begin{tikzcd}
+\color{blue}A \rtimes H_i \arrow[r, "\pi_{H_{i}}", blue] \arrow[rr, "\tilde \rho"', bend right, blue] & H_{i} \arrow[r, "\rho"] & \mathbb \GL(V)
+\end{tikzcd}\]
+        This is now irreducible, because they have the same image.
+        \begin{itemize}
+          \item \color{gray}\emph{$\tilde \rho$ is irreducible (LONG ANSWER):} Suppose $\ex W \lneq V$ which is $G_{i}$-stable, then $\forall s \in G_{i}$ we would have $\tilde \rho_{s}(W) = W$, but
+                \begin{align*}
+                  \tilde \rho_{s}(W) = (\rho \c \pi)(s)(W) \\
+                  = (\rho \c \pi)(a \cd h)(W) = \rho_{\pi(ah)}(W) = \rho_{h}(W) = W
+                \end{align*}
+                and since $\pi$ is surjective this holds $\forall h \in H_{i}$ so that $W$ is $H_{i}$-stable which contradicts the irreducibility of $\rho$.
+        \end{itemize}
+  \item Now tensor by $\tilde \chi_{i}$ and we get an irred. representation $\tilde \chi_{i} \otm \tilde \rho$ of $G_{i}$:
+        \begin{itemize}
+          \item \emph{Why is $\tilde \chi_{i} \otm \tilde \rho$ irred.?} This is because we are tensoring with a representation of degree 1. To see this let $\psi$ be the character of $\tilde \rho$. Then the character of $\tilde \chi_{i} \otm \tilde\rho$ would be the product $\tilde \chi_{i} \psi$. Look at
+                \begin{align*}
+                  (\tilde \chi_{i} \psi \mid \tilde \chi_{i} \psi) &= \frac 1{|G|}\sum_{s \in G}(\tilde \chi_{i} \psi)(s) (\tilde \chi_{i}\psi)(s^{-1}) \\
+                  &= \frac 1{|G|}\sum_{s \in G}\tilde \chi_{i}(s)\psi(s) \ubr{\tilde \chi_{i}(s^{-1})}_{\color{blue}\tilde \chi_{i}(s)^{-1}}\psi(s^{-1})\\
+                                                                           &= \frac 1{|G|} \sum_{s \in G}\psi(s)\psi(s^{-1}) \underset{\psi \text{ irr.}}= (\psi \mid \psi) = 1
+                \end{align*}
+        \end{itemize}
+        \item Write $\theta_{i,\rho} := \ind_{G_{i}}^{G}(\tilde \chi_{i} \otm \tilde \rho)$.
+\end{enumerate}
+
+\begin{prop} [Proposition 25]\item
+\begin{enumerate}[(a)]
+  \item $\theta_{i, \rho}$ is irred.
+  \item $\theta_{i,\rho} \cong \theta_{i',\rho'} \imp i = i', \rho \cong \rho'$.
+  \item Every irred. representation of $G$ is $\cong $ to some $\theta_{i,\rho}$.
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}[(a)]
+  \item Recall Mackey's irreducibility criterion (Theorem 3.2 from talk 9): $\theta_{i, \rho}:= \ind_{G_{i}}^{G}(\tilde \chi_{i} \otm \tilde \rho)$ is irreducible if and only if
+        \begin{enumerate}[(i)]
+          \item $\ph = \chi_{i} \otm \tilde \rho$ is irred. (we have already seen this)
+          \item $\forall s \in G \setminus G_{i}: \<\ph^{s}, \res_{K_{s}}\ph\>_{K_{s}} = 0$, where we write $K_{s} := G_{i} \cap sG_{i}s^{-1} = A\cd H_{i} \cap A\cd sH_{i}s^{-1}$. This is equivalent to $\ph^{s}$ and $\res_{K_{s}} \ph$ having no irred. component in common.
+                \begin{itemize}
+                  \item If the restrictions to $A$ are disjoint then $\ph^{s}$ and $\res_{K_{s}} \ph$ are disjoint. \emph{Why?} Because if $V = \bigoplus V_{i}$ and $V' = \bigoplus V_{i}'$ shared an irred. component, then the restriction would also share this component.
+                  \item $\res_{A}\ph = (\chi_{i} \otm \tilde \rho)|_{A}$, recall that
+                        \[\tilde \rho: G_{i} = A \rtimes H_{i} \tto \pi H_{i} \tto \rho \GL(V)\]
+                        so $\tilde \rho|_{A} = \id$. So we get $\res_{A} \ph = \chi_{i} \otm \id  = \chi_{i}\cd\id$
+                  \item Similarly for $\ph^{s}$ we have $\tilde \rho|_{A} = \id$ since $sas^{-1} \in A$ and $\chi_{i}(sas^{-1}) = s \cd \chi_{i}$ so we get $s  \chi_{i} \cd \id$.
+                        \item Since $s \notin G_{i} = A \rtimes H_{i} = A \rtimes \stb_{H}(\chi_{i})$ we have $s \cd \chi_{i} \ne \chi_{i}$ therefore $\ph^{s}|_{A}$ and $\res_{A} \ph$ are disjoint $\imp \ph^{s}$ and $\res_{K_{s}} \ph$ are disjoint.
+                \end{itemize}
+                So mackey's criterion $\imp \theta_{i, \rho} = \ind_{G_{i}}^{G}(\ph)$ is irred.
+        \end{enumerate}
+  \item
+        \begin{enumerate}[(i)]
+          \item $\theta_{i,\rho} \cong \theta_{i', \rho} \imp i = i'$:
+                \begin{enumerate}
+                  \item Consider the action of $A$ on one of the $sW$ from $\bigoplus_{\bar s \in G/G_{i}}sW$
+                        \begin{align}
+                          (\chi_{i} \otm \tilde \rho)\ubr{(as)}_{s\cd s^{-1}as}(W) &= (\chi_{i} \otm \tilde \rho)(s)((\chi_{i} \otm \tilde \rho)(\ubr{s^{-1}as}_{ \in A})(W)) \\
+                          &= s\chi_{i}(a) (sW)
+                        \end{align}
+                        % so we have the isomorphism
+%                         \[\begin{tikzcd}
+% W \arrow[r, "(\chi_i \otimes \tilde \rho)(s^{-1}as)=s \chi_i(a)\id_V"] \arrow[d, "(\chi_i \otimes \tilde \rho)(s)"'] & W \arrow[d, "(\chi_i \otimes \tilde \rho)(s)"] \\
+% sW \arrow[r, "(\chi_i \otimes \tilde \rho)(a) = \chi_i(a)\id_V"']                                                    & sW
+% \end{tikzcd}\]
+                        so this only depends on the orbit $\chi_{i}$ and thus determines $i$.
+                \end{enumerate}
+%                 \textbf{ALTERNATIVE}
+                \begin{enumerate}[1.]
+                  \item Look at the character of $\theta_{i,\rho}$ restricted to $A$, recall that the induced character is given by
+                        \begin{align}
+                          \chi(a) &= \frac 1{|G_{i}|} \sum_{\substack{t \in G,\\\color{red}t^{-1}at \in G_{i}}}\chi_{\chi_{i} \otm \tilde \rho}(t^{-1}at) \\
+                          &= \frac 1{|G_{i}|}\sum_{t \in G}\chi_{i}(t^{-1}at)\ubr{\chi_{\tilde\rho}(t^{-1}at)}_{= \dim W} \\
+                          &= \frac {\dim W}{|G_{i}|} \sum_{a' h \in A \rtimes H=G} \chi_{i}(h^{-1}\ubr{a'^{-1}aa'}_{=a}h)\\
+                          &= \frac {|A|\dim W}{|G_{i}|} \sum_{h \in H} h\chi_{i}(a)
+                        \end{align}
+                        This means that $\theta_{i,\rho}|_{A}$ is a direct sum of irred. representations corresponding to the $h\chi_{i}$ which are in the orbit $H \cd \chi_{i}$. Since orbits are disjoint we have $H\chi_{i} = H\chi_{i'} \imp i = i'$.
+                \end{enumerate}
+          \item $\theta_{i,\rho}$ determines $\rho$ up to isomorphism:
+                \begin{itemize}
+                  \item For fixed $i$ let $W_{i}:= \{x \in W \mid \theta_{i,\rho}(a)(x) = \chi_{i}(a)(x), \forall a \in A\}$, then $W_{i}$ is $H_{i}$-stable:
+                  \item So we want to check that $\theta_{i,\rho}(s)(x) \in W_{i}, \forall s \in H_{i}$ which is by definition equivalent to $\theta_{i,\rho}(a)(\theta_{i,\rho}(s)(x)) = \chi_{i}(a)(\theta_{i,\rho}(s)(x)), \forall a \in A$:
+                  \item Look at:
+                        \begin{align}
+                          \theta_{i,\rho}(a)(\theta_{i,\rho}(s)(x)) = \theta_{i,\rho}(as)(x) = \theta_{i,\rho}(ss^{-1}as)(x) \\
+                          \theta_{i,\rho}(s)\theta_{i,\rho}(\ubr{s^{-1}as}_{\in A})(x) = \theta_{i,\rho}(s)s\chi_{i}(a)(x) \\
+                          = \chi_{i}(a)(\theta_{i,\rho}(s)(x))
+                        \end{align}
+                        So $W_{i}$ is $H_{i}$-stable.
+                        \item One can check, that $\theta_{i,\rho}|_{H_{i}} \cong \rho$ TODO: HOW TO CHECK THIS??
+                \end{itemize}
+        \end{enumerate}
+  \item Let $a:= |A|, h = |H|, h_{i} = |H_{i}|$,
+        \begin{enumerate}[1.]
+          \item First we show that $a = \sum_{i} h/h_{i}$:
+                \begin{align}
+                  \sum_{i} \frac h{h_{i}} = \sum_{i}[H:H_{i}] = \sum_{i} H\cd \chi_{i} = |X| = |A| = a
+                \end{align}
+          \item Now for fixed $i$ look at
+                \begin{align}
+                  \sum_{\rho} (\deg \theta_{i, \rho})^{2} &= \sum_{\rho} ([G:G_{i}]\deg(\tilde \chi_{i} \otm \tilde \rho))^{2} \\
+                                            &= [H:H_{i}]^{2}\sum_{\rho \text{ irr. of }H_{i}} (\deg \rho)^{2} \\
+                                            &= \frac {h^{2}}{h_{i}^{2}} \cd h_{i} = \frac {h^{2}}{h_{i}}
+                \end{align}
+                \item Now sum over all $\theta_{i,\rho}$
+                \begin{align}
+                  \sum_{i \in X/H} \sum_{\rho \text{ irr.}} \deg(\theta_{i,\rho})^{2} &= \sum_{i \in X/H} \frac {h^{2}}{h_{i}} \\
+                  &= h\sum_{i} \frac h{h_{i}} = h \cd a = |G|
+                \end{align}
+        \end{enumerate}
+        So these are all of the irred. representations of $G$.
+\end{enumerate}
+\end{proof}
+\end{prop}
+\begin{exmp}
+  Application to $D_{n}, A_{4}, S_{4}$.
+  \begin{enumerate}[(a)]
+    \item $D_{n} \cong A \rtimes H := C_{n} \rtimes C_{2} \cong \<r, s \mid r^{n}=s^{2}=e, srs=r^{-1}\>$
+          \begin{enumerate}[1.]
+            \item let $X = \Hom(C_{n}, \mathbb C\en)$, we saw before that these are $\chi_{i}: r \mps \zeta^{i}$ for $0 \le i < n$, where $\zeta$ is an $n$-th root of unity.
+            \item Let $H \curvearrowright X$ by $s \cd \chi_{i}(r) = \chi_{i}(srs) = \chi_{i}(r^{-1}) = \chi_{i}(r)^{-1} = \zeta^{-i}$.
+            \item Let $(\chi_{i})_{i \in X/H}$ be a representative system for the orbits.
+            \item If $n$ is even, then $\chi_{0}$ and $\chi_{n/2}$ will be fixed by $H$ (because $n/2 \equiv -n/2 \mod n$) and so will have trivial orbit, and other orbits will look like $\{\chi_{i}, \chi_{-1}\}$.
+            \item For $0 < i < n/2$ we have $H_{i} = \stb_{H}(\chi_{i}) = \{1\}$ and $G_{i} = A \rtimes H_{i} = A$, so the only possible $\rho: H_{i} \to \mathbb C\en$ is trivial and hence $\tilde \rho$ is also trivial. And therefore
+                  \[\theta_{i,\rho} = \ind_{C_{n}}^{D_{n}}(\chi_{i}) = \chi_{i} \oplus s\chi_{i} = \chi_{i} \oplus \chi_{-i}\]
+            \item For $i = 0$ and $i = n/2$ we have $H_{i} = H$ and $G_{i} = D_{n}$ so we won't have to induce, so then we get
+                  \[\tilde \chi_{i}: D_{n} \tto {\pi_{A}} A \tto {\chi_{i}} \mathbb C\en \quad \quad \tilde \rho_{\pm}: D_{n} \tto {\pi_{H}} H \tto {\rho_{\pm}} \mathbb C\en\]
+                  where $\rho_{\pm}$ are the irred. representations of $H$ given by $s \mps \pm 1$. Notice $\tilde \chi_{0}$ and $\tilde \rho_{+}$ are trivial. We get the following:
+                  \begin{align*}
+                    \color{blue} \psi_{1} &= \tilde \chi_{0} \otm \tilde \rho_{+}: r^{k} \mps 1, sr^{k} \mps 1 \\
+                    \color{blue} \psi_{2} &= \tilde \chi_{0} \otm \tilde \rho_{-}: r^{k} \mps 1, sr^{k} \mps -1 \\
+                    \color{blue} \psi_{3} &= \tilde \chi_{n/2} \otm \tilde \rho_{+}: r^{k} \mps \zeta^{n/2k} = (-1)^{k} \\
+                    \color{blue} \psi_{4} &= \tilde \chi_{n/2} \otm \tilde \rho_{-}: r^{k} \mps (-1)^{k}, sr^{k} \mps (-1)(-1)^{k} = (-1)^{k+1}
+                  \end{align*}
+            \item If $n$ is odd, we don't have $\psi_{3}$ and $\psi_{4}$, and the same as above for $i \ne 0$. \color{blue} these are the same as the ones in talk 5.
+          \end{enumerate}
+    \item $A_{4} \cong K \rtimes C_{3}$ where $K = \<x, y \mid x^{2}, y^{2}, (xy)^{2} \> \cong C_{2} \oplus C_{2}$ and write $z := xy$.
+          \begin{enumerate}[1.]
+            \item Write $\chi_{0}$ for the trivial char. on $C_{2}$ and $\chi_{1}: s \mps -1$.
+            \item Irred. chars of $K$ are tensors of irred. chars $\chi_{ij} = \chi_{i} \otm \chi_{j}$ for $\chi_{i} \in \Hom(C_{2}, \mathbb C\en)$
+            \item $X = \Hom(K, \mathbb C\en) = \{\chi_{1}, \chi_{x}, \chi_{y}, \chi_{z}\}$.
+            \item In $A_{4}$ we have
+                  \begin{align*}
+                    rxr^{-1} = z,\quad
+                    ryr^{-1} = x,\quad
+                    rzr^{-1} = y
+                  \end{align*}
+
+            \item And therefore $C_{3} \curvearrowright X$ by
+                  \[r\chi_{x} = \chi_{z}, \quad r\chi_{y} = \chi_{x},\quad  r\chi_{z} = \chi_{y}\]
+                  One checks that only $\chi_{1}$ gets fixed by $C_{3}$, and the others are in the same orbit.
+            \item Lets look at $\chi_{1}$, here $H_{i} = C_{3}$ and $G_{i} = K \rtimes C_{3} = A_{4}$ is the whole group.
+            \item Extending $\chi_{1}$ to $\tilde \chi_{1}$ is still the trivial character.
+                  \[\begin{tikzcd}
+A_4 = K \rtimes C_3 \arrow[r, "\pi_{K}"] \arrow[rr, "\tilde \chi_1"', bend right] & K \arrow[r, "\chi_1"] & \mathbb C\en
+\end{tikzcd}\]
+            \item Now we take an irred. repr. of $C_{3}$
+                  \[\begin{tikzcd}
+A_4 = K \rtimes C_3 \arrow[r, "\pi_{C_3}"] \arrow[rr, "\tilde \rho_i"', bend right] & C_3 \arrow[r, "\rho_{\color{blue} i}"] & \mathbb C\en
+\end{tikzcd}\]
+          There are 3 irred. reps of $C_{3}$, write $\rho_{i}, 1 \le i \le 3$. And finally we get
+          \[\theta_{1, \rho_{i}}:= \ind_{A_{4}}^{A_{4}}(\tilde \chi_{1} \otm \tilde \rho_{i}) = \tilde \rho_{i},\quad 1 \le i \le 3\]
+
+          \item Now take any character in the other orbit $\chi_{x}$, now the stabilizer is trivial and $K \rtimes 1 \cong K$, so $\tilde \chi_{x} = \chi_{x}$.
+            \item Now we have only one choice for an irred. rep of the trivial group. So we get $\tilde \rho$ trivial. And hence:
+                  \[\theta_{x},\rho = \ind_{K}^{A_{4}}(\tilde \chi_{x}) = \bigoplus_{gK \in A_{4}/K} g\tilde \chi_{x} = \tilde\chi_{x} \oplus \tilde \chi_{y} \oplus \tilde \chi_{z}\]
+
+          \end{enumerate}
+    \item $S_{4} \cong K \rtimes S_{3}$ where $S_{3} \cong D_{3} \cong C_{3} \rtimes C_{2}$
+          \begin{enumerate}[1.]
+            \item $X = \Hom(K,\mathbb C\en)$ like above. $S_{3} \curvearrowright X$.
+            \item The trivial character $\chi_{1}$ will be ofc. stabilized by the whole group $S_{3}$, so $G_{1} = K \rtimes S_{3} = S_{4}$ (no need to induce), this gives us 3 irred. representations for each irred. representation of $S_{3} \cong D_{3} \cong C_{3} \rtimes C_{2}$, so \[\ind_{S_{4}}^{S_{4}}(\chi_{1} \otm \tilde \rho_{i}) = \tilde \rho_{i}, \quad 1 \le i \le 3\]
+            \item The other orbit $\{\chi_{x}, \chi_{y}, \chi_{z}\}$ has stabilizer isomorphic to $C_{2}$, so $G_{i} = K \rtimes C_{2}$.
+            \item So we get two representations of degree 3: \[\ind_{K \rtimes C_{2}}^{K \rtimes S_{3}}(\chi_{x} \otm \tilde \rho_{0})\quad \text{and}\quad \ind_{K \rtimes C_{2}}^{K \rtimes S_{3}}(\chi_{x} \otm \tilde \rho_{1})\]
+          \end{enumerate}
+
+  \end{enumerate}
+
+\end{exmp}
+\section{Review on classes of groups}
+\begin{defi}
+  A group $G$ is called
+  \begin{enumerate}[(a)]
+    \item \emph{solvable}, if $\ex$ a series
+          \[\{e\} = G_{0} \nt G_{1} \nt \cdots \nt G_{n} = G\]
+          and $\fak {G_{i}}{G_{i-1}}$ are abelian $\forall 1 \le i \le n$.
+    \item \emph{supersolvable}, if $G$ is solvable, all $G_{i} \nt G$ are normal and all $\fak {G_{i}}{G_{i-1}}$ are cyclic.
+    \item \emph{nilpotent}, if $G$ has a normal series with $\fak{G_{i+1}}{G_{i}} \le Z(\fak{G}{G_{i}})$
+    \item \emph{a $p$-group}, if $|G| = p^{k}$ for some prime.
+  \end{enumerate}
+\end{defi}
+\begin{rem}
+(a)$\impliedby$(b)$\impliedby$(c)$\impliedby$(d)
+\end{rem}
+\begin{defi}
+A $p$-subgroup $H \le G$ is called a \emph{Sylow $p$-subgroup} if it's maximal.
+\end{defi}
+
+\begin{thm}[Sylow]
+  Let $G$ be a group, then for each prime factor of $|G|$
+  \begin{enumerate}[(a)]
+    \item Sylow $p$-subgroups exist, $|\Syl_{p}(G)| \equiv 1 \mod p$.
+    \item They are are conjugates.
+    \item Each $p$-subgroup is contained in a Sylow $p$-subgroup.
+  \end{enumerate}
+
+\end{thm}
+\section{Representations of supersolvable groups}
+
+\begin{defi}
+A group $G$ is called \emph{monomial}, if every irreducible representation is induced by a linear character of a subgroup.
+\end{defi}
+
+\begin{lemm}[Lemma 4]
+Let $G$ be supersolvable and nonabelian. Then $\ex A \nt G$ abelian not contained in $Z(G)$.
+\end{lemm}
+
+\begin{thm}[Theorem 16]
+  Supersolvable $\imp$ monomial.
+  \begin{proof}
+    Induction on the order of $G$:
+    \begin{enumerate}
+      \item If $G$ abelian, then all irreducible representations have deg 1 and we are done.
+      \item If $G$ is not abelian, we can consider only faithful irred. reps $\rho$ (i.e. $\ker \rho = \{1\}$)
+            \begin{itemize}
+              \item \emph{Why only faithful?} Short answer: We can factor through the kernel and get a faithful irred. representation $\tilde \rho$
+                    \[\begin{tikzcd}
+G \arrow[r, "\rho"] \arrow[d, "\pi"']               & \GL(V) \\
+\tilde G:= \fak{G}{\ker \rho} \arrow[ru, "\tilde \rho"', hook] &
+\end{tikzcd}\]and we can show that if $\tilde \rho$ is monomial then so is $\rho$.
+                    \begin{proof}
+                      \begin{enumerate}[(1)]
+                        \item Let $\tilde \rho$ be monomial, i.e. $\tilde \rho = \ind_{\tilde H}^{\tilde G}(\tilde \ph)$ for some subgroup $\tilde H \le \tilde G$ and $\tilde \ph: \tilde H \to \GL(W)$ ($\dim_{\mathbb C} W=1$).
+                        \item A subgroup $\tilde H \le \fak G{\ker \rho}$ must be of the form $\fak H{\ker \rho}$ for some $H \le G$ \textbf{TODO: Why?}
+                        \item So $\tilde \rho = \ind_{H/\ker \rho}^{G/\ker \rho}(\tilde \ph)$ and we get
+                              \[V = \bigoplus_{\tilde s \tilde H \in \scriptsize \displaystyle\fak{G/\ker \rho}{H/\ker \rho}}\tilde \rho_{\tilde s}(W) \]
+                              \[= \bigoplus_{sH \in G/H} (\tilde \rho \c \pi)(s)(W) = \bigoplus_{sH \in G/H} \rho_{s}(W)\]
+                        \item Write $\ph: H \tto \pi \fak H{\ker \rho} \tto {\tilde \ph}\GL(W)$, so we have $\rho = \ind_{H}^{G}(\ph)$.
+                      \end{enumerate}
+
+              \end{proof}
+
+            \end{itemize}
+      \item let $A \nt G$ be abelian not contained in $Z(G)$ (lemma 4)
+      \item $\rho$ faithful $\imp \rho(A)$ not in $Z(\rho(G))$ (because $G \cong \rho(G)$)
+      \item $\imp \ex a \in A: \rho_{a}$ is not a homothety $\imp \res_{A}^{G}(\rho)$ is not isotypical (Remark after prop 24 since $A$ abelian).
+      \item Prop 24 $\imp \rho$ is induced by an irred. rep. of a subgroup $H \lneq G$ containing $A$. Since induction is transitive, we can apply induction to $H$ proves the theorem.
+    \end{enumerate}
+
+  \end{proof}
+\end{thm}
+Extension of Theorem 16 to semidirect products of supersolvable groups by an abelian normal subgroup.
+\begin{prop}
+  $G = A \rtimes H$, where $A \nt G$ is abelian and $H$ is supersolvable $\imp G$ monomial.
+  \begin{proof}
+    \begin{enumerate}[1.]
+      \item $H \curvearrowright X := \Hom(A, \mathbb C\en)$ by conjugation, $(\chi_{i})$ a system of representatives for the orbits. $H_{i} := \stb_{H}(\chi_{i}) \le H$.
+      \item Subgroups of a supersolvable group are supersolvable \textbf{Why?}, so from the previous proposition $H_{i}$ is monomial.
+      \item If we take an irred. $\rho: H_{i} \to \GL(W)$, then this is induced by a degree one $\s$ rep. of some subgroup $H_{i}'$.
+      \item The extension $\tilde \rho$ to $A \rtimes H_{i}$ is then also monomial
+            \[\begin{tikzcd}
+A \rtimes H_i \arrow[r] \arrow[rr, "\tilde \rho"', bend right] & H_i \arrow[r, "\rho"] & \GL(W)
+\end{tikzcd}\]
+            and is induced by
+            \begin{tikzcd}
+A \rtimes H_i' \arrow[r] \arrow[rr, "\tilde \s"', bend right] & H_i' \arrow[r, "\s"] & \mathbb C\en
+\end{tikzcd}
+      \item Since $\deg \tilde \chi_{i} = 1$, we have that $\tilde \chi_{i} \otm \tilde \rho$ is monomial and since induction is transitive also $\theta_{i, \rho} = \ind_{G_{i}}^{G}(\tilde \chi_{i} \otm \tilde \rho)$.
+      \item By proposition 25 all irred. reps of $G$ arise this way, so $G$ is monomial.
+    \end{enumerate}
+\end{proof}
+\end{prop}
+\end{document}

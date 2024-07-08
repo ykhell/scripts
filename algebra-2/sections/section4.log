@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  3 JUN 2024 17:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  8 JUN 2024 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -775,18 +775,18 @@ cat-e-gories $\OMS/cmsy/m/n/10 A$ \OT1/cmr/m/n/10 and $\OMS/cmsy/m/n/10 A[]$\OT
 [1
 
 {/usr/local/texlive/2023basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] (./section4.aux)
+[2] [3] [4] [5] [6] [7] [8] [9] (./section4.aux)
 Package rerunfilecheck Info: File `section4.out' has not changed.
-(rerunfilecheck)             Checksum: 405D6DCC07A29824B64CF95008DFC9B6;384.
+(rerunfilecheck)             Checksum: 8494975CC3921AE51D77ABD38E843375;712.
  ) 
 Here is how much of TeX's memory you used:
- 22441 strings out of 477476
- 432216 string characters out of 5824243
- 1878388 words of memory out of 5000000
- 42236 multiletter control sequences out of 15000+600000
- 518096 words of font info for 54 fonts, out of 8000000 for 9000
+ 23127 strings out of 477476
+ 448420 string characters out of 5824243
+ 1886388 words of memory out of 5000000
+ 42876 multiletter control sequences out of 15000+600000
+ 518794 words of font info for 56 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,15n,117p,548b,1083s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,21n,117p,548b,1191s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/yousef/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/
 ec/tcrm1000.600pk></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/publ
@@ -808,10 +808,10 @@ live/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local
 usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm5.pfb>
-Output written on section4.pdf (5 pages, 208169 bytes).
+Output written on section4.pdf (9 pages, 239642 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
- 62 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 227 compressed objects within 3 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 

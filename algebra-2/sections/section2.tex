@@ -649,8 +649,48 @@ Yoneda implies that $\lim F$ (if it exists) is unique up to unique isomorphism (
   \end{enumerate}
 
 \end{prop}
-        \begin{exmps}
-TODO
+\begin{exmps}
+  \begin{enumerate}[(a)]
+\item $J:=$ the discrete category on the set $\{0,1\}$, i.e. $(\Ob = \{0,1\}, \Mor J = \{1_{0}, 1_{1}\}, ...)$. A functor $F: J \to \C$ is given by the datum of a pair $(F_{0} = F(0), F_{1} = F(1))$ of objects of $\C$, \[\text{cones: } \begin{tikzcd}
+    & X \arrow[ld, "u_0"'] \arrow[rd, "u_1"] &     \\
+F_0 &                                        & F_1
+\end{tikzcd}\quad \text{cocones: }\begin{tikzcd}
+F_0 &                                        & F_1 \\
+    & X \arrow[lu, "v_0"] \arrow[ru, "v_0"'] &
+  \end{tikzcd}\]
+          any pair of morphisms $(u_{0}: X \to F_{0}, u_{1}: X \to F_{1})$ resp. $(v_{0}: F_{0} \to X, v_{1}: F_{1} \to X)$ defines a cone $\lim F$ resp. $\colim F$ and satisfies
+          \[\C(Y,\lim F) = \C(Y,F_{0}) \tm \C(Y,F_{1})\]resp.
+          \[\C(\colim(F,Z)) = \C(F_{0}, Z) \tm \C(F_{1}, Z)\]
+          If $\lim F$ exists write formally $\lim F = F_{0} \mathrel{\Pi} F_{1}$ (product), and if $\colim F$ exists write $F_{0} \amalg F_{1}$ (coproduct). Concretely
+          \begin{itemize}
+\item $\C = \Set, F_{0} \tm F_{1} = F_{0} \sqcup F_{1}$
+\item $\C = \RMod, F_{0} \tm F_{1} = F_{0} \opl F_{1}$
+\item $\C = \Grp, F_{0} \tm F_{1} = F_{0} * F_{1}$ (free product)
+          \end{itemize}
+    \item We can generalize to arbitrary discrete (small) categories with unterlying set $I$.Names for universal objects \[\prod_{i \in I} F_{i}, \quad \quad \coprod_{i \in I}F_{i}\]
+          defining property:
+          \[\C(\prod_{i \in I}F_{i}, Y) \overset != \prod_{i \in I} \C(F_{i}, Y) \text{ and } \C(Z, \coprod_{i \in I}F_{i}) \overset != \prod_{i \in I} \C(Z,F_{i})\]
+          \begin{itemize}
+\item $\Set, \prod_{i \in I} F_{i} = \bigsqcup_{i \in I} F_{i}$ (disjoint union)
+\item $\RMod, \prod_{i \in I} F_{i} = \bigoplus_{i \in I} F_{i}$ (direct sum)
+            \item $\Grp, \prod_{i \in I} F_{i} = \bigast_{i \in I} F_{i}$ (free product)
+          \end{itemize}
+    \item $J =$ category on 2 objects $0, 1$ with 2 morphisms $0 \rightrightarrows 1$ (besides $1_{0}, 1_{1}$). $F: J \to \C$ is determined by $F_{0} \overunderset ab \rightrightarrows F_{1}$
+          \[\text{cones: }\begin{tikzcd}
+                                                              & X \arrow[ld, "f_0"'] \arrow[rd, "f_1"] &     \\
+F_0 \arrow[rr, "a", shift left] \arrow[rr, "b"', shift right] &                                        & F_1
+\end{tikzcd} \quad \text{cocones: }\begin{tikzcd}
+F_0 \arrow[rr, "a", shift left] \arrow[rr, "b"', shift right] &                                        & F_1 \\
+                                                              & X \arrow[lu, "f_0"] \arrow[ru, "f_1"'] &
+                                                            \end{tikzcd}\]
+         \begin{itemize}
+           \item $\C(X,\lim F) = \{f_0 \in \C(X, F_{0}) \mid a \c f_{0} = b \c f_{0} = f_{1}\}$. $\lim F$ if it exists is called the \emph{equalizer} $\eq(F_{0} \overunderset ab \rightrightarrows F_{1})$.
+                 \item $\C(\colim F_{1}, X) = \{f_{1} \in \C(F_{1}, X) \mid f_{1} \c a = f_{1} \c b\}$. $\colim F$ if it exists is called the \emph{coequalizer} $\coeq(F_{0} \overunderset ab \rightrightarrows F_{1})$. TODO
+         \end{itemize}
+    \item Pullback and pushout:
+
+  \end{enumerate}
+
         \end{exmps}
    \begin{defi}
 $\C$ is \emph{(co-)complete} $\iff \C$ contains all (co)-limits.

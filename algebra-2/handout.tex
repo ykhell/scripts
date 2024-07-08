@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage{template}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead{}
+\fancyhead[RO,RE]{Representation theory of finite groups}
+\fancyhead[LO,L]{Yousef Khell}
+\fancyfoot{}
+\fancyfoot[LO]{Handout: Examples of induced representations} %This is the place for footnote
+    \begin{center}
+    	\Huge{\textbf{Talk 10: Examples of induced representations}}%Title spot
+      \end{center}
+
+      \begin{multicols*}{2}
+        \begin{rem*}
+            In this talk all groups are finite and all representations are finite dimensional over $\mathbb C$.
+        \end{rem*}
+        \section{Normal subgroups}
+        \begin{defi}[Normal subgroup]
+          % A subgroup $N \le G$ is called \emph{normal}, if its invariant under conjugation from $G$, i.e. if $gNg^{-1} \subseteq N,\forall g \in G$, and we write $N \nt G$.
+          Recall that $N \nt G :\iff gNg^{-1} = N, \forall g \in G$.
+        \end{defi}
+        \begin{defi}[Isotypical representation]
+          A representation is called \emph{isotypical} if its a direct sum of isomorphic irred. representations.
+        \end{defi}
+        \begin{prop}
+          Let $A \nt G, \rho: G \to \GL(V)$ be an irreducible representation, then either
+          \item (a) $\ex H \lneq G$ containing $A$ and an irred. $\s : H \to \GL(W)$ so that $\rho = \ind_{H}^{G}(\s)$, or
+          \item (b) the restriction $\rho|_{A}$ is isotypic.
+        \end{prop}
+
+\begin{rem}
+If $A$ is abelian, then (b) $\iff \rho(a)$ is a homothety $\forall a \in A$.
+\end{rem}
+        \begin{cor}
+If $A \nt G$ is abelian, then $\forall \rho$ irred. representation of $G$ we have $\deg \rho \mid [G:N]$.
+\end{cor}
+
+\begin{rem}
+  If $A \le G$ is an abelian subgroup (not necessarily normal), this doesn't hold in general, but we still have the bound $\deg \rho \le [G: A]$ like we have seen in corollary 1.3. from talk 4.
+\end{rem}
+
+\section{Semidirect products by an abelian group}
+\begin{const}
+    Let $G = A \rtimes H$, where $A \nt G$ is an abelian normal subgroup.
+  \begin{enumerate}[(1)]
+    \item Let $X:= \Hom(A,\mathbb C\en)$ be the set of irred. characters of $A$, and let $G \curvearrowright X$ by $s\cd \chi(a) = \chi(s^{-1}as)$.
+    \item Let $(\chi_{i})_{i \in X/H}$ be representatives for the orbits of the action $H \curvearrowright X$, and write $H_{i} := \stb_{H}(\chi_{i})$ and $G_{i} := A \rtimes H_{i}$.
+    \item Extend $\chi_{i}$ to $G_{i}$ by $\tilde \chi_{i}(a\cd h) = \chi_{i}(a)$.
+    \item Let $\rho: H_{i} \to \GL(W)$ be irreducible and extend it to an irred. representation of $G_{i}$ by $\tilde \rho(a \cd h) = \rho(h)$.
+    \item The tensor $\tilde \chi_{i} \otm \tilde \rho$ will be also irreducible.
+    \item Finally define $\theta_{i, \rho} = \ind_{G_{i}}^{G}(\tilde \chi_{i} \otm \tilde \rho)$.
+  \end{enumerate}
+\end{const}
+\begin{prop}
+\begin{enumerate}[(a)]
+  \item $\theta_{i, \rho}$ is irred.
+  \item $\theta_{i,\rho} \cong \theta_{i',\rho'} \imp i = i'$ and $\rho \cong \rho'$.
+  \item These are all the irred. representations of $G$.
+\end{enumerate}
+\end{prop}
+\begin{exmp}
+Application to $D_{n}, A_{4}$ and $S_{4}$.
+\end{exmp}
+
+\section{Review on classes of groups}
+\begin{defi}
+  A group $G$ is called
+  \begin{enumerate}[(a)]
+    \item \emph{solvable}, if $G$ has a normal series
+          \[\{e\} = G_{0} \nt G_{1} \nt \cdots \nt G_{n} = G\]
+          where all factors $\fak {G_{i}}{G_{i-1}}$ are abelian.
+    \item \emph{supersolvable}, if $G$ is solvable, all $G_{i} \nt G$ are normal in $G$ and all factors $\fak {G_{i}}{G_{i-1}}$ are cyclic.
+    \item \emph{nilpotent}, if $G$ has a normal series with $\fak{G_{i+1}}{G_{i}} \le Z(\fak{G}{G_{i}})$
+    \item \emph{a $p$-group}, if $|G| = p^{k}$ for some prime.
+  \end{enumerate}
+\end{defi}
+\begin{rem}
+(a)$\impliedby$(b)$\impliedby$(c)$\impliedby$(d)
+\end{rem}
+\begin{defi}
+A $p$-subgroup $H \le G$ is called a \emph{Sylow $p$-subgroup} of $G$ if it's maximal.
+\end{defi}
+
+\begin{thm}[Sylow]
+  Let $G$ be a group, then for each prime factor of $|G|$
+  \begin{enumerate}[(a)]
+    \item Sylow $p$-subgroups exist, and their number is congruent to $1 \mod p$.
+    \item They are conjugates.
+    \item Each $p$-subgroup is contained in a Sylow $p$-subgroup.
+  \end{enumerate}
+
+\end{thm}
+
+
+
+\section{Representations of supersolvable groups}
+\begin{defi}[Monomial]
+  A group $G$ is \emph{monomial}, if $\forall$ irred. $\rho$ is induced by a degree 1 rep. of a subgroup.
+\end{defi}
+
+\begin{lemm}
+Let $G$ be supersolvable and nonabelian. Then $\ex A \nt G$ abelian not contained in $Z(G)$.
+\end{lemm}
+
+\begin{thm}
+Every supersolvable group is monomial.
+\end{thm}
+\begin{cor}If $G = A \rtimes H$, where $A \nt G$ is abelian and $H$ is supersolvable, then $G$ is monomial.
+
+\end{cor}
+% \section{Notation/Definitions}
+% \begin{nota*}
+% \begin{enumerate}[(a)]
+%   \item $G \curvearrowright X : \iff G$ acts on $X$
+%   \item $N \nt G :\iff N$ is normal in $G$
+%   \item
+% \end{enumerate}
+
+% \end{nota*}
+\begin{thebibliography}{widest-label} % References are listed here
+	\bibitem[Ser77]{Ser77}%You can add more refernces by \bibitem command
+	Jean-Pierre Serre:
+	\emph{Linear Representations of Finite Groups}, Springer-Verlag, New York, 1977.
+
+\end{thebibliography}
+\end{multicols*}
+\end{document}

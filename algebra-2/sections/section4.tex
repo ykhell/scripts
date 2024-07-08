@@ -237,4 +237,240 @@ Now $g \c d \c u \c c = 0 \imp g \c d \c u = 0$ since $c$ is an epimorphism and 
 \end{tikzcd}\]
 Since $d$ is injective: if $e \c \ph = c \c \ph ' \imp \iota \c c \c \ph = \iota \c c \c \ph' \imp d \c \ph = d \c \ph' \imp \ph = \ph ' \imp e$ is a monomorphism $\imp \im f \hookrightarrow \ker g$.
 \end{proof}
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item A \emph{complex} in $\A$ is a family of morphisms $(d_{i}: X_{i} \to X_{i+1})_{i \in J}$ and $\emptyset \ne J \subseteq \Z$ an interval such that $\forall i \in J^{-}: d_{i+1} \c d_{i} = 0$ ($J^{-}:= J \setminus \sup J$), in other notation:
+        \[ \cdots \to X_{i-1} \xto {d_{i-1}} X_{i} \xto {d_{i}} X_{i+1} \to \cdots\]such that $d_{i} \c d_{i-1} = 0$.
+        \item An exact sequence in $\A$ (or an acyclic complex) is a complex such that $\forall i \in J^{-}$ the canonical monomorphism from lemma 21 $\im d_{i} \hookrightarrow \ker d_{i+1}$ is an isomorphism
+\end{enumerate}
+\end{defi}
+
+
+\begin{prop}
+  For any $f \in \A(X,Y)$ the sequence \[0 \to \ker f \xto \iota X \xto f Y \xto \pi \coker f \to 0\]
+  is exact, where $\iota$ is the kernel-morphism and $\pi$ is the cokernel-morphism.
+  \begin{proof}
+\begin{itemize}
+  \item Exactness at $\ker f$: Kernels are monomorphisms and so \[\ker \iota = 0 = \im(0 \to \ker f)\]
+  \item Exactness at $X$:
+        \[\im \iota \underset {16} = \ker f \xto \iota X = \ker f\]
+        for $Y$ and $\coker f$ pass to $\A\op$.
+\end{itemize}
+  \end{proof}
+\end{prop}
+
+
+\begin{lemm}[Decomposing and concatenating exact sequences]\item
+\begin{enumerate}[(a)]
+        \item If
+        \[
+  \cdots \to A \xto a B \to 0 \quad \text{and} \quad
+        0 \to B \xto b C \xto c D \to \cdots
+        \]
+        are exact at $B$ and $C$, then
+        \[\cdots \to A \tto{b \c a} C \tto c D \to \cdots\]
+        is exact at $C$, i.e. $c \c b \c a = 0$ and $\ker c = \im(b \c a)$.
+  \item If
+        \[
+  \cdots \to A \xto a B \tto b C \to 0 \quad \text{and} \quad
+        0 \to  C \xto c D \to \cdots
+        \]
+        are exact at $B$ and $C$, then
+        \[\cdots \to A \tto a B \tto {c \c b} D \to \cdots\]
+        is exact at $B$.
+
+  \item If
+        \[\cdots \to X \tto f Y \tto g Z \to \cdots\]is exact at $Y$, then:
+        \begin{enumerate}[(i)]
+          \item $\cdots \to X \to \im f \to 0$ and $0 \to \ker g \to Y \tto g Z \to \cdots$ are exact at $\im f, \ker g, Y.$
+                \item $\cdots X \tto f Y \to \coker f \cong \coim g \to 0$ and $0 \to \im g \to Z \to \cdots$ are exact at $Y, \coker f, \im g$.
+        \end{enumerate}
+\end{enumerate}
+\end{lemm}
+
+\begin{exmp*}
+  Prop 23 + Lemma 24 gives for $f \in \A(X,Y)$:
+  \[0 \to \ker f \to X \to \coim f \to 0\]
+  and
+  \[0 \to \im f \to Y \to \coker f \to 0\]
+  are exact sequences.
+\end{exmp*}
+\begin{defi*}
+  An exact sequence of the form \[0 \to A \to B \to C \to 0\]
+  is also called a \emph{short exact sequence} (s.e.s.)
+\end{defi*}
+
+\begin{lemm}
+  Let $0 \to A \tto a B \tto b C \to 0$ be a complex in $\A$, then:
+  \begin{enumerate}[(a)]
+    \item The sequence
+          \[\begin{tikzcd}
+A \arrow[r, "a"] & B \arrow[r, "b"] & C \arrow[r] \arrow[rd] & 0 \\
+                 &                  &                        & X
+               \end{tikzcd}\]
+          is (right) exact $\iff \forall X \in \A$
+          \[0 \to \Hom_{\A}(C,X) \tto {b^{*} = - \c b} \Hom_{\A}(B,X) \tto {a^{*}} \Hom_{\A}(A,X)\]
+          is exact in $\Ab$.
+    \item The sequence
+          \[0 \to A \tto a B \tto b C\]
+          is (left) exact $\iff \forall X \in \A:$
+          \[0 \to \Hom_{\A}(X,A) \tto{a_{*}} \Hom_{\A}(X,B) \tto {b_*} \Hom_{\A}(X,C)\]
+          is exact in $\Ab$.
+  \end{enumerate}
+\begin{proof}
+Stacks Project.
+\end{proof}
+\end{lemm}
+
+\begin{prop}
+  Let the following be a short exact sequence in $\A$
+\[\begin{tikzcd}
+0 \arrow[r] & A \arrow[r, "a"] & B \arrow[r, "b"] \arrow[l, "s", dashed, bend left] & C \arrow[r] \arrow[l, "t", dashed, bend left] & 0
+\end{tikzcd}\]
+Then the following are equivalent:
+\begin{enumerate}[(i)]
+\item $\ex s \in \A(B,A) : s \c a = 1_{A}$
+  \item $\ex t \in \A(C,B) : b \c t = 1_{C}$
+  \item $\ex s \in \A(B,A) \ex t \in \A(C, B) : s \c a = 1_{A}, b \c t = 1_{C}$ and $1_{B} = a \c s + t \c b$
+  \item $B \cong A \opl C$ with respect to the morphisms from (iii).
+\end{enumerate}
+
+        \begin{proof}
+          Exercise. (See 1.28)
+        \end{proof}
+\end{prop}
+
+\begin{prop}
+  Let $\A$ be an abelian category, then $\A$ possesses (all) finite limits and colimits, (finite meaning over finite index categories).
+\begin{proof}
+Exercise (See 2.46)
+\end{proof}
+\end{prop}
+
+\begin{prop}[Special case of 27]
+  If $\A$ is an abelian category, then $\A$ has pullbacks and pushouts. They are given by
+  \[\mathrm{p.b.}\l( \begin{tikzcd}
+                  & Y \arrow[d, "g"] \\
+X \arrow[r, "f"'] & Z
+\end{tikzcd}\r) = \ker (X \opl Y \tto{f - g} Z)\]
+and
+\[\mathrm{p.o.}\l(  \begin{tikzcd}
+X \arrow[d, "g"'] \arrow[r, "f"] & Y \\
+Z                                &
+\end{tikzcd} \r) = \coker(X \tto {(f,-g)} Y \opl Z)\]
+\begin{proof}
+Exercise.
+\end{proof}
+\end{prop}
+
+\begin{defi}
+A commutative diagram \[\begin{tikzcd}
+A \arrow[r, "a"] \arrow[d, "b"'] & B \arrow[d, "c"] \\
+C \arrow[r, "d"']                & D
+\end{tikzcd}\] in $\A$ is called
+\begin{enumerate}[(a)]
+  \item \emph{cartesian} if
+        \[\begin{tikzcd}
+            A \arrow[d, "b"'] \arrow[r, "a"] & B \\
+            C
+          \end{tikzcd} \cong \mathrm{p.b.} \l( \begin{tikzcd}
+            & B \arrow[d, "c"] \\
+            C \arrow[r, "d"'] & D
+          \end{tikzcd} \r)\]
+  \item \emph{cocartesian} if
+        \[\begin{tikzcd}
+            & B \arrow[d, "c"] \\
+            C \arrow[r, "d"'] & D
+          \end{tikzcd} \cong \mathrm{p.o.} \l( \begin{tikzcd}
+            A \arrow[d, "b"'] \arrow[r, "a"] & B \\
+            C
+          \end{tikzcd} \r) \]
+\end{enumerate}
+\end{defi}
+
+
+\begin{lemm}
+  Let $(*)$ be a commutative diagram in $\A$
+  \[\begin{tikzcd}
+      A \arrow[r, "a"] \arrow[d, "b"'] & B \arrow[d, "c"] \\
+      C \arrow[r, "d"']& D
+    \end{tikzcd} \quad \quad (*)\]
+  Then:
+  \begin{enumerate}[(a)]
+    \item $(*)$ is cartesian $\iff 0 \to A \tto{(a,b)} B \opl C \tto{c + d} D$ is exact.
+    \item $(*)$ cocartesian $\iff A \to B \opl C \to D \to 0$ is exact.
+    \item If $(*)$ is cartesian, then $\ker a \cong \ker d$ via $b$.
+    \item If $(*)$ is cocartesian, then $\coker a \cong \coker d$ via $c$.
+          \item If $(*)$ is cartesian and $d$ is surjective, then $(*)$ is cocartesian.
+          \item If $(*)$ is cocartesian and $a$ is injective, then $(*)$ is cartesian.
+  \end{enumerate}
+
+\end{lemm}
+\section{The homomorphism theorem and the isomorphism theorems}
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item On the set of monomorphisms to $X$ define an equivalence relation $(f: U \hookrightarrow X) \sim (g: V \hookrightarrow X) \iff \ex$ commutative diagram
+        \[\begin{tikzcd}
+U \arrow[rd, "f"', hook] \arrow[rr, "\alpha", dashed] &   & V \arrow[ld, "g", hook] \\
+                                                      & X &
+\end{tikzcd}\]
+with $\a$ an isomorphism. Call the equivalence classes \emph{subobjects} of $X$.
+  \item On the set of epimorphisms from $Y$ define an equivalence relation $(f: Y \twoheadrightarrow W) \sim (g: Y \twoheadrightarrow Z) \iff \ex$ commutative diagram
+\[\begin{tikzcd}
+                              & Y \arrow[ld, two heads, "f"'] \arrow[rd, two heads, "g"] &   \\
+W \arrow[rr, "\beta"', dashed] &                                    & Z
+\end{tikzcd}\]
+
+        with $\b$ an isomorphism. Call the equivalence classes \emph{quotients} of $Y$.
+\end{enumerate}
+Also: Call a monomorphism $f: U \to X$ (epimorphism $g: Y \to W$) a subobject (quotient) meaning its equivalence class.
+\end{defi}
+
+\begin{prop}
+  On subobjects $[U \tto f X], [V \tto X]$ of $X \in \A$ define a relation $[U \tto f X]\le [V \tto X] \iff \ex$ commutative diagram:
+
+        \[\begin{tikzcd}
+U \arrow[rd, "f"', hook] \arrow[rr, "\alpha", dashed, hook] &   & V \arrow[ld, "g", hook] \\
+                                                      & X &
+                                                    \end{tikzcd}\]with $\a$ a monomorphism. Then
+\begin{enumerate}[(a)]
+  \item $\le$ is a partial ordering on the class of subobjects.
+  \item The infimum of $[U \tto f X]$ and $[V \tto g X]$ exists and is represented by the pullback \[\mathrm{p.b.}\l( \begin{tikzcd}
+      & V \arrow[d] \\
+      U \arrow[r] & X
+                                                    \end{tikzcd} \r)\]
+        together with the diagonal map $\mathrm{p.b.}(\cdots) \to X$. Write $U \cap V$.
+  \item The supremum of $[U \tto f X]$ and $[V \tto g X]$ exists and is represented by the pushout
+        \[\mathrm{p.o.}\l( \begin{tikzcd}
+            U \cap V \arrow[d] \arrow[r]&  U\\
+            V
+          \end{tikzcd} \r)\]
+        together with the canonical  arrow $U \cap V \to \mathrm{p.o.}(\cdots)$. Write $U + V$
+\end{enumerate}
+\end{prop}
+
+\begin{rem}
+  Now we can formulate the homomorphism and isomorphism theorems:
+  \begin{enumerate}[(a)]
+    \item \textbf{Homomorphism theorem:} Given $f \in \A(X,Y) \ex$ canonical factorization:
+          \[\begin{tikzcd}
+              X \arrow[r, "f"] \arrow[d, "\mathrm{can.}"'] & Y \\
+              \displaystyle \fak X{\ker f} := \coim f \arrow[r, "\cong"'] & \im f \arrow[u, "\mathrm{can.}"']
+            \end{tikzcd}\]
+    \item \textbf{First isomorphism theorem:} For subobjects $U, V \le X$ we have \[\fak{U+V}U \cong \fak V{V \cap U}\]
+    \item \textbf{Second isomorphism theorem:} Given a monomorphism $\iota : U \to X, \ex$ bijection:
+          \[\l\{ V \mid U \le V \le X \r\} \leftrightarrow \l\{V \le \fak XU = \coim \iota\r\}\]
+          and for $U, V$ subobjects with $\b : U \to V$ and $\iota: V/U \hookrightarrow X/U$, we have an isomorphism \[\fak XV \cong \fak{(X/U)}{(V/U)} = \coim \iota\]
+  \end{enumerate}
+
+\end{rem}
+
+
+\begin{thm}[Snake lemma]
+  TODO.
+
+\end{thm}
+
+
 \end{document}
