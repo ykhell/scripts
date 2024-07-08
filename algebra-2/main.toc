@@ -1,40 +1,40 @@
-\contentsline {chapter}{\numberline {1}Modules}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Modules}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Quotient Modules}{4}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Direct sums and products}{5}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Generators and bases}{7}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Exact sequences}{8}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Projective Modules}{12}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Finite generation, exact sequences and $\oplus $}{14}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Noetherian and Artinian modules and rings}{16}{section.1.8}%
-\contentsline {section}{\numberline {1.9}Simple modules}{19}{section.1.9}%
-\contentsline {section}{\numberline {1.10}Indecomposable modules}{21}{section.1.10}%
-\contentsline {chapter}{\numberline {2}Category Theory}{23}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Preliminary remarks on set theory}{23}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Categories}{24}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Functors}{28}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Natural transforations}{31}{section.2.4}%
-\contentsline {section}{\numberline {2.5}The Yoneda lemma and presheaves}{33}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Conatravariant Yoneda}{34}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Universal pairs}{35}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Limits and colimits}{35}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Adjoint Functors}{38}{section.2.9}%
-\contentsline {chapter}{\numberline {3}Tensor Products}{39}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Tensor products over commutative rings}{41}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Tensor product of algebras}{41}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Abelian Categories}{44}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Kernels and cokernels}{46}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Abelian categories}{48}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Exactness}{48}{section.4.3}%
-\contentsline {section}{\numberline {4.4}The homomorphism theorem and the isomorphism theorems}{52}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Homological Algebra}{54}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Exact functors}{54}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}To define $R^{i}F$ (or $L_{i}F$)}{56}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}(Co-)chain complexes, (co-)homology}{59}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Double complexes}{60}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Injective and projective resolutions}{62}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Derived Functors}{65}{section.5.5}%
-\contentsline {section}{\numberline {5.6}The Ext Functor}{67}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Classical interpretation of $\Ext ^{1}$ as extension objects}{68}{subsection.5.6.1}%
-\contentsline {section}{\numberline {5.7}The Tor Functor}{69}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Commutative Algebra}{71}{chapter.6}%
+\contentsline {chapter}{\numberline {1}Modules}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Modules}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Quotient Modules}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Direct sums and products}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Generators and bases}{8}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Exact sequences}{9}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Projective Modules}{13}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Finite generation, exact sequences and $\oplus $}{15}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Noetherian and Artinian modules and rings}{17}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Simple modules}{20}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Indecomposable modules}{22}{section.1.10}%
+\contentsline {chapter}{\numberline {2}Category Theory}{24}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Preliminary remarks on set theory}{24}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Categories}{25}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Functors}{29}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Natural transforations}{32}{section.2.4}%
+\contentsline {section}{\numberline {2.5}The Yoneda lemma and presheaves}{34}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Conatravariant Yoneda}{35}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Universal pairs}{36}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Limits and colimits}{36}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Adjoint Functors}{39}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Tensor Products}{40}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Tensor products over commutative rings}{42}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Tensor product of algebras}{42}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Abelian Categories}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Kernels and cokernels}{47}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Abelian categories}{49}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Exactness}{49}{section.4.3}%
+\contentsline {section}{\numberline {4.4}The homomorphism theorem and the isomorphism theorems}{53}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Homological Algebra}{55}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Exact functors}{55}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}To define $R^{i}F$ (or $L_{i}F$)}{57}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}(Co-)chain complexes, (co-)homology}{60}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Double complexes}{61}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Injective and projective resolutions}{63}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Derived Functors}{66}{section.5.5}%
+\contentsline {section}{\numberline {5.6}The Ext Functor}{68}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Classical interpretation of $\Ext ^{1}$ as extension objects}{69}{subsection.5.6.1}%
+\contentsline {section}{\numberline {5.7}The Tor Functor}{70}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Commutative Algebra}{72}{chapter.6}%
