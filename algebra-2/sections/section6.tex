@@ -1,0 +1,304 @@
+\documentclass[a4paper]{report}
+\usepackage{../template}
+\begin{document}
+\section{Change of rings and localization}
+\begin{nota*}
+\begin{itemize}
+  \item Let $R, R', R''$ be commutative rings,
+  \item $I \subseteq R, I' \subseteq R'$ ideals,
+  \item $S \subseteq (R,1,\cd)$ a submonoid,
+  \item $\ph: R \to R'$ a ring homomorphism,
+  \item $M, N$ modules oveer $R$.
+\end{itemize}
+\end{nota*}
+
+\begin{defi}
+\begin{enumerate}[(a)]
+  \item The functor
+        \begin{align*}
+          R' \otimes_{R} - : \RMod &\to {}_{R'}\Mod\\
+          M &\mps R' \otm_{R} M
+        \end{align*}
+        is called the \emph{base change} or \emph{scalar extension} from $R$ to $R'$ via $\ph$.
+  \item The functor
+        \begin{align*}
+          (-)_{R}: {}_{R'}\Mod &\to \RMod\\
+          M' = (M',0',+',\cd') &\mps M'_{R} = (M',0',+',\cd)
+        \end{align*}
+        with $r \cd m' := \ph(r) \cd ' m'$ for $r \in R, m' \in M'$ is called \emph{scalar restriction} from $R'$ to $R$.
+  \item The functor
+        \begin{align*}
+          S^{-1}(-): \RMod &\to {}_{S^{-1}R}\Mod \\
+          M &\mps S^{-1}M
+        \end{align*}
+        is called \emph{localization} at $S$.
+\end{enumerate}
+\end{defi}
+\begin{rem*}
+Note that (c) is a special case of (a) because $S^{-1}(-) = S^{-1}R \otm_{R} -$ (for localization homomorphism $\ph_{S}: R \to S^{-1}R, r \mps \frac r 1$).
+\end{rem*}
+\begin{defi*}
+Call $R'$ flat over $R$ (via $\ph$) $: \iff \ph: R \to R'$ is flat $:\iff (R')_{R}$ is a flat $R$-module.
+\end{defi*}
+
+\begin{prop}
+\begin{enumerate}[(a)]
+  \item Scalar extension and restriction are additive functors.
+  \item Scalar restriction is exact.
+  \item Scalar extension is right exact, and exact $\iff R'$ is flat over $R$.
+  \item For $N' \in {}_{R'}\Mod:$ \[N' \otm_{R'}(R' \otm_{R} M) \cong N'_{R} \otm_{R} M\]
+  \item Let $M':= R' \otm_{R} M$ and $N':= R' \otm_{R} N$, then
+        \[M' \otm_{R'} N' \cong R' \otm_{R} (M \otm_{R} N) \cong M'_{R} \otm_{R} N\]
+        special case: \[S^{-1}M \otm_{S^{-1}R} S^{-1}N \cong S^{-1}(M \otm_{R} N)\]
+\end{enumerate}
+
+\end{prop}
+
+\begin{prop}
+  Let $\ph_{S,M} : M \to S^{-1} M, m \mps \frac m1$ be the localization map, then:
+  \begin{enumerate}[(a)]
+    \item $S^{-1}(-)$ is exact.
+    \item $\ph_{S,R}: R \to S^{-1}R$ is flat.
+    \item The map
+          \begin{align*}
+            \{N \le_{R} M\} &\tto p \{\mathcal N \le_{S^{-1}R} S^{-1}M\} \\
+            N &\mps S^{-1}N
+          \end{align*}
+          is surjective and has section $s: \mathcal N \mps \ph_{S,M}^{-1}(\mathcal N) \le M$. Here section means: $p \c s = \id$ for the set on the right.
+  \end{enumerate}
+\end{prop}
+
+\begin{exer*}
+Find an example of $R \to R'$ flat and $M$ an $R$-module such that $\{N \le_{R} M\} \to \{\mathcal N \le_{R'} R' \otm_{R}M\}$ is not surjective.
+\end{exer*}
+
+\begin{prop}[Quotients and localization]
+  Define $\bar S:= \{s + I \mid s \in S\} \subseteq \bar R := \fak RI$, then:
+  \begin{enumerate}[(a)]
+    \item As $S^{-1}R$-modules we have \[\fak{S^{-1}R}{S^{-1}I} \cong S^{-1} \l(\fak RI\r)\]
+    \item $\bar S \subseteq (\bar R, 1, \cd)$ is a submonoid and \[\psi: S^{-1}\bar R \to S^{-1} \bar R, \frac 1s(r+I) \mps \frac {r+I}{s+I}\]
+          is well defined and an isomorphism of rings and of $S^{-1}R$-modules.
+          \item $S^{-1}I = S^{-1}R \iff I \cap S \ne \emptyset$. In particular $S^{-1}R =0 \iff 0 \in S$.
+  \end{enumerate}
+
+\end{prop}
+\begin{prop}
+Let $M' = R' \otm_{R} M$ and $N' = R' \otm_{R} N$, then:
+\begin{enumerate}[(a)]
+  \item $M$ is a finitely generated $R$-module $\imp M'$ is a finitely generated $R'$-module. ($S^{-1}M$ is a finitely generated $S^{-1}R$-module)
+ \item $M$ is a noetherian $R$-module $\imp S^{-1}M$  is a noetherian $S^{-1}R$-module.
+\end{enumerate}
+\end{prop}
+
+\begin{prop}
+  Let $Q$ be an $R'$-module, then:
+  \begin{enumerate}[(a)]
+\item The map \begin{align*}
+  \Hom_{R}(M,Q_{R}) &\tto \cong \Hom_{R'}(M',Q) \\
+  \psi &\mps (\psi': r' \otm m \mps r' \cd \psi(m))
+\end{align*}
+          is an $R'$-module isomorphism. In the special case $R' = S^{-1}R$ we get the isomorphism
+          \begin{align*}
+            \Hom_{R}(M,Q) &\tto \cong \Hom_{S^{-1}R}(S^{-1}M,Q) \\
+            \psi &\mps \l(\psi': \frac ms \mps \frac{\psi(m)}s\r)
+          \end{align*}
+    \item Suppose now that $R$ is noetherian, $\ph: R \to R'$ is flat and $M$ is finitely generated as an $R$-module, then the map:
+          \begin{align*}
+            \mu_{M}: R' \otm_{R} \Hom_{R}(M,N) &\tto \cong \Hom_{R'}(M',N') \\
+            r' \otm \psi &\mps (r'' \otm m \mps r'r'' \otm \psi(m))
+          \end{align*}
+          is an $R$'module isomorphism. In the special case $R' = S^{-1}R$ we get the isomorphism
+          \begin{align*}
+            S^{-1}\Hom_{R}(M,N) &\tto \cong \Hom_{S^{-1}R}(S^{-1}M,S^{-1}N) \\
+            \frac 1s \psi &\mps \l(\frac 1s \psi': \frac ms' \mps \frac{\psi(m)}ss'\r)
+          \end{align*}
+          \item
+  \end{enumerate}
+\end{prop}
+
+\begin{lemm}
+  \begin{enumerate}[(a)]
+    \item If $P$ is a projective $R$-module, then $R' \otm_{R} P$ is a projective $R'$-module.
+    \item If $P^{\bullet} \to M$ is a projective resolution in $\coch_{\le 0}(\RMod)$ and $R \to R'$ is flat, then \[(R' \otm P^{i})_{i \ge 0} \to M\]
+          is a projective resolution.
+    \item If $R$ is noetherian and $M$ is a finitely generated $R$-module, then there exists a projective resolution of the form \[\cdots \to R^{n_{2}} \to R^{n_{1}} \to R^{n_{0}} \to M \to 0\]with $N_{i} \in \Nn$.
+          \item If $M$ is a flat $R$-module, then $M'$ is a flat $R'$-module.
+  \end{enumerate}
+
+\end{lemm}
+
+\begin{thm}
+  Suppose $R \to R'$ is flat and in case (b) that $R$ is noetherian and $M$ finitely generated $R$-module, then one has natural isomorphisms:
+  \begin{enumerate}[(a)]
+\item $u_{i}: R' \otm_{R} \Tor_{i}^{R}(M,N) \tto \cong R_{i}^{R}(M',N')$.
+\item $v^{i}: R' \otm_{R} \Ext_{R}^{i}(M,N) \tto \cong \Ext_{R'}^{i}(M',N')$.
+  \end{enumerate}
+
+\end{thm}
+
+\section{Spectrum of a ring}
+\begin{defi}
+Define \begin{align*}
+\Spec R &:= \{\mathfrak p \subseteq R \text{ prime ideal}\} \\
+\Max R &:= \{\mathfrak m \subseteq R \text{ maximal ideal}\} \\
+\Min R &:= \{\mathfrak p \subseteq R \text{ minimal in} \Spec R\}
+\end{align*}
+\end{defi}
+\begin{rem*} Regardinf the definition
+\begin{enumerate}[(a)]
+  \item $\Max R \subseteq \Spec R$.
+        \item $0_{R} = 1_{R} \iff R=0 \underset{10}\iff \Max R = \emptyset = \Spec R$.
+\end{enumerate}
+\end{rem*}
+
+\begin{thm}[Uses Zorn's lemma]
+  Suppose $R \ne 0$ is commutative, then $\Max R, \Min R$ are non-empty. Reminder on $\Min R$: If $\{\mathfrak p_{i}\}_{i \in I}$ is a descending chain in $\Spec R$, then $\bigcap \mathfrak p_{i}$ is a prime ideal.
+\end{thm}
+\begin{exmp*}
+  Let $R$ be a PID (not a field), then
+  \begin{enumerate}[(a)]
+    \item $\Spec R = \{(0)\} \cup \ubr{\Max R}_{=\{(f) \mid f \text{ irr.}\}}$
+    \item Gauß lemma gives the following: \[\Max R[X] = \{(f,p) \mid p \in R \text{ irr. and } f \in R[X] : \bar f \in \fak R{(p)}[X] \text{ irr.}\}\]
+          \[\Spec R[X] = \Max(R[X]) \amalg \{(0)\} \amalg \{(f) \mid f \in R[X] \text{ primitive, irred.} \} \amalg \{(p) \mid p \in R \text{ irred.}\}\] TODO WTF
+  \end{enumerate}
+\end{exmp*}
+
+\begin{prop}
+  For $\ph: R \to R'$ a ring homomorphism, the map \[\ph^{*} : \Spec R' \to \Spec R, \mathfrak p' \mps \ph^{-1}(\mathfrak p) \]
+  is well defined and inclusion preserving.
+\end{prop}
+
+\begin{prop}
+\begin{enumerate}[(a)]
+  \item For the quotient map $\pi: R \to \fak RI(=R')$ we have:
+        \begin{enumerate}[(i)]
+          \item $\pi^{*}: \Spec \fak RI \to \Spec R$ is injective.
+          \item $\im \pi^{*} = V(I) := \{\mathfrak p \in \Spec R \mid I \subseteq \mathfrak p\}$.
+          \item $V(I) \to \Spec \fak RI, \mathfrak p \mps \mathfrak p + I = \pi(\mathfrak p) \subseteq \fak R{\mathfrak p}$ is inverse to $\pi^{*}$.
+        \end{enumerate}
+  \item For the localization map $\ph_{S}: R \to S^{-1}R, r \mps \frac r1$ we have:
+        \begin{enumerate}[(i)]
+          \item $\ph_{S}^{*}: \Spec (S^{-1}R) \to \Spec R$ is injective.
+          \item $\im \ph_{S}^{*} = U(S) := \{\mathfrak p \in \Spec R \mid \mathfrak p \cap S = \emptyset\}$.
+          \item $U(S) \to\Spec (S^{-1}R), \mathfrak p \mps S^{-1}\mathfrak p$ is inverse to $\ph_{S}^{*}$.
+        \end{enumerate}
+\end{enumerate}
+\end{prop}
+
+\begin{cor}[to Theorem 10]
+  Suppose $U(S) \ne \emptyset$, i.e. $0 \notin S$, then:
+  \begin{enumerate}[(a)]
+    \item $U(S)$ contains minimal and maximal elements with respect to $\subseteq$.
+    \item If $I \cap S = \emptyset$ then (a) holds for \[\{\mathfrak p \in U(S) \mid I \subseteq \mathfrak p\} = \{\mathfrak p \in \Spec R \mid I \subseteq \mathfrak p, \mathfrak p \cap S \ne \emptyset\}\]
+          \item If $I \subseteq \mathfrak q$ for some $\mathfrak q \in \Spec R$, then (a) holds for $\{\mathfrak p \in \Spec R \mid I \subseteq \mathfrak p \subseteq \mathfrak q\}$.
+  \end{enumerate}
+\end{cor}
+
+\begin{defi}
+  For $f \in R$ write
+  \begin{enumerate}[(a)]
+    \item $S_{f} = \{f^{n} \mid n \in \Nn\} \le (R, 1, \cd)$ submonoid.
+    \item $U(f) := U(S_{f}) = \{\mathfrak p \in \Spec R \mid f \notin \mathfrak p\}$.
+    \item $R_{f} = S_{f}^{-1}R = \{\frac r{f^{n}} \mid r \in R, n \in \N\}$ with localization map $\ph: R \to R_{f}$.
+    \item For $M$ an $R$-module, set $M_{f} := S_{f}^{-1}M$.
+  \end{enumerate}
+  Note that $U(f)$ is in bijection with $\Spec R_{f}$ by $\mathfrak p \mps S_{f}^{-1}\mathfrak p = \mathfrak p_{f}$.
+
+\end{defi}
+
+\begin{defi} $f \in R$ is called \emph{nilpotent} if $\ex n\in \N : f^{n} = 0$. Note: $f$ is nilpotent $\iff S_{f} = 0 \iff R_{f} = 0 \iff U(f) = \emptyset$.
+\end{defi}
+\begin{rem*}Recall the definition of a topological space
+  \begin{enumerate}[(a)]
+    \item A topological space is a pair $\underline X = (X, \T)$ where $X$ is a set, $\T \subseteq \mathcal P(X)$ and $\T$ satisfies:
+          \begin{enumerate}[(i)]
+            \item $\emptyset, X \in \T$.
+            \item $\forall U, V \in \T: U \cap V \in \T$.
+                  \item $(U_{i})_{i \in I}$ in $\T$, then $\bigcup_{i \in I}U_{i} \in \T$.
+          \end{enumerate}
+    \item Call the elements in $\T$ \emph{open subsets} of $X$ (with respect to the topology $\T$).
+    \item Call $A \subseteq X$ \emph{closed} if $X \setminus A$ is open.
+          \item If $\underline X' = (X', \T')$ is another topological space, call a map $f: X \to X'$ continuous if $f^{-1}(\T') \subseteq \T$.
+  \end{enumerate}
+  Axioms that characterize $\A:= \{X \setminus U \mid U \in \T\}$ by:
+  \begin{enumerate}[(i)]
+    \item $\emptyset , X \in \A$.
+    \item $\forall A, B \in \A: A \cup B \in \A$.
+          \item $(A_{i})_{i \in I}$ in $\A$, then $\bigcap_{i \in I}A_{i} \in \A$.
+  \end{enumerate}
+\end{rem*}
+\begin{defi}
+  Recall also:
+  \begin{enumerate}[(a)]
+    \item A subset $B \subseteq \mathcal P(X)$ is called a \emph{basis} for a topology on $X$ if $\forall U, V \in B$ and $x \in U \cap V, \ex W \in B$ such that $x \in W$ and $W \subseteq U \cap V$.
+          \item If $B$ is a basis, the topology $\T_{B}$ generated by $B$ is characterized by: $U \in \T_{B} \setminus \{X\} \iff \forall x \in U \ex W \in B: x \in W \subseteq U$.
+  \end{enumerate}
+\end{defi}
+\begin{exmp*}If $(X, d)$ is a metric space, then the set of all $\varepsilon$-balls forms a basis for the associated (metric) topology.
+\end{exmp*}
+\begin{defi}
+A topological space $(X, \T)$ is called \emph{quasi-compact} $\iff$ for every covering $(U_{i})_{i \in I}$ by open subsets $U_{i}$ there is a finite $I_{0 } \subseteq I$ such that $\bigcup_{i \in I_{0}}U_{i} X \iff $ for any family $(A_{i})_{i \in I}$ of closed subsets of $X$ such that $\bigcap_{i \in I}A := \emptyset$ one finds a finite $I_{0} \subseteq I$ such that $\bigcap_{i \in I_{0}}A_{i} = \emptyset$.
+\end{defi}
+
+\begin{thm-defi}
+  Let $\A_{\Zar} := \A_{\Zar, R}:= \{V(I) \mid I \subseteq R \text{ ideal}\}$, then:
+  \begin{enumerate}[(a)]
+    \item $\A_{\Zar}$ is the set of closed subset of a topology $\T_{\Zar}$ on $\Spec R$, called the \emph{Zariski topology}.
+    \item The set $B:= \{U(f) \mid f \in R\}$ is a basis of $\T_{\Zar}$. Moreover one has \[U(f) \cap U(g) = U(f \cd g), \forall f,g \in \Spec R\]
+    \item $(\Spec R, \T_{\Zar})$ is quasi-compact.
+          \item If $\ph: R \to R'$ is a ring homomorphism, then $\ph^{*}: \Spec R' \to \Spec R$ is continuous with respect to the zariski topologies on $\Spec R$ and $R'$ respectively.
+  \end{enumerate}
+\end{thm-defi}
+
+\begin{defi}
+  For $\mathfrak p \in \Spec R$ set
+  \begin{enumerate}[(a)]
+    \item $S_{\mathfrak p} := R \setminus \mathfrak p$ submonoid of $(R, 1, \cd)$.
+    \item $R_{\mathfrak p}:= S^{-1}_{\mathfrak p}R$ localization of $R$ at $\mathfrak p$.
+    \item For an $R$-module $M$ we have $M\mathfrak p := S_{\mathfrak p}^{-1}M$.
+  \end{enumerate}
+\end{defi}
+Interpretation: For $\mathfrak p \in \Spec R$ let $J:= \{U(f) \mid f \in R \setminus \mathfrak p\}$
+\begin{prop}[Exer]
+\begin{enumerate}[(a)]
+  \item $J$ is filtered: $\forall U, V \in J: U \cap V \in J$
+  \item For $U(f) \subseteq U(g)$ we have a canonical homomorphism $R_{g} \to G_{f}$.
+  \item $R_{\mathfrak p} = \colim_{J} R_{f}$.
+  \item $M_{\mathfrak p} = \colim_{f \in J} (M_{f})$
+\end{enumerate}
+\end{prop}
+
+\begin{thm-defi}
+  For $R \ne 0$ the following are equivalent:
+  \begin{enumerate}[(i)]
+    \item $\#\Max(R)= 1$
+    \item $R \setminus R\en$ is an ideal of $R$.
+  \end{enumerate}
+  If (i) or (ii) hold, $R$ is called a \emph{local ring} with (unique) maximal ideal $\mathfrak m_{R} = R \setminus R\en$.
+\end{thm-defi}
+
+\begin{nota*}
+\begin{enumerate}[(a)]
+  \item ``$(R,\mathfrak m)$ is a rocal ring'' means $R$ is a local ring with $\mathfrak m$ maximal ideal.
+        \item The \emph{residue field} of $(R, \mathfrak m)$ is $\fak R{\mathfrak{m}}$
+\end{enumerate}
+\end{nota*}
+
+\begin{exer}
+  For $\mathfrak m \in \Max (R)$ the following are equivalent:
+  \begin{enumerate}[(i)]
+    \item $\{\mathfrak m\} = \Max R$.
+          \item $1 + \mathfrak m \subseteq R\en$.
+  \end{enumerate}
+
+\end{exer}
+
+\begin{prop}
+  Let $\mathfrak p \in \Spec R$, then
+  \begin{enumerate}[(a)]
+    \item $R_{\mathfrak p}$ is a local ring.
+          \item $\mathfrak p R \mathfrak p$
+  \end{enumerate}
+
+\end{prop}
+\end{document}

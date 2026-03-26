@@ -1,0 +1,899 @@
+* Table of Contents :toc:
+- [[#1-definitionen][1 Definitionen]]
+  - [[#motivation][Motivation]]
+  - [[#diagnostic-sociology---reading-the-present][Diagnostic Sociology - Reading the Present]]
+  - [[#analytical-sociology---levels-and-domains][Analytical Sociology - Levels and Domains]]
+  - [[#theoretical-sociology][Theoretical Sociology]]
+  - [[#methodological-sociology][Methodological Sociology]]
+  - [[#sociology-as-perspective][Sociology as Perspective]]
+  - [[#conceptual-access-to-sociology][Conceptual Access to Sociology]]
+  - [[#what-is-the-object-of-sociology---the-wallet-example][What is the Object of Sociology? - The Wallet Example]]
+- [[#2-kultur-und-handlungswissenschaft][2 Kultur und Handlungswissenschaft]]
+  - [[#motivation-1][Motivation]]
+  - [[#institutionalization-of-sociology][Institutionalization of Sociology]]
+  - [[#sociology-between-natural-and-human-science][Sociology Between Natural and Human Science]]
+  - [[#different-concepts-of-culture][Different Concepts of Culture]]
+  - [[#webers-cultural-analysis---ideas-and-interests][Weber's Cultural Analysis - Ideas and Interests]]
+  - [[#sociology-as-a-science-of-action][Sociology as a Science of Action]]
+- [[#3-was-ist-eine-soziologische-problemstellung][3 Was ist eine soziologische Problemstellung?]]
+  - [[#motivation-2][Motivation]]
+  - [[#webers-definition-of-sociology][Weber's Definition of Sociology]]
+  - [[#durkheims-definition-of-sociology][Durkheim's Definition of Sociology]]
+  - [[#durkheims-concept-of-social-facts][Durkheim's Concept of Social Facts]]
+  - [[#durkheims-study-of-suicide][Durkheim's Study of Suicide]]
+  - [[#example-sociological-problem-cases][Example sociological problem cases]]
+  - [[#conclusion][Conclusion]]
+- [[#4-anthropologische-grundlagen][4 Anthropologische Grundlagen]]
+  - [[#motivation-3][Motivation]]
+  - [[#durkheim---the-double-existence-of-the-human-being][Durkheim - The double existence of the human being]]
+  - [[#max-scheler---classical-images-of-the-human-being][Max Scheler - Classical images of the human being]]
+  - [[#philosophical-anthropology---what-makes-humans-special][Philosophical Anthropology - What makes humans special?]]
+  - [[#tomasello---evolutionaryempirical-anthropology][Tomasello - Evolutionary/Empirical Anthropology]]
+  - [[#the-role-of-socialization][The role of socialization]]
+- [[#5-sozialisation][5 Sozialisation]]
+  - [[#motivation-4][Motivation]]
+  - [[#hurrelmanns-working-definition][Hurrelmann's Working Definition]]
+  - [[#contexts-phases-and-agencies-of-socialization][Contexts, Phases and Agencies of Socialization]]
+  - [[#emile-durkheim---theory-of-socialization][Emile Durkheim - Theory of Socialization]]
+  - [[#sigmund-freud---psychoanalysis][Sigmund Freud - Psychoanalysis]]
+  - [[#erik-erikson---psychosocial-development][Erik Erikson - Psychosocial Development]]
+  - [[#behaviorism][Behaviorism]]
+  - [[#jean-piaget---cognitive-and-moral-development][Jean Piaget - Cognitive and Moral Development]]
+  - [[#lawrence-kohlberg---stages-of-moral-development][Lawrence Kohlberg - Stages of Moral Development]]
+  - [[#george-herbert-mead---the-social-constitution-of-the-self][George Herbert Mead - The Social Constitution of the Self]]
+  - [[#summary][Summary]]
+- [[#6-situation-und-interaktion][6 Situation und Interaktion]]
+  - [[#motivation-5][Motivation]]
+  - [[#the-dyad-and-mutual-uncertainty][The Dyad and Mutual Uncertainty]]
+  - [[#the-thomas-theorem][The Thomas Theorem]]
+  - [[#definition-of-a-situation][Definition of a Situation]]
+  - [[#goffman---is-there-order-to-situations][Goffman - Is There Order to Situations?]]
+  - [[#one-sided-theories-individualistic-action-theories][One-Sided Theories: Individualistic Action Theories]]
+  - [[#reciprocal-theories-mutual-constitution-of-meaning][Reciprocal Theories: Mutual Constitution of Meaning]]
+  - [[#summary-1][Summary]]
+- [[#7-rolle-habitus-und-normen][7 Rolle, Habitus und Normen]]
+  - [[#motivation---how-is-social-order-possible][Motivation - How is Social Order Possible?]]
+  - [[#position-and-role][Position and Role]]
+  - [[#norms][Norms]]
+  - [[#beyond-the-role-habitus][Beyond the Role: Habitus]]
+  - [[#bourdieus-alternative---the-habitus][Bourdieu's Alternative - The Habitus]]
+  - [[#summary-2][Summary]]
+- [[#8-werde-und-institutionen][8 Werde und Institutionen]]
+  - [[#kluckhohn---definition-of-values][Kluckhohn - Definition of Values]]
+  - [[#inglehart---value-change][Inglehart - Value Change]]
+  - [[#helmut-klages---value-synthesis-not-value-decline][Helmut Klages - Value Synthesis, Not Value Decline]]
+  - [[#definition-of-institution][Definition of Institution]]
+  - [[#freedom-and-formation][Freedom and Formation]]
+  - [[#four-analytical-dimensions-of-institutions][Four Analytical Dimensions of Institutions]]
+  - [[#theoretical-approaches-to-institutions][Theoretical Approaches to Institutions]]
+  - [[#goffman---total-institutions][Goffman - Total Institutions]]
+- [[#9-soziale-kontrolle-und-abweichung][9 Soziale Kontrolle und Abweichung]]
+  - [[#motivation-6][Motivation]]
+  - [[#anomie-and-social-change][Anomie and Social Change]]
+  - [[#merton---typology-of-individual-adaptation][Merton - Typology of Individual Adaptation]]
+  - [[#application-at-the-micro-level---truancy][Application at the Micro Level - Truancy]]
+  - [[#lepsius---application-at-the-macro-level-immobilism-in-southern-italy][Lepsius - Application at the Macro Level, Immobilism in Southern Italy]]
+  - [[#summary-of-concepts][Summary of Concepts]]
+- [[#10-soziale-gruppe][10 Soziale Gruppe]]
+  - [[#motivation-7][Motivation]]
+  - [[#levels-of-action---interaction-organizations-society][Levels of Action - Interaction, Organizations, Society]]
+  - [[#groups][Groups]]
+  - [[#friedhelm-neidhardts-definition][Friedhelm Neidhardt's Definition]]
+  - [[#groups-across-the-life-course][Groups across the Life Course]]
+  - [[#the-problem-of-defining-groups][The Problem of Defining Groups]]
+  - [[#processes-and-dynamics-within-groups][Processes and Dynamics Within Groups]]
+  - [[#summary-3][Summary]]
+- [[#11-weber---macht-und-herrschaft][11 Weber - Macht und Herrschaft]]
+  - [[#definition][Definition]]
+  - [[#wille-und-widerstreben-will-and-resistance][Wille und Widerstreben (Will and resistance)]]
+  - [[#three-forms-of-enforcing-power][Three forms of enforcing power:]]
+  - [[#how-power-emerges-and-stabilizes][How power emerges and stabilizes]]
+  - [[#heinrich-popitz---processes-of-power-formation][Heinrich Popitz - Processes of Power Formation]]
+  - [[#weber---domination-herrschaft][Weber - Domination (Herrschaft)]]
+  - [[#webers-three-ideal-types-of-legitimate-domination][Weber's three ideal types of legitimate domination]]
+- [[#12-soziale-ungleichheit][12 Soziale Ungleichheit]]
+  - [[#motivation-8][Motivation]]
+  - [[#definition-1][Definition]]
+  - [[#marx---class-inequality][Marx - Class Inequality]]
+  - [[#weber---class-and-status-inequality][Weber - Class and Status Inequality]]
+  - [[#the-concept-of-social-stratum-schicht][The Concept of Social Stratum (Schicht)]]
+  - [[#summary-4][Summary]]
+- [[#13-soziale-ungleichheit][13 Soziale Ungleichheit]]
+  - [[#bourdieu---sociocultural-class-theory][Bourdieu - Sociocultural Class Theory]]
+  - [[#the-forms-of-capital][The Forms of Capital]]
+  - [[#structuring-modern-capitalist-society][Structuring Modern Capitalist Society]]
+  - [[#class-structure][Class Structure]]
+  - [[#becks-individualization-thesis][Beck's Individualization Thesis]]
+  - [[#summary-5][Summary]]
+
+* 1 Definitionen
+** Motivation
+Sociology as a university subject and formal discipline is remarkably young — it emerged only at the beginning of the 20th century. It is also inherently plural and differentiated, which initially delayed its academic recognition but ultimately became one of its defining strengths. There is no single canon, no agreed-upon core doctrine — and this, far from being a weakness, is what keeps the discipline flexible and alive.There are several entry points through which sociology can be approached.
+** Diagnostic Sociology - Reading the Present
+One major function of sociology is diagnosis: characterizing contemporary society, identifying what has changed and what is changing. Four major axes of transformation currently occupy sociological attention:
+- Ecological change — the relationship between humans and their natural environment has become so fraught that the very concept of risk now carries, as one formulation puts it, the undertone of possible self-annihilation of life on Earth.
+- Cultural change — modernity has brought a structural shift from religion to the individual as the primary framework of meaning. Expectations have moved from the general to the particular; people are expected to construct their own biographies rather than inherit them.
+- Technological change — social acceleration driven by digitalization produces a distorted relationship between the self and the world. People can access enormous amounts of information, yet the very proliferation of recombination possibilities can paradoxically produce a sense of knowing nothing — and alongside this, a form of self-alienation rooted in social estrangement.
+- Social change — ongoing transformations in social inequality, from poverty societies to post-migration societies to wealth societies, all demand sociological attention.
+** Analytical Sociology - Levels and Domains
+Sociology doesn't just diagnose — it analyzes systematically. Using the example of COVID-19, three levels of analysis can be distinguished:
+- Micro level: face-to-face interactions, close social relationships, communication, cooperation — the effects of physical and social isolation, solidaristic behavior
+- Meso level: groups, networks, organizations — home office arrangements, systemically relevant professions
+- Macro level: nation-states and supranational entities — authoritarianism, nationalism, economic inequality, migration
+These levels cut across several social domains: politics (democratic freedoms, trust in institutions), economy (financial consequences, growing inequality), culture (ways of life, ethical values), and law (deviant behavior, sanctions and punishment).
+** Theoretical Sociology
+Karl Popper's image is useful here: "Theory is the net we cast out to capture 'the world' — to rationalize and master it. We work to make the mesh of the net ever finer." Theoretical concepts are tools for grasping reality and making society intelligible. Sociological theories range across action, structures, and systems — and often cross paradigm boundaries.
+** Methodological Sociology
+Sociology is a science of reality (Wirklichkeitswissenschaft). But the full complexity of social reality can never be completely captured — scientific knowledge always remains selective, directed at a fragment of what Heinrich Rickert called the "unsurveyable manifold" of the real.
+Two broad methodological paradigms exist:
+- Quantitative (measurement paradigm): oriented toward generalization, statistical patterns, large-scale regularities
+- Qualitative (interpretive paradigm): oriented toward understanding, representing specific groups and their perspectives in depth
+The absence of a fixed methodological canon is not a deficit — it requires sociologists to apply and adapt their knowledge flexibly, choosing the right tool for the right question.
+** Sociology as Perspective
+Beyond method and theory, sociology is also a way of seeing. Four preconditions make this possible:
+1. Interest in other people and their situations — including both familiar and unfamiliar social structures, including deviant behavior
+2. Curiosity — nothing should be taken for granted; everything requires a second, specifically sociological look
+3. Enthusiasm — genuine interest in human life as it is actually lived
+4. Radical doubt — distance from the object of study and a deliberate break with common sense
+This produces what is called the double hermeneutic: sociologists must understand both their object of study and themselves as observers. Since socialization shapes the researcher just as it shapes everyone else, complete separation from the subject matter is impossible. The sociologist is always also part of the society being studied.
+Two famous images of the sociological perspective:
+- Robert E. Park — Sociology as Reportage: engagement with the diversity and variance of social phenomena through fieldwork and participant observation. Park's subjects were race conflicts, poverty, prostitution, crime, gangs, inequality — the raw material of urban life encountered up close.
+- Georg Simmel — Sociology as Flânerie: observation through distance and immediate perception, without participation. The sociologist as detached stroller, watching the flow of social life from a contemplative remove.
+- Pierre Bourdieu offers a third, sharper formulation: sociology is a combat sport, one you need for self-defense. Much of social life is naturalized — treated as obvious and inevitable. Sociology helps us see the fouls in the game and name them for what they are.
+** Conceptual Access to Sociology
+What is sociology actually for? Three overlapping self-understandings:
+- Methodological: to make statements about social facts that are in principle empirically verifiable — truth-capable claims about the social world
+- Theoretical: to explain social reality from its objective conditions and to understand it in terms of subjective frameworks of action — the interplay of action and order
+- Analytical-diagnostic: to contribute to understanding contemporary societies and their probable futures
+** What is the Object of Sociology? - The Wallet Example
+Is "society" even a coherent object of study? Sociology has historically had to prove its right to exist alongside other established disciplines. A mundane example illustrates how sociological analysis works in practice.
+A wallet lying on a table is a naturally given object — no survey needed. But sociological analysis proceeds in three steps:
+
+Data collection: What does it contain? What form does it take — size, color, material? What is absent that one would normally expect?
+
+Data ordering: The arrangement of things in the wallet reveals something about the social fields and spheres its owner inhabits.
+
+Data analysis: Each item points to a different social domain:
+- Money → economy and consumption behavior
+- ID card → politics, law, citizenship
+- Student card → social structure and education
+- Size and material → culture and lifestyle
+- Membership cards → associational life and social belonging
+
+Taken together, the wallet can indicate the degree of a person's inclusion or exclusion from various areas of social life.
+
+The deeper point: sociologists always look for the underlying structure, the pattern, beneath everyday things. People are socialized into the use of such objects — they adopt them partly through norms, customs, and values — but that use is always also changeable, even if never completely free.
+
+Marx put it precisely: "People make their own history, but not under conditions of their own choosing." They act — but their action is always embedded in social contexts they did not create and often cannot control. That tension between agency and structure is, in many ways, what sociology is about.
+* 2 Kultur und Handlungswissenschaft
+** Motivation
+Sociology is a young discipline, emerging in the 19th and early 20th centuries. Its very name — the combination of "society" and "science" — already announces an ambition: to make society explicable, understandable, and ultimately changeable through scientific inquiry.
+
+What drove this ambition was a world in upheaval. Four massive transformations were reshaping European life simultaneously:
+- the economic revolution and the emergence of capitalism;
+- the cultural revolution and the rise of individualism;
+- the political revolutions producing democracy;
+- and the rise of scientific thinking as the dominant mode of understanding the world.
+Old traditions were being questioned, new ideas about the state and human nature were circulating, and people were beginning to sense that society was not a fixed, God-given order but something dynamic, constructed, and potentially steerable.
+Society is not solid — it changes, it is socially constructed, and it can be reconstructed. Sociology emerged to think through these transformations and the crises they produced, driven by three interrelated ambitions: understanding how stable social order reproduces itself, identifying ways to improve collective life, and maintaining a permanent critical reflection on social conditions.
+** Institutionalization of Sociology
+Sociology took root differently in three national contexts, and these differences shaped what it became.
+- In France, sociology was university-based from the outset, with Durkheim at its center — first in Bordeaux, then Paris. It was closely tied to the Enlightenment tradition and oriented toward rigorous scientific method.
+- In the USA, sociology was more pragmatic and reform-oriented. It grew out of social critique and social work, with religious and proletarian roots giving it a moral urgency. The Chicago School became its institutional heart, treating the city as a laboratory and combining sociological observation with the ambition to solve social problems directly.
+- In Germany, institutionalization came late, emerging from political economy and state science (Staatswissenschaft). The decisive methodological commitment was value-freedom (Wertfreiheit). Max Weber — one of the first German sociologists — insisted that politics had no place in the lecture hall. As a person, one may and should take value positions; as a scientist, one must not. The job of sociology is to establish empirical facts (Sachaussagen), not to issue normative judgments (Wertaussagen). The two must be rigorously kept apart.
+** Sociology Between Natural and Human Science
+Sociology occupies a distinctive position between two established scientific traditions. The natural sciences aim at causal explanation through laws — given that the world is pre-given, the task is to explain what causes what. The humanities (Geisteswissenschaften) aim at understanding through description — the world is not simply there to be explained but is a constructed, meaningful reality that must be interpreted.
+
+Sociology belongs to neither camp exclusively. It is a social-cultural science (Sozial- und Kulturwissenschaft) — a science of reality that combines explanation and understanding, attending to the everyday interactions of people rather than to religious or metaphysical constructs.
+
+Cultural-scientific approaches deal with made distinctions, with meaning and significance. Four interpretive strategies have been developed to reconstruct this meaning:
+- Structuralist readings locate meaning in the relations and structures between signs — meaning is relational, not inherent in any single element.
+- Phenomenological-hermeneutic readings find meaning in the intentions and purposes of actors — understanding requires getting inside the actor's perspective.
+- Behavioral-interactionist readings derive meaning from the coordination of actions and practices — meaning emerges from what people actually do together.
+- Language-game oriented readings locate meaning in language and communication — following Wittgenstein, meaning is use.
+The common thread: cultural sciences and sociology investigate how humans make distinctions, what meaning those historically, culturally, and socially conditioned distinctions have for the conduct of life and for social practice. The object is not things as such, but the significance things carry.
+** Different Concepts of Culture
+Sociology does not work with a single concept of culture. Four understandings coexist:
+- The normative concept of culture treats culture as something positive and aspired to — the opposite of mere nature or animalistic existence. Culture in this sense is what regulates human coexistence and lifts it above brute instinct. This is in many ways the central problem of sociology: how do humans organize their life together through shared norms?
+- The totality-oriented concept treats culture as all-encompassing and historically bound — it represents the entirety of a group's way of life, everything that distinguishes one human community from another.
+- The meaning-oriented concept treats culture as an aggregate of ideas and meaning-systems through which actors construct their world as meaningful. Culture on this view structures and orients action — it provides the frameworks within which things matter and decisions make sense.
+- The differentiation-theoretical concept treats culture as one specific field or subsystem among others, to be distinguished from economy, politics, law, and so on. Culture here is a particular domain, not an all-encompassing whole.
+** Weber's Cultural Analysis - Ideas and Interests
+Weber offers a formulation that cuts to the heart of cultural sociology: interests — both material and ideal — immediately govern human action. But the worldviews created by ideas have very often acted as the switches that determined the tracks along which the dynamic of interests moved action. It is the worldview that determines from what and toward what one seeks salvation — and what counts as salvation at all.
+
+This is a subtle but crucial point. Weber is not saying ideas rule the world, nor that interests do. He is saying they are in a relationship of mutual influence across time — a diachronic interaction. Interests are never context-free; they are always embedded in ideas. And ideas do not float free of interests — they gain their force and direction partly from the interests they serve or challenge.
+
+Idea-systems function as both models of reality (describing what is) and models for reality (prescribing what should be). They orient actors, tell them what to pursue and what to avoid, and provide the frameworks within which interests are articulated and pursued. The individual forms ideas, brings them into society, where they shape others who form their own ideas in response — a cycle of mutual constitution between persons and the meaning-systems they inhabit.
+
+The precondition for all of this is that humans are homo symbolicus — symbol-creating beings who can not only act but give their actions meaning, refer to absent things through signs, and build shared worlds of significance. Everyday knowledge and practice are therefore the central object of sociological inquiry — not to take them at face value, but to distance ourselves from them through concepts, theories, and methods in order to see what is actually going on beneath the surface. Sociology at its best, as the notes put it, disturbs our everyday assumptions and opens new possibilities for reflection. The example of gender conceptions — how radically they have shifted even within living memory — shows how much of what seems natural is in fact historically contingent.
+** Sociology as a Science of Action
+Weber's definition of sociology is precise and programmatic: "Sociology is a science which attempts the interpretive understanding of social action in order to arrive at a causal explanation of its course and effects."
+
+Two things are coupled here: a subject matter (social action) and a method (interpretive understanding and causal explanation). The definition rules out a purely external, behaviorist approach — you cannot understand society by merely observing behavior from outside. You have to grasp its meaning.
+
+Action in Weber's sense is human behavior to which the actor attaches a subjective meaning — an intention, purpose, or orientation. What distinguishes action from mere behavior is this dimension of meaning. An eye that twitches involuntarily is behavior; a deliberate wink directed at someone is action. The same physical movement, but entirely different sociological significance.
+
+Meaning-understanding (Sinnverstehen) is therefore the core methodological commitment. Meaning is a mental activity — it involves intentionality, orientation, goal-setting. It is always context-bound, procedural, and the result of interactive processes. Three levels of context bear on the meaning of any action:
+- The concrete situational context — a church, for instance, defines what it means to live a life dedicated to a single God.
+- The biographical context — a particular priest either adapts to this or finds himself in conflict with it.
+- The long-term social context — as believers drift away, the Church itself changes over time.
+Two methodological strategies help sociology gain the necessary distance from common sense in order to understand meaning:
+- The ethnological and Chicago School approach — acknowledging the foreignness of what one studies and reflexively examining one's own perceptions. Treating the city as a laboratory and attending carefully to both normal and abnormal behavior.
+- The sociology of everyday life — illuminating unconscious habits of thought and action (Schütz), making the normal strange through deliberate methodological estrangement. Crisis experiments, disability studies, conversation analysis — all work by disrupting the taken-for-granted to reveal the structures underneath.
+
+Finally, Weber adds a crucial qualifier to distinguish social action from action in general: "Social action is action which, in its subjectively intended meaning, is oriented toward the behavior of others and is thereby guided in its course." What makes action specifically social is that it is oriented toward others — it takes others into account, expects something from them, or responds to them. This coupling of action with meaningful orientation toward others is the true object of sociology.
+* 3 Was ist eine soziologische Problemstellung?
+** Motivation
+Are individual decisions truly individual and free, or are they shaped by forces beyond the individual? Sociology wants to analyze life under the assumption that it is determined by factors rooted in human socialization. Everyday phenomena become sociologically interesting when they shape our actions and ways of life, whether by enabling or constraining them.
+** Weber's Definition of Sociology
+Action-centered definition: Sociology is a science which attempts to interprate and understand social action in order to arrive at a causal explanation of its course and effects. The focus is on the meaning that individuals attach to their behavior.
+** Durkheim's Definition of Sociology
+Structure-centered definition: Sociology deals with social facts, analysed through observation and systematic comparison. The focus is on forces external to the individual.
+** Durkheim's Concept of Social Facts
+Every society has a stock of shared ideas and feelings, they are mental in nature but cannot be explained individually. They are social not psychological. These shared ideas are obligatory, they function as maxims that individuals must follow. Society can break apart if they are violated. Significant maxims are secured and perpetuated through institutions and sanctions.
+*** Methodological moves
+Social facts must be trated objectively and external to the individual. They act on people from outside like a form of constraint (Zwang). They have their own reality (sui generis), a collective consciousness such as morality that exists independently of any individual.
+Classic Example: stopping at a red light when the street is empty. No one is watching, yet the norm exerts its force.
+*** Two dimensions of type-formation
+- Morphology: structural units, their distribution and communication pathways - what are the rules of a social fact?
+- Physiology: functional relationships and processes between units - what effects do social facts produce?
+** Durkheim's Study of Suicide
+Durkheim's suicide study takes something seemingly the most private, individual act imaginable and shows it is shaped by social forces.
+His definition: Three elements are linked: the victim, the act and the forknowledge of the outcome.
+Method: Non-social factors (psychology, biology) are ruled out. Only social milleau remains as an explanatory cause. Durkheim builds a typology of four forms
+1. Egoistic: Weak social integration -> left to themselves
+2. Altruistic: Excessive integration -> self subordinated entirely to the group
+3. Anomic: Breakdown of regulating norms -> normlessness/chaos
+4. Fatalistic: Excessive regulation -> total suppression of the self
+*** Key findings
+- Religion: Suicide rates are higher among protestants than catholics, no because of doctrine, but because protestantism fosters religious individualism and fragmentation (egoism), while catholicism maintains collective structure.
+- Economic cycles: Suicide rates rise not only during crises but also during rapid economic booms. The disruption of normal collective order - whether through collapse or sudden prosperity - produces anomie. Capitalism expands without a moral equivalent to contain it.
+** Example sociological problem cases
+*** First names - private choice or social pressure?
+Names are freely chosen identity markers, yet they track social change precisely:
+- Decline of religiously inspired names -> secularization
+- Fewer names passed down from grandparents -> weakening of extended family, individualization, loss of traditional ties
+- Name clustering within social classes and milieus -> social inequalities persist even "beyond class"
+- Proliferation and pluralization of names -> individualization of lifestyle
+- Rise of non-german, non-christian names -> globalization
+Every individual act of naming is bound to social processes the parents themselves may not even notice.
+*** Goffman - Elevator riding
+Goffman's concept of the interaction order shows that even apparently passive, trivial behavior is structured. The elevator breaks down into a full sequence of social norms:
+- Decision sequence: choosing the elevator over the stairs involves both economic rationality (time, comfort, distance) and social rationality (how long to wait, whether to keep pressing the button, the elevator treated almost as an interaction partner).
+- Waiting order: an initially unordered queue becomes structured at the sound of the bell. The norm "let everyone out before entering" applies, along with queuing rules, overtaking prohibitions, and courtesy gestures.
+- Standing order: position inside the elevator follows the rule of distance maximization: diagonal and staggered placement, because proximity signals social relationship. Space is made for new arrivals.
+- Communication order: the elevator is communication-suppressing by design. Conversations are constrained by the duration of the ride. There is no exit, so a silence dynamic takes hold. Glances must be carefully managed.
+- Exit sequence: moving closer to the door, creating a path, looking away to signal disengagement, timing the departure not too early and not too late.
+** Conclusion
+Sociology combines:
+- methodological self-understanding: a science of social reality as it actually is.
+- theoretical self-understanding: the interplay between conditions and actions.
+* 4 Anthropologische Grundlagen
+** Motivation
+Sociology at its core needs only two fundamental concepts: action and order. From their subjectively intended meaning, everything else can be developed (Weber). The relationship between individual and collective is what produces order. But once order emerges, it exerts pressure back on the individual, constraining them through its rules.
+Ralf Dahrendorf captures this tension with the phrase: the annoyance of society.
+** Durkheim - The double existence of the human being
+Durkheim argues that humans exist in a constant tension between two states of consciousness:
+- The individual state: rooted in our organism and our immediate relationships with objects and surroundings
+- The social state: derived from society, taught to us, shows us how to relate to other people.
+This is the anthropological baseline: humans do not act solely from their own desires and ideas, they must coordinate their actions with the collective. The individual and social are not opposites, they are two poles of a single human existence.
+** Max Scheler - Classical images of the human being
+Before developing his own position, Scheler looks at different major traditions in how humans understood themselves, from religious conceptions in which life is oriented and devoted to God, to Nietzsche's will to power, to Darwin's natural selection. Each offers a different answer to the question of what distinguishes humans from other beings.
+** Philosophical Anthropology - What makes humans special?
+The question of philosophical anthropology is: human = animal + X, what exactly is this X?
+*** Max Scheler - The Spirit (Geist)
+Scheler's thesis: the special position of humans rests on their possession of spirit. Spirit is characterised by:
+- Personhood: the capacity for decision and self-determination
+- Independence from the organic: the mind-body duality (cogito ergo sum); the spirit is not simply reducible to bioligy
+- World-openness: unlike animals, humans are not bound to a fixed environment; the spirit detaches itself from bodily constraints
+- Objectification fo perception: humans can step back from experience and treat it as an object of reflection.
+Motivation rooted in decisions and individual goal-setting and evaluation.
+*** Helmut Plessner - Eccentric Positionality
+Plessner's thesis: the special position of humans rests not on the spirit alone but on eccentric positionality - a structural difference between spirit and body that must be continuously bridged. He develops this through a structural analysis of organic life:
+1. Plants
+   - Form: Open
+   - Characteristic: Bound to a location, open surface formation, no inner structure or organs.
+2. Animals
+   - Form: Closed/Centralized
+   - Characteristic: Integrated into their environment, self-mastery of the body, centric organization
+3. Humans
+   - Form: Reflexive/Eccentric
+   - Characteristic: Closed but self-reflective, self-aware, capable of stepping outside their own center
+The insight is that humans can step out of their own center and look back at themselves. This eccentric position gives rise to:
+- Self-experience and a relationship with oneself
+- Self-consciousness
+- The capacity to distinguish oneself from oneself
+*** Arnold Gehlen - Action
+Gehlen's thesis: the special position of humans rests on action, which precedes both thinking and feeling. The X is not spirit or reflexivity but the sheer necessity to act.
+The key differences from animals:
+- Instinct-boundedness: animals are bound to their instincts, locked into fixed behavioral responses
+- World-openness: animals are bound to specific places, humans can adapt to virtually any environment
+- Perception and representation: humans can perceive and process a far broader, more diffuse range of stimuli
+- The human as a Mängelwesen: humans arrive in the world biologically underequipped: no specialized sense organs, no fur, no claws, no ready-made behavioral programs.
+So how does such a deficient creature survive? Through action — not necessarily intentional or deliberate action, but action driven by the sheer necessity of staying alive. The human compensates for biological inadequacy through culture, institutions, and technology. Deficiency is thus paradoxically the engine of human civilization.
+** Tomasello - Evolutionary/Empirical Anthropology
+*** Rousseau vs Hobbes
+Classic debate: are humans naturally cooperative or naturally egoistic?
+- Rousseau says we are neutral at birth but corrupted by society.
+- Hobbes says we are bord selfish and dangerous
+*** Tomasello - humans are fundamentally cooperative
+His evidence comes from experiments with infants and toddlers, before they can walk, speak or be significantly shaped by culture, and shows they display cooperative and altruistic behavior across multiple domains
+**** Helping (Services)
+Even young children spontaneously help others without being asked or rewarded:
+- Retrieving objects out of reach
+- Removing obstacles
+- Correcting errors
+- Selecting the right approach to a task
+This behavior appears early, is immune to encouragement (it doesn't increase with reward), has evolutionary roots, appears across different cultures, and stems from natural empathy. It is therefore not a product of socialization or cultural learning.
+**** Informing
+Children use pointing gestures to direct others' attention, something chimpanzees do not do. They understand requests cooperatively, even implicit ones (e.g. bringing a battery when shown a remote that doesn't work).
+**** Sharing Resources
+Humans show a fundamental orientation toward fairness. Chimpanzees, by contrast, never voluntarily share food, they are pure utility-maximizers in conditions of food competition.
+** The role of socialization
+Altruism is not universal or unlimited. Two types of influence shape how natural cooperativeness develops over time:
+*** Direct social experience
+- Positive: children learn that cooperation tends to be reciprocated
+- Negative: children learn they can be exploited if always helpful
+- Result: after the initial purely altruistic phase, children develop differentiated judgments about whom to help and whom not to
+*** Norms and values
+- Learned through role models and communicated through interaction
+- Cultural norms around helping, and the avoidance of sanctions
+- Impression management, awareness of how one's behavior appears to others
+*** What makes humans uniquely cooperative
+Tomasello's broader argument is that the natural disposition toward cooperation is inseparable from a bundle of distinctly human cognitive capacities
+- Recognizing the intentions of others
+- Maintaining scenarios of shared attention
+- Reading the mental states of others
+- Knowing that the other knows that you know that they know
+This capacity for shared intentionality is Tomasello's candidate for the human Alleinstellungsmerkmal, the feature that sets humans apart.
+It is what makes culture, language, institutions, and cooperation at scale possible.
+*** Summary comparison of different notions of the X
+- Scheler: Spirit - personhood, world openness, objectification
+- Plessner: Eccentric positionality - self-reflexivity, stepping outside one's center
+- Gehlen: Action - driven by biological deficiency
+- Tomasello: Shared intentionality - cooperative, altruistic from birth
+All four approaches converge on a single insight: humans are not simply more intelligent animals. They are beings of a qualitatively different kind — open, self-reflective, action-oriented, and irreducibly social.
+* 5 Sozialisation
+** Motivation
+Socialization is to make fit to live in society. It is both a historical phenomenon and a sociological object of study, it varies across cultures and time.
+Two idea-typical principles fram the debate:
+- Sociobiological principle: genetic dispositions determine human behavior, nature wins.
+- Tabula rasa principle: the human arrives blank, shaped entirely by environment and external pressures, nature wins.
+Neither extreme holds on its own. Hurrelmann's working definition synthesizes both
+** Hurrelmann's Working Definition
+Socialization is the process of personality development through productive engagement with natural dispositions, particularly bodily and psychological characteristics (inner reality) and with the social and physical environment (outer reality).
+** Contexts, Phases and Agencies of Socialization
+Socialization doesn't happen in a vacuum, it operates across four nested levels:
+1. Individual contexts: personal experiences, attitudes, knowledge, emotions
+2. Interaction contexts: parent-child relationships, schooling, peers, relatives
+3. Institutional contexts: media, workplaces, churches
+4. Societal context: sozial structure, culture, economics, politics
+Each level shapes the individual and each feeds back into the others.
+** Emile Durkheim - Theory of Socialization
+Durkheim frames socialization with a Hobbesian reference point: without rules and norms, humans would be in permanent civil war. Social units only become stable when external constraints are internalized rather than merely imposed from outside.
+This internalized set of shared values is the collective consciousness (Kollektivbewusstsein) - equivalent to Durkheim's faits sociaux - which exerts moral pressure on actors.
+The human being has a dual structure in tension:
+- Drives and needs: the biological impulsive side
+- Morality, sociality, norm-consciousness: the social rule
+  Socialization (socialisation méthodique) is the process by which a human becomes a genuinely social being, learning to navigate and internalize the collective moral order.
+** Sigmund Freud - Psychoanalysis
+Freud offers an intrapsychic personality model with three agencies in dynamic tension:
+- The Id (Es): The reservoir of human drives; operates on the pleasure principle; a "cauldron of excitation" seeking satisfaction at all costs.
+- The Ego (Ich): The person navigating reality; develops in early childhood; regulates relationships with the external world through perception, control of motor processes, and reflective thought. It also displaces suppressed needs into the unconscious, where they may resurface later in life as conflicts or pathologies.
+- The Superego (Über-Ich): Morality and values; internalizes parental and societal norms. Functionally similar to Durkheim's collective consciousness.
+A successful socialization process achieves a good balance between all three: Id, Ego, and Superego. A failed one neglects one of the three poles, producing either a person enslaved to drives or one crushed under excessive moral constraint.
+** Erik Erikson - Psychosocial Development
+Erikson extends Freud by incorporating the social environment as an active force throughout the entire lifespan. Socialization is not something that happens in childhood and is then complete, it is a lifelong process of managing psychosocial crises. Each stage presents a tension that must be resolved
+*** Year 1
+- Tension: Basic trust vs. basic mistrust
+- Self-formula: I am what I am given
+*** Year 2-3
+- Tension: Autonomy vs. shame and doubt
+- Self-formula: I am what I will
+*** Year 4-6
+- Tension: Initiative vs. guilt
+- Self-formula: I am what I can imagine becoming
+*** Year 6-puberty
+- Tension: Industry vs. inferiority
+- Self-formula: I am what I learn
+*** Adolescence
+- Tension: Identity vs. identity diffusion
+- Self-formula: I am what I am
+The adolescent stage, is the most famous and pivotal, representing the peak moment of socialization and the formation of a coherent self. The later stages address what one can contribute to and pass on to others, and finally, whether one can look back on one's life with acceptance.
+*** Early Adulthood
+- Tension: Intimacy vs. isolation
+- Self-formula: We are what we love
+*** Adulthood
+- Tension: Generativity vs. stagnation
+- Self-formula: I am what I am willing to give
+*** Mature Adulthood
+- Tension: Ego integrity vs. despair
+- Self-formula: I am what I have made my own
+** Behaviorism
+Behaviorism shifts attention entirely to observable behavior and external stimuli, bracketing inner mental states. Learning, and therefore socialization, is explained through conditioning.
+*** J.B. Watson - Learning through conditioning
+demonstrated learning through conditioning in two famous cases:
+- Little Albert: a child was shown animals and objects, then exposed to a jarring noise simultaneously. The child soon showed fear responses to the objects alone, and crucially, this conditioning could not be undone.
+- Pavlov's dog: a bell was rung each time food was given. Eventually the bell alone triggered salivation, a new stimulus-response link had been established.
+*** Thorndike - Trial and error learning
+showed trial-and-error learning: animals discovered that pressing a lever produced food, and repeated the behavior.
+*** Bandura - learning through imitation
+emphasized learning through imitation, observation and modeling of others' behavior, without direct reward or punishment.
+*** Summary of behaviorism
+Behavioral change is explained through external (social, societal) stimuli that become linked to behavioral templates, forming habits and internal behavioral changes. Its main sociological representative is G.C. Homans. Its main weakness is the difficulty of transferring laboratory experimental conditions to real social life.
+** Jean Piaget - Cognitive and Moral Development
+Piaget maps development across two parallel tracks:
+*** Cognitive development
+How children come to perceive and understand the world:
+1. Sensorimotor phase (age 0-1.5): Coordination of motor skills and engagement with objects
+2. Preoperational phase (age 1.5-7): Lack of object permanence; objects represented through symbols and language
+3. Concrete operational phase (age 7-11): Logical principles recognized and applied; rational thinking emerges
+4. Formal operational phase (age 11+): Logical principles generalized; abstract and hypothetical thinking
+*** Moral development
+Piaget defined morality as a system of rules, with the core of ethics lying in the respect an individual has for those rules. Using rule-games such as marbles, he studied how children of different ages understand whether rules are heteronomous (imposed from outside, unchangeable) or autonomous (self-determined, open to negotiation). Young children treat rules as sacred and eternal; older children understand them as social agreements.
+** Lawrence Kohlberg - Stages of Moral Development
+Kohlberg extended Piaget's moral work using moral dilemmas, hypothetical situations where two norms conflict (e.g. the prohibition on stealing versus the duty to save a life, the famous Heinz Dilemma). He presented these to children and adolescents and categorized their reasoning into developmental stages, from obedience to punishment avoidance, through social conformity, up to principled reasoning based on universal ethical values.
+** George Herbert Mead - The Social Constitution of the Self
+Mead offers perhaps the most distinctly sociological account of identity formation. He claims that
+- Humans attribute meaning to every act of communication; they grasp intentions and significance
+- The individual attempts to take the perspective of whoever they are communicating with: taking the attitude of the other
+- This produces role-taking, anticipating the other's expectations and reflecting on one's own communication in light of them
+- Two key social others shape socialization: the significant other (concrete, close relationships) and the generalized other (the internalized perspective of society as a whole)
+- Language is central, it is the medium through which all of this happens
+Mead also distinguished two dimensions of the self:
+- I (subject-I): the spontaneous, active, creative side of personality.
+- Me (object-I): the self as it emerges through role-taking and interaction - the social self that knows how it appears to others.
+** Summary
+- Durkheim: internalization of collective norms (collective consciousness)
+- Freud: Dynamic between drives, ego and morality (Id, Ego, Superego)
+- Erikson: Lifelong resolution of psychosocial crises (Eight stages of development)
+- Behaviorism (Watson, Bandura): Conditioning and imitation
+- Piaget: Cognitive and moral stage progression (Heteronomy -> Autonomy)
+- Kohlberg: Moral reasoning through dilemmas
+- Mead: Identity through interaction and role taking (I/Me, generalized other)
+The overarching conclusion: interaction, cooperation, and language are constitutive of the essential structures of human subjectivity and identity. The self is not given, it is made, socially, through a lifelong process of engagement with others.
+* 6 Situation und Interaktion
+** Motivation
+Culture provides the meaning-framework that orients action. Action is the foundational concept of sociology. The human being is defined by its detachment from pure nature. Cooperation is the basic characteristic of social life. And socialization is the active process through which individuals engage with society.
+All of this converges on a central sociological task: analyzing situations, how they are structured, how people act within them, and how the interactions between people produce order.
+** The Dyad and Mutual Uncertainty
+The most elementary unit of social interaction is the dyad: two people in a situation together. The defining feature of this situation is mutual uncertainty: neither party knows exactly what the other is thinking, intending, or expecting. A job interview is a good example, both sides operate with an unspoken, implicit "understanding" of the situation, without it ever being spelled out.
+** The Thomas Theorem
+People do not act on the basis of objective reality as it is, but on the basis of how they interpret that reality. This is captured in the Thomas Theorem: "If we define a situation as real, it is real in its consequences."
+** Definition of a Situation
+A situation has three layers:
+- The objective conditions of action: what is actually there
+- Motives, intentions, attitudes: the actor's internal representations of those conditions
+- The subjective interpretation of the situation: how the actor reads the objective conditions through the lens of their own attitudes
+The result is action with real consequences, even if the interpretation was mistaken. This is a profoundly sociological insight: reality is not simply given, it is actively defined
+** Goffman - Is There Order to Situations?
+Goffman identifies four dimensions of uncertainty that every actor faces in interaction:
+- How do I present myself? - self-protection
+- How do I manage everyday situations? - goal achievement
+- How do I deal with rules? - the annoyance of society
+- How do I organize living together? - identity formation
+Interaction always confronts the individual actor as both an interpretive and a coping challenge. Situations can take several structural forms:
+- Failed interaction -> Parties talk past each other
+- Hierarchical interaction -> One party sets the terms, the other responds
+- Conflicting interaction -> Both parties pursure incompatible goals
+- Successful interaction -> A shared goal is pursued cooperatively
+** One-Sided Theories: Individualistic Action Theories
+These approaches explain interaction from the perspective of a single actor, without fully incorporating the mutual constitution of meaning.
+*** G.C. Homans - Utilitarian Tradition
+Homans explains social behavior through five hypotheses, all grounded in a reward-cost logic:
+1. Stimulus hypothesis: a past stimulus that led to reward will elicit the same behavior again
+2. Success hypothesis: behavior that has been rewarded will be repeated
+3. Value hypothesis: the more valuable the reward, the more likely the behavior
+4. Satiation hypothesis: the more recently a reward has been received, the less valuable it becomes
+5. Justice hypothesis: people expect their rewards to be proportional to their costs; perceived injustice produces anger
+*** Max Weber - Interpretive, Hermeneutic Tradition
+Weber's approach centers on the subjectively intended meaning of action. Before his four action types, a methodological note: Weber works with ideal types, theoretical models of reality, defined in advance and applied hypothetically. They are not descriptions of what really happens, nor normative prescriptions. They are deliberate idealizations that must be tested against reality.
+The four ideal types of action:
+1. Instrumentally rational (zweckrational): Action oriented toward calculated goals, using others' behavior and external conditions as means or constraints
+2. Value rational (wertrational): Action driven by conscious belief in the intrinsic value of a certain conduct (ethical, aesthetic, religious) regardless of its consequences
+3. Traditional: Action determined by ingrained habit; a borderline case of meaningful action: "a dull, habitual reaction to familiar stimuli"
+4. Affectual: Action oriented by current emotional states; can be uninhibited reaction to an extraordinary stimulus
+Weber also defines social relationships as: "a situation where the behavior of multiple persons is mutually oriented toward each other in its meaningful content." A social relationship exists solely in the probability that a certain form of social action will occur — whatever that probability rests on.
+** Reciprocal Theories: Mutual Constitution of Meaning
+These approaches insist that meaning, action, and identity are not properties of individual actors but emerge between them.
+*** Mead & Blumer - Symbolic Interactionism
+Three core premises:
+1. Human beings act toward things on the basis of the meanings those things have for them, e.g. a tree can be a research object, a site of memory, a symbol of love
+2. Meaning is neither inherent in objects nor purely psychological, it arises from intersubjective contexts: social experience, tradition, socialization
+3. Meaning is not fixed, it is handled and modified through interpretation as actors engage with the world
+The foundation is not the individual act or actor, but the interaction between persons. This makes symbolic interactionism a genuinely dialogical theory of action.
+*** Erving Goffman - Dramaturgical Interactionism
+Goffman defines social interaction in a precise sense: it occurs only in social situations where two or more individuals are physically co-present in such a way that they can react to each other.
+Physical co-presence is a structural feature with real behavioral consequences:
+- Expectation pressure: you must respond, a glance, a smile cannot be simply ignored
+- Communication compulsion: co-presence triggers social identification, classifying your interaction partner through appearance, clothing, voice. This carries the risk of stigmatization, a discrediting attribute can define the entire interaction
+- Attentional focusing: the interaction becomes thematically structured
+- Mutual perception: you perceive the other perceiving you, a double loop of awareness
+- Vulnerability: the body is an address for attack
+- Image management: you must represent yourself and control the information you emit, some behavior is controllable (speech, posture, expression), some is not (blushing)
+Goffman famously compares interaction to a theatrical performance on a social stage:
+**** Front stage (Vorderbühne)
+The space of performance and official conduct. Here one controls self-presentation because one is seen. The goal is neither moral (true/false) nor normative (good/bad), it is about managing the situation and influencing others. Actors draw on an expression reservoir across three dimensions:
+- Spatial: apartment, bar, office - the setting
+- Personal: status symbols, clothing, facial expression
+- Social: expectations, role patterns
+**** Back stage (Hinterbühne)
+The space of informality and confidentiality. Here one is unobserved and relieved of the pressure to fulfill expectations. The backstage is where the performance is prepared, relaxed, and dropped.
+** Summary
+- Thomas - Situational analysis: Reality is what actors define it to be
+- Homans - Utilitarian: Behavior follows reward-cost calculations
+- Weber - Interpretive: Action is meaningful; four ideal types
+- Mead/Blumer - Symbolic interactionism: Meaning emerges from interaction, not from individuals
+- Goffman - Dramaturgical: Interaction is performance; physical co-presence structures all social life
+The central insight threading through all of these: social order is not a given, it is continuously produced through situations, interpretations, and interactions. Society is not a backdrop to human action; it is the ongoing result of it.
+* 7 Rolle, Habitus und Normen
+** Motivation - How is Social Order Possible?
+The lectures so far have established that human action is fundamentally cooperative, embedded in cultural meaning-frameworks, and shaped by socialization. But this raises a structural puzzle: if we start from the individual, how does stable social order emerge and persist? What prevents the constant mutual uncertainty of interaction from collapsing into chaos?
+The answer lies in three interconnected concepts — positions and roles, norms, and habitus — each of which captures a different mechanism through which society stabilizes itself.
+** Position and Role
+Sociology's core insight here is that individual action carries an objective meaning that need not coincide with the actor's subjective intentions. We do society while simply going about our lives.
+The individual is located in society through positions — places within a field of social relationships that define one's relationship to others. A person occupies many positions simultaneously: parent, employee, neighbor, club member. Some positions are ascribed — given by birth, culture, or circumstance, and not freely chosen. Others are achieved — attained through effort and merit. Not all positions are equally accessible; structural constraints always limit the range of positions available to any given individual.
+Every position carries behavioral expectations — and these expectations, taken together, constitute a social role. Roles are not fixed forever; they are socially constructed and historically variable. The role of father today looks very different from what it looked like fifty years ago. But at any given moment, roles exert real pressure on actors.
+
+Parsons captures this formally: a role is a sector of an actor's total orientation system, organized around a particular interaction context and integrated with a specific set of value-standards governing interaction with others in complementary roles. In simpler terms: a role is a bundle of behavioral expectations attached to a position, steered by norms, and enforced through positive and negative sanctions.
+
+Dahrendorf adds three important clarifications. Roles are independent of each other — they can be learned, and in many cases must be learned through socialization. Their content is pre-determined by society — given from the outside, though changeable over time. And they oblige their bearers — they are socially monitored, and deviation is punished while conformity is rewarded.
+
+The expectations attached to any role can be ranked by their bindingness:
+- Must-expectations carry legal or quasi-legal force — violation results in formal punishment.
+- Should-expectations carry social force — fulfillment earns sympathy, violation risks social exclusion.
+- Can-expectations are optional — fulfillment earns appreciation, non-fulfillment produces mild disapproval at most. A club treasurer, for instance, is legally obligated to handle finances honestly, socially expected to participate actively in club life, and merely appreciated if they volunteer to collect funds.
+Roles serve a crucial integrative function: they mediate between society and the individual, providing the predictability that makes sustained interaction possible.
+** Norms
+René König's definition: "Norms in the sociological sense are rules that actually determine behavior in a given circle and about which there exists an agreement that may be more or less explicit."
+Norms are the mechanism through which roles are secured. They are socially binding behavioral rules that act on individuals from outside, are backed by sanctions, and generate expectations about others' behavior. Importantly, norms change over time — driven by those who deviate from them and seek to reshape them. The feminist transformation of gender roles is a clear historical example.
+Norms can be collective or individual, explicit or implicit, and they range from formalized legal rules to informal customs and conventions. Three dimensions of norm-consciousness help distinguish how norms actually operate:
+- Orientation knowledge — knowing what the norms are and what sanctions attach to them. Norms serve as guides in specific situations: knowing how to behave in a job interview, for instance, is a form of orientation knowledge.
+- Realization knowledge — knowing how the validity of the norm is secured and guaranteed. This concerns the mechanisms of enforcement, not just the content of the rule.
+- Legitimacy belief — the sense of bindingness; the degree to which an actor accepts the norm as genuinely valid for themselves. This depends on context (is the norm general or particular? who benefits — the individual or society as a whole?) and on who is in play: the norm-sender who articulates and represents the norm, the norm-guardian who monitors compliance (like a police officer), and the norm-setter who establishes new norms as an innovator.
+** Beyond the Role: Habitus
+The role concept is powerful, but it faces serious objections that motivate Bourdieu's alternative.
+- First critique: roles cannot capture the unity of identity. The role framework pictures the individual as a homo sociologicus — a passive recipient of external expectations who switches between roles depending on context. But this is psychologically implausible. People are not machines that slot cleanly into one role and then another. They are reflexive actors with an identity that persists across roles. Contradictions between roles are experienced as genuine tensions, not merely logical inconsistencies. And as Mead showed, identity is constituted through interaction and socialization — it is not a byproduct of role-playing but something more fundamental.
+- Second critique: the role concept is purely mental — it ignores the body. Roles are cognitive and mental constructs. But social experience is also carried in the body — in posture, gesture, gait, accent, physical ease or discomfort in different settings. This embodied dimension of social life escapes the role framework entirely.
+- Third critique: roles understate the social conditioning of human agency. The role framework can suggest a more voluntaristic picture than is warranted — as if actors simply perform roles they have chosen. In reality, social conditions deeply shape what actors can even conceive of doing, let alone actually do.
+** Bourdieu's Alternative - The Habitus
+The habitus is Bourdieu's response to all three critiques. Defined most precisely: the habitus is a system of internalized, durable dispositions that determine perception and action — a structuring structure that generates social practices, and simultaneously a structured structure that contributes to the reproduction of the social conditions that produced it.
+It works on two temporal registers: as modus operandi (the way we act now) and as modus operatum (the sediment of how we have acted in the past). Past experience is not just remembered — it is incorporated, stored in the body and in pre-reflective habits of perception and response.
+The habitus weaves together collective social conditions and individual biography. It is acquired primarily in early childhood, through the family and immediate social environment, and it operates largely below the level of conscious awareness. This is why it is so durable — it is not a set of beliefs one can simply revise upon reflection, but a set of dispositions written into the body and into the most basic frameworks of perception.
+The class habitus illustrates this concretely. Bourdieu observes systematic differences across social classes:
+The bourgeois habitus is characterized by eloquent language, self-assurance, a drive toward power and success, and a conscious demarcation from other groups. The middle-class habitus centers on ambition, discipline, and diligence — striving upward. The working-class habitus tends toward subordination and adaptation to existing conditions.
+These are not simply cultural preferences — they are embodied orientations toward the social world that were acquired through lived experience in particular social positions and that now reproduce those positions by shaping what actors notice, want, attempt, and expect of themselves.
+*** Five Assumptions of Habitus Theory
+- Incorporation: the habitus is a piece of internalized society, taken into the body through socialization processes. Society does not just shape our minds — it shapes our bodies.
+- Unconsciousness: the habitus operates as a system of dispositions that guides practical strategies below the level of conscious deliberation. We do not decide to hold ourselves in a particular way or speak with a particular cadence — we simply do.
+- Strategy: despite operating unconsciously, actors nonetheless pursue their own interests within the space the habitus opens up. Agency is not eliminated — it is structured.
+- Stability: because it is acquired in early childhood and is incorporated rather than merely believed, the habitus tends to remain stable over time. It is resistant to deliberate change.
+- Change: nonetheless, radical experiences can transform the habitus — though never totally and never instantly. Bourdieu's own biography is instructive: the son of a postman who became one of the world's most celebrated sociologists underwent a genuine habitus transformation — but it was the result of a long and often painful process of navigating between two social worlds.
+** Summary
+- Position: Locating individuals in a field of social relationships
+- Role: Bundle of behvaioral expectations attached to positions
+- Norms: Rules that secure roles and behavioral expectations through sanctions
+- Habitus: Embodied, durable system of dispositions that structures perception and action
+- I/Me: Reflexive self constituted through interaction and role-taking
+Roles and norms explain how society stabilizes itself through external expectations and sanctions. The habitus explains how those external structures become internal — written into the body, operating below consciousness, and reproducing social conditions across generations. Together, they account for the remarkable stability of social order without reducing individuals to mere puppets of the system.
+* 8 Werde und Institutionen
+** Kluckhohn - Definition of Values
+Values operate on multiple levels simultaneously. Generally, values are:
+- Conscious or unconscious conceptions of the good and the right
+- Culture or group-specific phenomena, they vary across societies and communities
+- Individually: directed toward the satisfaction of needs
+- Socially: they promote the integration of social units, the loss of shared values produces anomie
+- Contextually: they provide orientation for behavior
+
+Kluckhohn's definition captures this neatly: a value is a conception (explicit or implicit) of the desirable, which influences how actors select from available modes, means, and ends of action.
+
+A cultural value specifically is socially sanctioned, culturally typified, and psychologically internalized. It has both an objective dimension (its significance within the cultural system) and a subjective dimension (its significance within an individual's personality structure).
+
+** Inglehart - Value Change
+Ronald Inglehart distinguishes two broad value orientations:
+- Materialism: Centered on physical and security needs: survival, order, economic stability.
+- Post-Materialism: Centered on social and self-actualization needs: belonging, recognition, aesthetic and intellectual fulfillment.
+
+Two foundational hypotheses underpin this framework:
+- Scarcity hypothesis: people prioritize what is in short supply. Those who grew up in deprivation value material security above all.
+- Socialization hypothesis: basic value orientations are formed in the formative years of youth and remain stable throughout life.
+
+This maps to Maslow's hierarchy of needs, as lower-level needs are reliably met, higher-level values become dominant.
+*** Historical Context (1950-2000)
+The generation that experienced war and material deprivation carried strong materialist values into the postwar decades. The drive for consumption, stability, and order made sense given what they had lived through.
+
+But the generation that grew up in postwar prosperity, with basic needs met, gradually shifted toward post-materialist concerns.
+
+The 1968 protests crystallized this shift: peace, self-determination, and social equality moved to the center, displacing the purely material values of the previous generation.
+** Helmut Klages - Value Synthesis, Not Value Decline
+Klages explicitly rejects the common diagnosis of value decay. What is happening, he argues, is not the disappearance of values but their reorganization.
+
+The negative diagnosis (what critics see):
+- Dissolution of normative bonds in social behavior
+- Decline of discipline and willingness to work
+- Erosion of parliamentary democracy
+
+The positive diagnosis (what Klages sees):
+- Increased participation in political life
+- Greater willingness to accept marginalized groups
+- Readiness for individual sacrifice when values are at stake
+
+His 2005 analysis identifies three value dimensions — duty values, hedonistic-materialist values, and idealistic self-development — and maps the German population onto five types:
+- 23% Conventionalists: High duty values, low self-development
+- 10% Resigned: All values low
+- 30% Active realists: All values high
+- 17% Hedonistic materialists: High self-development, other values low
+- 20% Idealists: High idealistic self-development, other values low
+The largest group (active realists) combines a strong work ethic with genuine self-actualization values, suggesting that the supposed conflict between duty and freedom is often a false dichotomy.
+** Definition of Institution
+Institutions are two things simultaneously:
+- Concretizations of general values and guiding ideas. They give actors orientation and behavioral patterns, and together they represent and structure the basic social order
+- Stabilized, internalized behavioral patterns and meaning-structures with a regulating and orienting function
+The key word is durability: institutions persist. They are not just rules agreed upon today and abandoned tomorrow, they are patterns that have been internalized through socialization and reinforced through repetition.
+** Freedom and Formation
+Institutions sit at the intersection of two fundamental tensions:
+- Action dimension: they both relieve individuals (you don't have to reinvent every situation from scratch) and stabilize behavior
+- Order dimension: they satisfy systemic requirements and maintain social stability
+Without institutions, every interaction would require negotiation from zero. With them, the social world becomes navigable, but at the cost of constraint.
+** Four Analytical Dimensions of Institutions
+1. The Rule Aspect: Institutions are based on rules. Rules express underlying value orientations — what is considered important and worth regulating. Institutions emerge through their relationship to values or guiding ideas (culture), realize those values, and define the action framework within which the rules apply.
+2. The Validity Aspect: For rules to work, they must be recognized. An actor accepts a rule's validity for themselves — either because it is efficient and useful, because it has become habitual, or because it seems simply and obviously correct. This dimension specifies the concrete interaction order within which rules operate.
+3. The Motivation Aspect: Accepting a rule's validity does not automatically mean following it. Actors have their own goals, and institutions can become ends in themselves rather than means. The motivation aspect asks: what actually drives behavioral compliance?
+4. The Sanction Aspect: Institutions are backed by sanctions — positive (rewards for compliance) or negative (punishment for violation). Without enforcement mechanisms, rules remain wishes.
+** Theoretical Approaches to Institutions
+*** Gehlen - Anthropological tradition
+The anthropological tradition starts with the premise that humans are Mängelwesen: beings of biological deficiency who arrive in the world without any special organs, instincts or fixed behavioral patterns like animals. Because of this openness, humans are overwhelmed by the sheer volume of descisions and stimuli the world presents.
+
+Institutions solve this problem by providing relief, they take decisions off the table, transforming what would otherwise require delibiration into routine. From this perspective, institutions are a cultural achievement, they emerge through repitition and rationalization and they are what make human life in this world bearable at all.
+*** Mead, Bourdieu, Berger, Luckmann - Constructivist tradition
+The constructivist tradition approaches institutions from the angle of meaning-making and social identity. Since the self is always socially mediated, institutions are not external impositions on individuals but the very medium through which shared action and shared identity become possible.
+
+Berger and Luckmann trace the process in detail: repeated actions become habitual, habits become typified into roles nad patterns, these patterns are then externalizedd as if they existed independently of any individual, and finally they are internalized by new generations who encounter them as simply the natural order of things. 
+*** Durkheim, Malinowski, Schelsky - Functionalist tradition
+The functionalist tradition asks what work institutions do for society as a whole. The answer is that they secure basic human needs and maintain social cohesion. Without institutions regulating reproduction, the transmission of knowledge, economic exchange and collective meaning, societies could not persist.
+
+Institutions are not accidents of history but responses to enduring functional requirements, and their persistence is explained by the fact that they continue to fulfill those requirements across generations in a kind of self-reinforcing cycle.
+*** Parsons, Luhmann - Systemic tradition
+The systemic tradition operates at the highest level of abstraction, treating society less as a collection of individuals than as a self-reproducing system of differentiated subsystems: law, economy, politics, eduction etc.
+
+Institutions exist to regulate the boundaries and exchanges between these subsystems. They are not primarily about individual needs or shaared meaning but about the functional differentiation that allows modern complex societies to operate without collapsing under their own complexity.
+** Goffman - Total Institutions
+Goffman identified a limiting case of institutional life, the total institution, in which the institution does not merely orient life but encompasses it entirely. Examples:
+1. Care homes for those deemed incapable and harmless
+2. Care institutions for those unable to look after themselves who may pose an unintentional threat (hospitals, tuberculosis sanatoriums)
+3. Institutions protecting the community from danger (prisons, internment camps)
+4. Institutions designed to carry out work-like tasks more efficiently (barracks, boarding schools, ships)
+5. Retreats from the world (monasteries, abbeys)
+Definiing characteristics of total institutions:
+- Sharp boundary with the outside: the institution is a world itself
+- Dissolution of the usual seperation between sleeping, working and leisure, all domains of life take place in the same location under the same authority.
+- Division into two worlds: inmates and staff, a fundamental asymmetry
+- Civil death: the inmate is stripped of rights and prior identity
+- Admission procedure: A systematic process of humiliation and degradation, photographing, weighing, loss of personal belongings, body searches. The removal of identity equipment, the objects and markers through which a person recognizes and presents themselves.
+- Uniformization: new clothing, someimes shaving, the erasure of individual markers
+- Destruction of the formal relationship between the acting individual and their actions, what you do no longer belongs to you in the normal sense.
+Total institutions typically suppress all forms of self-determination and autonomy. They are the extreme pole of institutional life, where the regulating function of institutions tips over into the complete subordination of the individual self.
+* 9 Soziale Kontrolle und Abweichung
+** Motivation
+From the very beginning, sociology has been preoccupied with how societies change and how they resist change. The discipline's founding figures each offered a narrative:
+- Comte: society passes through three stages of intellectual development
+- Marx: history is driven by class struggle
+- Durkheim: modernization is a transition from mechanical to organic solidarity
+- Weber: modernity is the product of rationalization processes
+- Elias: civilization is a long term process of affect ccontrol and state formation
+What unites these accounts is attention to the relationship between social structure and culture, between the objective conditions people live in and the values and meanings through which they interpret those conditions.
+** Anomie and Social Change
+In this lecture we study a fundamental tension in social life. On one side we have culture: shared values, goals, motivational frameworks, and on the other side we have social structure: the norms actually in form and the real opportunities people have to realize those goals.
+
+When the two align, social life runs smoothly. When they diverge, anomie sets in: a condition in which the rules are no longer clear, shared goals feel unattainable through legitimate means, and the social fabric begins to fray. This gap between cultural aspiration and structural possibility is the engine of both deviance and social change. How individuals and groups respond to that gap, whether through acceptance, adaptation, withdrawal or rebellion, is what Merton's Typology maps
+** Merton - Typology of Individual Adaptation
+Robert K. Merton argues that social control is not simply a matter of fixed norms or institutions, it is elastic and variable, operating across a spectrum of mechanisms. Deviant behavior is best understood not as individual pathology but as a symptom of the gap between culturally prescribed goals and the socially structured means available to reach them.
+
+He defines the key terms precisely: the cultural structure consists of shared values that orient and regulate behavior, the social structure consists of the social relationships and opportunity structures within which members of society actually operate. Anomie occurs when these two break down relative to each other.
+
+From the combination of accepting or rejecting both goals and means, five types of adaptation emerge:
+- Conformity: both cultural goals and institutional means are accepted. This is the most stable configuration; it maintains social order. The conformist has internalized society's objectives and plays by the rules.
+- Innovation: the cultural goals are accepted but the legitimate means are rejected or unavailable. This is the most common form of deviance, and Merton sees it as structurally produced: when people want what society tells them to want but lack the resources to get it legitimately, they find alternative routes. It tends to manifest more in lower social strata precisely because the gap between aspiration and opportunity is widest there.
+- Ritualism — the goals are abandoned but the institutional means are retained through habit. The ritualist no longer genuinely believes in what they are doing, but keeps following the rules out of routine. Associated with the lower middle class — stagnation without open rebellion.
+- Apathy / Retreatism — both goals and means are rejected. The retreatist withdraws from the game entirely, perceiving themselves as an outsider with no viable path forward. Usually the result of accumulated negative and frustrating experience.
+- Rebellion — both goals and means are rejected and substituted with alternatives. Unlike retreatism, the rebel actively seeks to establish new norms and a different social order. This is the adaptation most closely associated with potential social change
+** Application at the Micro Level - Truancy
+The school system makes a useful case study because it has clearly defined cultural goals (educational success, and through it, economic wellbeing) and clearly defined institutional means (attendance, grades, qualifications). The connection between social class and educational achievement — documented in studies like PISA — makes the structural dimension visible: access to the legitimate means of success is unequally distributed.
+Merton's five types map onto student behavior as follows:
+- The conformist student has genuinely internalized the goal of educational success and accepts schooling as the legitimate path to it — they attend, engage, and perform.
+- The innovating student (active truancy) still accepts the goal of success but lacks or rejects the institutional path — perhaps due to socioeconomic disadvantage, they seek alternative routes (side jobs, or in extreme cases, illegal activities). Truancy is a byproduct of looking for other means to the same end.
+- The ritualist student (passive truancy) attends school out of habit or obligation but has stopped believing in its purpose. They are physically present but mentally absent — going through the motions without investment.
+- The apathetic student (school refusal) rejects both the goal and the means entirely. They see no point and no path. This typically follows a history of frustration and failure, producing a perception of oneself as a permanent outsider.
+- The rebel student truants as an act of protest — actively expressing dissatisfaction with the educational system itself, its goals, or its means. This may also include parent-initiated truancy on ideological, religious, or pedagogical grounds.
+** Lepsius - Application at the Macro Level, Immobilism in Southern Italy
+Lepsius turns the anomie framework toward a larger puzzle: why do some societies not change, even when the conditions for change exist and the gap between cultural aspiration and structural reality is enormous?
+
+The situation: for decades, political efforts to stimulate development in the agricultural south of Italy have met with persistent resistance. Rather than innovation or rebellion producing change, what prevails is stagnation and resignation.
+
+The structural diagnosis: the population lives in genuine poverty and hopelessness. The cultural ideal — a life free from existential threat — is perfectly clear. But the aspirational model is entirely urban, leaving no positive cultural concept of rural life that could serve as an alternative goal around which local development could organize. The gap between what is desired and what is structurally achievable is enormous — but it produces neither productive innovation nor sustained rebellion. Instead, the dominant responses are the ritualist and apathetic ones: endurance and withdrawal.
+
+The cultural worldview of Miseria: what stabilizes this system is a particular collective interpretation of poverty — the Miseria — which functions as a form of cultural fatalism. Suffering is understood not as a social mechanism that could be changed but as a pre-social fate, something that simply happens to people. This interpretive move dissolves the tension between ideal and reality: if your condition is fate rather than injustice, there is nothing to organize against.
+
+This worldview does something paradoxically important: it provides solidarity. The shared experience of degradation, interpreted as collective fate rather than individual failure, creates a kind of equality — we are all in this together, and none of us is personally to blame. That solidarity is then ritualized and taught, and it becomes a cultural prohibition against deviant behavior — against anyone breaking ranks and trying something different.
+
+The result is what Lepsius calls socio-cultural immobilism: neither social innovations nor cultural innovations manage to change the system. Occasional peasant uprisings remain protests rather than political movements with transformative goals. The only genuinely successful escape route is emigration — and the fact that emigrants succeed elsewhere demonstrates that the problem is structural and cultural, not personal.
+
+The key analytical point: this case shows that anomie does not automatically produce change. Ideas — not just interests — matter enormously. When a collective worldview reinterprets structural deprivation as destiny, it removes the cognitive and motivational preconditions for sustained reform. The same gap between cultural ideal and social reality that elsewhere might fuel innovation or rebellion here produces resignation and stability.
+** Summary of Concepts
+- Anomie: Gap between cultural goals and structural means - the engine of deviance and change
+- Conformity: goals and means both accepted, social stability
+- Innovation: Goals accepted, means rejected, strucutral inequality produces deviance
+- Ritualism: Goals abandoned, means retained, stagnation through habit
+- Retreatism: both rejected, withdrawal and self-exclusion
+- Rebellion: Both rejected and substituted, potential for social change
+- Southern italy: Anomie without change, fatalist worldview stabilizes structural deprivation
+The overarching lesson is that deviance is not primarily a moral or psychological category but a structural one. Where people stand in relation to society's goals and their access to legitimate means largely determines how they respond — and whether those responses reproduce the existing order or begin to transform it.
+* 10 Soziale Gruppe
+** Motivation
+This lecture builds on everything covered so far. The course has moved through the anthropological foundations of human action, the structural and cultural contexts that shape it (roles, norms, values, institutions, socialization), the dynamics of interaction in dyads and triads, and the mechanisms through which deviance and social control operate. Now the focus shifts to the intermediate level that connects individual interaction with large-scale social structures: the social group.
+** Levels of Action - Interaction, Organizations, Society
+A core sociological insight is that not all social relationships are alike. They differ in duration, intensity, scope, and the degree of mutual orientation they involve. Two foundational thinkers frame this:
+
+Georg Simmel argues that "society" in any meaningful sense exists wherever several individuals enter into mutual interaction (Wechselwirkung). But this interaction can take enormously varied forms — from the fleeting association of strangers sharing a hotel lobby, to the casual arrangement of a walk together, to the deep and enduring bonds of family, guild, or state. All of these are comparable as forms of interaction, but they differ fundamentally in degree, duration, and the weight they carry in people's lives.
+
+Max Weber adds that what makes a relationship specifically social is that behavior is meaningfully oriented toward others. The content of that orientation can be almost anything — conflict, enmity, sexual love, friendship, religious devotion, market exchange. What matters is that there is a minimum of mutual meaningful reference. This requires, in turn, a hierarchical ordering of social relationships by duration, stability, and reach — not all connections are equally significant or equally lasting.
+
+The central thesis that follows: sociological analysis requires distinguishing between different levels of action and order.
+
+Three frameworks illustrate this:
+- Micro vs. Macro sociology — micro focuses on social interaction, individuals, and action-theoretical perspectives; macro focuses on large-scale processes, states, and structural transformations.
+- Social vs. System integration (Lockwood) — social integration concerns the relationships between acting individuals, asking whether these tend toward stability or conflict. System integration concerns the relationships between parts of a system — for example, how education, economy, and politics relate to one another structurally.
+- Luhmann's social systems — distinguished by their boundaries and self-selection mechanisms: the interaction system (based on physical co-presence and mutual perception), the organization system (based on membership and behavioral expectations — specific norms apply), and the society system (based on communicative reachability in the broadest sense).
+** Groups
+Groups occupy a specific position within this landscape — they are neither fleeting interactions nor large-scale organizations, but something with its own distinctive structure and dynamics.
+How do groups form? Several typical causes:
+- Geographical proximity — neighbors who regularly encounter each other
+- Inherited social contexts — children of friends who form their own friendships
+- Membership in organizations — kindergartens, schools, sports clubs that bring people into sustained contact 
+** Friedhelm Neidhardt's Definition
+Neidhardt offers the most precise sociological definition of the group:
+"A group is a social system whose meaning-context is determined by immediate and diffuse membership as well as relative durability"
+*** Internal structural features
+- Immediacy: groups are characterized by face-to-face contact, by direct emotional engagement and sympathy among members, and by ongoing communication and mutual perception. You know the people in your group as people, not as role-occupants or functionaries.
+- Diffuseness of relationships: group relationships are not limited to a single topic or purpose. Unlike a committee or a formal organization, a group involves the whole person across multiple dimensions of life. The relationship spills over its original context.
+- Relative durability: groups meet regularly, and this regularity secures a shared context of meaning over time. The group develops a history, shared references, and a sense of continuity.
+*** External structural features
+- Action pressure: external demands on the group produce internal role differentiation. Groups adapt their internal structure in response to what they are required or expected to accomplish.
+- Available action resources: the material means and human capital at a group's disposal shape what it can achieve and how it organizes itself.
+- Existing membership alternatives: the degree to which members have alternatives to belonging affects the group's internal cohesion. When exit is easy, commitment looks different than when the group is the only option.
+** Groups across the Life Course
+Groups are not equally important at all stages of life — their function shifts significantly as people age.
+- In youth, group experiences are central to identity formation and the development of individual subjectivity. The peer group serves as the primary vehicle for the separation from parents and the transition into adulthood. Cliques, friend circles organized around shared hobbies, and shared living arrangements all serve this function — peers replace family as the primary reference point.
+- In adulthood, partnerships and family become more significant. Groups take on a more chosen, purposive character — regular shared dinners, book clubs, political, religious, or cultural associations. The group is less about identity formation and more about sustaining meaningful connection alongside other commitments.
+- In old age, groups serve to cushion social isolation as children leave and professional life ends. They also open the possibility of new, intensive contacts. Old friendships are reactivated, new living arrangements such as multi-generational housing are explored, and care homes create involuntary but sometimes meaningful group life.
+** The Problem of Defining Groups
+A purely statistical understanding — grouping people by a shared characteristic, such as being red-haired, overweight, or pipe-smoking — captures something, but it excludes the social dynamic that makes groups sociologically interesting. Belonging to a category is not the same as being part of a group.
+The more useful definition: a group is a certain number of actors whose communication is characterized by a personal orientation among members. It is not the shared attribute that constitutes the group, but the mutual recognition of persons as persons.
+** Processes and Dynamics Within Groups
+Over time, groups develop distinctive internal dynamics that distinguish them from more formal or fleeting forms of association:
+- Individualization of perception — non-verbal communication (gesture, facial expression, tone) becomes increasingly significant as members come to know each other better. The group develops a fine-grained sensitivity to its members as individuals.
+- Personalization of action attribution — the person becomes more important than the role or position they occupy. In a formal organization, what matters is what role you hold; in a group, what matters is who you are.
+- Emotions as steering mechanisms — groups are regulated not primarily by rules or incentives but by emotional responses. A broad range of sensory and emotional impressions become possible, shaping how members relate, how conflicts are handled, and how solidarity is maintained.
+** Summary
+- Social relationship: Society exists wherever mutual interaction occurs; relationships differ in degree, duration and meaning
+- Levels of analysis: Micro/macro, social/system integration, interaction/organization/society
+- Group (Neidhardt): A social system defined by immediacy, diffuseness and relative durability
+- Group formation: Proximity, inherited contexts, organizational membership
+- Groups across the life course: Identity formation in youth, sustaining connection in adulthood, countering isolation in old age
+- Group dynamics: Personalization, emotional regulation, individualized perception over time
+The group sits at the heart of social life — it is the unit through which abstract societal structures become personally meaningful, and through which individuals find recognition, belonging, and the practical experience of social order.
+  
+* 11 Weber - Macht und Herrschaft
+** Definition
+Power means any chance to impose one's own will within a social relationship, even against resistance.
+- Power is not something you possess, it's something you exercise
+- It's an asymmetric social relationship
+- Modern society finds power morally uncomfortable, but sociology treats it neutrally
+** Wille und Widerstreben (Will and resistance)
+- Wille: The subordinate complies and enacts the intentions of another
+- Widerstreben: The subordinate could refuse: freedom to resist is a necessary precondition, whithout it, we're not talking about power.
+** Three forms of enforcing power:
+- Punitive power (Strafmacht): obedience through fear and sancitons
+- Reward power (Belohnungsmacht): obedience through incentives
+- Belief power (Glaubensmacht): obedience through manipulation and reinterpretation
+** How power emerges and stabilizes
+- Consensus: an external threat alters group behavior, creating coordination around a power center.
+- Authority: a relationship of recognized superiority: technical or moral, where directing others' behavior is seen as objectively justified (expertise, moral standing)
+- Superior force: actions that bring about compliance through physically tangible means, subdivided into: 
+- political violence: The states monopoly on legitimate violence and 
+- ideological violence: Control over thought and beliefs
+** Heinrich Popitz - Processes of Power Formation
+Power forms most clearly in closed social systems (prison camps, ships, boarding schools) where initial conditions are equal for everyone, the key processes are:
+- Capacity for organization
+- Solidarity and monopolization
+- Threat and violence
+** Weber - Domination (Herrschaft)
+The chance that a specific command will find obedience among specific persons. Unlike raw power, domination is stable and structures, distinguished by
+- A minimum willingness to obey on part of subordinates: not just forced compliance but some degree of internalized acceptance
+- Domination is typically triadic: ruler, administrative staff, those subjected
+- A belief in legitimacy: those subjected accept the domination as valid in some sense
+** Weber's three ideal types of legitimate domination
+- Rational-legal domination: based on belief in legality of established rules and right of those in authority to issue commands, e.g. modern bureaucracy.
+- Traditional domination: based on the belief in the sanctity of longstanding traditions, e.g. monarchy, patriarchy.
+- Charismatic domination: based on devotion to the extraordinary qualities of an individual, their heroism, character and the order they embody. Inherently unstable, as it depends on the leader's continued demonstration of exceptional qualities.
+* 12 Soziale Ungleichheit
+** Motivation
+The foundational premise of this lecture is deceptively simple but consequential: social inequality is socially produced and historically variable. It is not natural, not inevitable, and not fixed. Different societies produce different forms of inequality, and the same society produces different forms at different moments in history. This framing distinguishes the sociological approach from naturalistic or fatalistic accounts — inequality is a human achievement, which means it can in principle be otherwise.
+** Definition
+Three criteria define social inequality in the sociological sense:
+- First, it is grounded in specific social action — inequality does not simply exist as a brute fact but is produced and reproduced through what people do, how they relate to one another, and how social positions are allocated and defended.
+- Second, it involves social differentiation — the division of society into distinct units with different positions, resources, and life chances.
+- Third — and crucially — it requires that these differences are socially interpreted in ways that persistently disadvantage individuals or groups. Differences alone are not inequality. A difference only becomes socially significant when it is linked to a qualitative judgment, a hierarchical evaluation of social members. Height varies among people; it only becomes a source of inequality when height is treated as a marker of worth or capability. The interpretive step — the attribution of value — is what transforms difference into disadvantage.
+How does social inequality arise? The mechanism runs through roles and sanctions. People are carriers of roles, and role distribution is secured through positive and negative sanctions. Those who hold power can impose sanctions — and conformity to norms leads to higher social standing. Inequality is therefore inseparable from relations of domination.
+
+Sociologically, inequality can be treated along five dimensions:
+- As a structural principle that gives society its overall shape.
+- As a group-formation principle through which groups with distinct interests crystallize.
+- As a conflict principle, since unequal access to resources generates antagonism.
+- As a behavioral principle, since behavior is group-specific — this is precisely what Bourdieu's habitus theory captures.
+- And as a developmental principle, since the tensions produced by inequality can trigger social change.
+
+** Marx - Class Inequality
+Marx locates the root of social inequality in economic conditions of existence — specifically in income, property, and the ownership of the means of production. These conditions differentiate and divide people into distinct social units.
+Marx distinguishes two senses of class:
+- Class in itself (Klasse an sich) — a collection of people who share the same objective economic conditions. They form a class by virtue of those shared circumstances, whether or not they are aware of it.
+- Class for itself (Klasse für sich) — a class that has developed a shared consciousness of its own existence and interests as a class. This is the politically active form of class: people who not only share conditions but know they do, and who organize accordingly. The relationship between classes in this sense is one of hostile confrontation — class struggle.
+*** The Action-Structure Problem in Marx
+The deeper dynamic of society, for Marx, lies in the tension between productive forces (technology, labor power, knowledge) and relations of production and ownership (who owns what, who controls the process). Technical change drives rationalization, frees up labor (creating what Marx called the reserve army of the unemployed), and generates contradictions between overproduction on one side and underconsumption on the other. These contradictions produce economic crises, which in turn generate class consciousness and — ultimately — class struggle. Social change is driven from within the economic structure, through the conflict it necessarily produces.
+** Weber - Class and Status Inequality
+Weber accepts the importance of economic class but insists it tells only part of the story. He distinguishes two analytically separate dimensions of social inequality:
+- Class belongs to the economic sphere. It is determined by one's command over goods and qualifications, and by the ways these can be converted into income. Weber identifies three types of class: property classes (defined by what one owns), acquisition classes (defined by one's market position and skills), and social classes (broader groupings with some degree of shared mobility chances and life situations).
+- Status (Stand) belongs to the social sphere. It is mediated through positive and negative evaluations — of oneself and by others. Three factors determine status position: the style of life one leads, the educational tradition one has been formed by, and prestige derived from factors such as family lineage. Status is about honor and social recognition, not just economic position — and crucially, status groups tend to police their boundaries through shared lifestyles, exclusive social relationships, and the deliberate distancing from those deemed beneath them.
+The distinction matters because class and status do not always align. A nouveau riche capitalist may have significant economic power but low status among established elites. A declining aristocrat may retain high status despite reduced income. This non-coincidence is itself sociologically significant.
+** The Concept of Social Stratum (Schicht)
+Two complementary approaches to stratification complete the picture:
+- The objective concept of stratum defines position through measurable, external characteristics: prestige markers (particularly occupational prestige), income and wealth, educational attainment, and sociodemographic features. Social relationships within this framework tend to be stratum-homogeneous — people relate primarily to others at their own level.
+- The subjective concept of stratum focuses on how people understand their own position — their typical mentality, their behavioral orientations, their sense of where they stand. Similar economic interests and shared worldviews cohere into something like a subjective class identity: not just where you objectively are, but how you experience and interpret being there.
+** Summary
+- Social inequality: Socially produced, historically variable, requires interpretive hierarchization
+- Marx - Class: Defined by economic conditions; class for itself requires shared consciousness
+- Weber - Class: Economic sphere — command over goods and market position
+- Weber - Status: Social sphere — honor, lifestyle, prestige, educational tradition
+- Objective stratum: Measured by income, education, occupational prestige
+- Subjective stratum: How actors understand and experience their own social position
+The central achievement of this lecture is to show that inequality is not one thing but several — economic, social, and subjective dimensions that overlap but do not reduce to one another. Marx and Weber agree that inequality is structural and consequential; they disagree about whether its root lies exclusively in the economy or whether status and honor constitute an irreducible additional dimension. That tension between the two positions remains productive in contemporary sociology.
+* 13 Soziale Ungleichheit
+** Bourdieu - Sociocultural Class Theory
+Bourdieu's central claim is that class membership both determines and reveals itself through lifestyle. This is a significant theoretical move: inequality is not just about who earns what, but about how people live, what they consume, how they carry themselves, what they find tasteful or vulgar, what music they listen to, what sports they play. Culture is not separate from social structure — it is social structure, expressed in everyday practice.
+This requires a reconceptualization of social space. For Bourdieu, the social world is a multidimensional space structured along different forms of capital. Position in that space is not determined by a single axis (like income) but by the volume and composition of the various capitals one possesses.
+** The Forms of Capital
+- Economic capital is the most straightforward: income, wealth, property. It is the foundation of all other capital forms in the sense that it can, under the right conditions, be converted into them.
+- Cultural capital exists in three forms. Incorporated cultural capital is embodied — it is acquired through a slow process of internalization and is tied to the body: a cultivated manner of speaking, ease in high-culture settings, the physical bearing of someone who grew up surrounded by books and art. It cannot be bought directly or transferred overnight. Objectified cultural capital takes the form of cultural goods — paintings, books, instruments — which can be owned but whose full value requires incorporated capital to unlock. Institutionalized cultural capital consists of formal educational credentials — degrees and academic titles — which have grown enormously in significance in modern societies as the primary legitimate currency of intellectual worth.
+- Social capital is the totality of actual and potential resources that come from belonging to networks of relationships — whether formalized (membership in clubs, professional associations) or informal (knowing the right people). It is not just about who you know, but about what those connections make available to you.
+- Symbolic capital is in some ways the master concept: it is the form that any of the other capitals take when they are recognized and legitimized — when they generate prestige, honor, and social acknowledgment. Economic wealth becomes symbolic capital when it is seen as a sign of personal worth; cultural knowledge becomes symbolic capital when it is recognized as refinement rather than mere information.
+Crucially, the capital forms are convertible — directly (economic capital can purchase cultural goods or educational credentials) or indirectly (social networks can be converted into economic opportunities, cultural prestige can open professional doors). It is this convertibility that makes the system dynamic and allows social reproduction to operate through apparently non-economic channels.
+** Structuring Modern Capitalist Society
+Two variables jointly determine social position:
+- The total volume of capital — how much one has across all forms combined
+- The capital composition — the ratio of economic to cultural capital within that total volume
+Someone with high total capital but primarily economic (a successful entrepreneur) occupies a different position in social space — and develops a different habitus and lifestyle — than someone with equally high total capital but primarily cultural (an intellectual or artist). This is why Bourdieu's model is two-dimensional rather than a simple hierarchy.
+
+A third variable is the trajectory — the direction of movement across social space over time, whether one is rising or falling. A downwardly mobile member of the bourgeoisie and an upwardly mobile member of the middle class may occupy similar positions at a given moment but have radically different orientations toward the social world.
+** Class Structure
+Bourdieu maps the social space onto a triadic class model, but each class contains internal divisions:
+- The dominant class (Bourgeoisie) is characterized by high total capital volume. Within it, two fractions are distinguished. The dominant dominant fraction — entrepreneurs, managers, financiers — reproduces itself primarily through economic capital, sometimes inherited. The dominated dominant fraction — artists, intellectuals, academics — reproduces itself primarily through cultural capital. These two fractions are in tension with each other over what counts as legitimate value: economic success versus cultural distinction.
+- The middle class (Kleinbürgertum) has lower total capital and is defined by the struggle to rise. The old middle class — small traders and craftsmen — reproduces itself mainly through economic capital. The new middle class — the new service professions, those working in education, media, social services, and the cultural industries — reproduces itself primarily through cultural capital. This new middle class is particularly important for Bourdieu because it actively promotes and disseminates new cultural values, often serving as the taste-makers and lifestyle arbiters for the broader society.
+- The working class (beherrschte Klasse) has very low total capital of all kinds and is oriented primarily toward material survival. Its habitus reflects the conditions of necessity — practicality, solidarity within the group, and a distanced or hostile relationship toward the cultural distinctions cultivated by the classes above.
+The central sociological mechanism holding this all together is distinction (Distinktion): the process by which social groups use cultural practices to mark their difference from — and superiority to — those below them. Taste is never innocent; it is always simultaneously a social weapon.
+** Beck's Individualization Thesis
+Ulrich Beck starts from a paradox: the distribution of income and wealth in modern societies remains largely stable — inequalities have not significantly diminished. Yet the material living conditions of virtually everyone have improved substantially. How is this possible, and what does it mean for how we think about class?
+Beck's answer unfolds in four steps.
+1. First, de-traditionalization: the general improvement of living conditions has loosened people's ties to traditional institutions and communities. Church membership declines, lifelong careers in a single occupation become rarer, regional rootedness weakens. The social milieus and communities that once gave class its experiential texture — the working-class neighborhood, the religious community, the occupational guild — erode.
+2. Second, the elevator effect: rising prosperity functions as if society as a whole has taken an elevator upward. Relative positions remain the same — everyone is still on the same floor relative to everyone else — but the absolute altitude has increased for all. A working-class family today may live materially better than a middle-class family did two generations ago, even if the gap between classes has not closed.
+3. Third, social mobility and individualization: the diversification of life situations means that people's biographies become less predictable from their class position. More people move between social strata across their lifetimes, and within any given stratum, lives look increasingly different from one another. The traditional triadic class society — bourgeoisie, middle class, proletariat — loses its self-evidence as an organizing map of social experience.
+4. Fourth — and most consequentially — Beck argues that this produces an end to the hierarchy model of social inequality. The categories of class and status, as inherited from Marx and Weber, become insufficient to capture the lived reality of inequality in late modernity. People no longer primarily experience their lives as members of a class. Individual biography, personal risk, and chosen lifestyle take center stage. Inequality does not disappear — it becomes individualized, attributed to personal decisions and failures rather than structural position. This is both an empirical observation and, implicitly, a critique: individualization obscures the structural roots of inequality precisely by making it feel personal.
+** Summary
+- Bourdieu - social space: Society is structured by the volume and composition of multiple capital forms
+- Economic capital: Income, wealth, property — the convertible foundation
+- Cultural capital: Embodied, objectified, institutionalized — the non-economic currency of advantage
+- Social capital: Networks and relationships as resources
+- Symbolic capital: Recognition and prestige — legitimized capital
+- Distinction: Cultural practices as mechanisms of class demarcation
+- Beck - Elevator effect: Absolute conditions improve while relative inequalities persist
+- Beck - Individualization: Class experience fragments; inequality is privatized and personalized
+Together, Bourdieu and Beck represent two moments in the sociological understanding of inequality. Bourdieu insists that class is real, embodied, and reproduced through culture — that even the most apparently personal tastes are structurally conditioned. Beck acknowledges that something has genuinely changed — that the old class maps no longer fit lived experience — while leaving open whether inequality itself has diminished or merely become harder to see. The tension between these two positions is one of the most productive in contemporary sociology.
